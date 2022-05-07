@@ -36,3 +36,16 @@
     margin-top: 40px;
   }
 }
+
+@media (max-width: 900px) {
+  .home {
+    justify-content: flex-start;
+    .logo svg {
+      max-width: 200px;
+      margin-top: 100px;
+    }
+    p {
+      max-width: 100%;
+    }
+  }
+}

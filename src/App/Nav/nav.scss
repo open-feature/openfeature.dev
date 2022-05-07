@@ -8,7 +8,7 @@
   .links {
     display: flex;
     a {
-      color: var(--link);
+      color: var(--text-secondary);
       line-height: 60px;
       text-decoration: none;
       &:not(:last-child) {
@@ -34,6 +34,53 @@
         left: 1px;
         right: 1px;
         position: absolute;
+      }
+    }
+  }
+  .trigger {
+    all: unset;
+    cursor: pointer;
+    display: none;
+    color: var(--text);
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    padding: 0 10px;
+    .trigger {
+      display: block;
+    }
+    .links {
+      margin-top: 60px;
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: calc(100vh - var(--nav-height));
+      background: var(--background);
+      flex-direction: column;
+      z-index: 1;
+      a {
+        line-height: unset;
+        justify-content: center;
+        display: flex;
+        padding: 20px;
+        font-size: 20px;
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+      }
+      .active:after {
+        width: 10%;
+        margin: auto;
+        bottom: 10px;
+      }
+    }
+    &.mobile-nav-open {
+      .links {
+        display: block;
       }
     }
   }

@@ -22,6 +22,7 @@ p {
 
 .button {
   all: unset;
+  font: inherit;
   padding: 6px 14px;
   background-color: var(--button);
   font-size: 18px;

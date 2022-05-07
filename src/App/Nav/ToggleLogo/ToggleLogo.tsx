@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { useThemeContext } from "../../../common/context/theme";
 import { ReactComponent as Logo } from "../../../assets/logo-black.svg";
+import { ReactComponent as LogoToggleLeft } from "../../../assets/logo-black-toggle-left.svg";
 
 import "./toggle-logo.scss";
 import { Link } from "react-router-dom";
@@ -19,7 +20,7 @@ export const ToggleLogo = () => {
       ])}
     >
       <Link to="/">
-        <Logo />
+        {themeContext.darkScheme ? <LogoToggleLeft /> : <Logo />}
       </Link>
       <div className="toggle" onClick={handleSchemeChange}>
         <div className="track">

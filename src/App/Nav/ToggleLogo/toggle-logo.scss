@@ -48,3 +48,14 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  .toggle-logo {
+    svg {
+      width: 100px;
+    }
+    .toggle {
+      display: none;
+    }
+  }
+}

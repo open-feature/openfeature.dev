@@ -1,13 +1,17 @@
 import "./home.scss";
 import { ReactComponent as Logo } from "../../assets/logo-black.svg";
+import { ReactComponent as LogoToggleLeft } from "../../assets/logo-black-toggle-left.svg";
 import { Link } from "react-router-dom";
+import { useThemeContext } from "../../common/context/theme";
 
 export const Home = () => {
+  const { themeContext } = useThemeContext();
+
   return (
     <div className="home">
       <div>
         <div className="logo">
-          <Logo />
+          {themeContext.darkScheme ? <LogoToggleLeft /> : <Logo />}
         </div>
         <p>
           OpenFeature is an <b>open standard</b> for feature flag management,
