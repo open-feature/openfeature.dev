@@ -1,0 +1,13 @@
+.light_mode {
+  --background: var(--background-light);
+  --text: var(--text-light);
+  --text-secondary: var(--text-secondary-light);
+  --button: var(--button-light);
+}
+
+.dark_mode {
+  --background: var(--background-dark);
+  --text: var(--text-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --button: var(--button-dark);
+}

@@ -1,0 +1,50 @@
+.toggle-logo {
+  display: flex;
+  position: relative;
+  svg {
+    width: 200px;
+    height: 60px;
+    path {
+      fill: var(--text);
+    }
+  }
+  .toggle {
+    background: var(--background);
+    border-right: 1px solid var(--background);
+    position: absolute;
+    width: 35px;
+    height: 24px;
+    top: 14px;
+    display: flex;
+    justify-content: center;
+    .track {
+      height: 22px;
+      width: 35px;
+      background: var(--text);
+      margin: auto;
+      border-radius: 15px;
+      transition: all 0.2s ease;
+      div {
+        height: 17px;
+        width: 17px;
+        position: absolute;
+        margin: auto;
+        background: var(--background);
+        border-radius: 15px;
+        right: 3px;
+        top: 0;
+        bottom: 0;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+  &.is-dark-mode {
+    .toggle {
+      .track {
+        div {
+          right: 15px;
+        }
+      }
+    }
+  }
+}

@@ -6,16 +6,20 @@ import { Overview } from "../Pages/Overview";
 import { Nav } from "./Nav";
 import { Community } from "../Pages/Community";
 import { Participate } from "../Pages/Participate";
+import { Footer } from "./Footer";
 
 const App = () => (
   <div className="App">
     <Nav />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/overview" element={<Overview />} />
-      <Route path="/community" element={<Community />} />
-      <Route path="/participate" element={<Participate />} />
-    </Routes>
+    <div className="content">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/overview" element={<Overview />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/participate" element={<Participate />} />
+      </Routes>
+    </div>
+    <Footer />
   </div>
 );
 

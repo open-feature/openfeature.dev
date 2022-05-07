@@ -1,0 +1,11 @@
+.footer {
+  color: var(--text-secondary);
+  font-size: 12px;
+  height: var(--footer-height);
+  padding: 18px 24px;
+  a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid var(--text-secondary);
+  }
+}
