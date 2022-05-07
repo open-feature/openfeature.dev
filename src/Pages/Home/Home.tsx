@@ -20,24 +20,16 @@ export const Home = () => {
           and a <b>developer-first, cloud-native implementation,</b> with{" "}
           <b>extensibility for open source and commercial offerings.</b>
         </p>
-        <div className="sign-up">
-          <i className="fa-solid fa-angles-right"></i>
-          <a
-            target="_blank"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfRG8Ldun3HmcUsZCFMMORKyafjEUUKDYz5X-Zv8ZFCgbwlXA/viewform"
-            rel="noreferrer"
-          >
-            Sign-up for news
-          </a>
-          <i className="fa-solid fa-angles-left"></i>
-        </div>
         <div className="actions">
           <Link className="button" to="/overview">
             Learn More
           </Link>
-          <Link className="button" to="/community">
-            Get Involved
-          </Link>
+          <a
+            className="button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfRG8Ldun3HmcUsZCFMMORKyafjEUUKDYz5X-Zv8ZFCgbwlXA/viewform"
+          >
+            Sign up
+          </a>
         </div>
       </div>
     </div>
