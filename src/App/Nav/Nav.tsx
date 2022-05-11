@@ -1,19 +1,24 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { LINKS } from "./links";
 import { ReactComponent as Logo } from "./logo-black.svg";
 import "./nav.scss";
 
 export const Nav = () => (
   <nav className="nav">
-    <Link to="/" className="logo">
+    <NavLink to="/" className="logo">
       <Logo />
-    </Link>
+    </NavLink>
     <div className="links">
-      <Link to="/overview">Overview</Link>
-      <a href="https://github.com">Specification</a>
-      <a href="https://github.com">Roadmap</a>
-      <Link to="/community">Community</Link>
-      <Link to="/participate">Participate</Link>
-      <a href="https://github.com">GitHub</a>
+      {LINKS.map((link) => {
+        return link.isExternal ? (
+          <a href={link.location} className="external-link">
+            {link.label}
+            <i className="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        ) : (
+          <NavLink to={link.location}>{link.label}</NavLink>
+        );
+      })}
     </div>
   </nav>
 );
