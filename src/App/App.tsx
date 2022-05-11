@@ -6,6 +6,7 @@ import { Overview } from "../Pages/Overview";
 import { Nav } from "./Nav";
 import { Community } from "../Pages/Community";
 import { Participate } from "../Pages/Participate";
+import { Footer } from "./Footer";
 
 const App = () => (
   <div className="App">
@@ -18,6 +19,7 @@ const App = () => (
         <Route path="/participate" element={<Participate />} />
       </Routes>
     </div>
+    <Footer />
   </div>
 );
 

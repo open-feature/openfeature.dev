@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useThemeContext } from "../../../common/context/theme";
-import { ReactComponent as Logo } from "./logo-black.svg";
+import { ReactComponent as Logo } from "../../../assets/logo-black.svg";
 
 import "./toggle-logo.scss";
 
