@@ -4,14 +4,6 @@
   justify-content: space-between;
   width: 100%;
 
-  .logo {
-    display: flex;
-    svg {
-      width: 200px;
-      height: 60px;
-    }
-  }
-
   .links {
     display: flex;
     a {
@@ -38,8 +30,8 @@
         height: 2px;
         background-color: var(--text);
         bottom: 18px;
-        left: 0;
-        right: 0;
+        left: 1px;
+        right: 1px;
         position: absolute;
       }
     }

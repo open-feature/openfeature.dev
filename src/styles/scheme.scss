@@ -1,0 +1,9 @@
+.light_mode {
+  --background: var(--background-light);
+  --text: var(--text-light);
+}
+
+.dark_mode {
+  --background: var(--background-dark);
+  --text: var(--text-dark);
+}
