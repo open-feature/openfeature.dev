@@ -9,7 +9,7 @@ import { Participate } from "../Pages/Participate";
 import { Footer } from "./Footer";
 
 const App = () => (
-  <div className="App">
+  <div className="app">
     <Nav />
     <div className="content">
       <Routes>

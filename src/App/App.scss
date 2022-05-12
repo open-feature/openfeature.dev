@@ -1,4 +1,4 @@
-.App {
+.app {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -7,5 +7,11 @@
   .content {
     min-height: calc(100vh - var(--nav-height) - var(--footer-height));
     display: flex;
+  }
+}
+
+@media (max-width: 900px) {
+  .app {
+    padding: 0 10px;
   }
 }
