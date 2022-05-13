@@ -6,27 +6,22 @@ export const LINKS = [
   },
   {
     label: "Specification",
-    location: "https://github.com",
+    location: "https://github.com/open-feature/spec",
     isExternal: true,
   },
   {
     label: "Roadmap",
-    location: "https://github.com",
+    location: "https://github.com/orgs/open-feature/projects/1",
     isExternal: true,
   },
   {
     label: "Community",
-    location: "/community",
-    isExternal: false,
-  },
-  {
-    label: "Participate",
-    location: "/participate",
-    isExternal: false,
+    location: "https://github.com/open-feature/community",
+    isExternal: true,
   },
   {
     label: "GitHub",
-    location: "https://github.com",
+    location: "https://github.com/open-feature",
     isExternal: true,
   },
 ];
