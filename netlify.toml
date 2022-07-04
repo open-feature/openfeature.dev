@@ -1,0 +1,5 @@
+# proxy to docs
+[[redirects]]
+  from = "/docs/*"
+  to = "https://lucky-creponne-baf9b3.netlify.app/:splat"
+  status = 200
