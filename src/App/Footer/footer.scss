@@ -30,7 +30,6 @@
     a {
       @include link(var(--cncf-blue-light));
       color: var(--cncf-blue-dark);
-      font-weight: 600;
     }
   }
 }

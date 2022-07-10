@@ -4,13 +4,13 @@ import cncfIcon from "../../assets/cncf-icon.svg";
 export const CNCFBadge = () => {
   return (
     <section className="footer-cncf">
-      <span>
+      <p>
         OpenFeature is a{" "}
         <a href="https://www.cncf.io" target="_blank" rel="noreferrer">
-          Cloud Native Computing Foundation
+          <b>Cloud Native Computing Foundation</b>
         </a>{" "}
         sandbox project.
-      </span>
+      </p>
       <img src={cncfIcon} alt="CNCF" className="cncf-logo" />
     </section>
   );
