@@ -1,8 +1,3 @@
-:root {
-  --cncf-blue-dark: #436bab;
-  --cncf-blue-light: #77c4d5;
-}
-
 @mixin link($hover-color) {
   text-decoration: none;
   color: inherit;
@@ -13,32 +8,34 @@
 }
 
 .footer {
-  color: var(--text-secondary);
-  font-size: 12px;
   height: var(--footer-height);
   padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
   a {
     @include link(var(--text));
     border-bottom: 1px solid var(--text-secondary);
   }
-  &-cncf {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    padding: 18px 24px;
-    a {
-      @include link(var(--cncf-blue-light));
-      color: var(--cncf-blue-dark);
+
+  &-text {
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 9px;
     }
   }
 }
 
 .cncf-logo {
-  max-width: 60px;
+  max-width: 200px;
   object-fit: contain;
 
   @media (max-width: 900px) {
-    max-width: 48px;
+    max-width: 130px;
   }
 }
