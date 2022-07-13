@@ -1,11 +1,50 @@
+@mixin link($hover-color) {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.7s all ease;
+  &:hover {
+    color: $hover-color;
+  }
+}
+
 .footer {
-  color: var(--text-secondary);
-  font-size: 12px;
   height: var(--footer-height);
-  padding: 18px 24px;
+  padding: 18px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+
   a {
-    text-decoration: none;
-    color: inherit;
+    @include link(var(--text));
     border-bottom: 1px solid var(--text-secondary);
+  }
+
+  &-text {
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  @media (max-width: 768px) {
+    &-text {
+      font-size: 9px;
+      flex-direction: column;
+      &-divider {
+        display: none;
+      }
+    }
+  }
+}
+
+.cncf-logo {
+  max-width: 180px;
+  object-fit: contain;
+
+  @media (max-width: 900px) {
+    max-width: 130px;
   }
 }
