@@ -9,11 +9,11 @@
 
 .footer {
   height: var(--footer-height);
-  padding: 18px 24px;
+  padding: 18px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 
   a {
     @include link(var(--text));
@@ -23,16 +23,25 @@
   &-text {
     color: var(--text-secondary);
     font-size: 12px;
-    line-height: 20px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
 
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
+    &-text {
       font-size: 9px;
+      flex-direction: column;
+      &-divider {
+        display: none;
+      }
     }
   }
 }
 
 .cncf-logo {
-  max-width: 200px;
+  max-width: 180px;
   object-fit: contain;
 
   @media (max-width: 900px) {
