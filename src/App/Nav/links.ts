@@ -25,3 +25,14 @@ export const LINKS = [
     isExternal: true,
   },
 ];
+
+export const SOCIALS = [
+  {
+    name: "twitter",
+    link: "https://twitter.com/openfeature",
+  },
+  {
+    name: "linkedin",
+    link: "https://www.linkedin.com/company/openfeature",
+  },
+];
