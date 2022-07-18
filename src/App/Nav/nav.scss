@@ -7,6 +7,8 @@
 
   .links {
     display: flex;
+    align-items: center;
+    gap: 16px;
     a {
       color: var(--text-secondary);
       line-height: 60px;
@@ -36,6 +38,16 @@
         position: absolute;
       }
     }
+    .socials {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      gap: 18px;
+      li {
+        list-style-type: none;
+      }
+    }
   }
   .trigger {
     all: unset;
@@ -45,7 +57,7 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .nav {
     padding: 0 10px;
     .trigger {
@@ -76,6 +88,10 @@
         width: 10%;
         margin: auto;
         bottom: 10px;
+      }
+      .socials {
+        flex-direction: column;
+        gap: 0;
       }
     }
     &.mobile-nav-open {

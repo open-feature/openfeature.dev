@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { LINKS } from "./links";
+import { LINKS, SOCIALS } from "./links";
 import "./nav.scss";
 import { ToggleLogo } from "./ToggleLogo";
 
@@ -13,7 +13,13 @@ export const Nav = () => {
       <div className="links">
         {LINKS.map((link, key) => {
           return link.isExternal ? (
-            <a key={key} href={link.location} className="external-link">
+            <a
+              key={key}
+              href={link.location}
+              className="external-link"
+              target="_blank"
+              rel="noreferrer"
+            >
               {link.label}
               <i className="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
@@ -23,6 +29,15 @@ export const Nav = () => {
             </NavLink>
           );
         })}
+        <ul className="socials">
+          {SOCIALS.map(({ name, link }, key) => (
+            <li>
+              <a key={key} href={link} target="_blank" rel="noreferrer">
+                <i className={`fa-brands fa-${name}`}></i>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
       <button
         className="trigger"
