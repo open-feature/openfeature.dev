@@ -38,10 +38,15 @@ h2 {
   color: inherit;
   cursor: pointer;
   display: inline-block;
+  border: 1px solid transparent;
+  transition: 0.5s all ease;
   &:hover {
     filter: brightness(90%);
   }
   &:active {
     filter: brightness(80%);
+  }
+  &:focus {
+    border-color: var(--text);
   }
 }
