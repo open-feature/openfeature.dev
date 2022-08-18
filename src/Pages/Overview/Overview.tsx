@@ -7,7 +7,7 @@ export const Overview = () => {
         <h1>Mission</h1>
         <p>
           To improve the software development lifecycle, no matter the size of
-          the project, by standardizing feature flagging for developers.
+          the project, by standardizing feature flagging for everyone.
         </p>
       </div>
       <div className="tiles">
