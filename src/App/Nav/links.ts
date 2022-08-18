@@ -5,13 +5,13 @@ export const LINKS = [
     isExternal: false,
   },
   {
-    label: "Specification",
-    location: "https://github.com/open-feature/spec",
+    label: "Documentation",
+    location: "https://docs.openfeature.dev/",
     isExternal: true,
   },
   {
-    label: "Roadmap",
-    location: "https://github.com/orgs/open-feature/projects/1",
+    label: "Specification",
+    location: "https://docs.openfeature.dev/docs/specification/",
     isExternal: true,
   },
   {

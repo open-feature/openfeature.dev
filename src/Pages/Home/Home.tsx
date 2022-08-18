@@ -1,8 +1,7 @@
-import "./home.scss";
-import { ReactComponent as Logo } from "../../assets/logo-black.svg";
 import { ReactComponent as LogoToggleLeft } from "../../assets/logo-black-toggle-left.svg";
-import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from "../../assets/logo-black.svg";
 import { useThemeContext } from "../../common/context/theme";
+import "./home.scss";
 
 export const Home = () => {
   const { themeContext } = useThemeContext();
@@ -21,9 +20,12 @@ export const Home = () => {
           <b>extensibility for open source and commercial offerings.</b>
         </p>
         <div className="actions">
-          <Link className="button" to="/overview">
+          <a
+            className="button"
+            href="https://docs.openfeature.dev/docs/reference/intro"
+          >
             Learn More
-          </Link>
+          </a>
           <a
             className="button"
             href="https://docs.google.com/forms/d/e/1FAIpQLSfRG8Ldun3HmcUsZCFMMORKyafjEUUKDYz5X-Zv8ZFCgbwlXA/viewform"
