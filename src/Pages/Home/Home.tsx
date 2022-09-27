@@ -15,7 +15,7 @@ export const Home = () => {
         <p>
           OpenFeature is an <b>open standard</b> for feature flag management,
           created to support a robust feature flag ecosystem using cloud native
-          technologies. OpenFeature will provide a <b>unified API and SDK</b>,
+          technologies. OpenFeature provides a <b>unified API and SDK</b>,
           and a <b>developer-first, cloud-native implementation,</b> with{" "}
           <b>extensibility for open source and commercial offerings.</b>
         </p>
