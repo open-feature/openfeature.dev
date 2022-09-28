@@ -35,4 +35,8 @@ export const SOCIALS = [
     name: "linkedin",
     link: "https://www.linkedin.com/company/openfeature",
   },
+  {
+    name: "slack",
+    link: "https://cloud-native.slack.com/archives/C0344AANLA1",
+  }
 ];
