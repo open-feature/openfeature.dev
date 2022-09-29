@@ -20,7 +20,7 @@ export const Footer = () => {
           © 2022 <a href=".">OpenFeature</a> is a{" "}
           <a href="https://www.cncf.io" target="_blank" rel="noreferrer">
             Cloud Native Computing Foundation
-          </a>{" "}
+          </a> (<a href="https://linuxfoundation.org/trademark-usage">CNCF®</a>){" "}
           sandbox project{" "}
         </span>
         <span className="footer-text-divider">|</span>{" "}
