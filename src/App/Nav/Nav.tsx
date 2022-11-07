@@ -32,7 +32,7 @@ export const Nav = () => {
         <ul className="socials">
           {SOCIALS.map(({ name, link }, key) => (
             <li>
-              <a key={key} href={link} target="_blank" rel="noreferrer">
+              <a key={key} href={link} target="_blank" rel="noreferrer" aria-label={name}>
                 <i className={`fa-brands fa-${name}`}></i>
               </a>
             </li>
