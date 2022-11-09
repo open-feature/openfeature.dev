@@ -19,7 +19,10 @@ export const ToggleLogo = () => {
         themeContext.darkScheme && "is-dark-mode",
       ])}
     >
-      <Link to="/">
+      <Link
+          to="/"
+          aria-label="logotype"
+      >
         {themeContext.darkScheme ? <LogoToggleLeft /> : <Logo />}
       </Link>
       <div className="toggle" onClick={handleSchemeChange}>
