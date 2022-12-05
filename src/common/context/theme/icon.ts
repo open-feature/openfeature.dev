@@ -4,8 +4,8 @@ const head =
     : null;
 
 export const changeFavicon = (state: boolean) => {
-  const lightIcon = "./favicon-light.svg";
-  const darkIcon = "./favicon-dark.svg";
+  const lightIcon = "./favicons/favicon-light.svg";
+  const darkIcon = "./favicons/favicon-dark.svg";
 
   const link = document.createElement("link"),
     oldLink = document.getElementById("dynamic-favicon");
