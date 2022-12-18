@@ -1,1 +1,1 @@
-# openfeature.dev
+# [openfeature.dev](https://openfeature.dev/)
