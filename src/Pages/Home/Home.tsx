@@ -22,6 +22,12 @@ export const Home = () => {
         <div className="actions">
           <a
             className="button"
+            href="https://killercoda.com/open-feature"
+          >
+            Try OpenFeature
+          </a>
+          <a
+            className="button"
             href="https://docs.openfeature.dev/docs/reference/intro"
           >
             Learn More
