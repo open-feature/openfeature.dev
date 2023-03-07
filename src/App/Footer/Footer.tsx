@@ -17,7 +17,7 @@ export const Footer = () => {
       />
       <span className="footer-text">
         <span>
-          © 2022 <a href=".">OpenFeature</a> is a{" "}
+          © 2023 <a href=".">OpenFeature</a> is a{" "}
           <a href="https://www.cncf.io" target="_blank" rel="noreferrer">
             Cloud Native Computing Foundation
           </a> (<a href="https://linuxfoundation.org/trademark-usage">CNCF®</a>){" "}
