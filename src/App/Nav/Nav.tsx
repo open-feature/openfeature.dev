@@ -17,11 +17,9 @@ export const Nav = () => {
               key={key}
               href={link.location}
               className="external-link"
-              target="_blank"
               rel="noreferrer"
             >
               {link.label}
-              <i className="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           ) : (
             <NavLink key={key} to={link.location}>
