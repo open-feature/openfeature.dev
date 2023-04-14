@@ -1,0 +1,6 @@
+[submodule "external-content/specification"]
+	path = external-content/specification
+	url = https://github.com/open-feature/spec
+[submodule "external-content/community"]
+	path = external-content/community
+	url = https://github.com/open-feature/community

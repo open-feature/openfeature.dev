@@ -1,0 +1,386 @@
+---
+sidebar_position: 1
+id: provider
+---
+
+# Providers
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { CopyChecklist } from '@site/src/components/custom/CopyChecklist';
+
+_Providers_ are responsible for performing flag evaluations.
+They provide an abstraction between the underlying flag management system and the OpenFeature SDK.
+Providers can wrap a vendor SDK, call a bespoke flag evaluation REST API, or even parse some locally stored file to resolve flag values.
+This allows the underlying flag evaluation logic to be changed without requiring a major code refactor.
+
+An [application integrator](/specification/glossary#application-integrator) can register one provider at a time.
+Registering an additional provider will override any previously configured providers.
+If no provider is set, OpenFeature will [no-op](<https://en.wikipedia.org/wiki/NOP_(code)>) and return the default value passed to the evaluation API.
+
+Providers are set through the [evaluation API](./evaluation-api#setting-a-provider).
+They're globally registered and a change affects both new and existing OpenFeature clients.
+
+<figure>
+  <img src={require('@site/static/img/docs/reference/of-architecture.png').default} />
+  <figcaption>
+    <i>An example of an OpenFeature provider for a fictional Flags-R-us service.</i>
+  </figcaption>
+</figure>
+
+## Implementing Providers
+
+### Getting started
+
+To develop a provider, start by confirming that an OpenFeature SDK is available in the language you're interested in.
+Next, you need to create a new project and include the OpenFeature SDK as a dependency.
+This can be a new repository or included in an [existing contrib repository](https://github.com/open-feature?q=contrib&type=all&language=&sort=) available under the OpenFeature organization.
+Finally, you’ll then need to write the provider itself.
+In most languages, this can be accomplished by implementing the provider interface exported by the OpenFeature SDK.
+
+### Naming recommendations
+
+The following naming recommendations can be used to ensure consistency between providers developed among the community.
+
+#### Repository name
+
+If you're creating a new repository, it's recommended that you use one the following naming conventions:
+
+- `openfeature-provider-<language name>`
+- `<vender/tool name>-openfeature-provider-<language name>`
+
+:::note
+
+It is **not** required that a provider be open source, but it's highly recommended.
+
+:::
+
+#### Artifact name
+
+The name of the artifact will vary based on the package manager.
+Ultimately, it's up to the publisher to decide what name makes the most sense.
+However, the following items should be used in the package name:
+
+- OpenFeature (can also be stylized as openfeature or open-feature)
+- Vender/tool name
+- The word `provider` should be included in the name
+
+An example of what it could look like in NPM: `@openfeature/flagd-provider`
+
+### Examples
+
+<Tabs groupId="code">
+<TabItem value="js" label="TypeScript">
+
+```ts
+import { Provider, ResolutionDetails, EvaluationContext, JsonValue } from '@openfeature/js-sdk';
+
+export class MyFeatureProvider implements Provider {
+  readonly metadata = {
+    name: 'My Feature Provider',
+  } as const;
+
+  resolveBooleanEvaluation(
+    flagKey: string,
+    defaultValue: boolean,
+    context: EvaluationContext
+  ): Promise<ResolutionDetails<boolean>> {
+    // code to resolve boolean details
+  }
+
+  resolveStringEvaluation(
+    flagKey: string,
+    defaultValue: string,
+    context: EvaluationContext
+  ): Promise<ResolutionDetails<string>> {
+    // code to resolve string details
+  }
+
+  resolveNumberEvaluation(
+    flagKey: string,
+    defaultValue: number,
+    context: EvaluationContext
+  ): Promise<ResolutionDetails<number>> {
+    // code to resolve number details
+  }
+
+  resolveObjectEvaluation(
+    flagKey: string,
+    defaultValue: JsonValue,
+    context: EvaluationContext
+  ): Promise<ResolutionDetails<JsonValue>> {
+    // code to resolve object details
+  }
+}
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+package dev.openfeature.javasdk;
+
+public class MyFeatureProvider implements FeatureProvider {
+
+    private final String name = "My Feature Provider";
+
+    @Override
+    public String getName() {
+      return this.name;
+    }
+
+    @Override
+    public Metadata getMetadata() {
+        return new Metadata() {
+            @Override
+            public String getName() {
+                return name;
+            }
+        };
+    }
+
+    @Override
+    public ProviderEvaluation<Boolean> getBooleanEvaluation(String key, Boolean defaultValue, EvaluationContext ctx) {
+      // code to resolve boolean details
+    }
+
+    @Override
+    public ProviderEvaluation<String> getStringEvaluation(String key, String defaultValue, EvaluationContext ctx) {
+      // code to resolve string details
+    }
+
+    @Override
+    public ProviderEvaluation<Integer> getIntegerEvaluation(String key, Integer defaultValue, EvaluationContext ctx) {
+      // code to resolve integer details
+    }
+
+    @Override
+    public ProviderEvaluation<Double> getDoubleEvaluation(String key, Double defaultValue, EvaluationContext ctx) {
+      // code to resolve double details
+    }
+
+    @Override
+    public ProviderEvaluation<Value> getObjectEvaluation(String key, Value defaultValue, EvaluationContext invocationContext) {
+      // code to resolve object details
+    }
+}
+```
+
+</TabItem>
+<TabItem value="csharp" label="C#">
+
+```csharp
+using System.Threading.Tasks;
+using OpenFeature;
+using OpenFeature.Model;
+
+public class MyFeatureProvider : FeatureProvider
+{
+    public static string Name => "My Feature Provider";
+
+    public override Metadata GetMetadata()
+    {
+        return new Metadata(Name);
+    }
+
+    public override Task<ResolutionDetails<bool>> ResolveBooleanValue(string flagKey, bool defaultValue,
+        EvaluationContext context = null)
+    {
+        // code to resolve boolean details
+    }
+
+    public override Task<ResolutionDetails<string>> ResolveStringValue(string flagKey, string defaultValue,
+        EvaluationContext context = null)
+    {
+        // code to resolve string details
+    }
+
+    public override Task<ResolutionDetails<int>> ResolveIntegerValue(string flagKey, int defaultValue,
+        EvaluationContext context = null)
+    {
+        // code to resolve integer details
+    }
+
+    public override Task<ResolutionDetails<double>> ResolveDoubleValue(string flagKey, double defaultValue,
+        EvaluationContext context = null)
+    {
+        // code to resolve double details
+    }
+
+    public override Task<ResolutionDetails<Value>> ResolveStructureValue(string flagKey, Value defaultValue,
+        EvaluationContext context = null)
+    {
+        // code to resolve object details
+    }
+}
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package provider
+
+// MyFeatureProvider implements the FeatureProvider interface and provides functions for evaluating flags
+type MyFeatureProvider struct{}
+
+// Metadata returns the metadata of the provider
+func (e MyFeatureProvider) Metadata() Metadata {
+    return Metadata{Name: "MyFeatureProvider"}
+}
+
+// BooleanEvaluation returns a boolean flag
+func (e MyFeatureProvider) BooleanEvaluation(flag string, defaultValue bool, evalCtx EvaluationContext) BoolResolutionDetail {
+    // code to evaluate boolean
+}
+
+// StringEvaluation returns a string flag
+func (e MyFeatureProvider) StringEvaluation(flag string, defaultValue string, evalCtx EvaluationContext) StringResolutionDetail {
+    // code to evaluate string
+}
+
+// FloatEvaluation returns a float flag
+func (e MyFeatureProvider) FloatEvaluation(flag string, defaultValue float64, evalCtx EvaluationContext) FloatResolutionDetail {
+    // code to evaluate float
+}
+
+// IntEvaluation returns an int flag
+func (e MyFeatureProvider) IntEvaluation(flag string, defaultValue int64, evalCtx EvaluationContext) IntResolutionDetail {
+    // code to evaluate int
+}
+
+// ObjectEvaluation returns an object flag
+func (e MyFeatureProvider) ObjectEvaluation(flag string, defaultValue interface{}, evalCtx EvaluationContext) ResolutionDetail {
+    // code to evaluate object
+}
+
+// Hooks returns hooks
+func (e MyFeatureProvider) Hooks() []Hook {
+    // code to retrieve hooks
+}
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+namespace OpenFeature\Dev\MyFeature;
+
+use OpenFeature\interfaces\hooks\HooksAwareTrait;
+use OpenFeature\interfaces\provider\Provider;
+use Psr\Log\LoggerAwareTrait;
+
+class MyFeatureProvider implements Provider
+{
+    use HooksAwareTrait;
+    use LoggerAwareTrait;
+
+    public const NAME = 'MyFeatureProvider';
+
+    public function getMetadata(): MetadataInterface
+    {
+        return new Metadata(self::NAME);
+    }
+
+    public function resolveBooleanValue(string $flagKey, bool $defaultValue, ?EvaluationContext $context = null): ResolutionDetails
+    {
+        // code to evaluate boolean
+    }
+
+    public function resolveStringValue(string $flagKey, string $defaultValue, ?EvaluationContext $context = null): ResolutionDetails
+    {
+        // code to evaluate string
+    }
+
+    public function resolveIntegerValue(string $flagKey, int $defaultValue, ?EvaluationContext $context = null): ResolutionDetails
+    {
+        // code to evaluate integer
+    }
+
+    public function resolveFloatValue(string $flagKey, float $defaultValue, ?EvaluationContext $context = null): ResolutionDetails
+    {
+        // code to evaluate float
+    }
+
+    public function resolveObjectValue(string $flagKey, $defaultValue, ?EvaluationContext $context = null): ResolutionDetails
+    {
+        // code to evaluate object
+    }
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+### Checklist
+
+Here is a checklist of important considerations when implementing a provider.
+
+#### Functional requirements
+
+<CopyChecklist
+  items={[
+    'All resolution methods are implemented (see `Provider` / `FeatureProvider` interface in applicable SDK).',
+    'Relevant configuration options for the underlying backend are exposed (typically using the provider constructor).',
+    'Flag-keys are transformed appropriately for the underlying backend (OpenFeature defines no restrictions in valid flag keys).',
+    'Context is transformed appropriately for the underlying backend.',
+    'Provider is named according to the [naming conventions](https://openfeature.dev/docs/reference/concepts/provider#naming-recommendations)',
+  ]}
+/>
+
+#### Non-functional requirements
+
+<CopyChecklist
+  items={[
+    'Documentation for installation, all behaviors (options, context transformation, flag-key transformation).',
+    'Provider is adequately tested.',
+    'Provider is added to [the documentation site](https://github.com/open-feature/openfeature.dev/issues/new?assignees=&labels=provider&template=document-provider.yaml&title=%5BProvider%5D%3A+).',
+    'Provider releases follow [semantic versioning](https://semver.org/).',
+    'Document the version of the OpenFeature specification to which your provider complies.',
+  ]}
+/>
+
+### FAQ
+
+#### Does my provider's version need to match the spec version to which it complies?
+
+No.
+You should document the version of the OpenFeature specification your provider complies to, and otherwise use [semantic versioning](https://semver.org/) in your artifact numbers.
+
+#### My backend needs a targeting key (or other user identifier), how can I ensure one exists?
+
+Targeting keys are not required by the Evaluation API.
+If your backend requires one, you have a couple options:
+
+- Indicate an error in your provider (this will result in the default value being returned).
+- Generate one automatically.
+
+Be sure to document this behavior.
+
+#### How should I handle error conditions?
+
+If an error condition is encountered in your provider, an error should be [indicated](/specification/types#error-code) by throwing or returning an error, as language idioms dictate.
+The SDK will ensure the default value is returned and expose the relevant error data.
+
+#### My flag system doesn't support flags of a particular type. What should I do?
+
+If your backend system doesn't support a particular flag type, you can:
+
+- Do a conversion from a type the system supports (for example, store JSON objects in a string, or booleans as `0`/`1`), and document this pattern.
+- Indicate an error in your provider (this will result in the default value being returned).
+
+#### How can people find my provider?
+
+Please add your provider to the [documentation](https://github.com/open-feature/openfeature.dev/issues/new?assignees=&labels=provider&template=document-provider.yaml&title=%5BProvider%5D%3A+) so people can find it!
+
+#### Where should I put my provider source code?
+
+If you are a vendor and you want to maintain full control over your provider, you should host the provider in your organization's SCM.
+If you would like your provider to be maintained as a community project, please take a look at our various [contrib repositories](https://github.com/orgs/open-feature/repositories?q=contrib&type=all&language=&sort=).
+We encourage you to make your code open source, but obviously it's your decision.
+
+#### Where should I publish my provider artifact?
+
+You should publish your provider on the appropriate package management repository for your language, keeping in mind the [naming conventions](https://openfeature.dev/docs/reference/concepts/provider#naming-recommendations).
+Our [contrib repositories](https://github.com/orgs/open-feature/repositories?q=contrib&type=all&language=&sort=) publish all their artifacts as part of their release processes.

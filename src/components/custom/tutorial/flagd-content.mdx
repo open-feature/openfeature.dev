@@ -1,0 +1,31 @@
+Providers are an important concept in OpenFeature because they are responsible for the flag evaluation itself.
+As we saw in the previous step, OpenFeature without a provider always returns the default value. If we want to actually perform feature
+flagging, we'll need to register a provider.
+
+Create a new file named `flags.flagd.json` and add the following JSON. Notice that there's a flag called `welcome-message` which matches the flag
+key referenced earlier. The `welcome-message` flag has `on` and `off` variants that return `true` and `false` respectively.
+The state property controls whether the feature flag is active or not. Finally, the defaultVariant property controls the variant that should be returned.
+In this case, the defaultVariant is `off`, therefore the value `false` would be returned.
+
+```json
+{
+  "flags": {
+    "welcome-message": {
+      "variants": {
+        "on": true,
+        "off": false
+      },
+      "state": "ENABLED",
+      "defaultVariant": "off"
+    }
+  }
+}
+```
+
+> NOTE: This configuration is specific for flagd and varies across providers.
+
+With the flagd configuration in place, start flagd service with the following docker command.
+
+```sh
+docker run -p 8013:8013 -v $(pwd)/:/etc/flagd/ -it ghcr.io/open-feature/flagd:latest start --uri file:/etc/flagd/flags.flagd.json
+```

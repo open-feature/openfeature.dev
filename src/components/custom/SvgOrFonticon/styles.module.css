@@ -1,0 +1,11 @@
+.svgOrIcon {
+  fill: var(--ifm-color-emphasis-800);
+  color: var(--ifm-color-emphasis-800);
+  transition: all var(--ifm-transition-fast) ease;
+  transition-property: border, box-shadow;
+}
+
+a:hover .svgOrIcon {
+  fill: var(--ifm-color-emphasis-700);
+  color: var(--ifm-color-emphasis-700);
+}

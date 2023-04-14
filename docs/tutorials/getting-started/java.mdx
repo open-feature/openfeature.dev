@@ -1,0 +1,239 @@
+---
+title: Java SDK and Spring Boot
+description: Getting Started with the OpenFeature Java SDK and Spring Boot
+---
+
+import FlagdContent from '@site/src/components/custom/tutorial/flagd-content.mdx';
+import FlagdChangeContent from '@site/src/components/custom/tutorial/flagd-change-content.mdx';
+import WhyDefaultContent from '@site/src/components/custom/tutorial/why-default-content.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Getting Started with the OpenFeature Java SDK and Spring Boot
+
+## Introduction
+
+This walk-through teaches you the basics of using OpenFeature in Java in the context of a Spring Boot Web application.
+
+You'll learn how to:
+
+- Integrate the OpenFeature Java SDK
+- Install and configure the OpenFeature provider
+- Perform basic feature flagging
+
+## Requirements
+
+This walk-through assumes that:
+
+- You have a basic knowledge of Java and Spring Boot
+- You have Java 8 or later
+- You have Docker installed and running on the host system
+
+## Walk-through
+
+### Step 1: Create a Spring Boot Web application
+
+To get started, visit [Spring Initializer](https://start.spring.io/).
+This website allows you to download a pre-configured
+Spring boot application.
+
+For our use case, add **Spring Web** from the dependencies section and set the following **project metadata** values,
+
+- Group: com
+- Artifact: demo
+
+Select a Java version matching your installation and download the application using the **GENERATE** button.
+Extract the archive and open it in your favorite editor.
+
+### Step 2: Add dependencies
+
+Based on the selected build system for Spring Boot application, add OpenFeature Java SDK and flagd provider dependencies
+to existing dependency management configuration.
+
+Given below are dependencies for Maven and Gradle with the latest dependency versions at the time of writing this walk-through.
+
+<Tabs groupId="dependency">
+<TabItem value="maven" label="Maven">
+
+```xml
+<dependency>
+    <groupId>dev.openfeature</groupId>
+    <artifactId>sdk</artifactId>
+    <version>1.3.1</version>
+</dependency>
+<dependency>
+    <groupId>dev.openfeature.contrib.providers</groupId>
+    <artifactId>flagd</artifactId>
+    <version>0.5.8</version>
+</dependency>
+```
+
+</TabItem>
+<TabItem value="gradle" label="Gradle">
+
+```groovy
+implementation 'dev.openfeature:sdk:1.3.1'
+implementation 'dev.openfeature.contrib.providers:flagd:0.5.8'
+```
+
+</TabItem>
+</Tabs>
+
+### Step 3: Add code
+
+The `OpenFeatureAPI` class is the main access point to OpenFeature SDK.
+This class is designed to act as a singleton.
+Let's define
+a simple bean configuration class called `OpenFeatureBeans`, that allows us to inject the `OpenFeatureAPI` singleton into desired Spring components.
+
+Create the Java class `OpenFeatureBeans.java` inside the package `com.demo` and add the following code,
+
+```java
+package com.demo;
+
+import dev.openfeature.sdk.OpenFeatureAPI;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class OpenFeatureBeans {
+
+    @Bean
+    public OpenFeatureAPI OpenFeatureAPI() {
+        final OpenFeatureAPI openFeatureAPI = OpenFeatureAPI.getInstance();
+
+        return openFeatureAPI;
+    }
+}
+```
+
+Then we can add the REST endpoint definition of `/hello` endpoint, along with dependency injection for `OpenFeatureAPI` instance.
+
+Create the Java class `RestHello.java` inside the package `com.demo` and add the following code.
+
+```java
+package com.demo;
+
+import dev.openfeature.sdk.Client;
+import dev.openfeature.sdk.OpenFeatureAPI;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class RestHello {
+    private final OpenFeatureAPI openFeatureAPI;
+
+    @Autowired
+    public RestHello(OpenFeatureAPI OFApi) {
+        this.openFeatureAPI = OFApi;
+    }
+    
+    @GetMapping("/hello")
+    public String getHello() {
+        final Client client = openFeatureAPI.getClient();
+
+        // Evaluate welcome-message feature flag
+        if (client.getBooleanValue("welcome-message", false)) {
+            return "Hello, welcome to this OpenFeature-enabled website!";
+        }
+
+        return "Hello!";
+    }
+}
+```
+
+At this point, we are ready to run the initial version of our application.
+
+### Step 4: Run the initial application
+
+Let's compile and run the application.
+
+<Tabs groupId="running">
+<TabItem value="maven" label="Maven">
+
+```shell
+mvn clean install
+java -jar target/demo-0.0.1-SNAPSHOT.jar
+```
+
+</TabItem>
+<TabItem value="gradle" label="Gradle">
+
+```shell
+./gradlew clean build
+java -jar build/libs/demo-0.0.1-SNAPSHOT.jar
+```
+
+</TabItem>
+</Tabs>
+
+Now you can visit the url [http://localhost:8080/hello](http://localhost:8080/hello) and observe the message **Hello!**.
+
+<WhyDefaultContent/>
+
+### Step 5: Configure a provider (flagd)
+
+<FlagdContent/>
+
+Finally, let's add the required code change to `OpenFeatureBeans.java` class.
+
+```diff
+package com.demo;
+
++ import dev.openfeature.contrib.providers.flagd.FlagdProvider;
+import dev.openfeature.sdk.OpenFeatureAPI;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class OpenFeatureBeans {
+
+    @Bean
+    public OpenFeatureAPI OpenFeatureAPI() {
+        final OpenFeatureAPI openFeatureAPI = OpenFeatureAPI.getInstance();
+        
++        // Use flagd as the OpenFeature provider and use default configurations
++        openFeatureAPI.setProvider(new FlagdProvider());
+
+        return openFeatureAPI;
+    }
+}
+```
+
+### Step 6: Rerun the application
+
+Let's rerun our Java Spring Boot application.
+
+<Tabs groupId="running">
+<TabItem value="maven" label="Maven">
+
+```shell
+mvn clean install
+java -jar target/demo-0.0.1-SNAPSHOT.jar
+```
+
+</TabItem>
+<TabItem value="gradle" label="Gradle">
+
+```shell
+./gradlew clean build
+java -jar build/libs/demo-0.0.1-SNAPSHOT.jar
+```
+
+</TabItem>
+</Tabs>
+
+Revisit the endpoint [http://localhost:8080/hello](http://localhost:8080/hello) and you will see the same value.
+
+<FlagdChangeContent/>
+
+Revisit the endpoint [http://localhost:8080/hello](http://localhost:8080/hello) and you will be greeted with `Hello, welcome to this OpenFeature-enabled website!`
+
+## Conclusion
+
+This walk-through introduced you to the OpenFeature Java SDK and how it can be easily integrated into well-known frameworks
+such as Spring Boot.
+It covered how a provider can be configured to perform the flag evaluation and introduced basic feature
+flagging concepts.
+It also showcased how feature flags can be updated at runtime, without requiring a code change and a redeployment.

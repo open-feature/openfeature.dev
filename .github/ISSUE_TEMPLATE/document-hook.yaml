@@ -1,0 +1,55 @@
+name: 🪝 Document Hook
+description: Add your hook to the OpenFeature documentation so others can discover and use it.
+title: "[Hook]: "
+labels:
+  - hook
+body:
+  - type: dropdown
+    attributes:
+      label: SDK
+      description: What SDK does this work with?
+      multiple: false
+      options:
+        - Java
+        - .NET
+        - Golang
+        - JavaScript/TypeScript
+        - Python
+        - Other (Not available in the list)
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Maintainer
+      description: Is this vendor or community maintained?
+      multiple: false
+      options:
+        - Vendor
+        - Community
+        - Other (Not available in the list)
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Artifacts
+      description: Links to any published artifacts.
+      placeholder: |
+        npm: https://www.npmjs.com/package/@openfeature/example-hook
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Repository
+      description: A link to the repository that contains the hook's code.
+      placeholder: https://github.com/open-feature/example-hook
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Anything else?
+      description: |
+        Links? References? Anything that will give us more ways to promote your hook!
+
+        Tip: A monochrome svg logo is helpful when a new vendor or tool.
+    validations:
+      required: false

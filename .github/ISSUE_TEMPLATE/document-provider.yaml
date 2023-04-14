@@ -1,0 +1,62 @@
+name: 🧩 Document Provider
+description: Add your provider to the OpenFeature documentation so others can discover and use it.
+title: "[Provider]: "
+labels:
+  - provider
+body:
+  - type: dropdown
+    attributes:
+      label: SDK
+      description: What SDK does this work with?
+      multiple: false
+      options:
+        - Java
+        - .NET
+        - Golang
+        - JavaScript/TypeScript
+        - Python
+        - Other (Not available in the list)
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Vendor/Tool
+      description: What vendor or tool does this provider integrate with?
+      placeholder: Flags-R-us
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Maintainer
+      description: Is this vendor or community maintained?
+      multiple: false
+      options:
+        - Vendor
+        - Community
+        - Other (Not available in the list)
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Artifacts
+      description: Links to any published artifacts.
+      placeholder: |
+        npm: https://www.npmjs.com/package/@openfeature/example-provider
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Repository
+      description: A link to the repository that contains the provider's code.
+      placeholder: https://github.com/open-feature/example-provider
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Anything else?
+      description: |
+        Links? References? Anything that will give us more ways to promote your provider!
+
+        Tip: A monochrome svg logo is helpful when a new vendor or tool.
+    validations:
+      required: false

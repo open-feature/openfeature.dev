@@ -1,0 +1,293 @@
+---
+sidebar_position: 1
+id: hooks
+---
+
+# Hooks
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+_Hooks_ are a mechanism that allow for the addition of arbitrary behavior at well-defined points of the _flag evaluation life-cycle_.
+Use cases include validation of the resolved flag value, modifying or adding data to the evaluation context, logging, telemetry, and tracking.
+
+## Adding Hooks to Flag Evaluation
+
+Hooks can be attached globally (on the OpenFeature API object), at the client, or at the flag invocation level.
+
+<Tabs groupId="code">
+<TabItem value="js" label="TypeScript">
+
+```ts
+// add a hook globally, to run on all evaluations
+OpenFeature.addHooks(new ExampleGlobalHook());
+
+// add a hook on this client, to run on all evaluations made by this client
+const client = OpenFeature.getClient();
+client.addHooks(new ExampleClientHook());
+
+// add a hook for this evaluation only
+const value = await client.getBooleanValue(FLAG_KEY, false, context, {
+  hooks: [new ExampleInvocationHook()],
+});
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+// add a hook globally, to run on all evaluations
+OpenFeatureAPI.getInstance().addHooks(new ExampleGlobalHook());
+
+// add a hook on this client, to run on all evaluations made by this client
+Client client = api.getClient();
+client.addHooks(new ExampleClientHook());
+
+// add a hook for this evaluation only
+Boolean value = client.getBooleanValue("key", false, null, FlagEvaluationOptions
+  .builder()
+  .hook(new ExampleInvocationHook())
+  .build());
+```
+
+</TabItem>
+<TabItem value="csharp" label="C#">
+
+```csharp
+// add a hook globally, to run on all evaluations
+Api.Instance.AddHooks(new ExampleGlobalHook());
+
+// add a hook on this client, to run on all evaluations made by this client
+var client = Api.Instance.GetClient();
+client.AddHooks(new ExampleClientHook());
+
+// add a hook for this evaluation only
+var value = await client.GetBooleanValue("boolFlag", false, context, new FlagEvaluationOptions(new ExampleInvocationHook()));
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+// add a hook globally, to run on all evaluations
+openfeature.AddHooks(ExampleGlobalHook{})
+
+// add a hook on this client, to run on all evaluations made by this client
+client := openfeature.NewClient("my-app")
+client.AddHooks(ExampleClientHook{})
+
+// add a hook for this evaluation only
+value, err := client.BooleanValue(
+    context.Background(), "boolFlag", false, openfeature.EvaluationContext{}, WithHooks(ExampleInvocationHook{}),
+)
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+// add a hook globally, to run on all evaluations
+$api = OpenFeatureAPI.getInstance();
+$api->addHook(new ExampleGlobalHook());
+
+// add a hook on this client, to run on all evaluations made by this client
+$client = $api->getClient();
+$client->addHook(new ExampleClientHook());
+
+// add a hook for this evaluation only
+$value = $client->getBooleanValue("boolFlag", false, $context, new EvaluationOptions([new ExampleInvocationHook()]));
+```
+
+</TabItem>
+</Tabs>
+
+## Flag Evaluation Life-Cycle
+
+The flag evaluation life-cycle consists of four stages: _Before_, _After_, _Error_ and _Finally_.
+A Hook will implement one or more of these stages, performing activities related to their specific role.
+
+> Note: "finally" is a reserved word in some languages.
+> In such cases, an alternate name is used, such as _finallyAfter_.
+
+### Before
+
+The _Before_ stage is evaluated before flag evaluation takes place.
+Hooks implementing the Before stage may alter the [evaluation context](./evaluation-context) or perform other side effects.
+Note that Before hooks run before flag evaluation has succeeded.
+Consider this when using Before hooks.
+You may want to use [After hooks](#after) for use cases where you want to perform some side effect with an assurance that flag evaluation proceeded normally.
+
+### After
+
+The _After_ stage is evaluated after **successful** flag evaluation.
+Hooks implementing the After stage may validate the resolved flag value (throwing or returning errors) or perform other side effects.
+After hooks are an ideal mechanism for publishing records in other services for the purposes of telemetry relating to flag evaluation or for user tracking.
+
+### Error
+
+The _Error_ stage runs only in the case that flag evaluation has proceeded abnormally.
+Some reasons for abnormal execution include:
+
+- the flag control plane could not be reached
+- the flag referenced by the flag key does not exist
+- the flag referenced by the flag key is not of the expected type
+- an unhandled error occurred in a _Before_ hook
+
+The Error stage is ideal for logging error messages or adding error records to a telemetry provider.
+
+### Finally
+
+The _Finally_ stage runs unconditionally, no matter if flag resolution succeeded or failed.
+Hooks implementing this stage might use it to release resources or finalize records.
+
+### Ordering
+
+Hooks are evaluated in the following order:
+
+- before: API, Client, Invocation
+- after: Invocation, Client, API
+- error (if applicable): Invocation, Client, API
+- finally: Invocation, Client, API
+
+Hooks added at the same level (API, client, or invocation) are evaluated in the order they are added.
+
+## Implementing Hooks
+
+Create a hook by implementing **at least** one of the flag evaluation life-cycle stages.
+
+<Tabs groupId="code">
+<TabItem value="js" label="TypeScript">
+
+```ts
+export class MyHook implements Hook {
+  before(hookContext: HookContext) {
+    // code to run before flag evaluation
+  }
+
+  after(hookContext: HookContext, evaluationDetails: EvaluationDetails<FlagValue>) {
+    // code to run after successful flag evaluation
+  }
+
+  error(hookContext: HookContext, err: Error) {
+    // code to run if there's an error during before hooks or during flag evaluation
+  }
+
+  finally(hookContext: HookContext) {
+    // code to run after all other stages, regardless of success/failure
+  }
+}
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+class MyHook implements BooleanHook {
+  @Override
+  public Optional<EvaluationContext> before(HookContext<Boolean> ctx, Map<String, Object> hints) {
+    // code to run before flag evaluation
+  }
+
+  @Override
+  public void after(HookContext<Boolean> ctx, FlagEvaluationDetails<Boolean> details, Map<String, Object> hints) {
+    // code to run after successful flag evaluation
+  }
+
+  @Override
+  public void error(HookContext<Boolean> ctx, Exception error, Map<String, Object> hints) {
+    // code to run if there's an error during before hooks or during flag evaluation
+  }
+
+  @Override
+  public void finallyAfter(HookContext<Boolean> ctx, Map<String, Object> hints) {
+    // code to run after all other stages, regardless of success/failure
+  }
+}
+```
+
+</TabItem>
+<TabItem value="csharp" label="C#">
+
+```csharp
+MyHook : Hook
+{
+  public Task<EvaluationContext> Before<T>(HookContext<T> context,
+      IReadOnlyDictionary<string, object> hints = null)
+  {
+    // code to run before flag evaluation
+  }
+
+  public virtual Task After<T>(HookContext<T> context, FlagEvaluationDetails<T> details,
+      IReadOnlyDictionary<string, object> hints = null)
+  {
+    // code to run after successful flag evaluation
+  }
+
+  public virtual Task Error<T>(HookContext<T> context, Exception error,
+      IReadOnlyDictionary<string, object> hints = null)
+  {
+    // code to run if there's an error during before hooks or during flag evaluation
+  }
+
+  public virtual Task Finally<T>(HookContext<T> context, IReadOnlyDictionary<string, object> hints = null)
+  {
+    // code to run after all other stages, regardless of success/failure
+  }
+}
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+type myHook struct{}
+
+func (h myHook) Before(ctx context.Context, hookContext openfeature.HookContext, hookHints openfeature.HookHints) (*openfeature.EvaluationContext, error) {
+    // code to run before flag evaluation
+}
+
+func (h myHook) After(ctx context.Context, hookContext openfeature.HookContext, flagEvaluationDetails openfeature.EvaluationDetails, hookHints openfeature.HookHints) error {
+    // code to run after successful flag evaluation
+}
+
+func (h myHook) Error(ctx context.Context, hookContext openfeature.HookContext, err error, hookHints openfeature.HookHints) {
+    // code to run if there's an error during before hooks or during flag evaluation
+}
+
+func (h myHook) Finally(ctx context.Context, hookContext openfeature.HookContext, hookHints openfeature.HookHints) {
+    // code to run after all other stages, regardless of success/failure
+}
+```
+
+</TabItem>
+
+<TabItem value="php" label="PHP">
+
+```php
+class MyHook implements Hook
+{
+    public function before(HookContext $context, HookHints $hints): ?EvaluationContext
+    {
+      // code to run before flag evaluation
+    }
+
+    public function after(HookContext $context, ResolutionDetails $details, HookHints $hints): void
+    {
+      // code to run after successful flag evaluation
+    }
+
+    public function error(HookContext $context, Throwable $error, HookHints $hints): void
+    {
+      // code to run if there's an error during before hooks or during flag evaluation
+    }
+
+    public function finally(HookContext $context, HookHints $hints): void
+    {
+      // code to run after all other stages, regardless of success/failure
+    }
+}
+
+```
+
+</TabItem>
+</Tabs>

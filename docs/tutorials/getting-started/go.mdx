@@ -1,0 +1,245 @@
+---
+title: Go SDK and Go Gin
+description: Getting Started with the OpenFeature Go SDK and Go Gin
+---
+
+import FlagdContent from '@site/src/components/custom/tutorial/flagd-content.mdx';
+import FlagdChangeContent from '@site/src/components/custom/tutorial/flagd-change-content.mdx';
+import WhyDefaultContent from '@site/src/components/custom/tutorial/why-default-content.mdx';
+
+# Getting Started with the OpenFeature Go SDK and Go Gin
+
+## Introduction
+
+This walk-through teaches you the basics of using OpenFeature in Go in the context of a Go Gin web application.
+
+You'll learn how to:
+
+- Integrate the OpenFeature Go SDK
+- Install and configure the OpenFeature provider
+- Perform basic feature flagging
+
+## Requirements
+
+## Walk-through
+
+This walk-through assumes that:
+
+- You have a basic knowledge of Go
+- You have Go 1.17 or later
+- You have Docker installed and running on the host system
+
+### Step 1: Create a new Go project
+
+To get started, let's create a new folder and initialize the project.
+This can be done by running following commands.
+
+```shell
+mkdir gostart
+cd gostart
+go mod init gostart
+```
+
+### Step 2: Set up the application
+
+Let's initialize the application with logic to expose a minimal Go Gin web endpoint.
+
+First, create the file `main.go` and include the following code.
+
+```go
+package main
+
+import (
+    "github.com/gin-gonic/gin"
+    "net/http"
+)
+
+const defaultMessage = "Hello!"
+
+func main() {
+    // Initialize Go Gin
+    engine := gin.Default()
+
+    // Setup a simple endpoint
+    engine.GET("/hello", func(c *gin.Context) {
+        c.JSON(http.StatusOK, defaultMessage)
+        return
+
+    })
+
+    engine.Run()
+}
+```
+
+To add Go Gin dependency to the application, run the following commands.
+
+```shell
+go get github.com/gin-gonic/gin
+go mod tidy
+```
+
+### Step 3: Add the OpenFeature SDK
+
+Next, let's add logic to customize the response message based on the `boolean` [flag key][flag-key] `welcome-message`.
+
+```diff
+package main
+
+ import (
++       "context"
+        "github.com/gin-gonic/gin"
++       "github.com/open-feature/go-sdk/pkg/openfeature"
+        "net/http"
+ )
+
+  const defaultMessage = "Hello!"
++ const newWelcomeMessage = "Hello, welcome to this OpenFeature-enabled website!"
+
+ func main() {
++       // Initialize OpenFeature client
++       client := openfeature.NewClient("GoStartApp")
++
+        // Initialize Go Gin
+        engine := gin.Default()
+
+        // Setup a simple endpoint
+        engine.GET("/hello", func(c *gin.Context) {
+-               c.JSON(http.StatusOK, defaultMessage)
+-               return
+
++               // Evaluate welcome-message feature flag
++               welcomeMessage, _ := client.BooleanValue(
++                       context.Background(), "welcome-message", false, openfeature.EvaluationContext{},
++               )
++
++               if welcomeMessage {
++                       c.JSON(http.StatusOK, newWelcomeMessage)
++                       return
++               } else {
++                       c.JSON(http.StatusOK, defaultMessage)
++                       return
++               }
+        })
+
+        engine.Run()
+```
+
+To add OpenFeature SDK dependency to the application, run the following commands.
+
+```shell
+go get github.com/open-feature/go-sdk/pkg/openfeature
+go mod tidy
+```
+
+### Step 4: Run the initial application
+
+Let's start the application and see it in action.
+
+```shell
+go run main.go
+```
+
+Now you can visit the url [http://localhost:8080/hello](http://localhost:8080/hello) and observe the message **Hello!**.
+
+<WhyDefaultContent/>
+
+### Step 5: Configure a provider (flagd)
+
+<FlagdContent/>
+
+Now, let's make the required code changes in our application.
+
+```diff
+ import (
+        "context"
+        "github.com/gin-gonic/gin"
++       flagd "github.com/open-feature/go-sdk-contrib/providers/flagd/pkg"
+        "github.com/open-feature/go-sdk/pkg/openfeature"
+        "net/http"
+ )
+
+ func main() {
++       // Use flagd as the OpenFeature provider
++       openfeature.SetProvider(flagd.NewProvider())
++
+        // Initialize OpenFeature client
+        client := openfeature.NewClient("GoStartApp")
+```
+
+Then, let's add `flagd provider` dependency with following commands.
+
+```shell
+go get github.com/open-feature/go-sdk-contrib/providers/flagd
+go mod tidy
+```
+
+The complete `main.go` file is given below:
+
+```go
+package main
+
+import (
+    "context"
+    "github.com/gin-gonic/gin"
+    flagd "github.com/open-feature/go-sdk-contrib/providers/flagd/pkg"
+    "github.com/open-feature/go-sdk/pkg/openfeature"
+    "net/http"
+)
+
+const defaultMessage = "Hello!"
+const newWelcomeMessage = "Hello, welcome to this OpenFeature-enabled website!"
+
+func main() {
+    // Use flagd as the OpenFeature provider
+    openfeature.SetProvider(flagd.NewProvider())
+
+    // Initialize OpenFeature client
+    client := openfeature.NewClient("GoStartApp")
+
+    // Initialize Go Gin
+    engine := gin.Default()
+
+    // Setup a simple endpoint
+    engine.GET("/hello", func(c *gin.Context) {
+
+        // Evaluate welcome-message feature flag
+        welcomeMessage, _ := client.BooleanValue(
+            context.Background(), "welcome-message", false, openfeature.EvaluationContext{},
+        )
+
+        if welcomeMessage {
+            c.JSON(http.StatusOK, newWelcomeMessage)
+            return
+        } else {
+            c.JSON(http.StatusOK, defaultMessage)
+            return
+        }
+    })
+
+    engine.Run()
+}
+```
+
+### Step 6: Rerun the application
+
+Let's rerun the application with the following command.
+
+```shell
+go run main.go
+```
+
+Revisit the endpoint [http://localhost:8080/hello](http://localhost:8080/hello) and you will see the same value.
+
+<FlagdChangeContent/>
+
+Revisit the endpoint [http://localhost:8080/hello](http://localhost:8080/hello) and you will be greeted with `Hello, welcome to this OpenFeature-enabled website!`
+
+## Conclusion
+
+This walk-through introduced you to the OpenFeature Go SDK and how it can be easily integrated into well-known frameworks
+such as Go Gin.
+It covered how a provider can be configured to perform the flag evaluation and introduced basic feature
+flagging concepts.
+It also showcased how feature flags can be updated at runtime, without requiring a code change and a redeployment.
+
+[flag-key]: /specification/glossary#flag-key
