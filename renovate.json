@@ -1,6 +1,78 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    "schedule:earlyMondays"
+  ],
+  "semanticCommits": "enabled",
+  "labels": [
+    "renovate"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "@docusaurus/"
+      ],
+      "groupName": "Docusaurus"
+    },
+    {
+      "matchPackagePatterns": [
+        "@typescript-eslint",
+        "eslint"
+      ],
+      "groupName": "ESLint"
+    },
+    {
+      "matchPackagePatterns": [
+        "@fortawesome/"
+      ],
+      "groupName": "Font Awesome"
+    },
+    {
+      "matchPackagePatterns": [
+        "@types/"
+      ],
+      "groupName": "Types"
+    },
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "automerge": true
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^docs/tutorials/ofo.md$"],
+      "matchStrings": ["open-feature\\/open-feature-operator\\/releases\\/download\\/(?<currentValue>.*?)\\/release\\.yaml"],
+      "depNameTemplate": "open-feature/open-feature-operator",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": ["^docs/tutorials/getting-started/java.mdx$"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "\\s*<groupId>dev\\.openfeature<\\/groupId>\\s*<artifactId>sdk<\\/artifactId>\\s*<version>(?<currentValue>.*?)<\\/version>",
+        "'dev\\.openfeature:sdk:(?<currentValue>.*?)'"
+      ],
+      "depNameTemplate": "dev.openfeature:sdk",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "fileMatch": ["^docs/tutorials/getting-started/java.mdx$"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "\\s*<groupId>dev\\.openfeature\\.contrib\\.providers<\\/groupId>\\s*<artifactId>flagd<\\/artifactId>\\s*<version>(?<currentValue>.*?)<\\/version>",
+        "'dev\\.openfeature\\.contrib\\.providers:flagd:(?<currentValue>.*?)'"
+      ],
+      "depNameTemplate": "dev.openfeature.contrib.providers:flagd",
+      "datasourceTemplate": "maven"
+    }
   ]
 }

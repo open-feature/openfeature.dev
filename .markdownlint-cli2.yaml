@@ -1,0 +1,34 @@
+
+config:
+    default: true
+
+    no-hard-tabs:
+        spaces_per_tab: 4
+
+    line-length: false
+
+    no-duplicate-header:
+        siblings_only: true
+
+    single-h1:
+        front_matter_title: ""
+
+    no-inline-html: false
+
+    emphasis-style: false
+
+    max-one-sentence-per-line: true
+
+customRules:
+    - markdownlint-rule-max-one-sentence-per-line
+
+globs:
+    - "docs/**/*.md*"
+    - "blogs/**/*.md*"
+
+ignores:
+    - node_modules
+    - external-content
+    - docs/specification
+
+fix: true

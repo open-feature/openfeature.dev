@@ -1,0 +1,334 @@
+---
+sidebar_position: 1
+id: evaluation-api
+---
+
+# Evaluation API
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+The Evaluation API is the primary component of OpenFeature that _application authors_ interact with.
+The Evaluation API allows developers to evaluate feature flags to alter control flow and application characteristics.
+
+## Setting a Provider
+
+Before you can start evaluating flags, you must set a [_provider_](./provider).
+The provider is the translation layer between the evaluation API and the flag system you use.
+
+<Tabs groupId="code">
+<TabItem value="js" label="TypeScript">
+
+```ts
+import { OpenFeature } from '@openfeature/js-sdk';
+
+OpenFeature.setProvider(new YourProviderOfChoice());
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+import dev.openfeature.javasdk.OpenFeatureAPI;
+
+OpenFeatureAPI api = OpenFeatureAPI.getInstance();
+api.setProvider(new YourProviderOfChoice());
+```
+
+</TabItem>
+<TabItem value="csharp" label="C#">
+
+```csharp
+using OpenFeature;
+
+Api.Instance.SetProvider(new YourProviderOfChoice());
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+openfeature.SetProvider(MyFeatureProvider{})
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+use OpenFeature\OpenFeatureAPI;
+
+OpenFeatureAPI::getInstance()->setProvider(new YourProviderOfChoice());
+```
+
+</TabItem>
+</Tabs>
+
+## Creating a client
+
+The OpenFeature client is a lightweight abstraction used to evaluate feature flags.
+If your application is small, you may use a single client for your whole application.
+In larger applications, it may be helpful to create multiple clients,
+each with different configuration to fit the needs of different sub-modules.
+Clients may also be created dynamically, per each HTTP request, for instance.
+
+<Tabs groupId="code">
+<TabItem value="js" label="TypeScript">
+
+```ts
+const client = OpenFeature.getClient('my-app');
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+Client client = api.getClient("my-app");
+```
+
+</TabItem>
+<TabItem value="csharp" label="C#">
+
+```csharp
+var client = Api.Instance.GetClient("my-app");
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+client := openfeature.NewClient("my-app")
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+$client = OpenFeatureAPI::getInstance()->getClient("my-app");
+```
+
+</TabItem>
+</Tabs>
+
+## Flag Evaluation
+
+### Basic Evaluation
+
+The client can be used to do basic flag evaluation, which simply returns flag values of a particular type.
+The default value must also be specified.
+In the case of any error during flag evaluation, the default value will be returned, so give consideration to your default values!
+
+<Tabs groupId="code">
+<TabItem value="js" label="TypeScript">
+
+```ts
+// get a bool value
+const boolValue = await client.getBooleanValue('boolFlag', false);
+
+// get a string value
+const stringValue = await client.getStringValue('stringFlag', 'default');
+
+// get an numeric value
+const numberValue = await client.getNumberValue('intFlag', 1);
+
+// get an object value
+const object = await client.getObjectValue<MyObject>('objectFlag', {});
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+// get a boolean value
+Boolean boolValue = client.getBooleanValue("boolFlag", false);
+
+// get a string value
+String stringValue = client.getStringValue("stringFlag", "default");
+
+// get an integer value
+Integer intValue = client.getIntegerValue("intFlag", 1);
+
+// get a double value
+Double doubleValue = client.getDoubleValue("doubleFlag", 0.9);
+
+// get an object value
+Value objectValue = client.getObjectValue("objectFlag", MyObjectInstance);
+```
+
+</TabItem>
+<TabItem value="csharp" label="C#">
+
+```csharp
+// get a boolean value
+var boolValue = await client.GetBooleanValue("boolFlag", false);
+
+// get a string value
+var stringValue = await client.GetStringValue("stringFlag", "default");
+
+// get an integer value
+var intValue = await client.GetIntegerValue("intFlag", 1);
+
+// get an double value
+var doubleValue = await client.GetDoubleValue("doubleFlag", 1);
+
+// get an object value
+var objectValue = await client.GetObjectValue("objectFlag", MyObjectInstance);
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+// get a boolean value
+boolValue, err := client.BooleanValue(context.Background(), "boolFlag", false, openfeature.EvaluationContext{})
+
+// get a string value
+stringValue, err := client.StringValue(context.Background(), "stringFlag", "default", openfeature.EvaluationContext{})
+
+// get an integer value
+intValue, err := client.IntValue(context.Background(), "intFlag", 1, openfeature.EvaluationContext{})
+
+// get a float value
+floatValue, err := client.FloatValue(context.Background(), "floatFlag", 3.14, openfeature.EvaluationContext{})
+
+// get an object value
+objectValue, err := client.ObjectValue(context.Background(), "objectFlag", myObject, openfeature.EvaluationContext{})
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+// get a boolean value
+$boolValue = $client->getBooleanValue("boolFlag", false, null, null);
+
+// get a string value
+$stringValue = $client->getStringValue("stringFlag", "default", null, null);
+
+// get an integer value
+$intValue = $client->getIntegerValue("intFlag", 1, null, null);
+
+// get a float value
+$floatValue = $client->getFloatValue("floatFlag", 0.9, null, null);
+
+// get an object value
+$objectValue = $client->getObjectValue("objectFlag", $myObjectInstance, null, null);
+```
+
+</TabItem>
+</Tabs>
+
+### Detailed Evaluation
+
+In addition to [basic evaluation](#basic-evaluation), _detailed evaluation_ methods are available.
+These return the value, as well as additional metadata about the flag evaluation in the _Evaluation Details_ structure.
+
+#### Evaluation Details Structure Fields
+
+| Field                    | Description                                                                                   |
+| ------------------------ | --------------------------------------------------------------------------------------------- |
+| flag key                 | the unique identifier for a feature flag                                                      |
+| value                    | the value returned from a flag evaluation                                                     |
+| reason (optional)        | a string explaining why the flag value was returned                                           |
+| variant (optional)       | the variant associated with the return flag value                                             |
+| error code (optional)    | an [error code](/specification/types#error-code) that categorizes flag evaluation errors |
+| error message (optional) | a string detailing the error                                                                  |
+
+<Tabs groupId="code">
+<TabItem value="js" label="TypeScript">
+
+```ts
+// get details of boolean evaluation
+const boolDetails = await client.getBooleanDetails('boolFlag', false);
+
+// get details of string evaluation
+const stringDetails = await client.getStringDetails('stringFlag', 'default');
+
+// get details of numeric evaluation
+const numberDetails = await client.getNumberDetails('intFlag', 1);
+
+// get details of object evaluation
+const objectDetails = await client.getObjectDetails<MyObject>('objectFlag', {});
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+// get details of boolean evaluation
+FlagEvaluationDetails<Boolean> boolDetails = client.getBooleanDetails("boolFlag", false);
+
+// get details of string evaluation
+FlagEvaluationDetails<String> stringDetails = client.getStringDetails("stringFlag", "default");
+
+// get details of integer evaluation
+FlagEvaluationDetails<Integer> intDetails = client.getIntegerDetails("intFlag", 1);
+
+// get details of double evaluation
+FlagEvaluationDetails<Double> doubleDetails = client.getDoubleDetails("doubleFlag", .9);
+
+// get details of object evaluation
+FlagEvaluationDetails<Value> objectDetails = client.getObjectDetails<MyObject>("objectFlag", myObjectDefaultInstance);
+```
+
+</TabItem>
+<TabItem value="csharp" label="C#">
+
+```csharp
+// get details of boolean evaluation
+var boolDetails = await client.GetBooleanDetails("boolFlag", false);
+
+// get details of string evaluation
+var stringDetails = await client.GetStringDetails("stringFlag", "default");
+
+// get details of int evaluation
+var intDetails = await client.GetIntegerDetails("intFlag", 1);
+
+// get details of double evaluation
+var doubleDetails = await client.GetDoubleDetails("doubleFlag", 1);
+
+// get details of object evaluation
+var objectDetails = await client.GetObjectDetails("objectFlag", myObjectDefaultInstance);
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+// get details of boolean evaluation
+boolDetails, err := client.BooleanValueDetails(context.Background(), "boolFlag", false, openfeature.EvaluationContext{})
+
+// get details of string evaluation
+stringDetails, err := client.StringValueDetails(context.Background(), "stringFlag", "default", openfeature.EvaluationContext{})
+
+// get details of integer evaluation
+intDetails, err := client.IntValueDetails(context.Background(), "intFlag", 1, openfeature.EvaluationContext{})
+
+// get details of float evaluation
+floatDetails, err := client.FloatValueDetails(context.Background(), "floatFlag", 3.14, openfeature.EvaluationContext{})
+
+// get details of object evaluation
+objectDetails, err := client.ObjectValueDetails(context.Background(), "objectFlag", myObject, openfeature.EvaluationContext{})
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+// get details of a boolean evaluation
+$boolDetails = $client->getBooleanDetails("boolFlag", false, null, null);
+
+// get details of a string evaluation
+$stringDetails = $client->getStringDetails("stringFlag", "default", null, null);
+
+// get details of an integer evaluation
+$intDetails = $client->getIntegerDetails("intFlag", 1, null, null);
+
+// get details of a float evaluation
+$floatDetails = $client->getFloatDetails("floatFlag", 0.9, null, null);
+
+// get details of an object evaluation
+$objectDetails = $client->getObjectDetails("objectFlag", $myObjectInstance, null, null);
+```
+
+</TabItem>
+</Tabs>

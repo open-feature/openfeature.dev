@@ -1,0 +1,17 @@
+Let's change the feature flag in our `flags.flagd.json`, making `defaultVariant` to `on`
+
+```diff
+{
+  "flags": {
+    "welcome-message": {
+      "variants": {
+        "on": true,
+        "off": false
+      },
+      "state": "ENABLED",
+-      "defaultVariant": "off"
++      "defaultVariant": "on"
+    }
+  }
+}
+```

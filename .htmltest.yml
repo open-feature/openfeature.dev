@@ -1,0 +1,4 @@
+
+IgnoreURLs: []
+IgnoreDirectoryMissingTrailingSlash: true
+IgnoreAltMissing: true

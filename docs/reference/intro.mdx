@@ -1,0 +1,72 @@
+---
+sidebar_position: 1
+id: intro
+title: Introduction
+---
+
+# Welcome to OpenFeature
+
+OpenFeature is an open standard that provides a vendor-agnostic, community-driven API for feature flagging that works with your favorite feature flag management tool.
+
+## What are feature flags?
+
+In the most basic case, you can think of a feature flag as an if/else statement that can be controlled at runtime.
+Feature flags allow application behavior to be altered without the deployment of new code.
+
+This capability serves a variety of purposes.
+You can reduce the need for long-running feature branches.
+You can hide work-in-progress functionality from end users, while still exposing it for internal testing.
+You can perform canary releases - rolling out a new feature to an initially small subset of users.
+You can perform A/B testing.
+You can safely degrade parts of a production system that are experiencing an outage.
+You can restrict access to specific product functionality based on user-characteristics such as geography or IP address, for usability, compliance or licensing reasons.
+
+Feature flags are _dynamic_; they are evaluated at runtime.
+Many of the use cases just described also require feature flags to be _context-aware_ - a flagging decision must take into account things like which user is making a web request.
+What's more, the configuration behind flagging decisions also needs to be dynamic to support use cases like canary releases where you gradually roll a feature out to more users without having to redeploy or restart anything.
+
+Given all these requirements (along with others such as an admin UI, audit trails, environment management, and more) it's clear that full use of feature flags requires a feature flagging system - typically a stand-alone feature-flagging service along with a client library which interacts with that service.
+
+<figure>
+  <img src={require('@site/static/img/docs/reference/ff-service.png').default} />
+  <figcaption>
+    <i>A typical feature-flagging system</i>
+  </figcaption>
+</figure>
+
+## What is OpenFeature?
+
+OpenFeature provides a shared, standardized feature flagging client - an _SDK_ - which can be plugged into various 3rd-party feature flagging _providers_.
+Whether you're using an open-source system or a commercial product, whether it's self-hosted or cloud-hosted, OpenFeature provides a consistent, unified API for developers to use feature flagging in their applications.
+
+<figure>
+  <img src={require('@site/static/img/docs/reference/of-architecture.png').default} />
+  <figcaption>
+    <i>OpenFeature integrated with a hypothetical "Flags-R-us" flag management system</i>
+  </figcaption>
+</figure>
+
+To accomplish this, the OpenFeature SDK defines a number of flexible abstractions.
+
+### Evaluation API
+
+The [evaluation API](./concepts/01-evaluation-api.mdx) is the part of the OpenFeature SDK that an _application author_ interacts with.
+It allows developers to evaluate feature flags, and use the resulting values to impact control flow or application characteristics.
+The evaluation API provides a framework that allows for customization of behavior and integration with various tools.
+
+### Evaluation Context
+
+The [evaluation context](./concepts/03-evaluation-context.mdx) is a container for arbitrary contextual data that can be used as a basis for dynamic evaluation.
+Static data such as the host or an identifier for the application can be configured globally.
+Dynamic evaluation context, such as the IP address of the client in a web application, can be implicitly propagated or explicitly passed to during flag evaluation, and can be merged with static values.
+
+### Providers
+
+[Providers](./concepts/02-provider.mdx) are the "translation layer" between the evaluation API and the flag management system in use.
+Providers are responsible for mapping the arguments supplied to the evaluation API to their equivalent representation in the associated flag management system.
+Providers might wrap a vendor SDK, call a bespoke flag evaluation REST API, or even parse some locally stored file to resolve flag values.
+
+### Hooks
+
+[Hooks](./concepts/04-hooks.mdx) are a mechanism that allow for the addition of arbitrary behavior at various points in the _flag evaluation life-cycle_.
+Hooks let you extend the OpenFeature SDK, adding functionality such as validating a resolved flag value, modifying or adding data to the evaluation context, logging, telemetry, and tracking.

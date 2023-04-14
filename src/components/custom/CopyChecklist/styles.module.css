@@ -1,0 +1,30 @@
+.checklistItem p {
+  display: inline;
+  margin-left: 3px;
+}
+
+.copyButton {
+  user-select: none; 
+  cursor: pointer;
+  position: absolute;
+  top: -32px;
+  right: 56px;
+  display: flex;
+  font-size: 0.8rem;
+  fill: var(--ifm-color-emphasis-500);
+  color: var(--ifm-color-emphasis-500);
+}
+
+.copyButton:hover {
+  fill: var(--ifm-color-emphasis-700);
+  color: var(--ifm-color-emphasis-700);
+}
+
+
+.copySvg {
+  width: 20px;
+  margin-right: 3px;
+  font-size: 0.8rem;
+  transition: all var(--ifm-transition-fast) ease;
+  transition-property: border, box-shadow;
+}

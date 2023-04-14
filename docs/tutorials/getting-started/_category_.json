@@ -1,0 +1,11 @@
+{
+  "position": 2,
+  "label": "Getting Started",
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "Getting started with the OpenFeature SDK",
+    "description": "These step-by-step guides walk you through the basics of the OpenFeature SDK for your preferred language."
+  }
+}
