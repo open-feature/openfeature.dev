@@ -1,70 +1,33 @@
-# OpenFeature Documentation
+<!-- markdownlint-disable MD033 -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/open-feature/community/0e23508c163a6a1ac8c0ced3e4bd78faafe627c7/assets/logo/horizontal/white/openfeature-horizontal-white.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/open-feature/community/0e23508c163a6a1ac8c0ced3e4bd78faafe627c7/assets/logo/horizontal/black/openfeature-horizontal-black.svg">
+    <img align="center" alt="OpenFeature Logo">
+  </picture>
+</p>
 
-This repository provides the documentation for OpenFeature; including the SDK, flagd and the operator.
+<h2 align="center">OpenFeature Website</h2>
 
-## Documentation Structure
+## 👋 Hey there! Thanks for checking out the OpenFeature website
 
-We are following a slightly modified version of the [diataxis framework](https://diataxis.fr/) for our documentation:
+This repo contains everything you see on openfeature.dev[openfeature-website].
+The webpage consists of a main landing page, documentation, the OpenFeature spec, community information, and a blog.
 
-- Docs: Reference material for using OpenFeature e.g. the specific commands and code
-- Getting Started: Guide on using OpenFeature
-- Tutorials: Use Cases and specific implementations
-- Explanations: Extensive explanations of the different components
+## 🤝 Contributing
 
-## Contributing
+Looking for a way to contribute? Great, here are some ideas to get you started!
 
-We welcome your contribution to the OpenFeature documentation. Please make sure to read our [contributor guidelines](https://github.com/open-feature/.github/blob/main/CONTRIBUTING.md)
+ - Add a new tutorial
+ - Write a blog post
+ - Fix a typo
+ - Expand on a topic that isn't currently covered in depth
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
-Please refer to the docusaurus documentation to learn how to format the documentation.
+Take a look at the [CONTRIBUTING](CONTRIBUTING.md) guide for more information.
 
-## Style Guide
-
-### Diagrams
-
-When adding a diagram to the documentation, it's recommended to use one of the following tools:
-
-#### Mermaid
-
-[Mermaid](https://mermaid-js.github.io/) is uses a Markdown-inspired text definitions to create diagrams. These diagrams are natively supported in GitHub and Docusaurus.
-
-#### Excalidraw
-
-[Excalidraw](https://excalidraw.com/) is a virtual whiteboard for sketching hand-drawn like diagrams. When saving an Excalidraw image, make sure to use the "embed scene" option. That will allow others to edit the image in the future.
-
-![Excalidraw Embed Scene](./static/img/excalidraw-embed-scene.png)
-
-## Running locally
-### Installation Prerequisites
-You will need [Node.js](https://nodejs.org/en/download) installed. Node.js >= 16.10 comes with `corepack` which can be used to access `yarn`. Instructions for using yarn on all versions of node can be found [here](https://yarnpkg.com/getting-started/install).
-
-### Installation
-
-```sh
-yarn
-```
-
-### Local Development
-
-```sh
-yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```sh
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-The documentation is hosted by Netlify and deployments are automatically triggered after a successful merge to main.
-
-## Licenses
+## 📜 Licenses
 
 - Documentation: [CC-BY-4.0](LICENSE)
 - Code: [Apache-2.0](LICENSE-CODE)
+
+[openfeature-website]: https://openfeature.dev
