@@ -11,7 +11,7 @@
 
 ## 👋 Hey there! Thanks for checking out the OpenFeature website
 
-This repo contains everything you see on openfeature.dev[openfeature-website].
+This repo contains everything you see on [openfeature.dev][openfeature-website].
 The webpage consists of a main landing page, documentation, the OpenFeature spec, community information, and a blog.
 
 ## 🤝 Contributing

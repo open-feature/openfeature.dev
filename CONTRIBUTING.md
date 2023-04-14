@@ -1,6 +1,20 @@
 
 
-# OpenFeature Contributing
+# OpenFeature Contributing <!-- omit in toc -->
+
+- [Running locally](#running-locally)
+  - [Installation Prerequisites](#installation-prerequisites)
+  - [Installation](#installation)
+  - [Local Development](#local-development)
+  - [Build](#build)
+  - [Deployment](#deployment)
+- [Pull Request](#pull-request)
+  - [How to Receive Comments](#how-to-receive-comments)
+  - [How to Get PRs Merged](#how-to-get-prs-merged)
+- [Style Guide](#style-guide)
+  - [Diagrams](#diagrams)
+    - [Mermaid](#mermaid)
+    - [Excalidraw](#excalidraw)
 
 ## Running locally
 
