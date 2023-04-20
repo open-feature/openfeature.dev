@@ -8,6 +8,8 @@ We’re going to add feature flagging to a Node service in under five minutes us
 
 This tutorial uses a simple [express][express] server, but if you're familiar with JavaScript and Node you should be able to follow along.
 
+> Prefer the zero-install, in-browser option? [Run this tutorial in-browser using Killercoda](https://killercoda.com/open-feature/scenario/five-minutes-to-feature-flags).
+
 ## Setup
 
 Before we jump into the tutorial, let's quickly get everything setup. You'll need [Git](https://git-scm.com/) and [NodeJS](https://nodejs.org/) version 16 or newer. After that, run the following command from your favorite terminal.
