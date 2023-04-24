@@ -8,6 +8,8 @@ We’re going to add feature flagging to a Node service in under five minutes us
 
 This tutorial uses a simple [express][express] server, but if you're familiar with JavaScript and Node you should be able to follow along.
 
+> Prefer the zero-install, in-browser option? [Run this tutorial in-browser using Killercoda](https://killercoda.com/open-feature/scenario/five-minutes-to-feature-flags).
+
 ## Setup
 
 Before we jump into the tutorial, let's quickly get everything setup. You'll need [Git](https://git-scm.com/) and [NodeJS](https://nodejs.org/) version 16 or newer. After that, run the following command from your favorite terminal.
@@ -345,6 +347,8 @@ We can get started with feature flags with low investment and low risk, and once
 ## Next steps
 
 To learn more about OpenFeature, check out the documentation [here](/docs/reference/intro). Specifically, you can read more about how the [evaluation API works](/docs/reference/concepts/evaluation-api/), what [tech stacks are supported](/docs/reference/technologies/), or read [more tutorials](/docs/category/getting-started/) about using OpenFeature in a variety of tech stacks.
+
+More hands-on tutorials are available on the [OpenFeature Killercoda page](https://killercoda.com/open-feature).
 
 We strive to provide a welcoming, open community. If you have any questions - or just want to nerd out about feature flags - the `#OpenFeature` channel in the [CNCF Slack][cncf-slack] is the place for you.
 
