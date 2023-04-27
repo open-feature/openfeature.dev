@@ -1,5 +1,6 @@
 import { faSquareJs } from '@fortawesome/free-brands-svg-icons';
 import CloudbeesNoFillSvg from '@site/static/img/cloudbees-no-fill.svg';
+import ConfigCat from '@site/static/img/config-cat-no-fill.svg';
 import FlagdSvg from '@site/static/img/flagd-no-fill.svg';
 import GoFeatureFlagNoFillSvg from '@site/static/img/goff-no-fill.svg';
 import LaunchDarklyNoFillSvg from '@site/static/img/launchdarkly-no-fill.svg';
@@ -64,6 +65,12 @@ export class JavascriptFeatures extends React.Component {
             description: 'A provider for the PostHog suite',
             href: 'https://www.npmjs.com/package/@tapico/node-openfeature-posthog',
             svg: PostHogNoFillSvg,
+          },
+          {
+            title: 'ConfigCat Provider',
+            description: 'A provider for ConfigCat',
+            href: 'https://www.npmjs.com/package/@openfeature/config-cat-provider',
+            svg: ConfigCat,
           },
         ]}
         hooks={[
