@@ -1,0 +1,76 @@
+---
+slug: 'april-2023-update'
+title: 'OpenFeature April 2023 Update'
+date: 2023-04-27
+authors: [staceypotter]
+description: "As the OpenFeature project and community grows we strive to bring you monthly updates to inform you on the latest happenings!"
+tags: [announcements, monthly-update]
+draft: false
+---
+
+As the OpenFeature project and community grows we strive to bring you monthly updates to inform you on the latest happenings! Read our last update [here](https://mailchi.mp/b2668b69ad5e/openfeature-newsletter-317792).
+
+This edition includes:
+- [We're Moving...our Mailing List](#🚚-We’re-Moving…our-Mailing-List-✉)
+- [New Tutorial](#Tutorial) & [website refresh](#Website-Refresh)
+- [Latest Releases](#Latest-Releases)
+- [Contributing](#Contributing-🏆)
+- [Upcoming events](#Upcoming-Events-and-Meetings)
+
+<!--truncate-->
+
+# April 2023 Update
+
+### 🚚 We're Moving...our Mailing List! ✉️
+
+We're transitioning over to the [CNCF Mailing List](https://lists.cncf.io/g/cncf-openfeature-project), so please [join us there](https://lists.cncf.io/g/cncf-openfeature-project) to stay up to date on project news, announcements, events, and more!
+
+### 💬 Connect With us! 🤝
+ 
+Chat with us on Slack! Join in and talk to us in the [#openfeature](https://cloud-native.slack.com/archives/C0344AANLA1) channel on [CNCF Slack](http://cloud-native.slack.com/). If you're not a part of the CNCF slack, you can [get an invite here](https://communityinviter.com/apps/cloud-native/cncf).
+
+And don't forget to follow us on all the socials! [Twitter](http://twitter.com/OpenFeature) | [LinkedIn](https://www.linkedin.com/company/openfeature/) | [YouTube](https://www.youtube.com/@openfeature834/)
+
+## New and Notable
+
+### Tutorial
+
+**Check out this new ⏱️ [Five Minutes to Feature Flags Tutorial](https://openfeature.dev/docs/tutorials/five-minutes-to-feature-flags/)! ⏱️**
+
+This tutorial walks you through adding feature flagging to a Node service in under five minutes using OpenFeature.
+
+This tutorial uses a simple [express](https://expressjs.com/) server, but if you're familiar with JavaScript and Node you should be able to follow along.
+
+Prefer the zero-install, in-browser option? [Run this tutorial in-browser using Killercoda.](https://killercoda.com/open-feature/scenario/five-minutes-to-feature-flags)
+
+### Website Refresh
+✨ We've got a refreshed [website](openfeature.dev) (which also includes our docs). Check it out and let us know what you think! ✨
+
+## Latest Releases
+
+- [Go SDK v1.3.0](https://github.com/open-feature/go-sdk/releases/tag/v1.3.0) 
+⚠️ Notice ⚠️ This update is a breaking change of the experimental Hooks API. Structures implementing the Hook interface will need to be modified. 
+- [Java SDK v1.3.1](https://github.com/open-feature/java-sdk/releases/tag/v1.3.1)
+- [JavaScript SDK v1.1.1](https://github.com/open-feature/js-sdk/releases/tag/js-sdk-v1.1.1)
+- [Flagd v0.5.2](https://github.com/open-feature/flagd/releases/tag/core/v0.5.2)
+
+## Contributing 🏆
+We welcome contributors of all kinds! Please visit us on GitHub, check out our Contributing Guidelines and Contributor Ladder, and if you're ready to dive-in here's a collection of Good First Issues!
+ 
+### Roadmap 🧭
+If you'd like to see what we're working on and what we've got planned, please check out the OpenFeature Roadmap here. 
+ 
+### Shout Outs 🏅👏
+Shout out and huge thanks to our new contributions from:
+- [Sindhu Inti](https://github.com/Sindhuinti) | [@IntiSindhu](twitter.com/@IntiSindhu) 
+- [Lukas Reining](https://github.com/lukas-reining)
+- [Camilo Aguilar](https://github.com/c4milo) | [@c4milo](twitter.com/@c4milo) 
+- [Stacey Potter](http://github.com/staceypotter) | [@stacey_potter](twitter.com/stacey_potter)
+
+## Upcoming Events and Meetings
+
+Join us on the [CNCF Community Groups Chapter for Hosted Projects](https://community.cncf.io/openfeature/).
+
+- [OpenFeature Project Meeting: May 11, 2023 at 10am EDT | 4pm CEST](https://community.cncf.io/events/details/cncf-openfeature-presents-openfeature-community-meeting-2023-05-11/)
+- [OpenFeature Project Meeting: May 25, 2023 at 10am EDT | 4pm CEST](https://community.cncf.io/events/details/cncf-openfeature-presents-openfeature-community-meeting-2023-05-25/)
+- [OpenFeature Project Meeting: June 8, 2023 at 10am EDT | 4pm CEST](https://community.cncf.io/events/details/cncf-openfeature-presents-openfeature-community-meeting-2023-06-08/)
