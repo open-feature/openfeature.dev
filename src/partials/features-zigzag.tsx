@@ -97,14 +97,29 @@ function FeaturesZigZag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl"
                 data-aos="fade-up"
               >
+                <CloudbeesSvg className="flex-auto h-20 w-20 m-4" />
                 <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap fill-[#1c1e21] dark:fill-[#e3e3e3]">
-                  <CloudbeesSvg className="flex-auto h-20 w-20 m-4" />
-                  <SplitSvg className="flex-auto h-20 w-20 m-4" />
-                  <FliptSvg className="flex-auto h-20 w-20 m-4" />
-                  <GoFeatureFlagSvg className="flex-auto h-20 w-20 m-4" />
-                  <FlagsmithSvg className="flex-auto h-20 w-20 m-4" />
-                  <LaunchDarklySvg className="flex-auto h-20 w-20 m-4" />
-                  <FlagdSvg className="flex-auto h-20 w-20 m-4" />
+                  <Link target="_blank" to="https://github.com/rollout/cloudbees-openfeature-provider-go">
+                    <CloudbeesSvg className="flex-auto h-20 w-20 m-4" />
+                  </Link>
+                  <Link target="_blank" to="https://github.com/splitio/split-openfeature-provider-go">
+                    <SplitSvg className="flex-auto h-20 w-20 m-4" />
+                  </Link>
+                  <Link target="_blank" to="https://github.com/flipt-io/flipt-openfeature-provider-go">
+                    <FliptSvg className="flex-auto h-20 w-20 m-4" />
+                  </Link>
+                  <Link target="_blank" to="https://github.com/open-feature/go-sdk-contrib/tree/main/providers/go-feature-flag">
+                    <GoFeatureFlagSvg className="flex-auto h-20 w-20 m-4" />
+                  </Link>
+                  <Link target="_blank" to="https://github.com/open-feature/go-sdk-contrib/tree/main/providers/flagsmith">
+                    <FlagsmithSvg className="flex-auto h-20 w-20 m-4" />
+                  </Link>
+                  <Link to="#">
+                    <LaunchDarklySvg className="flex-auto h-20 w-20 m-4" />
+                  </Link>
+                  <Link target="_blank" to="https://github.com/open-feature/go-sdk-contrib/tree/main/providers/flagd">
+                    <FlagdSvg className="flex-auto h-20 w-20 m-4" />
+                  </Link>
                 </div>
               </div>
               {/* Content */}
