@@ -1,5 +1,6 @@
 # Dependencies
 /node_modules
+/.yarn
 
 # Production
 /build
@@ -24,3 +25,4 @@ yarn-error.log*
 .idea
 .wireit
 .eslintcache
+/.yarnrc.yml
