@@ -97,7 +97,6 @@ function FeaturesZigZag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl"
                 data-aos="fade-up"
               >
-                <CloudbeesSvg className="flex-auto h-20 w-20 m-4" />
                 <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap fill-[#1c1e21] dark:fill-[#e3e3e3]">
                   <Link target="_blank" to="https://github.com/rollout/cloudbees-openfeature-provider-go">
                     <CloudbeesSvg className="flex-auto h-20 w-20 m-4" />
