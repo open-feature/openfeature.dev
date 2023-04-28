@@ -163,7 +163,7 @@ function FeaturesZigZag() {
                     isDarkTheme ? '#e3e3e3' : '#1c1e21'
                   }]`}
                 >
-                  <Link to="https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.GOFeatureFlag">
+                  <Link target="_blank" to="https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.GOFeatureFlag">
                     <CSharpNoFillSvg className="flex-auto h-20 w-20 m-4 " />
                   </Link>
                   <Link to="/docs/reference/technologies/server/go">
