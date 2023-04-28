@@ -148,11 +148,21 @@ function FeaturesZigZag() {
                     isDarkTheme ? '#e3e3e3' : '#1c1e21'
                   }]`}
                 >
-                  <CSharpNoFillSvg className="flex-auto h-20 w-20 m-4 " />
-                  <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faGolang} />
-                  <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faJava} />
-                  <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faSquareJs} />
-                  <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faPhp} />
+                  <Link to="https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.GOFeatureFlag">
+                    <CSharpNoFillSvg className="flex-auto h-20 w-20 m-4 " />
+                  </Link>
+                  <Link to="/docs/reference/technologies/server/go">
+                    <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faGolang} />
+                  </Link>
+                  <Link to="/docs/reference/technologies/server/java">
+                    <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faJava} />
+                  </Link>
+                  <Link to="/docs/reference/technologies/server/javascript">
+                    <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faSquareJs} />
+                  </Link>
+                  <Link to="/docs/reference/technologies/server/php">
+                    <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faPhp} />
+                  </Link>
                 </div>
               </div>
               {/* Content */}
