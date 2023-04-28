@@ -44,8 +44,8 @@
     "react-transition-group": "^4.4.5",
     "remarkable": "2.0.1",
     "remarkable-react": "1.4.3",
-    "sass": "^1.62.0",
-    "tailwindcss": "^3.3.1"
+    "sass": "^1.62.1",
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.4.0",
@@ -61,7 +61,7 @@
     "eslint-plugin-jest": "27.2.1",
     "eslint-plugin-mdx": "2.0.5",
     "fs-extra": "11.1.1",
-    "markdownlint-cli2": "^0.7.0",
+    "markdownlint-cli2": "^0.7.1",
     "markdownlint-rule-max-one-sentence-per-line": "^0.0.2",
     "prettier": "2.8.8",
     "typescript": "4.9.5",
