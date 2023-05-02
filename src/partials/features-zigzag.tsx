@@ -29,6 +29,7 @@ import { faPhp } from '@fortawesome/free-brands-svg-icons';
 
 function FeaturesZigZag() {
   const { isDarkTheme } = useColorMode();
+  const iconColor = isDarkTheme ? "#e3e3e3" : "#1c1e21";
 
   return (
     <section>
@@ -97,26 +98,26 @@ function FeaturesZigZag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl"
                 data-aos="fade-up"
               >
-                <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap fill-[#1c1e21] dark:fill-[#e3e3e3]">
-                  <Link target="_blank" to="https://github.com/rollout/cloudbees-openfeature-provider-go">
+                <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap">
+                  <Link className="fill-[#1c1e21] dark:fill-[#e3e3e3]" to="">
                     <CloudbeesSvg className="flex-auto h-20 w-20 m-4" />
                   </Link>
-                  <Link target="_blank" to="https://github.com/splitio/split-openfeature-provider-go">
+                  <Link className="fill-[#1c1e21] dark:fill-[#e3e3e3]" to="">
                     <SplitSvg className="flex-auto h-20 w-20 m-4" />
                   </Link>
-                  <Link target="_blank" to="https://github.com/flipt-io/flipt-openfeature-provider-go">
+                  <Link className="fill-[#1c1e21] dark:fill-[#e3e3e3]" to="">
                     <FliptSvg className="flex-auto h-20 w-20 m-4" />
                   </Link>
-                  <Link target="_blank" to="https://github.com/open-feature/go-sdk-contrib/tree/main/providers/go-feature-flag">
+                  <Link className="fill-[#1c1e21] dark:fill-[#e3e3e3]" to="">
                     <GoFeatureFlagSvg className="flex-auto h-20 w-20 m-4" />
                   </Link>
-                  <Link target="_blank" to="https://github.com/open-feature/go-sdk-contrib/tree/main/providers/flagsmith">
+                  <Link className="fill-[#1c1e21] dark:fill-[#e3e3e3]" to="">
                     <FlagsmithSvg className="flex-auto h-20 w-20 m-4" />
                   </Link>
-                  <Link to="#">
+                  <Link className="fill-[#1c1e21] dark:fill-[#e3e3e3]" to="">
                     <LaunchDarklySvg className="flex-auto h-20 w-20 m-4" />
                   </Link>
-                  <Link target="_blank" to="https://github.com/open-feature/go-sdk-contrib/tree/main/providers/flagd">
+                  <Link className="fill-[#1c1e21] dark:fill-[#e3e3e3]" to="">
                     <FlagdSvg className="flex-auto h-20 w-20 m-4" />
                   </Link>
                 </div>
@@ -157,25 +158,21 @@ function FeaturesZigZag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1"
                 data-aos="fade-up"
               >
-                <div
-                  className={`max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap fill-[#1c1e21] dark:fill-[#e3e3e3] [color:${
-                    isDarkTheme ? '#e3e3e3' : '#1c1e21'
-                  }]`}
-                >
-                  <Link target="_blank" to="https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.GOFeatureFlag">
-                    <CSharpNoFillSvg className="flex-auto h-20 w-20 m-4 " />
+                <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap">
+                  <Link className="fill-[#1c1e21] dark:fill-[#e3e3e3]" to="">
+                    <CSharpNoFillSvg className="flex-auto h-20 w-20 m-4  " />
                   </Link>
-                  <Link to="/docs/reference/technologies/server/go">
-                    <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faGolang} />
+                  <Link style={{ color: iconColor }} to="/docs/reference/technologies/server/go">
+                    <FontAwesomeIcon className="flex-auto h-20 w-20 m-4  hover:text-[#2f4f4f]" icon={faGolang} />
                   </Link>
-                  <Link to="/docs/reference/technologies/server/java">
-                    <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faJava} />
+                  <Link style={{ color: iconColor }} to="/docs/reference/technologies/server/java">
+                    <FontAwesomeIcon className="flex-auto h-20 w-20 m-4 hover:text-[#2f4f4f]" icon={faJava} />
                   </Link>
-                  <Link to="/docs/reference/technologies/server/javascript">
-                    <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faSquareJs} />
+                  <Link style={{ color: iconColor }} to="/docs/reference/technologies/server/javascript">
+                    <FontAwesomeIcon className="flex-auto h-20 w-20 m-4 hover:text-[#2f4f4f]" icon={faSquareJs} />
                   </Link>
-                  <Link to="/docs/reference/technologies/server/php">
-                    <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faPhp} />
+                  <Link style={{ color: iconColor }} to="/docs/reference/technologies/server/php">
+                    <FontAwesomeIcon className="flex-auto h-20 w-20 m-4 hover:text-[#2f4f4f]" icon={faPhp} />
                   </Link>
                 </div>
               </div>
