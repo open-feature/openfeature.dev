@@ -29,7 +29,7 @@ import { faPhp } from '@fortawesome/free-brands-svg-icons';
 
 function FeaturesZigZag() {
   const { isDarkTheme } = useColorMode();
-  const iconColor = isDarkTheme ? "#e3e3e3" : "#1c1e21";
+  const iconColor = isDarkTheme ? '#e3e3e3' : '#1c1e21';
 
   return (
     <section>
@@ -160,7 +160,7 @@ function FeaturesZigZag() {
               >
                 <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap">
                   <Link className="fill-[#1c1e21] dark:fill-[#e3e3e3]" to="">
-                    <CSharpNoFillSvg className="flex-auto h-20 w-20 m-4  " />
+                    <CSharpNoFillSvg className="flex-auto h-20 w-20 m-4 hover:fill-[#2f4f4f] " />
                   </Link>
                   <Link style={{ color: iconColor }} to="/docs/reference/technologies/server/go">
                     <FontAwesomeIcon className="flex-auto h-20 w-20 m-4  hover:text-[#2f4f4f]" icon={faGolang} />
