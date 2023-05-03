@@ -159,7 +159,10 @@ function FeaturesZigZag() {
                 data-aos="fade-up"
               >
                 <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap">
-                  <Link className="fill-[#1c1e21] dark:fill-[#e3e3e3]" to="">
+                  <Link
+                    className="fill-[#1c1e21] dark:fill-[#e3e3e3] hover:cursor-pointer"
+                    to="/docs/reference/technologies/server/dotnet"
+                  >
                     <CSharpNoFillSvg className="flex-auto h-20 w-20 m-4 hover:fill-[#2f4f4f] " />
                   </Link>
                   <Link style={{ color: iconColor }} to="/docs/reference/technologies/server/go">
