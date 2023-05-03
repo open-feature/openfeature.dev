@@ -25,6 +25,7 @@ In this case, the defaultVariant is `off`, therefore the value `false` would be 
 > NOTE: This configuration is specific for flagd and varies across providers.
 
 With the flagd configuration in place, start flagd service with the following docker command.
+> NOTE: On Windows WSL is required both for running docker and to store the file. This is a limitation of Docker (https://github.com/docker/for-win/issues/8479)
 
 ```sh
 docker run -p 8013:8013 -v $(pwd)/:/etc/flagd/ -it ghcr.io/open-feature/flagd:latest start --uri file:/etc/flagd/flags.flagd.json
