@@ -78,6 +78,7 @@ export class JavascriptFeatures extends React.Component {
             description: 'The official DevCycle OpenFeature Provider',
             href: 'https://www.npmjs.com/package/@devcycle/openfeature-nodejs-provider',
             svg: DevCycleNoFillSvg,
+            vendorOfficial: true
           }
         ]}
         hooks={[

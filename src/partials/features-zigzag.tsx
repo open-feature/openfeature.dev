@@ -20,6 +20,7 @@ import GoFeatureFlagSvg from '@site/static/img/goff-no-fill.svg';
 import FlagsmithSvg from '@site/static/img/flagsmith-no-fill.svg';
 import LaunchDarklySvg from '@site/static/img/launchdarkly-no-fill.svg';
 import FlagdSvg from '@site/static/img/flagd-no-fill.svg';
+import DevCycleSvg from '@site/static/img/devcycle-no-fill.svg';
 
 import CSharpNoFillSvg from '@site/static/img/c-sharp-no-fill.svg';
 import { faGolang } from '@fortawesome/free-brands-svg-icons';
@@ -105,6 +106,7 @@ function FeaturesZigZag() {
                   <FlagsmithSvg className="flex-auto h-20 w-20 m-4" />
                   <LaunchDarklySvg className="flex-auto h-20 w-20 m-4" />
                   <FlagdSvg className="flex-auto h-20 w-20 m-4" />
+                  <DevCycleSvg className="flex-auto h-20 w-20 m-4" />
                 </div>
               </div>
               {/* Content */}
