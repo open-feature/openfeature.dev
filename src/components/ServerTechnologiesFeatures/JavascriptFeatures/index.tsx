@@ -7,6 +7,7 @@ import LaunchDarklyNoFillSvg from '@site/static/img/launchdarkly-no-fill.svg';
 import OtelNoFillSvg from '@site/static/img/otel-no-fill.svg';
 import PostHogNoFillSvg from '@site/static/img/post-hog-no-fill.svg';
 import SplitNoFillSvg from '@site/static/img/split-no-fill.svg';
+import DevCycleNoFillSvg from '@site/static/img/devcycle-no-fill.svg';
 import React from 'react';
 import { OpenFeatureTechnologiesPage } from '../../custom/OpenFeatureTechnologiesPage';
 
@@ -72,6 +73,13 @@ export class JavascriptFeatures extends React.Component {
             href: 'https://www.npmjs.com/package/@openfeature/config-cat-provider',
             svg: ConfigCat,
           },
+          {
+            title: 'DevCycle Provider',
+            description: 'The official DevCycle OpenFeature Provider',
+            href: 'https://www.npmjs.com/package/@devcycle/openfeature-nodejs-provider',
+            svg: DevCycleNoFillSvg,
+            vendorOfficial: true
+          }
         ]}
         hooks={[
           {
