@@ -1,0 +1,146 @@
+---
+title: PHP SDK and Laravel
+description: Getting Started with the OpenFeature PHP SDK on Laravel
+---
+
+import FlagdContent from '@site/src/components/custom/tutorial/flagd-content.mdx';
+import FlagdChangeContent from '@site/src/components/custom/tutorial/flagd-change-content.mdx';
+import WhyDefaultContent from '@site/src/components/custom/tutorial/why-default-content.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Getting Started with the OpenFeature PHP SDK on Laravel
+
+## Introduction
+
+This walk-through teaches you the basics of using OpenFeature with PHP using Laravel.
+You'll learn how to:
+
+- Install the PHP SDK
+- Install and configure a provider
+- Perform basic feature flagging
+
+## Requirements
+
+This walk-through assumes that:
+
+- You should have a good understanding of PHP syntax, data types, operators, functions, control structures.
+- You have PHP 8.0 or later.
+- You have Docker installed and running on the host system.
+
+## Walk-through
+
+### Step 1: Create a new Laravel PHP project
+
+To get started, create a new folder, bootstrap the project, and install the dependencies.
+This can be done by running the following commands.
+
+```sh
+composer create-project --prefer-dist laravel/laravel openfeature-php-intro
+cd openfeature-php-intro
+```
+
+### Step 2: Create a sample response
+
+Define a route for your API by adding the following code to the `routes/api.php` file.
+
+```php
+Route::get('/hello', function () {
+    return response()->json(['message' => 'Hello, World!']);
+});
+```
+### Step 3: Add the OpenFeature SDK
+
+Let's install the OpenFeature SDK using the following command.
+
+```sh
+composer require open-feature/sdk
+```
+
+Update `routes/api.php` to import SDK
+
+```diff
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
++ use OpenFeature\OpenFeatureAPI;
+```
+
+The client can now be used to get a feature flag value. In this case, we'll get a boolean value using the welcome-message flag key.
+
+The second argument is the fallback value, which is returned if there's abnormal behavior.
+
+```diff
+Route::get('/hello', function () {
+-    return response()->json(['message' => 'Hello, World!']);
++    $api = OpenFeatureAPI::getInstance();
++    $client = $api->getClient();
++    if(client->getBooleanValue("welcome-message", false)){
++    return response()->json(['message' => 'Hello, World! open feature']);
++    }
++    return response()->json(['message' => 'Hello, World!']);
+});
+```
+### Step 4: Run the application
+
+Let's start the app and see it in action.
+Run the following command to start the server.
+
+```sh
+php artisan serve
+```
+
+Open your favorite browser and navigate to [http://localhost:8000](http://localhost:8000).
+If all goes as planned, you should see "Laravel" in glorious monochrome.
+
+<WhyDefaultContent />
+
+> NOTE: You should stop the app by using the keyboard short `ctrl + c` before moving on to the next step.
+
+### Step 5: Configure a provider (flagd)
+
+<FlagdContent />
+
+Now let's make the required code changes in our application.
+
+
+Now, update `routes/api.php` to import the `flagd provider`.
+
+```diff
+use OpenFeature\OpenFeatureAPI;
++ use OpenFeature\Providers\Flagd\FlagdProvider;
+```
+
+
+Finally, we need to register the provider with OpenFeature.
+
+```diff
+Route::get('/hello', function () {
+    $api = OpenFeatureAPI::getInstance();
++   $api->setProvider(new FlagdProvider());
+    $client = $api->getClient();
+    if(client->getBooleanValue("welcome-message", false)){
+    return response()->json(['message' => 'Hello, World! open feature']);
+    }
+    return response()->json(['message' => 'Hello, World!']);
+});
+```
+### Step 6: Rerun the application
+
+Now that everything is in place, let's start the app again.
+
+```sh
+php artisan serve
+```
+
+Open your favorite browser and navigate to [http://localhost:8080](http://localhost:8080) should show the same value as before.
+This difference is now the feature flag value can be changed at runtime!
+
+<FlagdChangeContent />
+
+Save the changes to `flag.json` and refresh the browser tab.
+
+## Conclusion
+
+This walk-through introduced you to the OpenFeature PHP SDK.
+It covered how a provider can be configured to perform the flag evaluation and introduced basic feature flagging concepts.
+It also showcased how feature flags can be updated at runtime, without requiring a redeployment.
