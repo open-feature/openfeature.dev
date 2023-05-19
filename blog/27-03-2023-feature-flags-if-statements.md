@@ -31,7 +31,9 @@ Now try modelling this in code:
 - If user is premium and located in Australia = v4 (orange)
 - Everyone else gets v1 (green)
 That’s 2 variables. Imagine how many variations a real system has. Now imagine trying to update these conditions in real time, without a redeployment.
+
 <img src={require('@site/static/img/blog/feature-flags-if-statements/feature-flag-context.png').default} />
+
 The real power of feature flags:
 - They can be as simple or as complex as you like (this makes getting started easy with plenty of room to grow and expand)
 - Separation of concerns: Allows you to deploy without releasing (place all new features behind flags and disable them).
