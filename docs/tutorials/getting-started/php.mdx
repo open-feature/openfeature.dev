@@ -76,7 +76,8 @@ Route::get('/hello', function () {
 -    return response()->json(['message' => 'Hello, World!']);
 +    $api = OpenFeatureAPI::getInstance();
 +    $client = $api->getClient();
-+    if(client->getBooleanValue("welcome-message", false)){
++    if($client->getBooleanValue("welcome-message", false)){
+
 +    return response()->json(['message' => 'Hello, World! open feature']);
 +    }
 +    return response()->json(['message' => 'Hello, World!']);
