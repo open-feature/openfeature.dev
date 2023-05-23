@@ -115,18 +115,25 @@ use OpenFeature\OpenFeatureAPI;
 ```
 
 Finally, we need to register the provider with OpenFeature.
-
 ```diff
 Route::get('/hello', function () {
     $api = OpenFeatureAPI::getInstance();
-+   $api->setProvider(new FlagdProvider());
++
++  $client = new Client();
++  $httpFactory = new HttpFactory();
++  $api->setProvider(new FlagdProvider([
++         'httpConfig' => new HttpConfig(
++              $client,
++              $httpFactory,
++              $httpFactory,
++         )
++     ]));
     $client = $api->getClient();
     if(client->getBooleanValue("welcome-message", false)){
     return response()->json(['message' => 'Hello, World! open feature']);
     }
     return response()->json(['message' => 'Hello, World!']);
 });
-```
 ### Step 6: Rerun the application
 
 Now that everything is in place, let's start the app again.
