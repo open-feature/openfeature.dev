@@ -112,7 +112,9 @@ Now, update `routes/api.php` to import the `flagd provider`.
 ```diff
 use OpenFeature\OpenFeatureAPI;
 + use OpenFeature\Providers\Flagd\FlagdProvider;
-```
++ use OpenFeature\Providers\Flagd\config\HttpConfig;
++ use GuzzleHttp\Client;
++ use GuzzleHttp\Psr7\HttpFactory;
 
 Finally, we need to register the provider with OpenFeature.
 ```diff
