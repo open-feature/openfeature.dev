@@ -14,12 +14,10 @@ import TabItem from '@theme/TabItem';
 ## Introduction
 
 This walk-through teaches you the basics of using OpenFeature with PHP using Laravel.
+
 You'll learn how to:
-
 - Install the OpenFeature PHP SDK
-
 - Install and configure an OpenFeature provider
-
 - Perform basic feature flagging
 
 ## Requirements
@@ -51,6 +49,7 @@ Route::get('/hello', function () {
     return response()->json(['message' => 'Hello, World!']);
 });
 ```
+
 ### Step 3: Add the OpenFeature SDK
 
 Let's install the OpenFeature SDK using the following command.
@@ -77,12 +76,12 @@ Route::get('/hello', function () {
 +    $api = OpenFeatureAPI::getInstance();
 +    $client = $api->getClient();
 +    if($client->getBooleanValue("welcome-message", false)){
-
-+    return response()->json(['message' => 'Hello, World! open feature']);
++        return response()->json(['message' => 'Hello, World! open feature']);
 +    }
 +    return response()->json(['message' => 'Hello, World!']);
 });
 ```
+
 ### Step 4: Run the application
 
 Let's start the app and see it in action.
@@ -92,7 +91,7 @@ Run the following command to start the server.
 php artisan serve
 ```
 
-Open your favorite browser and navigate to [http://localhost:8000/api/hello](http://localhost:8000/api/hello).
+Open your favorite browser and navigate to <http://localhost:8000/api/hello>.
 
 If all goes as planned, you should see the message "Hello, World!" in glorious monochrome.
 
@@ -121,10 +120,11 @@ use OpenFeature\OpenFeatureAPI;
 + use OpenFeature\Providers\Flagd\config\HttpConfig;
 + use GuzzleHttp\Client;
 + use GuzzleHttp\Psr7\HttpFactory;
+```
+
 Finally, we need to register the provider with OpenFeature.
 
 ```diff
-
 Route::get('/hello', function () {
     $api = OpenFeatureAPI::getInstance();
 +
@@ -139,13 +139,13 @@ Route::get('/hello', function () {
 +     ]));
     $client = $api->getClient();
     if(client->getBooleanValue("welcome-message", false)){
-    return response()->json(['message' => 'Hello, World! open feature']);
+        return response()->json(['message' => 'Hello, World! open feature']);
     }
     return response()->json(['message' => 'Hello, World!']);
 });
+```
 
 ### Step 6: Rerun the application
-
 
 Now that everything is in place, let's start the app again.
 
@@ -153,14 +153,13 @@ Now that everything is in place, let's start the app again.
 php artisan serve
 ```
 
-Open your favorite browser and navigate to [http://localhost:8000/api/hello](http://localhost:8000/api/hello) should show the same value as before.
+Open your favorite browser and navigate to <http://localhost:8000/api/hello> should show the same value as before.
 
 This difference is now the feature flag value can be changed at runtime!
 
 <FlagdChangeContent />
 
 Save the changes to `flags.flagd.json` and refresh the browser tab.
-
 
 ## Conclusion
 
