@@ -105,10 +105,13 @@ If all goes as planned, you should see the message "Hello, World!" in glorious m
 <FlagdContent />
 
 Also, we have to install PHP flagd provider. Open up your terminal and write this command.
+
 ```sh
 composer require open-feature/flagd-provider
 ```
+
 Now let's make the required code changes in our application.
+
 
 Now, update `routes/api.php` to import the `flagd provider`.
 
@@ -118,9 +121,10 @@ use OpenFeature\OpenFeatureAPI;
 + use OpenFeature\Providers\Flagd\config\HttpConfig;
 + use GuzzleHttp\Client;
 + use GuzzleHttp\Psr7\HttpFactory;
-
 Finally, we need to register the provider with OpenFeature.
+
 ```diff
+
 Route::get('/hello', function () {
     $api = OpenFeatureAPI::getInstance();
 +
@@ -139,7 +143,9 @@ Route::get('/hello', function () {
     }
     return response()->json(['message' => 'Hello, World!']);
 });
+
 ### Step 6: Rerun the application
+
 
 Now that everything is in place, let's start the app again.
 
