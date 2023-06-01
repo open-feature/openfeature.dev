@@ -75,7 +75,7 @@ An example of what it could look like in NPM: `@openfeature/flagd-provider`
 <TabItem value="js" label="TypeScript">
 
 ```ts
-import { Provider, ResolutionDetails, EvaluationContext, JsonValue } from '@openfeature/js-sdk';
+import { Provider, ResolutionDetails, EvaluationContext, JsonValue, OpenFeatureEventEmitter } from '@openfeature/js-sdk';
 
 export class MyFeatureProvider implements Provider {
   readonly metadata = {
