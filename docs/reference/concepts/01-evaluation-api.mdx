@@ -63,6 +63,17 @@ OpenFeatureAPI::getInstance()->setProvider(new YourProviderOfChoice());
 ```
 
 </TabItem>
+
+<TabItem value="python" label="Python">
+
+```php
+from open_feature import open_feature_api
+from open_feature.provider.no_op_provider import NoOpProvider
+
+open_feature_api.set_provider(NoOpProvider())
+```
+
+</TabItem>
 </Tabs>
 
 ## Creating a client
@@ -109,6 +120,15 @@ $client = OpenFeatureAPI::getInstance()->getClient("my-app");
 ```
 
 </TabItem>
+
+<TabItem value="python" label="Python">
+
+```php
+open_feature_client = open_feature_api.get_client()
+```
+
+</TabItem>
+
 </Tabs>
 
 ## Flag Evaluation
@@ -214,6 +234,20 @@ $floatValue = $client->getFloatValue("floatFlag", 0.9, null, null);
 
 // get an object value
 $objectValue = $client->getObjectValue("objectFlag", $myObjectInstance, null, null);
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+# Depending on the flag type, use one of the methods below
+flag_key = "PROVIDER_FLAG"
+boolean_result = open_feature_client.get_boolean_value(key=flag_key,default_value=False)
+integer_result = open_feature_client.get_integer_value(key=flag_key,default_value=-1)
+float_result = open_feature_client.get_float_value(key=flag_key,default_value=-1)
+string_result = open_feature_client.get_string_value(key=flag_key,default_value="")
+object_result = open_feature_client.get_object_value(key=flag_key,default_value={})
 ```
 
 </TabItem>
@@ -330,6 +364,29 @@ $floatDetails = $client->getFloatDetails("floatFlag", 0.9, null, null);
 
 // get details of an object evaluation
 $objectDetails = $client->getObjectDetails("objectFlag", $myObjectInstance, null, null);
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```php
+flag_key = "PROVIDER_FLAG"
+
+// get details of a boolean evaluation
+boolean_details = open_feature_client.get_boolean_details(key=flag_key,default_value=False,evaluation_context={},flag_evaluation_options={})
+
+// get details of a string evaluation
+string_details = open_feature_client.get_string_details(key=flag_key,default_value="",evaluation_context={},flag_evaluation_options={})
+
+// get details of an integer evaluation
+int_details = open_feature_client.get_integer_details(key=flag_key,default_value=1,evaluation_context={},flag_evaluation_options={})
+
+// get details of a float evaluation
+float_details = open_feature_client.get_float_details(key=flag_key,default_value=0.9,evaluation_context={},flag_evaluation_options={})
+
+// get details of an object evaluation
+object_details = open_feature_client.get_object_details(key=flag_key,default_value={},evaluation_context={},flag_evaluation_options={})
 ```
 
 </TabItem>

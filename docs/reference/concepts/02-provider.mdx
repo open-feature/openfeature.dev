@@ -313,6 +313,76 @@ class MyFeatureProvider implements Provider
 
 </TabItem>
 
+<TabItem value="python" label="Python">
+
+```python
+import typing
+
+from open_feature.evaluation_context.evaluation_context import EvaluationContext
+from open_feature.flag_evaluation.reason import Reason
+from open_feature.flag_evaluation.resolution_details import FlagResolutionDetails
+from open_feature.hooks.hook import Hook
+from open_feature.provider.metadata import Metadata
+from open_feature.provider.my_provider_metadata import MyProviderMetadata
+from open_feature.provider.provider import AbstractProvider
+
+
+class MyProvider(AbstractProvider):
+    def get_metadata(self) -> Metadata:
+        return MyProviderMetadata()
+
+    def get_provider_hooks(self) -> typing.List[Hook]:
+        return []
+
+    def resolve_boolean_details(
+        self,
+        flag_key: str,
+        default_value: bool,
+        evaluation_context: typing.Optional[EvaluationContext] = None,
+    ) -> FlagResolutionDetails[bool]:
+        
+        # Code to retrieve details for boolean-type flags
+
+
+    def resolve_string_details(
+        self,
+        flag_key: str,
+        default_value: str,
+        evaluation_context: typing.Optional[EvaluationContext] = None,
+    ) -> FlagResolutionDetails[str]:
+        
+        # Code to retrieve details for string-type flags
+
+    def resolve_integer_details(
+        self,
+        flag_key: str,
+        default_value: int,
+        evaluation_context: typing.Optional[EvaluationContext] = None,
+    ) -> FlagResolutionDetails[int]:
+        
+        # Code to retrieve details for integer-type flags
+
+    def resolve_float_details(
+        self,
+        flag_key: str,
+        default_value: float,
+        evaluation_context: typing.Optional[EvaluationContext] = None,
+    ) -> FlagResolutionDetails[float]:
+        
+        # Code to retrieve details for float-type flags
+
+    def resolve_object_details(
+        self,
+        flag_key: str,
+        default_value: typing.Union[dict, list],
+        evaluation_context: typing.Optional[EvaluationContext] = None,
+    ) -> FlagResolutionDetails[typing.Union[dict, list]]:
+
+        # Code to retrieve details for object-type flags
+```
+
+</TabItem>
+
 </Tabs>
 
 ### Checklist

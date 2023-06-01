@@ -125,6 +125,19 @@ $boolValue = $client->getBooleanValue("boolFlag", false, $context);
 ```
 
 </TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+boolean_value = open_feature_client.get_boolean_value(
+    key="my_flag",
+    default_value=False,
+    evaluation_context={ "foo": "bar", "foo2": "bar2" },
+    flag_evaluation_options={}
+);
+```
+
+</TabItem>
 </Tabs>
 
 ### Context merging
