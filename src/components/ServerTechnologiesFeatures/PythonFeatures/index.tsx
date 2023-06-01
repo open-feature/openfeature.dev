@@ -21,7 +21,7 @@ export class PythonFeatures extends React.Component {
         artifact={{
           title: 'OpenFeature on Pypi',
           href: 'https://pypi.org/project/openfeature-sdk/',
-          instruction: 'pip install openfeature-sdk==0.0.9',
+          instruction: 'pip install -U openfeature-sdk',
           codeBlockLanguage: 'shell',
         }}
         providers={[]}
