@@ -41,7 +41,7 @@ The real power of feature flags:
 - Separation of responsibilities: Product managers take responsibility of feature flags, leaving DevOps teams to deal with their area of responsibility.
 ## So, are Feature Flags if Statements?
 No, feature flagging is so much more powerful and dynamic than environment variables or if statements. But if you’re already using if statements, you already have enough knowledge to take your environment variables and if statements to the next level with feature flags.
-If you’re stuck on the environment variable + if statement metaphor, feature flags are a very complex if statement that you can **target**, **update**, **toggle** and **gain observability over**, in **real time** without a **re-deployment**.
+If you’re stuck on the environment variable + if statement metaphor, feature flags are a very flexible if statement that you can **target**, **update**, **toggle** and **gain observability over**, in **real time** without a **re-deployment**.
 ## Where Do I Start?
 Start with the OpenFeature hands-on tutorials.
 These tutorials are provided by Killercoda, a third-party in-browser learning platform.
