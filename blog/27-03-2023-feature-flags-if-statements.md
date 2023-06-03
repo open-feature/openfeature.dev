@@ -56,7 +56,7 @@ You will need a flag "backend" evaluation engine.
 Choose a vendor or code your own?
 [Start your journey](https://bit.ly/openfeatureflagd) with the open source flagd solution.
 ### 3. Instrument Your Application
-Whether you've chosen to use flagd, gone with a vendor solution, or developed a custom OpenFeature-compliant in-house solution, by now your backend flag evaluation infrastructure is running.
+Whether you've chosen to use a community project, gone with a vendor solution, or developed a custom OpenFeature-compliant in-house solution, by now your backend flag evaluation infrastructure is running.
 It is time to instrument your application!
 The [Five minutes to feature flags](https://bit.ly/openfeature5mins) tutorial walks through how to instrument an application in an OpenFeature-compliant way.
 ### 4: Feature Flags on Kubernetes?
