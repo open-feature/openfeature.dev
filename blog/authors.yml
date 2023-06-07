@@ -33,7 +33,13 @@ petehodgson:
    title: Software delivery consultant, OpenFeature contributor
    url: https://thepete.net
    image_url: https://github.com/moredip.png
-   
+
+agardnerit:
+  name: Adam Gardner
+  title: DevRel @ Dynatrace, OpenFeature Contributor
+  url: https://agardner.net
+  image_url: https://github.com/agardnerit.png
+
 staceypotter:
    name: Stacey Potter
    title: Program Manager, Open Source Community at Dynatrace

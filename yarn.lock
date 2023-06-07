@@ -6546,6 +6546,11 @@ markdownlint-micromark@0.1.2:
   resolved "https://registry.npmjs.org/markdownlint-micromark/-/markdownlint-micromark-0.1.2.tgz"
   integrity sha512-jRxlQg8KpOfM2IbCL9RXM8ZiYWz2rv6DlZAnGv8ASJQpUh6byTBnEsbuMZ6T2/uIgntyf7SKg/mEaEBo1164fQ==
 
+markdownlint-micromark@0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/markdownlint-micromark/-/markdownlint-micromark-0.1.2.tgz#5520e04febffa46741875a2f297509ffdb561f5c"
+  integrity sha512-jRxlQg8KpOfM2IbCL9RXM8ZiYWz2rv6DlZAnGv8ASJQpUh6byTBnEsbuMZ6T2/uIgntyf7SKg/mEaEBo1164fQ==
+
 markdownlint-rule-helpers@~0.18.0:
   version "0.18.0"
   resolved "https://registry.npmjs.org/markdownlint-rule-helpers/-/markdownlint-rule-helpers-0.18.0.tgz"
