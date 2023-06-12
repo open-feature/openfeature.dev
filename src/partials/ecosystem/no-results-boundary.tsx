@@ -1,7 +1,13 @@
 import React from 'react';
 import { useInstantSearch } from 'react-instantsearch-hooks-web';
 
-export function NoResultsBoundary({ children, fallback }: { children: React.ReactNode; fallback: React.ReactNode }) {
+export default function NoResultsBoundary({
+  children,
+  fallback,
+}: {
+  children: React.ReactNode;
+  fallback: React.ReactNode;
+}) {
   const { results } = useInstantSearch();
 
   // The `__isArtificial` flag makes sure to not display the No Results message

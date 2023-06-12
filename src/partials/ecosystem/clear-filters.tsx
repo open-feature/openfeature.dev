@@ -3,7 +3,7 @@ import { useClearRefinements } from 'react-instantsearch-hooks-web';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
 
-export function ClearFilters() {
+export default function ClearFilters() {
   const { refine, canRefine } = useClearRefinements();
 
   return (

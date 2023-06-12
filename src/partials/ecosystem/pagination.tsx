@@ -1,9 +1,9 @@
 import React from 'react';
 import { usePagination, Pagination as InstantSearchPagination } from 'react-instantsearch-hooks-web';
 
-import { ITEMS_PER_PAGE } from './constants';
+import { SEARCH_ITEMS_PER_PAGE } from '../../datasets/constants';
 
-export function Pagination() {
+export default function Pagination() {
   const { nbPages, refine, currentRefinement, nbHits } = usePagination({
     // The number of pages to display on each side of the current page.
     padding: 3,
@@ -42,7 +42,7 @@ export function Pagination() {
           {/* 30 is set in the instance search config */}
           <p className="text-sm text-emphasis-700">
             Showing <span className="font-medium">1</span> to{' '}
-            <span className="font-medium">{nbHits < ITEMS_PER_PAGE ? nbHits : ITEMS_PER_PAGE}</span> of{' '}
+            <span className="font-medium">{nbHits < SEARCH_ITEMS_PER_PAGE ? nbHits : SEARCH_ITEMS_PER_PAGE}</span> of{' '}
             <span className="font-medium">{nbHits}</span> results
           </p>
         </div>

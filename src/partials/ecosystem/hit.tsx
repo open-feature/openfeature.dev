@@ -2,10 +2,10 @@ import React, { ComponentType, SVGProps } from 'react';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Pill } from './pill';
+import Pill from './pill';
 import { TECHNOLOGY_COLOR_MAP, TYPE_COLOR_MAP, EcosystemElement } from '../../datasets';
 
-export function Hit({ hit }: { hit: EcosystemElement }) {
+export default function Hit({ hit }: { hit: EcosystemElement }) {
   const external = hit.href.startsWith('http');
   const Svg: ComponentType<SVGProps<SVGSVGElement>> = hit.logo;
 

@@ -1,8 +1,18 @@
-import PageIllustration from '@site/src/partials/page-illustration';
+import React, { useEffect } from 'react';
+import { useLocation } from '@docusaurus/router';
 import Layout from '@theme/Layout';
 import AOS from 'aos';
-import { createIndex, getSearchClient } from 'instantsearch-itemsjs-adapter';
-import React, { useEffect } from 'react';
+
+import { SEARCH_ITEMS_PER_PAGE } from '../datasets/constants';
+import { ECOSYSTEM } from '../datasets';
+
+import Pagination from '../partials/ecosystem/pagination';
+import ClearFilters from '../partials/ecosystem/clear-filters';
+import NoResults from '../partials/ecosystem/no-results';
+import NoResultsBoundary from '../partials/ecosystem/no-results-boundary';
+import PageIllustration from '../partials/page-illustration';
+import Hit from '../partials/ecosystem/hit';
+
 import {
   Configure,
   Hits,
@@ -11,15 +21,7 @@ import {
   SearchBox,
   ToggleRefinement,
 } from 'react-instantsearch-hooks-web';
-import { ITEMS_PER_PAGE } from './constants';
-import { Pagination } from './pagintation';
-
-import { ClearFilters } from './clear-filters';
-import { NoResults } from './no-results';
-import { NoResultsBoundary } from './no-results-boundary';
-
-import { ECOSYSTEM } from '../../datasets';
-import { Hit } from './hit';
+import { createIndex, getSearchClient } from 'instantsearch-itemsjs-adapter';
 
 const options = {
   searchableFields: ['title', 'description'],
@@ -56,6 +58,7 @@ const index = createIndex(ECOSYSTEM, options);
 const searchClient = getSearchClient(index);
 
 export default function Ecosystem() {
+  const location = useLocation();
   useEffect(() => {
     AOS.init({
       once: true,
@@ -74,13 +77,12 @@ export default function Ecosystem() {
   return (
     <Layout title="Ecosystem" description="OpenFeature Ecosystem">
       <InstantSearch searchClient={searchClient} indexName="instant_search" routing={true}>
-        <Configure hitsPerPage={ITEMS_PER_PAGE}></Configure>
+        <Configure hitsPerPage={SEARCH_ITEMS_PER_PAGE}></Configure>
         <div className="flex flex-col min-h-screen overflow-hidden">
           <main className="grow">
             <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
               <PageIllustration />
             </div>
-
             <div className="relative pt-16 pb-10 md:pt-32 md:pb-16">
               <div className="max-w-3xl mx-auto text-center pb-12">
                 <h2
@@ -109,14 +111,12 @@ export default function Ecosystem() {
                 </div>
               </div>
             </div>
-
             <div className="container grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
               <div className="hidden lg:block">
                 <div className="flex justify-between">
                   <span className="text-xl font-medium text-content">Filter</span>
                   <ClearFilters />
                 </div>
-
                 <div className="border-0 border-solid border-t border-gray-200 py-4">
                   <span className="font-medium text-content">Type</span>
                   <RefinementList

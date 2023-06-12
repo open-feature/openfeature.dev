@@ -1,7 +1,7 @@
 import React from 'react';
 import { useInstantSearch } from 'react-instantsearch-hooks-web';
 
-export function NoResults() {
+export default function NoResults() {
   const { results } = useInstantSearch();
 
   const hasRefinements = results.getRefinements().length > 0;
