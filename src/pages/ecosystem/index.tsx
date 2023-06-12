@@ -1,0 +1,194 @@
+import PageIllustration from '@site/src/partials/page-illustration';
+import Layout from '@theme/Layout';
+import AOS from 'aos';
+import { createIndex, getSearchClient } from 'instantsearch-itemsjs-adapter';
+import React, { useEffect } from 'react';
+import {
+  Configure,
+  Hits,
+  InstantSearch,
+  RefinementList,
+  SearchBox,
+  ToggleRefinement,
+} from 'react-instantsearch-hooks-web';
+import { ITEMS_PER_PAGE } from './constants';
+import { Pagination } from './pagintation';
+
+import { ClearFilters } from './clear-filters';
+import { NoResults } from './no-results';
+import { NoResultsBoundary } from './no-results-boundary';
+
+import { ECOSYSTEM } from '../../datasets';
+import { Hit } from './hit';
+
+const options = {
+  searchableFields: ['title', 'description'],
+  query: '',
+  aggregations: {
+    type: {
+      title: 'types',
+      size: 4,
+      hide_zero_doc_count: true,
+      conjunction: false,
+    },
+    technology: {
+      title: 'technologies',
+      size: 10,
+      hide_zero_doc_count: true,
+      conjunction: false,
+    },
+    vendor: {
+      title: 'vendors',
+      size: 10,
+      conjunction: false,
+      hide_zero_doc_count: true,
+      sort: 'key',
+    },
+    vendorOfficial: {
+      title: 'official',
+      size: 2,
+      conjunction: true,
+    },
+  },
+};
+
+const index = createIndex(ECOSYSTEM, options);
+const searchClient = getSearchClient(index);
+
+export default function Ecosystem() {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      disable: 'phone',
+      duration: 1000,
+      easing: 'ease-out-sine',
+    });
+  });
+
+  useEffect(() => {
+    document.querySelector('html').style.scrollBehavior = 'auto';
+    window.scroll({ top: 0 });
+    document.querySelector('html').style.scrollBehavior = '';
+  }, [location.pathname]);
+
+  return (
+    <Layout title="Ecosystem" description="OpenFeature Ecosystem">
+      <InstantSearch searchClient={searchClient} indexName="instant_search" routing={true}>
+        <Configure hitsPerPage={ITEMS_PER_PAGE}></Configure>
+        <div className="flex flex-col min-h-screen overflow-hidden">
+          <main className="grow">
+            <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
+              <PageIllustration />
+            </div>
+
+            <div className="relative pt-16 pb-10 md:pt-32 md:pb-16">
+              <div className="max-w-3xl mx-auto text-center pb-12">
+                <h2
+                  className="text-3xl text-semibold dark:fill-white fill-gray-700 mb-8 sm:px-2"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  Discover the OpenFeature Ecosystem
+                </h2>
+                <div className="flex justify-center">
+                  <div data-aos="fade-up" data-aos-delay="200">
+                    <SearchBox
+                      autoFocus
+                      placeholder={'Search hooks and providers...'}
+                      classNames={{
+                        root: 'w-screen md:w-[512px] px-4',
+                        input:
+                          'w-full h-12 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6',
+                        submit: 'hidden',
+                        reset: 'hidden',
+                        resetIcon: 'hidden',
+                        loadingIcon: 'hidden',
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="container grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
+              <div className="hidden lg:block">
+                <div className="flex justify-between">
+                  <span className="text-xl font-medium text-content">Filter</span>
+                  <ClearFilters />
+                </div>
+
+                <div className="border-0 border-solid border-t border-gray-200 py-4">
+                  <span className="font-medium text-content">Type</span>
+                  <RefinementList
+                    attribute="type"
+                    sortBy={['count:desc']}
+                    classNames={{
+                      count:
+                        'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
+                      list: 'list-none m-0 p-0',
+                      checkbox: 'border-solid h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500',
+                      labelText: 'ml-3 text-sm text-content',
+                    }}
+                  />
+                </div>
+                <div className="border-0 border-solid border-t border-gray-200 py-4">
+                  <span className="font-medium text-content">Technology</span>
+                  <RefinementList
+                    attribute="technology"
+                    sortBy={['name:asc']}
+                    classNames={{
+                      count:
+                        'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
+                      list: 'list-none m-0 p-0',
+                      checkbox: 'border-solid h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500',
+                      labelText: 'ml-3 text-sm text-content',
+                    }}
+                  />
+                </div>
+                <div className="border-0 border-solid border-t border-gray-200 py-4">
+                  <span className="font-medium text-content">Vendor</span>
+                  <RefinementList
+                    attribute="vendor"
+                    sortBy={['name:asc']}
+                    classNames={{
+                      count:
+                        'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
+                      list: 'list-none m-0 p-0',
+                      checkbox: 'border-solid h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500',
+                      labelText: 'ml-3 text-sm text-content',
+                    }}
+                  />
+                </div>
+                <div className="border-0 border-solid border-t border-gray-200 py-4">
+                  <span className="font-medium text-content">Support level</span>
+                  <ToggleRefinement
+                    attribute="vendorOfficial"
+                    label="Vendor supported"
+                    classNames={{
+                      count:
+                        'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
+                      checkbox: 'border-solid h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500',
+                      labelText: 'ml-3 text-sm text-content',
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="lg:col-span-4">
+                <NoResultsBoundary fallback={<NoResults />}>
+                  <Hits
+                    classNames={{
+                      list: 'flex flex-wrap gap-8',
+                      item: 'list-none',
+                    }}
+                    hitComponent={Hit}
+                  />
+                  <Pagination />
+                </NoResultsBoundary>
+              </div>
+            </div>
+          </main>
+        </div>
+      </InstantSearch>
+    </Layout>
+  );
+}

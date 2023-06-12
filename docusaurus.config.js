@@ -207,6 +207,10 @@ const config = {
             docsPluginId: 'specification',
           },
           {
+            to: '/ecosystem',
+            label: 'Ecosystem',
+          },
+          {
             type: 'doc',
             docId: 'README',
             position: 'left',
@@ -267,7 +271,7 @@ const config = {
                 label: 'Join us on Slack',
                 href: 'https://cloud-native.slack.com/archives/C0344AANLA1',
               },
-               {
+              {
                 label: 'YouTube',
                 href: 'https://www.youtube.com/@openfeature834',
               },
