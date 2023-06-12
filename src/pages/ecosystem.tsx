@@ -154,7 +154,7 @@ export default function Ecosystem() {
                   <NoResultsBoundary fallback={<NoResults />}>
                     <Hits
                       classNames={{
-                        list: 'flex flex-wrap gap-8 justify-center',
+                        list: 'flex flex-wrap gap-8 justify-center md:justify-start',
                         item: 'list-none',
                       }}
                       hitComponent={Hit}
