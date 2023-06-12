@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
-import { useLocation } from '@docusaurus/router';
+import React from 'react';
 import Layout from '@theme/Layout';
-import AOS from 'aos';
 import {
   Configure,
   Hits,
@@ -58,22 +56,6 @@ const index = createIndex(ECOSYSTEM, options);
 const searchClient = getSearchClient(index);
 
 export default function Ecosystem() {
-  const location = useLocation();
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      disable: 'phone',
-      duration: 1000,
-      easing: 'ease-out-sine',
-    });
-  });
-
-  useEffect(() => {
-    document.querySelector('html').style.scrollBehavior = 'auto';
-    window.scroll({ top: 0 });
-    document.querySelector('html').style.scrollBehavior = '';
-  }, [location.pathname]);
-
   return (
     <Layout title="Ecosystem" description="OpenFeature Ecosystem">
       <InstantSearch searchClient={searchClient} indexName="instant_search" routing={true}>
@@ -86,29 +68,23 @@ export default function Ecosystem() {
               </div>
               <div className="relative pt-16 pb-10 md:pt-32 md:pb-16">
                 <div className="max-w-3xl mx-auto text-center pb-12">
-                  <h2
-                    className="text-3xl text-semibold dark:fill-white fill-gray-700 mb-8 sm:px-2"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                  >
+                  <h2 className="text-3xl text-semibold dark:fill-white fill-gray-700 mb-8 sm:px-2">
                     Discover the OpenFeature Ecosystem
                   </h2>
                   <div className="flex justify-center">
-                    <div data-aos="fade-up" data-aos-delay="200">
-                      <SearchBox
-                        autoFocus
-                        placeholder={'Search hooks and providers...'}
-                        classNames={{
-                          root: 'w-screen md:w-[512px] px-4',
-                          input:
-                            'w-full h-12 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6',
-                          submit: 'hidden',
-                          reset: 'hidden',
-                          resetIcon: 'hidden',
-                          loadingIcon: 'hidden',
-                        }}
-                      />
-                    </div>
+                    <SearchBox
+                      autoFocus
+                      placeholder={'Search hooks and providers...'}
+                      classNames={{
+                        root: 'w-screen md:w-[512px] px-4',
+                        input:
+                          'w-full h-12 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6',
+                        submit: 'hidden',
+                        reset: 'hidden',
+                        resetIcon: 'hidden',
+                        loadingIcon: 'hidden',
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -178,7 +154,7 @@ export default function Ecosystem() {
                   <NoResultsBoundary fallback={<NoResults />}>
                     <Hits
                       classNames={{
-                        list: 'flex flex-wrap gap-8',
+                        list: 'flex flex-wrap gap-8 justify-center',
                         item: 'list-none',
                       }}
                       hitComponent={Hit}
