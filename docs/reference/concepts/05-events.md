@@ -8,7 +8,7 @@ id: events
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Events allow enable the ability to react to state changes in the provider or underlying flag management system.
+Events enable the ability to react to state changes in the provider or underlying flag management system.
 These include changes in provider readiness, error status, or perhaps most interestingly, flag configuration changes.
 
 ## Event Handlers
@@ -43,6 +43,11 @@ client.addHandler(ProviderEvents.Error, (eventDetails: EventDetails) => {
 client.addHandler(ProviderEvents.Stale, (eventDetails: EventDetails) => {
   // do something when the provider has gone stale
 });
+
+// handlers can also be added globally
+OpenFeature.addHandler(ProviderEvents.Ready, (eventDetails: EventDetails) => {
+  // do something when the provider is ready
+});
 ```
 
 </TabItem>
@@ -58,7 +63,7 @@ The provider is ready to perform flag evaluations.
 
 _Application authors_ may wish to wait to evaluate flags until the provider has fully started.
 In that case, they can await the `PROVIDER_READY` event before evaluating any flags.
-This can be especially useful for hiding views or otherwise deferring evaluation until associated flags can be resolved accurately.
+This can be especially useful for hiding UI elements or otherwise deferring evaluation until associated flags can be resolved accurately.
 
 ### PROVIDER_CONFIGURATION_CHANGED
 
