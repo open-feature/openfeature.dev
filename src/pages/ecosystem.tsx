@@ -50,6 +50,7 @@ const options = {
       conjunction: true,
     },
   },
+  removeStopWordFilter: false,
 };
 
 const index = createIndex(ECOSYSTEM, options);
