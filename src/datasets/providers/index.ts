@@ -30,7 +30,7 @@ export const PROVIDERS: EcosystemElement[] = [
         vendor: i.name,
         title: `${i.name} Provider`,
         description:
-          typeof i.description === 'undefined'
+          !i.description
             ? createDefaultDescription(i.name, vendorOfficial)
             : typeof i.description === 'string'
             ? i.description
