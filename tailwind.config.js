@@ -4,6 +4,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        emphasis: {
+          100: 'var(--ifm-color-emphasis-100)',
+          200: 'var(--ifm-color-emphasis-200)',
+          300: 'var(--ifm-color-emphasis-300)',
+          400: 'var(--ifm-color-emphasis-400)',
+          500: 'var(--ifm-color-emphasis-500)',
+          600: 'var(--ifm-color-emphasis-600)',
+          700: 'var(--ifm-color-emphasis-700)',
+          800: 'var(--ifm-color-emphasis-800)',
+          900: 'var(--ifm-color-emphasis-900)',
+        },
         gray: {
           100: '#EBF1F5',
           200: '#D9E3EA',
@@ -26,6 +37,10 @@ module.exports = {
           800: '#38379C',
           900: '#262668',
         },
+        primary: 'var(--ifm-color-primary)',
+        secondary: 'var(--ifm-color-content-secondary)',
+        content: 'var(--ifm-color-content)',
+        selected: 'var(--ifm-hover-overlay)',
       },
       spacing: {
         '9/16': '56.25%',
@@ -71,5 +86,5 @@ module.exports = {
     preflight: false,
   },
   darkMode: ['class', '[data-theme="dark"]'],
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };
