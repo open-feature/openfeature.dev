@@ -45,11 +45,11 @@
     "react": "17.0.2",
     "react-copy-to-clipboard": "5.1.0",
     "react-dom": "17.0.2",
-    "react-instantsearch-hooks-web": "^6.44.1",
+    "react-instantsearch-hooks-web": "^6.44.3",
     "react-transition-group": "^4.4.5",
     "remarkable": "2.0.1",
     "remarkable-react": "1.4.3",
-    "sass": "^1.63.3",
+    "sass": "^1.63.4",
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
@@ -58,7 +58,7 @@
     "@types/fs-extra": "11.0.1",
     "@typescript-eslint/eslint-plugin": "5.59.11",
     "@typescript-eslint/parser": "5.59.11",
-    "eslint": "8.42.0",
+    "eslint": "8.43.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-mdx": "2.1.0",
     "eslint-plugin-check-file": "2.4.0",
