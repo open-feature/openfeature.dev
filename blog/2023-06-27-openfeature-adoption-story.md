@@ -14,6 +14,8 @@ During thinking on how to define the exposed interfaces, while keeping it simple
 Gladly, the mentioned feature management cloud service created provider implementation for OpenFeature.  
 Let me explain why and how it was adopted.
 
+<!--truncate-->
+
 ## Why Feature Management was needed
 
 Our product needed a solution for feature flags:
@@ -104,7 +106,12 @@ sequenceDiagram
 Some thoughts raised during the adoption:
 * Feature Flags Configuration  
   Considering this as the provider configuration of feature flags, e.g.  
-  ```feature1=enabled, feature2=enabled by 50% split, feature3=disabled, feature4=enabled by customerId=4```  
+  ```
+  feature1=enabled
+  feature2=enabled by 50% split
+  feature3=disabled
+  feature4=enabled by customerId=4
+  ```  
   This configuration can be represented as a scheme.  
   I was thinking whether this configuration to be part of the standard. See [Slack discussion](https://cloud-native.slack.com/archives/C0344AANLA1/p1684776996586969?thread_ts=1684774617.486109&cid=C0344AANLA1) and example [flagd-definitions](https://github.com/open-feature/schemas/blob/main/json/flagd-definitions.json)
 * Flags registration  
