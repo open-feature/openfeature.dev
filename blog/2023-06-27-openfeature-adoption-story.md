@@ -40,7 +40,7 @@ This can tell me that the OpenFeature standard is making sense.
 ## How OpenFeature was adopted
 As for this context OpenFeature can be treated as a "bridge", it was used accordingly:
 * OpenFeature provider initializer was added.
-* Generic OpenFeature wrapper was created.
+* Generic OpenFeature client wrapper was created.
 
 ## Monitoring
 As our provider was fetching feature flags configuration and receiving real-time configuration changes, we needed to know its status and provide an alert on scenarios like service is down or communication failure.  
@@ -57,12 +57,12 @@ We needed an option for fetching all enabled flags from the feature management s
 
 ## SDK used functionalities
 OpenFeature SDK has several used functionalities. What used for our case:
-* evaluation via OpenFeature Client (getBooleanEvaluation with context and similar for other types)
-* Initialization - see [Initialization](./Initialization)
-* Events - see [Monitoring](./Monitoring)
-* Fetch all flags - see [Fetching flags](./Fetching flags)
+* Evaluation via OpenFeature Client (getBooleanEvaluation with context and similar for other types)
+* Initialization - see [Initialization](#initialization)
+* Events - see [Monitoring](#monitoring)
+* Fetch all flags - see [Fetching flags](#fetching-flags)
 
-###  Features Management SDK
+###  Features Management SDK - example flow
 
 ```mermaid
 sequenceDiagram
@@ -85,7 +85,7 @@ sequenceDiagram
   note left of SDK: OpenFeature method
   end
   SDK->>request: true/false from cache
-  SDK->>features: <stream> fetch conf changes events https:...
+  SDK->>features: <stream> fetch config changes events https://...
   features->>SDK: OK
   note left of features: fetch config changes responses
   developer->>features: Change feature flag value
@@ -97,7 +97,7 @@ sequenceDiagram
   rect rgb(30,144,255)
   note left of SDK: OpenFeature Error event
   end
-  SDK->>metrics: Features Service status=Error
+  SDK->metrics: Features Service status=Error
   request->>SDK: getBooleanEvaluation
   SDK->>request: true/false from cache
 ```
@@ -113,7 +113,7 @@ Some thoughts raised during the adoption:
   feature4=enabled by customerId=4
   ```  
   This configuration can be represented as a scheme.  
-  I was thinking whether this configuration to be part of the standard. See [Slack discussion](https://cloud-native.slack.com/archives/C0344AANLA1/p1684776996586969?thread_ts=1684774617.486109&cid=C0344AANLA1) and example [flagd-definitions](https://github.com/open-feature/schemas/blob/main/json/flagd-definitions.json)
+  I was thinking whether this configuration to be part of the standard. See [Slack discussion](https://cloud-native.slack.com/archives/C0344AANLA1/p1684776996586969?thread_ts=1684774617.486109&cid=C0344AANLA1) and example [flagd-definitions](https://github.com/open-feature/schemas/blob/main/json/flagd-definitions.json).
 * Flags registration  
   Some providers exposing initial flags registration via their SDK. Wondering how does it go with OpenFeature spec.
 
