@@ -102,7 +102,14 @@ sequenceDiagram
   SDK->>request: true/false from cache
 ```
 
-## Misc.
+## Summary
+
+### High Level Adoption
+* Main functionallity used is for evaluating a feature flag value, which fitted our needs.
+* Adopting OpenFeature flag required adding OpenFeature SDK dependency and using it.  
+  As no other major extra steps were needed, it is done via the adoption without containers related changes.
+
+### Challenges
 Some thoughts raised during the adoption:
 * Feature Flags Configuration  
   Considering this as the provider configuration of feature flags, e.g.  
@@ -115,6 +122,7 @@ Some thoughts raised during the adoption:
   This configuration can be represented as a scheme.  
   I was thinking whether this configuration to be part of the standard. If so, it might be beneficial for import/export configurations accross vendors.
   See [Slack discussion](https://cloud-native.slack.com/archives/C0344AANLA1/p1684776996586969?thread_ts=1684774617.486109&cid=C0344AANLA1) and example [flagd-definitions](https://github.com/open-feature/schemas/blob/main/json/flagd-definitions.json).
+* Events - see [Monitoring](#monitoring)
 * Fetch all flags - see [Fetching flags](#fetching-flags)
 * Flags registration  
   Some providers exposing initial flags registration via their SDK. Wondering how does it go with OpenFeature spec.
