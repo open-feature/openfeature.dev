@@ -53,7 +53,7 @@ A common action is provider initialization. As it was vendor specific, it was do
 Open Feature lately added [Initialization](https://github.com/open-feature/spec/blob/main/specification/sections/02-providers.md#24-initialization) to the spec. This could have make it more standard implementation.
 
 ## Fetching flags
-We needed an option for fetching all enabled flags from the feature management service. This was not included at OpenFeature at the time, see example at [Flag Retrieval discussion](https://github.com/open-feature/ofep/issues/13#issuecomment-1337889563).
+We used an option for fetching all enabled flags from the feature management service. This was not included at OpenFeature at the time, see example at [Flag Retrieval discussion](https://github.com/open-feature/ofep/issues/13#issuecomment-1337889563).
 
 ## SDK used functionalities
 OpenFeature SDK has several used functionalities. What used for our case:
@@ -66,7 +66,7 @@ OpenFeature SDK has several used functionalities. What used for our case:
 
 ```mermaid
 sequenceDiagram
-  participant SDK
+  participant SDK as SDK (server-side)
   participant features as Features Service
   actor request as User Request
   participant developer as Developer
@@ -113,7 +113,9 @@ Some thoughts raised during the adoption:
   feature4=enabled by customerId=4
   ```  
   This configuration can be represented as a scheme.  
-  I was thinking whether this configuration to be part of the standard. See [Slack discussion](https://cloud-native.slack.com/archives/C0344AANLA1/p1684776996586969?thread_ts=1684774617.486109&cid=C0344AANLA1) and example [flagd-definitions](https://github.com/open-feature/schemas/blob/main/json/flagd-definitions.json).
+  I was thinking whether this configuration to be part of the standard. If so, it might be beneficial for import/export configurations accross vendors.
+  See [Slack discussion](https://cloud-native.slack.com/archives/C0344AANLA1/p1684776996586969?thread_ts=1684774617.486109&cid=C0344AANLA1) and example [flagd-definitions](https://github.com/open-feature/schemas/blob/main/json/flagd-definitions.json).
+* Fetch all flags - see [Fetching flags](#fetching-flags)
 * Flags registration  
   Some providers exposing initial flags registration via their SDK. Wondering how does it go with OpenFeature spec.
 
