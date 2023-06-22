@@ -1,7 +1,7 @@
 ---
 slug: 'openfeature-adoption-story'
 title: 'OpenFeature Adoption Story'
-date: 2023-06-27
+date: 2023-06-22
 authors: [liran2000]
 description: "OpenFeature is an open standard for feature-flagging. This is an adoption story."
 tags: [client, sdk, adoption]
