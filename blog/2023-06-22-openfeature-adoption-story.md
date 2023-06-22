@@ -25,11 +25,11 @@ Our product needed a solution for feature flags:
 
 ## Why OpenFeature was chosen
 
-While keeping it simple and generic, I had a few wonders:
-* How to name the method
-* How to do provide information for error handling
-* What response structure to define
-* How to define properties passed to the methods
+While keeping it simple and generic, we had a few considerations:
+* How to name the method ?
+* How to do provide information for error handling ?
+* What response structure to define ?
+* How to define properties passed to the methods ?
 
 OpenFeature solved me all these questions with its standard. When using a standard, I have good reasons why it is defined like this, as the standard supports it.
 
