@@ -8,10 +8,10 @@ tags: [client, sdk, adoption]
 draft: false
 ---
 
-Our team recently needed to use one of the large feature management cloud services.  
-This service had a documented SDK with usage guidelines.  
-During thinking on how to define the exposed interfaces, while keeping it simple and generic, I started doing some research, and encountered [OpenFeature](https://openfeature.dev).  
-Gladly, the mentioned feature management cloud service created provider implementation for OpenFeature.  
+Our team recently needed to use one of the largest feature management cloud services.
+This service has a documented SDK with usage guidelines.
+Thinking about how to define the exposed interfaces, while keeping it simple and generic, I started doing some research, and encountered [OpenFeature](https://openfeature.dev).
+Gladly, the mentioned feature management cloud service has already created an OpenFeature provider.
 Let me explain why and how it was adopted.
 
 <!--truncate-->
@@ -21,9 +21,9 @@ Let me explain why and how it was adopted.
 Our product needed a solution for feature flags:
 * providing a gradual release mechanism and a simple way to define target audiences such as target group or split release
 * Using feature flags for dynamic configuration values which can be changed in runtime dynamically without needing for a new release deployment.
-* Ability for A/B testing - can be done via feature for specific region, specific users etc'.
+* Ability for A/B testing - can be done via feature for specific region, specific users, etc.
 
-## Why OpenFeature was chosen to be used
+## Why OpenFeature was chosen
 
 While keeping it simple and generic, I had a few wonders:
 * How to name the method
