@@ -30,6 +30,7 @@ While keeping it simple and generic, I had a few wonders:
 * How to do provide information for error handling
 * What response structure to define
 * How to define properties passed to the methods
+
 OpenFeature solved me all these questions with its standard. When using a standard, I have good reasons why it is defined like this, as the standard supports it.
 
 ## Feature Management Cloud Service Provider Implementation For OpenFeature
@@ -57,7 +58,7 @@ We used an option for fetching all enabled flags from the feature management ser
 
 ## SDK used functionalities
 OpenFeature SDK has several used functionalities. What used for our case:
-* Evaluation via OpenFeature Client (getBooleanEvaluation with context and similar for other types)
+* Evaluation via OpenFeature Client (getBooleanEvaluation with context and similarly for other types)
 * Initialization - see [Initialization](#initialization)
 * Events - see [Monitoring](#monitoring)
 * Fetch all flags - see [Fetching flags](#fetching-flags)
