@@ -44,9 +44,9 @@ As for this context OpenFeature can be treated as a "bridge", it was used accord
 * Generic OpenFeature client wrapper was created.
 
 ## Monitoring
-As our provider was fetching feature flags configuration and receiving real-time configuration changes, we needed to know its status and provide an alert on scenarios like service is down or communication failure.  
-When adoption was done, OpenFeature did not support that functionality.  
-However, OpenFeature recently added [Events](https://github.com/open-feature/spec/blob/main/specification/sections/05-events.md#5-events). Together with provider events implementation, it could have given us this functionality.  
+As our provider was fetching feature flags configuration and receiving real-time configuration changes, we needed to know its status and provide an alert on scenarios like service is down or communication failure.
+When adoption was done, OpenFeature did not support that functionality.
+However, OpenFeature recently added [Events](https://github.com/open-feature/spec/blob/main/specification/sections/05-events.md#5-events). Together with provider events implementation, it could have given us this functionality.
 To overcome the missing events enhancement, we implemented it directly via provider abilities. It did cause some mix between OpenFeature and vendor specific implementation.
 
 ## Initialization
