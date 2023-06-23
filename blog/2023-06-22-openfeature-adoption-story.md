@@ -26,7 +26,7 @@ Our product needed a solution for feature flags:
 ## Why OpenFeature was chosen
 
 While keeping it simple and generic, we had a few considerations:
-* How to name the method ?
+* What to name the methods?
 * How to do provide information for error handling ?
 * What response structure to define ?
 * How to define properties passed to the methods ?
@@ -34,7 +34,7 @@ While keeping it simple and generic, we had a few considerations:
 Because OpenFeature is an open standard, we felt confident in the way things are defined, and it answered all of the above questions for us.
 
 ## Feature Management Cloud Service Provider Implementation For OpenFeature
-Although the provider implementation is used transparantly, as it is open sourced, we explored its implementation.  
+Although the provider implementation is used transparently, as it is open sourced, we explored its implementation.  
 What we saw is that the provider implementation is very short and simple, acting like a "bridge" from OpenFeature to the feature management cloud service specific vendor SDK which already exists.  
 This tells me that the OpenFeature standard makes sense.
 
@@ -45,13 +45,13 @@ As for this context OpenFeature can be treated as a "bridge", it was used accord
 
 ## Monitoring
 As our provider was fetching feature flags configuration and receiving real-time configuration changes, we needed to know its status and provide an alert on scenarios like service is down or communication failure.  
-When adoption was done, OpenFeature did not support that functionallity.  
-Open Feature recently added [Events](https://github.com/open-feature/spec/blob/main/specification/sections/05-events.md#5-events). Together with provider events implementation, it could have given us this functionallity.  
+When adoption was done, OpenFeature did not support that functionality.  
+However, OpenFeature recently added [Events](https://github.com/open-feature/spec/blob/main/specification/sections/05-events.md#5-events). Together with provider events implementation, it could have given us this functionality.  
 To overcome the missing events enhancement, we implemented it directly via provider abilities. It did cause some mix between OpenFeature and vendor specific implementation.
 
 ## Initialization
 A common action is provider initialization. As it was vendor specific, it was done by provider call implementation.  
-Open Feature recently added [Initialization](https://github.com/open-feature/spec/blob/main/specification/sections/02-providers.md#24-initialization) to the spec. This could have made it a more standard implementation.
+OpenFeature recently added [Initialization](https://github.com/open-feature/spec/blob/main/specification/sections/02-providers.md#24-initialization) to the spec. This could have made it a more standard implementation.
 
 ## Fetching flags
 We used an option for fetching all enabled flags from the feature management service. This was not included in OpenFeature at the time, see example at [Flag Retrieval discussion](https://github.com/open-feature/ofep/issues/13#issuecomment-1337889563).
@@ -108,7 +108,6 @@ sequenceDiagram
 ### High Level Adoption
 * Main functionality used is for evaluating a feature flag value, which fit our needs.
 * Adopting OpenFeature flag required adding OpenFeature SDK dependency and using it.  
-  As no other major extra steps were needed, it is done via the adoption without containers related changes.
 
 ### Challenges
 Some thoughts raised during the adoption:
