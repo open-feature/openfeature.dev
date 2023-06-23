@@ -9,5 +9,9 @@ export const ConfigCat: Provider = {
       vendorOfficial: false,
       href: 'https://www.npmjs.com/package/@openfeature/config-cat-provider',
     },
+    Go: {
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/providers/configcat',
+    },
   },
 };

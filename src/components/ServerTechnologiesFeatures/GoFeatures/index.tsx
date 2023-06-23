@@ -10,6 +10,7 @@ import FliptSvg from '@site/static/img/flipt-no-fill.svg';
 import GoFeatureFlagNoFillSvg from '@site/static/img/goff-no-fill.svg';
 import FlagsmithNoFill from '@site/static/img/flagsmith-no-fill.svg';
 import LaunchDarklyNoFill from '@site/static/img/launchdarkly-no-fill.svg';
+import ConfigCatSvg from '@site/static/img/config-cat-no-fill.svg';
 
 export class GoFeatures extends React.Component {
   override render() {
@@ -73,6 +74,13 @@ export class GoFeatures extends React.Component {
             description: 'A community-maintained provider for LaunchDarkly',
             href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/providers/launchdarkly',
             svg: LaunchDarklyNoFill,
+            vendorOfficial: false,
+          },
+          {
+            title: 'ConfigCat Provider',
+            description: 'A community-maintained provider for ConfigCat',
+            href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/providers/configcat',
+            svg: ConfigCatSvg,
             vendorOfficial: false,
           },
         ]}
