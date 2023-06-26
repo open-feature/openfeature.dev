@@ -24,7 +24,7 @@ You'll learn how to:
 
 This walk-through assumes that:
 
-- You should have a good understanding of PHP syntax, data types, operators, functions, control structures.
+- You should have a good understanding of PHP syntax, data types, operators, functions, and control structures.
 - You have PHP 8.0 or later.
 - You have Docker installed and running on the host system.
 
@@ -58,7 +58,7 @@ Let's install the OpenFeature SDK using the following command.
 composer require open-feature/sdk
 ```
 
-Update `routes/api.php` to import SDK
+Update `routes/api.php` to import the SDK
 
 ```diff
 use Illuminate\Http\Request;
@@ -128,17 +128,17 @@ Finally, we need to register the provider with OpenFeature.
 Route::get('/hello', function () {
     $api = OpenFeatureAPI::getInstance();
 +
-+  $client = new Client();
++  $httpClient = new Client();
 +  $httpFactory = new HttpFactory();
 +  $api->setProvider(new FlagdProvider([
 +         'httpConfig' => new HttpConfig(
-+              $client,
++              $httpClient,
 +              $httpFactory,
 +              $httpFactory,
 +         )
 +     ]));
     $client = $api->getClient();
-    if(client->getBooleanValue("welcome-message", false)){
+    if($client->getBooleanValue("welcome-message", false)){
         return response()->json(['message' => 'Hello, World! open feature']);
     }
     return response()->json(['message' => 'Hello, World!']);
