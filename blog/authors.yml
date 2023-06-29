@@ -33,9 +33,21 @@ petehodgson:
    title: Software delivery consultant, OpenFeature contributor
    url: https://thepete.net
    image_url: https://github.com/moredip.png
-   
+
+agardnerit:
+  name: Adam Gardner
+  title: DevRel @ Dynatrace, OpenFeature Contributor
+  url: https://agardner.net
+  image_url: https://github.com/agardnerit.png
+
 staceypotter:
    name: Stacey Potter
    title: Program Manager, Open Source Community at Dynatrace
    url: https://github.com/staceypotter
    image_url: https://github.com/staceypotter.png
+
+liran2000:
+  name: Liran Mendelovich
+  title: Software Developer
+  url: https://liran2000.github.io
+  image_url: https://liran2000.github.io/images/liran.jpg
