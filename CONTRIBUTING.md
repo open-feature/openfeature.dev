@@ -7,6 +7,8 @@
   - [Installation](#installation)
   - [Local Development](#local-development)
   - [Build](#build)
+  - [Update content](#update-content)
+    - [SDK Docs](#sdk-docs)
   - [Deployment](#deployment)
 - [Pull Request](#pull-request)
   - [How to Receive Comments](#how-to-receive-comments)
@@ -45,6 +47,13 @@ yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Update content
+
+#### SDK Docs
+
+The SDK docs can be updated by running `yarn update:sdk-docs`.
+This will fetch the READMEs from all the configured SDK repos and automatically run transformations on the content.
 
 ### Deployment
 

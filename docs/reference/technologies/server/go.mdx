@@ -1,5 +1,189 @@
-# Go
+---
+title: Go
+---
 
-import { GoFeatures } from '@site/src/components/ServerTechnologiesFeatures';
+<!--
+This content has been automatically generated from go-sdk on Fri Jul 14 2023 17:07:58 GMT-0400 (Eastern Daylight Time).
+Edits can be made here: https://github.com/open-feature/go-sdk
+-->
 
-<GoFeatures/>
+[![Go Reference](https://pkg.go.dev/badge/github.com/open-feature/go-sdk/pkg/openfeature.svg)](https://pkg.go.dev/github.com/open-feature/go-sdk/pkg/openfeature)
+[![a](https://img.shields.io/badge/slack-%40cncf%2Fopenfeature-brightgreen?style=flat&logo=slack)](https://cloud-native.slack.com/archives/C0344AANLA1)
+[![Go Report Card](https://goreportcard.com/badge/github.com/open-feature/go-sdk)](https://goreportcard.com/report/github.com/open-feature/go-sdk)
+[![codecov](https://codecov.io/gh/open-feature/go-sdk/branch/main/graph/badge.svg?token=FZ17BHNSU5)](https://codecov.io/gh/open-feature/go-sdk)
+[![v0.5.1](https://img.shields.io/static/v1?label=Specification&message=v0.5.1&color=yellow)](https://github.com/open-feature/spec/tree/v0.5.1)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/6601/badge)](https://bestpractices.coreinfrastructure.org/projects/6601)
+
+## Requirements
+
+- Go 1.18+
+
+## Installation
+
+```shell
+go get github.com/open-feature/go-sdk
+```
+
+### Software Bill of Materials (SBOM)
+
+The release workflow generates an SBOM (using [cyclonedx](https://github.com/CycloneDX/cyclonedx-gomod)) and pushes it to the release. It can be found as an asset named `bom.json` within a release.
+
+## Features
+
+- support for various backend [providers](/docs/reference/concepts/provider)
+- easy integration and extension via [hooks](/docs/reference/concepts/hooks)
+- bool, string, numeric, and object flag types
+- [context-aware](/docs/reference/concepts/evaluation-context) evaluation
+
+## Usage
+
+To configure the SDK you'll need to add a provider to the `openfeature` global singleton. From there, you can generate a `Client` which is usable by your code.
+While you'll likely want a provider for your specific backend, we've provided a `NoopProvider`, which simply returns the default passed in.
+
+```go
+package main
+
+import (
+	"context"
+	"github.com/open-feature/go-sdk/pkg/openfeature"
+)
+
+func main() {
+	openfeature.SetProvider(openfeature.NoopProvider{})
+	client := openfeature.NewClient("app")
+	value, err := client.BooleanValue(
+		context.Background(), "v2_enabled", false, openfeature.EvaluationContext{},
+	)
+}
+```
+
+A list of available providers can be found [here](/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=Provider&instant_search%5BrefinementList%5D%5Btechnology%5D%5B0%5D=Go).
+
+For complete documentation, visit: https://openfeature.dev/docs/category/concepts
+
+### Context-aware evaluation
+
+Sometimes the value of a flag must take into account some dynamic criteria about the application or user, such as the user location, IP, email address, or the location of the server.
+In OpenFeature, we refer to this as [`targeting`](/specification/glossary#targeting).
+If the flag system you're using supports targeting, you can provide the input data using the `EvaluationContext`.
+
+```go
+// add a value to the global context
+openfeature.SetEvaluationContext(openfeature.NewEvaluationContext(
+    "foo",
+    map[string]interface{}{
+        "myGlobalKey":  "myGlobalValue",
+    },
+))
+
+// add a value to the client context
+client := openfeature.NewClient("my-app")
+client.SetEvaluationContext(openfeature.NewEvaluationContext(
+    "", 
+    map[string]interface{}{
+        "myGlobalKey":  "myGlobalValue",
+    },
+))
+
+// add a value to the invocation context
+evalCtx := openfeature.NewEvaluationContext(
+    "",
+    map[string]interface{}{
+        "myInvocationKey": "myInvocationValue",
+    },
+)
+boolValue, err := client.BooleanValue("boolFlag", false, evalCtx)
+```
+
+### Providers
+
+To develop a provider, you need to create a new project and include the OpenFeature SDK as a dependency. This can be a new repository or included in [the existing contrib repository](https://github.com/open-feature/go-sdk-contrib) available under the OpenFeature organization. Finally, you’ll then need to write the provider itself. This can be accomplished by implementing the `FeatureProvider` interface exported by the OpenFeature SDK.
+
+```go
+package provider
+
+// MyFeatureProvider implements the FeatureProvider interface and provides functions for evaluating flags
+type MyFeatureProvider struct{}
+
+// Metadata returns the metadata of the provider
+func (e MyFeatureProvider) Metadata() Metadata {
+    return Metadata{Name: "MyFeatureProvider"}
+}
+
+// BooleanEvaluation returns a boolean flag
+func (e MyFeatureProvider) BooleanEvaluation(flag string, defaultValue bool, evalCtx EvaluationContext) BoolResolutionDetail {
+    // code to evaluate boolean
+}
+
+// StringEvaluation returns a string flag
+func (e MyFeatureProvider) StringEvaluation(flag string, defaultValue string, evalCtx EvaluationContext) StringResolutionDetail {
+    // code to evaluate string
+}
+
+// FloatEvaluation returns a float flag
+func (e MyFeatureProvider) FloatEvaluation(flag string, defaultValue float64, evalCtx EvaluationContext) FloatResolutionDetail {
+    // code to evaluate float
+}
+
+// IntEvaluation returns an int flag
+func (e MyFeatureProvider) IntEvaluation(flag string, defaultValue int64, evalCtx EvaluationContext) IntResolutionDetail {
+    // code to evaluate int
+}
+
+// ObjectEvaluation returns an object flag
+func (e MyFeatureProvider) ObjectEvaluation(flag string, defaultValue interface{}, evalCtx EvaluationContext) ResolutionDetail {
+    // code to evaluate object
+}
+
+// Hooks returns hooks
+func (e MyFeatureProvider) Hooks() []Hook {
+    // code to retrieve hooks
+}
+```
+
+See [here](/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=Provider&instant_search%5BrefinementList%5D%5Btechnology%5D%5B0%5D=Go) for a catalog of available providers.
+
+### Hooks
+
+Implement your own hook by conforming to the [Hook interface](https://github.com/open-feature/go-sdk/blob/doc-in-readme./pkg/openfeature/hooks.go).
+
+To satisfy the interface, all methods (`Before`/`After`/`Finally`/`Error`) need to be defined. To avoid defining empty functions
+make use of the `UnimplementedHook` struct (which already implements all the empty functions).
+
+```go
+type MyHook struct {
+  openfeature.UnimplementedHook
+}
+
+// overrides UnimplementedHook's Error function
+func (h MyHook) Error(hookContext openfeature.HookContext, err error, hookHints openfeature.HookHints) {
+	log.Println(err)
+}
+```
+
+Register the hook at the global, client, or invocation level.
+
+A list of available hooks can be found [here](/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=Hook&instant_search%5BrefinementList%5D%5Btechnology%5D%5B0%5D=Go).
+
+### Logging
+
+If not configured, the logger falls back to the standard Go log package at error level only.
+
+In order to avoid coupling to any particular logging implementation the SDK uses the structured logging [logr](https://github.com/go-logr/logr)
+API. This allows integration to any package that implements the layer between their logger and this API.
+Thankfully there are already [integration implementations](https://github.com/go-logr/logr#implementations-non-exhaustive)
+for many of the popular logger packages.
+
+```go
+var l logr.Logger
+l = integratedlogr.New() // replace with your chosen integrator
+
+openfeature.SetLogger(l) // set the logger at global level
+
+c := openfeature.NewClient("log").WithLogger(l) // set the logger at client level
+
+```
+
+[logr](https://github.com/go-logr/logr) uses incremental verbosity levels (akin to named levels but in integer form).
+The SDK logs `info` at level `0` and `debug` at level `1`. Errors are always logged.
+
