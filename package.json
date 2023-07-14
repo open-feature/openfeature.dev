@@ -118,7 +118,8 @@
     "lint:md": {
       "command": "markdownlint-cli2",
       "files": [
-        "**/*.md*"
+        "**/*.md*",
+        ".markdownlint-cli2.yaml"
       ],
       "output": []
     }
