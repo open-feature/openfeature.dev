@@ -9,12 +9,13 @@ export type EcosystemElement = {
   logo: ComponentType<SVGProps<SVGSVGElement>>;
   title: string;
   description: string;
-  technology: string;
-  type: string;
+  technology: Technology;
+  type: Type;
   vendorOfficial: boolean;
 };
 
 export type Technology = 'JavaScript' | 'Java' | 'Go' | 'PHP' | '.NET';
+
 
 export const TECHNOLOGY_COLOR_MAP: Record<Technology, string> = {
   JavaScript: 'bg-yellow-50 text-yellow-600 ring-yellow-500/10',
