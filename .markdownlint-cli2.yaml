@@ -30,5 +30,6 @@ ignores:
     - node_modules
     - external-content
     - docs/specification
+    - docs/reference/technologies/**/*.mdx
 
 fix: true
