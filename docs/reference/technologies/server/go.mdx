@@ -30,7 +30,8 @@ go get github.com/open-feature/go-sdk
 
 ### Software Bill of Materials (SBOM)
 
-The release workflow generates an SBOM (using [cyclonedx](https://github.com/CycloneDX/cyclonedx-gomod)) and pushes it to the release. It can be found as an asset named `bom.json` within a release.
+The release workflow generates an SBOM (using [cyclonedx](https://github.com/CycloneDX/cyclonedx-gomod)) and pushes it to the release.
+It can be found as an asset named `bom.json` within a release.
 
 ## Features
 
@@ -41,29 +42,30 @@ The release workflow generates an SBOM (using [cyclonedx](https://github.com/Cyc
 
 ## Usage
 
-To configure the SDK you'll need to add a provider to the `openfeature` global singleton. From there, you can generate a `Client` which is usable by your code.
+To configure the SDK you'll need to add a provider to the `openfeature` global singleton.
+From there, you can generate a `Client` which is usable by your code.
 While you'll likely want a provider for your specific backend, we've provided a `NoopProvider`, which simply returns the default passed in.
 
 ```go
 package main
 
 import (
-	"context"
-	"github.com/open-feature/go-sdk/pkg/openfeature"
+    "context"
+    "github.com/open-feature/go-sdk/pkg/openfeature"
 )
 
 func main() {
-	openfeature.SetProvider(openfeature.NoopProvider{})
-	client := openfeature.NewClient("app")
-	value, err := client.BooleanValue(
-		context.Background(), "v2_enabled", false, openfeature.EvaluationContext{},
-	)
+    openfeature.SetProvider(openfeature.NoopProvider{})
+    client := openfeature.NewClient("app")
+    value, err := client.BooleanValue(
+        context.Background(), "v2_enabled", false, openfeature.EvaluationContext{},
+    )
 }
 ```
 
 A list of available providers can be found [here](/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=Provider&instant_search%5BrefinementList%5D%5Btechnology%5D%5B0%5D=Go).
 
-For complete documentation, visit: https://openfeature.dev/docs/category/concepts
+For complete documentation, visit: <https://openfeature.dev/docs/category/concepts>
 
 ### Context-aware evaluation
 
@@ -101,7 +103,10 @@ boolValue, err := client.BooleanValue("boolFlag", false, evalCtx)
 
 ### Providers
 
-To develop a provider, you need to create a new project and include the OpenFeature SDK as a dependency. This can be a new repository or included in [the existing contrib repository](https://github.com/open-feature/go-sdk-contrib) available under the OpenFeature organization. Finally, you’ll then need to write the provider itself. This can be accomplished by implementing the `FeatureProvider` interface exported by the OpenFeature SDK.
+To develop a provider, you need to create a new project and include the OpenFeature SDK as a dependency.
+This can be a new repository or included in [the existing contrib repository](https://github.com/open-feature/go-sdk-contrib) available under the OpenFeature organization.
+Finally, you’ll then need to write the provider itself.
+This can be accomplished by implementing the `FeatureProvider` interface exported by the OpenFeature SDK.
 
 ```go
 package provider
@@ -151,7 +156,8 @@ See [here](/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=Provid
 
 Implement your own hook by conforming to the [Hook interface](https://github.com/open-feature/go-sdk/blob/doc-in-readme./pkg/openfeature/hooks.go).
 
-To satisfy the interface, all methods (`Before`/`After`/`Finally`/`Error`) need to be defined. To avoid defining empty functions
+To satisfy the interface, all methods (`Before`/`After`/`Finally`/`Error`) need to be defined.
+To avoid defining empty functions
 make use of the `UnimplementedHook` struct (which already implements all the empty functions).
 
 ```go
@@ -161,7 +167,7 @@ type MyHook struct {
 
 // overrides UnimplementedHook's Error function
 func (h MyHook) Error(hookContext openfeature.HookContext, err error, hookHints openfeature.HookHints) {
-	log.Println(err)
+    log.Println(err)
 }
 ```
 
@@ -174,7 +180,8 @@ A list of available hooks can be found [here](/ecosystem?instant_search%5Brefine
 If not configured, the logger falls back to the standard Go log package at error level only.
 
 In order to avoid coupling to any particular logging implementation the SDK uses the structured logging [logr](https://github.com/go-logr/logr)
-API. This allows integration to any package that implements the layer between their logger and this API.
+API.
+This allows integration to any package that implements the layer between their logger and this API.
 Thankfully there are already [integration implementations](https://github.com/go-logr/logr#implementations-non-exhaustive)
 for many of the popular logger packages.
 
@@ -189,5 +196,5 @@ c := openfeature.NewClient("log").WithLogger(l) // set the logger at client leve
 ```
 
 [logr](https://github.com/go-logr/logr) uses incremental verbosity levels (akin to named levels but in integer form).
-The SDK logs `info` at level `0` and `debug` at level `1`. Errors are always logged.
-
+The SDK logs `info` at level `0` and `debug` at level `1`.
+Errors are always logged.
