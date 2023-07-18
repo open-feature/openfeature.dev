@@ -7,7 +7,7 @@ export const OpenTelemetry: Hook = {
   technologies: {
     JavaScript: {
       vendorOfficial: false,
-      href: 'https://github.com/open-feature/java-sdk-contrib/tree/main/hooks/open-telemetry',
+      href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/hooks/open-telemetry',
     },
     Go: {
       vendorOfficial: false,
