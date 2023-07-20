@@ -58,7 +58,7 @@ const searchClient = getSearchClient(index);
 
 export default function Ecosystem() {
   return (
-    <Layout title="Ecosystem" description="OpenFeature Ecosystem">
+    <Layout title="SDK Matrix" description="OpenFeature SDK Matrix">
       <InstantSearch searchClient={searchClient} indexName="instant_search" routing={true}>
         <Configure hitsPerPage={SEARCH_ITEMS_PER_PAGE}></Configure>
         <ScrollTo>

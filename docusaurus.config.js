@@ -207,8 +207,8 @@ const config = {
             docsPluginId: 'specification',
           },
           {
-            to: '/ecosystem',
-            label: 'Ecosystem',
+            to: '/sdk-matrix',
+            label: 'SDK Matrix',
           },
           {
             type: 'doc',
