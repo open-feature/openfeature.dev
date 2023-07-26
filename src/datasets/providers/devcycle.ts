@@ -4,10 +4,12 @@ import { Provider } from '.';
 export const DevCycle: Provider = {
   name: 'DevCycle',
   logo: DevCycleSvg,
-  technologies: {
-    JavaScript: {
+  technologies: [
+    {
+      technology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://www.npmjs.com/package/@devcycle/openfeature-nodejs-provider',
+      category: ['Server-side'],
     },
-  },
+  ],
 };

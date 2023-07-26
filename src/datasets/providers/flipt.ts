@@ -4,10 +4,12 @@ import { Provider } from '.';
 export const Flipt: Provider = {
   name: 'Flipt',
   logo: FliptSvg,
-  technologies: {
-    Go: {
+  technologies: [
+    {
+      technology: 'Go',
       vendorOfficial: true,
       href: 'https://github.com/flipt-io/flipt-openfeature-provider-go',
+      category: ['Server-side'],
     },
-  },
+  ],
 };

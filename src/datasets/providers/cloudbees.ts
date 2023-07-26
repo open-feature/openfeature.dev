@@ -4,26 +4,30 @@ import { Provider } from '.';
 export const CloudBees: Provider = {
   name: 'CloudBees',
   logo: CloudBeesSvg,
-  technologies: {
-    JavaScript: {
+  technologies: [
+    {
+      technology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://github.com/rollout/cloudbees-openfeature-provider-node',
+      category: ['Server-side'],
     },
-    Go: {
+    {
+      technology: 'Go',
       vendorOfficial: true,
       href: 'https://github.com/rollout/cloudbees-openfeature-provider-go',
+      category: ['Server-side'],
     },
-    Java: {
+    {
+      technology: 'Java',
       vendorOfficial: true,
       href: 'https://github.com/rollout/cloudbees-openfeature-provider-java',
+      category: ['Server-side'],
     },
-    ['.NET']: {
-      vendorOfficial: true,
-      href: 'https://github.com/rollout/cloudbees-openfeature-provider-dotnet',
-    },
-    PHP: {
+    {
+      technology: 'PHP',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/php-sdk-contrib/tree/main/providers/CloudBees',
+      category: ['Server-side'],
     },
-  },
+  ],
 };

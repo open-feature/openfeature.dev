@@ -10,7 +10,7 @@ import { Goff } from './goff';
 import { LaunchDarkly } from './launchdarkly';
 import { PostHog } from './posthog';
 import { Split } from './split';
-import { EcosystemElement, Technology } from '..';
+import { Category, EcosystemElement, Technology } from '..';
 
 export const PROVIDERS: EcosystemElement[] = [
   CloudBees,
@@ -24,22 +24,22 @@ export const PROVIDERS: EcosystemElement[] = [
   PostHog,
   Split,
 ]
-  .map((i) => {
-    return Object.entries(i.technologies).map(([technology, { vendorOfficial, href }]) => {
+  .map((provider) => {
+    return provider.technologies.map(({ category, href, technology, vendorOfficial }): EcosystemElement => {
       return {
-        vendor: i.name,
-        title: `${i.name} Provider`,
-        description:
-          !i.description
-            ? createDefaultDescription(i.name, vendorOfficial)
-            : typeof i.description === 'string'
-            ? i.description
-            : i.description(vendorOfficial),
+        vendor: provider.name,
+        title: `${provider.name} Provider`,
+        description: !provider.description
+          ? createDefaultDescription(provider.name, vendorOfficial)
+          : typeof provider.description === 'string'
+          ? provider.description
+          : provider.description(vendorOfficial),
         type: 'Provider',
-        logo: i.logo,
+        logo: provider.logo,
         href,
         technology,
         vendorOfficial,
+        category,
       };
     });
   })
@@ -54,6 +54,6 @@ function createDefaultDescription(vendor: string, official: boolean): string {
 export type Provider = {
   name: string;
   logo: ComponentType<SVGProps<SVGSVGElement>>;
-  technologies: Partial<Record<Technology, { vendorOfficial: boolean; href: string }>>;
+  technologies: Array<{ technology: Technology; vendorOfficial: boolean; href: string; category: Category[] }>;
   description?: string | ((vendorSupported: boolean) => string);
 };

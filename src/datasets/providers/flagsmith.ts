@@ -4,14 +4,18 @@ import { Provider } from '.';
 export const Flagsmith: Provider = {
   name: 'Flagsmith',
   logo: FlagsmithSvg,
-  technologies: {
-    Go: {
+  technologies: [
+    {
+      technology: 'Go',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/providers/flagsmith',
+      category: ['Server-side'],
     },
-    Java: {
+    {
+      technology: 'Java',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/java-sdk-contrib/tree/main/providers/flagsmith',
+      category: ['Server-side'],
     },
-  },
+  ],
 };

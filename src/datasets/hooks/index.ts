@@ -2,19 +2,20 @@ import type { ComponentType, SVGProps } from 'react';
 import { OpenTelemetry } from './opentelemetry';
 import { Validation } from './validation';
 import { Datadog } from './datadog';
-import { EcosystemElement, Technology } from '..';
+import { Category, EcosystemElement, Technology } from '..';
 
 export const HOOKS: EcosystemElement[] = [OpenTelemetry, Validation, Datadog]
-  .map((i) => {
-    return Object.entries(i.technologies).map(([technology, { vendorOfficial, href }]) => {
+  .map((hook) => {
+    return hook.technologies.map(({ vendorOfficial, technology, href, category }): EcosystemElement => {
       return {
-        title: `${i.name} Hook`,
-        description: typeof i.description === 'string' ? i.description : i.description(vendorOfficial),
+        title: `${hook.name} Hook`,
+        description: typeof hook.description === 'string' ? hook.description : hook.description(vendorOfficial),
         type: 'Hook',
-        logo: i.logo,
+        logo: hook.logo,
         href,
         technology,
         vendorOfficial,
+        category,
       };
     });
   })
@@ -23,6 +24,6 @@ export const HOOKS: EcosystemElement[] = [OpenTelemetry, Validation, Datadog]
 export type Hook = {
   name: string;
   logo: ComponentType<SVGProps<SVGSVGElement>>;
-  technologies: Partial<Record<Technology, { vendorOfficial: boolean; href: string }>>;
+  technologies: Array<{ technology: Technology; vendorOfficial: boolean; href: string; category: Category[] }>;
   description: string | ((vendorSupported: boolean) => string);
 };

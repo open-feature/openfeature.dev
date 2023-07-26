@@ -4,10 +4,12 @@ import { Provider } from '.';
 export const PostHog: Provider = {
   name: 'PostHog',
   logo: PostHogSvg,
-  technologies: {
-    JavaScript: {
+  technologies: [
+    {
+      technology: 'JavaScript',
       vendorOfficial: false,
       href: 'https://www.npmjs.com/package/@tapico/node-openfeature-posthog',
+      category: ['Server-side'],
     },
-  },
+  ],
 };
