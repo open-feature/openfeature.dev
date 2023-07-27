@@ -16,6 +16,7 @@ import TabItem from '@theme/TabItem';
 This walk-through teaches you the basics of using OpenFeature with PHP using Laravel.
 
 You'll learn how to:
+
 - Install the OpenFeature PHP SDK
 - Install and configure an OpenFeature provider
 - Perform basic feature flagging
@@ -66,7 +67,8 @@ use Illuminate\Support\Facades\Route;
 + use OpenFeature\OpenFeatureAPI;
 ```
 
-The client can now be used to get a feature flag value. In this case, we'll get a boolean value using the welcome-message flag key.
+The client can now be used to get a feature flag value.
+In this case, we'll get a boolean value using the welcome-message flag key.
 
 The second argument is the fallback value, which is returned if there's abnormal behavior.
 
@@ -103,14 +105,14 @@ If all goes as planned, you should see the message "Hello, World!" in glorious m
 
 <FlagdContent />
 
-Also, we have to install PHP flagd provider. Open up your terminal and write this command.
+Also, we have to install PHP flagd provider.
+Open up your terminal and write this command.
 
 ```sh
 composer require open-feature/flagd-provider
 ```
 
 Now let's make the required code changes in our application.
-
 
 Now, update `routes/api.php` to import the `flagd provider`.
 
