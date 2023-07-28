@@ -54,6 +54,7 @@ This command generates static content into the `build` directory and can be serv
 
 The SDK docs can be updated by running `yarn update:sdk-docs`.
 This will fetch the READMEs from all the configured SDK repos and automatically run transformations on the content.
+A new SDK can be added at `scripts/sdks.ts`.
 
 ### Deployment
 
