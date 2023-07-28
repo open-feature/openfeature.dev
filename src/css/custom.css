@@ -46,6 +46,11 @@
   text-align: left;
 }
 
+/* Add some space between github badges */
+.github-badges>a {
+  margin-left: 2px;
+  margin-right: 2px;
+}
 /* center the footer items' content */
 .footer__item {
   text-align: center;
