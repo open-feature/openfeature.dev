@@ -59,10 +59,12 @@ const removeExtraNewlinesAtTop = (content: string): string => {
  * Add header information to the content.
  */
 const addHeader =
-  (sdk: { name: string; url: string; repo: string }) =>
+  (sdk: { name: string; url: string; repo: string; fileName: string }) =>
   (content: string): string => {
     return `---
-title: ${sdk.name}
+title: OpenFeature ${sdk.name} SDK
+slug: ${sdk.fileName}
+sidebar_label: ${sdk.name}
 ---
 
 <!--
@@ -131,7 +133,7 @@ export const modifyContent = (sdks: SDK[]) => {
         removeComments,
         removeExtraNewlinesBetweenSections,
         removeExtraNewlinesAtTop,
-        addHeader({ name: sdk.name, repo: sdk.repo, url }),
+        addHeader({ name: sdk.name, repo: sdk.repo, url, fileName }),
         replaceLinks({ url, branch }),
       ].reduce((currentContent, processor) => processor(currentContent), initialContent),
     };
