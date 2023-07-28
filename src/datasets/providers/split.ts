@@ -4,26 +4,36 @@ import { Provider } from '.';
 export const Split: Provider = {
   name: 'Split',
   logo: SplitSvg,
-  technologies: {
-    JavaScript: {
+  technologies: [
+    {
+      technology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://github.com/splitio/split-openfeature-provider-js',
+      category: ['Server-side'],
     },
-    Go: {
+    {
+      technology: 'Go',
       vendorOfficial: true,
-      href: 'https://github.com/splitio/split-openfeature-provider-go',
+      href: 'https://github.com/splitio/split-openfeature-provider-g',
+      category: ['Server-side'],
     },
-    Java: {
+    {
+      technology: 'Java',
       vendorOfficial: true,
       href: 'https://github.com/splitio/split-openfeature-provider-java',
+      category: ['Server-side'],
     },
-    ['.NET']: {
+    {
+      technology: '.NET',
       vendorOfficial: true,
       href: 'https://github.com/splitio/split-openfeature-provider-dotnet',
+      category: ['Server-side'],
     },
-    PHP: {
+    {
+      technology: 'PHP',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/php-sdk-contrib/tree/main/providers/Split',
+      category: ['Server-side'],
     },
-  },
+  ],
 };

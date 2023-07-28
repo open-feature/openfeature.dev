@@ -5,6 +5,7 @@ import type { ComponentType, SVGProps } from 'react';
 export const ECOSYSTEM: EcosystemElement[] = [...PROVIDERS, ...HOOKS];
 
 export type EcosystemElement = {
+  vendor?: string;
   href: string;
   logo: ComponentType<SVGProps<SVGSVGElement>>;
   title: string;
@@ -12,9 +13,11 @@ export type EcosystemElement = {
   technology: string;
   type: string;
   vendorOfficial: boolean;
+  category: Category[];
 };
 
 export type Technology = 'JavaScript' | 'Java' | 'Go' | 'PHP' | '.NET';
+export type Category = 'Server-side' | 'Client-side';
 
 export const TECHNOLOGY_COLOR_MAP: Record<Technology, string> = {
   JavaScript: 'bg-yellow-50 text-yellow-600 ring-yellow-500/10',

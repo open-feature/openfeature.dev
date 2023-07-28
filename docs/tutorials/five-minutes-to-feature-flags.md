@@ -12,7 +12,9 @@ This tutorial uses a simple [express][express] server, but if you're familiar wi
 
 ## Setup
 
-Before we jump into the tutorial, let's quickly get everything setup. You'll need [Git](https://git-scm.com/) and [NodeJS](https://nodejs.org/) version 16 or newer. After that, run the following command from your favorite terminal.
+Before we jump into the tutorial, let's quickly get everything setup.
+You'll need [Git](https://git-scm.com/) and [NodeJS](https://nodejs.org/) version 16 or newer.
+After that, run the following command from your favorite terminal.
 
 ```bash
 git clone https://github.com/open-feature/five-minutes-to-feature-flags.git && \
@@ -64,11 +66,13 @@ The output should look like this:
 Hello, world!
 ```
 
-Looks good! Go ahead and stop the server using `Ctrl` + `C`.
+Looks good!
+Go ahead and stop the server using `Ctrl` + `C`.
 
 ## With cows, please
 
-Let’s imagine that we’re adding a new, experimental feature to this hello world service. We’re going to upgrade the format of the server’s response, using [cowsay][cowsay]!
+Let’s imagine that we’re adding a new, experimental feature to this hello world service.
+We’re going to upgrade the format of the server’s response, using [cowsay][cowsay]!
 
 We are, however, not 100% sure that this cowsay formatting is going to work out, so for now we’ll protect it behind a conditional:
 
@@ -108,7 +112,9 @@ node 02_basic_flags.js
 
 By default, the service continues to work exactly as it did before.
 
-Next change `withCow` to `true` using your favorite text editor and restart the node server. Now the response comes in an exciting new format. To try it out, enter the following command into the terminal:
+Next change `withCow` to `true` using your favorite text editor and restart the node server.
+Now the response comes in an exciting new format.
+To try it out, enter the following command into the terminal:
 
 ```bash
 curl http://localhost:3333
@@ -139,7 +145,9 @@ That `withCow` boolean and its accompanying conditional check are a very basic f
 
 ## Introducing OpenFeature
 
-Managing these flags by changing hardcoded constants gets old fast though. A team that uses feature flags in any significant way soon reaches for a feature flagging framework. Let’s move in that direction by updating the service to use OpenFeature.
+Managing these flags by changing hardcoded constants gets old fast though.
+A team that uses feature flags in any significant way soon reaches for a feature flagging framework.
+Let’s move in that direction by updating the service to use OpenFeature.
 
 ```js {4,13,16} title="03_openfeature.js"
 import express from 'express';
@@ -170,7 +178,9 @@ app.listen(3333, () => {
 });
 ```
 
-We’ve imported the `@openfeature/js-sdk` NPM module, and used it to create an OpenFeature client called `featureFlags`. We then call `getBooleanValue` on that client to find out if the `with-cows` feature flag is true or false. Depending on what we get back we either show the new cow-based output, or the traditional plaintext format.
+We’ve imported the `@openfeature/js-sdk` NPM module, and used it to create an OpenFeature client called `featureFlags`.
+We then call `getBooleanValue` on that client to find out if the `with-cows` feature flag is true or false.
+Depending on what we get back we either show the new cow-based output, or the traditional plaintext format.
 
 Start the server with:
 
@@ -192,7 +202,8 @@ Hello, world!
 
 :::note
 
-When we call `getBooleanValue` we also provide a default value of false. Since we haven’t configured the OpenFeature SDK with a _feature flag provider_ yet, it will always return that default value.
+When we call `getBooleanValue` we also provide a default value of false.
+Since we haven’t configured the OpenFeature SDK with a _feature flag provider_ yet, it will always return that default value.
 
 :::
 
@@ -200,7 +211,8 @@ When we call `getBooleanValue` we also provide a default value of false. Since w
 
 OpenFeature becomes useful when we connect our OpenFeature SDK to a full-fledged feature flagging system - a commercial product, an open-source offering, or perhaps a custom internal tool - so that it can provide flagging decisions from that system.
 
-Connecting OpenFeature to one of these backends is very straightforward, but it does require that we have an actual flagging framework set up. For now, let’s just configure a really, really simple provider that doesn’t need a backend:
+Connecting OpenFeature to one of these backends is very straightforward, but it does require that we have an actual flagging framework set up.
+For now, let’s just configure a really, really simple provider that doesn’t need a backend:
 
 ```js {5,16-22} title="04_openfeature_with_provider.js"
 import express from 'express';
@@ -269,7 +281,8 @@ The output should look like this:
                 ||     ||
 ```
 
-Next change the `with-cows` value to false and restart the node server. We will now see the more boring response when entering the following command into the terminal:
+Next change the `with-cows` value to false and restart the node server.
+We will now see the more boring response when entering the following command into the terminal:
 
 ```bash
 curl http://localhost:3333
@@ -283,7 +296,9 @@ Hello, world!
 
 ## Moving to a full feature-flagging system
 
-We’ve gotten started with OpenFeature using a very simple but extremely limited provider. The beauty of OpenFeature is that we can transition to a real feature-flagging system when we’re ready, without any change to how we evaluate flags. It’s as simple as configuring a different provider.
+We’ve gotten started with OpenFeature using a very simple but extremely limited provider.
+The beauty of OpenFeature is that we can transition to a real feature-flagging system when we’re ready, without any change to how we evaluate flags.
+It’s as simple as configuring a different provider.
 
 **For example:**
 
@@ -346,11 +361,13 @@ We can get started with feature flags with low investment and low risk, and once
 
 ## Next steps
 
-To learn more about OpenFeature, check out the documentation [here](/docs/reference/intro). Specifically, you can read more about how the [evaluation API works](/docs/reference/concepts/evaluation-api/), what [tech stacks are supported](/docs/reference/technologies/), or read [more tutorials](/docs/category/getting-started/) about using OpenFeature in a variety of tech stacks.
+To learn more about OpenFeature, check out the documentation [here](/docs/reference/intro).
+Specifically, you can read more about how the [evaluation API works](/docs/reference/concepts/evaluation-api/), what [tech stacks are supported](/docs/reference/technologies/), or read [more tutorials](/docs/category/getting-started/) about using OpenFeature in a variety of tech stacks.
 
 More hands-on tutorials are available on the [OpenFeature Killercoda page](https://killercoda.com/open-feature).
 
-We strive to provide a welcoming, open community. If you have any questions - or just want to nerd out about feature flags - the `#OpenFeature` channel in the [CNCF Slack][cncf-slack] is the place for you.
+We strive to provide a welcoming, open community.
+If you have any questions - or just want to nerd out about feature flags - the `#OpenFeature` channel in the [CNCF Slack][cncf-slack] is the place for you.
 
 [express]: https://expressjs.com/
 [cowsay]: https://www.npmjs.com/package/cowsay

@@ -31,6 +31,11 @@ const options = {
       hide_zero_doc_count: true,
       conjunction: false,
     },
+    category: {
+      title: 'category',
+      size: 2,
+      conjunction: true,
+    },
     technology: {
       title: 'technologies',
       size: 10,
@@ -110,6 +115,20 @@ export default function Ecosystem() {
                     />
                   </div>
                   <div className="border-0 border-solid border-t border-gray-200 py-4">
+                    <span className="font-medium text-content">Category</span>
+                    <RefinementList
+                      attribute="category"
+                      sortBy={['count:desc']}
+                      classNames={{
+                        count:
+                          'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
+                        list: 'list-none m-0 p-0',
+                        checkbox: 'border-solid h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500',
+                        labelText: 'ml-3 text-sm text-content',
+                      }}
+                    />
+                  </div>
+                  <div className="border-0 border-solid border-t border-gray-200 py-4">
                     <span className="font-medium text-content">Technology</span>
                     <RefinementList
                       attribute="technology"
@@ -143,8 +162,6 @@ export default function Ecosystem() {
                       attribute="vendorOfficial"
                       label="Vendor supported"
                       classNames={{
-                        count:
-                          'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
                         checkbox: 'border-solid h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500',
                         labelText: 'ml-3 text-sm text-content',
                       }}

@@ -4,26 +4,42 @@ import { Provider } from '.';
 export const Flagd: Provider = {
   name: 'FlagD',
   logo: FlagdSvg,
-  technologies: {
-    JavaScript: {
+  technologies: [
+    {
+      technology: 'JavaScript',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/flagd',
+      category: ['Server-side'],
     },
-    Go: {
+    {
+      technology: 'JavaScript',
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/flagd-web',
+      category: ['Client-side'],
+    },
+    {
+      technology: 'Go',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/providers/flagd',
+      category: ['Server-side'],
     },
-    Java: {
+    {
+      technology: 'Java',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/java-sdk-contrib/tree/main/providers/flagd',
+      category: ['Server-side'],
     },
-    ['.NET']: {
+    {
+      technology: '.NET',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.Flagd',
+      category: ['Server-side'],
     },
-    PHP: {
+    {
+      technology: 'PHP',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/php-sdk-contrib/tree/main/providers/Flagd',
+      category: ['Server-side'],
     },
-  },
+  ],
 };
