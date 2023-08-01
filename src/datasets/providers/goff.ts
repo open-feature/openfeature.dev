@@ -12,6 +12,12 @@ export const Goff: Provider = {
       category: ['Server-side'],
     },
     {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/go-feature-flag-web',
+      category: ['Client-side'],
+    },
+    {
       technology: 'Go',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/providers/go-feature-flag',
