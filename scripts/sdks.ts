@@ -6,15 +6,8 @@ const SDKS: SDK[] = [
     name: 'Go',
     type: 'server',
     repo: 'go-sdk',
-    // TODO replace once this branch is merged.
-    branch: 'doc-in-readme',
+    branch: 'main',
   },
-  // TODO enable once the readme format is agreed upon
-  // {
-  //   name: 'Java',
-  //   type: 'server',
-  //   repo: 'java-sdk',
-  // },
 ];
 
 export const sdks = {
