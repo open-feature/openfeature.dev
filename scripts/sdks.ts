@@ -12,7 +12,7 @@ const SDKS: SDK[] = [
     name: 'JavaScript',
     type: 'server',
     repo: 'js-sdk',
-    branch: 'update-readme',
+    branch: 'main',
     folder: '/packages/server',
   },
 ];
