@@ -20,8 +20,6 @@ const presetClassicOptions: PresetClassicOptions = {
   blog: {
     showReadingTime: true,
     remarkPlugins: [mdxMermaid],
-    // Please change this to your repo.
-    // Remove this to remove the "edit this page" links.
     editUrl: 'https://github.com/open-feature/openfeature.dev/edit/main/',
     blogSidebarCount: 'ALL',
     blogSidebarTitle: 'All Blog Posts',
