@@ -1,3 +1,5 @@
+import { normalize } from 'node:path';
+
 import { SDK } from './types';
 
 const OPEN_FEATURE_URL = 'https://openfeature.dev';
@@ -79,26 +81,27 @@ Last updated at ${new Date()}
 ${content}`;
   };
 
-const replaceLinks = (repo: { url: string; branch: string }) => {
+const replaceLinks = (repo: { url: string; branch: string; folder?: string }) => {
   return (content: string) => {
-    const replace = (processRelativeUrl: (url: string, separator: string) => string) => (url: string) => {
+    const replace = (processRelativeUrl: (url: string) => string) => (url: string) => {
       try {
         new URL(url);
         return url.replace(OPEN_FEATURE_URL, '');
       } catch {
-        // Replace relative links that start with `./` or `/`
-        const separator = /^\.?\//.test(url) ? '' : '/';
-        return processRelativeUrl(url, separator);
+        return processRelativeUrl(url);
       }
     };
 
-    const replaceMarkdownLink = replace((url, separator) => {
+    const replaceMarkdownLink = replace((url) => {
       if (url.startsWith('#')) {
         return url;
       } else if (url.startsWith(OPEN_FEATURE_URL)) {
         return url.replace(OPEN_FEATURE_URL, '');
       } else {
-        return `${repo.url}/blob/${repo.branch}${separator}${url}`;
+        const folder = repo.folder ?? '';
+        // Properly constructs the path even if it's relative.
+        const normalizedPath = normalize(`${repo.branch}/${folder}/${url}`);
+        return `${repo.url}/blob/${normalizedPath}`;
       }
     });
 
@@ -134,7 +137,7 @@ export const modifyContent = (sdks: SDK[]) => {
         removeExtraNewlinesBetweenSections,
         removeExtraNewlinesAtTop,
         addHeader({ name: sdk.name, repo: sdk.repo, url, fileName }),
-        replaceLinks({ url, branch }),
+        replaceLinks({ url, branch, folder: sdk.folder }),
       ].reduce((currentContent, processor) => processor(currentContent), initialContent),
     };
   };

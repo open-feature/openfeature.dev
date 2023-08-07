@@ -30,4 +30,8 @@ export type SDK = {
    * The git branch that should be used when fetching the readme.
    */
   branch?: string;
+  /**
+   * The folder where the README can be found.
+   */
+  folder?: string;
 };

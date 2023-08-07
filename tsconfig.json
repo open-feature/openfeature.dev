@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "jsx": "react",
     "lib": [
       "ES2021"
     ],
