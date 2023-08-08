@@ -1,3 +1,6 @@
 node_modules
 dist
 *.js
+
+# Auto-generated disclaimer causes an eslint parsing error 
+docs/reference/technologies/**/*.mdx
