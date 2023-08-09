@@ -1,0 +1,88 @@
+---
+sidebar_position: 1
+id: events
+---
+
+# Events
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Events enable the ability to react to state changes in the provider or underlying flag management system.
+These include changes in provider readiness, error status, or perhaps most interestingly, flag configuration changes.
+
+## Event Handlers
+
+Event handlers can be attached to a `client` or to the global API object, for any [provider event type](/specification/types#provider-events).
+Handlers attached to the global API object run when _any_ provider emits the associated events; this makes global handlers ideal for configuration troubleshooting, monitoring and other cross-cutting concerns.
+Handlers attached to a client will run only when the provider bound with that client emits the associated event; this makes `client` handlers ideal for reacting to flag-state changes in an application domain logic.
+
+Handlers are passed an [event details](/specification/types#event-details) structure, which contains data about the event, including a list of keys that have changed (if applicable and available).
+
+<!-- TODO: add more languages when completed -->
+<Tabs groupId="code">
+<TabItem value="js" label="TypeScript">
+
+```ts
+// attach a `PROVIDER_READY` handler
+client.addHandler(ProviderEvents.Ready, (eventDetails: EventDetails) => {
+  // do something when the provider is ready
+});
+
+// attach a `PROVIDER_CONFIGURATION_CHANGED` handler
+client.addHandler(ProviderEvents.ConfigurationChanged, (eventDetails: EventDetails) => {
+  // do something when flags settings have changed
+});
+
+// attach a `PROVIDER_ERROR` handler
+client.addHandler(ProviderEvents.Error, (eventDetails: EventDetails) => {
+  // do something when the provider has entered an error state
+});
+
+// attach a `PROVIDER_STALE` handler
+client.addHandler(ProviderEvents.Stale, (eventDetails: EventDetails) => {
+  // do something when the provider has gone stale
+});
+
+// handlers can also be added globally
+OpenFeature.addHandler(ProviderEvents.Ready, (eventDetails: EventDetails) => {
+  // do something when the provider is ready
+});
+```
+
+</TabItem>
+</Tabs>
+
+## Event Types
+
+See [event types](/specification/types#provider-events) specification.
+
+### PROVIDER_READY
+
+The provider is ready to perform flag evaluations.
+
+_Application authors_ may wish to wait to evaluate flags until the provider has fully started.
+In that case, they can await the `PROVIDER_READY` event before evaluating any flags.
+This can be especially useful for hiding UI elements or otherwise deferring evaluation until associated flags can be resolved accurately.
+
+### PROVIDER_CONFIGURATION_CHANGED
+
+A change was made to the backend flag configuration.
+
+If the flag management system supports it, providers may emit a `PROVIDER_CONFIGURATION_CHANGED` event signifying that flag configurations have changed.
+This might mean the value of a flag (or flags) have changed, or that a rule has been updated.
+Generally, the associated event details will indicate which flag (or flags) have been changed with the `flags changed` field.
+
+### PROVIDER_ERROR
+
+The provider signalled an error.
+
+If a provider becomes unavailable, evaluations will typically default.
+Handlers associated with `PROVIDER_ERROR` events can be used to alert monitoring systems about the provider failure, or enable custom fallback mechanisms.
+
+### PROVIDER_STALE
+
+The provider's cached state is not longer valid and may not be up-to-date with the source of truth.
+
+Some providers maintain a connection to a management system, but are also tolerate of disconnection.
+The `PROVIDER_STALE` indicates this situation.

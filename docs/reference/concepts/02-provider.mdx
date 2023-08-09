@@ -28,6 +28,8 @@ They're globally registered and a change affects both new and existing OpenFeatu
   </figcaption>
 </figure>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DU9f1PinQU8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Implementing Providers
 
 ### Getting started
@@ -73,12 +75,15 @@ An example of what it could look like in NPM: `@openfeature/flagd-provider`
 <TabItem value="js" label="TypeScript">
 
 ```ts
-import { Provider, ResolutionDetails, EvaluationContext, JsonValue } from '@openfeature/js-sdk';
+import { Provider, ResolutionDetails, EvaluationContext, JsonValue, OpenFeatureEventEmitter } from '@openfeature/js-sdk';
 
 export class MyFeatureProvider implements Provider {
   readonly metadata = {
     name: 'My Feature Provider',
   } as const;
+
+  // emitter for provider events
+  events = new OpenFeatureEventEmitter();
 
   resolveBooleanEvaluation(
     flagKey: string,
