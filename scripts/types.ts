@@ -1,10 +1,8 @@
-import type { Technology } from '@site/src/datasets';
-
 export type SDK = {
   /**
    * The name of the technology used for the SDK.
    */
-  name: Technology;
+  name: string;
   /**
    * The name used for the generated file.
    *

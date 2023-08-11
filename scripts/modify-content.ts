@@ -116,7 +116,8 @@ const replaceLinks = (repo: { url: string; branch: string; folder?: string }) =>
  */
 export const modifyContent = (sdks: SDK[]) => {
   return (file: string, initialContent: string): { filename: string; content } => {
-    const sdk = sdks.find((sdk) => file.startsWith(`${sdk.repo}/${sdk.branch ?? DEFAULT_BRANCH}`));
+    console.log('file', file);
+    const sdk = sdks.find((sdk) => file.startsWith(`${sdk.repo}/${sdk.branch ?? DEFAULT_BRANCH}${sdk.folder ?? ''}/`));
 
     if (!sdk) {
       throw new Error(`Unable to modify content for ${sdk.repo}`);
