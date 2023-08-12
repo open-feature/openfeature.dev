@@ -29,8 +29,8 @@ import { faSquareJs } from '@fortawesome/free-brands-svg-icons';
 import { faPhp } from '@fortawesome/free-brands-svg-icons';
 
 function FeaturesZigZag() {
-  const { isDarkTheme } = useColorMode();
-  const iconColor = isDarkTheme ? '#e3e3e3' : '#1c1e21';
+  const iconColor = useColorMode().colorMode === 'dark' ? '#e3e3e3' : '#1c1e21';
+
 
   return (
     <section>
