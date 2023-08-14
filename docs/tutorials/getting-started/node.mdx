@@ -123,9 +123,10 @@ npm install @openfeature/js-sdk
 
 Update `index.js` to import the SDK.
 
-```diff
+```js
 const express = require('express');
-+ const { OpenFeature } = require('@openfeature/js-sdk');
+// diff-add 
+const { OpenFeature } = require('@openfeature/js-sdk');
 ```
 
 </TabItem>
@@ -134,9 +135,10 @@ const express = require('express');
 
 Update `index.ts` to import the SDK.
 
-```diff
+```ts
 import express from "express";
-+ import { OpenFeature } from "@openfeature/js-sdk";
+// diff-add
+import { OpenFeature } from "@openfeature/js-sdk";
 ```
 
 </TabItem>
@@ -144,10 +146,10 @@ import express from "express";
 
 Once you've imported `OpenFeature`, a new client can be created.
 
-```diff
+```js
 const port = 8080;
-
-+ const client = OpenFeature.getClient();
+// diff-add
+const client = OpenFeature.getClient();
 ```
 
 The client can now be used to get a feature flag value.
@@ -155,18 +157,23 @@ In this case, we'll get a `boolean` value using the `welcome-message` [flag key]
 
 The second argument is the fallback value, which is returned if there's abnormal behavior.
 
-```diff
-- app.get("/", (_, res) => {
+```js
+// diff-remove
+app.get("/", (_, res) => {
+// diff-add-block-start
 + app.get("/", async (_, res) => {
 +   const showWelcomeMessage = await client.getBooleanValue("welcome-message", false);
 +   if (showWelcomeMessage) {
 +     res.send("Express + TypeScript + OpenFeature Server");
 +   } else {
+// diff-add-block-end
+// diff-remove
 -   res.send("Express + TypeScript Server");
+// diff-add-block-start
 +     res.send("Express + TypeScript Server");
 +   }
+// diff-add-block-end
 });
-
 ```
 
 ### Step 4: Run the application
@@ -216,9 +223,10 @@ npm install @openfeature/flagd-provider
 
 Now, update `index.js` to import the `flagd provider`.
 
-```diff
+```js
 const { OpenFeature } = require('@openfeature/js-sdk');
-+ const { FlagdProvider } = require('@openfeature/flagd-provider');
+// diff-add
+const { FlagdProvider } = require('@openfeature/flagd-provider');
 ```
 
 </TabItem>
@@ -227,9 +235,10 @@ const { OpenFeature } = require('@openfeature/js-sdk');
 
 Now, update `index.ts` to import the `flagd provider`.
 
-```diff
+```ts
 import { OpenFeature } from "@openfeature/js-sdk";
-+ import { FlagdProvider } from "@openfeature/flagd-provider";
+// diff-add
+import { FlagdProvider } from "@openfeature/flagd-provider";
 ```
 
 </TabItem>
@@ -237,10 +246,11 @@ import { OpenFeature } from "@openfeature/js-sdk";
 
 Finally, we need to register the provider with OpenFeature.
 
-```diff
+```js
 const port = 8080;
 
-+ OpenFeature.setProvider(new FlagdProvider());
+// diff-add
+OpenFeature.setProvider(new FlagdProvider());
 const client = OpenFeature.getClient();
 ```
 
