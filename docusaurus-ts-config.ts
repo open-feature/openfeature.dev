@@ -317,6 +317,13 @@ const config: Config = {
       },
     ],
     'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-ZG0JSPYJXZ',
+        anonymizeIP: true,
+      },
+    ],
   ],
   themeConfig,
 };

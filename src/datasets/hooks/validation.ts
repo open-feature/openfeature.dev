@@ -10,13 +10,13 @@ export const Validation: Hook = {
       technology: 'Go',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/hooks/validator',
-      category: ['Server-side'],
+      category: ['Server'],
     },
     {
       technology: 'PHP',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/php-sdk-contrib/tree/main/hooks/Validators',
-      category: ['Server-side'],
+      category: ['Server'],
     },
   ],
 };
