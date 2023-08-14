@@ -161,17 +161,17 @@ The second argument is the fallback value, which is returned if there's abnormal
 // diff-remove
 app.get("/", (_, res) => {
 // diff-add-block-start
-+ app.get("/", async (_, res) => {
-+   const showWelcomeMessage = await client.getBooleanValue("welcome-message", false);
-+   if (showWelcomeMessage) {
-+     res.send("Express + TypeScript + OpenFeature Server");
-+   } else {
+app.get("/", async (_, res) => {
+  const showWelcomeMessage = await client.getBooleanValue("welcome-message", false);
+  if (showWelcomeMessage) {
+    res.send("Express + TypeScript + OpenFeature Server");
+  } else {
 // diff-add-block-end
 // diff-remove
--   res.send("Express + TypeScript Server");
+  res.send("Express + TypeScript Server");
 // diff-add-block-start
-+     res.send("Express + TypeScript Server");
-+   }
+    res.send("Express + TypeScript Server");
+  }
 // diff-add-block-end
 });
 ```
