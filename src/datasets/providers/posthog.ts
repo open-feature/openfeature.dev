@@ -9,7 +9,7 @@ export const PostHog: Provider = {
       technology: 'JavaScript',
       vendorOfficial: false,
       href: 'https://www.npmjs.com/package/@tapico/node-openfeature-posthog',
-      category: ['Server-side'],
+      category: ['Server'],
     },
   ],
 };

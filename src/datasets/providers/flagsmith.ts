@@ -9,13 +9,13 @@ export const Flagsmith: Provider = {
       technology: 'Go',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/providers/flagsmith',
-      category: ['Server-side'],
+      category: ['Server'],
     },
     {
       technology: 'Java',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/java-sdk-contrib/tree/main/providers/flagsmith',
-      category: ['Server-side'],
+      category: ['Server'],
     },
   ],
 };

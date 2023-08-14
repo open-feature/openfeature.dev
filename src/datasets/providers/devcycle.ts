@@ -9,7 +9,7 @@ export const DevCycle: Provider = {
       technology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://www.npmjs.com/package/@devcycle/openfeature-nodejs-provider',
-      category: ['Server-side'],
+      category: ['Server'],
     },
   ],
 };

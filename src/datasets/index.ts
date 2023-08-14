@@ -17,7 +17,7 @@ export type EcosystemElement = {
 };
 
 export type Technology = 'JavaScript' | 'Java' | 'Go' | 'PHP' | '.NET';
-export type Category = 'Server-side' | 'Client-side';
+export type Category = 'Server' | 'Client';
 
 
 export const TECHNOLOGY_COLOR_MAP: Record<Technology, string> = {
