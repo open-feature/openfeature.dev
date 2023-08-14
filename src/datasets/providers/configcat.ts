@@ -9,13 +9,13 @@ export const ConfigCat: Provider = {
       technology: 'JavaScript',
       vendorOfficial: false,
       href: 'https://www.npmjs.com/package/@openfeature/config-cat-provider',
-      category: ['Server-side'],
+      category: ['Server'],
     },
     {
       technology: 'Go',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/providers/configcat',
-      category: ['Server-side'],
+      category: ['Server'],
     },
   ],
 };

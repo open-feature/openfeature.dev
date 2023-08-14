@@ -9,7 +9,7 @@ export const Flipt: Provider = {
       technology: 'Go',
       vendorOfficial: true,
       href: 'https://github.com/flipt-io/flipt-openfeature-provider-go',
-      category: ['Server-side'],
+      category: ['Server'],
     },
   ],
 };

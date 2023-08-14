@@ -10,7 +10,7 @@ export const Datadog: Hook = {
       technology: 'PHP',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/php-sdk-contrib/tree/main/hooks/DDTrace',
-      category: ['Server-side'],
+      category: ['Server'],
     },
   ],
 };
