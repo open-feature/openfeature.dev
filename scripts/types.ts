@@ -11,6 +11,12 @@ export type SDK = {
    */
   filename?: string;
   /**
+   * The slug used to identify the page in Docusaurus.
+   *
+   * @defaults filename
+   */
+  slug?: string;
+  /**
    * The file extension used for the generated file.
    *
    * @default mdx

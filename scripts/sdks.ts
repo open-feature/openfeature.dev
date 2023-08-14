@@ -10,8 +10,8 @@ const SDKS: SDK[] = [
   },
   {
     name: 'Node.js',
-    // The file name also controls the slug used by Docusaurus
     filename: 'javascript',
+    slug: 'javascript',
     type: 'server',
     repo: 'js-sdk',
     branch: 'main',
@@ -20,6 +20,7 @@ const SDKS: SDK[] = [
   {
     name: 'Web',
     filename: 'web',
+    slug: 'web',
     type: 'client',
     repo: 'js-sdk',
     branch: 'main',
