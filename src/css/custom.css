@@ -46,6 +46,22 @@
   text-align: left;
 }
 
+.code-block-diff-remove-line{
+  background-color: #ff00001f;
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+  border-left: 3px solid #ff000080;
+}
+
+.code-block-diff-add-line{
+  background-color: #00ff001f;
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+  border-left: 3px solid #00ff0080;
+}
+
 /* Shifts the badges left to look nicer in the docs */
 .github-badges {
   text-align: start;

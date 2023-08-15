@@ -9,11 +9,22 @@ const SDKS: SDK[] = [
     branch: 'main',
   },
   {
-    name: 'JavaScript',
+    name: 'Node.js',
+    filename: 'javascript',
+    slug: 'javascript',
     type: 'server',
     repo: 'js-sdk',
     branch: 'main',
     folder: '/packages/server',
+  },
+  {
+    name: 'Web',
+    filename: 'web',
+    slug: 'web',
+    type: 'client',
+    repo: 'js-sdk',
+    branch: 'main',
+    folder: '/packages/client',
   },
 ];
 

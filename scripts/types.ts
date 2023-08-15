@@ -1,10 +1,8 @@
-import type { Technology } from '@site/src/datasets';
-
 export type SDK = {
   /**
    * The name of the technology used for the SDK.
    */
-  name: Technology;
+  name: string;
   /**
    * The name used for the generated file.
    *
@@ -12,6 +10,12 @@ export type SDK = {
    *
    */
   filename?: string;
+  /**
+   * The slug used to identify the page in Docusaurus.
+   *
+   * @defaults filename
+   */
+  slug?: string;
   /**
    * The file extension used for the generated file.
    *

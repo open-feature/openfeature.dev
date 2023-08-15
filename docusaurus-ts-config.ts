@@ -162,6 +162,25 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
   prism: {
     theme: oceanicNext,
     additionalLanguages: ['java', 'csharp', 'powershell', 'php'],
+    magicComments: [
+      {
+        className: 'theme-code-block-highlighted-line',
+        line: 'highlight-next-line',
+        block: { start: 'highlight-start', end: 'highlight-end' },
+      },
+      {
+        className: 'code-block-diff-remove-line',
+        line: 'diff-remove',
+        block: { start: 'diff-remove-block-start', end: 'diff-remove-block-end' },
+      },
+      {
+        className: 'code-block-diff-add-line',
+        line: 'diff-add',
+        block: {
+          start: 'diff-add-block-start', end: 'diff-add-block-end'
+        },
+      },
+    ],
   },
 };
 
