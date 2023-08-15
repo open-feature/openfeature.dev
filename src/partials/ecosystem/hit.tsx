@@ -3,7 +3,7 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Pill from './pill';
-import {TECHNOLOGY_COLOR_MAP, TYPE_COLOR_MAP, EcosystemElement,} from '../../datasets';
+import {TECHNOLOGY_COLOR_MAP, TYPE_COLOR_MAP, EcosystemElement} from '../../datasets';
 
 export default function Hit({ hit }: { hit: EcosystemElement }) {
   const external = hit.href.startsWith('http');
@@ -22,8 +22,8 @@ export default function Hit({ hit }: { hit: EcosystemElement }) {
         {external && <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="h-4 w-4 opacity-60" />}
       </div>
       <h3>{hit.title}</h3>
-      <p className="h-24 leading-snug line-clamp-3">{hit.description}</p>
-      <div className="flex gap-2 flex-wrap">
+      <p className="h-20 leading-snug line-clamp-3">{hit.description}</p>
+      <div className="flex gap-2 flex-wrap mt-auto">
         <Pill color={TECHNOLOGY_COLOR_MAP[hit.technology]}>{hit.technology}</Pill>
         <Pill color={TYPE_COLOR_MAP[hit.type]}>{hit.type}</Pill>
         <Pill color={""}>{hit.category}</Pill>
