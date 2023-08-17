@@ -3,6 +3,12 @@ import { SDK } from './types';
 
 const SDKS: SDK[] = [
   {
+    name: 'Java',
+    type: 'server',
+    repo: 'java-sdk',
+    branch: 'main',
+  },
+  {
     name: 'Go',
     type: 'server',
     repo: 'go-sdk',
