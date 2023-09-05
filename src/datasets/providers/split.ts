@@ -14,7 +14,7 @@ export const Split: Provider = {
     {
       technology: 'Go',
       vendorOfficial: true,
-      href: 'https://github.com/splitio/split-openfeature-provider-g',
+      href: 'https://github.com/splitio/split-openfeature-provider-go',
       category: ['Server'],
     },
     {
