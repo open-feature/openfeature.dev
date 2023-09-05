@@ -1,4 +1,4 @@
-import { faGolang, faJava, faPhp, faSquareJs } from '@fortawesome/free-brands-svg-icons';
+import { faGolang, faJava, faPhp, faNodeJs } from '@fortawesome/free-brands-svg-icons';
 import CSharpNoFillSvg from '@site/static/img/c-sharp-no-fill.svg';
 import React from 'react';
 import { OpenFeatureComponentTable } from '../custom/OpenFeatureComponentTable';
@@ -17,9 +17,9 @@ export class ServerTechnologiesTable extends React.Component {
           },
           {
             href: '/docs/reference/technologies/server/javascript',
-            iconDefinition: faSquareJs,
-            title: 'JavaScript',
-            description: 'SDK and components for JavaScript',
+            iconDefinition: faNodeJs,
+            title: 'Node.js',
+            description: 'SDK and components for .Node.js',
           },
           {
             href: '/docs/reference/technologies/server/dotnet',
