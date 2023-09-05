@@ -32,6 +32,15 @@ const SDKS: SDK[] = [
     branch: 'main',
     folder: '/packages/client',
   },
+  {
+    name: 'Android',
+    filename: 'kotlin',
+    slug: 'kotlin',
+    type: 'client',
+    repo: 'kotlin-sdk',
+    // TODO change to main before merging.
+    branch: 'readme-template',
+  },
 ];
 
 export const sdks = {

@@ -1,4 +1,5 @@
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faAndroid } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
 import { OpenFeatureComponentTable } from '../custom/OpenFeatureComponentTable';
 
@@ -13,6 +14,12 @@ export class ClientTechnologiesTable extends React.Component {
             iconDefinition: faGlobe,
             title: 'Web',
             description: 'SDK and components for the web',
+          },
+          {
+            href: '/docs/reference/technologies/client/kotlin',
+            iconDefinition: faAndroid,
+            title: 'Android',
+            description: 'SDK and components for Android',
           },
         ]}
       />
