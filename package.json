@@ -62,7 +62,7 @@
     "@types/fs-extra": "11.0.1",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
-    "eslint": "8.47.0",
+    "eslint": "8.49.0",
     "eslint-config-prettier": "8.10.0",
     "eslint-mdx": "2.2.0",
     "eslint-plugin-check-file": "2.6.2",
