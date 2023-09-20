@@ -6970,9 +6970,9 @@ isobject@^3.0.1:
   integrity sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==
 
 itemsjs@^2.1.14, itemsjs@^2.1.21:
-  version "2.1.21"
-  resolved "https://registry.yarnpkg.com/itemsjs/-/itemsjs-2.1.21.tgz#374ec58333852373dbf6a1579574d237c16f315a"
-  integrity sha512-W0Uzk7DSrxOThWvmijv/8VLE7GBaMqqXKunXt3FTEno1QODjoeWZzJWjmKgteC5UcY/kGbrr3KAwihTI43EYwQ==
+  version "2.1.22"
+  resolved "https://registry.yarnpkg.com/itemsjs/-/itemsjs-2.1.22.tgz#0c9b8c25e9b853350fcf8fad744e41e1b815c1f0"
+  integrity sha512-aWoVfLFK2j38Sb0NUBN64hEDRndf54eXHrM2tc3c8Yq5dz5XJgTN/eSPHpbEiWbs1JbYjRNOWuzH6cQpG9QtQw==
   dependencies:
     boolean-parser "^0.0.2"
     fastbitset "^0.4.0"
@@ -8038,10 +8038,15 @@ minimatch@^9.0.0:
   dependencies:
     brace-expansion "^2.0.1"
 
-minimist@^1.2.0, minimist@^1.2.5, minimist@^1.2.6:
+minimist@^1.2.0, minimist@^1.2.6:
   version "1.2.6"
   resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
+
+minimist@^1.2.5:
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
+  integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
 minipass@^5.0.0:
   version "5.0.0"
@@ -10238,7 +10243,7 @@ string.prototype.trimstart@^1.0.6:
 
 string_decoder@^1.1.1:
   version "1.3.0"
-  resolved "https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz"
+  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.3.0.tgz#42f114594a46cf1a8e30b0a84f56c78c3edac21e"
   integrity sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==
   dependencies:
     safe-buffer "~5.2.0"
