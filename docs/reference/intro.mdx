@@ -72,3 +72,7 @@ Providers might wrap a vendor SDK, call a bespoke flag evaluation REST API, or e
 
 [Hooks](./concepts/04-hooks.mdx) are a mechanism that allow for the addition of arbitrary behavior at various points in the _flag evaluation life-cycle_.
 Hooks let you extend the OpenFeature SDK, adding functionality such as validating a resolved flag value, modifying or adding data to the evaluation context, logging, telemetry, and tracking.
+
+### Events
+
+[Events](./concepts/05-events.mdx) enable the ability to react to state changes in the provider or underlying flag management system. These include changes in provider readiness, error status, or perhaps most interestingly, flag configuration changes.
