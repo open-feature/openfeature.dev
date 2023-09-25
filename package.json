@@ -57,7 +57,7 @@
     "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.4.1",
+    "@docusaurus/module-type-aliases": "2.4.3",
     "@tsconfig/docusaurus": "1.0.7",
     "@types/fs-extra": "11.0.2",
     "@typescript-eslint/eslint-plugin": "5.62.0",
