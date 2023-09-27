@@ -1,7 +1,7 @@
 import FlipperNoFillSvg from '@site/static/img/flipper-no-fill.svg';
 import { Provider } from '.';
 
-export const LaunchDarkly: Provider = {
+export const Flipper: Provider = {
   name: 'Flipper',
   logo: FlipperNoFillSvg,
   technologies: [
