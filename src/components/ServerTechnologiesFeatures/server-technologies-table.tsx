@@ -1,5 +1,4 @@
-import { faGolang, faJava, faPhp, faSquareJs } from '@fortawesome/free-brands-svg-icons';
-import { faGem } from '@fortawesome/free-regular-svg-icons';
+import { faGolang, faJava, faPhp, faSquareJs, faGem  } from '@fortawesome/free-brands-svg-icons';
 import CSharpNoFillSvg from '@site/static/img/c-sharp-no-fill.svg';
 import React from 'react';
 import { OpenFeatureComponentTable } from '../custom/OpenFeatureComponentTable';
