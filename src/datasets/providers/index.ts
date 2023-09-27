@@ -10,7 +10,7 @@ import { Goff } from './goff';
 import { LaunchDarkly } from './launchdarkly';
 import { PostHog } from './posthog';
 import { Split } from './split';
-import { Flippter } from './flipper';
+import { Flipper } from './flipper';
 import { Category, EcosystemElement, Technology } from '..';
 
 export const PROVIDERS: EcosystemElement[] = [
