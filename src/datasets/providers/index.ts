@@ -10,6 +10,7 @@ import { Goff } from './goff';
 import { LaunchDarkly } from './launchdarkly';
 import { PostHog } from './posthog';
 import { Split } from './split';
+import { Flippter } from './flipper';
 import { Category, EcosystemElement, Technology } from '..';
 
 export const PROVIDERS: EcosystemElement[] = [
@@ -23,6 +24,7 @@ export const PROVIDERS: EcosystemElement[] = [
   LaunchDarkly,
   PostHog,
   Split,
+  Flipper,
 ]
   .map((provider) => {
     return provider.technologies.map(({ category, href, technology, vendorOfficial }): EcosystemElement => {
