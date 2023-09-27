@@ -1,4 +1,5 @@
-import { faGolang, faJava, faPhp, faSquareJs, gem } from '@fortawesome/free-brands-svg-icons';
+import { faGolang, faJava, faPhp, faSquareJs } from '@fortawesome/free-brands-svg-icons';
+import { faGem } from '@fortawesome/free-regular-svg-icons';
 import CSharpNoFillSvg from '@site/static/img/c-sharp-no-fill.svg';
 import React from 'react';
 import { OpenFeatureComponentTable } from '../custom/OpenFeatureComponentTable';
@@ -41,7 +42,7 @@ export class ServerTechnologiesTable extends React.Component {
           },
           {
             href: '/docs/reference/technologies/server/ruby',
-            iconDefinition: gem,
+            iconDefinition: faGem,
             title: 'Ruby',
             description: 'SDK and components for Ruby',
           },
