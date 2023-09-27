@@ -26,6 +26,7 @@ export const TECHNOLOGY_COLOR_MAP: Record<Technology, string> = {
   Java: 'bg-amber-50 text-amber-600 ring-amber-500/10',
   ['.NET']: 'bg-violet-50 text-violet-600 ring-violet-500/10',
   PHP: 'bg-indigo-50 text-indigo-600 ring-indigo-500/10',
+  Ruby: 'bg-red-50 text-red-500 ring-red-500/10',
 };
 
 export type Type = 'Hook' | 'Provider';
