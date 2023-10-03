@@ -38,8 +38,7 @@ const SDKS: SDK[] = [
     slug: 'kotlin',
     type: 'client',
     repo: 'kotlin-sdk',
-    // TODO change to main before merging.
-    branch: 'readme-template',
+    branch: 'main',
   },
 ];
 
