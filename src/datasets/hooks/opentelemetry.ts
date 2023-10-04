@@ -30,5 +30,11 @@ export const OpenTelemetry: Hook = {
       href: 'https://github.com/open-feature/php-sdk-contrib/tree/main/hooks/OpenTelemetry',
       category: ['Server'],
     },
+    {
+      technology: '.NET',
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Hooks.Otel',
+      category: ['Server'],
+    },
   ],
 };
