@@ -19,7 +19,6 @@ Handlers attached to a client will run only when the provider bound with that cl
 
 Handlers are passed an [event details](/specification/types#event-details) structure, which contains data about the event, including a list of keys that have changed (if applicable and available).
 
-<!-- TODO: add more languages when completed -->
 <Tabs groupId="code">
 <TabItem value="js" label="TypeScript">
 
@@ -75,14 +74,14 @@ Generally, the associated event details will indicate which flag (or flags) have
 
 ### PROVIDER_ERROR
 
-The provider signalled an error.
+The provider signaled an error.
 
 If a provider becomes unavailable, evaluations will typically default.
 Handlers associated with `PROVIDER_ERROR` events can be used to alert monitoring systems about the provider failure, or enable custom fallback mechanisms.
 
 ### PROVIDER_STALE
 
-The provider's cached state is not longer valid and may not be up-to-date with the source of truth.
+The provider's cached state is no longer valid and may not be up-to-date with the source of truth.
 
 Some providers maintain a connection to a management system, but are also tolerate of disconnection.
 The `PROVIDER_STALE` indicates this situation.
