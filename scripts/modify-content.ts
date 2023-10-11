@@ -12,7 +12,7 @@ const GITHUB_ORG = 'open-feature';
  * step to ensure subsequent regex's match.
  */
 const carriageReturnsToNewLines = (content: string): string => {
-  return content.replace(/\r/g, '\n');
+  return content.replace(/\r\n/g, '\n');
 };
 
 /**
