@@ -9,6 +9,14 @@ const SDKS: SDK[] = [
     branch: 'main',
   },
   {
+    name: '.NET',
+    filename: 'dotnet',
+    slug: 'dotnet',
+    type: 'server',
+    repo: 'dotnet-sdk',
+    branch: 'main',
+  },
+  {
     name: 'Go',
     type: 'server',
     repo: 'go-sdk',
