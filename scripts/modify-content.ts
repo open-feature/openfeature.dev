@@ -8,6 +8,14 @@ const DEFAULT_FILE_EXTENSION = 'mdx';
 const GITHUB_ORG = 'open-feature';
 
 /**
+ * Converts carriage return characters to new lines. This is an important preprocessing
+ * step to ensure subsequent regex's match.
+ */
+const carriageReturnsToNewLines = (content: string): string => {
+  return content.replace(/\r\n/g, '\n');
+};
+
+/**
  * Removes emojis from headers.. they look fine in GitHub but awful in the docs.
  */
 const removeEmojisFromHeaders = (content: string): string => {
@@ -131,6 +139,7 @@ export const modifyContent = (sdks: SDK[]) => {
     return {
       filename: `${sdk.type}/${fileName}.${fileExtension}`,
       content: [
+        carriageReturnsToNewLines,
         removeEmojisFromHeaders,
         removeSections,
         removeLine,
