@@ -24,4 +24,5 @@ Infrastructure as code solutions and PaaS providers have no standard on which to
 
 ## Let's Discuss!
 
-We’ve started a [GitHub discussion](https://github.com/orgs/open-feature/discussions/249), and we will be holding a meeting on [October 19, 2023 from 10:00am - 11:00am ET (4:00pm - 5:00pm CET)](https://community.cncf.io/events/details/cncf-openfeature-presents-openfeature-special-meeting/) to discuss this topic in detail. The goal of this meeting is to gauge interest from users, organizations, vendors, maintainers of associated open source projects, and feature flag subject matter experts - with the potential of forming a Special Interest Group (SIG), or something similar, around this problem. 
+We’ve started a [GitHub discussion](https://github.com/orgs/open-feature/discussions/249), and we will be holding a meeting on [October 19, 2023 from 10:00am - 11:00am ET (4:00pm - 5:00pm CET)](https://community.cncf.io/events/details/cncf-openfeature-presents-openfeature-special-meeting/) to discuss this topic in detail.
+The goal of this meeting is to gauge interest from users, organizations, vendors, maintainers of associated open source projects, and feature flag subject matter experts - with the potential of forming a Special Interest Group (SIG), or something similar, around this problem. 
