@@ -20,7 +20,7 @@ Infrastructure as code solutions and PaaS providers have no standard on which to
 
 > This is an exciting area of research from a project perspective. With this, teams who are building a feature flagging solution could implement a simple API and have API clients in many of the major languages. It's a big win for new entrants / internal products, as well as simplifies the workload of adding Open Feature support for existing vendors.
 > 
-> Justin Abrahms 	
+> - Justin Abrahms
 
 ## Let's Discuss!
 
