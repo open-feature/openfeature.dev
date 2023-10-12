@@ -153,7 +153,7 @@ Let’s move in that direction by updating the service to use OpenFeature.
 import express from 'express';
 import Router from 'express-promise-router';
 import cowsay from 'cowsay';
-import { OpenFeature } from '@openfeature/js-sdk';
+import { OpenFeature } from '@openfeature/server-sdk';
 
 const app = express();
 const routes = Router();
@@ -178,7 +178,7 @@ app.listen(3333, () => {
 });
 ```
 
-We’ve imported the `@openfeature/js-sdk` NPM module, and used it to create an OpenFeature client called `featureFlags`.
+We’ve imported the `@openfeature/server-sdk` NPM module, and used it to create an OpenFeature client called `featureFlags`.
 We then call `getBooleanValue` on that client to find out if the `with-cows` feature flag is true or false.
 Depending on what we get back we either show the new cow-based output, or the traditional plaintext format.
 
@@ -218,7 +218,7 @@ For now, let’s just configure a really, really simple provider that doesn’t 
 import express from 'express';
 import Router from 'express-promise-router';
 import cowsay from 'cowsay';
-import { OpenFeature } from '@openfeature/js-sdk';
+import { OpenFeature } from '@openfeature/server-sdk';
 import { InMemoryProvider } from '@openfeature/in-memory-provider';
 
 const app = express();
