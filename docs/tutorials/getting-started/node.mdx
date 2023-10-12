@@ -115,7 +115,7 @@ app.listen(port, () => {
 Let's install the OpenFeature SDK using the following command.
 
 ```sh
-npm install @openfeature/js-sdk
+npm install @openfeature/server-sdk
 ```
 
 <Tabs groupId="js-tutorial">
@@ -126,7 +126,7 @@ Update `index.js` to import the SDK.
 ```js
 const express = require('express');
 // diff-add 
-const { OpenFeature } = require('@openfeature/js-sdk');
+const { OpenFeature } = require('@openfeature/server-sdk');
 ```
 
 </TabItem>
@@ -138,7 +138,7 @@ Update `index.ts` to import the SDK.
 ```ts
 import express from "express";
 // diff-add
-import { OpenFeature } from "@openfeature/js-sdk";
+import { OpenFeature } from "@openfeature/server-sdk";
 ```
 
 </TabItem>
@@ -224,7 +224,7 @@ npm install @openfeature/flagd-provider
 Now, update `index.js` to import the `flagd provider`.
 
 ```js
-const { OpenFeature } = require('@openfeature/js-sdk');
+const { OpenFeature } = require('@openfeature/server-sdk');
 // diff-add
 const { FlagdProvider } = require('@openfeature/flagd-provider');
 ```
@@ -236,7 +236,7 @@ const { FlagdProvider } = require('@openfeature/flagd-provider');
 Now, update `index.ts` to import the `flagd provider`.
 
 ```ts
-import { OpenFeature } from "@openfeature/js-sdk";
+import { OpenFeature } from "@openfeature/server-sdk";
 // diff-add
 import { FlagdProvider } from "@openfeature/flagd-provider";
 ```
