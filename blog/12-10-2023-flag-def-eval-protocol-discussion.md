@@ -18,7 +18,7 @@ Providers must be implemented for multiple languages and vendors.
 Turnkey, self-hosted applications can't easily leverage OpenFeature (they would need to support some kind of plugin system to allow a provider to be specified and configured).
 Infrastructure as code solutions and PaaS providers have no standard on which to base vendor-neutral feature flag definitions.
 
-> This is an exciting area of research from a project perspective. With this, teams who are building a feature flagging solution could implement a simple API and have API clients in many of the major languages. It's a big win for new entrants / internal products, as well as simplifies the workload of adding Open Feature support for existing vendors.”
+> This is an exciting area of research from a project perspective. With this, teams who are building a feature flagging solution could implement a simple API and have API clients in many of the major languages. It's a big win for new entrants / internal products, as well as simplifies the workload of adding Open Feature support for existing vendors.
 > 
 > Justin Abrahms 	
 
