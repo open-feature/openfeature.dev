@@ -51,7 +51,7 @@
     "react-transition-group": "^4.4.5",
     "remarkable": "2.0.1",
     "remarkable-react": "1.4.3",
-    "sass": "^1.69.0",
+    "sass": "^1.69.3",
     "tailwindcss": "^3.3.3",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0"
