@@ -214,41 +214,47 @@ OpenFeature becomes useful when we connect our OpenFeature SDK to a full-fledged
 Connecting OpenFeature to one of these backends is very straightforward, but it does require that we have an actual flagging framework set up.
 For now, let’s just configure a really, really simple provider that doesn’t need a backend:
 
-```js {5,16-22} title="04_openfeature_with_provider.js"
-import express from 'express';
-import Router from 'express-promise-router';
-import cowsay from 'cowsay';
-import { OpenFeature } from '@openfeature/server-sdk';
-import { InMemoryProvider } from '@openfeature/in-memory-provider';
+```js {4,15-24,26-28} title="04_openfeature_with_provider.js"
+import express from "express";
+import Router from "express-promise-router";
+import cowsay from "cowsay";
+import { OpenFeature, InMemoryProvider } from "@openfeature/server-sdk";
 
 const app = express();
 const routes = Router();
 app.use((_, res, next) => {
-  res.setHeader('content-type', 'text/plain');
+  res.setHeader("content-type", "text/plain");
   next();
 }, routes);
 
 const featureFlags = OpenFeature.getClient();
 
 const FLAG_CONFIGURATION = {
-  'with-cows': true,
+  'with-cows': {
+    variants: {
+      on: true,
+      off: false
+    },
+    disabled: false,
+    defaultVariant: "on"
+  }
 };
 
 const featureFlagProvider = new InMemoryProvider(FLAG_CONFIGURATION);
 
 OpenFeature.setProvider(featureFlagProvider);
 
-routes.get('/', async (_, res) => {
-  const withCows = await featureFlags.getBooleanValue('with-cows', false);
+routes.get("/", async (_, res) => {
+  const withCows = await featureFlags.getBooleanValue("with-cows", false);
   if (withCows) {
-    res.send(cowsay.say({ text: 'Hello, world!' }));
+    res.send(cowsay.say({ text: "Hello, world!" }));
   } else {
-    res.send('Hello, world!');
+    res.send("Hello, world!");
   }
 });
 
 app.listen(3333, () => {
-  console.log('Server running at http://localhost:3333');
+  console.log("Server running at http://localhost:3333");
 });
 ```
 
@@ -294,68 +300,112 @@ The output should look like this:
 Hello, world!
 ```
 
+## Configuring targeting
+
+Feature flags are at their most powerful when we can use contextual information to determine feature flag values.
+We call this targeting.
+We'll set the `defaultVariant` back to "off" to make sure our targting works.
+Now, let's add some targeting by adding a `contextEvaluator` to the `"with-cows"` flag.
+We'll use some request data as the basis of or flag evaluation - let's check the `X-Cow` HTTP header.
+Then, when we evaluate the flag, will be sure to pass our additional contextual information.
+
+```js {23-28,37-40} title="05_openfeature_with_targeting.js"
+import express from "express";
+import Router from "express-promise-router";
+import cowsay from "cowsay";
+import { OpenFeature, InMemoryProvider } from "@openfeature/server-sdk";
+
+const app = express();
+const routes = Router();
+app.use((_, res, next) => {
+  res.setHeader("content-type", "text/plain");
+  next();
+}, routes);
+
+const featureFlags = OpenFeature.getClient();
+
+const FLAG_CONFIGURATION = {
+  'with-cows': {
+    variants: {
+      on: true,
+      off: false
+    },
+    disabled: false,
+    defaultVariant: "off",
+    contextEvaluator: (context) => {
+      if (context.cow === "Bessie") {
+        return "on";
+      }
+      return "off";
+    },
+  }
+};
+
+const featureFlagProvider = new InMemoryProvider(FLAG_CONFIGURATION);
+
+OpenFeature.setProvider(featureFlagProvider);
+
+routes.get("/", async (req, res) => {
+  const context = {
+    cow: req.get("x-cow")
+  };
+  const withCows = await featureFlags.getBooleanValue("with-cows", false, context);
+  if (withCows) {
+    res.send(cowsay.say({ text: "Hello, world!" }));
+  } else {
+    res.send("Hello, world!");
+  }
+});
+
+app.listen(3333, () => {
+  console.log("Server running at http://localhost:3333");
+});
+```
+
+Next restart the node server, and make a new request:
+
+```bash
+curl http://localhost:3333
+```
+
+The output should look like this:
+
+```disable-copy-button
+Hello, world!
+```
+
+Now, make a request with our specific cow of interest:
+
+```bash
+curl http://localhost:3333 -H "X-Cow: Bessie"
+```
+
+The output should once again look like this:
+
+```disable-copy-button
+ _______________
+< Hello, world! >
+ ---------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
+
+:::note
+
+This is a simple targeting mechanism used by our InMemory provider.
+Other systems provide more robust targeting capabilities.
+
+:::
+
 ## Moving to a full feature-flagging system
 
 We’ve gotten started with OpenFeature using a very simple but extremely limited provider.
 The beauty of OpenFeature is that we can transition to a real feature-flagging system when we’re ready, without any change to how we evaluate flags.
-It’s as simple as configuring a different provider.
+It’s as simple as configuring a [different provider](/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=Provider).
 
-**For example:**
-
-<details>
-  <summary>CloudBees</summary>
-
-```js
-import { CloudbeesProvider } from 'cloudbees-openfeature-provider-node';
-
-const appKey = '[YOUR_APP_KEY]';
-OpenFeature.setProvider(await CloudbeesProvider.build(appKey));
-```
-
-</details>
-
-<details>
-  <summary>flagd</summary>
-
-```js
-import { FlagdProvider } from '@openfeature/flagd-provider';
-
-OpenFeature.setProvider(
-  new FlagdProvider({
-    host: '[FLAGD_HOST]',
-    port: 8013,
-  })
-);
-```
-
-</details>
-
-<details>
-  <summary>LaunchDarkly</summary>
-
-```js
-import { init } from 'launchdarkly-node-server-sdk';
-import { LaunchDarklyProvider } from '@launchdarkly/openfeature-node-server';
-
-const ldClient = init('[YOUR-SDK-KEY]');
-await ldClient.waitForInitialization();
-OpenFeature.setProvider(new LaunchDarklyProvider(ldClient));
-```
-
-</details>
-
-<details>
-  <summary>Split</summary>
-
-```js
-import { SplitFactory } from '@splitsoftware/splitio';
-import { OpenFeatureSplitProvider } from '@splitsoftware/openfeature-js-split-provider';
-
-const splitClient = SplitFactory({ core: { authorizationKey: '[YOUR_AUTH_KEY]' } }).client();
-OpenFeature.setProvider(new OpenFeatureSplitProvider({ splitClient }));
-```
-
-</details>
 
 We can get started with feature flags with low investment and low risk, and once we’re ready, it’s just a few lines of code to transition to a full-featured, scalable backend.
 
