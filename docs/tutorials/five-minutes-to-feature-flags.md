@@ -214,41 +214,47 @@ OpenFeature becomes useful when we connect our OpenFeature SDK to a full-fledged
 Connecting OpenFeature to one of these backends is very straightforward, but it does require that we have an actual flagging framework set up.
 For now, let’s just configure a really, really simple provider that doesn’t need a backend:
 
-```js {5,16-22} title="04_openfeature_with_provider.js"
-import express from 'express';
-import Router from 'express-promise-router';
-import cowsay from 'cowsay';
-import { OpenFeature } from '@openfeature/server-sdk';
-import { InMemoryProvider } from '@openfeature/in-memory-provider';
+```js {4,15-24,26-28} title="04_openfeature_with_provider.js"
+import express from "express";
+import Router from "express-promise-router";
+import cowsay from "cowsay";
+import { OpenFeature, InMemoryProvider } from "@openfeature/js-sdk";
 
 const app = express();
 const routes = Router();
 app.use((_, res, next) => {
-  res.setHeader('content-type', 'text/plain');
+  res.setHeader("content-type", "text/plain");
   next();
 }, routes);
 
 const featureFlags = OpenFeature.getClient();
 
 const FLAG_CONFIGURATION = {
-  'with-cows': true,
+  'with-cows': {
+    variants: {
+      on: true,
+      off: false
+    },
+    disabled: false,
+    defaultVariant: "on"
+  }
 };
 
 const featureFlagProvider = new InMemoryProvider(FLAG_CONFIGURATION);
 
 OpenFeature.setProvider(featureFlagProvider);
 
-routes.get('/', async (_, res) => {
-  const withCows = await featureFlags.getBooleanValue('with-cows', false);
+routes.get("/", async (_, res) => {
+  const withCows = await featureFlags.getBooleanValue("with-cows", false);
   if (withCows) {
-    res.send(cowsay.say({ text: 'Hello, world!' }));
+    res.send(cowsay.say({ text: "Hello, world!" }));
   } else {
-    res.send('Hello, world!');
+    res.send("Hello, world!");
   }
 });
 
 app.listen(3333, () => {
-  console.log('Server running at http://localhost:3333');
+  console.log("Server running at http://localhost:3333");
 });
 ```
 
@@ -292,6 +298,98 @@ The output should look like this:
 
 ```disable-copy-button
 Hello, world!
+```
+
+## Configuring targeting
+
+Feature flags are at their most powerful when we can use contextual information to inform feature flag values.
+We call this targeting.
+We'll set the `defaultVariant` back to "off" to make sure our targting works.
+Now, let's add some targeting by adding a `contextEvaluator` to the `"with-cows"` flag.
+Then, we'll use some request data as the basis of or flag evaluation - let's check the `X-Cow` HTTP header.
+
+```js {23-28,37-39} title="04_openfeature_with_provider.js"
+import express from "express";
+import Router from "express-promise-router";
+import cowsay from "cowsay";
+import { OpenFeature, InMemoryProvider } from "@openfeature/server-sdk";
+
+const app = express();
+const routes = Router();
+app.use((_, res, next) => {
+  res.setHeader("content-type", "text/plain");
+  next();
+}, routes);
+
+const featureFlags = OpenFeature.getClient();
+
+const FLAG_CONFIGURATION = {
+  'with-cows': {
+    variants: {
+      on: true,
+      off: false
+    },
+    disabled: false,
+    defaultVariant: "off",
+    contextEvaluator: (context) => {
+      if (context.cow === "Bessie") {
+        return "on";
+      }
+      return "off";
+    },
+  }
+};
+
+const featureFlagProvider = new InMemoryProvider(FLAG_CONFIGURATION);
+
+OpenFeature.setProvider(featureFlagProvider);
+
+routes.get("/", async (req, res) => {
+  const context = {
+    cow: req.get("x-cow")
+  };
+  const withCows = await featureFlags.getBooleanValue("with-cows", false, context);
+  if (withCows) {
+    res.send(cowsay.say({ text: "Hello, world!" }));
+  } else {
+    res.send("Hello, world!");
+  }
+});
+
+app.listen(3333, () => {
+  console.log("Server running at http://localhost:3333");
+});
+```
+
+Next restart the node server, and make a new request:
+
+```bash
+curl http://localhost:3333
+```
+
+The output should look like this:
+
+```disable-copy-button
+Hello, world!
+```
+
+Now, make a request with our specific cow of interest:
+
+```bash
+curl http://localhost:3333 -H "X-Cow: Bessie"
+```
+
+The output should once again look like this:
+
+```disable-copy-button
+ _______________
+< Hello, world! >
+ ---------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
 ```
 
 ## Moving to a full feature-flagging system
