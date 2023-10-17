@@ -302,13 +302,14 @@ Hello, world!
 
 ## Configuring targeting
 
-Feature flags are at their most powerful when we can use contextual information to inform feature flag values.
+Feature flags are at their most powerful when we can use contextual information to determine feature flag values.
 We call this targeting.
 We'll set the `defaultVariant` back to "off" to make sure our targting works.
 Now, let's add some targeting by adding a `contextEvaluator` to the `"with-cows"` flag.
-Then, we'll use some request data as the basis of or flag evaluation - let's check the `X-Cow` HTTP header.
+We'll use some request data as the basis of or flag evaluation - let's check the `X-Cow` HTTP header.
+Then, when we evaluate the flag, will be sure to pass our additional contextual information.
 
-```js {23-28,37-39} title="04_openfeature_with_provider.js"
+```js {23-28,37-40} title="05_openfeature_with_targeting.js"
 import express from "express";
 import Router from "express-promise-router";
 import cowsay from "cowsay";
@@ -392,68 +393,19 @@ The output should once again look like this:
                 ||     ||
 ```
 
+:::note
+
+This is a simple targeting mechanism used by our InMemory provider.
+Other systems provide more robust targeting capabilities.
+
+:::
+
 ## Moving to a full feature-flagging system
 
 We’ve gotten started with OpenFeature using a very simple but extremely limited provider.
 The beauty of OpenFeature is that we can transition to a real feature-flagging system when we’re ready, without any change to how we evaluate flags.
-It’s as simple as configuring a different provider.
+It’s as simple as configuring a [different provider](/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=Provider).
 
-**For example:**
-
-<details>
-  <summary>CloudBees</summary>
-
-```js
-import { CloudbeesProvider } from 'cloudbees-openfeature-provider-node';
-
-const appKey = '[YOUR_APP_KEY]';
-OpenFeature.setProvider(await CloudbeesProvider.build(appKey));
-```
-
-</details>
-
-<details>
-  <summary>flagd</summary>
-
-```js
-import { FlagdProvider } from '@openfeature/flagd-provider';
-
-OpenFeature.setProvider(
-  new FlagdProvider({
-    host: '[FLAGD_HOST]',
-    port: 8013,
-  })
-);
-```
-
-</details>
-
-<details>
-  <summary>LaunchDarkly</summary>
-
-```js
-import { init } from 'launchdarkly-node-server-sdk';
-import { LaunchDarklyProvider } from '@launchdarkly/openfeature-node-server';
-
-const ldClient = init('[YOUR-SDK-KEY]');
-await ldClient.waitForInitialization();
-OpenFeature.setProvider(new LaunchDarklyProvider(ldClient));
-```
-
-</details>
-
-<details>
-  <summary>Split</summary>
-
-```js
-import { SplitFactory } from '@splitsoftware/splitio';
-import { OpenFeatureSplitProvider } from '@splitsoftware/openfeature-js-split-provider';
-
-const splitClient = SplitFactory({ core: { authorizationKey: '[YOUR_AUTH_KEY]' } }).client();
-OpenFeature.setProvider(new OpenFeatureSplitProvider({ splitClient }));
-```
-
-</details>
 
 We can get started with feature flags with low investment and low risk, and once we’re ready, it’s just a few lines of code to transition to a full-featured, scalable backend.
 
