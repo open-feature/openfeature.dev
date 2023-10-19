@@ -11,7 +11,7 @@ draft: false
 ## Renaming the @openfeature/js-sdk
 
 It's been said that there's only two hard things in Computer Science: cache invalidation and naming things.
-Here at the OpenFeature project we can attest to both, but today we'd like to talk mostly about naming.
+Here at the OpenFeature project we can attest to both, but today we'd like to talk about naming.
 
 ### What's changed
 
