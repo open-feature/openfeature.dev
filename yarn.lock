@@ -7263,7 +7263,7 @@ json5@^2.1.2, json5@^2.2.2, json5@^2.2.3:
 
 jsonc-parser@^3.0.0:
   version "3.2.0"
-  resolved "https://registry.npmjs.org/jsonc-parser/-/jsonc-parser-3.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/jsonc-parser/-/jsonc-parser-3.2.0.tgz#31ff3f4c2b9793f89c67212627c51c6394f88e76"
   integrity sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==
 
 jsonfile@^6.0.1:
@@ -9230,7 +9230,7 @@ prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
 
 proper-lockfile@^4.1.2:
   version "4.1.2"
-  resolved "https://registry.npmjs.org/proper-lockfile/-/proper-lockfile-4.1.2.tgz"
+  resolved "https://registry.yarnpkg.com/proper-lockfile/-/proper-lockfile-4.1.2.tgz#c8b9de2af6b2f1601067f98e01ac66baa223141f"
   integrity sha512-TjNPblN4BwAWMXU8s9AEz4JmQxnD1NNL7bNOY/AKUzyamc379FWASUhc/K1pL2noVb+XmZKLL68cjzLsiOAMaA==
   dependencies:
     graceful-fs "^4.2.4"
@@ -9855,7 +9855,7 @@ responselike@^1.0.2:
 
 retry@^0.12.0:
   version "0.12.0"
-  resolved "https://registry.npmjs.org/retry/-/retry-0.12.0.tgz"
+  resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
   integrity sha512-9LkiTwjUh6rT555DtE9rTX+BKByPfrMzEAtnlEtdEwr3Nkffwiihqe2bWADg+OQRjt9gl6ICdmB/ZFDCGAtSow==
 
 retry@^0.13.1:
@@ -11675,9 +11675,9 @@ wildcard@^2.0.0:
   integrity sha512-CC1bOL87PIWSBhDcTrdeLo6eGT7mCFtrg0uIJtqJUFyK+eJnzl8A1niH56uu7KMa5XFrtiV+AQuHO3n7DsHnLQ==
 
 wireit@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/wireit/-/wireit-0.14.0.tgz#8ecb922280d9b3a493bed520900ab458e0f38727"
-  integrity sha512-CwHhyWduARI7zOoyyQvxH6U/5GTy8p6RxTe2LpwIhE4Y8PbaTk0iH8dLkeGMvxETVBkxCgQnF2GfzYKXMSmYSw==
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/wireit/-/wireit-0.14.1.tgz#83b63598503573db6722ad49b1fe15b57ee71890"
+  integrity sha512-q5sixPM/vKQEpyaub6J9QoHAFAF9g4zBdnjoYelH9/RLAekcUf3x1dmFLACGZ6nYjqehCsTlXC1irmzU7znPhA==
   dependencies:
     braces "^3.0.2"
     chokidar "^3.5.3"
