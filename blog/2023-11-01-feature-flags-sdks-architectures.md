@@ -48,6 +48,8 @@ SDK application cluster can help significantly.
 
 ### "Direct" API endpoints Bridge SDK - example flow
 
+<img src={require('@site/static/img/blog/feature-flags-sdks-architectures/Direct-API-endpoints-Bridge-SDK.png').default} />
+<!--
 ```mermaid
 sequenceDiagram
     box MediumAquamarine App cluster
@@ -62,9 +64,12 @@ sequenceDiagram
     SDK ->> features: getBooleanEvaluation
     features ->> SDK: true/false
 ```
+-->
 
 ### "Direct" API endpoints Bridge SDK using Relay Proxy - example flow
 
+<img src={require('@site/static/img/blog/feature-flags-sdks-architectures/Direct-API-endpoints-Bridge-SDK-using-Relay-Proxy.png').default} />
+<!--
 ```mermaid
 sequenceDiagram
     box MediumAquamarine App Cluster
@@ -81,6 +86,7 @@ note left of SDK: another request
 SDK->>proxy: getBooleanEvaluation
 proxy->>SDK: true/false
 ```
+-->
 
 #### Advantages
 
@@ -112,6 +118,8 @@ Source.
 
 ### API endpoints requests with cache - example flow
 
+<img src={require('@site/static/img/blog/feature-flags-sdks-architectures/API-endpoints-requests-with-cache.png').default} />
+<!--
 ```mermaid
 sequenceDiagram
     box MediumAquamarine App cluster
@@ -125,9 +133,12 @@ sequenceDiagram
     note left of SDK: another request
     SDK ->> SDK: getBooleanEvaluation true/false from cache
 ```
+-->
 
 ### API endpoints requests with cache using Relay Proxy - example flow
 
+<img src={require('@site/static/img/blog/feature-flags-sdks-architectures/API-endpoints-requests-with-cache-using-Relay-Proxy.png').default} />
+<!--
 ```mermaid
 sequenceDiagram
     box MediumAquamarine App Cluster
@@ -143,6 +154,7 @@ proxy->>SDK: true/false
 note left of SDK: another request
 SDK->>SDK: getBooleanEvaluation true/false from cache
 ```
+-->
 
 #### Advantages
 
@@ -173,6 +185,8 @@ not every flag evaluation triggers a message to the Features Service / Proxy.
 
 ### Local evaluation - example flow
 
+<img src={require('@site/static/img/blog/feature-flags-sdks-architectures/Local-evaluation.png').default} />
+<!--
 ```mermaid
 sequenceDiagram
     participant SDK as SDK (server-side)
@@ -190,6 +204,7 @@ sequenceDiagram
     features ->> SDK: Error
     SDK ->> SDK: getBooleanEvaluation true/false, evaluated locally from cached config
 ```
+-->
 
 #### Advantages
 
