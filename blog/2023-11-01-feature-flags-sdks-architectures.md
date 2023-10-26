@@ -8,16 +8,14 @@ tags: [client, sdk]
 draft: false
 ---
 
-Server-side SDKs (software development kits) are common for letting applications like microservices interact with
-Feature Flags services.  
-Feature Flags SDKs have several used functionalities, mainly feature flag evaluation with or without a context. Each
-Feature Flags service can publish SDKs in multiple programming languages.  
-The Feature Flags services commonly expose APIs via endpoints like REST HTTP and/or gRpc.
-SDKs are an important layer, as network traffic loads affects both the application and the Feature Flags services.
-When the Feature Flags service is a Cloud SaaS service, some services support a relay proxy or a sidecar application
-which can be deployed on an organization network. The
-Relay Proxy lets multiple clients to connect to a local proxy, reducing number of outbound connections to the Cloud
-Service. Considering that a large amount of microservices using SDKs instances can be deployed, this can be significant.
+Server-side feature flag software development kits (SDKs) are common for letting applications like microservices interact with Feature flag services.
+Feature Flags SDKs have several used functionalities, mainly feature flag evaluation with or without context.
+Each Feature Flags service can publish SDKs in multiple programming languages.
+The Feature Flags services commonly expose APIs via endpoints like REST HTTP and/or gRPC.
+SDKs are an important layer, as network traffic loads affect both the application and the Feature Flags services.
+When the Feature Flags service is a Cloud SaaS service, some services support a relay proxy or a sidecar application, which can be deployed on an organization network.
+The Relay Proxy lets multiple clients connect to a local proxy, reducing the number of outbound connections to the Cloud Service.
+Considering that a large amount of microservices using SDK instances can be deployed, this can be significant.
 
 
 <!--truncate-->
