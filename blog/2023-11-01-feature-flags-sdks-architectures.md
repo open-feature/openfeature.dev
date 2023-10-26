@@ -49,44 +49,10 @@ SDK application cluster can help significantly.
 ### "Direct" API endpoints Bridge SDK - example flow
 
 <img src={require('@site/static/img/blog/feature-flags-sdks-architectures/Direct-API-endpoints-Bridge-SDK.png').default} />
-<!--
-```mermaid
-sequenceDiagram
-    box MediumAquamarine App cluster
-        participant SDK as SDK (server-side)
-    end
-    box PowderBlue Remote Location
-        participant features as Features Service <br> / Source
-    end
-    SDK ->> features: getBooleanEvaluation
-    features ->> SDK: true/false
-    note left of SDK: another request
-    SDK ->> features: getBooleanEvaluation
-    features ->> SDK: true/false
-```
--->
 
 ### "Direct" API endpoints Bridge SDK using Relay Proxy - example flow
 
 <img src={require('@site/static/img/blog/feature-flags-sdks-architectures/Direct-API-endpoints-Bridge-SDK-using-Relay-Proxy.png').default} />
-<!--
-```mermaid
-sequenceDiagram
-    box MediumAquamarine App Cluster
-        participant SDK as SDK (server-side)
-        participant proxy as Relay Proxy
-    end
-    box PowderBlue Remote Location
-        participant features as Features Service <br> / Source
-    end
-proxy->features: 
-  SDK->>proxy: getBooleanEvaluation
-proxy->>SDK: true/false
-note left of SDK: another request
-SDK->>proxy: getBooleanEvaluation
-proxy->>SDK: true/false
-```
--->
 
 #### Advantages
 
@@ -119,42 +85,10 @@ Source.
 ### API endpoints requests with cache - example flow
 
 <img src={require('@site/static/img/blog/feature-flags-sdks-architectures/API-endpoints-requests-with-cache.png').default} />
-<!--
-```mermaid
-sequenceDiagram
-    box MediumAquamarine App cluster
-        participant SDK as SDK (server-side)
-    end
-    box PowderBlue Remote Location
-        participant features as Features Service <br> / Source
-    end
-    SDK ->> features: getBooleanEvaluation
-    features ->> SDK: true/false
-    note left of SDK: another request
-    SDK ->> SDK: getBooleanEvaluation true/false from cache
-```
--->
 
 ### API endpoints requests with cache using Relay Proxy - example flow
 
 <img src={require('@site/static/img/blog/feature-flags-sdks-architectures/API-endpoints-requests-with-cache-using-Relay-Proxy.png').default} />
-<!--
-```mermaid
-sequenceDiagram
-    box MediumAquamarine App Cluster
-        participant SDK as SDK (server-side)
-        participant proxy as Relay Proxy
-    end
-    box PowderBlue Remote Location
-        participant features as Features Service <br> / Source
-    end
-proxy->features: 
-  SDK->>proxy: getBooleanEvaluation
-proxy->>SDK: true/false
-note left of SDK: another request
-SDK->>SDK: getBooleanEvaluation true/false from cache
-```
--->
 
 #### Advantages
 
@@ -186,25 +120,6 @@ not every flag evaluation triggers a message to the Features Service / Proxy.
 ### Local evaluation - example flow
 
 <img src={require('@site/static/img/blog/feature-flags-sdks-architectures/Local-evaluation.png').default} />
-<!--
-```mermaid
-sequenceDiagram
-    participant SDK as SDK (server-side)
-    participant features as Features Service <br> / Proxy / Source
-    participant developer as App team
-    SDK ->> features: fetch config https://...
-    note left of SDK: save config in cache
-    SDK ->> features: <stream> fetch config changes events https://...
-    features ->> SDK: OK
-    note left of features: fetch config changes responses
-    SDK ->> SDK: getBooleanEvaluation true/false, evaluated locally from cached config
-    developer ->> features: Change feature flag value
-    features ->> SDK: Changed event
-    SDK ->> features: fetch config https://...
-    features ->> SDK: Error
-    SDK ->> SDK: getBooleanEvaluation true/false, evaluated locally from cached config
-```
--->
 
 #### Advantages
 
