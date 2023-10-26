@@ -1,6 +1,10 @@
 import { normalize } from 'node:path';
 
-import { SDK } from './types';
+import { SDK, SDKS } from '../src/datasets/sdks';
+import { SdkCompatibilityGenerator } from './sdk-compatibility-generator';
+
+// import JavaSvg from '@site/static/img/java-no-fill.svg';
+// console.log(JavaSvg);
 
 const OPEN_FEATURE_URL = 'https://openfeature.dev';
 const DEFAULT_BRANCH = 'main';
@@ -119,36 +123,63 @@ const replaceLinks = (repo: { url: string; branch: string; folder?: string }) =>
   };
 };
 
-/**
- * Transforms SDK READMEs for inclusion in the OpenFeature docs.
- */
-export const modifyContent = (sdks: SDK[]) => {
-  return (file: string, initialContent: string): { filename: string; content } => {
+const markdownProcessor = (sdks: SDK[]) => {
+  let sdksProcessed = 0;
+  const sdkSupportMatrixGenerator = new SdkCompatibilityGenerator();
+  return (file: string, initialContent: string): { filename: string; content: string } => {
     const sdk = sdks.find((sdk) => file.startsWith(`${sdk.repo}/${sdk.branch ?? DEFAULT_BRANCH}${sdk.folder ?? ''}/`));
 
     if (!sdk) {
       throw new Error(`Unable to modify content for ${sdk.repo}`);
     }
 
-    const url = `https://github.com/${GITHUB_ORG}/${sdk.repo}`;
+    const repoUrl = `https://github.com/${GITHUB_ORG}/${sdk.repo}`;
     const fileName = sdk.filename ?? sdk.name.toLowerCase();
     const slug = sdk.slug ?? fileName;
     const fileExtension = sdk.fileExtension ?? DEFAULT_FILE_EXTENSION;
     const branch = sdk.branch ?? DEFAULT_BRANCH;
 
+    const content = [
+      carriageReturnsToNewLines,
+      removeEmojisFromHeaders,
+      removeSections,
+      removeLine,
+      removeComments,
+      removeExtraNewlinesBetweenSections,
+      removeExtraNewlinesAtTop,
+      addHeader({ name: sdk.name, repo: sdk.repo, url: repoUrl, fileName, slug }),
+      replaceLinks({ url: repoUrl, branch, folder: sdk.folder }),
+    ].reduce((currentContent, processor) => processor(currentContent), initialContent);
+
+    sdkSupportMatrixGenerator.addSdk({
+      name: sdk.name,
+      repoUrl,
+      category: sdk.category,
+      path: sdk.href,
+      content,
+    });
+
+    if (sdksProcessed >= sdks.length - 1) {
+      console.log('processed all sdks... writing matrix to file');
+      sdkSupportMatrixGenerator.generateJson('src/datasets/sdks/sdk-compatibility.json');
+    }
+    sdksProcessed++;
+
     return {
-      filename: `${sdk.type}/${fileName}.${fileExtension}`,
-      content: [
-        carriageReturnsToNewLines,
-        removeEmojisFromHeaders,
-        removeSections,
-        removeLine,
-        removeComments,
-        removeExtraNewlinesBetweenSections,
-        removeExtraNewlinesAtTop,
-        addHeader({ name: sdk.name, repo: sdk.repo, url, fileName, slug }),
-        replaceLinks({ url, branch, folder: sdk.folder }),
-      ].reduce((currentContent, processor) => processor(currentContent), initialContent),
+      filename: `${sdk.category.toLocaleLowerCase()}/${fileName}.${fileExtension}`,
+      content,
     };
   };
+};
+
+/**
+ * Transforms SDK READMEs for inclusion in the OpenFeature docs.
+ */
+export const processSdkReadmes = {
+  paths: SDKS.map((sdk) => {
+    const branch = sdk.branch ?? 'main';
+    const folder = sdk.folder ?? '';
+    return `${sdk.repo}/${branch}${folder}/README.md`;
+  }),
+  modifyContent: markdownProcessor(SDKS),
 };

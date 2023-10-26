@@ -99,3 +99,11 @@
 .language-disable-copy-button button {
   display: none !important;
 }
+
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}

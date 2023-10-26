@@ -7,7 +7,7 @@ import oceanicNext from 'prism-react-renderer/themes/oceanicNext';
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 import mdxMermaid from 'mdx-mermaid';
-import { sdks } from './scripts/sdks';
+import { processSdkReadmes } from './scripts/process-sdk-readmes';
 
 const presetClassicOptions: PresetClassicOptions = {
   docs: {
@@ -161,7 +161,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
   },
   prism: {
     theme: oceanicNext,
-    additionalLanguages: ['java', 'csharp', 'powershell', 'php'],
+    additionalLanguages: ['java', 'csharp', 'powershell', 'php', 'kotlin'],
     magicComments: [
       {
         className: 'theme-code-block-highlighted-line',
@@ -177,7 +177,8 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
         className: 'code-block-diff-add-line',
         line: 'diff-add',
         block: {
-          start: 'diff-add-block-start', end: 'diff-add-block-end'
+          start: 'diff-add-block-start',
+          end: 'diff-add-block-end',
         },
       },
     ],
@@ -307,8 +308,8 @@ const config: Config = {
         noRuntimeDownloads: true,
         sourceBaseUrl: 'https://raw.githubusercontent.com/open-feature/',
         outDir: 'docs/reference/technologies',
-        documents: sdks.paths,
-        modifyContent: sdks.modifyContent,
+        documents: processSdkReadmes.paths,
+        modifyContent: processSdkReadmes.modifyContent,
       },
     ],
     [
