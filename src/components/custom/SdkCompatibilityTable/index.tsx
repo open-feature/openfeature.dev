@@ -48,7 +48,7 @@ export default function SdkCompatibilityTable({ compatibility }: { compatibility
             Release version
             <span className="has-tooltip">
               <Popover className="tooltip rounded shadow-[0_1.5px_3px_0_rgba(0,0,0,0.15)] p-2 bg-gray-100 text-emphasis-800 max-w-xs">
-                <p className="text-sm">The latest published release version.</p>
+                <div className="text-sm">The latest published release version.</div>
               </Popover>
               <FontAwesomeIcon className="h-4 w-4 mx-1 opacity-80 hover:opacity-100" icon={faCircleExclamation} />
             </span>
@@ -69,7 +69,7 @@ export default function SdkCompatibilityTable({ compatibility }: { compatibility
                   OpenFeature employs semantic versioning for release versions. SDKs below 1.0 aim to minimize breaking
                   changes but are allowed in order to avoid long-term technical debt.
                 </p>
-                <ul className="text-xs list-none">
+                <ul className="text-xs list-none mt-2">
                   <li>✅: A major version 1 or greater is available</li>
                   <li>⚠️: A major version hasn't been released</li>
                 </ul>
