@@ -3,9 +3,6 @@ import { normalize } from 'node:path';
 import { SDK, SDKS } from '../src/datasets/sdks';
 import { SdkCompatibilityGenerator } from './sdk-compatibility-generator';
 
-// import JavaSvg from '@site/static/img/java-no-fill.svg';
-// console.log(JavaSvg);
-
 const OPEN_FEATURE_URL = 'https://openfeature.dev';
 const DEFAULT_BRANCH = 'main';
 const DEFAULT_FILE_EXTENSION = 'mdx';
