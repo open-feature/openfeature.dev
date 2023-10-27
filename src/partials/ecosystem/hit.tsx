@@ -1,6 +1,7 @@
 import React, { ComponentType, SVGProps } from 'react';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from '@docusaurus/Link';
 
 import Pill from './pill';
 import { TECHNOLOGY_COLOR_MAP, TYPE_COLOR_MAP } from '../../datasets';
@@ -11,9 +12,8 @@ export default function Hit({ hit }: { hit: EcosystemElement }) {
   const Svg: ComponentType<SVGProps<SVGSVGElement>> = hit.logo;
 
   return (
-    <a
-      href={hit.href}
-      target={external ? '_blank' : '_self'}
+    <Link
+      to={hit.href}
       className="card hover:no-underline h-full w-64 p-4 shadow-[0_1.5px_3px_0_rgba(0,0,0,0.15)] border border-solid border-1 border-emphasis-200 hover:border-primary hover:shadow-[0_3px_6px_0_rgba(0,0,0,0.2)] text-emphasis-800 hover:text-content fill-emphasis-800 hover:fill-emphasis-800"
     >
       <div className="flex justify-between mb-6">
@@ -29,6 +29,6 @@ export default function Hit({ hit }: { hit: EcosystemElement }) {
         <Pill color={TYPE_COLOR_MAP[hit.type]}>{hit.type}</Pill>
         <Pill color={''}>{hit.category}</Pill>
       </div>
-    </a>
+    </Link>
   );
 }
