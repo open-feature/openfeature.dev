@@ -17,5 +17,11 @@ export const ConfigCat: Provider = {
       href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/providers/configcat',
       category: ['Server'],
     },
+    {
+          technology: 'Java',
+          vendorOfficial: false,
+          href: 'https://github.com/open-feature/java-sdk-contrib/tree/main/providers/configcat',
+          category: ['Server'],
+        },
   ],
 };
