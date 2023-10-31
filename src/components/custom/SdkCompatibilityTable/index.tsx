@@ -14,7 +14,9 @@ export default function SdkCompatibilityTable({ compatibility }: { compatibility
         <tr>
           <th></th>
           {compatibility.map((row) => (
-            <th>{row.name}</th>
+            <th>
+              <Link to={row.path}>{row.name}</Link>
+            </th>
           ))}
         </tr>
       </thead>
