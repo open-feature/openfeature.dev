@@ -9,7 +9,7 @@
       "stable": true
     },
     "spec": {
-      "href": "https://github.com/open-feature/spec/tree/v0.7.0",
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
       "version": "0.7.0"
     },
     "features": {
@@ -52,12 +52,12 @@
     "path": "/docs/reference/technologies/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.6.3",
-      "version": "1.6.3",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.7.0",
+      "version": "1.7.0",
       "stable": true
     },
     "spec": {
-      "href": "https://github.com/open-feature/spec/tree/v0.7.0",
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
       "version": "0.7.0"
     },
     "features": {
@@ -105,7 +105,7 @@
       "stable": true
     },
     "spec": {
-      "href": "https://github.com/open-feature/spec/tree/v0.5.2",
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.5.2",
       "version": "0.5.2"
     },
     "features": {
@@ -153,7 +153,7 @@
       "stable": true
     },
     "spec": {
-      "href": "https://github.com/open-feature/spec/tree/v0.7.0",
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
       "version": "0.7.0"
     },
     "features": {
@@ -196,12 +196,12 @@
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.1",
-      "version": "0.4.1",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.3",
+      "version": "0.4.3",
       "stable": false
     },
     "spec": {
-      "href": "https://github.com/open-feature/spec/tree/v0.7.0",
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
       "version": "0.7.0"
     },
     "features": {
@@ -249,7 +249,7 @@
       "stable": false
     },
     "spec": {
-      "href": "https://github.com/open-feature/spec/tree/v0.6.0",
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.6.0",
       "version": "0.6.0"
     },
     "features": {

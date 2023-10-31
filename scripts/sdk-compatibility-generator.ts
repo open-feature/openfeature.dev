@@ -17,8 +17,8 @@ export class SdkCompatibilityGenerator {
       name: sdk.name,
       path: sdk.path,
       category: sdk.category,
-      release: this.getReleaseInfo(sdk.repoUrl, sdk.content),
-      spec: this.getSpecInfo(sdk.content),
+      release: this.getReleaseInfo(sdk.name, sdk.repoUrl, sdk.content),
+      spec: this.getSpecInfo(sdk.name, sdk.content),
       features: this.getFeatureStatus(sdk.path, sdk.content),
     });
   }
@@ -27,11 +27,20 @@ export class SdkCompatibilityGenerator {
     writeFileSync(path, JSON.stringify(this._matrix, null, 2));
   }
 
-  private getReleaseInfo(url: string, content: string): SdkCompatibility['release'] {
+  /**
+   * Extracts the release version and a link to the release notes from a badge
+   * on the SDKs readme. The RegEx is looking for an <a> tag that looks like
+   * <a href="https://github.com/open-feature/SDK_REPO_NAME/releases/tag/TAG_VERSION">
+   */
+  private getReleaseInfo(name: string, url: string, content: string): SdkCompatibility['release'] {
     const releaseRegex = new RegExp(
       `<a href="(${url.replaceAll('/', '\\/').replaceAll('.', '\\.')}\\/releases\\/tag\\/.*(v?\\d+\\.\\d+\\.\\d+))">`
     );
     const releaseInfo = releaseRegex.exec(content);
+    if (!releaseInfo) {
+      throw new Error(`Unable to extract spec information from ${name}`);
+    }
+
     return {
       href: releaseInfo[1],
       version: releaseInfo[2],
@@ -39,12 +48,20 @@ export class SdkCompatibilityGenerator {
     };
   }
 
-  private getSpecInfo(content: string): SdkCompatibility['spec'] {
+  /**
+   * Extracts the spec version and a link to the release notes from a badge
+   * on the SDKs readme. The RegEx is looking for an <a> tag that looks like
+   * <a href="https://github.com/open-feature/spec/releases/tag/TAG_VERSION">
+   */
+  private getSpecInfo(name: string, content: string): SdkCompatibility['spec'] {
     const specRegex = new RegExp(
-      '<a href="(https:\\/\\/github\\.com\\/open-feature\\/spec\\/tree\\/v(\\d+\\.\\d+\\.\\d+))">'
+      '<a href="(https:\\/\\/github\\.com\\/open-feature\\/spec\\/releases\\/tag\\/v(\\d+\\.\\d+\\.\\d+))">'
     );
 
     const specInfo = specRegex.exec(content);
+    if (!specInfo) {
+      throw new Error(`Unable to extract spec information from ${name}`);
+    }
 
     return {
       href: specInfo[1],
@@ -52,6 +69,12 @@ export class SdkCompatibilityGenerator {
     };
   }
 
+  /**
+   * Extracts the status of features defined on the SDK readme. The feature table
+   * should match the SDK readme template.
+   *
+   * @link https://github.com/open-feature/.github/tree/main/templates/READMEs#-features
+   */
   private getFeatureStatus(path: string, content: string): SdkCompatibility['features'] {
     const featureStatus = {};
 

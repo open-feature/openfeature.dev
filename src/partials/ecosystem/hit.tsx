@@ -27,7 +27,7 @@ export default function Hit({ hit }: { hit: EcosystemElement }) {
       <div className="flex gap-2 flex-wrap mt-auto">
         <Pill color={TECHNOLOGY_COLOR_MAP[hit.technology]}>{hit.technology}</Pill>
         <Pill color={TYPE_COLOR_MAP[hit.type]}>{hit.type}</Pill>
-        <Pill color={''}>{hit.category}</Pill>
+        <Pill>{hit.category}</Pill>
       </div>
     </Link>
   );
