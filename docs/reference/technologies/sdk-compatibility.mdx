@@ -1,0 +1,27 @@
+---
+sidebar_position: 0
+title: SDK Compatibility Overview
+description: An overview of the status and supported features of the OpenFeature SDKs
+---
+
+import SdkCompatibilityTable from '@site/src/components/custom/SdkCompatibilityTable';
+import Json from '@site/src/datasets/sdks/sdk-compatibility.json';
+
+This page provides an overview of the status and supported features of the OpenFeature SDKs.
+
+### Server-side SDKs
+
+Server-side SDKs are intended for multi-user application (e.g. web server applications) and conform to the [dynamic-context paradigm](/specification/glossary#dynamic-context-paradigm).
+
+<SdkCompatibilityTable compatibility={Json.filter(sdk => sdk.category === 'Server')}/>
+
+<sub>Implemented: ✅ | In-progress: ⚠️ | Not implemented yet: ❌ | Unknown status: ❓</sub>
+
+### Client-side SDKs
+
+Client-side SDKs are intended for single user client application (e.g. mobile phones, single-page web apps) and conform to the [dynamic-context paradigm](/specification/glossary#dynamic-context-paradigm).
+
+
+<SdkCompatibilityTable compatibility={Json.filter(sdk => sdk.category === 'Client')}/>
+
+<sub>Implemented: ✅ | In-progress: ⚠️ | Not implemented yet: ❌ | Unknown status: ❓</sub>
