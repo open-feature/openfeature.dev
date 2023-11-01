@@ -14,7 +14,7 @@ export const DevCycle: Provider = {
     {
       technology: 'Java',
       vendorOfficial: true,
-      href: 'https://github.com/DevCycleHQ/java-server-sdk/',
+      href: 'https://github.com/DevCycleHQ/java-server-sdk/#openfeature-support',
       category: ['Server'],
     },
   ],
