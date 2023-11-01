@@ -29,7 +29,7 @@ Below, I dive into three of the main server-side SDK functionalities at a high l
 
 * The described architectures below are high level.
 * Feature flag services described in the diagrams may be a cloud service, a local network proxy or some data source (some feature flag solutions SDKs can communicate directly from a source like GitHub).
-* Additional functionalities like statistics reporting, metrics, events and more should also be taken into consideration, but I have not explored these in this particular blog post.
+* Additional functionalities like statistics reporting, evaluation analytics metrics, events and more should also be taken into consideration, but I have not explored these in this particular blog post.
 
 ### "Direct" API endpoints Bridge
 
@@ -57,7 +57,7 @@ In this approach, as each operation like feature flag evaluation causing network
 * Performance and resources usage: each operation like feature flag evaluation causing network traffic.
     * Slow compared to alternative architectures.
     * High load on network traffic.
-    * Affecting both application, and Feature Flag service itself, whether it is self-hosted relay proxy or even more when it is a Cloud Saas service.
+    * Numerous network requests causing high load on the feature flag service / proxy.
 
 ### API endpoints requests with cache
 
@@ -81,7 +81,7 @@ As this approach involves network traffic for non-cached evaluations, a relay pr
 
 #### Disadvantages
 
-* Functional disadvantage is that intermediate issue like network or feature flags service error for non-cached data is handled by not evaluating to the expected feature flag value.
+* Intermediate issues like network or feature flag service errors may lead to unexpected flag evaluation behavior.
 * Another functional disadvantage is that intermediate issue like network or feature flags service error during microservice initialization is handled by not evaluating to the expected feature flag value.
 * First requests are not in cache, thus slower and causing network traffic.
 * Not every request can be efficiently cached, as some evaluations can be dynamic according to context with different values.
@@ -93,7 +93,6 @@ With this approach, the feature flag configuration is saved locally in the SDK.
 Feature flag evaluation is done locally via the SDK and is not affected by network performance.
 With this approach, configuration can be fetched on initialization, and be refreshed periodically and/or when there is a configuration change, which can be triggered at the SDK via stream event from the feature flag service. 
 Some SDKs sync data via WebSockets or [SSE](https://en.wikipedia.org/wiki/Server-sent_events).
-When this approach is used, evaluation analytics metrics can be aggregated at the SDK side and published separately, as not every flag evaluation triggers a message to the Features Service / Proxy.
 
 ### Local evaluation - example flow
 
@@ -119,6 +118,7 @@ This approach is less suitable for client-side SDKs from a security point of vie
 
 ## OpenFeature and server-side SDKs
 
+OpenFeature is an open specification that provides a vendor-agnostic, community-driven API for feature flagging, while a main part of it is the SDK specification.
 * OpenFeature has a [specification](https://openfeature.dev/specification/glossary/#feature-flag-sdk) for how an SDK should behave across multiple programming languages.
 * The OpenFeature specification has methods like flags evaluation and initialization.
 * The OpenFeature specification treats events, which can go together with some scenarios like network errors.
