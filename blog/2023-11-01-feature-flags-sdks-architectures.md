@@ -53,7 +53,6 @@ In this approach, as each operation like feature flag evaluation causing network
 #### Disadvantages
 
 * Intermediate issues like network or feature flag service errors may lead to unexpected flag evaluation behavior.
-* Another functional disadvantage is that intermediate issue like network or feature flags service error during microservice initialization is handled by not evaluating to the expected feature flag value.
 * Performance and resources usage: each operation like feature flag evaluation causing network traffic.
     * Slow compared to alternative architectures.
     * High load on network traffic.
@@ -112,16 +111,12 @@ Some SDKs sync data via WebSockets or [SSE](https://en.wikipedia.org/wiki/Server
 * When feature flag configurations are very large with many feature flags, network traffic and local cache sizes can be increased. This can impact the time an SDK needs to initialize.
 * Local evaluation should be implemented at the SDK, developed and maintained for multiple languages. Considering rules like context properties based and percentage rollout strategies via hashing to buckets, it can be hard to keep 100% feature parity across languages.
 
-#### A note on client-side SDKs for web browser / client app
-
-This approach is less suitable for client-side SDKs from a security point of view, as full feature flag configuration and authorization keys are exposed to end users.
-
 ## OpenFeature and server-side SDKs
 
 OpenFeature is an open specification that provides a vendor-agnostic, community-driven API for feature flagging, while a main part of it is the SDK specification.
 * OpenFeature has a [specification](https://openfeature.dev/specification/glossary/#feature-flag-sdk) for how an SDK should behave across multiple programming languages.
 * The OpenFeature specification has methods like flags evaluation and initialization.
-* The OpenFeature specification treats events, which can go together with some scenarios like network errors.
+* The OpenFeature specification supports events, which can be used by developers to react to initialization, flag configuration changes, and error events.
 * As there are multiple SDK architectures, fallback mechanisms are not always well-defined, and vendors can implement providers the way they choose.
 
 
