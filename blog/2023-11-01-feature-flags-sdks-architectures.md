@@ -61,7 +61,7 @@ In this approach, as each operation like feature flag evaluation causing network
 
 ### API endpoints requests with cache
 
-At this approach, the feature flag service exposes APIs via endpoints like REST HTTP and/or gRpc, and the SDK calling the endpoint requests, and translate the request/responses to the programming language. A cache is used for responses data.  
+With this approach, the feature flag service exposes APIs via endpoints like REST HTTP and/or gRpc, and the SDK calling the endpoint requests, and translate the request/responses to the programming language. A cache is used for responses data.  
 Feature flag evaluation is done on proxy / features service only.  
 As this approach involves network traffic for non-cached evaluations, a Relay Proxy is effective for having the network traffic data on internal network for faster and efficient performance and reducing the load on the Features Service / Source.
 
