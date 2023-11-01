@@ -2,9 +2,9 @@ import type { ComponentType, SVGProps } from 'react';
 import { OpenTelemetry } from './opentelemetry';
 import { Validation } from './validation';
 import { Datadog } from './datadog';
-import { Category, EcosystemElement, Technology } from '..';
+import { Category, EcosystemElement, Technology } from '../types';
 
-export const HOOKS: EcosystemElement[] = [OpenTelemetry, Validation, Datadog]
+export const ECOSYSTEM_HOOKS: EcosystemElement[] = [OpenTelemetry, Validation, Datadog]
   .map((hook) => {
     return hook.technologies.map(({ vendorOfficial, technology, href, category }): EcosystemElement => {
       return {
