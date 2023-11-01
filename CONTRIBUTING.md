@@ -54,7 +54,14 @@ This command generates static content into the `build` directory and can be serv
 
 The SDK docs can be updated by running `yarn update:sdk-docs`.
 This will fetch the READMEs from all the configured SDK repos and automatically run transformations on the content.
-A new SDK can be added at `scripts/sdks.ts`.
+
+A new SDK can be added by:
+
+1. Add an SVG that represents the technology used by the SDK in the `/static/img` directory. [Font Awesome](https://fontawesome.com/) is a good resource finding SVGs.
+1. Add the SVG to the logo map found `/src/datasets/sdks/ecosystem.ts`. The key can be anything you want as long as it matches what you define in the next step.
+2. Add a new SDK in `/src/datasets/sdks`
+1. Add the newly created SDK to the `SDKS` array in `/src/datasets/sdks/index.ts`
+1. Run `yarn update:sdk-docs`
 
 ### Deployment
 

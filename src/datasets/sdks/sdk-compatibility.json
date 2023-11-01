@@ -1,0 +1,290 @@
+[
+  {
+    "name": "Java",
+    "path": "/docs/reference/technologies/server/java",
+    "category": "Server",
+    "release": {
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.7.0",
+      "version": "1.7.0",
+      "stable": true
+    },
+    "spec": {
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
+      "version": "0.7.0"
+    },
+    "features": {
+      "Providers": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/java#providers"
+      },
+      "Targeting": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/java#targeting"
+      },
+      "Hooks": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/java#hooks"
+      },
+      "Logging": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/java#logging"
+      },
+      "Named clients": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/java#named-clients"
+      },
+      "Eventing": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/java#eventing"
+      },
+      "Shutdown": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/java#shutdown"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/java#extending"
+      }
+    }
+  },
+  {
+    "name": "Node.js",
+    "path": "/docs/reference/technologies/server/javascript",
+    "category": "Server",
+    "release": {
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.7.0",
+      "version": "1.7.0",
+      "stable": true
+    },
+    "spec": {
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
+      "version": "0.7.0"
+    },
+    "features": {
+      "Providers": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/javascript#providers"
+      },
+      "Targeting": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/javascript#targeting"
+      },
+      "Hooks": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/javascript#hooks"
+      },
+      "Logging": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/javascript#logging"
+      },
+      "Named clients": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/javascript#named-clients"
+      },
+      "Eventing": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/javascript#eventing"
+      },
+      "Shutdown": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/javascript#shutdown"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/javascript#extending"
+      }
+    }
+  },
+  {
+    "name": ".NET",
+    "path": "/docs/reference/technologies/server/dotnet",
+    "category": "Server",
+    "release": {
+      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v1.3.1",
+      "version": "1.3.1",
+      "stable": true
+    },
+    "spec": {
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.5.2",
+      "version": "0.5.2"
+    },
+    "features": {
+      "Providers": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/dotnet#providers"
+      },
+      "Targeting": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/dotnet#targeting"
+      },
+      "Hooks": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/dotnet#hooks"
+      },
+      "Logging": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/dotnet#logging"
+      },
+      "Named clients": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/dotnet#named-clients"
+      },
+      "Eventing": {
+        "status": "❌",
+        "path": "/docs/reference/technologies/server/dotnet#eventing"
+      },
+      "Shutdown": {
+        "status": "❌",
+        "path": "/docs/reference/technologies/server/dotnet#shutdown"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/dotnet#extending"
+      }
+    }
+  },
+  {
+    "name": "Go",
+    "path": "/docs/reference/technologies/server/go",
+    "category": "Server",
+    "release": {
+      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.8.0",
+      "version": "1.8.0",
+      "stable": true
+    },
+    "spec": {
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
+      "version": "0.7.0"
+    },
+    "features": {
+      "Providers": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/go#providers"
+      },
+      "Targeting": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/go#targeting"
+      },
+      "Hooks": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/go#hooks"
+      },
+      "Logging": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/go#logging"
+      },
+      "Named clients": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/go#named-clients"
+      },
+      "Eventing": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/go#eventing"
+      },
+      "Shutdown": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/go#shutdown"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/go#extending"
+      }
+    }
+  },
+  {
+    "name": "Web",
+    "path": "/docs/reference/technologies/client/web",
+    "category": "Client",
+    "release": {
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.3",
+      "version": "0.4.3",
+      "stable": false
+    },
+    "spec": {
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
+      "version": "0.7.0"
+    },
+    "features": {
+      "Providers": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/web#providers"
+      },
+      "Targeting": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/web#targeting-and-context"
+      },
+      "Hooks": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/web#hooks"
+      },
+      "Logging": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/web#logging"
+      },
+      "Named clients": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/web#named-clients"
+      },
+      "Eventing": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/web#eventing"
+      },
+      "Shutdown": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/web#shutdown"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/web#extending"
+      }
+    }
+  },
+  {
+    "name": "Android",
+    "path": "/docs/reference/technologies/client/kotlin",
+    "category": "Client",
+    "release": {
+      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.0.4",
+      "version": "0.0.4",
+      "stable": false
+    },
+    "spec": {
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.6.0",
+      "version": "0.6.0"
+    },
+    "features": {
+      "Providers": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/kotlin#providers"
+      },
+      "Targeting": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/kotlin#targeting"
+      },
+      "Hooks": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/kotlin#hooks"
+      },
+      "Logging": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/client/kotlin"
+      },
+      "Named clients": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/client/kotlin"
+      },
+      "Eventing": {
+        "status": "⚠️",
+        "path": "/docs/reference/technologies/client/kotlin#eventing"
+      },
+      "Shutdown": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/kotlin#shutdown"
+      },
+      "Extending": {
+        "status": "⚠️",
+        "path": "/docs/reference/technologies/client/kotlin#extending"
+      }
+    }
+  }
+]

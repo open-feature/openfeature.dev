@@ -4,6 +4,7 @@ import { FontAwesomeCardData, SvgCardData, SvgOrFonticon } from '../SvgOrFontico
 import { faCircleCheck, faSadCry } from '@fortawesome/free-regular-svg-icons';
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from '@docusaurus/Link';
 
 type CardData = {
   href: string;
@@ -31,25 +32,21 @@ export class OpenFeatureComponentCard extends React.Component<OpenFeatureCompone
     const props = this.props as CardData & Partial<SvgCardData & FontAwesomeCardData>;
     const external = props.href.startsWith('http');
     return (
-      <a
-        // if external, open in new tab
-        target={external ? '_blank' : '_self'}
-        href={props.href}
-        style={{ position: 'relative' }}
-        className={clsx('card padding--lg', styles.cardContainer)}
-      >
+      <Link to={props.href} style={{ position: 'relative' }} className={clsx('card padding--lg', styles.cardContainer)}>
         <div style={{ height: 0, position: 'absolute', right: 20, top: 20 }}>{external ? '🔗' : ''}</div>
 
-        <SvgOrFonticon svg={ props.svg } iconDefinition={ props.iconDefinition }/>
+        <SvgOrFonticon svg={props.svg} iconDefinition={props.iconDefinition} />
         <h1 className={clsx('text--truncate', styles.cardTitle)}>{this.props.title}</h1>
         <h2 className={clsx(styles.cardDescription)}>{this.props.description}</h2>
         <div className={clsx(styles.vendorOfficialContainer)}>
-          { props.vendorOfficial ?
-            <FontAwesomeIcon icon={ faCircleCheck } title="Official, vendor-supported provider"/> :
+          {props.vendorOfficial ? (
+            <FontAwesomeIcon icon={faCircleCheck} title="Official, vendor-supported provider" />
+          ) : (
             // visibility: 'hidden'  is important here. This icon is only here for consistent sizing.
-            <FontAwesomeIcon style={{ visibility: 'hidden' }} icon={ faSadCry }/> }          
+            <FontAwesomeIcon style={{ visibility: 'hidden' }} icon={faSadCry} />
+          )}
         </div>
-      </a>
+      </Link>
     );
   }
 }

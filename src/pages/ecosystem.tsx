@@ -80,7 +80,7 @@ export default function Ecosystem() {
                   <div className="flex justify-center">
                     <SearchBox
                       autoFocus
-                      placeholder={'Search hooks and providers...'}
+                      placeholder={'Search SDKs, hooks, and providers...'}
                       classNames={{
                         root: 'w-screen md:w-[512px] px-4',
                         input:
