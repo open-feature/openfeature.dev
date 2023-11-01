@@ -3,7 +3,7 @@ slug: 'feature-flags-sdks-architectures'
 title: 'Different approaches for server-side SDK architectures'
 date: 2023-11-01
 authors: [liran2000]
-description: "Feature Flags services Server-side SDKs different architectures approaches"
+description: "This blog explores the pros and cons of common server-side feature flag SDK architectures."
 tags: [client, sdk]
 draft: false
 ---
