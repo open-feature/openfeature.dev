@@ -1,6 +1,6 @@
 ---
 slug: 'feature-flags-sdks-architectures'
-title: 'Feature Flags services Server-side SDKs different architectures approaches'
+title: 'Different approaches for server-side SDKs architecture'
 date: 2023-11-01
 authors: [liran2000]
 description: "Feature Flags services Server-side SDKs different architectures approaches"
