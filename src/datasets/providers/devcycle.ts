@@ -11,5 +11,11 @@ export const DevCycle: Provider = {
       href: 'https://www.npmjs.com/package/@devcycle/openfeature-nodejs-provider',
       category: ['Server'],
     },
+    {
+      technology: 'Java',
+      vendorOfficial: true,
+      href: 'https://github.com/DevCycleHQ/java-server-sdk/#openfeature-support',
+      category: ['Server'],
+    },
   ],
 };
