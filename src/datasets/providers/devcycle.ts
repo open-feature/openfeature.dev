@@ -8,19 +8,19 @@ export const DevCycle: Provider = {
     {
       technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://www.npmjs.com/package/@devcycle/openfeature-nodejs-provider',
+      href: 'https://docs.devcycle.com/sdk/server-side-sdks/node/node-openfeature',
       category: ['Server'],
     },
     {
       technology: 'Java',
       vendorOfficial: true,
-      href: 'https://github.com/DevCycleHQ/java-server-sdk/#openfeature-support',
+      href: 'https://docs.devcycle.com/sdk/server-side-sdks/java-local/java-local-openfeature',
       category: ['Server'],
     },
     {
       technology: 'Go',
       vendorOfficial: true,
-      href: 'https://github.com/DevCycleHQ/go-server-sdk#openfeature-support',
+      href: 'https://docs.devcycle.com/sdk/server-side-sdks/go/go-openfeature',
       category: ['Server'],
     },
     {
