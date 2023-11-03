@@ -17,5 +17,17 @@ export const DevCycle: Provider = {
       href: 'https://github.com/DevCycleHQ/java-server-sdk/#openfeature-support',
       category: ['Server'],
     },
+    {
+      technology: 'Go',
+      vendorOfficial: true,
+      href: 'https://github.com/DevCycleHQ/go-server-sdk#openfeature-support',
+      category: ['Server'],
+    },
+    {
+      technology: '.NET',
+      vendorOfficial: true,
+      href: 'https://docs.devcycle.com/sdk/server-side-sdks/dotnet/dotnet-openfeature',
+      category: ['Server'],
+    },
   ],
 };
