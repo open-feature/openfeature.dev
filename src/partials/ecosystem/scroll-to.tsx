@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { useInstantSearch } from 'react-instantsearch-hooks-web';
+import { useInstantSearch } from 'react-instantsearch';
 
 export default function ScrollTo({ children }: { children: React.ReactNode }) {
-  const { use } = useInstantSearch();
+  const { addMiddlewares } = useInstantSearch();
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -22,8 +22,8 @@ export default function ScrollTo({ children }: { children: React.ReactNode }) {
       };
     };
 
-    return use(middleware);
-  }, [use]);
+    return addMiddlewares(middleware);
+  }, [addMiddlewares]);
 
   return (
     <div ref={containerRef} className="ais-ScrollTo">
