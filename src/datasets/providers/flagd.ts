@@ -2,7 +2,7 @@ import FlagdSvg from '@site/static/img/flagd-no-fill.svg';
 import { Provider } from '.';
 
 export const Flagd: Provider = {
-  name: 'FlagD',
+  name: 'flagd',
   logo: FlagdSvg,
   technologies: [
     {

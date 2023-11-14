@@ -3,7 +3,13 @@ import { ECOSYSTEM_PROVIDERS } from './providers';
 import { ECOSYSTEM_SDKS } from './sdks/ecosystem';
 import { EcosystemElement, Technology, Type } from './types';
 
-export const ECOSYSTEM: EcosystemElement[] = [...ECOSYSTEM_SDKS, ...ECOSYSTEM_PROVIDERS, ...ECOSYSTEM_HOOKS];
+export const ECOSYSTEM: EcosystemElement[] = [...ECOSYSTEM_SDKS, ...ECOSYSTEM_PROVIDERS, ...ECOSYSTEM_HOOKS].map(
+  (s) => ({
+    // Creates a unique id per item for the search index
+    id: `${s.type}/${s.category}/${s.technology}/${s.vendor}/${s.href}`,
+    ...s,
+  })
+);
 
 export const TECHNOLOGY_COLOR_MAP: Record<Technology, string> = {
   JavaScript: 'bg-yellow-50 text-yellow-600 ring-yellow-500/10',

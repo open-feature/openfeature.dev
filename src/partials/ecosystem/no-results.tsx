@@ -1,5 +1,5 @@
 import React from 'react';
-import { useInstantSearch } from 'react-instantsearch-hooks-web';
+import { useInstantSearch } from 'react-instantsearch';
 import NoResultSvg from '@site/static/img/no-results.svg';
 
 export default function NoResults() {

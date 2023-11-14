@@ -1,5 +1,5 @@
 import React from 'react';
-import { usePagination, Pagination as InstantSearchPagination } from 'react-instantsearch-hooks-web';
+import { usePagination, Pagination as InstantSearchPagination } from 'react-instantsearch';
 
 import { SEARCH_ITEMS_PER_PAGE } from '../../datasets/constants';
 
