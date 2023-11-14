@@ -5,8 +5,9 @@ import { Go } from './go';
 import { Web } from './web';
 import { Category, Technology } from '../types';
 import { Kotlin } from './kotlin';
+import { Python } from './python';
 
-export const SDKS = [Java, Nodejs, Dotnet, Go, Web, Kotlin];
+export const SDKS = [Java, Nodejs, Dotnet, Go, Python, Web, Kotlin];
 
 export type SDK = {
   /**
