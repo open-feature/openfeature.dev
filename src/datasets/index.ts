@@ -18,6 +18,7 @@ export const TECHNOLOGY_COLOR_MAP: Record<Technology, string> = {
   ['.NET']: 'bg-violet-50 text-violet-600 ring-violet-500/10',
   PHP: 'bg-indigo-50 text-indigo-600 ring-indigo-500/10',
   Kotlin: 'bg-purple-50 text-purple-600 ring-purple-500/10',
+  Python: 'bg-blue-50 text-blue-600 ring-blue-500/10',
 };
 
 export const TYPE_COLOR_MAP: Record<Type, string> = {

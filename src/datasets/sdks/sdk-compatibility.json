@@ -52,8 +52,8 @@
     "path": "/docs/reference/technologies/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.7.0",
-      "version": "1.7.0",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.7.2",
+      "version": "1.7.2",
       "stable": true
     },
     "spec": {
@@ -192,12 +192,60 @@
     }
   },
   {
+    "name": "Python",
+    "path": "/docs/reference/technologies/server/python",
+    "category": "Server",
+    "release": {
+      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.4.1",
+      "version": "0.4.1",
+      "stable": false
+    },
+    "spec": {
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.3.0",
+      "version": "0.3.0"
+    },
+    "features": {
+      "Providers": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/python#providers"
+      },
+      "Targeting": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/python#targeting"
+      },
+      "Hooks": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/python#hooks"
+      },
+      "Logging": {
+        "status": "❌",
+        "path": "/docs/reference/technologies/server/python#logging"
+      },
+      "Named clients": {
+        "status": "❌",
+        "path": "/docs/reference/technologies/server/python#named-clients"
+      },
+      "Eventing": {
+        "status": "❌",
+        "path": "/docs/reference/technologies/server/python#eventing"
+      },
+      "Shutdown": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/python#shutdown"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/python#extending"
+      }
+    }
+  },
+  {
     "name": "Web",
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.3",
-      "version": "0.4.3",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.5",
+      "version": "0.4.5",
       "stable": false
     },
     "spec": {
@@ -244,8 +292,8 @@
     "path": "/docs/reference/technologies/client/kotlin",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.0.4",
-      "version": "0.0.4",
+      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.1.0",
+      "version": "0.1.0",
       "stable": false
     },
     "spec": {
