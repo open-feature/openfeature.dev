@@ -375,6 +375,12 @@ Be sure to document this behavior.
 If an error condition is encountered in your provider, an error should be [indicated](/specification/types#error-code) by throwing or returning an error, as language idioms dictate.
 The SDK will ensure the default value is returned and expose the relevant error data.
 
+#### Why isn't there an [error code](/specification/types#error-code) for disabled flags?
+
+The evaluation of disabled flags does not constitute an "exceptional" occurrence.
+Flag management systems which feature the ability to disable flags typically expect that flags in this state might be evaluated by client applications.
+For this reason, OpenFeature defines a [disabled reason](/specification/types#resolution-details), not a disabled error.
+
 #### My flag system doesn't support flags of a particular type. What should I do?
 
 If your backend system doesn't support a particular flag type, you can:
