@@ -26,7 +26,7 @@ export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = [
   LaunchDarkly,
   PostHog,
   Split,
-  Unleash
+  Unleash,
 ]
   .map((provider) => {
     return provider.technologies.map(({ category, href, technology, vendorOfficial }): EcosystemElement => {
