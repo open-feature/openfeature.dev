@@ -1,4 +1,4 @@
-import HarnessSvg from '@site/static/img/Harness-no-fill.svg';
+import HarnessSvg from '@site/static/img/harness-no-fill.svg';
 import { Provider } from '.';
 
 export const Harness: Provider = {
