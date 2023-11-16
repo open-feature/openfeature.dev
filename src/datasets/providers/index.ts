@@ -10,9 +10,9 @@ import { Goff } from './goff';
 import { LaunchDarkly } from './launchdarkly';
 import { PostHog } from './posthog';
 import { Split } from './split';
-import { Category, EcosystemElement, Technology } from '..';
+import { Category, EcosystemElement, Technology } from '../types';
 
-export const PROVIDERS: EcosystemElement[] = [
+export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = [
   CloudBees,
   ConfigCat,
   DevCycle,

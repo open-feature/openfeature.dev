@@ -1,13 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import {
-  Configure,
-  Hits,
-  InstantSearch,
-  RefinementList,
-  SearchBox,
-  ToggleRefinement,
-} from 'react-instantsearch-hooks-web';
+import { Configure, Hits, InstantSearch, RefinementList, SearchBox, ToggleRefinement } from 'react-instantsearch';
 import { createIndex, getSearchClient } from 'instantsearch-itemsjs-adapter';
 
 import { SEARCH_ITEMS_PER_PAGE } from '../datasets/constants';
@@ -47,7 +40,6 @@ const options = {
       size: 10,
       conjunction: false,
       hide_zero_doc_count: true,
-      sort: 'key',
     },
     vendorOfficial: {
       title: 'official',
@@ -64,7 +56,12 @@ const searchClient = getSearchClient(index);
 export default function Ecosystem() {
   return (
     <Layout title="Ecosystem" description="OpenFeature Ecosystem">
-      <InstantSearch searchClient={searchClient} indexName="instant_search" routing={true}>
+      <InstantSearch
+        searchClient={searchClient}
+        indexName="instant_search"
+        routing={true}
+        future={{ preserveSharedStateOnUnmount: true }}
+      >
         <Configure hitsPerPage={SEARCH_ITEMS_PER_PAGE}></Configure>
         <ScrollTo>
           <div className="flex flex-col min-h-screen overflow-hidden">
@@ -80,7 +77,7 @@ export default function Ecosystem() {
                   <div className="flex justify-center">
                     <SearchBox
                       autoFocus
-                      placeholder={'Search hooks and providers...'}
+                      placeholder={'Search SDKs, hooks, and providers...'}
                       classNames={{
                         root: 'w-screen md:w-[512px] px-4',
                         input:
@@ -146,7 +143,10 @@ export default function Ecosystem() {
                     <span className="font-medium text-content">Vendor</span>
                     <RefinementList
                       attribute="vendor"
-                      sortBy={['name:asc']}
+                      // Perform a case insensitive sort
+                      sortBy={(a, b) => {
+                        return a.name.localeCompare(b.name);
+                      }}
                       classNames={{
                         count:
                           'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',

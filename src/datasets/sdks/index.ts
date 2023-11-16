@@ -1,3 +1,14 @@
+import { Java } from './java';
+import { Nodejs } from './nodejs';
+import { Dotnet } from './dotnet';
+import { Go } from './go';
+import { Web } from './web';
+import { Category, Technology } from '../types';
+import { Kotlin } from './kotlin';
+import { Python } from './python';
+
+export const SDKS = [Java, Nodejs, Dotnet, Go, Python, Web, Kotlin];
+
 export type SDK = {
   /**
    * The name of the technology used for the SDK.
@@ -7,7 +18,7 @@ export type SDK = {
    * The name used for the generated file.
    *
    * @defaults name.toLowerCase()
-   *
+   
    */
   filename?: string;
   /**
@@ -22,10 +33,8 @@ export type SDK = {
    * @default mdx
    */
   fileExtension?: string;
-  /**
-   * The type of SDK based on the static and dynamic paradigms
-   */
-  type: 'client' | 'server';
+
+  category: Category;
   /**
    * The name of the SDK repo.
    */
@@ -38,4 +47,18 @@ export type SDK = {
    * The folder where the README can be found.
    */
   folder?: string;
+  /**
+   * A key that matches an SVG logo found the LogoMap.
+   *
+   * @example c-sharp-no-fill.svg
+   */
+  logoKey: string;
+  /**
+   * Friendly name of the technology of the SDK.
+   */
+  technology: Technology;
+  /**
+   * Link to the SDK documentation
+   */
+  href: string;
 };

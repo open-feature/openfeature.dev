@@ -1,5 +1,5 @@
 import React from 'react';
-import { useClearRefinements } from 'react-instantsearch-hooks-web';
+import { useClearRefinements } from 'react-instantsearch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
 

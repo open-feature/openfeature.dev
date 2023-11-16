@@ -184,18 +184,18 @@
     "@algolia/logger-common" "4.20.0"
     "@algolia/requester-common" "4.20.0"
 
-"@algolia/ui-components-highlight-vdom@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@algolia/ui-components-highlight-vdom/-/ui-components-highlight-vdom-1.2.1.tgz#c430c9f090ef8c68477ef4b685324ed231ce0c13"
-  integrity sha512-IlYgIaCUEkz9ezNbwugwKv991oOHhveyq6nzL0F1jDzg1p3q5Yj/vO4KpNG910r2dwGCG3nEm5GtChcLnarhFA==
+"@algolia/ui-components-highlight-vdom@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@algolia/ui-components-highlight-vdom/-/ui-components-highlight-vdom-1.2.2.tgz#913ac447e41afc79dcbd95ca37531bbfbdb81cfe"
+  integrity sha512-/+7jh7cd5rR2yQC7ME4SDcnAMiD1Ofn5Qq+E7afTJx9XSMOHkLR77/o6YcuJ60TfD1S+9lr7yjBLACon8gOuzQ==
   dependencies:
-    "@algolia/ui-components-shared" "1.2.1"
+    "@algolia/ui-components-shared" "1.2.2"
     "@babel/runtime" "^7.0.0"
 
-"@algolia/ui-components-shared@1.2.1", "@algolia/ui-components-shared@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@algolia/ui-components-shared/-/ui-components-shared-1.2.1.tgz#62e3a04fc11623f149312942cd764d4528dd994c"
-  integrity sha512-a7mYHf/GVQfhAx/HRiMveKkFvHspQv/REdG+C/FIOosiSmNZxX7QebDwJkrGSmDWdXO12D0Qv1xn3AytFcEDlQ==
+"@algolia/ui-components-shared@1.2.2", "@algolia/ui-components-shared@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@algolia/ui-components-shared/-/ui-components-shared-1.2.2.tgz#ec49246e2de7d0461cdeadf2e7742d2f2c7c0bd9"
+  integrity sha512-FYwEG5sbr8p4V8mqP0iUaKgmWfcrMXRXwp7e6iBuB65P/7QyL8pT4I6/iGb85Q5mNH+UtYYSmLZhKjEblllKEQ==
 
 "@alloc/quick-lru@^5.2.0":
   version "5.2.0"
@@ -3182,10 +3182,10 @@ ajv@^8.0.0, ajv@^8.9.0:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-algoliasearch-helper@3.14.0:
-  version "3.14.0"
-  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.14.0.tgz#2409c2591952719ab6fba1de77b3bbe5094ab85e"
-  integrity sha512-gXDXzsSS0YANn5dHr71CUXOo84cN4azhHKUbg71vAWnH+1JBiR4jf7to3t3JHXknXkbV0F7f055vUSBKrltHLQ==
+algoliasearch-helper@3.15.0:
+  version "3.15.0"
+  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.15.0.tgz#d680783329920a3619a74504dccb97a4fb943443"
+  integrity sha512-DGUnK3TGtDQsaUE4ayF/LjSN0DGsuYThB8WBgnnDY0Wq04K6lNVruO3LfqJOgSfDiezp+Iyt8Tj4YKHi+/ivSA==
   dependencies:
     "@algolia/events" "^4.0.1"
 
@@ -3738,15 +3738,15 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001538:
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001517:
+  version "1.0.30001554"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001554.tgz"
+  integrity sha512-A2E3U//MBwbJVzebddm1YfNp7Nud5Ip+IPn4BozBmn4KqVX7AvluoIDFWjsv5OkGnKUXQVmMSoMKLa3ScCblcQ==
+
+caniuse-lite@^1.0.30001538:
   version "1.0.30001538"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001538.tgz#9dbc6b9af1ff06b5eb12350c2012b3af56744f3f"
   integrity sha512-HWJnhnID+0YMtGlzcp3T9drmBJUVDchPJ08tpUGFLs9CYlwWPH2uLgpHn8fND5pCgXVtnGS3H4QR9XLMHVNkHw==
-
-caniuse-lite@^1.0.30001517:
-  version "1.0.30001521"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001521.tgz#e9930cf499f7c1e80334b6c1fbca52e00d889e56"
-  integrity sha512-fnx1grfpEOvDGH+V17eccmNjucGUnCbP6KL+l5KqBIerp26WK/+RQ7CIDE37KGJjaPyqWXXlFUyKiWmvdNNKmQ==
 
 ccount@^1.0.0:
   version "1.1.0"
@@ -6695,19 +6695,19 @@ instantsearch-itemsjs-adapter@^1.1.5:
     itemsjs "^2.1.14"
     tsup "^5.11.7"
 
-instantsearch.js@4.56.8:
-  version "4.56.8"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.56.8.tgz#c417c68a792a4b7d6cc866cdb059d828799e84da"
-  integrity sha512-40DJ5l70ZzVzWPK3qrHTKlJLaHGq1PRZpzfL6281P2mz8G19WOHQHKAP4Zh6a4lOZaRtJQUiPjQwqCHSurXZ5g==
+instantsearch.js@4.60.0:
+  version "4.60.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.60.0.tgz#3b5476a5532efbc3fcb513a36905dc6c76d7e26d"
+  integrity sha512-u/xeCT1DaxPioJnSm3hV4lNAojlhbjGrpX5fHO6+RJjpDFv/MgYxiIOdaIRowmt5F0v/3QCm+Un5f4jy1/+emA==
   dependencies:
     "@algolia/events" "^4.0.1"
-    "@algolia/ui-components-highlight-vdom" "^1.2.1"
-    "@algolia/ui-components-shared" "^1.2.1"
+    "@algolia/ui-components-highlight-vdom" "^1.2.2"
+    "@algolia/ui-components-shared" "^1.2.2"
     "@types/dom-speech-recognition" "^0.0.1"
     "@types/google.maps" "^3.45.3"
     "@types/hogan.js" "^3.0.0"
     "@types/qs" "^6.5.3"
-    algoliasearch-helper "3.14.0"
+    algoliasearch-helper "3.15.0"
     hogan.js "^3.0.2"
     htm "^3.0.0"
     preact "^10.10.0"
@@ -7131,15 +7131,10 @@ itemsjs@^2.1.14:
     lodash "^4.17.21"
     lunr "^1.0.0"
 
-itemsjs@^2.1.22:
-  version "2.1.22"
-  resolved "https://registry.yarnpkg.com/itemsjs/-/itemsjs-2.1.22.tgz#0c9b8c25e9b853350fcf8fad744e41e1b815c1f0"
-  integrity sha512-aWoVfLFK2j38Sb0NUBN64hEDRndf54eXHrM2tc3c8Yq5dz5XJgTN/eSPHpbEiWbs1JbYjRNOWuzH6cQpG9QtQw==
-  dependencies:
-    boolean-parser "^0.0.2"
-    fastbitset "^0.4.0"
-    lodash "^4.17.21"
-    lunr "^1.0.0"
+itemsjs@^2.1.24:
+  version "2.1.24"
+  resolved "https://registry.yarnpkg.com/itemsjs/-/itemsjs-2.1.24.tgz#542cc65feddd69efc02da94a6702e9b9bfc916e2"
+  integrity sha512-e9t06r0jiSzC6Rx/rlJTh32VtocOEpwx7K+GCjkLk+ITMWQk5hxtl6yQzuZeRdMSdTFd6yoSLyT8GcDRmVKujw==
 
 jackspeak@^2.0.3:
   version "2.2.0"
@@ -9434,24 +9429,24 @@ react-helmet-async@*, react-helmet-async@^1.3.0:
     react-fast-compare "^3.2.0"
     shallowequal "^1.1.0"
 
-react-instantsearch-hooks-web@^6.47.3:
-  version "6.47.3"
-  resolved "https://registry.yarnpkg.com/react-instantsearch-hooks-web/-/react-instantsearch-hooks-web-6.47.3.tgz#aad0381c72ee85dc0465a59894d1f0c16bf4e3b5"
-  integrity sha512-JTkPm11xwCX9eO4FgeeJ4v4O98wz1L7cAa2LkspgzDD1MPjMLtmiRVzvGxuYnOayQTtfC5+0GOBwuJEN8TDI8A==
+react-instantsearch-core@7.3.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/react-instantsearch-core/-/react-instantsearch-core-7.3.0.tgz#32f0926e7a16d44eb1c4964fd020a053d24d25a5"
+  integrity sha512-v66mG+Io/Mmd5LQaoQXxGD/acHnLIM1Cq/uzlcC0VbFji7JXoJhChRPUcA+z5fGDaidBxdJOPRtQjJpTQ+/h8g==
   dependencies:
     "@babel/runtime" "^7.1.2"
-    instantsearch.js "4.56.8"
-    react-instantsearch-hooks "6.47.3"
-
-react-instantsearch-hooks@6.47.3:
-  version "6.47.3"
-  resolved "https://registry.yarnpkg.com/react-instantsearch-hooks/-/react-instantsearch-hooks-6.47.3.tgz#66876c9a5fdf0bb0e777fcf14901b63269a17953"
-  integrity sha512-QuGSwZ664MHrzvndXGnsyPhpKHywGqyDgqOVorYpEE24Y063OPv5XtmJaZqn27MIvvByUormTb6dbPgbjqkd8w==
-  dependencies:
-    "@babel/runtime" "^7.1.2"
-    algoliasearch-helper "3.14.0"
-    instantsearch.js "4.56.8"
+    algoliasearch-helper "3.15.0"
+    instantsearch.js "4.60.0"
     use-sync-external-store "^1.0.0"
+
+react-instantsearch@^7.3.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/react-instantsearch/-/react-instantsearch-7.3.0.tgz#75a994cb0422fdeee6d28212f19ee3e1a078635c"
+  integrity sha512-X0ZKDMP7DDKkRqnM99JbpsqASXDBVCUSpEYmPPhDx/PFGUzOu9yAFNCBkpJxfIf2A3nL/Z1QQDXuUYRdBgVCsg==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    instantsearch.js "4.60.0"
+    react-instantsearch-core "7.3.0"
 
 react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0:
   version "16.13.1"
