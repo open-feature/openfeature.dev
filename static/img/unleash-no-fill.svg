@@ -1,18 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 251.43 251.03" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
-  <defs>
-    <filter id="black-and-white-filter-0" color-interpolation-filters="sRGB" x="-500%" y="-500%" width="1000%" height="1000%" bx:preset="black-and-white 1 0">
-      <feColorMatrix type="saturate" values="0"/>
-      <feComponentTransfer>
-        <feFuncR type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
-        <feFuncG type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
-        <feFuncB type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
-      </feComponentTransfer>
-    </filter>
-    <style>.cls-1{fill:#1a4049;}.cls-2{fill:#fff;}.cls-3{fill:#817afe;}</style>
-  </defs>
-  <circle class="cls-1" cx="125.71" cy="125.31" r="80" style="filter: url(#black-and-white-filter-0);"/>
-  <polygon class="cls-2" points="137.14 91.03 137.14 113.88 137.14 136.74 160 136.74 160 113.88 160 91.03 137.14 91.03" style="filter: url(#black-and-white-filter-0);"/>
-  <polygon class="cls-2" points="114.29 113.88 114.29 91.03 91.43 91.03 91.43 113.88 91.43 136.74 91.43 159.6 114.29 159.6 137.14 159.6 137.14 136.74 114.29 136.74 114.29 113.88" style="filter: url(#black-and-white-filter-0);"/>
-  <rect class="cls-3" x="137.14" y="136.74" width="22.86" height="22.86" style="filter: url(#black-and-white-filter-0); fill: rgb(164, 163, 174); fill-opacity: 0.44;"/>
+<svg width="178" height="178" viewBox="0 0 178 178" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M88.5 176C136.825 176 176 136.825 176 88.5C176 40.1751 136.825 1 88.5 1C40.1751 1 1 40.1751 1 88.5C1 136.825 40.1751 176 88.5 176ZM76 51H51V101V126H126V101V51H101V101H76V51Z" />
+  <rect x="101" y="101" width="25" height="25" fill="black" fill-opacity="0.5" />
 </svg>
+  
