@@ -37,7 +37,7 @@ const options = {
     },
     vendor: {
       title: 'vendors',
-      size: 10,
+      size: 20,
       conjunction: false,
       hide_zero_doc_count: true,
     },
