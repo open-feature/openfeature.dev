@@ -14,6 +14,8 @@ import PageIllustration from '../partials/page-illustration';
 import Hit from '../partials/ecosystem/hit';
 import ScrollTo from '../partials/ecosystem/scroll-to';
 
+const VENDORS_SHOWN_AS_FACET = 20;
+
 const options = {
   searchableFields: ['title', 'description'],
   query: '',
@@ -37,7 +39,7 @@ const options = {
     },
     vendor: {
       title: 'vendors',
-      size: 20,
+      size: VENDORS_SHOWN_AS_FACET,
       conjunction: false,
       hide_zero_doc_count: true,
     },
@@ -147,6 +149,7 @@ export default function Ecosystem() {
                       sortBy={(a, b) => {
                         return a.name.localeCompare(b.name);
                       }}
+                      limit={VENDORS_SHOWN_AS_FACET}
                       classNames={{
                         count:
                           'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
