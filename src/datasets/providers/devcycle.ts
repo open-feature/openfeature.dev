@@ -29,5 +29,11 @@ export const DevCycle: Provider = {
       href: 'https://docs.devcycle.com/sdk/server-side-sdks/dotnet/dotnet-openfeature',
       category: ['Server'],
     },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://docs.devcycle.com/sdk/client-side-sdks/javascript/javascript-openfeature',
+      category: ['Client'],
+    },
   ],
 };
