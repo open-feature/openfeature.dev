@@ -7,9 +7,11 @@ import { Flagd } from './flagd';
 import { Flagsmith } from './flagsmith';
 import { Flipt } from './flipt';
 import { Goff } from './goff';
+import { Harness } from './harness';
 import { LaunchDarkly } from './launchdarkly';
 import { PostHog } from './posthog';
 import { Split } from './split';
+import { Unleash } from './unleash';
 import { Category, EcosystemElement, Technology } from '../types';
 
 export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = [
@@ -20,9 +22,11 @@ export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = [
   Flagsmith,
   Flipt,
   Goff,
+  Harness,
   LaunchDarkly,
   PostHog,
   Split,
+  Unleash,
 ]
   .map((provider) => {
     return provider.technologies.map(({ category, href, technology, vendorOfficial }): EcosystemElement => {

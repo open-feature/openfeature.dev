@@ -21,6 +21,8 @@ import FlagsmithSvg from '@site/static/img/flagsmith-no-fill.svg';
 import LaunchDarklySvg from '@site/static/img/launchdarkly-no-fill.svg';
 import FlagdSvg from '@site/static/img/flagd-no-fill.svg';
 import DevCycleSvg from '@site/static/img/devcycle-no-fill.svg';
+import UnleashSvg from '@site/static/img/unleash-no-fill.svg';
+import HarnessSvg from '@site/static/img/harness-no-fill.svg';
 
 import CSharpNoFillSvg from '@site/static/img/c-sharp-no-fill.svg';
 import { faGolang } from '@fortawesome/free-brands-svg-icons';
@@ -107,6 +109,8 @@ function FeaturesZigZag() {
                   <LaunchDarklySvg className="flex-auto h-20 w-20 m-4" />
                   <FlagdSvg className="flex-auto h-20 w-20 m-4" />
                   <DevCycleSvg className="flex-auto h-20 w-20 m-4" />
+                  <UnleashSvg className="flex-auto h-20 w-20 m-4" />
+                  <HarnessSvg className="flex-auto h-20 w-20 m-4" />
                 </div>
               </div>
               {/* Content */}
