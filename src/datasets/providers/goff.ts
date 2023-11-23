@@ -35,5 +35,17 @@ export const Goff: Provider = {
       href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.GOFeatureFlag',
       category: ['Server'],
     },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://github.com/thomaspoignant/go-feature-flag/tree/main/openfeature/providers/python-provider',
+      category: ['Server'],
+    },
+    {
+      technology: 'Kotlin',
+      vendorOfficial: true,
+      href: 'https://github.com/thomaspoignant/go-feature-flag/tree/main/openfeature/providers/kotlin-provider',
+      category: ['Client'],
+    },
   ],
 };
