@@ -44,7 +44,7 @@ function FeaturesZigZag() {
             </div>
             <h1 className="h2 mb-4">Community driven feature flagging</h1>
             <p className="text-xl text-gray-500 dark:text-gray-300 mb-4">
-              OpenFeature is an open source CNCF sandbox project under the Apache 2 license. Check out the project on{' '}
+              OpenFeature is an open source CNCF incubating project under the Apache 2 license. Check out the project on{' '}
               <Link to="https://github.com/open-feature">GitHub</Link> and consider joining the{' '}
               <Link to="/community/">OpenFeature community!</Link>
             </p>
