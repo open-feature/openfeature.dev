@@ -157,7 +157,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
         ],
       },
     ],
-    copyright: `© ${new Date().getFullYear()} OpenFeature is a Cloud Native Computing Foundation sandbox project | Documentation Distributed under CC BY 4.0 | All Rights Reserved`,
+    copyright: `© ${new Date().getFullYear()} OpenFeature is a Cloud Native Computing Foundation incubating project | Documentation Distributed under CC BY 4.0 | All Rights Reserved`,
   },
   prism: {
     theme: oceanicNext,
