@@ -3,7 +3,8 @@ import type { UserThemeConfig as ThemeCommonConfig } from '@docusaurus/theme-com
 import type { UserThemeConfig as AlgoliaThemeConfig } from '@docusaurus/theme-search-algolia';
 import type { Config } from '@docusaurus/types';
 
-import oceanicNext from 'prism-react-renderer/themes/oceanicNext';
+import { themes } from 'prism-react-renderer';
+const oceanicNext = themes.oceanicNext;
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 import mdxMermaid from 'mdx-mermaid';
