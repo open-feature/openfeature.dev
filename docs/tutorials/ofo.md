@@ -67,7 +67,7 @@ If your cluster already has cert manager, or you're using another solution for c
 Install cert-manager, and wait for it to be ready:
 
 ```shell
-kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.9.1/cert-manager.yaml && \
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.13.2/cert-manager.yaml && \
 kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'cert-manager'
 ```
 
@@ -84,7 +84,7 @@ kubectl create namespace open-feature-operator-system
 And finally, let's install the operator itself:
 
 ```shell
-kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.2.36/release.yaml && \
+kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.5.0/release.yaml && \
 kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'open-feature-operator-system'
 ```
 
@@ -116,12 +116,19 @@ kubectl port-forward svc/open-feature-demo-service -n default 30000:30000
 Now you should see our fictional app at <http://localhost:30000>
 
 For this demo, we get flag definitions from the custom resource definition you applied to K8s above (`end-to-end.yaml`).
-The resource type is `FeatureFlagconfiguration` and is called `end-to-end` within the `default` namespace.
-You can modify the flag values in the `featureFlagSpec` and reapply the CRD to see the changes.
-This file also contains service and deployment definitions, but these need not be modified as part of this demo.
-You may be interested in the `openfeature.dev*` annotations though, which the OpenFeature operator uses to detect which workloads require flagd.
+The resource type is `FeatureFlag` and is called `end-to-end` within the `default` namespace.
+You can modify the flag values in the `FeatureFlag` and reapply the CRD to see the changes.
 
-Let's get started learning how OpenFeature is helping Fib3r manage this landing page!
+This file also contains service and deployment definitions, but these need not be modified as part of this demo.
+You may be interested in the `openfeature.dev/*` annotations though, which the OpenFeature operator uses to detect which workloads require flagd.
+
+- `openfeature.dev/enabled` - setting this to `true` make operator to inject flagd as a sidecar
+- `openfeature.dev/featureflagsource` - refers to the `FeatureFlagSource` CRD which define flagd configurations, including its feature flag sources
+
+In the given example, there's a `FeatureFlagSource` CRD named `end-to-end`, with configurations to source `FeatureFlag` CRD named `end-to-end` as flag source.
+You can lean more about these configurations from [flag source configuration documentation](https://github.com/open-feature/open-feature-operator/blob/main/docs/feature_flag_source.md)
+
+Next, let's get started learning how OpenFeature is helping Fib3r manage this landing page!
 
 The company has been in the process of changing the name of our app, but legal hasn't quite finished the process yet.
 Here, we've defined a simple feature flag that can be use to update the name instantly without redeploying our application.
@@ -138,9 +145,10 @@ Change the `"defaultVariant"` of the `"hex-color"` within the `end-to-end.yaml` 
 
 Flag evaluations can take into account contextual information about the user, application, or action.
 The `"fib-algo"` flag returns a different result if our email ends with `"@faas.com"`.
+
 Let's run the fibonacci calculator once as a customer (without being logged in).
 Then login (use any email ending in `...@faas.com`) and observe the impact.
-This effect is driven by the rule defined in the `featureFlagSpec`.
+This effect is driven by the rule defined in the `flagSpec`.
 Feel free to experiment with your own flag values and rules!
 
 ### Cleaning up
