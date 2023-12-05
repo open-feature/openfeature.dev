@@ -3,23 +3,20 @@ import type { UserThemeConfig as ThemeCommonConfig } from '@docusaurus/theme-com
 import type { UserThemeConfig as AlgoliaThemeConfig } from '@docusaurus/theme-search-algolia';
 import type { Config } from '@docusaurus/types';
 
-import oceanicNext from 'prism-react-renderer/themes/oceanicNext';
+import { themes } from 'prism-react-renderer';
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
-import mdxMermaid from 'mdx-mermaid';
 import { processSdkReadmes } from './scripts/process-sdk-readmes';
 
 const presetClassicOptions: PresetClassicOptions = {
   docs: {
     sidebarPath: require.resolve('./sidebars.js'),
-    remarkPlugins: [mdxMermaid],
     editUrl: (params) => {
       return `https://github.com/open-feature/openfeature.dev/edit/main/docs/${params.docPath}`;
     },
   },
   blog: {
     showReadingTime: true,
-    remarkPlugins: [mdxMermaid],
     editUrl: 'https://github.com/open-feature/openfeature.dev/edit/main/',
     blogSidebarCount: 'ALL',
     blogSidebarTitle: 'All Blog Posts',
@@ -160,7 +157,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
     copyright: `© ${new Date().getFullYear()} OpenFeature is a Cloud Native Computing Foundation incubating project | Documentation Distributed under CC BY 4.0 | All Rights Reserved`,
   },
   prism: {
-    theme: oceanicNext,
+    theme: themes.oceanicNext,
     additionalLanguages: ['java', 'csharp', 'powershell', 'php', 'kotlin'],
     magicComments: [
       {
@@ -294,7 +291,6 @@ const config: Config = {
         routeBasePath: 'community',
         exclude: ['.github/**/*', 'ISSUE_TEMPLATE/**'],
         sidebarPath: require.resolve('./external-content/community/docusaurus-sidebar.js'),
-        remarkPlugins: [mdxMermaid],
         editUrl: (params) => {
           return `https://github.com/open-feature/community/edit/main/${params.docPath}`;
         },
@@ -318,7 +314,6 @@ const config: Config = {
         id: 'specification',
         path: 'external-content/specification/specification',
         routeBasePath: 'specification',
-        remarkPlugins: [mdxMermaid],
         editUrl: (params) => {
           return `https://github.com/open-feature/spec/edit/main/${params.docPath}`;
         },
@@ -346,6 +341,10 @@ const config: Config = {
     ],
   ],
   themeConfig,
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 };
 
-export = config;
+export default config;
