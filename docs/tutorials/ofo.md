@@ -113,7 +113,7 @@ kubectl port-forward svc/open-feature-demo-service -n default 30000:30000
 
 ### Experiment with OpenFeature
 
-Now you should see our fictional app at <http://localhost:30000>
+Now you should see our fictional app at [http://localhost:30000](http://localhost:30000)
 
 For this demo, we get flag definitions from the custom resource definition you applied to K8s above (`end-to-end.yaml`).
 The resource type is `FeatureFlag` and is called `end-to-end` within the `default` namespace.
