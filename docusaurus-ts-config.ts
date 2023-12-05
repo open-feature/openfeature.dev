@@ -195,7 +195,7 @@ const config: Config = {
   },
   url: 'https://openfeature.dev',
   baseUrl: '/',
-  onBrokenLinks: 'ignore',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
     defaultLocale: 'en',
