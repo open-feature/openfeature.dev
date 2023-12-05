@@ -6,20 +6,17 @@ import type { Config } from '@docusaurus/types';
 import { themes } from 'prism-react-renderer';
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
-import mdxMermaid from 'mdx-mermaid';
 import { processSdkReadmes } from './scripts/process-sdk-readmes';
 
 const presetClassicOptions: PresetClassicOptions = {
   docs: {
     sidebarPath: require.resolve('./sidebars.js'),
-    remarkPlugins: [mdxMermaid],
     editUrl: (params) => {
       return `https://github.com/open-feature/openfeature.dev/edit/main/docs/${params.docPath}`;
     },
   },
   blog: {
     showReadingTime: true,
-    remarkPlugins: [mdxMermaid],
     editUrl: 'https://github.com/open-feature/openfeature.dev/edit/main/',
     blogSidebarCount: 'ALL',
     blogSidebarTitle: 'All Blog Posts',
@@ -294,7 +291,6 @@ const config: Config = {
         routeBasePath: 'community',
         exclude: ['.github/**/*', 'ISSUE_TEMPLATE/**'],
         sidebarPath: require.resolve('./external-content/community/docusaurus-sidebar.js'),
-        remarkPlugins: [mdxMermaid],
         editUrl: (params) => {
           return `https://github.com/open-feature/community/edit/main/${params.docPath}`;
         },
@@ -318,7 +314,6 @@ const config: Config = {
         id: 'specification',
         path: 'external-content/specification/specification',
         routeBasePath: 'specification',
-        remarkPlugins: [mdxMermaid],
         editUrl: (params) => {
           return `https://github.com/open-feature/spec/edit/main/${params.docPath}`;
         },
@@ -346,6 +341,10 @@ const config: Config = {
     ],
   ],
   themeConfig,
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 };
 
 export default config;
