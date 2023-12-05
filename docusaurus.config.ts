@@ -3,7 +3,7 @@ import type { UserThemeConfig as ThemeCommonConfig } from '@docusaurus/theme-com
 import type { UserThemeConfig as AlgoliaThemeConfig } from '@docusaurus/theme-search-algolia';
 import type { Config } from '@docusaurus/types';
 
-import oceanicNext from 'prism-react-renderer/themes/oceanicNext';
+import { themes } from 'prism-react-renderer';
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 import mdxMermaid from 'mdx-mermaid';
@@ -160,7 +160,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
     copyright: `© ${new Date().getFullYear()} OpenFeature is a Cloud Native Computing Foundation incubating project | Documentation Distributed under CC BY 4.0 | All Rights Reserved`,
   },
   prism: {
-    theme: oceanicNext,
+    theme: themes.oceanicNext,
     additionalLanguages: ['java', 'csharp', 'powershell', 'php', 'kotlin'],
     magicComments: [
       {
@@ -348,4 +348,4 @@ const config: Config = {
   themeConfig,
 };
 
-export = config;
+export default config;
