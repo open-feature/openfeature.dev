@@ -38,7 +38,7 @@ curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/playground/ma
 #### Building our cluster
 
 OK, let's get our cluster up and running!
-If you already have a K8s cluster, you can skip to [Install cert-manager](#install-cert-manager).
+We recommend using `kind` for this demo, but if you already have a K8s cluster, you can skip to [Install cert-manager](#install-cert-manager).
 
 ##### Using Kind
 
@@ -84,7 +84,7 @@ kubectl create namespace open-feature-operator-system
 And finally, let's install the operator itself:
 
 ```shell
-kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.5.0/release.yaml && \
+kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.5.1/release.yaml && \
 kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'open-feature-operator-system'
 ```
 
@@ -101,14 +101,20 @@ If you're using `k9s` or some other means of visualization, your cluster should 
 
 ![k9s](@site/static/img/tutorials/k9s.png)
 
-#### Forward the service
+#### Forward the service (if not using kind)
 
-If you're using the supplied `kind` config, you can skip to [Experiment with OpenFeature](#experiment-with-openfeature), this port is already forwarded.
+⚠️ If you're using the [supplied `kind` config](#using-kind), ***you can skip to [Experiment with OpenFeature](#experiment-with-openfeature), this port is already forwarded.***
 
-Forward the service port:
+Forward the app service port:
 
 ```shell
-kubectl port-forward svc/open-feature-demo-service -n default 30000:30000
+kubectl port-forward svc/open-feature-demo-app-service -n default 30000:30000
+```
+
+Forward the UI flag evaluation service port:
+
+```shell
+kubectl port-forward svc/open-feature-demo-ui-service -n default 30002:30002
 ```
 
 ### Experiment with OpenFeature
