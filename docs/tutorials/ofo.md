@@ -103,7 +103,7 @@ If you're using `k9s` or some other means of visualization, your cluster should 
 
 #### Forward the service (if not using kind)
 
-⚠️ If you're using the [supplied `kind` config](#using-kind), ***you can skip to [Experiment with OpenFeature](#experiment-with-openfeature), this port is already forwarded.***
+⚠️ If you're using the [supplied `kind` config](#using-kind), ***you can skip to [Experiment with OpenFeature](#experiment-with-openfeature), the ports are already forwarded.***
 
 Forward the app service port:
 
