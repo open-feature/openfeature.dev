@@ -35,5 +35,11 @@ export const LaunchDarkly: Provider = {
       href: 'https://github.com/launchdarkly/openfeature-dotnet-server',
       category: ['Server'],
     },
+    {
+      technology: 'PHP',
+      vendorOfficial: true,
+      href: 'https://github.com/launchdarkly/openfeature-php-server',
+      category: ['Server'],
+    },
   ],
 };
