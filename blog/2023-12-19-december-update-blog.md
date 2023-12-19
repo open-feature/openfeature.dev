@@ -3,8 +3,8 @@ slug: 'openfeature-december-2023-update'
 title: 'OpenFeature December 2023 Update: We're Incubating & more!'
 date: 2023-12-19
 authors: [staceypotter]
-description: ""
-tags: [client, sdk]
+description: "OpenFeature December 2023 Update: Happy Holidays, Incubation, Governance Committee Elections, & More"
+tags: []
 draft: true
 ---
 ## December 2023 Update
@@ -21,7 +21,7 @@ Happy holidays and a very happy new year in the coming weeks! There’s a lot ha
 
 🤩 We are ecstatic to announce that the Cloud Native Computing Foundation’s Technical Oversight Committee has promoted OpenFeature to Incubating project status! 🎉 Many thanks to our wonderful community of maintainers, contributors, and users! 🙏 ✨ 
 
-📰 [Read more about incubation and the future of OpenFeature here.](https://www.cncf.io/blog/2023/12/19/openfeature-becomes-a-cncf-incubating-project/)
+📰 [Read more about incubation and the future of OpenFeature here.](https://www.cncf.io/?p=98784)
 
 ### New & Notable
 
