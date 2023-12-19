@@ -5,7 +5,7 @@ date: 2023-12-19
 authors: [staceypotter]
 description: "OpenFeature December 2023 Update: Happy Holidays, Incubation, Governance Committee Elections, & More"
 tags: []
-draft: true
+draft: false
 ---
 ## December 2023 Update
 
