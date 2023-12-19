@@ -38,7 +38,7 @@ curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/playground/ma
 #### Building our cluster
 
 OK, let's get our cluster up and running!
-If you already have a K8s cluster, you can skip to [Install cert-manager](#install-cert-manager).
+We recommend using `kind` for this demo, but if you already have a K8s cluster, you can skip to [Install cert-manager](#install-cert-manager).
 
 ##### Using Kind
 
@@ -84,7 +84,7 @@ kubectl create namespace open-feature-operator-system
 And finally, let's install the operator itself:
 
 ```shell
-kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.5.0/release.yaml && \
+kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.5.2/release.yaml && \
 kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'open-feature-operator-system'
 ```
 
@@ -101,54 +101,65 @@ If you're using `k9s` or some other means of visualization, your cluster should 
 
 ![k9s](@site/static/img/tutorials/k9s.png)
 
-#### Forward the service
+#### Forward the service (if not using kind)
 
-If you're using the supplied `kind` config, you can skip to [Experiment with OpenFeature](#experiment-with-openfeature), this port is already forwarded.
+⚠️ If you're using the [supplied `kind` config](#using-kind), ***you can skip to [Experiment with OpenFeature](#experiment-with-openfeature), the ports are already forwarded.***
 
-Forward the service port:
+Forward the app service port:
 
 ```shell
-kubectl port-forward svc/open-feature-demo-service -n default 30000:30000
+kubectl port-forward svc/open-feature-demo-app-service -n default 30000:30000
+```
+
+Forward the UI flag evaluation service port:
+
+```shell
+kubectl port-forward svc/open-feature-demo-ui-service -n default 30002:30002
 ```
 
 ### Experiment with OpenFeature
 
 Now you should see our fictional app at [http://localhost:30000](http://localhost:30000)
 
-For this demo, we get flag definitions from the custom resource definition you applied to K8s above (`end-to-end.yaml`).
-The resource type is `FeatureFlag` and is called `end-to-end` within the `default` namespace.
-You can modify the flag values in the `FeatureFlag` and reapply the CRD to see the changes.
+For this demo, we get flag definitions from the custom resource definitions (CRDs) you applied to K8s above (`end-to-end.yaml`).
+The resource type is `FeatureFlag` and there are two instances defined: one is called `ui-flags` (for the front-end) and one called `app-flags`
+(for the back-end).
+Below, you'll see how you can modify these instances to change your feature flags.
 
-This file also contains service and deployment definitions, but these need not be modified as part of this demo.
+This file also contains service and deployment definitions, *but these need not be modified as part of this demo*.
 You may be interested in the `openfeature.dev/*` annotations though, which the OpenFeature operator uses to detect which workloads require flagd.
 
 - `openfeature.dev/enabled` - setting this to `true` make operator to inject flagd as a sidecar
 - `openfeature.dev/featureflagsource` - refers to the `FeatureFlagSource` CRD which define flagd configurations, including its feature flag sources
 
-In the given example, there's a `FeatureFlagSource` CRD named `end-to-end`, with configurations to source `FeatureFlag` CRD named `end-to-end` as flag source.
+In the given example, there's a `FeatureFlagSource` custom resource (CR) named `flag-sources`, configured to use the `FeatureFlag` CRs mentioned above.
+In simple terms, you can think of a `FeatureFlagSource` instance as a resource that associates a workload with one or many `FeatureFlag` instances (though it has other purposes as well).
 You can lean more about these configurations from [flag source configuration documentation](https://github.com/open-feature/open-feature-operator/blob/main/docs/feature_flag_source.md)
 
 Next, let's get started learning how OpenFeature is helping Fib3r manage this landing page!
 
 The company has been in the process of changing the name of our app, but legal hasn't quite finished the process yet.
 Here, we've defined a simple feature flag that can be use to update the name instantly without redeploying our application.
-Change the `"defaultVariant"` of the feature flag `new-welcome-message"` to `"on"` in the `featureFlagSpec`, then redeploy the change with:
+Change the `"defaultVariant"` of the feature flag `new-welcome-message"` to `"on"` in the `ui-flags` CR, then redeploy the change with:
 
 ```shell
 kubectl apply -n default -f end-to-end.yaml
 ```
 
+Notice that the welcome message has changed from "Welcome to FaaS: Fibonacci as a Service!" to "Welcome to Fib3r: Fibonacci as a Service!".
 Great!
-Now let's help the design team experiment with new color palette.
+Now let's help the design team experiment with new color palette...
 Let's change our landing page's color.
-Change the `"defaultVariant"` of the `"hex-color"` within the `end-to-end.yaml` file and use `kubectl` to apply the change again.
+Change the `"defaultVariant"` of the `"hex-color"` within the `ui-flags` CR and use `kubectl` to apply the change again.
+You should notice the color of the page changes immediately.
 
 Flag evaluations can take into account contextual information about the user, application, or action.
 The `"fib-algo"` flag returns a different result if our email ends with `"@faas.com"`.
 
-Let's run the fibonacci calculator once as a customer (without being logged in).
-Then login (use any email ending in `...@faas.com`) and observe the impact.
-This effect is driven by the rule defined in the `flagSpec`.
+Let's run the fibonacci calculator...
+Run it once as a "customer" (without being logged in).
+Then login as an "employee" (use any email ending in `...@faas.com`) and observe the impact.
+This effect is driven by the rule defined in the `app-flags` CR, which controls our server-side flags, and is predicated on the email address of the user.
 Feel free to experiment with your own flag values and rules!
 
 ### Cleaning up

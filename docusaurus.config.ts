@@ -187,7 +187,7 @@ const config: Config = {
   tagline: 'Standardizing Feature Flagging for Everyone',
   customFields: {
     description:
-      'OpenFeature is an open specification that provides a vendor-agnostic, community-driven API for feature flagging that works with your favorite feature flag management tool.',
+      'OpenFeature is an open specification that provides a vendor-agnostic, community-driven API for feature flagging that works with your favorite feature flag management tool or in-house solution.',
   },
   url: 'https://openfeature.dev',
   baseUrl: '/',
