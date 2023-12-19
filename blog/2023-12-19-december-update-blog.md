@@ -37,7 +37,7 @@ Voting period is open through January 31, 2024. For more information on the el
 
 #### SDK Compatibility Overview 
 
-You can now see the status and supported features of the OpenFeature SDKs in a simplified visual matrix for both Server-side and Client-side SDKs. Check it out here. 
+You can now see the status and supported features of the OpenFeature SDKs in a simplified visual matrix for both Server-side and Client-side SDKs. Check it out [here](https://openfeature.dev/docs/reference/technologies/sdk-compatibility). 
 
 <img src={require('@site/static/img/blog/2023-12-19-december-update/sdk-compatibility-overview.png').default} />
 
@@ -84,8 +84,7 @@ Join us on the [CNCF OpenFeature Community Chapter](https://community.cncf.io/op
 
 #### Recent Talks 📺
 
-* [Cloud Native Islamabad Workshop: A Guided Tour of OpenFeature by Saim Safdar & Adam Gardner 
-](https://www.youtube.com/live/C19YGf0t-2g?feature=shared)
+* [Cloud Native Islamabad Workshop: A Guided Tour of OpenFeature by Saim Safdar & Adam Gardner](https://www.youtube.com/live/C19YGf0t-2g?feature=shared)
 * [KubeCon Europe 2023: Building a Kubernetes Experimentation Platform with OpenFeature; Enabling Organizations to Put Theory into Practice by Alex Jones](https://youtu.be/hlvoJhMx2HU?feature=shared)
 * [CNCF on-demand Webinar: An Introduction to Feature Flagging & OpenFeature by Adam Gardner](https://youtu.be/LTvTr6kp53Y?feature=shared) 
 * [St Louis Go Meetup: OpenFeature: Revolutionizing Feature Management by James Carr](https://www.youtube.com/live/Mhd2VEul-To?feature=shared&t=281) 
