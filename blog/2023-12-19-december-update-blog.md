@@ -1,6 +1,6 @@
 ---
-slug: 'openfeature-december-2023-update'
-title: 'OpenFeature December 2023 Update: We're Incubating & more!'
+slug: "openfeature-december-2023-update"
+title: "OpenFeature December 2023 Update: We're Incubating & more!"
 date: 2023-12-19
 authors: [staceypotter]
 description: "OpenFeature December 2023 Update: Happy Holidays, Incubation, Governance Committee Elections, & More"
