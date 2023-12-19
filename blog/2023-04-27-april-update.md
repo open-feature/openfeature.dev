@@ -1,6 +1,6 @@
 ---
-slug: 'april-2023-update'
-title: 'OpenFeature April 2023 Update'
+slug: "april-2023-update"
+title: "OpenFeature April 2023 Update"
 date: 2023-04-27
 authors: [staceypotter]
 description: "As the OpenFeature project and community grows we strive to bring you monthly updates to inform you on the latest happenings!"
