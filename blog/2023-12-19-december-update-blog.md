@@ -18,7 +18,7 @@ Happy holidays and a very happy new year in the coming weeks! There’s a lot ha
 
 ## OpenFeature is now an Incubating Project! 🎉
 
-<img src={require('@static/img/blog/2023-12-19-december-update/OF%20Incubation%20Celebration.png').default} />
+<img src={require('@site/static/img/blog/2023-12-19-december-update/incubation-celebration.png').default} />
 
 🤩 We are ecstatic to announce that the Cloud Native Computing Foundation’s Technical Oversight Committee has promoted OpenFeature to Incubating project status! 🎉 Many thanks to our wonderful community of maintainers, contributors, and users! 🙏 ✨ 
 
@@ -39,7 +39,7 @@ Voting period is open through January 31, 2024. For more information on the el
 
 You can now see the status and supported features of the OpenFeature SDKs in a simplified visual matrix for both Server-side and Client-side SDKs. Check it out here. 
 
-<img src={require('@img/blog/2023-12-19-december-update/OF%20SDK%20Compatability%20Overview%20Image.png').default} />
+<img src={require('@site/static/img/blog/2023-12-19-december-update/sdk-compatibility-overview.png').default} />
 
 #### OpenFeature Remote Evaluation Protocol
 
