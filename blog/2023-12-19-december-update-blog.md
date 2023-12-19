@@ -89,7 +89,7 @@ Join us on the [CNCF OpenFeature Community Chapter](https://community.cncf.io/op
 * [CNCF on-demand Webinar: An Introduction to Feature Flagging & OpenFeature by Adam Gardner](https://youtu.be/LTvTr6kp53Y?feature=shared) 
 * [St Louis Go Meetup: OpenFeature: Revolutionizing Feature Management by James Carr](https://www.youtube.com/live/Mhd2VEul-To?feature=shared&t=281) 
 * [Swiss CloudNative Day: OpenFeature - Managing Feature Flags by Robin Wyss & Nicola Roten](https://youtu.be/EJI3ODhh8Y8?feature=shared) 
-* [AppDeveloperCon 2023: Build Progressive Delivery and Safety Into Your Apps with Feature Flags by Adam Gardner](https://youtu.be/D9kzXExhLfY?feature=shared)https://youtu.be/D9kzXExhLfY?feature=shared
+* [AppDeveloperCon 2023: Build Progressive Delivery and Safety Into Your Apps with Feature Flags by Adam Gardner](https://youtu.be/D9kzXExhLfY?feature=shared)
 
 ### 💬 Connect with Us! 🤝
 
