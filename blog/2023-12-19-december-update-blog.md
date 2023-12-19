@@ -7,6 +7,7 @@ description: "OpenFeature December 2023 Update: Happy Holidays, Incubation, Gove
 tags: []
 draft: false
 ---
+
 ## December 2023 Update
 
 Hello OpenFeature Community 👋 
