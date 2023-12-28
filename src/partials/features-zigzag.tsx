@@ -150,15 +150,25 @@ function FeaturesZigZag() {
                 data-aos="fade-up"
               >
                 <div
-                  className={`max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap fill-[#1c1e21] dark:fill-[#e3e3e3] [color:${
-                    isDarkTheme ? '#e3e3e3' : '#1c1e21'
-                  }]`}
+                  className={`max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap`}
                 >
-                  <CSharpNoFillSvg className="flex-auto h-20 w-20 m-4 " />
-                  <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faGolang} />
-                  <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faJava} />
-                  <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faSquareJs} />
-                  <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faPhp} />
+                  <Link to="/docs/reference/technologies/server/dotnet"
+                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
+                    <CSharpNoFillSvg className="h-full w-full hover:fill-primary" />
+                  </Link>
+                  <Link to="/docs/reference/technologies/server/go" className="flex-auto h-20 w-20  m-4 text-inherit">
+                    <FontAwesomeIcon className={`h-full w-full`} icon={faGolang} />
+                  </Link>
+                  <Link to="/docs/reference/technologies/server/java" className="flex-auto h-20 w-20  m-4 text-inherit">
+                    <FontAwesomeIcon className="h-full w-full" icon={faJava} />
+                  </Link>
+                  <Link to="/docs/reference/technologies/server/javascript"
+                        className="flex-auto h-20 w-20  m-4 text-inherit">
+                    <FontAwesomeIcon className="h-full w-full" icon={faSquareJs} />
+                  </Link>
+                  <Link to="/docs/reference/technologies/server/php" className="flex-auto h-20 w-20  m-4 text-inherit">
+                    <FontAwesomeIcon className="h-full w-full" icon={faPhp} />
+                  </Link>
                 </div>
               </div>
               {/* Content */}
