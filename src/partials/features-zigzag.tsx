@@ -1,5 +1,4 @@
 import React from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
 import CheckboxIcon from './checkbox-icon';
 import Link from '@docusaurus/Link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -31,7 +30,6 @@ import { faSquareJs } from '@fortawesome/free-brands-svg-icons';
 import { faPhp } from '@fortawesome/free-brands-svg-icons';
 
 function FeaturesZigZag() {
-  const isDarkTheme = useColorMode().colorMode === 'dark';
 
   return (
     <section>
