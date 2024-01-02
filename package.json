@@ -62,7 +62,7 @@
     "@docusaurus/module-type-aliases": "3.0.1",
     "@docusaurus/tsconfig": "^3.0.1",
     "@types/fs-extra": "11.0.4",
-    "@types/react": "^18.2.42",
+    "@types/react": "^18.2.46",
     "@typescript-eslint/eslint-plugin": "6.16.0",
     "@typescript-eslint/parser": "6.16.0",
     "eslint": "8.56.0",

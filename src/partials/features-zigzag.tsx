@@ -1,8 +1,6 @@
 import React from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
 import CheckboxIcon from './checkbox-icon';
 import Link from '@docusaurus/Link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /**
  * The code snippet was created on Carbon.now using the dracula pro theme.
@@ -13,26 +11,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
  */
 import CodeSnippet from '@site/static/img/code-snippet.png';
 
-import CloudbeesSvg from '@site/static/img/cloudbees-no-fill.svg';
-import SplitSvg from '@site/static/img/split-no-fill.svg';
-import FliptSvg from '@site/static/img/flipt-no-fill.svg';
-import GoFeatureFlagSvg from '@site/static/img/goff-no-fill.svg';
-import FlagsmithSvg from '@site/static/img/flagsmith-no-fill.svg';
-import LaunchDarklySvg from '@site/static/img/launchdarkly-no-fill.svg';
-import FlagdSvg from '@site/static/img/flagd-no-fill.svg';
-import DevCycleSvg from '@site/static/img/devcycle-no-fill.svg';
-import UnleashSvg from '@site/static/img/unleash-no-fill.svg';
-import HarnessSvg from '@site/static/img/harness-no-fill.svg';
-
-import CSharpNoFillSvg from '@site/static/img/c-sharp-no-fill.svg';
-import { faGolang } from '@fortawesome/free-brands-svg-icons';
-import { faJava } from '@fortawesome/free-brands-svg-icons';
-import { faSquareJs } from '@fortawesome/free-brands-svg-icons';
-import { faPhp } from '@fortawesome/free-brands-svg-icons';
+import { PROVIDERS } from '@site/src/datasets/providers';
+import { ECOSYSTEM_SDKS } from '@site/src/datasets/sdks/ecosystem';
 
 function FeaturesZigZag() {
-  const isDarkTheme = useColorMode().colorMode === 'dark';
-
+  function getVendorLink(vendor: string) {
+    return encodeURI(`/ecosystem?instant_search[refinementList][vendor][0]=${vendor}`);
+  }
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -101,16 +86,17 @@ function FeaturesZigZag() {
                 data-aos="fade-up"
               >
                 <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap fill-[#1c1e21] dark:fill-[#e3e3e3]">
-                  <CloudbeesSvg className="flex-auto h-20 w-20 m-4" />
-                  <SplitSvg className="flex-auto h-20 w-20 m-4" />
-                  <FliptSvg className="flex-auto h-20 w-20 m-4" />
-                  <GoFeatureFlagSvg className="flex-auto h-20 w-20 m-4" />
-                  <FlagsmithSvg className="flex-auto h-20 w-20 m-4" />
-                  <LaunchDarklySvg className="flex-auto h-20 w-20 m-4" />
-                  <FlagdSvg className="flex-auto h-20 w-20 m-4" />
-                  <DevCycleSvg className="flex-auto h-20 w-20 m-4" />
-                  <UnleashSvg className="flex-auto h-20 w-20 m-4" />
-                  <HarnessSvg className="flex-auto h-20 w-20 m-4" />
+                  {PROVIDERS.map((vendor) => {
+                    const Icon = vendor.logo;
+                    return (
+                      <Link
+                        to={getVendorLink(vendor.name)}
+                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] "
+                      >
+                        <Icon className="h-full w-full hover:fill-primary" />
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
               {/* Content */}
@@ -149,16 +135,15 @@ function FeaturesZigZag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1"
                 data-aos="fade-up"
               >
-                <div
-                  className={`max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap fill-[#1c1e21] dark:fill-[#e3e3e3] [color:${
-                    isDarkTheme ? '#e3e3e3' : '#1c1e21'
-                  }]`}
-                >
-                  <CSharpNoFillSvg className="flex-auto h-20 w-20 m-4 " />
-                  <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faGolang} />
-                  <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faJava} />
-                  <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faSquareJs} />
-                  <FontAwesomeIcon className="flex-auto h-20 w-20 m-4" icon={faPhp} />
+                <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap">
+                  {ECOSYSTEM_SDKS.map((sdk) => {
+                    const Icon = sdk.logo;
+                    return (
+                      <Link to={sdk.href} className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
+                        <Icon className="h-full w-full hover:fill-primary" />
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
               {/* Content */}
