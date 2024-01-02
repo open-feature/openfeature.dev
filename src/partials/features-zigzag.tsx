@@ -28,9 +28,13 @@ import { faGolang } from '@fortawesome/free-brands-svg-icons';
 import { faJava } from '@fortawesome/free-brands-svg-icons';
 import { faSquareJs } from '@fortawesome/free-brands-svg-icons';
 import { faPhp } from '@fortawesome/free-brands-svg-icons';
+import { FAVOURITE_PROVIDERS } from '@site/src/datasets/providers';
 
 function FeaturesZigZag() {
 
+  function getVendorLink(vendor: string) {
+    return encodeURI(`/ecosystem?instant_search[refinementList][vendor][0]=${vendor}`);
+  }
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -100,47 +104,19 @@ function FeaturesZigZag() {
               >
                 <div
                   className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap fill-[#1c1e21] dark:fill-[#e3e3e3]">
-                  <Link to="/ecosystem?instant_search[refinementList][vendor][0]=CloudBees"
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
-                    <CloudbeesSvg className="h-full w-full hover:fill-primary" />
-                  </Link>
-                  <Link to="/ecosystem?instant_search[refinementList][vendor][0]=Split"
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
-                    <SplitSvg className="h-full w-full hover:fill-primary" />
-                  </Link>
-                  <Link to="/ecosystem?instant_search[refinementList][vendor][0]=Flipt"
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
-                    <FliptSvg className="h-full w-full hover:fill-primary" />
-                  </Link>
-                  <Link to="/ecosystem?instant_search[refinementList][vendor][0]=GO Feature Flag"
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
-                    <GoFeatureFlagSvg className="h-full w-full hover:fill-primary" />
-                  </Link>
-                  <Link to="/ecosystem?instant_search[refinementList][vendor][0]=Flagsmith"
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
-                    <FlagsmithSvg className="h-full w-full hover:fill-primary" />
-                  </Link>
-                  <Link to="/ecosystem?instant_search[refinementList][vendor][0]=LaunchDarkly"
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
-                    <LaunchDarklySvg className="h-full w-full hover:fill-primary" />
-                  </Link>
-                  <Link to="/ecosystem?instant_search[refinementList][vendor][0]=flagd"
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
-                    <FlagdSvg className="h-full w-full hover:fill-primary" />
-                  </Link>
-                  <Link to="/ecosystem?instant_search[refinementList][vendor][0]=DevCycle"
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
-                    <DevCycleSvg className="h-full w-full hover:fill-primary" />
-                  </Link>
-                  <Link to="/ecosystem?instant_search[refinementList][vendor][0]=Unleash"
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
-                    <UnleashSvg className="h-full w-full hover:fill-primary" />
-                  </Link>
-                  <Link to="/ecosystem?instant_search[refinementList][vendor][0]=Harness"
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
-                    <HarnessSvg className="h-full w-full hover:fill-primary" />
-                  </Link>
+                  {
+                    FAVOURITE_PROVIDERS.map((vendor) => {
+                      const Icon = vendor.logo;
+                      return (
+                        <Link to={getVendorLink(vendor.vendor)}
+                              className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
+                          <Icon className="h-full w-full hover:fill-primary" />
+                        </Link>
+                      );
+                    })
+                  }
                 </div>
+
               </div>
               {/* Content */}
               <div
@@ -179,7 +155,7 @@ function FeaturesZigZag() {
                 data-aos="fade-up"
               >
                 <div
-                  className={`max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap`}
+                  className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap"
                 >
                   <Link to="/docs/reference/technologies/server/dotnet"
                         className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">

@@ -49,6 +49,23 @@ export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = [
   })
   .flat();
 
+
+export const FAVOURITE_PROVIDERS: { vendor: string; logo: ComponentType<SVGProps<SVGSVGElement>>; }[] = [
+  CloudBees,
+  Split,
+  Flipt,
+  Goff,
+  Flagsmith,
+  LaunchDarkly,
+  Flagd,
+  DevCycle,
+  Unleash,
+  Harness,
+].map((provider) => ({
+  vendor: provider.name,
+  logo: provider.logo,
+}));
+
 function createDefaultDescription(vendor: string, official: boolean): string {
   return official
     ? `The official ${vendor} provider for OpenFeature`
