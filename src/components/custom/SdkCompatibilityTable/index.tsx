@@ -32,7 +32,7 @@ export default function SdkCompatibilityTable({ compatibility }: { compatibility
           <td>
             Spec version
             <span className="has-tooltip">
-              <Popover className="tooltip rounded shadow-[0_1.5px_3px_0_rgba(0,0,0,0.15)] p-2 bg-gray-100 text-emphasis-800 max-w-xs">
+              <Popover className="tooltip rounded shadow-[0_1.5px_3px_0_rgba(0,0,0,0.15)] p-2 bg-gray-100 text-emphasis-800 dark:text-emphasis-200 max-w-xs">
                 <p className="text-sm">The version of the specification that the SDK is fully compliant with.</p>
               </Popover>
               <FontAwesomeIcon className="h-4 w-4 mx-1 opacity-80 hover:opacity-100" icon={faCircleExclamation} />
@@ -49,7 +49,7 @@ export default function SdkCompatibilityTable({ compatibility }: { compatibility
           <td>
             Release version
             <span className="has-tooltip">
-              <Popover className="tooltip rounded shadow-[0_1.5px_3px_0_rgba(0,0,0,0.15)] p-2 bg-gray-100 text-emphasis-800 max-w-xs">
+              <Popover className="tooltip rounded shadow-[0_1.5px_3px_0_rgba(0,0,0,0.15)] p-2 bg-gray-100 text-emphasis-800 dark:text-emphasis-200 max-w-xs">
                 <div className="text-sm">The latest published release version.</div>
               </Popover>
               <FontAwesomeIcon className="h-4 w-4 mx-1 opacity-80 hover:opacity-100" icon={faCircleExclamation} />
@@ -66,7 +66,7 @@ export default function SdkCompatibilityTable({ compatibility }: { compatibility
           <td>
             Stable release
             <span className="has-tooltip">
-              <Popover className="tooltip rounded shadow-[0_1.5px_3px_0_rgba(0,0,0,0.15)] p-2 bg-gray-100 text-emphasis-800 max-w-xs">
+              <Popover className="tooltip rounded shadow-[0_1.5px_3px_0_rgba(0,0,0,0.15)] p-2 bg-gray-100 text-emphasis-800 dark:text-emphasis-200 max-w-xs">
                 <p className="text-sm">
                   OpenFeature employs semantic versioning for release versions. SDKs below 1.0 aim to minimize breaking
                   changes but are allowed in order to avoid long-term technical debt.
