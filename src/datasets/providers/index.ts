@@ -14,7 +14,7 @@ import { Split } from './split';
 import { Unleash } from './unleash';
 import { Category, EcosystemElement, Technology } from '../types';
 
-export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = [
+export const PROVIDERS: Provider[] = [
   CloudBees,
   ConfigCat,
   DevCycle,
@@ -27,44 +27,27 @@ export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = [
   PostHog,
   Split,
   Unleash,
-]
-  .map((provider) => {
-    return provider.technologies.map(({ category, href, technology, vendorOfficial }): EcosystemElement => {
-      return {
-        vendor: provider.name,
-        title: `${provider.name} ${technology} ${category} Provider`,
-        description: !provider.description
-          ? createDefaultDescription(provider.name, vendorOfficial)
-          : typeof provider.description === 'string'
+];
+
+export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) => {
+  return provider.technologies.map(({ category, href, technology, vendorOfficial }): EcosystemElement => {
+    return {
+      vendor: provider.name,
+      title: `${provider.name} ${technology} ${category} Provider`,
+      description: !provider.description
+        ? createDefaultDescription(provider.name, vendorOfficial)
+        : typeof provider.description === 'string'
           ? provider.description
           : provider.description(vendorOfficial),
-        type: 'Provider',
-        logo: provider.logo,
-        href,
-        technology,
-        vendorOfficial,
-        category,
-      };
-    });
-  })
-  .flat();
-
-
-export const FAVOURITE_PROVIDERS: { vendor: string; logo: ComponentType<SVGProps<SVGSVGElement>>; }[] = [
-  CloudBees,
-  Split,
-  Flipt,
-  Goff,
-  Flagsmith,
-  LaunchDarkly,
-  Flagd,
-  DevCycle,
-  Unleash,
-  Harness,
-].map((provider) => ({
-  vendor: provider.name,
-  logo: provider.logo,
-}));
+      type: 'Provider',
+      logo: provider.logo,
+      href,
+      technology,
+      vendorOfficial,
+      category,
+    };
+  });
+}).flat();
 
 function createDefaultDescription(vendor: string, official: boolean): string {
   return official

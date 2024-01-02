@@ -1,7 +1,6 @@
 import React from 'react';
 import CheckboxIcon from './checkbox-icon';
 import Link from '@docusaurus/Link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /**
  * The code snippet was created on Carbon.now using the dracula pro theme.
@@ -12,15 +11,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
  */
 import CodeSnippet from '@site/static/img/code-snippet.png';
 
-import CSharpNoFillSvg from '@site/static/img/c-sharp-no-fill.svg';
-import { faGolang } from '@fortawesome/free-brands-svg-icons';
-import { faJava } from '@fortawesome/free-brands-svg-icons';
-import { faSquareJs } from '@fortawesome/free-brands-svg-icons';
-import { faPhp } from '@fortawesome/free-brands-svg-icons';
-import { FAVOURITE_PROVIDERS } from '@site/src/datasets/providers';
+import { PROVIDERS } from '@site/src/datasets/providers';
+import { ECOSYSTEM_SDKS } from '@site/src/datasets/sdks/ecosystem';
 
 function FeaturesZigZag() {
-
   function getVendorLink(vendor: string) {
     return encodeURI(`/ecosystem?instant_search[refinementList][vendor][0]=${vendor}`);
   }
@@ -91,21 +85,19 @@ function FeaturesZigZag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl"
                 data-aos="fade-up"
               >
-                <div
-                  className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap fill-[#1c1e21] dark:fill-[#e3e3e3]">
-                  {
-                    FAVOURITE_PROVIDERS.map((vendor) => {
-                      const Icon = vendor.logo;
-                      return (
-                        <Link to={getVendorLink(vendor.vendor)}
-                              className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
-                          <Icon className="h-full w-full hover:fill-primary" />
-                        </Link>
-                      );
-                    })
-                  }
+                <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap fill-[#1c1e21] dark:fill-[#e3e3e3]">
+                  {PROVIDERS.map((vendor) => {
+                    const Icon = vendor.logo;
+                    return (
+                      <Link
+                        to={getVendorLink(vendor.name)}
+                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] "
+                      >
+                        <Icon className="h-full w-full hover:fill-primary" />
+                      </Link>
+                    );
+                  })}
                 </div>
-
               </div>
               {/* Content */}
               <div
@@ -143,26 +135,15 @@ function FeaturesZigZag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1"
                 data-aos="fade-up"
               >
-                <div
-                  className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap"
-                >
-                  <Link to="/docs/reference/technologies/server/dotnet"
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
-                    <CSharpNoFillSvg className="h-full w-full hover:fill-primary" />
-                  </Link>
-                  <Link to="/docs/reference/technologies/server/go" className="flex-auto h-20 w-20  m-4 text-inherit">
-                    <FontAwesomeIcon className="h-full w-full" icon={faGolang} />
-                  </Link>
-                  <Link to="/docs/reference/technologies/server/java" className="flex-auto h-20 w-20  m-4 text-inherit">
-                    <FontAwesomeIcon className="h-full w-full" icon={faJava} />
-                  </Link>
-                  <Link to="/docs/reference/technologies/server/javascript"
-                        className="flex-auto h-20 w-20  m-4 text-inherit">
-                    <FontAwesomeIcon className="h-full w-full" icon={faSquareJs} />
-                  </Link>
-                  <Link to="/docs/reference/technologies/server/php" className="flex-auto h-20 w-20  m-4 text-inherit">
-                    <FontAwesomeIcon className="h-full w-full" icon={faPhp} />
-                  </Link>
+                <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap">
+                  {ECOSYSTEM_SDKS.map((sdk) => {
+                    const Icon = sdk.logo;
+                    return (
+                      <Link to={sdk.href} className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
+                        <Icon className="h-full w-full hover:fill-primary" />
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
               {/* Content */}
