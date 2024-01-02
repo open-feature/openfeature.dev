@@ -186,7 +186,7 @@ function FeaturesZigZag() {
                     <CSharpNoFillSvg className="h-full w-full hover:fill-primary" />
                   </Link>
                   <Link to="/docs/reference/technologies/server/go" className="flex-auto h-20 w-20  m-4 text-inherit">
-                    <FontAwesomeIcon className={`h-full w-full`} icon={faGolang} />
+                    <FontAwesomeIcon className="h-full w-full" icon={faGolang} />
                   </Link>
                   <Link to="/docs/reference/technologies/server/java" className="flex-auto h-20 w-20  m-4 text-inherit">
                     <FontAwesomeIcon className="h-full w-full" icon={faJava} />
