@@ -84,7 +84,7 @@ kubectl create namespace open-feature-operator-system
 And finally, let's install the operator itself:
 
 ```shell
-kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.5.2/release.yaml && \
+kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.5.3/release.yaml && \
 kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'open-feature-operator-system'
 ```
 
