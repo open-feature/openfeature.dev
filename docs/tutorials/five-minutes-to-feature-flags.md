@@ -406,7 +406,6 @@ We’ve gotten started with OpenFeature using a very simple but extremely limite
 The beauty of OpenFeature is that we can transition to a real feature-flagging system when we’re ready, without any change to how we evaluate flags.
 It’s as simple as configuring a [different provider](/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=Provider).
 
-
 We can get started with feature flags with low investment and low risk, and once we’re ready, it’s just a few lines of code to transition to a full-featured, scalable backend.
 
 ## Next steps
