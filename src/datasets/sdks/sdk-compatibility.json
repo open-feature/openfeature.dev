@@ -4,8 +4,8 @@
     "path": "/docs/reference/technologies/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.7.0",
-      "version": "1.7.0",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.7.2",
+      "version": "1.7.2",
       "stable": true
     },
     "spec": {
@@ -52,8 +52,8 @@
     "path": "/docs/reference/technologies/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.7.4",
-      "version": "1.7.4",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.7.5",
+      "version": "1.7.5",
       "stable": true
     },
     "spec": {
@@ -148,8 +148,8 @@
     "path": "/docs/reference/technologies/server/go",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.8.0",
-      "version": "1.8.0",
+      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.9.0",
+      "version": "1.9.0",
       "stable": true
     },
     "spec": {
@@ -244,8 +244,8 @@
     "path": "/docs/reference/technologies/server/php",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.0.2",
-      "version": "2.0.2",
+      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.0.4",
+      "version": "2.0.4",
       "stable": true
     },
     "spec": {
@@ -292,8 +292,8 @@
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.7",
-      "version": "0.4.7",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.8",
+      "version": "0.4.8",
       "stable": false
     },
     "spec": {
@@ -340,8 +340,8 @@
     "path": "/docs/reference/technologies/client/kotlin",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.1.0",
-      "version": "0.1.0",
+      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.2.1",
+      "version": "0.2.1",
       "stable": false
     },
     "spec": {
