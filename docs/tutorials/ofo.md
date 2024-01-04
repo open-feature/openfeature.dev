@@ -6,7 +6,7 @@ title: Cloud Native Flags with the OpenFeature Operator
 
 # Cloud Native Feature-Flagging with the OpenFeature Operator
 
-In the following tutorial, we'll see how to leverage _flagd_ and the OpenFeature Operator to enable cloud-native, self-hosted feature flags in your Kubernetes cluster. [flagd](https://github.com/open-feature/flagd) is a "feature flag daemon with a Unix philosophy".
+In the following tutorial, we'll see how to leverage _flagd_ and the OpenFeature Operator to enable cloud-native, self-hosted feature flags in your Kubernetes cluster. [flagd](https://flagd.dev/) is a "feature flag daemon with a Unix philosophy".
 Put another way, it's a small, self-contained binary that evaluates feature flags, uses standard interfaces, and runs just about anywhere.
 It can be deployed in a central location serving multiple clients or embedded into a unit of deployment (such as a pod in Kubernetes).
 The [OpenFeature Operator](https://github.com/open-feature/open-feature-operator) is a K8s-flavored solution for easily adding flagd to any relevant workloads.
@@ -20,7 +20,7 @@ It parses Kubernetes spec files and adds flagd and associated objects to the wor
   - [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation) is similar to minikube (another solution for running a cluster locally you may be familiar with) but supports more than one node, so it makes for a slightly more realistic experience.
     If using kind, this tutorial provides a 3-node cluster definition with a forwarded containerPort for you (more on that later).
   - [MicroK8s](https://microk8s.io/) and [K3s](https://k3s.io/) are easily installable Kubernetes clusters you can use locally.
-    The benefit of these is that they are the basically identical to a production environment.
+    The benefit of these is that they are basically identical to a production environment.
     Configuration of `MicroK8s` and `K3s` is out of the scope of this tutorial.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [k9s](https://k9scli.io/) (optional, if you'd like to inspect your cluster visually)
@@ -43,8 +43,6 @@ We recommend using `kind` for this demo, but if you already have a K8s cluster, 
 ##### Using Kind
 
 Download the cluster definition file, `kind-cluster.yaml`:
-
-<!-- TODO: update this before merge to point to asset in main -->
 
 ```shell
 curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/kind-cluster.yaml > kind-cluster.yaml
@@ -123,33 +121,33 @@ Now you should see our fictional app at [http://localhost:30000](http://localhos
 
 For this demo, we get flag definitions from the custom resource definitions (CRDs) you applied to K8s above (`end-to-end.yaml`).
 The resource type is `FeatureFlag` and there are two instances defined: one is called `ui-flags` (for the front-end) and one called `app-flags`
-(for the back-end).
+(for the back end).
 Below, you'll see how you can modify these instances to change your feature flags.
 
 This file also contains service and deployment definitions, *but these need not be modified as part of this demo*.
 You may be interested in the `openfeature.dev/*` annotations though, which the OpenFeature operator uses to detect which workloads require flagd.
 
-- `openfeature.dev/enabled` - setting this to `true` make operator to inject flagd as a sidecar
-- `openfeature.dev/featureflagsource` - refers to the `FeatureFlagSource` CRD which define flagd configurations, including its feature flag sources
+- `openfeature.dev/enabled` - setting this to `true` instructs the operator to inject flagd as a sidecar
+- `openfeature.dev/featureflagsource` - refers to the `FeatureFlagSource` CRD, which defines flagd configurations, including its feature flag sources
 
 In the given example, there's a `FeatureFlagSource` custom resource (CR) named `flag-sources`, configured to use the `FeatureFlag` CRs mentioned above.
 In simple terms, you can think of a `FeatureFlagSource` instance as a resource that associates a workload with one or many `FeatureFlag` instances (though it has other purposes as well).
-You can lean more about these configurations from [flag source configuration documentation](https://github.com/open-feature/open-feature-operator/blob/main/docs/feature_flag_source.md)
+You can learn more about these configurations from [flag source configuration documentation](https://flagd.dev/reference/openfeature-operator/crds/featureflagsource/)
 
 Next, let's get started learning how OpenFeature is helping Fib3r manage this landing page!
 
 The company has been in the process of changing the name of our app, but legal hasn't quite finished the process yet.
-Here, we've defined a simple feature flag that can be use to update the name instantly without redeploying our application.
+Here, we've defined a simple feature flag that can be used to update the name instantly without redeploying our application.
 Change the `"defaultVariant"` of the feature flag `new-welcome-message"` to `"on"` in the `ui-flags` CR, then redeploy the change with:
 
 ```shell
 kubectl apply -n default -f end-to-end.yaml
 ```
 
-Notice that the welcome message has changed from "Welcome to FaaS: Fibonacci as a Service!" to "Welcome to Fib3r: Fibonacci as a Service!".
+Notice that the welcome message has changed from "Welcome to FaaS: Fibonacci as a Service!" to "Fib3r: Math at the speed of the internet!".
 Great!
-Now let's help the design team experiment with new color palette...
-Let's change our landing page's color.
+Now, let's help the design team experiment with a new color palette...
+Let's change the color of our landing page.
 Change the `"defaultVariant"` of the `"hex-color"` within the `ui-flags` CR and use `kubectl` to apply the change again.
 You should notice the color of the page changes immediately.
 
@@ -158,8 +156,8 @@ The `"fib-algo"` flag returns a different result if our email ends with `"@faas.
 
 Let's run the fibonacci calculator...
 Run it once as a "customer" (without being logged in).
-Then login as an "employee" (use any email ending in `...@faas.com`) and observe the impact.
-This effect is driven by the rule defined in the `app-flags` CR, which controls our server-side flags, and is predicated on the email address of the user.
+Then log in as an "employee" (use any email ending in `...@faas.com`) and observe the impact.
+This effect is driven by the rule defined in the `app-flags` CR, which controls our server-side flags and is predicated on the email address of the user.
 Feel free to experiment with your own flag values and rules!
 
 ### Cleaning up
