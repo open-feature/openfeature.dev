@@ -65,3 +65,5 @@ jobs:
       continue-on-error: true
       run: |
         gh pr create --title "chore: update sdk readmes" --base main --head $BRANCH_NAME
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
