@@ -64,6 +64,6 @@ jobs:
       shell: bash
       continue-on-error: true
       run: |
-        gh pr create --title "chore: update sdk readmes" --base main --head $BRANCH_NAME
+        gh pr create --title "chore: update sdk readmes" --body "The PR was automatically generated via the update-sdk-docs GitHub workflow." --base main --head $BRANCH_NAME
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
