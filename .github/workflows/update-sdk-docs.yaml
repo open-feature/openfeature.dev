@@ -49,7 +49,6 @@ jobs:
       shell: bash
       run: |
         git reset --hard origin/main
-        git clean -ffdx
 
     - name: Update SDKs and commit changes
       shell: bash
