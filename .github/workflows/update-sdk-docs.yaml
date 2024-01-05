@@ -1,6 +1,8 @@
 name: Update SDK Docs
 
-on: 
+on:
+  schedule:
+    - cron:  '0 8 * * 1-5'
   workflow_dispatch:
 
 jobs:
