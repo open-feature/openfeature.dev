@@ -1,0 +1,71 @@
+name: Update SDK Docs
+
+on:
+  schedule:
+    - cron:  '0 8 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        fetch-depth: 0
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: '.nvmrc'
+        cache: 'yarn'
+
+    - name: Install dependencies
+      run: yarn install --immutable
+
+    - name: Set up git
+      shell: bash
+      run: |
+        git config --global user.name "OpenFeature Bot"
+        git config --global user.email "109696520+openfeaturebot@users.noreply.github.com"
+
+    - name: Set branch env variable
+      shell: bash
+      run: echo "BRANCH_NAME=update-sdk-readmes" >> $GITHUB_ENV
+
+    - name: Checkout branch
+      shell: bash
+      run: |
+        if git rev-parse --verify $BRANCH_NAME >/dev/null 2>&1
+        then
+          echo "Branch exists, checking out"
+          git checkout $BRANCH_NAME
+        else
+          echo "Branch does not exist, creating"
+          git checkout -b $BRANCH_NAME
+        fi
+
+    - name: Ensure branch is up to date
+      shell: bash
+      run: |
+        git reset --hard origin/main
+
+    - name: Update SDKs and commit changes
+      shell: bash
+      run: |
+        yarn run update:sdk-docs && \
+        git add --all && \
+        git commit -m 'chore: update sdk readmes' -s && \
+        git push origin $BRANCH_NAME --force-with-lease
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create pr if doesn't exist
+      shell: bash
+      continue-on-error: true
+      run: |
+        gh pr create --title "chore: update sdk readmes" --body "The PR was automatically generated via the update-sdk-docs GitHub workflow." --base main --head $BRANCH_NAME
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
