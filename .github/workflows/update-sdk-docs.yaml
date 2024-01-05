@@ -60,7 +60,7 @@ jobs:
         git commit -m 'chore: update sdk readmes' -s && \
         git push origin $BRANCH_NAME --force-with-lease
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PULL_REQUEST_AUTOMATION }}
 
     - name: Create pr if doesn't exist
       shell: bash
@@ -68,4 +68,4 @@ jobs:
       run: |
         gh pr create --title "chore: update sdk readmes" --body "The PR was automatically generated via the update-sdk-docs GitHub workflow." --base main --head $BRANCH_NAME
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PULL_REQUEST_AUTOMATION }}
