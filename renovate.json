@@ -8,6 +8,9 @@
   "labels": [
     "renovate"
   ],
+  "git-submodules": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "matchPackagePatterns": [
