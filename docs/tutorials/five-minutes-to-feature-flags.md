@@ -365,6 +365,10 @@ app.listen(3333, () => {
 Next restart the node server, and make a new request:
 
 ```bash
+node 05_openfeature_with_targeting.js
+```
+
+```bash
 curl http://localhost:3333
 ```
 
