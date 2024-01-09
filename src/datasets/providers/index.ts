@@ -12,12 +12,14 @@ import { LaunchDarkly } from './launchdarkly';
 import { PostHog } from './posthog';
 import { Split } from './split';
 import { Unleash } from './unleash';
+import { FeatBit } from './featbit';
 import { Category, EcosystemElement, Technology } from '../types';
 
 export const PROVIDERS: Provider[] = [
   CloudBees,
   ConfigCat,
   DevCycle,
+  FeatBit,
   Flagd,
   Flagsmith,
   Flipt,
