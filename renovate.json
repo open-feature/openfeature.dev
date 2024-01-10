@@ -1,8 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    "schedule:earlyMondays"
+    "config:recommended",
+    ":automergeTypes",
+    ":automergeStableNonMajor",
+    "npm:unpublishSafe"
   ],
   "semanticCommits": "enabled",
   "labels": [
@@ -11,45 +13,6 @@
   "git-submodules": {
     "enabled": true
   },
-  "packageRules": [
-    {
-      "matchPackagePatterns": [
-        "@docusaurus/"
-      ],
-      "groupName": "Docusaurus"
-    },
-    {
-      "matchPackagePatterns": [
-        "@typescript-eslint",
-        "eslint"
-      ],
-      "groupName": "ESLint"
-    },
-    {
-      "matchPackagePatterns": [
-        "@fortawesome/"
-      ],
-      "groupName": "Font Awesome"
-    },
-    {
-      "matchPackagePatterns": [
-        "@types/"
-      ],
-      "groupName": "Types"
-    },
-    {
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
-      "matchDepTypes": [
-        "devDependencies"
-      ],
-      "automerge": true
-    }
-  ],
   "regexManagers": [
     {
       "fileMatch": ["^docs/tutorials/ofo.md$"],
