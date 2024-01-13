@@ -70,7 +70,7 @@
     "eslint-mdx": "2.3.2",
     "eslint-plugin-check-file": "2.6.2",
     "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-jest": "27.6.1",
+    "eslint-plugin-jest": "27.6.2",
     "eslint-plugin-mdx": "2.3.2",
     "fs-extra": "11.2.0",
     "markdownlint-cli2": "^0.11.0",
