@@ -5081,10 +5081,10 @@ eslint-mdx@2.3.3:
     uvu "^0.5.6"
     vfile "^5.3.7"
 
-eslint-mdx@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-2.3.2.tgz#6fb16d2b3c521d4bb97db90cf75036ec2bf8363f"
-  integrity sha512-JGCTqFJ68OIJAl/BRm2a2OckrBHj56G0wM2/sN/vV1VseTzK4cL2D+N3khlRPWMOKUa6zXHrmQ6WIoR2ZXkCTw==
+eslint-mdx@^2.3.3:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-2.3.4.tgz#87a5d95d6fcb27bafd2b15092f16f5aa559e336b"
+  integrity sha512-u4NszEUyoGtR7Q0A4qs0OymsEQdCO6yqWlTzDa9vGWsK7aMotdnW0hqifHTkf6lEtA2vHk2xlkWHTCrhYLyRbw==
   dependencies:
     acorn "^8.10.0"
     acorn-jsx "^5.3.2"
@@ -5153,12 +5153,12 @@ eslint-plugin-markdown@^3.0.1:
   dependencies:
     mdast-util-from-markdown "^0.8.5"
 
-eslint-plugin-mdx@2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-2.3.2.tgz#521291ca312572398565cb77b27da627fc3df5a0"
-  integrity sha512-NwDt+g2cheYKfgguJF1eYHjStUDVploN0OZ2okg1whh2cw2Pz3jxbGqU9FYe4GnLtZD77EKVggxUEdMzbidwGQ==
+eslint-plugin-mdx@2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-2.3.3.tgz#23eecab2fd90bdfb21831fbd22ad4a9477930fce"
+  integrity sha512-x7H3RWOM9zpX07/9Up+qBMB5nWANXHH1y/TeGE2iqbMGmYafhIgYh5FDYRChG4Bxas1MxXBG+B4BsSiDxqwAWA==
   dependencies:
-    eslint-mdx "^2.3.2"
+    eslint-mdx "^2.3.3"
     eslint-plugin-markdown "^3.0.1"
     remark-mdx "^2.3.0"
     remark-parse "^10.0.2"
