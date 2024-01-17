@@ -7,6 +7,6 @@ export const Kotlin: SDK = {
   category: 'Client',
   repo: 'kotlin-sdk',
   logoKey: 'android-no-fill.svg',
-  technology: '.NET',
+  technology: 'Kotlin',
   href: '/docs/reference/technologies/client/kotlin',
 };

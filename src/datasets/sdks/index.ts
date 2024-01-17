@@ -7,8 +7,9 @@ import { Category, Technology } from '../types';
 import { Kotlin } from './kotlin';
 import { Python } from './python';
 import { PHP } from './php';
+import { Swift } from './swift';
 
-export const SDKS = [Java, Nodejs, Dotnet, Go, Python, PHP, Web, Kotlin];
+export const SDKS = [Java, Nodejs, Dotnet, Go, Python, PHP, Web, Kotlin, Swift];
 
 export type SDK = {
   /**
