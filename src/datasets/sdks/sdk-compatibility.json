@@ -52,8 +52,8 @@
     "path": "/docs/reference/technologies/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.8.0",
-      "version": "1.8.0",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.9.1",
+      "version": "1.9.1",
       "stable": true
     },
     "spec": {
@@ -292,8 +292,8 @@
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.8",
-      "version": "0.4.8",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.10",
+      "version": "0.4.10",
       "stable": false
     },
     "spec": {
