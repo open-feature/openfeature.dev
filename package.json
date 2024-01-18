@@ -43,7 +43,7 @@
     "docusaurus-theme-github-codeblock": "^2.0.1",
     "instantsearch-itemsjs-adapter": "^1.1.5",
     "itemsjs": "^2.1.24",
-    "mermaid": "10.6.1",
+    "mermaid": "10.7.0",
     "postcss": "^8.4.33",
     "prism-react-renderer": "2.3.1",
     "prismjs": "1.29.0",
