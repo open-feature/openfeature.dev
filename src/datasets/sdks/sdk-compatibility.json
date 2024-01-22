@@ -4,8 +4,8 @@
     "path": "/docs/reference/technologies/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.7.2",
-      "version": "1.7.2",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.7.3",
+      "version": "1.7.3",
       "stable": true
     },
     "spec": {
@@ -52,8 +52,8 @@
     "path": "/docs/reference/technologies/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.9.0",
-      "version": "1.9.0",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.9.1",
+      "version": "1.9.1",
       "stable": true
     },
     "spec": {
@@ -130,7 +130,7 @@
         "path": "/docs/reference/technologies/server/dotnet#named-clients"
       },
       "Eventing": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/technologies/server/dotnet#eventing"
       },
       "Shutdown": {
@@ -292,8 +292,8 @@
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.9",
-      "version": "0.4.9",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.10",
+      "version": "0.4.10",
       "stable": false
     },
     "spec": {
@@ -340,8 +340,8 @@
     "path": "/docs/reference/technologies/client/kotlin",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.2.1",
-      "version": "0.2.1",
+      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.2.2",
+      "version": "0.2.2",
       "stable": false
     },
     "spec": {
@@ -370,8 +370,8 @@
         "path": "/docs/reference/technologies/client/kotlin"
       },
       "Eventing": {
-        "status": "⚠️",
-        "path": "/docs/reference/technologies/client/kotlin#eventing"
+        "status": "❓",
+        "path": "/docs/reference/technologies/client/kotlin"
       },
       "Shutdown": {
         "status": "✅",
