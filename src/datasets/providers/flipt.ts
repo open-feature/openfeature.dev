@@ -17,5 +17,11 @@ export const Flipt: Provider = {
       href: 'https://github.com/open-feature/java-sdk-contrib/tree/main/providers/flipt',
       category: ['Server'],
     },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/flipt',
+      category: ['Server'],
+    },
   ],
 };
