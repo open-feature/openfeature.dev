@@ -362,16 +362,16 @@
         "path": "/docs/reference/technologies/client/kotlin#hooks"
       },
       "Logging": {
-        "status": "❓",
-        "path": "/docs/reference/technologies/client/kotlin"
+        "status": "❌",
+        "path": "/docs/reference/technologies/client/kotlin#logging"
       },
       "Named clients": {
-        "status": "❓",
-        "path": "/docs/reference/technologies/client/kotlin"
+        "status": "❌",
+        "path": "/docs/reference/technologies/client/kotlin#named-clients"
       },
       "Eventing": {
-        "status": "❓",
-        "path": "/docs/reference/technologies/client/kotlin"
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/kotlin#eventing"
       },
       "Shutdown": {
         "status": "✅",
