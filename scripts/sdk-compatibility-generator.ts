@@ -31,12 +31,16 @@ export class SdkCompatibilityGenerator {
    * Extracts the release version and a link to the release notes from a badge
    * on the SDKs readme. The RegEx is looking for an <a> tag that looks like
    * <a href="https://github.com/open-feature/SDK_REPO_NAME/releases/tag/TAG_VERSION">
+   * or a markdown link that looks like (https://github.com/open-feature/SDK_REPO_NAME/releases/tag/TAG_VERSION).
    */
   private getReleaseInfo(name: string, url: string, content: string): SdkCompatibility['release'] {
-    const releaseRegex = new RegExp(
-      `<a href="(${url.replaceAll('/', '\\/').replaceAll('.', '\\.')}\\/releases\\/tag\\/.*(v?\\d+\\.\\d+\\.\\d+))">`
+    const releaseHtmlRegex = new RegExp(
+      `<a href="(${url.replaceAll('/', '\\/').replaceAll('.', '\\.')}\\/releases\\/tag\\/.*(v?\\d+\\.\\d+\\.\\d+))">`,
     );
-    const releaseInfo = releaseRegex.exec(content);
+    const releaseMarkdownRegex = new RegExp(
+      `\\((${url.replaceAll('/', '\\/').replaceAll('.', '\\.')}\\/releases\\/tag\\/.*(v?\\d+\\.\\d+\\.\\d+))\\)`,
+    );
+    const releaseInfo = releaseHtmlRegex.exec(content) ?? releaseMarkdownRegex.exec(content);
     if (!releaseInfo) {
       throw new Error(`Unable to extract spec information from ${name}`);
     }
@@ -51,14 +55,18 @@ export class SdkCompatibilityGenerator {
   /**
    * Extracts the spec version and a link to the release notes from a badge
    * on the SDKs readme. The RegEx is looking for an <a> tag that looks like
-   * <a href="https://github.com/open-feature/spec/releases/tag/TAG_VERSION">
+   * <a href="https://github.com/open-feature/spec/releases/tag/TAG_VERSION"> or
+   * a markdown link that looks like (https://github.com/open-feature/spec/releases/tag/TAG_VERSION).
    */
   private getSpecInfo(name: string, content: string): SdkCompatibility['spec'] {
-    const specRegex = new RegExp(
-      '<a href="(https:\\/\\/github\\.com\\/open-feature\\/spec\\/releases\\/tag\\/v(\\d+\\.\\d+\\.\\d+))">'
+    const specHtmlRegex = new RegExp(
+      '<a href="(https:\\/\\/github\\.com\\/open-feature\\/spec\\/releases\\/tag\\/v(\\d+\\.\\d+\\.\\d+))">',
+    );
+    const specMarkdownRegex = new RegExp(
+      '\\((https:\\/\\/github\\.com\\/open-feature\\/spec\\/releases\\/tag\\/v(\\d+\\.\\d+\\.\\d+))\\)',
     );
 
-    const specInfo = specRegex.exec(content);
+    const specInfo = specHtmlRegex.exec(content) ?? specMarkdownRegex.exec(content);
     if (!specInfo) {
       throw new Error(`Unable to extract spec information from ${name}`);
     }
