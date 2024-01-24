@@ -19,6 +19,8 @@ config:
 
     max-one-sentence-per-line: true
 
+    no-emphasis-as-header: false
+
 customRules:
     - markdownlint-rule-max-one-sentence-per-line
 
