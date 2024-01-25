@@ -2,8 +2,8 @@ import { SDK } from '.';
 
 export const Nodejs: SDK = {
   name: 'Node.js',
-  filename: 'javascript',
-  slug: 'javascript',
+  filename: 'javascript/index',
+  id: 'javascript',
   category: 'Server',
   repo: 'js-sdk',
   folder: '/packages/server',

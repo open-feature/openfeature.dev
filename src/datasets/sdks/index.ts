@@ -8,8 +8,22 @@ import { Kotlin } from './kotlin';
 import { Python } from './python';
 import { PHP } from './php';
 import { Swift } from './swift';
+// import { React } from './react';
+import { Nestjs } from './nestjs';
 
-export const SDKS = [Java, Nodejs, Dotnet, Go, Python, PHP, Web, Kotlin, Swift];
+export const SDKS = [
+  Java,
+  Nodejs,
+  Nestjs,
+  Dotnet,
+  Go,
+  Python,
+  PHP,
+  Web,
+  // React,
+  Kotlin,
+  Swift,
+];
 
 export type SDK = {
   /**
@@ -26,9 +40,15 @@ export type SDK = {
   /**
    * The slug used to identify the page in Docusaurus.
    *
-   * @defaults filename
+   * @url https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter
    */
   slug?: string;
+  /**
+   * The id used to identify the page in Docusaurus.
+   *
+   * @url https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter
+   */
+  id?: string;
   /**
    * The file extension used for the generated file.
    *
@@ -63,4 +83,10 @@ export type SDK = {
    * Link to the SDK documentation
    */
   href: string;
+  /**
+   * Determines if the SDK should be included in the support matrix.
+   *
+   * @default true
+   */
+  includeInSupportMatrix?: boolean;
 };
