@@ -2,13 +2,13 @@ import type { Options as PresetClassicOptions } from '@docusaurus/preset-classic
 import type { UserThemeConfig as ThemeCommonConfig } from '@docusaurus/theme-common';
 import type { UserThemeConfig as AlgoliaThemeConfig } from '@docusaurus/theme-search-algolia';
 import type { Config } from '@docusaurus/types';
+import autoprefixer from 'autoprefixer';
+import { themes } from 'prism-react-renderer';
 import { rehypeGithubAlerts } from 'rehype-github-alerts';
 import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
-
-import { themes } from 'prism-react-renderer';
 import tailwindcss from 'tailwindcss';
-import autoprefixer from 'autoprefixer';
+
 import { processSdkReadmes } from './scripts/process-sdk-readmes';
 
 const presetClassicOptions: PresetClassicOptions = {

@@ -11,10 +11,10 @@
 
 :root {
   --ifm-color-primary: #5D5DFF;
+  --github-alert-important-color: rgb(130, 80, 223);
   --github-alert-default-color: rgb(175, 184, 193);
-    --github-alert-note-color: rgb(9, 105, 218);
-    --github-alert-important-color: rgb(130, 80, 223);
-    --github-alert-warning-color: rgb(154, 103, 0);
+  --github-alert-warning-color: rgb(154, 103, 0);
+  --github-alert-note-color: rgb(9, 105, 218);
 }
 
 .footer {
@@ -115,6 +115,7 @@
 .has-tooltip:hover .tooltip {
   @apply visible z-50;
 }
+
 .markdown-alert-title {
   display: inline-flex;
   margin-bottom: 4px;
@@ -125,36 +126,33 @@
   margin-right: 8px;
 }
 
+.markdown-alert {
+  padding: 0 1em;
+  margin-bottom: 16px;
+  border-left: 0.25em solid var(--github-alert-default-color);
+}
 .markdown-alert-note .markdown-alert-title,
 .markdown-alert-note .markdown-alert-title>svg {
   color: var(--github-alert-note-color);
   fill: var(--github-alert-note-color);
 }
 
+.markdown-alert-note {
+  border-left-color: var(--github-alert-note-color);
+}
 .markdown-alert-important .markdown-alert-title,
 .markdown-alert-important .markdown-alert-title>svg {
   color: var(--github-alert-important-color);
   fill: var(--github-alert-important-color);
 }
 
+.markdown-alert-important {
+  border-left-color: var(--github-alert-important-color);
+}
 .markdown-alert-warning .markdown-alert-title,
 .markdown-alert-warning .markdown-alert-title>svg {
   color: var(--github-alert-warning-color);
   fill: var(--github-alert-warning-color);
-}
-
-.markdown-alert {
-  padding: 0 1em;
-  margin-bottom: 16px;
-  border-left: 0.25em solid var(--github-alert-default-color);
-}
-
-.markdown-alert-note {
-  border-left-color: var(--github-alert-note-color);
-}
-
-.markdown-alert-important {
-  border-left-color: var(--github-alert-important-color);
 }
 
 .markdown-alert-warning {
