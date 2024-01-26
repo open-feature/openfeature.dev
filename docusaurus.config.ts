@@ -2,10 +2,13 @@ import type { Options as PresetClassicOptions } from '@docusaurus/preset-classic
 import type { UserThemeConfig as ThemeCommonConfig } from '@docusaurus/theme-common';
 import type { UserThemeConfig as AlgoliaThemeConfig } from '@docusaurus/theme-search-algolia';
 import type { Config } from '@docusaurus/types';
-
-import { themes } from 'prism-react-renderer';
-import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
+import { themes } from 'prism-react-renderer';
+import { rehypeGithubAlerts } from 'rehype-github-alerts';
+import remarkBreaks from 'remark-breaks';
+import remarkGfm from 'remark-gfm';
+import tailwindcss from 'tailwindcss';
+
 import { processSdkReadmes } from './scripts/process-sdk-readmes';
 
 const presetClassicOptions: PresetClassicOptions = {
@@ -315,8 +318,10 @@ const config: Config = {
         path: 'external-content/specification/specification',
         routeBasePath: 'specification',
         editUrl: (params) => {
-          return `https://github.com/open-feature/spec/edit/main/${params.docPath}`;
+          return `https://github.com/open-feature/spec/edit/main/specification/${params.docPath}`;
         },
+        rehypePlugins: [rehypeGithubAlerts],
+        remarkPlugins: [remarkGfm, remarkBreaks],
         // ... other options
       },
     ],
