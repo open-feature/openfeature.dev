@@ -13,6 +13,7 @@ import { PostHog } from './posthog';
 import { Split } from './split';
 import { Unleash } from './unleash';
 import { FeatBit } from './featbit';
+import { UserDefaults } from './user-defaults';
 import { Category, EcosystemElement, Technology } from '../types';
 
 export const PROVIDERS: Provider[] = [
@@ -29,6 +30,7 @@ export const PROVIDERS: Provider[] = [
   PostHog,
   Split,
   Unleash,
+  UserDefaults,
 ];
 
 export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) => {
@@ -62,4 +64,5 @@ export type Provider = {
   logo: ComponentType<SVGProps<SVGSVGElement>>;
   technologies: Array<{ technology: Technology; vendorOfficial: boolean; href: string; category: Category[] }>;
   description?: string | ((vendorSupported: boolean) => string);
+  excludeFromLandingPage?: boolean;
 };
