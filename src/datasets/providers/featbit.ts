@@ -11,5 +11,17 @@ export const FeatBit: Provider = {
       href: 'https://github.com/featbit/featbit-openfeature-provider-java-server',
       category: ['Server'],
     },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-node-server',
+      category: ['Server'],
+    },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-js-client',
+      category: ['Client'],
+    },
   ],
 };
