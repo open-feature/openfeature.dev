@@ -136,16 +136,12 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
         title: 'More',
         items: [
           {
-            label: 'Website',
-            href: '/',
-          },
-          {
-            label: 'Blog',
-            to: '/blog',
-          },
-          {
             label: 'GitHub',
             href: 'https://github.com/open-feature',
+          },
+          {
+            label: 'Trademarks',
+            href: 'https://www.linuxfoundation.org/legal/trademark-usage',
           },
           {
             html: `
