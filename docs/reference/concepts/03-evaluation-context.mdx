@@ -12,7 +12,18 @@ The [_evaluation context_](/specification/glossary#evaluation-context) is a cont
 Static data such as the host or an identifier for the application can be configured globally.
 Dynamic evaluation context, such as the IP address of the client in a web application, can be implicitly propagated or explicitly passed to during flag evaluation, and can be merged with static values.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/L4iSvkxVnFI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```mdx-code-block
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+
+<div className="video-container">
+  <LiteYouTubeEmbed
+    id="L4iSvkxVnFI"
+    title="YouTube video player"
+    poster="maxresdefault"
+    webp
+  />
+</div>
+```
 
 ## Providing Evaluation Context
 
