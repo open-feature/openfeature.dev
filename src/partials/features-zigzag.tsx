@@ -86,7 +86,7 @@ function FeaturesZigZag() {
                 data-aos="fade-up"
               >
                 <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap fill-[#1c1e21] dark:fill-[#e3e3e3]">
-                  {PROVIDERS.map((vendor) => {
+                  {PROVIDERS.filter((p) => !p.excludeFromLandingPage).map((vendor) => {
                     const Icon = vendor.logo;
                     return (
                       <Link
