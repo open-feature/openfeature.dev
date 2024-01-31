@@ -8,22 +8,10 @@ import { Kotlin } from './kotlin';
 import { Python } from './python';
 import { PHP } from './php';
 import { Swift } from './swift';
-// import { React } from './react';
+import { React } from './react';
 import { Nestjs } from './nestjs';
 
-export const SDKS = [
-  Java,
-  Nodejs,
-  Nestjs,
-  Dotnet,
-  Go,
-  Python,
-  PHP,
-  Web,
-  // React,
-  Kotlin,
-  Swift,
-];
+export const SDKS = [Java, Nodejs, Nestjs, Dotnet, Go, Python, PHP, Web, React, Kotlin, Swift];
 
 export type SDK = {
   /**
