@@ -112,6 +112,23 @@ $value = $client->getBooleanValue("boolFlag", false, $context, new EvaluationOpt
 ```
 
 </TabItem>
+<TabItem value="python" label="Python">
+
+```python
+# add a hook globally, to run on all evaluations
+import openfeature.api
+openfeature.api.add_hooks([ExampleGlobalHook()])
+
+# add a hook on this client, to run on all evaluations made by this client
+client = api.get_client()
+client.add_hooks([ExampleClientHook()])
+
+# add a hook for this evaluation only
+options = EvaluationOptions(hooks=[ExampleInvocationHook()])
+value = client.get_boolean_value("boolFlag", False, context, options)
+```
+
+</TabItem>
 </Tabs>
 
 ## Flag Evaluation Life-Cycle
@@ -300,6 +317,26 @@ class MyHook implements Hook
     }
 }
 
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+from openfeature.hook import Hook
+
+class MyHook(Hook):
+    def before(self, context: HookContext, hints: dict):
+        ...  # code to run before flag evaluation
+
+    def after(self, context: HookContext, details: FlagEvaluationDetails, hints: dict):
+        ...  # code to run after successful flag evaluation
+
+    def error(self, context: HookContext, error, hints: dict):
+        ...  # code to run if there's an error during before hooks or during flag evaluation
+
+    def finally_after(self, context: HookContext, hints: dict):
+        ...  # code to run after all other stages, regardless of success/failure
 ```
 
 </TabItem>

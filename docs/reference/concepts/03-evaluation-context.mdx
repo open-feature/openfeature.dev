@@ -136,6 +136,25 @@ $boolValue = $client->getBooleanValue("boolFlag", false, $context);
 ```
 
 </TabItem>
+<TabItem value="python" label="Python">
+
+```python
+# add a value to the global context
+import openfeature.api
+context = EvaluationContext("targetingKey", {"myGlobalKey": "myGlobalValue"})
+openfeature.api.set_evaluation_context(context)
+
+# add a value to the client context
+client = api.get_client()
+context = EvaluationContext("targetingKey", {"myClientKey": "myClientValue"})
+client.set_evaluation_context(context)
+
+# add a value to the invocation context
+context = EvaluationContext("targetingKey", {"myInvocationKey": "myInvocationValue"})
+bool_value = client.get_boolean_value("boolFlag", False, context)
+```
+
+</TabItem>
 </Tabs>
 
 ### Context merging
