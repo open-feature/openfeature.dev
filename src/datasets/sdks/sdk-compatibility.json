@@ -52,8 +52,8 @@
     "path": "/docs/reference/technologies/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.10.0",
-      "version": "1.10.0",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.11.0",
+      "version": "1.11.0",
       "stable": true
     },
     "spec": {
@@ -292,8 +292,8 @@
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.11",
-      "version": "0.4.11",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.12",
+      "version": "0.4.12",
       "stable": false
     },
     "spec": {
@@ -388,8 +388,8 @@
     "path": "/docs/reference/technologies/client/swift",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/swift-sdk/releases/tag/0.0.2",
-      "version": "0.0.2",
+      "href": "https://github.com/open-feature/swift-sdk/releases/tag/0.1.0",
+      "version": "0.1.0",
       "stable": false
     },
     "spec": {
