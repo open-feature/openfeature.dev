@@ -35,5 +35,11 @@ export const DevCycle: Provider = {
       href: 'https://docs.devcycle.com/sdk/client-side-sdks/javascript/javascript-openfeature',
       category: ['Client'],
     },
+    {
+      technology: 'PHP',
+      vendorOfficial: true,
+      href: 'https://docs.devcycle.com/sdk/server-side-sdks/php/php-openfeature',
+      category: ['Server'],
+    },
   ],
 };
