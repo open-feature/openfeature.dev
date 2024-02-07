@@ -196,13 +196,13 @@
     "path": "/docs/reference/technologies/server/python",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.4.1",
-      "version": "0.4.1",
+      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.4.2",
+      "version": "0.4.2",
       "stable": false
     },
     "spec": {
-      "href": "https://github.com/open-feature/spec/releases/tag/v0.3.0",
-      "version": "0.3.0"
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.5.2",
+      "version": "0.5.2"
     },
     "features": {
       "Providers": {
@@ -218,7 +218,7 @@
         "path": "/docs/reference/technologies/server/python#hooks"
       },
       "Logging": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/technologies/server/python#logging"
       },
       "Named clients": {
@@ -340,8 +340,8 @@
     "path": "/docs/reference/technologies/client/kotlin",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.2.2",
-      "version": "0.2.2",
+      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.2.3",
+      "version": "0.2.3",
       "stable": false
     },
     "spec": {
