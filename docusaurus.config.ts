@@ -73,6 +73,10 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
         label: 'Community',
       },
       {
+        to: '/support-training',
+        label: 'Support & Training',
+      },
+      {
         type: 'doc',
         docId: 'tutorials/five-minutes-to-feature-flags',
         position: 'left',
