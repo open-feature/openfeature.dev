@@ -41,5 +41,11 @@ export const LaunchDarkly: Provider = {
       href: 'https://github.com/launchdarkly/openfeature-php-server',
       category: ['Server'],
     },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://github.com/launchdarkly/openfeature-python-server',
+      category: ['Server'],
+    },
   ],
 };
