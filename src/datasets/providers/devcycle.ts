@@ -41,5 +41,11 @@ export const DevCycle: Provider = {
       href: 'https://docs.devcycle.com/sdk/server-side-sdks/php/php-openfeature',
       category: ['Server'],
     },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://docs.devcycle.com/sdk/server-side-sdks/python/python-openfeature',
+      category: ['Server'],
+    },
   ],
 };

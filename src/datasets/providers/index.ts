@@ -37,7 +37,9 @@ export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) 
   return provider.technologies.map(({ category, href, technology, vendorOfficial }): EcosystemElement => {
     return {
       vendor: provider.name,
-      title: `${provider.name} ${technology} ${category} Provider`,
+      title: (technology === 'JavaScript')
+          ? `${provider.name} ${technology} ${category[0] === 'Client' ? 'Web' : 'Node.js'} Provider`
+          : `${provider.name} ${technology} ${category} Provider`,
       description: !provider.description
         ? createDefaultDescription(provider.name, vendorOfficial)
         : typeof provider.description === 'string'
