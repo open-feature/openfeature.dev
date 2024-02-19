@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { ComponentType, SVGProps } from 'react';
 import { FontAwesomeCardData, SvgCardData, SvgOrFonticon } from '../SvgOrFonticon';
 import { faCircleCheck, faSadCry } from '@fortawesome/free-regular-svg-icons';
 import styles from './styles.module.css';
@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 type CardData = {
   href: string;
   title: string;
-  description: string;
+  description?: string;
   /**
    * Cards with "vendorOfficial:true" will have a badge indicating they are vendor maintained and supported.
    * This should only be used for providers/hooks released and maintained by vendors, not in OpenFeature contrib repositories.
@@ -20,6 +20,8 @@ type CardData = {
    * Defaults to false.
    */
   showLast?: boolean;
+  image?: string;
+  svgImage?: ComponentType<SVGProps<SVGSVGElement>>;
 };
 
 export type OpenFeatureComponentCardData = CardData & (SvgCardData | FontAwesomeCardData);
@@ -31,12 +33,30 @@ export class OpenFeatureComponentCard extends React.Component<OpenFeatureCompone
   override render() {
     const props = this.props as CardData & Partial<SvgCardData & FontAwesomeCardData>;
     const external = props.href.startsWith('http');
+    let SvgComponent: ComponentType<SVGProps<SVGSVGElement>>;
+    
+    if (props.svgImage) {
+      SvgComponent = props.svgImage;
+    }
+    
     return (
       <Link to={props.href} style={{ position: 'relative' }} className={clsx('card padding--lg', styles.cardContainer)}>
-        <div style={{ height: 0, position: 'absolute', right: 20, top: 20 }}>{external ? '🔗' : ''}</div>
+        <div style={{ height: 0, position: 'absolute', right: 20, top: 20 }}>{external && !props.image && !props.svgImage ? '🔗' : ''}</div>
+        {props.image && (
+          <div className='min-h-24 flex content-center items-center'>
+            <img src={props.image} alt={`${props.title} logo`} className='w-11/12 ml-auto mr-auto block align-middle' />
+          </div>
+        )}
+        {props.svgImage && (
+          <div className='h-28 w-72'>
+            <SvgComponent className='w-full h-full object-contain object-center' />
+          </div>
+        )}
 
-        <SvgOrFonticon svg={props.svg} iconDefinition={props.iconDefinition} />
-        <h1 className={clsx('text--truncate', styles.cardTitle)}>{this.props.title}</h1>
+        {!props.image && !props.svgImage && (
+            <SvgOrFonticon svg={props.svg} iconDefinition={props.iconDefinition} />
+        )}
+        <h1 className={clsx('text--truncate', styles.cardTitle)}>{this.props.title && !props.image && !props.svgImage ? this.props.title : ''}</h1>
         <h2 className={clsx(styles.cardDescription)}>{this.props.description}</h2>
         <div className={clsx(styles.vendorOfficialContainer)}>
           {props.vendorOfficial ? (
