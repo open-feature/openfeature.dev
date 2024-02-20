@@ -29,7 +29,7 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/java#logging"
       },
-      "Named clients": {
+      "Domains": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/java#named-clients"
       },
@@ -77,9 +77,9 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/javascript#logging"
       },
-      "Named clients": {
+      "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/javascript#named-clients"
+        "path": "/docs/reference/technologies/server/javascript#domains"
       },
       "Eventing": {
         "status": "✅",
@@ -125,7 +125,7 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/dotnet#logging"
       },
-      "Named clients": {
+      "Domains": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/dotnet#named-clients"
       },
@@ -173,7 +173,7 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/go#logging"
       },
-      "Named clients": {
+      "Domains": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/go#named-clients"
       },
@@ -221,7 +221,7 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/python#logging"
       },
-      "Named clients": {
+      "Domains": {
         "status": "❌",
         "path": "/docs/reference/technologies/server/python#named-clients"
       },
@@ -269,7 +269,7 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/php#logging"
       },
-      "Named clients": {
+      "Domains": {
         "status": "❌",
         "path": "/docs/reference/technologies/server/php#named-clients"
       },
@@ -317,9 +317,9 @@
         "status": "✅",
         "path": "/docs/reference/technologies/client/web#logging"
       },
-      "Named clients": {
+      "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/web#named-clients"
+        "path": "/docs/reference/technologies/client/web#domains"
       },
       "Eventing": {
         "status": "✅",
@@ -365,7 +365,7 @@
         "status": "❌",
         "path": "/docs/reference/technologies/client/kotlin#logging"
       },
-      "Named clients": {
+      "Domains": {
         "status": "❌",
         "path": "/docs/reference/technologies/client/kotlin#named-clients"
       },
@@ -413,7 +413,7 @@
         "status": "❌",
         "path": "/docs/reference/technologies/client/swift#logging"
       },
-      "Named clients": {
+      "Domains": {
         "status": "❌",
         "path": "/docs/reference/technologies/client/swift#named-clients"
       },

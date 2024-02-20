@@ -11,7 +11,8 @@ export const features = [
   'Targeting',
   'Hooks',
   'Logging',
-  'Named clients',
+  // Domain is the updated terminology for "Named clients"
+  ['Domains', 'Named clients'],
   'Eventing',
   'Shutdown',
   'Extending',

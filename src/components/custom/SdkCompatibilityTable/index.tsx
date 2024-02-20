@@ -91,7 +91,9 @@ export default function SdkCompatibilityTable({ compatibility }: { compatibility
           ))}
         </tr>
 
-        {features.map((feat) => {
+        {features.map((feature) => {
+          // The first element is the latest feature name, others are for historical reasons.
+          const feat = Array.isArray(feature) ? feature[0] : feature;
           return (
             <tr key={feat}>
               <td>{feat}</td>
