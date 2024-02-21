@@ -33,8 +33,11 @@ export default function Support(): JSX.Element {
                 <h3>Add a resource</h3>
                 <p>Anyone who has developed an OpenFeature training program or offers related services can add themselves to this page by opening a pull request against it.</p>
                 <div className="flex justify-center mt-16">
-                <Link to="https://github.com/open-feature/openfeature.dev">
-                    <button className='btn bg-purple-600 text-white hover:bg-purple-700 hover:text-white'>ADD YOUR COMPANY</button>
+                <Link
+                  className="btn text-white hover:text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0"
+                  to="https://github.com/open-feature/openfeature.dev"
+                >
+                  ADD YOUR COMPANY
                 </Link>
                 </div>
             </div>
