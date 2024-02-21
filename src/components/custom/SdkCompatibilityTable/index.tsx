@@ -92,11 +92,13 @@ export default function SdkCompatibilityTable({ compatibility }: { compatibility
         </tr>
 
         {features.map((feature) => {
-          // The first element is the latest feature name, others are for historical reasons.
+          // The first element is the latest feature name, others are for historical reasons
           const feat = Array.isArray(feature) ? feature[0] : feature;
+          // Join all alternative names to display them in the table
+          const featName = Array.isArray(feature) ? feature.join(' / ') : feature;
           return (
             <tr key={feat}>
-              <td>{feat}</td>
+              <td>{featName}</td>
               {compatibility.map((row) => {
                 return (
                   <td>
