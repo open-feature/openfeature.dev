@@ -222,8 +222,8 @@
         "path": "/docs/reference/technologies/server/python#logging"
       },
       "Domains": {
-        "status": "❌",
-        "path": "/docs/reference/technologies/server/python#named-clients"
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/python#domains"
       },
       "Eventing": {
         "status": "❌",
