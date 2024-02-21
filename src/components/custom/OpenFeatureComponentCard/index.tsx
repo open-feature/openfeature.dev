@@ -48,7 +48,7 @@ export class OpenFeatureComponentCard extends React.Component<OpenFeatureCompone
           </div>
         )}
         {props.svgImage && (
-          <div className='h-28 w-72'>
+          <div className='h-28 w-80'>
             <SvgComponent className='w-full h-full object-contain object-center' />
           </div>
         )}
@@ -56,16 +56,21 @@ export class OpenFeatureComponentCard extends React.Component<OpenFeatureCompone
         {!props.image && !props.svgImage && (
             <SvgOrFonticon svg={props.svg} iconDefinition={props.iconDefinition} />
         )}
-        <h1 className={clsx('text--truncate', styles.cardTitle)}>{this.props.title && !props.image && !props.svgImage ? this.props.title : ''}</h1>
-        <h2 className={clsx(styles.cardDescription)}>{this.props.description}</h2>
-        <div className={clsx(styles.vendorOfficialContainer)}>
-          {props.vendorOfficial ? (
-            <FontAwesomeIcon icon={faCircleCheck} title="Official, vendor-supported provider" />
-          ) : (
-            // visibility: 'hidden'  is important here. This icon is only here for consistent sizing.
-            <FontAwesomeIcon style={{ visibility: 'hidden' }} icon={faSadCry} />
-          )}
-        </div>
+        
+        {!props.image && !props.svgImage && (
+          <>
+          <h1 className={clsx('text--truncate', styles.cardTitle)}>{this.props.title && !props.image && !props.svgImage ? this.props.title : ''}</h1>
+          <h2 className={clsx(styles.cardDescription)}>{this.props.description}</h2>
+          <div className={clsx(styles.vendorOfficialContainer)}>
+            {props.vendorOfficial ? (
+              <FontAwesomeIcon icon={faCircleCheck} title="Official, vendor-supported provider" />
+            ) : (
+              // visibility: 'hidden'  is important here. This icon is only here for consistent sizing.
+              <FontAwesomeIcon style={{ visibility: 'hidden' }} icon={faSadCry} />
+            )}
+          </div>
+        </>
+        )}
       </Link>
     );
   }
