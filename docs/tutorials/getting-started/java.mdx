@@ -178,10 +178,11 @@ Now you can visit the url [http://localhost:8080/hello](http://localhost:8080/he
 
 Finally, let's add the required code change to `OpenFeatureBeans.java` class.
 
-```diff
+```java
 package com.demo;
 
-+ import dev.openfeature.contrib.providers.flagd.FlagdProvider;
+// diff-add
+import dev.openfeature.contrib.providers.flagd.FlagdProvider;
 import dev.openfeature.sdk.OpenFeatureAPI;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -192,10 +193,12 @@ public class OpenFeatureBeans {
     @Bean
     public OpenFeatureAPI OpenFeatureAPI() {
         final OpenFeatureAPI openFeatureAPI = OpenFeatureAPI.getInstance();
-        
-+        // Use flagd as the OpenFeature provider and use default configurations
-+        openFeatureAPI.setProvider(new FlagdProvider());
 
+// diff-add-block-start
+        // Use flagd as the OpenFeature provider and use default configurations
+        openFeatureAPI.setProvider(new FlagdProvider());
+
+// diff-add-block-end
         return openFeatureAPI;
     }
 }
