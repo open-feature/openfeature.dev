@@ -1,6 +1,6 @@
 Let's change the feature flag in our `flags.flagd.json`, making `defaultVariant` to `on`
 
-```diff
+```json
 {
   "flags": {
     "welcome-message": {
@@ -9,8 +9,10 @@ Let's change the feature flag in our `flags.flagd.json`, making `defaultVariant`
         "off": false
       },
       "state": "ENABLED",
--      "defaultVariant": "off"
-+      "defaultVariant": "on"
+// diff-remove
+      "defaultVariant": "off"
+// diff-add
+      "defaultVariant": "on"
     }
   }
 }

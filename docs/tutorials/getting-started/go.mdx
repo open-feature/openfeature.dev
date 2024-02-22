@@ -82,46 +82,52 @@ go mod tidy
 
 Next, let's add logic to customize the response message based on the `boolean` [flag key][flag-key] `welcome-message`.
 
-```diff
+```go
 package main
 
- import (
-+       "context"
-        "github.com/gin-gonic/gin"
-+       "github.com/open-feature/go-sdk/pkg/openfeature"
-        "net/http"
- )
+import (
+// diff-add
+      "context"
+       "github.com/gin-gonic/gin"
+// diff-add
+       "github.com/open-feature/go-sdk/pkg/openfeature"
+       "net/http"
+)
 
-  const defaultMessage = "Hello!"
-+ const newWelcomeMessage = "Hello, welcome to this OpenFeature-enabled website!"
+const defaultMessage = "Hello!"
+const newWelcomeMessage = "Hello, welcome to this OpenFeature-enabled website!"
 
- func main() {
-+       // Initialize OpenFeature client
-+       client := openfeature.NewClient("GoStartApp")
-+
-        // Initialize Go Gin
-        engine := gin.Default()
+func main() {
+       // Initialize OpenFeature client
+       client := openfeature.NewClient("GoStartApp")
 
-        // Setup a simple endpoint
-        engine.GET("/hello", func(c *gin.Context) {
--               c.JSON(http.StatusOK, defaultMessage)
--               return
+       // Initialize Go Gin
+       engine := gin.Default()
 
-+               // Evaluate welcome-message feature flag
-+               welcomeMessage, _ := client.BooleanValue(
-+                       context.Background(), "welcome-message", false, openfeature.EvaluationContext{},
-+               )
-+
-+               if welcomeMessage {
-+                       c.JSON(http.StatusOK, newWelcomeMessage)
-+                       return
-+               } else {
-+                       c.JSON(http.StatusOK, defaultMessage)
-+                       return
-+               }
-        })
+       // Setup a simple endpoint
+       engine.GET("/hello", func(c *gin.Context) {
+// diff-remove-block-start
+               c.JSON(http.StatusOK, defaultMessage)
+               return
 
-        engine.Run()
+// diff-remove-block-end
+// diff-add-block-start
+               // Evaluate welcome-message feature flag
+               welcomeMessage, _ := client.BooleanValue(
+                       context.Background(), "welcome-message", false, openfeature.EvaluationContext{},
+               )
+
+               if welcomeMessage {
+                       c.JSON(http.StatusOK, newWelcomeMessage)
+                       return
+               } else {
+                       c.JSON(http.StatusOK, defaultMessage)
+                       return
+               }
+// diff-add-block-end
+       })
+
+       engine.Run()
 ```
 
 To add OpenFeature SDK dependency to the application, run the following commands.
@@ -149,21 +155,24 @@ Now you can visit the url [http://localhost:8080/hello](http://localhost:8080/he
 
 Now, let's make the required code changes in our application.
 
-```diff
- import (
-        "context"
-        "github.com/gin-gonic/gin"
-+       flagd "github.com/open-feature/go-sdk-contrib/providers/flagd/pkg"
-        "github.com/open-feature/go-sdk/pkg/openfeature"
-        "net/http"
- )
+```go
+import (
+       "context"
+       "github.com/gin-gonic/gin"
+// diff-add
+       flagd "github.com/open-feature/go-sdk-contrib/providers/flagd/pkg"
+       "github.com/open-feature/go-sdk/pkg/openfeature"
+       "net/http"
+)
 
- func main() {
-+       // Use flagd as the OpenFeature provider
-+       openfeature.SetProvider(flagd.NewProvider())
-+
-        // Initialize OpenFeature client
-        client := openfeature.NewClient("GoStartApp")
+func main() {
+// diff-add-block-start
+       // Use flagd as the OpenFeature provider
+       openfeature.SetProvider(flagd.NewProvider())
+
+// diff-add-block-end
+       // Initialize OpenFeature client
+       client := openfeature.NewClient("GoStartApp")
 ```
 
 Then, let's add `flagd provider` dependency with following commands.

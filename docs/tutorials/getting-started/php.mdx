@@ -61,10 +61,11 @@ composer require open-feature/sdk
 
 Update `routes/api.php` to import the SDK
 
-```diff
+```php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-+ use OpenFeature\OpenFeatureAPI;
+// diff-add
+use OpenFeature\OpenFeatureAPI;
 ```
 
 The client can now be used to get a feature flag value.
@@ -72,15 +73,16 @@ In this case, we'll get a boolean value using the welcome-message flag key.
 
 The second argument is the fallback value, which is returned if there's abnormal behavior.
 
-```diff
+```php
 Route::get('/hello', function () {
--    return response()->json(['message' => 'Hello, World!']);
-+    $api = OpenFeatureAPI::getInstance();
-+    $client = $api->getClient();
-+    if($client->getBooleanValue("welcome-message", false)){
-+        return response()->json(['message' => 'Hello, World! open feature']);
-+    }
-+    return response()->json(['message' => 'Hello, World!']);
+// diff-add-block-start
+    $api = OpenFeatureAPI::getInstance();
+    $client = $api->getClient();
+    if($client->getBooleanValue("welcome-message", false)){
+        return response()->json(['message' => 'Hello, World! open feature']);
+    }
+// diff-add-block-end
+    return response()->json(['message' => 'Hello, World!']);
 });
 ```
 
@@ -116,29 +118,33 @@ Now let's make the required code changes in our application.
 
 Now, update `routes/api.php` to import the `flagd provider`.
 
-```diff
+```php
 use OpenFeature\OpenFeatureAPI;
-+ use OpenFeature\Providers\Flagd\FlagdProvider;
-+ use OpenFeature\Providers\Flagd\config\HttpConfig;
-+ use GuzzleHttp\Client;
-+ use GuzzleHttp\Psr7\HttpFactory;
+// diff-add-block-start
+use OpenFeature\Providers\Flagd\FlagdProvider;
+use OpenFeature\Providers\Flagd\config\HttpConfig;
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\HttpFactory;
+// diff-add-block-end
 ```
 
 Finally, we need to register the provider with OpenFeature.
 
-```diff
+```php
 Route::get('/hello', function () {
     $api = OpenFeatureAPI::getInstance();
-+
-+  $httpClient = new Client();
-+  $httpFactory = new HttpFactory();
-+  $api->setProvider(new FlagdProvider([
-+         'httpConfig' => new HttpConfig(
-+              $httpClient,
-+              $httpFactory,
-+              $httpFactory,
-+         )
-+     ]));
+// diff-add-block-start
+
+    $httpClient = new Client();
+    $httpFactory = new HttpFactory();
+    $api->setProvider(new FlagdProvider([
+        'httpConfig' => new HttpConfig(
+            $httpClient,
+            $httpFactory,
+            $httpFactory,
+        )
+    ]));
+// diff-add-block-end
     $client = $api->getClient();
     if($client->getBooleanValue("welcome-message", false)){
         return response()->json(['message' => 'Hello, World! open feature']);
