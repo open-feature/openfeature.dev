@@ -6,7 +6,7 @@ description: An overview of the status and supported features of the OpenFeature
 
 import SdkCompatibilityTable from '@site/src/components/custom/SdkCompatibilityTable';
 import Json from '@site/src/datasets/sdks/sdk-compatibility.json';
-import { serverSideFeatures, clintSideFeatures } from '@site/src/datasets/constants';
+import { serverSideFeatures, clientSideFeatures } from '@site/src/datasets/constants';
 
 This page provides an overview of the status and supported features of the OpenFeature SDKs.
 
@@ -22,6 +22,6 @@ Server-side SDKs are intended for multi-user applications (e.g. web server appli
 
 Client-side SDKs are intended for single user client applications (e.g. mobile phones, single-page web apps) and conform to the [static-context paradigm](/specification/glossary#static-context-paradigm).
 
-<SdkCompatibilityTable compatibility={Json.filter(sdk => sdk.category === 'Client')} features={clintSideFeatures}/>
+<SdkCompatibilityTable compatibility={Json.filter(sdk => sdk.category === 'Client')} features={clientSideFeatures}/>
 
 <sub>Implemented: ✅ | In-progress: ⚠️ | Not implemented yet: ❌ | Unknown status: ❓</sub>

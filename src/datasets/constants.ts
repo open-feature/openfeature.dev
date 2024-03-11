@@ -19,7 +19,7 @@ export const serverSideFeatures = [
   'Extending',
 ];
 
-export const clintSideFeatures = [
+export const clientSideFeatures = [
   'Providers',
   'Targeting',
   'Hooks',

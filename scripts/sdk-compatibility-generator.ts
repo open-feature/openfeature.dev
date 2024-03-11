@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs';
 import { SdkCompatibility, Category } from '../src/datasets/types';
-import { serverSideFeatures, clintSideFeatures } from '../src/datasets/constants';
+import { serverSideFeatures, clientSideFeatures } from '../src/datasets/constants';
 import { SDK } from '../src/datasets/sdks';
 
 type Input = Pick<SDK, 'name' | 'category'> & {
@@ -86,7 +86,7 @@ export class SdkCompatibilityGenerator {
   private getFeatureStatus(category: Category, path: string, content: string): SdkCompatibility['features'] {
     const featureStatus = {};
 
-    const features = category === 'Server' ? serverSideFeatures : clintSideFeatures;
+    const features = category === 'Server' ? serverSideFeatures : clientSideFeatures;
     for (const feature of features) {
       // The first element is the latest feature name, others are for historical reasons.
       const featureName: string = Array.isArray(feature) ? feature[0] : feature;
