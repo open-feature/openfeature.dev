@@ -15,5 +15,6 @@ export const features = [
   ['Domains', 'Named clients'],
   'Eventing',
   'Shutdown',
+  'Transaction Context Propagation',
   'Extending',
 ] as const;

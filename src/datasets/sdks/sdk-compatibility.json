@@ -41,6 +41,10 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/java#shutdown"
       },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/server/java"
+      },
       "Extending": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/java#extending"
@@ -88,6 +92,10 @@
       "Shutdown": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/javascript#shutdown"
+      },
+      "Transaction Context Propagation": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/javascript#transaction-context-propagation"
       },
       "Extending": {
         "status": "✅",
@@ -137,6 +145,10 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/dotnet#shutdown"
       },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/server/dotnet"
+      },
       "Extending": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/dotnet#extending"
@@ -184,6 +196,10 @@
       "Shutdown": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/go#shutdown"
+      },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/server/go"
       },
       "Extending": {
         "status": "✅",
@@ -233,6 +249,10 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/python#shutdown"
       },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/server/python"
+      },
       "Extending": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/python#extending"
@@ -280,6 +300,10 @@
       "Shutdown": {
         "status": "❌",
         "path": "/docs/reference/technologies/server/php#shutdown"
+      },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/server/php"
       },
       "Extending": {
         "status": "✅",
@@ -329,6 +353,10 @@
         "status": "✅",
         "path": "/docs/reference/technologies/client/web#shutdown"
       },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/client/web"
+      },
       "Extending": {
         "status": "✅",
         "path": "/docs/reference/technologies/client/web#extending"
@@ -377,6 +405,10 @@
         "status": "✅",
         "path": "/docs/reference/technologies/client/kotlin#shutdown"
       },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/client/kotlin"
+      },
       "Extending": {
         "status": "⚠️",
         "path": "/docs/reference/technologies/client/kotlin#extending"
@@ -424,6 +456,10 @@
       "Shutdown": {
         "status": "❌",
         "path": "/docs/reference/technologies/client/swift#shutdown"
+      },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/client/swift"
       },
       "Extending": {
         "status": "✅",
