@@ -59,12 +59,12 @@ Given below are dependencies for Maven and Gradle with the latest dependency ver
 <dependency>
     <groupId>dev.openfeature</groupId>
     <artifactId>sdk</artifactId>
-    <version>1.7.3</version>
+    <version>1.7.4</version>
 </dependency>
 <dependency>
     <groupId>dev.openfeature.contrib.providers</groupId>
     <artifactId>flagd</artifactId>
-    <version>0.6.9</version>
+    <version>0.7.0</version>
 </dependency>
 ```
 
@@ -72,8 +72,8 @@ Given below are dependencies for Maven and Gradle with the latest dependency ver
 <TabItem value="gradle" label="Gradle">
 
 ```groovy
-implementation 'dev.openfeature:sdk:1.7.3'
-implementation 'dev.openfeature.contrib.providers:flagd:0.6.9'
+implementation 'dev.openfeature:sdk:1.7.4'
+implementation 'dev.openfeature.contrib.providers:flagd:0.7.0'
 ```
 
 </TabItem>
@@ -178,10 +178,11 @@ Now you can visit the url [http://localhost:8080/hello](http://localhost:8080/he
 
 Finally, let's add the required code change to `OpenFeatureBeans.java` class.
 
-```diff
+```java
 package com.demo;
 
-+ import dev.openfeature.contrib.providers.flagd.FlagdProvider;
+// diff-add
+import dev.openfeature.contrib.providers.flagd.FlagdProvider;
 import dev.openfeature.sdk.OpenFeatureAPI;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -192,10 +193,12 @@ public class OpenFeatureBeans {
     @Bean
     public OpenFeatureAPI OpenFeatureAPI() {
         final OpenFeatureAPI openFeatureAPI = OpenFeatureAPI.getInstance();
-        
-+        // Use flagd as the OpenFeature provider and use default configurations
-+        openFeatureAPI.setProvider(new FlagdProvider());
 
+// diff-add-block-start
+        // Use flagd as the OpenFeature provider and use default configurations
+        openFeatureAPI.setProvider(new FlagdProvider());
+
+// diff-add-block-end
         return openFeatureAPI;
     }
 }

@@ -74,6 +74,15 @@ OpenFeatureAPI::getInstance()->setProvider(new YourProviderOfChoice());
 ```
 
 </TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import openfeature.api
+
+openfeature.api.set_provider(YourProviderOfChoice())
+```
+
+</TabItem>
 </Tabs>
 
 ## Creating a client
@@ -117,6 +126,15 @@ client := openfeature.NewClient("my-app")
 
 ```php
 $client = OpenFeatureAPI::getInstance()->getClient("my-app");
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import openfeature.api
+
+openfeature.api.get_client("my-app")
 ```
 
 </TabItem>
@@ -225,6 +243,26 @@ $floatValue = $client->getFloatValue("floatFlag", 0.9, null, null);
 
 // get an object value
 $objectValue = $client->getObjectValue("objectFlag", $myObjectInstance, null, null);
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+# get a boolean value
+value = client.get_boolean_value("boolFlag", False)
+
+# get a string value
+value = client.get_string_value("stringFlag", "default")
+
+# get an integer value
+value = client.get_integer_value("intFlag", 1)
+
+# get a float value
+value = client.get_float_value("floatFlag", 0.9)
+
+# get an object value
+value = client.get_object_value("objectFlag", my_object_instance)
 ```
 
 </TabItem>
@@ -341,6 +379,26 @@ $floatDetails = $client->getFloatDetails("floatFlag", 0.9, null, null);
 
 // get details of an object evaluation
 $objectDetails = $client->getObjectDetails("objectFlag", $myObjectInstance, null, null);
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+# get details of boolean evaluation
+details = client.get_boolean_details("boolFlag", false);
+
+# get details of string evaluation
+details = client.get_string_details("stringFlag", "default");
+
+# get details of an integer evaluation
+details = client.get_integer_details("intFlag", 1);
+
+# get details of a float evaluation
+details = client.get_float_details("floatFlag", 1);
+
+# get details of object evaluation
+details = client.get_object_details("objectFlag", {});
 ```
 
 </TabItem>
