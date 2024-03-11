@@ -6,6 +6,7 @@ description: An overview of the status and supported features of the OpenFeature
 
 import SdkCompatibilityTable from '@site/src/components/custom/SdkCompatibilityTable';
 import Json from '@site/src/datasets/sdks/sdk-compatibility.json';
+import { serverSideFeatures, clintSideFeatures } from '@site/src/datasets/constants';
 
 This page provides an overview of the status and supported features of the OpenFeature SDKs.
 
@@ -13,7 +14,7 @@ This page provides an overview of the status and supported features of the OpenF
 
 Server-side SDKs are intended for multi-user applications (e.g. web server applications) and conform to the [dynamic-context paradigm](/specification/glossary#dynamic-context-paradigm).
 
-<SdkCompatibilityTable compatibility={Json.filter(sdk => sdk.category === 'Server')}/>
+<SdkCompatibilityTable compatibility={Json.filter(sdk => sdk.category === 'Server')} features={serverSideFeatures}/>
 
 <sub>Implemented: ✅ | In-progress: ⚠️ | Not implemented yet: ❌ | Unknown status: ❓</sub>
 
@@ -21,6 +22,6 @@ Server-side SDKs are intended for multi-user applications (e.g. web server appli
 
 Client-side SDKs are intended for single user client applications (e.g. mobile phones, single-page web apps) and conform to the [static-context paradigm](/specification/glossary#static-context-paradigm).
 
-<SdkCompatibilityTable compatibility={Json.filter(sdk => sdk.category === 'Client')}/>
+<SdkCompatibilityTable compatibility={Json.filter(sdk => sdk.category === 'Client')} features={clintSideFeatures}/>
 
 <sub>Implemented: ✅ | In-progress: ⚠️ | Not implemented yet: ❌ | Unknown status: ❓</sub>

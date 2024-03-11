@@ -1,13 +1,18 @@
 import React from 'react';
 import type { SdkCompatibility } from '@site/src/datasets/types';
-import { features } from '@site/src/datasets/constants';
 import { Popover } from '@headlessui/react';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 import Link from '@docusaurus/Link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function SdkCompatibilityTable({ compatibility }: { compatibility: SdkCompatibility[] }) {
+export default function SdkCompatibilityTable({
+  compatibility,
+  features,
+}: {
+  compatibility: SdkCompatibility[];
+  features: string[];
+}) {
   return (
     <table>
       <thead>

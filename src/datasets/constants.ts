@@ -6,7 +6,7 @@ export const SEARCH_ITEMS_PER_PAGE = 16;
  *
  * @link https://github.com/open-feature/.github/tree/main/templates/READMEs
  */
-export const features = [
+export const serverSideFeatures = [
   'Providers',
   'Targeting',
   'Hooks',
@@ -17,4 +17,16 @@ export const features = [
   'Shutdown',
   'Transaction Context Propagation',
   'Extending',
-] as const;
+];
+
+export const clintSideFeatures = [
+  'Providers',
+  'Targeting',
+  'Hooks',
+  'Logging',
+  // Domain is the updated terminology for "Named clients"
+  ['Domains', 'Named clients'],
+  'Eventing',
+  'Shutdown',
+  'Extending',
+];
