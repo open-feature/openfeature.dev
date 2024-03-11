@@ -44,6 +44,10 @@
       "Extending": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/java#extending"
+      },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/server/java"
       }
     }
   },
@@ -92,6 +96,10 @@
       "Extending": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/javascript#extending"
+      },
+      "Transaction Context Propagation": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/javascript#transaction-context-propagation"
       }
     }
   },
@@ -140,6 +148,10 @@
       "Extending": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/dotnet#extending"
+      },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/server/dotnet"
       }
     }
   },
@@ -188,6 +200,10 @@
       "Extending": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/go#extending"
+      },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/server/go"
       }
     }
   },
@@ -236,6 +252,10 @@
       "Extending": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/python#extending"
+      },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/server/python"
       }
     }
   },
@@ -284,6 +304,10 @@
       "Extending": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/php#extending"
+      },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/server/php"
       }
     }
   },
