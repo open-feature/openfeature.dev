@@ -90,7 +90,7 @@ export class SdkCompatibilityGenerator {
       // The first element is the latest feature name, others are for historical reasons.
       const featureName: string = Array.isArray(feature) ? feature[0] : feature;
       const featureRegex = new RegExp(String.raw`(✅|⚠️|❌) +\|.+\[(${
-        Array.isArray(feature) ? feature.join("|") : feature
+        Array.isArray(feature) ? feature.join('|') : feature
       })\]\(#(.+?)\)`);
 
       const extractedFeature = featureRegex.exec(content);
