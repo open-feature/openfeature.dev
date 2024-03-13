@@ -11,7 +11,7 @@ draft: false
 ## Recent Specification Changes 🗒
 
 There's no shortage of frameworks available when it comes to the development of enterprise software.
-Weather it's the "frontend" or "backend", developers are quick to avail things like React, Spring, Gin and Flask to avoid boilerplate code and structure their applications in a familiar way.
+Whether it's the "frontend" or "backend", developers are quick to avail things like React, Spring, Gin and Flask to avoid boilerplate code and structure their applications in a familiar way.
 Such frameworks also offer convenient abstractions that ease the employment of common patterns, think _dependency injection_ as in Angular or Spring, or _MVC_ as in Django or ASP.NET MVC.
 Many also provide extensibility features so that new functionality can be implemented seamlessly and idiomatically.
 
