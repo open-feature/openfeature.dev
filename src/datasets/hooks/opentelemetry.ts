@@ -36,5 +36,11 @@ export const OpenTelemetry: Hook = {
       href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Hooks.Otel',
       category: ['Server'],
     },
+    {
+      technology: 'Python',
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/python-sdk-contrib/tree/main/hooks/openfeature-hooks-opentelemetry',
+      category: ['Server'],
+    },
   ],
 };
