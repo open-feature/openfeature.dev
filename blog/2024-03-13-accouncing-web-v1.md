@@ -1,7 +1,7 @@
 ---
 slug: "web-v1-announcement"
 title: "OpenFeature Web SDK v1"
-date: 2024-03-13
+date: 2024-03-19
 authors: [beeme1mr]
 description: "Announcing version 1.0 of the OpenFeature Web SDK"
 tags: [release, client, spec, specification, web, mobile, sdk, react]
