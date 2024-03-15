@@ -19,7 +19,7 @@ It was built from the ground up to be performant, powerful, and flexible while p
 Folks have been asking for client-side support since the beginning of OpenFeature.
 Since web-based applications represent the vast majority of applications that people interact with on a daily basis, we are thrilled to provide teams with a consistent feature flagging experience across their entire stack.
 The Web SDK is a foundational SDK that can be used on its own but also lays the groundwork for framework-specific implementations.
-Having a vendor-neutral web SDK, provides an opportunity to a wide array of technologies that can be used by everyone.
+Having a vendor-neutral Web SDK, provides an opportunity to a wide array of technologies that can be used by everyone.
 The web framework ecosystem is massive and constantly evolving, it’s more important than ever to come together to ensure feature flagging is accessible to all.
 
 ## Web vs server
@@ -54,7 +54,7 @@ We plan on supporting many more frameworks including Angular, Vue, Svelte, and m
 
 While this post is focused on the Web SDK, we haven’t forgotten about mobile.
 Our friends at Spotify recently donated an initial [Kotlin](/docs/reference/technologies/client/kotlin/) and [Swift](/docs/reference/technologies/client/swift/) SDK.
-These comprise the primary technologies in the mobile space, and in concert with the web SDK, cover the majority of client platforms.
+These comprise the primary technologies in the mobile space, and in concert with the Web SDK, cover the majority of client platforms.
 
 Finally, OpenFeature has been hard at work defining the [OpenFeature Remote Evaluation Protocol (OFREP)](https://github.com/open-feature/protocol).
 The goal of this initiative is to standardize how feature flags can be evaluated over a network.
