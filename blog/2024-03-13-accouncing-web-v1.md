@@ -19,7 +19,7 @@ It was built from the ground up to be performant, powerful, and flexible while p
 Folks have been asking for client-side support since the beginning of OpenFeature.
 Since web-based applications represent the vast majority of applications that people interact with on a daily basis, we are thrilled to provide teams with a consistent feature flagging experience across their entire stack.
 The Web SDK is a foundational SDK that can be used on its own but also lays the groundwork for framework-specific implementations.
-Having a vendor-neutral Web SDK, provides an opportunity to a wide array of technologies that can be used by everyone.
+Having a vendor-neutral Web SDK, provides an opportunity to a wide array of technologies that everyone can use.
 The web framework ecosystem is massive and constantly evolving, it’s more important than ever to come together to ensure feature flagging is accessible to all.
 
 ## Web vs Server
@@ -32,7 +32,7 @@ The rationale for introducing this paradigm can be found in our [Catering to the
 
 Feature flagging commonly leverages relevant contextual data like a user id, location, or browser type to enable powerful targeting capabilities.
 In OpenFeature, we refer to this as the evaluation context.
-On the web or mobile, evaluation context typically remains constant for the duration of a user session; this is known as the static-context paradigm.
+On the web or mobile, the evaluation context typically remains constant for the duration of a user session; this is known as the static-context paradigm.
 This paradigm represents a simple, flexible, and powerful way of thinking about client-side feature flag evaluation.
 In particular, it was designed to support robust caching, with consideration for slow networks, and with high fault tolerance.
 This ensures minimal overhead and consistently fast feature flag evaluations.
