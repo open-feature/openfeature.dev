@@ -22,7 +22,7 @@ The Web SDK is a foundational SDK that can be used on its own but also lays the 
 Having a vendor-neutral Web SDK, provides an opportunity to a wide array of technologies that can be used by everyone.
 The web framework ecosystem is massive and constantly evolving, it’s more important than ever to come together to ensure feature flagging is accessible to all.
 
-## Web vs server
+## Web vs Server
 
 At first glance, using a feature flag on the web may appear similar to server-side usage.
 In many cases, this is true! However, there are subtle, yet important differences.
