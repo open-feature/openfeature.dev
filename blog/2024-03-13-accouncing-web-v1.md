@@ -42,23 +42,21 @@ This ensures minimal overhead and consistently fast feature flag evaluations.
 It was of the utmost importance to ensure consistency across vendors and tools.
 While defining the static context paradigm in the OpenFeature specification, we identified opportunities to simplify provider development.
 One such example was making the [providers stateless](/blog/reconciling-with-state/#wider-implications-stateless-providers).
-This moves the responsibility to the SDK instead of the provider author.
-Making providers easier to develop and ensuring consistent behavior across implementations.
+This moves responsibility to the SDK instead of the provider author, making providers easier to develop and ensuring consistent behavior across implementations.
 
 ## What's next?
 
 The Web SDK is great on its own but becomes even more powerful and user-friendly when leveraging framework-specific functionality.
 The [React SDK](/docs/reference/technologies/client/web/react/) is an excellent example of this.
 It abstracts the implementation details of supporting features like automatic component re-rendering and [built-in suspense](https://react.dev/reference/react/Suspense) support.
-We plan on supporting many more frameworks including Angular, Vue, Svelte, and more.
+We plan to support many more frameworks, including Angular, Vue, and Svelte.
 
 While this post is focused on the Web SDK, we haven’t forgotten about mobile.
 Our friends at Spotify recently donated an initial [Kotlin](/docs/reference/technologies/client/kotlin/) and [Swift](/docs/reference/technologies/client/swift/) SDK.
 These comprise the primary technologies in the mobile space, and in concert with the Web SDK, cover the majority of client platforms.
 
 Finally, OpenFeature has been hard at work defining the [OpenFeature Remote Evaluation Protocol (OFREP)](https://github.com/open-feature/protocol).
-The goal of this initiative is to standardize how feature flags can be evaluated over a network.
-This will enable seamless interoperability between tools and vendors that support the protocol.
+This initiative aims to standardize how feature flags can be evaluated over a network, enabling seamless interoperability between tools and vendors that support the protocol.
 
 ## Get involved
 
