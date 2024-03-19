@@ -87,6 +87,10 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
       },
     ],
   },
+  announcementBar: {
+    content:
+      'Interested in client-side feature flagging? The web SDK v1 is available now. Check out the announcement <a href="/blog/web-v1-announcement">here</a>!',
+  },
   footer: {
     style: 'dark',
     links: [
