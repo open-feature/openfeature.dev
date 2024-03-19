@@ -19,7 +19,7 @@ It was built from the ground up to be performant, powerful, and flexible while p
 Folks have been asking for client-side support since the beginning of OpenFeature.
 Since web-based applications represent the vast majority of applications that people interact with on a daily basis, we are thrilled to provide teams with a consistent feature flagging experience across their entire stack.
 The Web SDK is a foundational SDK that can be used on its own but also lays the groundwork for framework-specific implementations.
-Having a vendor-neutral Web SDK, provides an opportunity to a wide array of technologies that everyone can use.
+Having a vendor-neutral Web SDK provides an opportunity for a wide array of technologies everyone can use.
 The web framework ecosystem is massive and constantly evolving, it’s more important than ever to come together to ensure feature flagging is accessible to all.
 
 ## Web vs Server
