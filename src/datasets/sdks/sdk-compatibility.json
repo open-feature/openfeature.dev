@@ -41,13 +41,13 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/java#shutdown"
       },
-      "Extending": {
-        "status": "✅",
-        "path": "/docs/reference/technologies/server/java#extending"
-      },
       "Transaction Context Propagation": {
         "status": "❓",
         "path": "/docs/reference/technologies/server/java"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/java#extending"
       }
     }
   },
@@ -56,8 +56,8 @@
     "path": "/docs/reference/technologies/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.13.1",
-      "version": "1.13.1",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.13.2",
+      "version": "1.13.2",
       "stable": true
     },
     "spec": {
@@ -93,13 +93,13 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/javascript#shutdown"
       },
-      "Extending": {
-        "status": "✅",
-        "path": "/docs/reference/technologies/server/javascript#extending"
-      },
       "Transaction Context Propagation": {
         "status": "✅",
         "path": "/docs/reference/technologies/server/javascript#transaction-context-propagation"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/javascript#extending"
       }
     }
   },
@@ -108,13 +108,13 @@
     "path": "/docs/reference/technologies/server/dotnet",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v1.4.1",
-      "version": "1.4.1",
+      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v1.5.0",
+      "version": "1.5.0",
       "stable": true
     },
     "spec": {
-      "href": "https://github.com/open-feature/spec/releases/tag/v0.5.2",
-      "version": "0.5.2"
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
+      "version": "0.7.0"
     },
     "features": {
       "Providers": {
@@ -145,13 +145,13 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/dotnet#shutdown"
       },
-      "Extending": {
-        "status": "✅",
-        "path": "/docs/reference/technologies/server/dotnet#extending"
-      },
       "Transaction Context Propagation": {
         "status": "❓",
         "path": "/docs/reference/technologies/server/dotnet"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/dotnet#extending"
       }
     }
   },
@@ -197,13 +197,13 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/go#shutdown"
       },
-      "Extending": {
-        "status": "✅",
-        "path": "/docs/reference/technologies/server/go#extending"
-      },
       "Transaction Context Propagation": {
         "status": "❓",
         "path": "/docs/reference/technologies/server/go"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/go#extending"
       }
     }
   },
@@ -249,13 +249,13 @@
         "status": "✅",
         "path": "/docs/reference/technologies/server/python#shutdown"
       },
-      "Extending": {
-        "status": "✅",
-        "path": "/docs/reference/technologies/server/python#extending"
-      },
       "Transaction Context Propagation": {
         "status": "❓",
         "path": "/docs/reference/technologies/server/python"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/python#extending"
       }
     }
   },
@@ -301,13 +301,13 @@
         "status": "❌",
         "path": "/docs/reference/technologies/server/php#shutdown"
       },
-      "Extending": {
-        "status": "✅",
-        "path": "/docs/reference/technologies/server/php#extending"
-      },
       "Transaction Context Propagation": {
         "status": "❓",
         "path": "/docs/reference/technologies/server/php"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/php#extending"
       }
     }
   },
@@ -316,9 +316,9 @@
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v0.4.15",
-      "version": "0.4.15",
-      "stable": false
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.0.0",
+      "version": "1.0.0",
+      "stable": true
     },
     "spec": {
       "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
