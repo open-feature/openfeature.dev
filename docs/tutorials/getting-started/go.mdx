@@ -90,7 +90,7 @@ import (
       "context"
        "github.com/gin-gonic/gin"
 // diff-add
-       "github.com/open-feature/go-sdk/pkg/openfeature"
+       "github.com/open-feature/go-sdk/openfeature"
        "net/http"
 )
 
@@ -168,8 +168,11 @@ import (
 func main() {
 // diff-add-block-start
        // Use flagd as the OpenFeature provider
-       openfeature.SetProvider(flagd.NewProvider())
-
+       err := openfeature.SetProviderAndWait(flagd.NewProvider())
+       if err != nil {
+           // If a provider initialization error occurs, log it and exit
+           log.Fatalf("Failed to set the OpenFeature provider: %v", err)
+       }
 // diff-add-block-end
        // Initialize OpenFeature client
        client := openfeature.NewClient("GoStartApp")
@@ -200,7 +203,11 @@ const newWelcomeMessage = "Hello, welcome to this OpenFeature-enabled website!"
 
 func main() {
     // Use flagd as the OpenFeature provider
-    openfeature.SetProvider(flagd.NewProvider())
+    err := openfeature.SetProviderAndWait(flagd.NewProvider())
+    if err != nil {
+        // If an error occurs, log it and exit
+        log.Fatalf("Failed to set the OpenFeature provider: %v", err)
+    }
 
     // Initialize OpenFeature client
     client := openfeature.NewClient("GoStartApp")
