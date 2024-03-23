@@ -6784,9 +6784,9 @@ isobject@^3.0.1:
   integrity sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==
 
 itemsjs@^2.1.14, itemsjs@^2.1.24:
-  version "2.1.24"
-  resolved "https://registry.yarnpkg.com/itemsjs/-/itemsjs-2.1.24.tgz#542cc65feddd69efc02da94a6702e9b9bfc916e2"
-  integrity sha512-e9t06r0jiSzC6Rx/rlJTh32VtocOEpwx7K+GCjkLk+ITMWQk5hxtl6yQzuZeRdMSdTFd6yoSLyT8GcDRmVKujw==
+  version "2.1.25"
+  resolved "https://registry.yarnpkg.com/itemsjs/-/itemsjs-2.1.25.tgz#7d9ae7b35db487a06485b60f8367842d95729f62"
+  integrity sha512-6berzY1e2LhJeXxm5Zjwtvx21DhH4yrF3mhDhhjXpG1Nt74Dkd7qkqX1q6qWJZGduMkZYpSWUxmQZxwA37fHzg==
 
 jackspeak@^2.3.5:
   version "2.3.6"
