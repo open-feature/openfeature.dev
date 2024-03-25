@@ -5,7 +5,6 @@ import type { Config } from '@docusaurus/types';
 import autoprefixer from 'autoprefixer';
 import { themes } from 'prism-react-renderer';
 import { rehypeGithubAlerts } from 'rehype-github-alerts';
-import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 import tailwindcss from 'tailwindcss';
 
@@ -17,6 +16,8 @@ const presetClassicOptions: PresetClassicOptions = {
     editUrl: (params) => {
       return `https://github.com/open-feature/openfeature.dev/edit/main/docs/${params.docPath}`;
     },
+    rehypePlugins: [rehypeGithubAlerts],
+    remarkPlugins: [remarkGfm],
   },
   blog: {
     showReadingTime: true,
@@ -297,6 +298,8 @@ const config: Config = {
         editUrl: (params) => {
           return `https://github.com/open-feature/community/edit/main/${params.docPath}`;
         },
+        rehypePlugins: [rehypeGithubAlerts],
+        remarkPlugins: [remarkGfm],
         // ... other options
       },
     ],
@@ -321,7 +324,7 @@ const config: Config = {
           return `https://github.com/open-feature/spec/edit/main/specification/${params.docPath}`;
         },
         rehypePlugins: [rehypeGithubAlerts],
-        remarkPlugins: [remarkGfm, remarkBreaks],
+        remarkPlugins: [remarkGfm],
         // ... other options
       },
     ],
