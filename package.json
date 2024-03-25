@@ -53,7 +53,7 @@
     "react-instantsearch": "^7.6.0",
     "react-lite-youtube-embed": "^2.4.0",
     "react-transition-group": "^4.4.5",
-    "rehype-github-alerts": "^2.0.0",
+    "rehype-github-alerts": "^3.0.0",
     "remark-breaks": "^4.0.0",
     "remark-gfm": "^4.0.0",
     "remarkable": "2.0.1",
