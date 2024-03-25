@@ -9686,10 +9686,10 @@ regjsparser@^0.9.1:
   dependencies:
     jsesc "~0.5.0"
 
-rehype-github-alerts@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/rehype-github-alerts/-/rehype-github-alerts-2.0.0.tgz#d6ed7dda9ffd80b0b865f4452c97c33d9aeec69b"
-  integrity sha512-0aq1rD48MwrmFLxSRWehygg0BsRI6eVU0bgHPRT3cQ1RCkToE6ROetFkQYyXA/ouKgjTjDSH9f4/u895n9fwqg==
+rehype-github-alerts@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/rehype-github-alerts/-/rehype-github-alerts-3.0.0.tgz#f86c235acdc3fa8b2dd0cd1a60cfd91e4616663e"
+  integrity sha512-m8Lm+V0Ee0T9JqaLN0eBqtyUSfMUDFhAOIjbvoAQfI6EKtxKsIGWP6PaQE01UBHat0K7dBtnaeyCmJuUO7ylHg==
   dependencies:
     hast-util-from-html "^2.0.1"
     hast-util-is-element "^3.0.0"
