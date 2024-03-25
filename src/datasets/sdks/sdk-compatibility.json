@@ -4,8 +4,8 @@
     "path": "/docs/reference/technologies/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.7.4",
-      "version": "1.7.4",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.7.6",
+      "version": "1.7.6",
       "stable": true
     },
     "spec": {
@@ -212,13 +212,13 @@
     "path": "/docs/reference/technologies/server/python",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.5.0",
-      "version": "0.5.0",
+      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.6.0",
+      "version": "0.6.0",
       "stable": false
     },
     "spec": {
-      "href": "https://github.com/open-feature/spec/releases/tag/v0.5.2",
-      "version": "0.5.2"
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.8.0",
+      "version": "0.8.0"
     },
     "features": {
       "Providers": {
@@ -242,7 +242,7 @@
         "path": "/docs/reference/technologies/server/python#domains"
       },
       "Eventing": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/technologies/server/python#eventing"
       },
       "Shutdown": {

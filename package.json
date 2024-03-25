@@ -54,7 +54,6 @@
     "react-lite-youtube-embed": "^2.4.0",
     "react-transition-group": "^4.4.5",
     "rehype-github-alerts": "^3.0.0",
-    "remark-breaks": "^4.0.0",
     "remark-gfm": "^4.0.0",
     "remarkable": "2.0.1",
     "remarkable-react": "1.4.3",
