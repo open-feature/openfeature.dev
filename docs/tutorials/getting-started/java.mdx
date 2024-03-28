@@ -128,7 +128,7 @@ public class RestHello {
     public RestHello(OpenFeatureAPI OFApi) {
         this.openFeatureAPI = OFApi;
     }
-    
+
     @GetMapping("/hello")
     public String getHello() {
         final Client client = openFeatureAPI.getClient();
@@ -183,6 +183,8 @@ package com.demo;
 
 // diff-add
 import dev.openfeature.contrib.providers.flagd.FlagdProvider;
+// diff-add
+import dev.openfeature.sdk.exceptions.OpenFeatureError;
 import dev.openfeature.sdk.OpenFeatureAPI;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -196,7 +198,11 @@ public class OpenFeatureBeans {
 
 // diff-add-block-start
         // Use flagd as the OpenFeature provider and use default configurations
-        openFeatureAPI.setProvider(new FlagdProvider());
+        try {
+            openFeatureAPI.setProviderAndWait(new FlagdProvider());
+        } catch (OpenFeatureError e) {
+            throw new RuntimeException("Failed to set OpenFeature provider", e);
+        }
 
 // diff-add-block-end
         return openFeatureAPI;
