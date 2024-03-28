@@ -12,6 +12,7 @@ import { LaunchDarkly } from './launchdarkly';
 import { PostHog } from './posthog';
 import { Split } from './split';
 import { Unleash } from './unleash';
+import { Statsig } from './statsig';
 import { FeatBit } from './featbit';
 import { UserDefaults } from './user-defaults';
 import { Category, EcosystemElement, Technology } from '../types';
@@ -29,6 +30,7 @@ export const PROVIDERS: Provider[] = [
   LaunchDarkly,
   PostHog,
   Split,
+  Statsig,
   Unleash,
   UserDefaults,
 ];
