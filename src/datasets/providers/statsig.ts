@@ -11,5 +11,17 @@ export const Statsig: Provider = {
       href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.Statsig',
       category: ['Server'],
     },
+    {
+      technology: 'Go',
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/providers/statsig',
+      category: ['Server'],
+    },
+    {
+      technology: 'Java',
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/java-sdk-contrib/tree/main/providers/statsig',
+      category: ['Server'],
+    },
   ],
 };
