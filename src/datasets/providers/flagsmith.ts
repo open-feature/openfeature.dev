@@ -17,5 +17,17 @@ export const Flagsmith: Provider = {
       href: 'https://github.com/open-feature/java-sdk-contrib/tree/main/providers/flagsmith',
       category: ['Server'],
     },
+    {
+        technology: '.NET',
+        vendorOfficial: true,
+        href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.Flagsmith',
+        category: ['Server'],
+    },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://github.com/Flagsmith/flagsmith-openfeature-provider-python',
+      category: ['Server'],
+    },
   ],
 };
