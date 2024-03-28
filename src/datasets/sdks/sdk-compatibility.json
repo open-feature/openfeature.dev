@@ -212,8 +212,8 @@
     "path": "/docs/reference/technologies/server/python",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.6.0",
-      "version": "0.6.0",
+      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.6.1",
+      "version": "0.6.1",
       "stable": false
     },
     "spec": {
