@@ -42,8 +42,8 @@
         "path": "/docs/reference/technologies/server/java#shutdown"
       },
       "Transaction Context Propagation": {
-        "status": "❓",
-        "path": "/docs/reference/technologies/server/java"
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/java#transaction-context-propagation"
       },
       "Extending": {
         "status": "✅",
@@ -212,8 +212,8 @@
     "path": "/docs/reference/technologies/server/python",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.6.0",
-      "version": "0.6.0",
+      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.6.1",
+      "version": "0.6.1",
       "stable": false
     },
     "spec": {
