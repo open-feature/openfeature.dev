@@ -1,5 +1,3 @@
-
-
 # OpenFeature Contributing <!-- omit in toc -->
 
 - [Running locally](#running-locally)
@@ -22,14 +20,13 @@
 
 ### Installation Prerequisites
 
-You will need [Node.js](https://nodejs.org/en/download) installed.
-Node.js >= 16.10 comes with `corepack` which can be used to access `yarn`.
+You will need [Node.js](https://nodejs.org/en/download) >= 18 and `yarn` installed.
 Instructions for using yarn on all versions of node can be found [here](https://yarnpkg.com/getting-started/install).
 
-### Installation
+### Install dependencies
 
 ```sh
-yarn
+yarn && yarn submodules
 ```
 
 ### Local Development
@@ -93,6 +90,7 @@ Makes sure your environment is all setup by starting the website
 
 ```bash
 yarn
+yarn submodules
 yarn start
 ```
 
@@ -156,4 +154,3 @@ When adding a diagram to the documentation, it's recommended to use one of the f
 [Excalidraw](https://excalidraw.com/) is a virtual whiteboard for sketching hand-drawn like diagrams. When saving an Excalidraw image, make sure to use the "embed scene" option. That will allow others to edit the image in the future.
 
 ![Excalidraw Embed Scene](./static/img/excalidraw-embed-scene.png)
-
