@@ -3,7 +3,6 @@
   "extends": [
     "config:recommended",
     ":automergeTypes",
-    ":automergeStableNonMajor",
     "npm:unpublishSafe"
   ],
   "semanticCommits": "enabled",
