@@ -41,5 +41,11 @@ export const Flagd: Provider = {
       href: 'https://github.com/open-feature/php-sdk-contrib/tree/main/providers/Flagd',
       category: ['Server'],
     },
+    {
+      technology: 'Python',
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/python-sdk-contrib/tree/main/providers/openfeature-provider-flagd',
+      category: ['Server'],
+    },
   ],
 };
