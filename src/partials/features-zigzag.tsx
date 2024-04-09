@@ -91,6 +91,7 @@ function FeaturesZigZag() {
                     return (
                       <Link
                         to={getVendorLink(vendor.name)}
+                        aria-label={vendor.name}
                         className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] "
                       >
                         <Icon className="h-full w-full hover:fill-primary" />
@@ -139,7 +140,7 @@ function FeaturesZigZag() {
                   {ECOSYSTEM_SDKS.map((sdk) => {
                     const Icon = sdk.logo;
                     return (
-                      <Link to={sdk.href} className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
+                      <Link to={sdk.href} aria-label={sdk.technology} className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
                         <Icon className="h-full w-full hover:fill-primary" />
                       </Link>
                     );
