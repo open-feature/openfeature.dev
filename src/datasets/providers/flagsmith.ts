@@ -18,10 +18,16 @@ export const Flagsmith: Provider = {
       category: ['Server'],
     },
     {
-        technology: '.NET',
-        vendorOfficial: true,
-        href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.Flagsmith',
-        category: ['Server'],
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/flagsmith-client',
+      category: ['Client'],
+    },
+    {
+      technology: '.NET',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.Flagsmith',
+      category: ['Server'],
     },
     {
       technology: 'Python',
