@@ -56,13 +56,13 @@
     "path": "/docs/reference/technologies/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.13.4",
-      "version": "1.13.4",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.13.5",
+      "version": "1.13.5",
       "stable": true
     },
     "spec": {
-      "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
-      "version": "0.7.0"
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.8.0",
+      "version": "0.8.0"
     },
     "features": {
       "Providers": {
@@ -316,13 +316,13 @@
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.0.2",
-      "version": "1.0.2",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.0.3",
+      "version": "1.0.3",
       "stable": true
     },
     "spec": {
-      "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
-      "version": "0.7.0"
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.8.0",
+      "version": "0.8.0"
     },
     "features": {
       "Providers": {
