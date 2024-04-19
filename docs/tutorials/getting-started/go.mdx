@@ -63,8 +63,6 @@ func main() {
     // Setup a simple endpoint
     engine.GET("/hello", func(c *gin.Context) {
         c.JSON(http.StatusOK, defaultMessage)
-        return
-
     })
 
     engine.Run()
@@ -111,7 +109,6 @@ func main() {
        engine.GET("/hello", func(c *gin.Context) {
 // diff-remove-block-start
                c.JSON(http.StatusOK, defaultMessage)
-               return
 
 // diff-remove-block-end
 // diff-add-block-start
@@ -131,12 +128,13 @@ func main() {
        })
 
        engine.Run()
+}
 ```
 
 To add OpenFeature SDK dependency to the application, run the following commands.
 
 ```shell
-go get github.com/open-feature/go-sdk/pkg/openfeature
+go get github.com/open-feature/go-sdk/openfeature
 go mod tidy
 ```
 
@@ -164,7 +162,9 @@ import (
        "github.com/gin-gonic/gin"
 // diff-add
        flagd "github.com/open-feature/go-sdk-contrib/providers/flagd/pkg"
-       "github.com/open-feature/go-sdk/pkg/openfeature"
+       "log"
+// diff-add-block-end
+       "github.com/open-feature/go-sdk/openfeature"
        "net/http"
 )
 
@@ -195,11 +195,12 @@ The complete `main.go` file is given below:
 package main
 
 import (
-    "context"
-    "github.com/gin-gonic/gin"
-    flagd "github.com/open-feature/go-sdk-contrib/providers/flagd/pkg"
-    "github.com/open-feature/go-sdk/pkg/openfeature"
-    "net/http"
+	"context"
+	"log"
+	"net/http"
+	"github.com/gin-gonic/gin"
+	flagd "github.com/open-feature/go-sdk-contrib/providers/flagd/pkg"
+	"github.com/open-feature/go-sdk/openfeature"
 )
 
 const defaultMessage = "Hello!"
