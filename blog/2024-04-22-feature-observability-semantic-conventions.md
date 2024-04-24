@@ -9,7 +9,9 @@ draft: false
 ---
 
 As comic book aficionados say, with great power comes great responsibility, or great complexity as the case may be.
-The OpenTelemetry feature observability semantic convention SIG aims to combat this problem by defining a consistent set of rules and definitions for feature telemetry data.
+Feature flags provide incredible value, and now with OpenFeature they're more accessible than ever, but the complexity they introduce should not be ignored.
+As your application grows, it becomes more and more difficult to understand how feature flag evaluations and changes impact your users and their experience with your application.
+The OpenTelemetry feature observability semantic convention special interest group (SIG) aims to combat this problem by defining a consistent set of rules and definitions for feature telemetry data.
 Keep reading to learn more about this effort and how you can be involved!
 
 <!--truncate-->
