@@ -27,14 +27,6 @@ It parses Kubernetes spec files and adds flagd and associated objects to the wor
 
 ### Show me the commands
 
-#### Downloading assets
-
-Download the file defining our demo deployment, service, and CRD, `end-to-end.yaml`:
-
-```shell
-curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/playground/main/config/k8s/end-to-end.yaml > end-to-end.yaml
-```
-
 #### Building our cluster
 
 OK, let's get our cluster up and running!
@@ -60,21 +52,13 @@ This might take a minute or two.
 
 Great!
 Next, because our operator makes use of webhooks, we need some certificate infrastructure in our cluster.
-If your cluster already has cert manager, or you're using another solution for certificate management, you can skip to [Create Namespace](#create-namespace).
+If your cluster already has cert manager, or you're using another solution for certificate management, you can go to [Install OpenFeature operator](#install-openfeature-operator).
 
 Install cert-manager, and wait for it to be ready:
 
 ```shell
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.13.2/cert-manager.yaml && \
 kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'cert-manager'
-```
-
-#### Create namespace
-
-Next, we need to create a namespace for the operator and our workload:
-
-```shell
-kubectl create namespace open-feature-operator-system
 ```
 
 #### Install OpenFeature operator
@@ -86,9 +70,18 @@ kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/
 kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'open-feature-operator-system'
 ```
 
+#### Downloading assets
+
+Download the file defining our demo deployment, service and custom resource (CRs), `end-to-end.yaml`:
+
+```shell
+curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/playground/main/config/k8s/end-to-end.yaml > end-to-end.yaml
+```
+
 #### Deploy our workload
 
 Now that the operator is ready to go, we can deploy our workload:
+(example below deploys into K8s default namespace, update accordingly to other namespace)
 
 ```shell
 kubectl -n default apply -f end-to-end.yaml && \
@@ -119,7 +112,7 @@ kubectl port-forward svc/open-feature-demo-ui-service -n default 30002:30002
 
 Now you should see our fictional app at [http://localhost:30000](http://localhost:30000)
 
-For this demo, we get flag definitions from the custom resource definitions (CRDs) you applied to K8s above (`end-to-end.yaml`).
+For this demo, we get flag definitions from the custom resource (CRs) you applied to K8s above (`end-to-end.yaml`).
 The resource type is `FeatureFlag` and there are two instances defined: one is called `ui-flags` (for the front-end) and one called `app-flags`
 (for the back end).
 Below, you'll see how you can modify these instances to change your feature flags.
