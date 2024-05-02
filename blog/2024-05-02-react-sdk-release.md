@@ -71,6 +71,10 @@ Without suspense, when a component makes an HTTP request or performs some other 
 React's Suspense paradigm uses some clever tricks to track this status for developers, and shows a specified fallback until the promise is resolved.
 Even more conveniently, within a [_suspense boundary_](https://react.dev/reference/react/Suspense#suspense), all promises are tracked as a group; when a new asynchronous call is added to any components in this scope, the developer need not make any changes to suspend rendering while this call is awaited!
 
+<p align="center">
+  <img width="50%" src={require('@site/static/img/blog/2024-05-02-react-sdk-release/suspense.gif').default} />
+</p>
+
 Most feature flags solutions require some network I/O to retrieve their flag values or rules.
 Until this I/O is complete, we may want to suspend the UI to prevent users from seeing unexpected content or layout changes.
 The React SDK supports suspense while the provider is becoming ready, and while the provider is reconciling changes based on changes to the evaluation context.
