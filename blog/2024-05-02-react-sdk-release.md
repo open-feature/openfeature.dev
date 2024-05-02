@@ -41,7 +41,7 @@ The most fundament feature of the React SDK is support for re-rending components
 Flag value changes could be the result of changes in the evaluation context which is the basis for flag evaluations rules, or change in the flag definitions themselves.
 Changes in the evaluation context are best exemplified by changes to user properties in a application; for example, a user logging in, adding something to their cart, or changing their subscriber level.
 Any of these examples could mean that we need to re-evaluate feature flags in light of this new information.
-The flag evaluation hooks provided by the React SDK do this automatically by default.
+The flag evaluation hooks provided by the React SDK do this automatically (by default) when the bound provider emits a [_PROVIDER_CONTEXT_CHANGED_](https://openfeature.dev/specification/types#provider-events) event.
 
 ```tsx
 function MyPage() {
@@ -60,7 +60,7 @@ function MyPage() {
   );
 }
 ```
-Additionally, some feature flag solutions support realtime updates when flag configurations themselves are changed.
+Additionally, some feature flag solutions support realtime updates when flag configurations themselves are changed and the bound provider emits a [PROVIDER_CONFIGURATION_CHANGED](https://openfeature.dev/specification/types#provider-events) event.
 The React SDK also supports re-rendering in these cases, so that a change in a flag definition results in those changes immediately being reflected in the user interface.
 Both of these features can be disabled per-flag, or for the scope of the [context provider](#context-provider).
 
