@@ -8,7 +8,7 @@ tags: [react, client, sdk, web, javascript, typescript]
 draft: false
 ---
 
-We're stoked to announce the first release of the [@openfeature/react-sdk](https://www.npmjs.com/package/@openfeature/react-sdk)!
+We're stoked to announce the first release of the [@openfeature/react-sdk](/docs/reference/technologies/client/web/react)!
 This SDK is a distribution of our SDK for the web with extensions to support idiomatic React development and features.
 This blog highlights a few of these, with a few implementation details for the real React nerds. 🤓
 
