@@ -85,3 +85,11 @@ The provider's cached state is no longer valid and may not be up-to-date with th
 
 Some providers maintain a connection to a management system, but are also tolerate of disconnection.
 The `PROVIDER_STALE` indicates this situation.
+
+### PROVIDER_RECONCILING (Static-context/Client-side only)
+
+The context associated with the provider has changed, and the provider has not yet [reconciled](/docs/reference/concepts/sdk-paradigms#static-context-paradigms-client-side-sdks) its associated state.
+
+### PROVIDER_CONTEXT_CHANGED (Static-context/Client-side only)
+
+The context associated with the provider has changed, and the provider has [reconciled](/docs/reference/concepts/sdk-paradigms#static-context-paradigms-client-side-sdks) its associated state.
