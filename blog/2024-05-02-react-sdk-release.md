@@ -61,7 +61,7 @@ function MyPage() {
 }
 ```
 Additionally, some feature flag solutions support realtime updates when flag configurations themselves are changed and the bound provider emits a [PROVIDER_CONFIGURATION_CHANGED](https://openfeature.dev/specification/types#provider-events) event.
-The React SDK also supports re-rendering in these cases, so that a change in a flag definition results in those changes immediately being reflected in the user interface.
+The React SDK also supports re-rendering in these cases so that a change in a flag definition immediately reflects those changes in the user interface.
 Both of these features can be disabled per-flag, or for the scope of the [context provider](#context-provider).
 
 ### Built-in Suspense
