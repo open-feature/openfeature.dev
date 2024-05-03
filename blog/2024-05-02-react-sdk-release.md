@@ -21,7 +21,7 @@ This blog highlights a few of these, with a few implementation details for the r
 The OpenFeature client is a lightweight abstraction used to evaluate feature flags, implemented by every SDK.
 Essentially, they represent a _scope_ for feature flag evaluations.
 React's [_context provider_](https://react.dev/reference/react/createContext#provider) concept provides a means of sharing data and objects across multiple components without explicitly passing them through [_props_](https://react.dev/learn/passing-props-to-a-component).
-A context provider is an ideal means of providing a bounded scope for flag evaluations by associating a react context with an OpenFeature client; the OpenFeature React SDKs `OpenFeatureProvider` does exactly this.
+A context provider is an ideal means of providing a bounded scope for flag evaluations by associating a react context with an OpenFeature client; the OpenFeature React SDK's `OpenFeatureProvider` does exactly this.
 Within the scope of this React provider, all flag evaluation hooks will make use of the bound OpenFeature client and its associated [OpenFeature provider](https://openfeature.dev/specification/glossary#provider).
 
 ```tsx
