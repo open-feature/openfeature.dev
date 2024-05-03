@@ -237,7 +237,7 @@ client.addHandler(ProviderEvents.FlagValuesChanged, () => {
 
 To recap, OpenFeature is planning to support client-side feature flagging by introducing the concept of two flagging paradigms: dynamic context (for server-side flagging) and static context (for client-side flagging). The OpenFeature APIs will have two slightly different flavors, depending upon which paradigm they support.
 
-This raises a question around distribution - how will we distribute these two flavors of API for languages such as JavaScript and Java which support both paradigms. Our intention in those situations is to distribute two distinct packages - for example with JavaScript we will likely have a `@openfeature/js-node-sdk` package and a `@openfeature/js-browser-sdk` package. We are opting for this approach rather that distributing a single "universal", multi-paradigm package contain both APIs because we think this will be less confusing for developers getting started with OpenFeature. But under the covers the two OpenFeature packages will share a lot of common code.
+This raises a question around distribution - how will we distribute these two flavors of API for languages such as JavaScript and Java which support both paradigms. Our intention in those situations is to distribute two distinct packages - for example with JavaScript we will likely have a `@openfeature/server-sdk` package and a `@openfeature/web-sdk` package. We are opting for this approach rather that distributing a single "universal", multi-paradigm package contain both APIs because we think this will be less confusing for developers getting started with OpenFeature. But under the covers the two OpenFeature packages will share a lot of common code.
 
 If a feature flagging provider wants to provide support for both paradigms they will need to provide two distinct implementations of the [Provider API](/specification/sections/providers). These implementations could be shipped as part of a "universal" multi-paradigm, or as separate packages - that's a choice for a provider to make.
 
@@ -253,4 +253,5 @@ With these additions in place, OpenFeature should have everything needed to brin
 
 Initally published **Feburary 13 2023**.
 
-Updated **Feburary 18 2023** to include discussion of local vs remote flag evaluation models.
+- Updated **Feburary 18 2023** to include discussion of local vs remote flag evaluation models.
+- Updated **May 3 2024** to update the NPM package names.
