@@ -37,7 +37,7 @@ function App() {
 
 ### Re-rendering with Flag Changes
 
-The most fundament feature of the React SDK is support for re-rending components using feature flags when the effective values of those flags change.
+The most fundamental feature of the React SDK is support for re-rending components using feature flags when the effective values of those flags change.
 Flag value changes could be the result of changes in the evaluation context which is the basis for flag evaluations rules, or change in the flag definitions themselves.
 Changes in the evaluation context are best exemplified by changes to user properties in an application; for example, a user logging in, adding something to their cart, or changing their subscriber level.
 Any of these examples could mean that we need to re-evaluate feature flags in light of this new information.
