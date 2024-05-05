@@ -90,7 +90,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
   },
   announcementBar: {
     content:
-      'Interested in client-side feature flagging? The web SDK v1 is available now. Check out the announcement <a href="/blog/web-v1-announcement">here</a>!',
+      'We\'ve just released the first official version of the OpenFeature React SDK! Learn more <a href="/blog/openfeature-react-sdk-release">here</a>!',
   },
   footer: {
     style: 'dark',
