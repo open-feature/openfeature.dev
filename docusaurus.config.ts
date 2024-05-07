@@ -133,7 +133,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
           },
           {
             label: 'YouTube',
-            href: 'https://www.youtube.com/@openfeature834',
+            href: 'https://www.youtube.com/@openfeature',
           },
         ],
       },
