@@ -18,8 +18,8 @@ For this reason, the evaluation API defines a parameter for the evaluation conte
 ## Static Context Paradigms (Client-side SDKs)
 
 In client-side usage, the evaluation context changes less frequently, often in response to user actions or UI events.
-In this case, the context frequently corresponds to a single user, and the context data represents facts about them (such as their name or subsciption level) or the applciation state (if the user has items in their cart).
-When the context data changes, it's often necessary for the provider to update it's cache of evaluated flags, or request an updated ruleset from the server; we refer to this as _context reconiliation_.
+In this case, the context frequently corresponds to a single user, and the context data represents facts about them (such as their name or subscription level) or the application state (if the user has items in their cart).
+When the context data changes, it's often necessary for the provider to update it's cache of evaluated flags, or request an updated ruleset from the server; we refer to this as _context reconciliation_.
 SDKs using the static-context paradigm define a `context changed handler` for providers to implement which runs any time the context is modified.
 Client-side implementations include some additional event types: [PROVIDER_RECONCILING](/docs/reference/concepts/events#provider_reconciling-static-contextclient-side-only) and [PROVIDER_CONTEXT_CHANGED](/docs/reference/concepts/events#provider_context_changed-static-contextclient-side-only).
 These are emitted when the provider's context is invalidated, and after it's subsequently reconciled, accordingly.
