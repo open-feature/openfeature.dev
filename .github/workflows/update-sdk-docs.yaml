@@ -15,6 +15,8 @@ jobs:
       with:
         submodules: recursive
         fetch-depth: 0
+        # Avoid using the GitHub token in the git config
+        persist-credentials: false
 
     - name: Set up Node.js
       uses: actions/setup-node@v4
@@ -57,10 +59,14 @@ jobs:
       run: |
         yarn run update:sdk-docs && \
         git add --all && \
-        git commit -m 'chore: update sdk readmes' -s && \
-        git push origin $BRANCH_NAME --force-with-lease
-      env:
-        GITHUB_TOKEN: ${{ secrets.PULL_REQUEST_AUTOMATION }}
+        git commit -m 'chore: update sdk readmes' -s
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.PULL_REQUEST_AUTOMATION }}
+        branch: ${{ vars.BRANCH_NAME }}
+        force_with_lease: true
 
     - name: Create pr if doesn't exist
       shell: bash
