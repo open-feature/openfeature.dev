@@ -64,7 +64,7 @@ jobs:
       with:
         github_token: ${{ secrets.PULL_REQUEST_AUTOMATION }}
         branch: ${{ env.BRANCH_NAME }}
-        force_with_lease: true
+        force: true
 
     - name: Create pr if doesn't exist
       shell: bash
