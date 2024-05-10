@@ -1,9 +1,10 @@
-import EnvVarSvg from '@site/static/img/env-var-no-fill.svg';
+import EnvVarSvg from '@site/static/img/gear-icon.svg';
 import { Provider } from '.';
 
 export const EnvVar: Provider = {
-  name: 'Environment Variable ',
+  name: 'Environment Variable',
   logo: EnvVarSvg,
+  excludeFromLandingPage: true,
   technologies: [
     {
       technology: 'JavaScript',
