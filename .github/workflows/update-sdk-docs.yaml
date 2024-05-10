@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      BRANCH_NAME: update-sdk-readmes
 
     steps:
     - name: Checkout code
@@ -32,10 +34,6 @@ jobs:
       run: |
         git config --global user.name "OpenFeature Bot"
         git config --global user.email "109696520+openfeaturebot@users.noreply.github.com"
-
-    - name: Set branch env variable
-      shell: bash
-      run: echo "BRANCH_NAME=update-sdk-readmes" >> $GITHUB_ENV
 
     - name: Checkout branch
       shell: bash
@@ -65,7 +63,7 @@ jobs:
       uses: ad-m/github-push-action@v0.8.0
       with:
         github_token: ${{ secrets.PULL_REQUEST_AUTOMATION }}
-        branch: ${{ vars.BRANCH_NAME }}
+        branch: ${{ env.BRANCH_NAME }}
         force_with_lease: true
 
     - name: Create pr if doesn't exist
