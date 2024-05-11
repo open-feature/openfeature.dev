@@ -3,6 +3,7 @@ import type { ComponentType, SVGProps } from 'react';
 import { CloudBees } from './cloudbees';
 import { ConfigCat } from './configcat';
 import { DevCycle } from './devcycle';
+import { EnvVar } from './env-var';
 import { Flagd } from './flagd';
 import { Flagsmith } from './flagsmith';
 import { Flipt } from './flipt';
@@ -22,6 +23,7 @@ export const PROVIDERS: Provider[] = [
   CloudBees,
   ConfigCat,
   DevCycle,
+  EnvVar,
   FeatBit,
   Flagd,
   Flagsmith,
