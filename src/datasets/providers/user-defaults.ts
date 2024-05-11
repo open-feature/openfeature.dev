@@ -1,4 +1,4 @@
-import UserDefaultsSvg from '@site/static/img/user-defaults-no-fill.svg';
+import UserDefaultsSvg from '@site/static/img/gear-icon.svg';
 import { Provider } from '.';
 
 // https://developer.apple.com/documentation/foundation/userdefaults
