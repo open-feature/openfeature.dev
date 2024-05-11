@@ -1,0 +1,166 @@
+---
+title: Python SDK and Flask
+description: Getting Started with the OpenFeature Python SDK on Flask
+---
+
+import FlagdContent from '@site/src/components/custom/tutorial/flagd-content.mdx';
+import FlagdChangeContent from '@site/src/components/custom/tutorial/flagd-change-content.mdx';
+import WhyDefaultContent from '@site/src/components/custom/tutorial/why-default-content.mdx';
+
+
+# Getting Started with the OpenFeature Python SDK
+
+## Introduction
+
+This walk-through teaches you the basics of using OpenFeature with Python.
+You'll learn how to:
+
+- Install the Python SDK
+- Install and configure a provider
+- Perform basic feature flagging
+
+## Requirements
+
+This walk-through assumes that:
+
+- You have a basic understanding of Python and Flask.
+- You have Flask 3.x and Pyhton 3.10 or later.
+- You have Docker installed and running on the host system.
+  The latest version of Docker can be found [here][docker-download].
+
+> **NOTE:** If you don't have docker installed, check the available options to install Flagd [here](https://flagd.dev/installation/).
+
+## Walk-through
+
+### Step 1: Create a a minimal flask application
+
+To get started, create a new folder, bootstrap the project, and install the dependencies.
+This can be done by running the following commands.
+
+```sh
+  mkdir openfeature-python-intro
+  cd openfeature-python-intro
+  pip install Flask
+```
+
+### Step 2: Create a Flask app
+
+Create a new file named `app.py` inside openfeature-python-intro directory and include the following code.
+
+```python
+  from flask import Flask
+  app = Flask(__name__)
+
+  @app.route("/")
+  def index():
+      return "Flask Server"
+```
+
+### Step 3: Add the OpenFeature SDK
+
+Let's install the OpenFeature SDK using the following commands.
+
+```sh
+  pip install typing-extensions
+  pip install openfeature-provider-flagd
+```
+
+Update `app.py` to import the SDK.
+```python
+  from openfeature import api
+  from openfeature.contrib.provider.flagd import FlagdProvider
+```
+
+Once you've imported `OpenFeature`, a new client can be created using the `FlagdProvider`.
+
+```python
+  api.set_provider(FlagdProvider())
+  client = api.get_client()
+```
+
+The client can now be used to get a feature flag value.
+In this case, we'll get a `boolean` value using the `welcome-message` [flag key][flag-key]
+and fallback value, which is returned if there's abnormal behavior using the `client.get_boolean_value()` method.
+
+```python
+@app.route("/")
+def index():
+    showWelcomeMessage = client.get_boolean_value("welcome-message", False)
+    if showWelcomeMessage:
+        return "Flask + OpenFeature Server"
+
+    return "Flask Server"
+```
+
+### Step 4: Run the application
+Let's start the app and see it in action, use the final code below.
+
+```python
+from flask import Flask
+from openfeature import api
+from openfeature.contrib.provider.flagd import FlagdProvider
+
+app = Flask(__name__)
+api.set_provider(FlagdProvider())
+client = api.get_client()
+
+
+@app.route("/")
+def index():
+    showWelcomeMessage = client.get_boolean_value("welcome-message", False)
+    if showWelcomeMessage:
+        return "Flask + OpenFeature Server"
+
+    return "Flask Server"
+```
+Run the following command to start the server.
+
+```sh
+flask run
+```
+
+Open your favorite browser and navigate to [ http://127.0.0.1:5000]( http://127.0.0.1:5000).
+If all goes as planned, you should see "Flask Server".
+
+<WhyDefaultContent />
+
+> NOTE: You should stop the app by using the keyboard short `ctrl + c` before moving on to the next step.
+
+### Step 5: Configure a provider (flagd)
+
+<FlagdContent />
+
+Flagd can be run as a [standalone binary](https://flagd.dev/reference/flagd-cli/flagd/) or [Kubernetes Operator](https://openfeature.dev/docs/tutorials/ofo/) 
+as well. If you don't have docker installed, get and install the [Flagd binary](https://github.com/open-feature/flagd/releases).
+With the flagd configuration in place, start flagd service with the following command.
+
+```sh
+  flagd start -f file:flags.flagd.json
+```
+
+### Step 6: Rerun the application
+
+Now that everything is in place, let's start the app again.
+
+
+```python
+flask run
+```
+
+Open your browser and navigate to [ http://127.0.0.1:5000]( http://127.0.0.1:5000) should show the same value as before.
+This difference is now the feature flag value can be changed at runtime!
+
+<FlagdChangeContent />
+
+Save the changes to `flags.flagd.json` and refresh the browser tab.
+You should now be greeted with `Flask + OpenFeature Server`.
+
+## Conclusion
+
+This walk-through introduced you to the OpenFeature Python SDK.
+It covered how a provider can be configured to perform the flag evaluation and introduced basic feature flagging concepts.
+It also showcased how feature flags can be updated at runtime, without requiring a redeployment.
+
+[learn-flask]: https://flask.palletsprojects.com/en/3.0.x/
+[docker-download]: https://docs.docker.com/engine/install/
+[flag-key]: /specification/glossary#flag-key
