@@ -24,7 +24,7 @@ You'll learn how to:
 This walk-through assumes that:
 
 - You have a basic understanding of Python and Flask.
-- You have Flask 3.x and Pyhton 3.10 or later.
+- You have Flask 3.x and Python 3.10 or later.
 - You have Docker installed and running on the host system.
   The latest version of Docker can be found [here][docker-download].
 
@@ -32,15 +32,15 @@ This walk-through assumes that:
 
 ## Walk-through
 
-### Step 1: Create a a minimal flask application
+### Step 1: Create a minimal flask application
 
 To get started, create a new folder, bootstrap the project, and install the dependencies.
 This can be done by running the following commands.
 
 ```sh
-  mkdir openfeature-python-intro
-  cd openfeature-python-intro
-  pip install Flask
+mkdir openfeature-python-intro
+cd openfeature-python-intro
+pip install Flask
 ```
 
 ### Step 2: Create a Flask app
@@ -61,8 +61,8 @@ Create a new file named `app.py` inside openfeature-python-intro directory and i
 Let's install the OpenFeature SDK using the following commands.
 
 ```sh
-  pip install typing-extensions
-  pip install openfeature-provider-flagd
+pip install typing-extensions
+pip install openfeature-provider-flagd
 ```
 
 Update `app.py` to import the SDK.
@@ -85,8 +85,8 @@ and fallback value, which is returned if there's abnormal behavior using the `cl
 ```python
 @app.route("/")
 def index():
-    showWelcomeMessage = client.get_boolean_value("welcome-message", False)
-    if showWelcomeMessage:
+    show_welcome_message = client.get_boolean_value("welcome-message", False)
+    if show_welcome_message:
         return "Flask + OpenFeature Server"
 
     return "Flask Server"
@@ -107,8 +107,8 @@ client = api.get_client()
 
 @app.route("/")
 def index():
-    showWelcomeMessage = client.get_boolean_value("welcome-message", False)
-    if showWelcomeMessage:
+    show_welcome_message = client.get_boolean_value("welcome-message", False)
+    if show_welcome_message:
         return "Flask + OpenFeature Server"
 
     return "Flask Server"
@@ -135,7 +135,7 @@ as well. If you don't have docker installed, get and install the [Flagd binary](
 With the flagd configuration in place, start flagd service with the following command.
 
 ```sh
-  flagd start -f file:flags.flagd.json
+flagd start -f file:flags.flagd.json
 ```
 
 ### Step 6: Rerun the application
@@ -143,7 +143,7 @@ With the flagd configuration in place, start flagd service with the following co
 Now that everything is in place, let's start the app again.
 
 
-```python
+```sh
 flask run
 ```
 
