@@ -56,8 +56,8 @@
     "path": "/docs/reference/technologies/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.13.5",
-      "version": "1.13.5",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.14.0",
+      "version": "1.14.0",
       "stable": true
     },
     "spec": {
@@ -316,8 +316,8 @@
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.0.3",
-      "version": "1.0.3",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.1.0",
+      "version": "1.1.0",
       "stable": true
     },
     "spec": {
