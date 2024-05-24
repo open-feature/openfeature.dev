@@ -17,6 +17,7 @@ import { Unleash } from './unleash';
 import { Statsig } from './statsig';
 import { FeatBit } from './featbit';
 import { UserDefaults } from './user-defaults';
+import { GrowthBook } from './growthbook';
 import { Category, EcosystemElement, Technology } from '../types';
 
 export const PROVIDERS: Provider[] = [
@@ -37,6 +38,7 @@ export const PROVIDERS: Provider[] = [
   Statsig,
   Unleash,
   UserDefaults,
+  GrowthBook,
 ];
 
 export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) => {
