@@ -187,7 +187,7 @@
       },
       "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/go#named-clients"
+        "path": "/docs/reference/technologies/server/go#domains"
       },
       "Eventing": {
         "status": "✅",
