@@ -7,12 +7,6 @@ export const EnvVar: Provider = {
   excludeFromLandingPage: true,
   technologies: [
     {
-      technology: 'Rust',
-      vendorOfficial: true,
-      href: 'https://github.com/open-feature/rust-sdk-contrib/tree/main/crates/env-var',
-      category: ['Server'],
-    },
-    {
       technology: 'Go',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/providers/from-env',
@@ -28,6 +22,12 @@ export const EnvVar: Provider = {
       technology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/env-var',
+      category: ['Server'],
+    },
+    {
+      technology: 'Rust',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/rust-sdk-contrib/tree/main/crates/env-var',
       category: ['Server'],
     },
   ],
