@@ -23,10 +23,10 @@
     "node": ">18.0.0"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.3.2",
-    "@docusaurus/plugin-client-redirects": "^3.3.2",
-    "@docusaurus/preset-classic": "^3.3.2",
-    "@docusaurus/theme-mermaid": "^3.3.2",
+    "@docusaurus/core": "^3.4.0",
+    "@docusaurus/plugin-client-redirects": "^3.4.0",
+    "@docusaurus/preset-classic": "^3.4.0",
+    "@docusaurus/theme-mermaid": "^3.4.0",
     "@fortawesome/fontawesome-svg-core": "6.5.2",
     "@fortawesome/free-brands-svg-icons": "6.5.2",
     "@fortawesome/free-regular-svg-icons": "6.5.2",
@@ -62,8 +62,8 @@
     "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.3.2",
-    "@docusaurus/tsconfig": "^3.3.2",
+    "@docusaurus/module-type-aliases": "3.4.0",
+    "@docusaurus/tsconfig": "^3.4.0",
     "@types/fs-extra": "11.0.4",
     "@types/react": "^18.3.3",
     "@typescript-eslint/eslint-plugin": "7.11.0",
