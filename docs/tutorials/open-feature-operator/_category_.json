@@ -1,0 +1,11 @@
+{
+  "position": 3,
+  "label": "OpenFeature Operator",
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "OpenFeature Operator Tutorials",
+    "description": "These step-by-step guides walk you through the basics of the OpenFeature SDK for your preferred language."
+  }
+}
