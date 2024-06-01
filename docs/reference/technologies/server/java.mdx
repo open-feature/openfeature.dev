@@ -282,7 +282,7 @@ OpenFeatureAPI api = OpenFeatureAPI.getInstance();
 Map<String, Value> transactionAttrs = new HashMap<>();
 transactionAttrs.put("userId", new Value("userId"));
 EvaluationContext transactionCtx = new ImmutableContext(transactionAttrs);
-api.setTransactionContext(apiCtx);
+api.setTransactionContext(transactionCtx);
 ```
 Additionally, you can develop a custom transaction context propagator by implementing the `TransactionContextPropagator` interface and registering it as shown above.
 
