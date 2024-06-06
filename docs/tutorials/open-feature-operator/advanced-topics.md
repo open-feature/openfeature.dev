@@ -170,7 +170,7 @@ Take note of the `flagd-in-process` pod.
 ### Test the in-process configuration
 
 Let's make sure everything is working as expected by changing the value of a backend flag.
-Open your browser and navigate to <http://localhost>.
+Open your browser and navigate to [localhost](http://localhost).
 
 ![ui-in-process-preview](@site/static/img/tutorials/ui-in-process.png)
 
@@ -275,7 +275,7 @@ Take note of the `flagd-ui` pod.
 ### Test the client-side configuration
 
 Let's make sure everything is working as expected.
-Open your browser and navigate to <http://localhost> (or refresh, if you're already there).
+Open your browser and navigate to [localhost](http://localhost) (or refresh, if you're already there).
 
 ![ui-client-side-preview](@site/static/img/tutorials/ui-client-side.png)
 
