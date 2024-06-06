@@ -19,6 +19,7 @@ import { FeatBit } from './featbit';
 import { UserDefaults } from './user-defaults';
 import { GrowthBook } from './growthbook';
 import { Category, EcosystemElement, Technology } from '../types';
+import { MultiProvider } from './multi-provider';
 
 export const PROVIDERS: Provider[] = [
   CloudBees,
@@ -39,6 +40,7 @@ export const PROVIDERS: Provider[] = [
   Unleash,
   UserDefaults,
   GrowthBook,
+  MultiProvider,
 ];
 
 export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) => {
