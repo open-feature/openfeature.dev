@@ -128,7 +128,7 @@ function FeaturesZigZag() {
                 </div>
               </div>
             </div>
-            ;{/* 3rd item */}
+            {/* 3rd item */}
             <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
               {/* Image */}
               <div
@@ -165,7 +165,6 @@ function FeaturesZigZag() {
                 </div>
               </div>
             </div>
-            ;;
           </div>
         </div>
       </div>
