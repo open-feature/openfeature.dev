@@ -31,7 +31,7 @@
       },
       "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/java#named-clients"
+        "path": "/docs/reference/technologies/server/java#domains"
       },
       "Eventing": {
         "status": "✅",
@@ -56,8 +56,8 @@
     "path": "/docs/reference/technologies/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.14.0",
-      "version": "1.14.0",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.15.0",
+      "version": "1.15.0",
       "stable": true
     },
     "spec": {
@@ -316,8 +316,8 @@
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.1.0",
-      "version": "1.1.0",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.2.1",
+      "version": "1.2.1",
       "stable": true
     },
     "spec": {
