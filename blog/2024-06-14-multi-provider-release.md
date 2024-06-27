@@ -49,7 +49,7 @@ const multiProvider = new MultiProvider(
 );
 ```
 
-### FirstMatchStrategy
+### First Match Strategy
 
 The default Strategy is the `FirstMatchStrategy`. This will evaluate providers in order, moving on to the next provider only if the current provider returns a `FLAG_NOT_FOUND` result. If an error is thrown by any provider, the Multi-Provider will throw that error. The OpenFeature SDK will then catch the error and return the default value.
 
@@ -57,19 +57,19 @@ This strategy is useful for migrating from one provider to another, when some fl
 
 `FirstMatchStrategy` can also be used to pull feature flags from multiple sources, and return as soon as the flag is found.
 
-### **FirstSuccessfulStrategy**
+### First Successful Strategy
 
 `FirstSuccessfulStrategy` is similar to `FirstMatchStrategy`, except that errors from evaluated providers do not halt execution. Instead, it will return the first successful result from a provider. If no provider successfully responds, it will throw an error result.
 
 One use case for this strategy is if you want the Multi-Provider to fallback to another provider in the case of an error, rather than throwing an error itself. For example, if an external vendor provider goes down, you may want to automatically fall back to a config file.
 
-### **ComparisonStrategy**
+### Comparison Strategy
 
 The `ComparisonStrategy` requires that all providers agree on a value. If the providers return the same value, the result of the evaluation will be that value. Otherwise, the evaluation result will contain an error in the `errors` field to indicate a mismatch, and the result value will be the value returned by the first provider. The `ComparisonStrategy` also evaluates all providers in parallel, as it is not intended to exit as soon as it finds a match.
 
 One use case for this strategy is validating the success of a provider migration. If the configuration in one provider has been recreated in another, this strategy confirms the flags and user targeting are consistent between those sources.
 
-### **Custom Strategies**
+### Custom Strategies
 
 In order to support complex provider behaviour and diverse use cases, users can write custom strategies that extend the abstract `BaseEvaluationStrategy` class. Some key methods to control the Multi-Provider’s behaviour include:
 
