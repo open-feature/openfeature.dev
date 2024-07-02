@@ -4,8 +4,8 @@
     "path": "/docs/reference/technologies/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.8.0",
-      "version": "1.8.0",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.9.0",
+      "version": "1.9.0",
       "stable": true
     },
     "spec": {
