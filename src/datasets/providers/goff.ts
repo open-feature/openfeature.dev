@@ -47,5 +47,11 @@ export const Goff: Provider = {
       href: 'https://github.com/thomaspoignant/go-feature-flag/tree/main/openfeature/providers/kotlin-provider',
       category: ['Client'],
     },
+    {
+      technology: 'Swift',
+      vendorOfficial: true,
+      href: 'https://github.com/go-feature-flag/openfeature-swift-provider',
+      category: ['Client'],
+    },
   ],
 };
