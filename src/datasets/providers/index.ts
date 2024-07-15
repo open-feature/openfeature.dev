@@ -20,6 +20,7 @@ import { UserDefaults } from './user-defaults';
 import { GrowthBook } from './growthbook';
 import { Category, EcosystemElement, Technology } from '../types';
 import { MultiProvider } from './multi-provider';
+import { Hypertune } from './hypertune';
 
 export const PROVIDERS: Provider[] = [
   CloudBees,
@@ -32,6 +33,7 @@ export const PROVIDERS: Provider[] = [
   Flipt,
   Goff,
   Harness,
+  Hypertune,
   Kameleoon,
   LaunchDarkly,
   PostHog,
