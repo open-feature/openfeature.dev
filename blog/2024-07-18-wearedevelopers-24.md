@@ -1,7 +1,7 @@
 ---
 slug: "wearedevelopers-2024"
 title: "Join OpenFeature at WeAreDevelopers World Congress '24"
-date: 2024-03-18
+date: 2024-07-18
 authors: [andrewdmaclean]
 description: "WeAreDevelopers"
 tags: [wearedevelopers, booth]
