@@ -47,5 +47,11 @@ export const LaunchDarkly: Provider = {
       href: 'https://github.com/launchdarkly/openfeature-python-server',
       category: ['Server'],
     },
+    {
+      technology: 'Ruby',
+      vendorOfficial: true,
+      href: 'https://github.com/launchdarkly/openfeature-ruby-server',
+      category: ['Server'],
+    },
   ],
 };
