@@ -12326,9 +12326,9 @@ wildcard@^2.0.0:
   integrity sha512-CC1bOL87PIWSBhDcTrdeLo6eGT7mCFtrg0uIJtqJUFyK+eJnzl8A1niH56uu7KMa5XFrtiV+AQuHO3n7DsHnLQ==
 
 wireit@^0.14.5:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/wireit/-/wireit-0.14.5.tgz#cd1c4136444c8dbe655f34f60fe2454a9e69d430"
-  integrity sha512-K4ka9YBpSyD6pmFZYTJd4VpPsAiPT6j/fOtLzYgnKWlPIMM7lAZjQQ30H7urO+Lqx1Wvrw88tQHBz4njy+lglg==
+  version "0.14.7"
+  resolved "https://registry.yarnpkg.com/wireit/-/wireit-0.14.7.tgz#8b4de32ac9bd6445ce4f6f89a91b4241980ae09d"
+  integrity sha512-bMyyaKtH8fTYD3cmI8ZULIwifDcgNRHyHfYF54QFISvKiDtDJ4yHJZRlW/q2j0DaRjuFbMkIhpE++/GtI5iipQ==
   dependencies:
     brace-expansion "^4.0.0"
     chokidar "^3.5.3"
