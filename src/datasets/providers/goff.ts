@@ -53,5 +53,11 @@ export const Goff: Provider = {
       href: 'https://github.com/go-feature-flag/openfeature-swift-provider',
       category: ['Client'],
     },
+    {
+      technology: 'PHP',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/php-sdk-contrib/tree/main/providers/GoFeatureFlag',
+      category: ['Server'],
+    },
   ],
 };
