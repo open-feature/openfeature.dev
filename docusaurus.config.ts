@@ -5,7 +5,6 @@ import type { Config } from '@docusaurus/types';
 import autoprefixer from 'autoprefixer';
 import { themes } from 'prism-react-renderer';
 import { rehypeGithubAlerts } from 'rehype-github-alerts';
-import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 import tailwindcss from 'tailwindcss';
 
@@ -17,6 +16,8 @@ const presetClassicOptions: PresetClassicOptions = {
     editUrl: (params) => {
       return `https://github.com/open-feature/openfeature.dev/edit/main/docs/${params.docPath}`;
     },
+    rehypePlugins: [rehypeGithubAlerts],
+    remarkPlugins: [remarkGfm],
   },
   blog: {
     showReadingTime: true,
@@ -91,6 +92,10 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
       },
     ],
   },
+  announcementBar: {
+    content:
+      'We\'ve just released the first official version of the OpenFeature React SDK! Learn more <a href="/blog/openfeature-react-sdk-release">here</a>!',
+  },
   footer: {
     style: 'dark',
     links: [
@@ -132,7 +137,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
           },
           {
             label: 'YouTube',
-            href: 'https://www.youtube.com/@openfeature834',
+            href: 'https://www.youtube.com/@openfeature',
           },
         ],
       },
@@ -161,7 +166,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
   },
   prism: {
     theme: themes.oceanicNext,
-    additionalLanguages: ['java', 'csharp', 'powershell', 'php', 'kotlin'],
+    additionalLanguages: ['java', 'csharp', 'powershell', 'php', 'kotlin', 'ruby'],
     magicComments: [
       {
         className: 'theme-code-block-highlighted-line',
@@ -297,6 +302,8 @@ const config: Config = {
         editUrl: (params) => {
           return `https://github.com/open-feature/community/edit/main/${params.docPath}`;
         },
+        rehypePlugins: [rehypeGithubAlerts],
+        remarkPlugins: [remarkGfm],
         // ... other options
       },
     ],
@@ -321,7 +328,7 @@ const config: Config = {
           return `https://github.com/open-feature/spec/edit/main/specification/${params.docPath}`;
         },
         rehypePlugins: [rehypeGithubAlerts],
-        remarkPlugins: [remarkGfm, remarkBreaks],
+        remarkPlugins: [remarkGfm],
         // ... other options
       },
     ],

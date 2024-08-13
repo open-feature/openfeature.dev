@@ -89,6 +89,8 @@ This makes it easier for developers to mix and match providers based on their ne
 
 ### Examples
 
+#### Dynamic Context Implementations (Server-side SDKs)
+
 <Tabs groupId="code">
 <TabItem value="js" label="TypeScript">
 
@@ -99,6 +101,8 @@ export class MyFeatureProvider implements Provider {
   readonly metadata = {
     name: 'My Feature Provider',
   } as const;
+
+  readonly runsOn = 'server';
 
   // emitter for provider events
   events = new OpenFeatureEventEmitter();
@@ -393,7 +397,48 @@ class MyProvider(AbstractProvider):
 ```
 
 </TabItem>
+</Tabs>
 
+### Static Context Implementations (Client-side SDKs)
+
+<Tabs groupId="code">
+<TabItem value="js" label="TypeScript">
+
+```ts
+import { EvaluationContext, Provider, JsonValue, ResolutionDetails } from '@openfeature/web-sdk';
+
+export class TestProvider implements Provider {
+  metadata = {
+    name: TestProvider.name,
+  };
+
+  readonly runsOn = 'client';
+
+  hooks = [];
+
+  onContextChange(oldContext: EvaluationContext, newContext: EvaluationContext): Promise<void> {
+    // code to run to reconcile the providers state with the newly updated context
+  }
+
+  resolveBooleanEvaluation(flagKey: string, defaultValue: boolean): ResolutionDetails<boolean> {
+    // code to evaluate boolean
+  }
+
+  resolveStringEvaluation(flagKey: string, defaultValue: string): ResolutionDetails<string> {
+    // code to evaluate string
+  }
+
+  resolveNumberEvaluation(flagKey: string, defaultValue: number): ResolutionDetails<number> {
+    // code to evaluate number
+  }
+
+  resolveObjectEvaluation<U extends JsonValue>(flagKey: string, defaultValue: U): ResolutionDetails<U> {
+    // code to evaluate object
+  }
+}
+```
+
+</TabItem>
 </Tabs>
 
 ### Checklist

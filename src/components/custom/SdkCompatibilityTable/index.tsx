@@ -1,13 +1,18 @@
 import React from 'react';
 import type { SdkCompatibility } from '@site/src/datasets/types';
-import { features } from '@site/src/datasets/constants';
 import { Popover } from '@headlessui/react';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 import Link from '@docusaurus/Link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function SdkCompatibilityTable({ compatibility }: { compatibility: SdkCompatibility[] }) {
+export default function SdkCompatibilityTable({
+  compatibility,
+  features,
+}: {
+  compatibility: SdkCompatibility[];
+  features: string[];
+}) {
   return (
     <table>
       <thead>
@@ -91,10 +96,14 @@ export default function SdkCompatibilityTable({ compatibility }: { compatibility
           ))}
         </tr>
 
-        {features.map((feat) => {
+        {features.map((feature) => {
+          // The first element is the latest feature name, others are for historical reasons
+          const feat = Array.isArray(feature) ? feature[0] : feature;
+          // Join all alternative names to display them in the table
+          const featName = Array.isArray(feature) ? feature.join(' / ') : feature;
           return (
             <tr key={feat}>
-              <td>{feat}</td>
+              <td>{featName}</td>
               {compatibility.map((row) => {
                 return (
                   <td>

@@ -70,12 +70,19 @@ const removeExtraNewlinesAtTop = (content: string): string => {
  * Add header information to the content.
  */
 const addHeader =
-  (sdk: { name: string; url: string; repo: string; fileName: string; slug: string }) =>
+  (sdk: { name: string; url: string; repo: string; fileName: string; slug?: string; id?: string }) =>
   (content: string): string => {
+    const frontmatter: string[] = [];
+    frontmatter.push(`title: OpenFeature ${sdk.name} SDK`);
+    if (sdk.slug) {
+      frontmatter.push(`slug: ${sdk.slug}`);
+    }
+    if (sdk.id) {
+      frontmatter.push(`id: ${sdk.id}`);
+    }
+    frontmatter.push(`sidebar_label: ${sdk.name}`);
     return `---
-title: OpenFeature ${sdk.name} SDK
-slug: ${sdk.slug}
-sidebar_label: ${sdk.name}
+${frontmatter.join('\n')}
 ---
 
 <!--
@@ -132,7 +139,6 @@ const markdownProcessor = (sdks: SDK[]) => {
 
     const repoUrl = `https://github.com/${GITHUB_ORG}/${sdk.repo}`;
     const fileName = sdk.filename ?? sdk.name.toLowerCase();
-    const slug = sdk.slug ?? fileName;
     const fileExtension = sdk.fileExtension ?? DEFAULT_FILE_EXTENSION;
     const branch = sdk.branch ?? DEFAULT_BRANCH;
 
@@ -144,17 +150,19 @@ const markdownProcessor = (sdks: SDK[]) => {
       removeComments,
       removeExtraNewlinesBetweenSections,
       removeExtraNewlinesAtTop,
-      addHeader({ name: sdk.name, repo: sdk.repo, url: repoUrl, fileName, slug }),
+      addHeader({ name: sdk.name, repo: sdk.repo, url: repoUrl, fileName, slug: sdk.slug, id: sdk.id }),
       replaceLinks({ url: repoUrl, branch, folder: sdk.folder }),
     ].reduce((currentContent, processor) => processor(currentContent), initialContent);
 
-    sdkSupportMatrixGenerator.addSdk({
-      name: sdk.name,
-      repoUrl,
-      category: sdk.category,
-      path: sdk.href,
-      content,
-    });
+    if (sdk.includeInSupportMatrix ?? true) {
+      sdkSupportMatrixGenerator.addSdk({
+        name: sdk.name,
+        repoUrl,
+        category: sdk.category,
+        path: sdk.href,
+        content,
+      });
+    }
 
     if (sdksProcessed >= sdks.length - 1) {
       console.log('processed all sdks... writing matrix to file');

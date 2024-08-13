@@ -1,20 +1,25 @@
 ---
 sidebar_position: 2
-id: ofo
-title: Cloud Native Flags with the OpenFeature Operator
+id: quick-start
+title: 'Quick Start: Cloud Native Feature-Flagging with the OpenFeature Operator'
 ---
 
-# Cloud Native Feature-Flagging with the OpenFeature Operator
+# Quick Start: Cloud Native Feature-Flagging with the OpenFeature Operator
 
 In the following tutorial, we'll see how to leverage _flagd_ and the OpenFeature Operator to enable cloud-native, self-hosted feature flags in your Kubernetes cluster. [flagd](https://flagd.dev/) is a "feature flag daemon with a Unix philosophy".
 Put another way, it's a small, self-contained binary that evaluates feature flags, uses standard interfaces, and runs just about anywhere.
 It can be deployed in a central location serving multiple clients or embedded into a unit of deployment (such as a pod in Kubernetes).
 The [OpenFeature Operator](https://github.com/open-feature/open-feature-operator) is a K8s-flavored solution for easily adding flagd to any relevant workloads.
-It parses Kubernetes spec files and adds flagd and associated objects to the workloads based on annotations and custom resource definitions it understands.
+The operator parses Kubernetes spec files and adds flagd and associated objects to the workloads based on annotations and custom resource definitions it understands.
+The injected flagd sidecar then gets its feature flags by querying the Kubernetes API for our flags.
 
-## Let's do it
+> [!NOTE]  
+> This deployment pattern (injecting flagd as a sidecar which communicates with the kubernetes API directly) is the simplest to configure, but it may not be the right solution for all use-cases.
+> See the [advanced tutorial](./advanced-topics.md) for alternative models.
 
-### Prerequisites
+<p style={{fontSize:"x-large"}}>Let's do it</p>
+
+## Prerequisites
 
 - If you don't have access to an existing K8s cluster, you have a few options:
   - [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation) is similar to minikube (another solution for running a cluster locally you may be familiar with) but supports more than one node, so it makes for a slightly more realistic experience.
@@ -24,43 +29,38 @@ It parses Kubernetes spec files and adds flagd and associated objects to the wor
     Configuration of `MicroK8s` and `K3s` is out of the scope of this tutorial.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [k9s](https://k9scli.io/) (optional, if you'd like to inspect your cluster visually)
+- [helm](https://helm.sh/) (optional, if you prefer to install the operator using the Helm chart)
 
-### Show me the commands
+> [!NOTE]  
+> If not using kind, you will have to handle forwarding ports and exposing ingresses however appropriate for your distribution or infrastructure.
 
-#### Downloading assets
+## Show me the commands
 
-Download the file defining our demo deployment, service, and CRD, `end-to-end.yaml`:
-
-```shell
-curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/playground/main/config/k8s/end-to-end.yaml > end-to-end.yaml
-```
-
-#### Building our cluster
+### Building our cluster
 
 OK, let's get our cluster up and running!
 We recommend using `kind` for this demo, but if you already have a K8s cluster, you can skip to [Install cert-manager](#install-cert-manager).
 
-##### Using Kind
+#### Using Kind
 
-Download the cluster definition file, `kind-cluster.yaml`:
+Download the cluster definition file, `kind-cluster-quick-start.yaml`:
 
 ```shell
-curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/kind-cluster.yaml > kind-cluster.yaml
+curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/kind-cluster-quick-start.yaml > kind-cluster-quick-start.yaml
 ```
 
-Then, create our cluster using the `kind-cluster.yaml` file:
+Then, create our cluster using the `kind-cluster-quick-start.yaml` file:
 
 ```shell
-kind create cluster --config kind-cluster.yaml
+kind create cluster --config kind-cluster-quick-start.yaml
 ```
 
 This might take a minute or two.
 
-#### Install cert-manager
+### Install cert-manager
 
-Great!
 Next, because our operator makes use of webhooks, we need some certificate infrastructure in our cluster.
-If your cluster already has cert manager, or you're using another solution for certificate management, you can skip to [Create Namespace](#create-namespace).
+If your cluster already has cert manager, or you're using another solution for certificate management, you can go to [Install OpenFeature operator](#install-openfeature-operator).
 
 Install cert-manager, and wait for it to be ready:
 
@@ -69,26 +69,47 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'cert-manager'
 ```
 
-#### Create namespace
-
-Next, we need to create a namespace for the operator and our workload:
-
-```shell
-kubectl create namespace open-feature-operator-system
-```
-
-#### Install OpenFeature operator
+### Install OpenFeature operator
 
 And finally, let's install the operator itself:
 
+<details>
+  <summary>Install using manifest</summary>
+
+  ```shell
+  kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.6.0/release.yaml && \
+  kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'open-feature-operator-system'
+  ```
+
+</details>
+
+<details>
+  <summary>Install using Helm</summary>
+
+  ```shell
+  helm repo add openfeature https://open-feature.github.io/open-feature-operator/ && \
+  helm repo update && \
+  helm upgrade --install open-feature-operator openfeature/open-feature-operator
+  ```
+
+  > [!NOTE]  
+  > When using Helm, various configuration parameters can be set, such as resource limits and default configuration values.
+  > See the full [chart documentation](https://artifacthub.io/packages/helm/open-feature-operator/open-feature-operator#configuration) for details.
+
+</details>
+
+### Downloading assets
+
+Download the file defining our demo deployment, service and custom resource (CRs), `end-to-end.yaml`:
+
 ```shell
-kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.5.3/release.yaml && \
-kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'open-feature-operator-system'
+curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/playground/main/config/k8s/end-to-end.yaml > end-to-end.yaml
 ```
 
-#### Deploy our workload
+### Deploy our workload
 
 Now that the operator is ready to go, we can deploy our workload:
+(example below deploys into K8s default namespace, update accordingly to other namespace)
 
 ```shell
 kubectl -n default apply -f end-to-end.yaml && \
@@ -99,7 +120,7 @@ If you're using `k9s` or some other means of visualization, your cluster should 
 
 ![k9s](@site/static/img/tutorials/k9s.png)
 
-#### Forward the service (if not using kind)
+### Forward the service (if not using kind)
 
 ⚠️ If you're using the [supplied `kind` config](#using-kind), ***you can skip to [Experiment with OpenFeature](#experiment-with-openfeature), the ports are already forwarded.***
 
@@ -115,11 +136,11 @@ Forward the UI flag evaluation service port:
 kubectl port-forward svc/open-feature-demo-ui-service -n default 30002:30002
 ```
 
-### Experiment with OpenFeature
+## Experiment with OpenFeature
 
 Now you should see our fictional app at [http://localhost:30000](http://localhost:30000)
 
-For this demo, we get flag definitions from the custom resource definitions (CRDs) you applied to K8s above (`end-to-end.yaml`).
+For this demo, we get flag definitions from the custom resource (CRs) you applied to K8s above (`end-to-end.yaml`).
 The resource type is `FeatureFlag` and there are two instances defined: one is called `ui-flags` (for the front-end) and one called `app-flags`
 (for the back end).
 Below, you'll see how you can modify these instances to change your feature flags.
@@ -160,7 +181,7 @@ Then log in as an "employee" (use any email ending in `...@faas.com`) and observ
 This effect is driven by the rule defined in the `app-flags` CR, which controls our server-side flags and is predicated on the email address of the user.
 Feel free to experiment with your own flag values and rules!
 
-### Cleaning up
+## Cleaning up
 
 If you used a kind cluster, you can clean everything up by running:
 

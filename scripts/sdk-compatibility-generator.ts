@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs';
-import { SdkCompatibility } from '../src/datasets/types';
-import { features } from '../src/datasets/constants';
+import { SdkCompatibility, Category } from '../src/datasets/types';
+import { serverSideFeatures, clientSideFeatures } from '../src/datasets/constants';
 import { SDK } from '../src/datasets/sdks';
 
 type Input = Pick<SDK, 'name' | 'category'> & {
@@ -19,7 +19,7 @@ export class SdkCompatibilityGenerator {
       category: sdk.category,
       release: this.getReleaseInfo(sdk.name, sdk.repoUrl, sdk.content),
       spec: this.getSpecInfo(sdk.name, sdk.content),
-      features: this.getFeatureStatus(sdk.path, sdk.content),
+      features: this.getFeatureStatus(sdk.category, sdk.path, sdk.content),
     });
   }
 
@@ -83,16 +83,21 @@ export class SdkCompatibilityGenerator {
    *
    * @link https://github.com/open-feature/.github/tree/main/templates/READMEs#-features
    */
-  private getFeatureStatus(path: string, content: string): SdkCompatibility['features'] {
+  private getFeatureStatus(category: Category, path: string, content: string): SdkCompatibility['features'] {
     const featureStatus = {};
 
+    const features = category === 'Server' ? serverSideFeatures : clientSideFeatures;
     for (const feature of features) {
-      const featureRegex = new RegExp(String.raw`(✅|⚠️|❌) +\|.+\[${feature}\]\(#(.+?)\)`);
+      // The first element is the latest feature name, others are for historical reasons.
+      const featureName: string = Array.isArray(feature) ? feature[0] : feature;
+      const featureRegex = new RegExp(
+        String.raw`(✅|⚠️|❌) +\|.+\[(${Array.isArray(feature) ? feature.join('|') : feature})\]\(#(.+?)\)`,
+      );
 
       const extractedFeature = featureRegex.exec(content);
-      featureStatus[feature] = {
+      featureStatus[featureName] = {
         status: extractedFeature?.[1] ?? '❓',
-        path: extractedFeature?.[2] ? `${path}#${extractedFeature[2]}` : path,
+        path: extractedFeature?.[3] ? `${path}#${extractedFeature[3]}` : path,
       };
     }
 

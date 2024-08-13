@@ -77,7 +77,6 @@ function FeaturesZigZag() {
                 </div>
               </div>
             </div>
-
             {/* 2nd item */}
             <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
               {/* Image */}
@@ -90,7 +89,9 @@ function FeaturesZigZag() {
                     const Icon = vendor.logo;
                     return (
                       <Link
+                        title={vendor.name}
                         to={getVendorLink(vendor.name)}
+                        aria-label={vendor.name}
                         className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] "
                       >
                         <Icon className="h-full w-full hover:fill-primary" />
@@ -127,7 +128,6 @@ function FeaturesZigZag() {
                 </div>
               </div>
             </div>
-
             {/* 3rd item */}
             <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
               {/* Image */}
@@ -139,7 +139,12 @@ function FeaturesZigZag() {
                   {ECOSYSTEM_SDKS.map((sdk) => {
                     const Icon = sdk.logo;
                     return (
-                      <Link to={sdk.href} className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] ">
+                      <Link
+                        title={sdk.title}
+                        to={sdk.href}
+                        aria-label={sdk.title}
+                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] "
+                      >
                         <Icon className="h-full w-full hover:fill-primary" />
                       </Link>
                     );

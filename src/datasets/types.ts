@@ -12,7 +12,17 @@ export type EcosystemElement = {
   category: Category[];
 };
 
-export type Technology = 'JavaScript' | 'Java' | 'Go' | 'PHP' | '.NET' | 'Kotlin' | 'Python' | 'Swift';
+export type Technology =
+  | 'JavaScript'
+  | 'Java'
+  | 'Go'
+  | 'PHP'
+  | '.NET'
+  | 'Kotlin'
+  | 'Python'
+  | 'Swift'
+  | 'Rust'
+  | 'Ruby';
 export type Category = 'Server' | 'Client';
 export type Type = 'Hook' | 'Provider' | 'SDK';
 
