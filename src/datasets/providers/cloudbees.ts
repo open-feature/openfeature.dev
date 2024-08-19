@@ -29,5 +29,11 @@ export const CloudBees: Provider = {
       href: 'https://github.com/open-feature/php-sdk-contrib/tree/main/providers/CloudBees',
       category: ['Server'],
     },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://github.com/rollout/cloudbees-openfeature-provider-python',
+      category: ['Server'],
+    },
   ],
 };

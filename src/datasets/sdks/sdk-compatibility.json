@@ -4,8 +4,8 @@
     "path": "/docs/reference/technologies/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.8.0",
-      "version": "1.8.0",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.9.0",
+      "version": "1.9.0",
       "stable": true
     },
     "spec": {
@@ -212,8 +212,8 @@
     "path": "/docs/reference/technologies/server/python",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.7.0",
-      "version": "0.7.0",
+      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.7.1",
+      "version": "0.7.1",
       "stable": false
     },
     "spec": {
@@ -264,8 +264,8 @@
     "path": "/docs/reference/technologies/server/php",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.0.7",
-      "version": "2.0.7",
+      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.0.8",
+      "version": "2.0.8",
       "stable": true
     },
     "spec": {
@@ -412,8 +412,8 @@
     "path": "/docs/reference/technologies/client/swift",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/swift-sdk/releases/tag/0.1.0",
-      "version": "0.1.0",
+      "href": "https://github.com/open-feature/swift-sdk/releases/tag/0.2.0",
+      "version": "0.2.0",
       "stable": false
     },
     "spec": {
@@ -452,6 +452,58 @@
       "Extending": {
         "status": "✅",
         "path": "/docs/reference/technologies/client/swift#extending"
+      }
+    }
+  },
+  {
+    "name": "Ruby",
+    "path": "/docs/reference/technologies/server/ruby",
+    "category": "Server",
+    "release": {
+      "href": "https://github.com/open-feature/ruby-sdk/releases/tag/v0.4.0",
+      "version": "0.4.0",
+      "stable": false
+    },
+    "spec": {
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.8.0",
+      "version": "0.8.0"
+    },
+    "features": {
+      "Providers": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/ruby#providers"
+      },
+      "Targeting": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/ruby#targeting"
+      },
+      "Hooks": {
+        "status": "⚠️",
+        "path": "/docs/reference/technologies/server/ruby#hooks"
+      },
+      "Logging": {
+        "status": "❌",
+        "path": "/docs/reference/technologies/server/ruby#logging"
+      },
+      "Domains": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/ruby#domains"
+      },
+      "Eventing": {
+        "status": "❌",
+        "path": "/docs/reference/technologies/server/ruby#eventing"
+      },
+      "Shutdown": {
+        "status": "⚠️",
+        "path": "/docs/reference/technologies/server/ruby#shutdown"
+      },
+      "Transaction Context Propagation": {
+        "status": "❌",
+        "path": "/docs/reference/technologies/server/ruby#transaction-context-propagation"
+      },
+      "Extending": {
+        "status": "⚠️",
+        "path": "/docs/reference/technologies/server/ruby#extending"
       }
     }
   }
