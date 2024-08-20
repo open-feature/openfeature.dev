@@ -42,6 +42,7 @@ const ProvidersCarousel = () => {
       plugins={[
         Autoplay({
           delay: 5000,
+          stopOnMouseEnter: true,
         }),
       ]}
     >
@@ -81,6 +82,7 @@ const EcosystemSDKsCarousel = () => {
       plugins={[
         Autoplay({
           delay: 5000,
+          stopOnMouseEnter: true,
         }),
       ]}
     >
