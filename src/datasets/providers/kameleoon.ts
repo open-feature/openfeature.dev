@@ -11,5 +11,11 @@ export const Kameleoon: Provider = {
       href: 'https://github.com/Kameleoon/openfeature-dotnet',
       category: ['Server'],
     },
+    {
+      technology: 'Java',
+      vendorOfficial: true,
+      href: 'https://github.com/Kameleoon/openfeature-java',
+      category: ['Server'],
+    },
   ],
 };

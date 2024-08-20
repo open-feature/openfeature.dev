@@ -10,8 +10,9 @@ import { PHP } from './php';
 import { Swift } from './swift';
 import { React } from './react';
 import { Nestjs } from './nestjs';
+import { Ruby } from './ruby';
 
-export const SDKS = [Java, Nodejs, Nestjs, Dotnet, Go, Python, PHP, Web, React, Kotlin, Swift];
+export const SDKS = [Java, Nodejs, Nestjs, Dotnet, Go, Python, PHP, Web, React, Kotlin, Swift, Ruby];
 
 export type SDK = {
   /**

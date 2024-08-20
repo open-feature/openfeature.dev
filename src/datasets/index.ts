@@ -20,6 +20,8 @@ export const TECHNOLOGY_COLOR_MAP: Record<Technology, string> = {
   Kotlin: 'bg-purple-50 text-purple-600 ring-purple-500/10',
   Python: 'bg-blue-50 text-blue-600 ring-blue-500/10',
   Swift: 'bg-orange-50 text-orange-600 ring-orange-500/10',
+  Rust: 'bg-pink-50 text-pink-600 ring-pink-500/10',
+  Ruby: 'bg-red-50 text-red-600 ring-red-500/10',
 };
 
 export const TYPE_COLOR_MAP: Record<Type, string> = {
