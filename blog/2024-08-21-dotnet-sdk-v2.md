@@ -35,7 +35,7 @@ This allows for the cancellation of async tasks, and is consistent with .NET nor
 
 ### ValueTasks for Hooks
 
-The return types for stages within [hooks](docs/reference/concepts/hooks) have been updated to take advantage of the performance benefit provided by [ValueTasks](https://devblogs.microsoft.com/dotnet/understanding-the-whys-whats-and-whens-of-valuetask/).
+The return types for stages within [hooks](/docs/reference/concepts/hooks) have been updated to take advantage of the performance benefit provided by [ValueTasks](https://devblogs.microsoft.com/dotnet/understanding-the-whys-whats-and-whens-of-valuetask/).
 The vast majority of hook stages run synchronously, and they are awaited internally by the SDK; so we can avoid the additional allocations associated with `Tasks` by using `ValueTasks`:
 
 ```diff
