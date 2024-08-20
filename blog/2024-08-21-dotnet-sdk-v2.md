@@ -184,3 +184,9 @@ public class MyBeforeHook : Hook
 
 <!-- TODO: UPDATE THIS LINK WHEN WE HAVE A 2.0! -->
 See [here](https://github.com/open-feature/dotnet-sdk/blob/main/CHANGELOG.md#200-2024-03-12) for the full changelog.
+
+## Thanks!
+
+Thanks to all our users, and a special thanks to everyone who contributed to the .NET SDK:
+
+<img src={require('@site/static/img/blog/2024-08-21-dotnet-sdk-v2/contributors.png').default} />
