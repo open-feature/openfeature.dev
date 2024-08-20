@@ -20,17 +20,21 @@ It also includes some performance optimizations brought to you by the latest .NE
 
 Methods on some key interfaces (such as provider resolvers) have been updated to indicate that they work asynchronously, by appending the `Async` suffix in accordance with .NET conventions:
 
-```diff
-+ await Api.Instance.SetProviderAsync(myProviderInstance);
-- await Api.Instance.SetProvider(myProviderInstance);
+```csharp
+// diff-remove
+    await Api.Instance.SetProvider(myProviderInstance);
+// diff-add
+    await Api.Instance.SetProviderAsync(myProviderInstance);
 ```
 
 Additionally, optional cancellation tokens can now be passed to applicable asynchronous methods.
 This allows for the cancellation of async tasks, and is consistent with .NET norms:
 
-```diff
-+ await client.GetBooleanValueAsync("my-flag", false, cancellationToken);
-- await client.GetBooleanValue("my-flag", false);
+```csharp
+// diff-remove
+    await client.GetBooleanValue("my-flag", false);
+// diff-add
+    await client.GetBooleanValueAsync("my-flag", false, cancellationToken);
 ```
 
 ### ValueTasks for Hooks
@@ -38,19 +42,23 @@ This allows for the cancellation of async tasks, and is consistent with .NET nor
 The return types for stages within [hooks](/docs/reference/concepts/hooks) have been updated to take advantage of the performance benefit provided by [ValueTasks](https://devblogs.microsoft.com/dotnet/understanding-the-whys-whats-and-whens-of-valuetask/).
 The vast majority of hook stages run synchronously, and they are awaited internally by the SDK; so we can avoid the additional allocations associated with `Tasks` by using `ValueTasks`:
 
-```diff
+```csharp
 public class MyBeforeHook : Hook
 {
--  public Task<EvaluationContext> Before<T>(HookContext<T> context,
--      IReadOnlyDictionary<string, object> hints = null)
--  {
--    // code to run before flag evaluation
--  }
-+  public ValueTask<EvaluationContext> BeforeAsync<T>(HookContext<T> context,
-+      IReadOnlyDictionary<string, object> hints = null)
-+  {
-+    // code to run before flag evaluation
-+  }
+// diff-remove-block-start
+    public Task<EvaluationContext> Before<T>(HookContext<T> context,
+        IReadOnlyDictionary<string, object> hints = null)
+    {
+      // code to run before flag evaluation
+    }
+// diff-remove-block-end
+// diff-add-block-start
+    public ValueTask<EvaluationContext> BeforeAsync<T>(HookContext<T> context,
+        IReadOnlyDictionary<string, object> hints = null)
+    {
+      // code to run before flag evaluation
+    }
+// diff-add-block-end
 }
 ```
 
@@ -65,16 +73,20 @@ Generally, application authors won't have to make many changes.
 As mentioned above, some async methods have been changed to confirm to .NET conventions.
 Evaluation methods now have the "Async" suffix, and accept an optional cancellationToken:
 
-```diff
-+ await client.GetBooleanValueAsync("my-flag", false, cancellationToken);
-- await client.GetBooleanValue("my-flag", false);
+```csharp
+// diff-remove
+    await client.GetBooleanValue("my-flag", false);
+// diff-add
+    await client.GetBooleanValueAsync("my-flag", false, cancellationToken);
 ```
 
 The method for setting a provider has been updated similarly:
 
-```diff
-+ await Api.Instance.SetProviderAsync(myProviderInstance);
-- await Api.Instance.SetProvider(myProviderInstance);
+```csharp
+// diff-remove
+    await Api.Instance.SetProvider(myProviderInstance);
+// diff-add
+    await Api.Instance.SetProviderAsync(myProviderInstance);
 ```
 
 #### "Client Name" has Changed to "Domain"
@@ -90,22 +102,27 @@ No changes to consuming code are necessary these cases.
 Provider authors must change their implementations in accordance with new methods names on the provider interface.
 Optionally, you can make use of the new cancellation token:
 
-```diff
-+ public override Task<ResolutionDetails<bool>> ResolveBooleanValue(
-+             string flagKey,
-+             bool defaultValue,
-+             EvaluationContext? context = null)
-+         {
-+             // return boolean flag details
-+         }
-- public override Task<ResolutionDetails<bool>> ResolveBooleanValueAsync(
--             string flagKey,
--             bool defaultValue,
--             EvaluationContext? context = null,
--             CancellationToken cancellationToken = default)
--         {
--             // return boolean flag details
--         }
+```csharp
+// diff-remove-block-start
+
+    public override Task<ResolutionDetails<bool>> ResolveBooleanValue(
+                string flagKey,
+                bool defaultValue,
+                EvaluationContext? context = null)
+            {
+                // return boolean flag details
+            }
+// diff-remove-block-end
+// diff-add-block-start
+    public override Task<ResolutionDetails<bool>> ResolveBooleanValueAsync(
+                string flagKey,
+                bool defaultValue,
+                EvaluationContext? context = null,
+                CancellationToken cancellationToken = default)
+            {
+                // return boolean flag details
+            }
+// diff-add-block-end
 ```
 
 #### No Need for Provider Status
@@ -113,18 +130,22 @@ Optionally, you can make use of the new cancellation token:
 It's no longer necessary to define, update or expose provider status.
 If your provider requires initialization, simply define the optional `InitializeAsync` method:
 
-```diff
+```csharp
 public class MyProvider : FeatureProvider
 {
--   private ProviderStatus _status = ProviderStatus.NotReady;        
--
--   public override ProviderStatus GetStatus()
--   {
--       return _status;
--   }
+// diff-remove-block-start
 
--   public override Task Initialize(EvaluationContext context)
-+   public override Task InitializeAsync(EvaluationContext context)
+    private ProviderStatus _status = ProviderStatus.NotReady;        
+   
+    public override ProviderStatus GetStatus()
+    {
+        return _status;
+    }
+
+    public override Task Initialize(EvaluationContext context)
+// diff-remove-block-end
+// diff-add
+    public override Task InitializeAsync(EvaluationContext context)
     {
         // some async initialization
     }
@@ -139,20 +160,24 @@ For more details about this change, see our [previous blog post](https://openfea
 
 Hooks must now return `ValueTask` instead of `Task`:
 
-```diff
+```csharp
 public class MyBeforeHook : Hook
 {
--  public Task<EvaluationContext> Before<T>(HookContext<T> context,
--      IReadOnlyDictionary<string, object> hints = null)
--  {
--    // code to run before flag evaluation
--  }
-+  public ValueTask<EvaluationContext> BeforeAsync<T>(HookContext<T> context,
-+      IReadOnlyDictionary<string, object> hints = null)
-+  {
-+    // code to run before flag evaluation
-+  }
+// diff-remove-block-start
+    public Task<EvaluationContext> Before<T>(HookContext<T> context,
+        IReadOnlyDictionary<string, object> hints = null)
+    {
+      // code to run before flag evaluation
+    }
+// diff-remove-block-end
+// diff-add-block-start
+    public ValueTask<EvaluationContext> BeforeAsync<T>(HookContext<T> context,
+        IReadOnlyDictionary<string, object> hints = null)
+    {
+      // code to run before flag evaluation
+    }
 }
+// diff-add-block-end
 ```
 
 ## Full Changelog
