@@ -4,7 +4,7 @@ title: "OpenFeature .NET SDK 2.0 Release"
 date: 2024-08-21
 authors: [toddbaert]
 description: "Announcing the 2.0 Release of the OpenFeature SDK for .NET"
-tags: [.NET, dotnet, c#, csharp, async, v2.0, v2]
+tags: [.NET, dotnet, c#, csharp, async, v2.0, v2, sdk]
 draft: false
 ---
 
