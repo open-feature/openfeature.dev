@@ -152,7 +152,7 @@ public class MyProvider : FeatureProvider
 }
 ```
 
-For more details about this change, see our [previous blog post](https://openfeature.dev/blog/reconciling-with-state).
+For more details about this change, see our [previous blog post](/blog/reconciling-with-state).
 
 ### Hook Authors
 
