@@ -23,10 +23,10 @@
     "node": ">18.0.0"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.4.0",
-    "@docusaurus/plugin-client-redirects": "^3.4.0",
-    "@docusaurus/preset-classic": "^3.4.0",
-    "@docusaurus/theme-mermaid": "^3.4.0",
+    "@docusaurus/core": "^3.5.2",
+    "@docusaurus/plugin-client-redirects": "^3.5.2",
+    "@docusaurus/preset-classic": "^3.5.2",
+    "@docusaurus/theme-mermaid": "^3.5.2",
     "@fortawesome/fontawesome-svg-core": "6.6.0",
     "@fortawesome/free-brands-svg-icons": "6.6.0",
     "@fortawesome/free-regular-svg-icons": "6.6.0",
@@ -48,13 +48,13 @@
     "instantsearch-itemsjs-adapter": "^1.1.5",
     "itemsjs": "^2.1.25",
     "mermaid": "10.9.1",
-    "postcss": "^8.4.40",
+    "postcss": "^8.4.41",
     "prism-react-renderer": "2.3.1",
     "prismjs": "1.29.0",
     "react": "18.3.1",
     "react-copy-to-clipboard": "5.1.0",
     "react-dom": "18.3.1",
-    "react-instantsearch": "^7.12.3",
+    "react-instantsearch": "^7.13.0",
     "react-lite-youtube-embed": "^2.4.0",
     "react-transition-group": "^4.4.5",
     "rehype-github-alerts": "^3.0.0",
@@ -63,17 +63,17 @@
     "remarkable-react": "1.4.3",
     "sass": "^1.77.8",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss": "^3.4.7",
+    "tailwindcss": "^3.4.10",
     "tailwindcss-animate": "^1.0.7",
     "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.4.0",
-    "@docusaurus/tsconfig": "^3.4.0",
+    "@docusaurus/module-type-aliases": "3.5.2",
+    "@docusaurus/tsconfig": "^3.5.2",
     "@types/fs-extra": "11.0.4",
-    "@types/react": "^18.3.3",
-    "@typescript-eslint/eslint-plugin": "8.0.0",
-    "@typescript-eslint/parser": "8.0.0",
+    "@types/react": "^18.3.4",
+    "@typescript-eslint/eslint-plugin": "8.2.0",
+    "@typescript-eslint/parser": "8.2.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-mdx": "3.1.5",
@@ -86,7 +86,7 @@
     "markdownlint-rule-max-one-sentence-per-line": "^0.0.2",
     "prettier": "3.3.3",
     "typescript": "5.5.4",
-    "wireit": "^0.14.5"
+    "wireit": "^0.14.7"
   },
   "browserslist": {
     "production": [
