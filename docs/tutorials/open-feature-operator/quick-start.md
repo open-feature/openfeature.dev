@@ -46,7 +46,7 @@ We recommend using `kind` for this demo, but if you already have a K8s cluster, 
 Download the cluster definition file, `kind-cluster-quick-start.yaml`:
 
 ```shell
-curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/kind-cluster-quick-start.yaml > kind-cluster-quick-start.yaml
+curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/kind-cluster-quick-start.yaml > kind-cluster-quick-start.yaml
 ```
 
 Then, create our cluster using the `kind-cluster-quick-start.yaml` file:
