@@ -70,7 +70,7 @@ public class MyBeforeHook : Hook
 
 Generally, application authors won't have to make many changes.
 
-As mentioned above, some async methods have been changed to confirm to .NET conventions.
+As mentioned above, some async methods have been changed to conform to .NET conventions.
 Evaluation methods now have the "Async" suffix, and accept an optional cancellationToken:
 
 ```csharp
