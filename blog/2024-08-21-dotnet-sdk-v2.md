@@ -182,8 +182,7 @@ public class MyBeforeHook : Hook
 
 ## Full Changelog
 
-<!-- TODO: UPDATE THIS LINK WHEN WE HAVE A 2.0! -->
-See [here](https://github.com/open-feature/dotnet-sdk/blob/main/CHANGELOG.md#200-2024-03-12) for the full changelog.
+See [here](https://github.com/open-feature/dotnet-sdk/blob/main/CHANGELOG.md#200-2024-08-21) for the full changelog.
 
 ## Thanks!
 
