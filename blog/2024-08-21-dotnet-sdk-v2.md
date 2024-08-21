@@ -9,7 +9,7 @@ draft: false
 ---
 
 Today we're announcing the release of our first 2.0 SDK; the OpenFeature SDK for .NET, v2.0!
-This release contains a number of ergonomic improvements to the SDK which .NET developers will appreciate.
+This release contains several ergonomic improvements to the SDK, which .NET developers will appreciate.
 It also includes some performance optimizations brought to you by the latest .NET primitives.
 
 <!--truncate-->
