@@ -32,9 +32,9 @@ This allows for the cancellation of async tasks, and is consistent with .NET nor
 
 ```csharp
 // diff-remove
-    await client.GetBooleanValue("my-flag", false);
+    await client.GetBooleanValue("my-flag", false, context, options);
 // diff-add
-    await client.GetBooleanValueAsync("my-flag", false, cancellationToken);
+    await client.GetBooleanValueAsync("my-flag", false, context, options, cancellationToken);
 ```
 
 ### ValueTasks for Hooks
@@ -54,7 +54,7 @@ public class MyBeforeHook : Hook
 // diff-remove-block-end
 // diff-add-block-start
     public ValueTask<EvaluationContext> BeforeAsync<T>(HookContext<T> context,
-        IReadOnlyDictionary<string, object> hints = null)
+        IReadOnlyDictionary<string, object> hints = null, CancellationToken cancellationToken = default)
     {
       // code to run before flag evaluation
     }
@@ -75,9 +75,9 @@ Evaluation methods now have the "Async" suffix, and accept an optional cancellat
 
 ```csharp
 // diff-remove
-    await client.GetBooleanValue("my-flag", false);
+    await client.GetBooleanValue("my-flag", false, context, options);
 // diff-add
-    await client.GetBooleanValueAsync("my-flag", false, cancellationToken);
+    await client.GetBooleanValueAsync("my-flag", false, context, options, cancellationToken);
 ```
 
 The method for setting a provider has been updated similarly:
@@ -145,7 +145,7 @@ public class MyProvider : FeatureProvider
     public override Task Initialize(EvaluationContext context)
 // diff-remove-block-end
 // diff-add
-    public override Task InitializeAsync(EvaluationContext context)
+    public override Task InitializeAsync(EvaluationContext context, CancellationToken cancellationToken = default)
     {
         // some async initialization
     }
@@ -172,7 +172,7 @@ public class MyBeforeHook : Hook
 // diff-remove-block-end
 // diff-add-block-start
     public ValueTask<EvaluationContext> BeforeAsync<T>(HookContext<T> context,
-        IReadOnlyDictionary<string, object> hints = null)
+        IReadOnlyDictionary<string, object> hints = null, CancellationToken cancellationToken = default)
     {
       // code to run before flag evaluation
     }
