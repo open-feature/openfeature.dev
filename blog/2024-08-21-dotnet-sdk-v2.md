@@ -8,7 +8,7 @@ tags: [.NET, dotnet, c#, csharp, async, v2.0, v2, sdk]
 draft: false
 ---
 
-Today we're announcing the release of our first 2.0 SDK; the OpenFeature SDK for .NET, v2.0!
+Today we're announcing the release of the OpenFeature SDK for .NET, v2.0!
 This release contains several ergonomic improvements to the SDK, which .NET developers will appreciate.
 It also includes some performance optimizations brought to you by the latest .NET primitives.
 
