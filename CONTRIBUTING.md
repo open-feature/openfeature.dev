@@ -18,7 +18,7 @@
 
 ## Running locally
 
-### Installation Prerequisites
+### Installation Prerequisites (Without Devbox)
 
 You will need [Node.js](https://nodejs.org/en/download) >= 18 and `yarn` installed.
 Instructions for using yarn on all versions of node can be found [here](https://yarnpkg.com/getting-started/install).
@@ -36,6 +36,18 @@ yarn start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Local Development with Devbox
+
+To develop locally with (Devbox)[https://www.jetify.com/devbox], Follow the steps below:
+
+1.Make sure you have [Devbox](https://www.jetify.com/devbox/docs/installing_devbox/) installed.
+
+2.Install the development dependencies by running `devbox install`.
+
+3.Enter the development environment by running `devbox shell`. This will start a new shell with the project dependencies installed.
+
+4.Continue with the steps above to run the project locally using `yarn start`.
 
 ### Build
 
