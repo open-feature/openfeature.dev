@@ -65,7 +65,7 @@ const GenericCarousel = ({
                 return (
                   <Link
                     title={sdk.name}
-                    to={sdk.link}
+                    to={sdk.href}
                     aria-label={sdk.name}
                     className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] cursor-pointer "
                   >
