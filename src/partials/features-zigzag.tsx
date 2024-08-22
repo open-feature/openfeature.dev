@@ -67,7 +67,7 @@ const GenericCarousel = ({
                     title={sdk.name}
                     to={sdk.link}
                     aria-label={sdk.name}
-                    className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] "
+                    className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] cursor-pointer "
                   >
                     <Icon className="h-full w-full hover:fill-primary" />
                   </Link>
