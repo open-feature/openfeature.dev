@@ -89,8 +89,9 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
     ],
   },
   announcementBar: {
+    id: 'dotnetV2',
     content:
-      'We\'ve just released the first official version of the OpenFeature React SDK! Learn more <a href="/blog/openfeature-react-sdk-release">here</a>!',
+      'We\'ve just released the OpenFeature SDK for .NET v2.0! Learn more <a href="/blog/dotnet-sdk-v2">here</a>!',
   },
   footer: {
     style: 'dark',
