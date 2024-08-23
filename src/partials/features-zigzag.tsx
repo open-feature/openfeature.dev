@@ -14,10 +14,77 @@ import CodeSnippet from '@site/static/img/code-snippet.png';
 import { PROVIDERS } from '@site/src/datasets/providers';
 import { ECOSYSTEM_SDKS } from '@site/src/datasets/sdks/ecosystem';
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  CarouselDots,
+} from '../components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
+
+const groupItems = (items, groupSize) => {
+  return items.reduce((acc, item, index) => {
+    const groupIndex = Math.floor(index / groupSize);
+    if (!acc[groupIndex]) {
+      acc[groupIndex] = [];
+    }
+    acc[groupIndex].push(item);
+    return acc;
+  }, []);
+};
+
+const GenericCarousel = ({
+  items,
+}: {
+  items: Array<{
+    name: string;
+    logo: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+    href: string;
+  }>;
+}) => {
+  const groupedSDKs = groupItems(items, 6);
+
+  return (
+    <Carousel
+      className="w-full max-w-xs"
+      plugins={[
+        Autoplay({
+          delay: 5000,
+          stopOnMouseEnter: true,
+        }),
+      ]}
+    >
+      <CarouselContent>
+        {groupedSDKs.map((sdks, index) => {
+          return (
+            <CarouselItem key={index} className="grid grid-cols-3 gap-4">
+              {sdks.map((sdk) => {
+                const Icon = sdk.logo;
+                return (
+                  <Link
+                    title={sdk.name}
+                    to={sdk.href}
+                    aria-label={sdk.name}
+                    className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] cursor-pointer "
+                  >
+                    <Icon className="h-full w-full hover:fill-primary" />
+                  </Link>
+                );
+              })}
+            </CarouselItem>
+          );
+        })}
+      </CarouselContent>
+      <CarouselDots />
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+  );
+};
+
 function FeaturesZigZag() {
-  function getVendorLink(vendor: string) {
-    return encodeURI(`/ecosystem?instant_search[refinementList][vendor][0]=${vendor}`);
-  }
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -84,20 +151,14 @@ function FeaturesZigZag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0"
                 data-aos="fade-up"
               >
-                <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap fill-[#1c1e21] dark:fill-[#e3e3e3]">
-                  {PROVIDERS.filter((p) => !p.excludeFromLandingPage).map((vendor) => {
-                    const Icon = vendor.logo;
-                    return (
-                      <Link
-                        title={vendor.name}
-                        to={getVendorLink(vendor.name)}
-                        aria-label={vendor.name}
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] "
-                      >
-                        <Icon className="h-full w-full hover:fill-primary" />
-                      </Link>
-                    );
-                  })}
+                <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row justify-center fill-[#1c1e21] dark:fill-[#e3e3e3]">
+                  <GenericCarousel
+                    items={PROVIDERS.map((provider) => ({
+                      name: provider.name,
+                      logo: provider.logo,
+                      href: encodeURI(`/ecosystem?instant_search[refinementList][vendor][0]=${provider.name}`),
+                    }))}
+                  />
                 </div>
               </div>
               {/* Content */}
@@ -135,20 +196,14 @@ function FeaturesZigZag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1"
                 data-aos="fade-up"
               >
-                <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row flex-wrap">
-                  {ECOSYSTEM_SDKS.map((sdk) => {
-                    const Icon = sdk.logo;
-                    return (
-                      <Link
-                        title={sdk.title}
-                        to={sdk.href}
-                        aria-label={sdk.title}
-                        className="flex-auto h-20 w-20 m-4 fill-[#1c1e21] dark:fill-[#e3e3e3] "
-                      >
-                        <Icon className="h-full w-full hover:fill-primary" />
-                      </Link>
-                    );
-                  })}
+                <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row justify-center">
+                  <GenericCarousel
+                    items={ECOSYSTEM_SDKS.map((sdk) => ({
+                      name: sdk.title,
+                      logo: sdk.logo,
+                      href: sdk.href,
+                    }))}
+                  />
                 </div>
               </div>
               {/* Content */}

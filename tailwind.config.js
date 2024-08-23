@@ -86,5 +86,5 @@ module.exports = {
     preflight: false,
   },
   darkMode: ['class', '[data-theme="dark"]'],
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/forms'), require('tailwindcss-animate')],
 };
