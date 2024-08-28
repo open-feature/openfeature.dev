@@ -1,11 +1,13 @@
 # OpenFeature Contributing <!-- omit in toc -->
 
 - [Running locally](#running-locally)
-  - [Installation Prerequisites](#installation-prerequisites)
-  - [Installation](#installation)
+  - [Installation Prerequisites (Without Devbox)](#installation-prerequisites-without-devbox)
+  - [Install dependencies](#install-dependencies)
   - [Local Development](#local-development)
+  - [Local Development with Devbox](#local-development-with-devbox)
   - [Build](#build)
-  - [Update content](#update-content)
+  - [Manage content](#manage-content)
+    - [Ecosystem](#ecosystem)
     - [SDK Docs](#sdk-docs)
   - [Deployment](#deployment)
 - [Pull Request](#pull-request)
@@ -35,19 +37,17 @@ yarn && yarn submodules
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This command starts a local development server and opens up a browser window.
+Most changes are reflected live without having to restart the server.
 
 ### Local Development with Devbox
 
-To develop locally with (Devbox)[https://www.jetify.com/devbox], Follow the steps below:
+To develop locally with [Devbox](https://www.jetify.com/devbox), Follow the steps below:
 
 1.Make sure you have [Devbox](https://www.jetify.com/devbox/docs/installing_devbox/) installed.
-
-2.Install the development dependencies by running `devbox install`.
-
-3.Enter the development environment by running `devbox shell`. This will start a new shell with the project dependencies installed.
-
-4.Continue with the steps above to run the project locally using `yarn start`.
+1.Install the development dependencies by running `devbox install`.
+1.Enter the development environment by running `devbox shell`. This will start a new shell with the project dependencies installed.
+1.Continue with the steps above to run the project locally using `yarn start`.
 
 ### Build
 
@@ -57,20 +57,36 @@ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-### Update content
+### Ecosystem
 
-#### SDK Docs
+The ecosystem content is loaded from `/src/datasets/index.ts`.
 
-The SDK docs can be updated by running `yarn update:sdk-docs`.
-This will fetch the READMEs from all the configured SDK repos and automatically run transformations on the content.
+#### Hooks
+
+A new hook can be added by:
+
+1. Add a new hook in `/src/datasets/hooks`
+1. Add the newly created hook to the `ECOSYSTEM_HOOKS` array in `/src/datasets/hooks/index.ts`
+
+#### Providers
+
+A new provider can be added by:
+
+1. Add a new hook in `/src/datasets/providers`
+1. Add the newly created hook to the `PROVIDERS` array in `/src/datasets/providers/index.ts`
+
+#### SDKs
 
 A new SDK can be added by:
 
 1. Add an SVG that represents the technology used by the SDK in the `/static/img` directory. [Font Awesome](https://fontawesome.com/) is a good resource finding SVGs.
 1. Add the SVG to the logo map found `/src/datasets/sdks/ecosystem.ts`. The key can be anything you want as long as it matches what you define in the next step.
-2. Add a new SDK in `/src/datasets/sdks`
+1. Add a new SDK in `/src/datasets/sdks`
 1. Add the newly created SDK to the `SDKS` array in `/src/datasets/sdks/index.ts`
 1. Run `yarn update:sdk-docs`
+
+The SDK docs can be updated by running `yarn update:sdk-docs`.
+This will fetch the READMEs from all the configured SDK repos and automatically run transformations on the content.
 
 ### Deployment
 
