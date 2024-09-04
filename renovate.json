@@ -1,21 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    ":automergeTypes",
-    "npm:unpublishSafe"
-  ],
-  "semanticCommits": "enabled",
-  "labels": [
-    "renovate"
-  ],
-  "git-submodules": {
-    "enabled": true
-  },
+  "extends": ["github>open-feature/community-tooling"],
   "regexManagers": [
     {
       "fileMatch": ["^docs/tutorials/ofo.md$"],
-      "matchStrings": ["open-feature\\/open-feature-operator\\/releases\\/download\\/(?<currentValue>.*?)\\/release\\.yaml"],
+      "matchStrings": [
+        "open-feature\\/open-feature-operator\\/releases\\/download\\/(?<currentValue>.*?)\\/release\\.yaml"
+      ],
       "depNameTemplate": "open-feature/open-feature-operator",
       "datasourceTemplate": "github-releases"
     },
