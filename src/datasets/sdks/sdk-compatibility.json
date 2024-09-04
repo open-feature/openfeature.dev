@@ -4,8 +4,8 @@
     "path": "/docs/reference/technologies/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.9.0",
-      "version": "1.9.0",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.9.1",
+      "version": "1.9.1",
       "stable": true
     },
     "spec": {
@@ -56,8 +56,8 @@
     "path": "/docs/reference/technologies/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.15.0",
-      "version": "1.15.0",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.15.1",
+      "version": "1.15.1",
       "stable": true
     },
     "spec": {
@@ -108,8 +108,8 @@
     "path": "/docs/reference/technologies/server/dotnet",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v1.5.0",
-      "version": "1.5.0",
+      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.0.0",
+      "version": "2.0.0",
       "stable": true
     },
     "spec": {
@@ -135,7 +135,7 @@
       },
       "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dotnet#named-clients"
+        "path": "/docs/reference/technologies/server/dotnet#domains"
       },
       "Eventing": {
         "status": "✅",
@@ -316,8 +316,8 @@
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.2.1",
-      "version": "1.2.1",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.2.3",
+      "version": "1.2.3",
       "stable": true
     },
     "spec": {
