@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         submodules: recursive
         fetch-depth: 0
@@ -21,7 +21,7 @@ jobs:
         persist-credentials: false
 
     - name: Set up Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4
       with:
         node-version-file: '.nvmrc'
         cache: 'yarn'
@@ -60,7 +60,7 @@ jobs:
         git commit -m 'chore: update sdk readmes' -s
 
     - name: Push changes
-      uses: ad-m/github-push-action@v0.8.0
+      uses: ad-m/github-push-action@d91a481090679876dfc4178fef17f286781251df # v0.8.0
       with:
         github_token: ${{ secrets.PULL_REQUEST_AUTOMATION }}
         branch: ${{ env.BRANCH_NAME }}
