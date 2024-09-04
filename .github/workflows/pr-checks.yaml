@@ -5,6 +5,7 @@ on:
     types: [opened, synchronize, reopened]
     branches:
       - main
+  merge_group:
 
 jobs:
   build-lint:
