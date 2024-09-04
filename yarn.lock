@@ -9166,9 +9166,9 @@ micromatch@4.0.5, micromatch@^4.0.2, micromatch@^4.0.5:
     picomatch "^2.3.1"
 
 micromatch@^4.0.4:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.7.tgz#33e8190d9fe474a9895525f5618eee136d46c2e5"
-  integrity sha512-LPP/3KorzCwBxfeUuZmaR6bG2kdeHSbe0P2tY3FLRU4vYrjYz5hI4QZwV0njUx3jeuKe67YukQ1LSPZBKDqO/Q==
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.8.tgz#d66fa18f3a47076789320b9b1af32bd86d9fa202"
+  integrity sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==
   dependencies:
     braces "^3.0.3"
     picomatch "^2.3.1"
@@ -12590,9 +12590,9 @@ wildcard@^2.0.0:
   integrity sha512-CC1bOL87PIWSBhDcTrdeLo6eGT7mCFtrg0uIJtqJUFyK+eJnzl8A1niH56uu7KMa5XFrtiV+AQuHO3n7DsHnLQ==
 
 wireit@^0.14.8:
-  version "0.14.8"
-  resolved "https://registry.yarnpkg.com/wireit/-/wireit-0.14.8.tgz#5466a7163dddedf55853b1808844ff036d2153ce"
-  integrity sha512-pxRAjRGft/38fOE6CNm6np0spVaXFZIIlF0MF+J6P0zLqWb7CDcNITDxHM7zRe12pIMM0opq4upaOa10IKQ91Q==
+  version "0.14.9"
+  resolved "https://registry.yarnpkg.com/wireit/-/wireit-0.14.9.tgz#72fb1e3a605f246104c0e292f10472ecc106fe1d"
+  integrity sha512-hFc96BgyslfO1WGSzQqOVYd5N3TB+4u9w70L9GHR/T7SYjvFmeznkYMsRIjMLhPcVabCEYPW1vV66wmIVDs+dQ==
   dependencies:
     brace-expansion "^4.0.0"
     chokidar "^3.5.3"
