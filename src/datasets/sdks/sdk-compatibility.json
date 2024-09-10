@@ -4,8 +4,8 @@
     "path": "/docs/reference/technologies/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.9.1",
-      "version": "1.9.1",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.10.0",
+      "version": "1.10.0",
       "stable": true
     },
     "spec": {
@@ -160,8 +160,8 @@
     "path": "/docs/reference/technologies/server/go",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.12.0",
-      "version": "1.12.0",
+      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.13.0",
+      "version": "1.13.0",
       "stable": true
     },
     "spec": {
@@ -198,8 +198,8 @@
         "path": "/docs/reference/technologies/server/go#shutdown"
       },
       "Transaction Context Propagation": {
-        "status": "❓",
-        "path": "/docs/reference/technologies/server/go"
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/go#transaction-context-propagation"
       },
       "Extending": {
         "status": "✅",
