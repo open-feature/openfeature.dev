@@ -9,7 +9,7 @@ export const Bucket: Provider = {
     {
       technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://www.npmjs.com/package/@bucketco/openfeature-node-provider',
+      href: 'https://github.com/bucketco/bucket-javascript-sdk/tree/main/packages/openfeature-node-provider',
       category: ['Server'],
     },
   ],
