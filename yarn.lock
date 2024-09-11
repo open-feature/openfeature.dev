@@ -2464,9 +2464,9 @@
     "@hapi/hoek" "^9.0.0"
 
 "@headlessui/react@^2.1.3":
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-2.1.6.tgz#4161d085cfdbcfb21cdff75d4c048c9e6cc5fe09"
-  integrity sha512-IkaSHxsMdrSdVZn5n3ClfvqQo5umHeqwjeZfbFUTczykeHoMH+3VOP0nn7zVsbebazjPmOsXh3x9gCy6e2PG5Q==
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-2.1.7.tgz#45852e578a36072ae214e10fe0827992e9c49239"
+  integrity sha512-3mZkkpFK2lK0Xvl9LcdgyN+mQQQ/bZU7lLhy63isqZ+OaYug7DQGTSPQd/TM0nUayvk+8pHSiaYuSRw/mTHUTg==
   dependencies:
     "@floating-ui/react" "^0.26.16"
     "@react-aria/focus" "^3.17.1"
