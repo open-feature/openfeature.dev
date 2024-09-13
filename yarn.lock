@@ -5724,22 +5724,22 @@ embla-carousel-autoplay@^8.2.0:
   integrity sha512-h7DFJLf9uQD+XDxr1NwA3/oFIjsnj/iED2RjET5u6/svMec46IbF1CYPhmB5Q/1Fc0WkcvhPpsEsrtVXQLxNzA==
 
 embla-carousel-react@^8.2.0:
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-8.2.1.tgz#0202bd6b04f749cf9a56ad86f4549f75b7bb43bb"
-  integrity sha512-YKtARk101mp00Zb6UAFkkvK+5XRo92LAtO9xLFeDnQ/XU9DqFhKnRy1CedRRj0/RSk6MTFDx3MqOQue3gJj9DA==
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-8.3.0.tgz#8aa6b9b77c3e900349a7215cb31b7ead6a84a715"
+  integrity sha512-P1FlinFDcIvggcErRjNuVqnUR8anyo8vLMIH8Rthgofw7Nj8qTguCa2QjFAbzxAUTQTPNNjNL7yt0BGGinVdFw==
   dependencies:
-    embla-carousel "8.2.1"
-    embla-carousel-reactive-utils "8.2.1"
+    embla-carousel "8.3.0"
+    embla-carousel-reactive-utils "8.3.0"
 
-embla-carousel-reactive-utils@8.2.1:
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/embla-carousel-reactive-utils/-/embla-carousel-reactive-utils-8.2.1.tgz#c62fdb6f77c6dcd68bcdaba62523acacb8e633fc"
-  integrity sha512-LXMVOOyv09ZKRxRQXYMX1FpVGcypsuxdcidNcNlBQUN2mK7hkmjVFQwwhfnnY39KMi88XYnYPBgMxfTe0vxSrA==
+embla-carousel-reactive-utils@8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/embla-carousel-reactive-utils/-/embla-carousel-reactive-utils-8.3.0.tgz#75f177ed2f6bdafbaab8f869f936692d08cd488e"
+  integrity sha512-EYdhhJ302SC4Lmkx8GRsp0sjUhEN4WyFXPOk0kGu9OXZSRMmcBlRgTvHcq8eKJE1bXWBsOi1T83B+BSSVZSmwQ==
 
-embla-carousel@8.2.1:
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-8.2.1.tgz#d156be420f47d9f61f444eb789c9901cce43f7f8"
-  integrity sha512-9mTDtyMZJhFuuW5pixhTT4iLiJB1l3dH3IpXUKCsgLlRlHCiySf/wLKy5xIAzmxIsokcQ50xea8wi7BCt0+Rxg==
+embla-carousel@8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-8.3.0.tgz#dc27c63c405aa98320cb36893e4be2fbdc787ee1"
+  integrity sha512-Ve8dhI4w28qBqR8J+aMtv7rLK89r1ZA5HocwFz6uMB/i5EiC7bGI7y+AM80yAVUJw3qqaZYK7clmZMUR8kM3UA==
 
 emoji-regex@^10.2.1:
   version "10.3.0"
