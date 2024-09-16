@@ -1,5 +1,6 @@
 import type { ComponentType, SVGProps } from 'react';
 
+import { Bucket } from './bucket';
 import { CloudBees } from './cloudbees';
 import { ConfigCat } from './configcat';
 import { DevCycle } from './devcycle';
@@ -23,6 +24,7 @@ import { MultiProvider } from './multi-provider';
 import { Hypertune } from './hypertune';
 
 export const PROVIDERS: Provider[] = [
+  Bucket,
   CloudBees,
   ConfigCat,
   DevCycle,
