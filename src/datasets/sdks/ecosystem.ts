@@ -13,6 +13,7 @@ import PythonSvg from '@site/static/img/python-no-fill.svg';
 import PhpSvg from '@site/static/img/php-no-fill.svg';
 import IosSvg from '@site/static/img/ios-no-fill.svg';
 import RubySvg from '@site/static/img/ruby-no-fill.svg';
+import AngularSvg from '@site/static/img/angular-no-fill.svg';
 
 const LogoMap: Record<string, EcosystemElement['logo']> = {
   'c-sharp-no-fill.svg': CSharpSvg,
@@ -27,6 +28,7 @@ const LogoMap: Record<string, EcosystemElement['logo']> = {
   'php-no-fill.svg': PhpSvg,
   'ios-no-fill.svg': IosSvg,
   'ruby-no-fill.svg': RubySvg,
+  'angular-no-fill.svg': AngularSvg,
 };
 
 export const ECOSYSTEM_SDKS: EcosystemElement[] = SDKS.map((sdk) => {
