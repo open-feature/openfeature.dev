@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    if: github.repository == 'open-feature/openfeature.dev'
     runs-on: ubuntu-latest
     env:
       BRANCH_NAME: update-sdk-readmes

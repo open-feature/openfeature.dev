@@ -23,6 +23,7 @@ export type Technology =
   | 'Swift'
   | 'Rust'
   | 'Ruby';
+
 export type Category = 'Server' | 'Client';
 export type Type = 'Hook' | 'Provider' | 'SDK';
 
