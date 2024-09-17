@@ -12,5 +12,11 @@ export const Bucket: Provider = {
       href: 'https://github.com/bucketco/bucket-javascript-sdk/tree/main/packages/openfeature-node-provider',
       category: ['Server'],
     },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/bucketco/bucket-javascript-sdk/tree/main/packages/openfeature-browser-provider',
+      category: ['Client'],
+    },
   ],
 };
