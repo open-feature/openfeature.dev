@@ -66,7 +66,7 @@ export default function Ecosystem() {
       >
         <Configure hitsPerPage={SEARCH_ITEMS_PER_PAGE}></Configure>
         <ScrollTo>
-          <div className="flex flex-col min-h-screen overflow-hidden m-16">
+          <div className="flex flex-col min-h-screen overflow-hidden">
             <main className="grow">
               <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
                 <PageIllustration />
