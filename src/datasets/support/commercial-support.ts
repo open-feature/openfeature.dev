@@ -37,7 +37,7 @@ export const CommercialSupportList: CommercialSupportType[] = [
     svg: FliptSvg,
   },
   {
-    name: 'launchDarkly',
+    name: 'LaunchDarkly',
     href: 'https://launchdarkly.com/',
     svg: LaunchDarklySvg,
   },
