@@ -89,9 +89,9 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
     ],
   },
   announcementBar: {
-    id: 'dotnetV2',
+    id: 'announcing-angular-sdk',
     content:
-      'We\'ve just released the OpenFeature SDK for .NET v2.0! Learn more <a href="/blog/dotnet-sdk-v2">here</a>!',
+      'Psst! We\'ve released a brand new SDK for Angular. Read more <a href="/blog/announcing-angular-sdk">here</a>!',
   },
   footer: {
     style: 'dark',
