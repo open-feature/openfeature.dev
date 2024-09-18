@@ -26,7 +26,7 @@ export default function Support(): JSX.Element {
           </div>
         </div>
         <div className="mb-16">
-          <h3>Commercial Support</h3>
+          <h3>Commercial support</h3>
           <div className="flex flex-wrap gap-8 justify-center md:justify-start">
             {CommercialSupportList.map(({ href, name, svg: Svg }) => (
               <Link
@@ -45,7 +45,7 @@ export default function Support(): JSX.Element {
         <div className="mb-16">
           <h3>Add a resource</h3>
           <p>
-            Anyone who has developed an OpenFeature training program or offers related services can add themselves to
+            If you have developed an OpenFeature training program or offer related services, you can add yourself to
             this page with a pull request.
           </p>
           <div className="flex justify-center mt-16">
