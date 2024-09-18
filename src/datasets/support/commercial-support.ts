@@ -3,6 +3,7 @@ import type { ComponentType, SVGProps } from 'react';
 import DevCycleSvg from '@site/static/img/vendors/devcycle.svg';
 import FliptSvg from '@site/static/img/vendors/flipt.svg';
 import FlagsmithSvg from '@site/static/img/vendors/flagsmith.svg';
+import LaunchDarklySvg from '@site/static/img/vendors/launchdarkly.svg';
 
 type CommercialSupportType = {
   name: string;
@@ -34,5 +35,10 @@ export const CommercialSupportList: CommercialSupportType[] = [
     name: 'Flipt',
     href: 'https://www.flipt.io/',
     svg: FliptSvg,
+  },
+  {
+    name: 'launchDarkly',
+    href: 'https://launchdarkly.com/',
+    svg: LaunchDarklySvg,
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
