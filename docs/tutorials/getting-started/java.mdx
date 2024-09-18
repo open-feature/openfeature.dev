@@ -59,12 +59,12 @@ Given below are dependencies for Maven and Gradle with the latest dependency ver
 <dependency>
     <groupId>dev.openfeature</groupId>
     <artifactId>sdk</artifactId>
-    <version>1.9.0</version>
+    <version>1.10.0</version>
 </dependency>
 <dependency>
     <groupId>dev.openfeature.contrib.providers</groupId>
     <artifactId>flagd</artifactId>
-    <version>0.8.3</version>
+    <version>0.8.9</version>
 </dependency>
 ```
 
@@ -72,8 +72,8 @@ Given below are dependencies for Maven and Gradle with the latest dependency ver
 <TabItem value="gradle" label="Gradle">
 
 ```groovy
-implementation 'dev.openfeature:sdk:1.9.0'
-implementation 'dev.openfeature.contrib.providers:flagd:0.8.3'
+implementation 'dev.openfeature:sdk:1.10.0'
+implementation 'dev.openfeature.contrib.providers:flagd:0.8.9'
 ```
 
 </TabItem>
@@ -99,7 +99,7 @@ import org.springframework.context.annotation.Configuration;
 public class OpenFeatureBeans {
 
     @Bean
-    public OpenFeatureAPI OpenFeatureAPI() {
+    public OpenFeatureAPI openFeatureAPI() {
         final OpenFeatureAPI openFeatureAPI = OpenFeatureAPI.getInstance();
 
         return openFeatureAPI;

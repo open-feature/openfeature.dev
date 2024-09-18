@@ -7,7 +7,7 @@ export const Web: SDK = {
   id: 'web',
   repo: 'js-sdk',
   branch: 'main',
-  folder: '/packages/client',
+  folder: '/packages/web',
   logoKey: 'web-no-fill.svg',
   technology: 'JavaScript',
   href: '/docs/reference/technologies/client/web',

@@ -19,6 +19,8 @@ OpenFeature, we've been working on [enhancing our specification](https://github.
 Specifically with respect to front end frameworks such as React, we've found that it was critical to refine the semantics of our events API and context-reconciliation concepts.
 This post discusses some of our improvements.
 
+<!--truncate-->
+
 ### Context Reconciliation
 
 As discussed in [previous blog posts](https://openfeature.dev/blog/catering-to-the-client-side), we've seen that client-side feature flag APIs share some commonalities we refer to collectively as the [static-context paradigm](https://openfeature.dev/specification/glossary/#static-context-paradigm); in short, the context used as the basis for flag evaluation is less frequently changed and generally corresponds to a user, or application state that a user occasionally modifies.

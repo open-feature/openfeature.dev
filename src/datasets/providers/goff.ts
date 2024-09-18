@@ -6,6 +6,12 @@ export const Goff: Provider = {
   logo: GoffSvg,
   technologies: [
     {
+      technology: 'Ruby',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/ruby-sdk-contrib/tree/main/providers/openfeature-go-feature-flag-provider',
+      category: ['Server'],
+    },
+    {
       technology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/go-feature-flag',
@@ -52,6 +58,12 @@ export const Goff: Provider = {
       vendorOfficial: true,
       href: 'https://github.com/go-feature-flag/openfeature-swift-provider',
       category: ['Client'],
+    },
+    {
+      technology: 'PHP',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/php-sdk-contrib/tree/main/providers/GoFeatureFlag',
+      category: ['Server'],
     },
   ],
 };

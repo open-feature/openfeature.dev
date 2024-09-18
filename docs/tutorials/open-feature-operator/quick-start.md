@@ -103,7 +103,7 @@ And finally, let's install the operator itself:
 Download the file defining our demo deployment, service and custom resource (CRs), `end-to-end.yaml`:
 
 ```shell
-curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/playground/main/config/k8s/end-to-end.yaml > end-to-end.yaml
+curl -sfL https://raw.githubusercontent.com/open-feature/playground/main/config/k8s/end-to-end.yaml > end-to-end.yaml
 ```
 
 ### Deploy our workload

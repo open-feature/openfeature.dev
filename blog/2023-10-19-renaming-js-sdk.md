@@ -13,6 +13,8 @@ draft: false
 It's been said that there's only two hard things in Computer Science: cache invalidation and naming things.
 Here at the OpenFeature project we can attest to both, but today we'd like to talk about naming.
 
+<!--truncate-->
+
 ### What's changed
 
 In order to avoid confusion, we recently renamed our server-side JavaScript SDK.

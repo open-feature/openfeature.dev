@@ -93,8 +93,9 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
     ],
   },
   announcementBar: {
+    id: 'announcing-angular-sdk',
     content:
-      'We\'ve just released the first official version of the OpenFeature React SDK! Learn more <a href="/blog/openfeature-react-sdk-release">here</a>!',
+      'Psst! We\'ve released a brand new SDK for Angular. Read more <a href="/blog/announcing-angular-sdk">here</a>!',
   },
   footer: {
     style: 'dark',
