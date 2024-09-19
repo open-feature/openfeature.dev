@@ -14,7 +14,7 @@ type CommercialSupportType = {
 /**
  * Companies that provide commercial support for OpenFeature should be
  * added to this list alphabetically by company name. The extent of the
- * support provided is the responsibility of each company.
+ * support provided is the responsibility of each company to define.
  *
  * The minimum requirements for adding a company to this list are:
  *  - At least one supported provider listed in the OpenFeature ecosystem
@@ -23,22 +23,22 @@ type CommercialSupportType = {
 export const CommercialSupportList: CommercialSupportType[] = [
   {
     name: 'DevCycle',
-    href: 'https://devcycle.com/',
+    href: 'https://devcycle.com/openfeature',
     svg: DevCycleSvg,
   },
   {
     name: 'Flagsmith',
-    href: 'https://www.flagsmith.com/',
+    href: 'https://www.flagsmith.com/openfeature',
     svg: FlagsmithSvg,
   },
   {
     name: 'Flipt',
-    href: 'https://www.flipt.io/',
+    href: 'https://docs.flipt.io/integration/openfeature',
     svg: FliptSvg,
   },
   {
     name: 'LaunchDarkly',
-    href: 'https://launchdarkly.com/',
+    href: 'https://docs.launchdarkly.com/sdk/openfeature/',
     svg: LaunchDarklySvg,
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
