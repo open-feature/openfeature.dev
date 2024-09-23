@@ -23,7 +23,7 @@ type CommercialSupportType = {
 export const CommercialSupportList: CommercialSupportType[] = [
   {
     name: 'DevCycle',
-    href: 'https://devcycle.com/openfeature',
+    href: 'https://docs.devcycle.com/integrations/openfeature',
     svg: DevCycleSvg,
   },
   {
