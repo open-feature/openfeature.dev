@@ -17,5 +17,23 @@ export const Kameleoon: Provider = {
       href: 'https://github.com/Kameleoon/openfeature-java',
       category: ['Server'],
     },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://github.com/Kameleoon/openfeature-python',
+      category: ['Server'],
+    },
+    {
+      technology: 'Go',
+      vendorOfficial: true,
+      href: 'https://github.com/Kameleoon/openfeature-go',
+      category: ['Server'],
+    },
+    {
+      technology: 'Kotlin',
+      vendorOfficial: true,
+      href: 'https://github.com/Kameleoon/openfeature-android',
+      category: ['Client'],
+    },
   ],
 };
