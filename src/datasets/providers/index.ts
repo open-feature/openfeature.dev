@@ -22,10 +22,12 @@ import { GrowthBook } from './growthbook';
 import { Category, EcosystemElement, Technology } from '../types';
 import { MultiProvider } from './multi-provider';
 import { Hypertune } from './hypertune';
+import { ConfigBee } from './configbee';
 
 export const PROVIDERS: Provider[] = [
   Bucket,
   CloudBees,
+  ConfigBee,
   ConfigCat,
   DevCycle,
   EnvVar,
