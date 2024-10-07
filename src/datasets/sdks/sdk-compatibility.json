@@ -264,8 +264,8 @@
     "path": "/docs/reference/technologies/server/php",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.0.8",
-      "version": "2.0.8",
+      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.0.9",
+      "version": "2.0.9",
       "stable": true
     },
     "spec": {
