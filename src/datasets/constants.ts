@@ -14,8 +14,9 @@ export const serverSideFeatures = [
   // Domain is the updated terminology for "Named clients"
   ['Domains', 'Named clients'],
   'Eventing',
-  'Shutdown',
+  'Tracking',
   'Transaction Context Propagation',
+  'Shutdown',
   'Extending',
 ];
 
@@ -27,6 +28,7 @@ export const clientSideFeatures = [
   // Domain is the updated terminology for "Named clients"
   ['Domains', 'Named clients'],
   'Eventing',
+  'Tracking',
   'Shutdown',
   'Extending',
 ];
