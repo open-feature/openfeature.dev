@@ -4,6 +4,7 @@ import DevCycleSvg from '@site/static/img/vendors/devcycle.svg';
 import FliptSvg from '@site/static/img/vendors/flipt.svg';
 import FlagsmithSvg from '@site/static/img/vendors/flagsmith.svg';
 import LaunchDarklySvg from '@site/static/img/vendors/launchdarkly.svg';
+import TgglSvg from '@site/static/img/vendors/tggl.svg';
 
 type CommercialSupportType = {
   name: string;
@@ -40,5 +41,10 @@ export const CommercialSupportList: CommercialSupportType[] = [
     name: 'LaunchDarkly',
     href: 'https://docs.launchdarkly.com/sdk/openfeature/',
     svg: LaunchDarklySvg,
+  },
+  {
+    name: 'Tggl',
+    href: 'https://tggl.io/developers/sdks/open-feature',
+    svg: TgglSvg,
   },
 ].sort((a, b) => a.name.localeCompare(b.name));

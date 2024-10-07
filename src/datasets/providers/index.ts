@@ -23,6 +23,7 @@ import { Category, EcosystemElement, Technology } from '../types';
 import { MultiProvider } from './multi-provider';
 import { Hypertune } from './hypertune';
 import { ConfigBee } from './configbee';
+import { Tggl } from './tggl';
 
 export const PROVIDERS: Provider[] = [
   Bucket,
@@ -47,6 +48,7 @@ export const PROVIDERS: Provider[] = [
   UserDefaults,
   GrowthBook,
   MultiProvider,
+  Tggl,
 ];
 
 export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) => {
