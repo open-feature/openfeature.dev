@@ -16,6 +16,7 @@ export const serverSideFeatures = [
   'Eventing',
   'Shutdown',
   'Transaction Context Propagation',
+  'Tracking',
   'Extending',
 ];
 
@@ -28,5 +29,6 @@ export const clientSideFeatures = [
   ['Domains', 'Named clients'],
   'Eventing',
   'Shutdown',
+  'Tracking',
   'Extending',
 ];
