@@ -35,5 +35,17 @@ export const Kameleoon: Provider = {
       href: 'https://github.com/Kameleoon/openfeature-android',
       category: ['Client'],
     },
+    {
+      technology: 'Ruby',
+      vendorOfficial: true,
+      href: 'https://github.com/Kameleoon/openfeature-ruby',
+      category: ['Server'],
+    },
+    {
+      technology: 'PHP',
+      vendorOfficial: true,
+      href: 'https://github.com/Kameleoon/openfeature-php',
+      category: ['Server'],
+    },
   ],
 };
