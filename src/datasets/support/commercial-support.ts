@@ -5,6 +5,7 @@ import FliptSvg from '@site/static/img/vendors/flipt.svg';
 import FlagsmithSvg from '@site/static/img/vendors/flagsmith.svg';
 import LaunchDarklySvg from '@site/static/img/vendors/launchdarkly.svg';
 import TgglSvg from '@site/static/img/vendors/tggl.svg';
+import GoffSvg from '@site/static/img/vendors/gofeatureflag.svg';
 
 type CommercialSupportType = {
   name: string;
@@ -36,6 +37,11 @@ export const CommercialSupportList: CommercialSupportType[] = [
     name: 'Flipt',
     href: 'https://docs.flipt.io/integration/openfeature',
     svg: FliptSvg,
+  },
+  {
+    name: 'GO Feature Flag',
+    href: 'https://gofeatureflag.org/docs/openfeature_sdk/sdk',
+    svg: GoffSvg,
   },
   {
     name: 'LaunchDarkly',
