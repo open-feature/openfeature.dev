@@ -11,5 +11,11 @@ export const PostHog: Provider = {
       href: 'https://www.npmjs.com/package/@tapico/node-openfeature-posthog',
       category: ['Server'],
     },
+    {
+      technology: 'Go',
+      vendorOfficial: false,
+      href: 'https://github.com/dhaus67/openfeature-posthog-go',
+      category: ['Server'],
+    },
   ],
 };
