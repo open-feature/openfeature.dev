@@ -1397,7 +1397,7 @@
     webpack "^5.95.0"
     webpackbar "^6.0.1"
 
-"@docusaurus/core@3.6.0", "@docusaurus/core@^3.5.2":
+"@docusaurus/core@3.6.0", "@docusaurus/core@^3.6.0":
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/core/-/core-3.6.0.tgz#b23fc7e253a49cc3e5ac9e091354f497cc0b101b"
   integrity sha512-lvRgMoKJJSRDt9+HhAqFcICV4kp/mw1cJJrLxIw4Q2XZnFGM1XUuwcbuaqWmGog+NcOLZaPCcCtZbn60EMCtjQ==
@@ -1507,7 +1507,7 @@
     react-helmet-async "*"
     react-loadable "npm:@docusaurus/react-loadable@6.0.0"
 
-"@docusaurus/plugin-client-redirects@^3.5.2":
+"@docusaurus/plugin-client-redirects@^3.6.0":
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-client-redirects/-/plugin-client-redirects-3.6.0.tgz#54155826e9e5da625e296eb93e346c11c1541a78"
   integrity sha512-LIqRT6dtgxdENQH8XYwOOyxfKuzFD1ayJmIDCp9Yi/rbdcPE4vvTcESLGXOKvcyWZSfyCu+JA8Tyk4qpp+2J0w==
@@ -1641,7 +1641,7 @@
     sitemap "^7.1.1"
     tslib "^2.6.0"
 
-"@docusaurus/preset-classic@^3.5.2":
+"@docusaurus/preset-classic@^3.6.0":
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/preset-classic/-/preset-classic-3.6.0.tgz#71561f366a266be571022764eb8b9e5618f573eb"
   integrity sha512-kpGNdQzr/Dpm7o3b1iaQrz4DMDx3WIeBbl4V4P4maa2zAQkTdlaP4CMgA5oKrRrpqPLnQFsUM/b+qf2glhl2Tw==
@@ -1710,7 +1710,7 @@
     tslib "^2.6.0"
     utility-types "^3.10.0"
 
-"@docusaurus/theme-mermaid@^3.5.2":
+"@docusaurus/theme-mermaid@^3.6.0":
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/theme-mermaid/-/theme-mermaid-3.6.0.tgz#0a79b76950aee8e2856a3e39f1c1050eb237c1c9"
   integrity sha512-5t7zzBnnJa4BBcGo9bEfTM48DxD/+CVbFkfiRnFXheWjMrMm5a+IP10igEQ4zyDC+QgatbzLAxkj4GRYpYTauA==
@@ -1753,7 +1753,7 @@
     fs-extra "^11.1.1"
     tslib "^2.6.0"
 
-"@docusaurus/tsconfig@^3.5.2":
+"@docusaurus/tsconfig@^3.6.0":
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/tsconfig/-/tsconfig-3.6.0.tgz#4be9d0469e5f3683cd6e2d33bc8e963d9878f751"
   integrity sha512-1nHsSMlNgEifnvsL4ql9wx7I1xXhrrNZl65IKD11pdo/749oI9fMcvm47dDwgS57x1WEteIAxJjzidffa5J9TQ==
