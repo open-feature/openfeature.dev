@@ -47,5 +47,11 @@ export const Kameleoon: Provider = {
       href: 'https://github.com/Kameleoon/openfeature-php',
       category: ['Server'],
     },
+    {
+      technology: 'Swift',
+      vendorOfficial: true,
+      href: 'https://github.com/Kameleoon/openfeature-swift',
+      category: ['Client'],
+    },
   ],
 };
