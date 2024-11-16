@@ -210,7 +210,7 @@ However in the earlier client-side example we are in the static context paradigm
 
 ### Non-authoritative results
 
-This synchronous API also lines up better with the the way rendering works in client-side web frameworks like React and Vue - via a synchronous call. However, with a synchronous API we have a potential for a race condition. What happens if our rendering logic asks for a flagging decision before a pre-evaluation operation has completed? We can't block, and so will have to return some sort of non-authoritative decision - a default value, or a previously evaluated value, or perhaps a null value.
+This synchronous API also lines up better with the way rendering works in client-side web frameworks like React and Vue - via a synchronous call. However, with a synchronous API we have a potential for a race condition. What happens if our rendering logic asks for a flagging decision before a pre-evaluation operation has completed? We can't block, and so will have to return some sort of non-authoritative decision - a default value, or a previously evaluated value, or perhaps a null value.
 
 ```javascript
 client.setContext(updatedEvalContext);
@@ -251,7 +251,7 @@ With these additions in place, OpenFeature should have everything needed to brin
 
 ## Revisions
 
-Initally published **Feburary 13 2023**.
+Initially published **February 13 2023**.
 
-- Updated **Feburary 18 2023** to include discussion of local vs remote flag evaluation models.
+- Updated **February 18 2023** to include discussion of local vs remote flag evaluation models.
 - Updated **May 3 2024** to update the NPM package names.
