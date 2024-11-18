@@ -92,11 +92,6 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
       },
     ],
   },
-  announcementBar: {
-    id: 'announcing-angular-sdk',
-    content:
-      'Psst! We\'re excited to kick off the very first OpenFeature Summit. Read more <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/co-located-events/openfeature-summit/">here</a>!',
-  },
   footer: {
     style: 'dark',
     links: [
