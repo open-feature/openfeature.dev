@@ -68,7 +68,7 @@
     "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.6.1",
+    "@docusaurus/module-type-aliases": "3.6.2",
     "@docusaurus/tsconfig": "^3.6.1",
     "@types/fs-extra": "11.0.4",
     "@types/react": "^18.3.5",
