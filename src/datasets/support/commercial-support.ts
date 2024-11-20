@@ -6,6 +6,7 @@ import FlagsmithSvg from '@site/static/img/vendors/flagsmith.svg';
 import LaunchDarklySvg from '@site/static/img/vendors/launchdarkly.svg';
 import TgglSvg from '@site/static/img/vendors/tggl.svg';
 import GoffSvg from '@site/static/img/vendors/gofeatureflag.svg';
+import ConfigCatSvg from '@site/static/img/vendors/configcat.svg';
 
 type CommercialSupportType = {
   name: string;
@@ -23,6 +24,11 @@ type CommercialSupportType = {
  *  - Publicly available mention of OpenFeature support on the company's website or documentation
  */
 export const CommercialSupportList: CommercialSupportType[] = [
+  {
+    name: 'ConfigCat',
+    href: 'https://configcat.com/docs/sdk-reference/openfeature/overview',
+    svg: ConfigCatSvg,
+  },
   {
     name: 'DevCycle',
     href: 'https://docs.devcycle.com/integrations/openfeature',
