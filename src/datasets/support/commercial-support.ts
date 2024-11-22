@@ -1,5 +1,6 @@
 import type { ComponentType, SVGProps } from 'react';
 
+import KameleoonSvg from '@site/static/img/vendors/kameleoon.svg';
 import DevCycleSvg from '@site/static/img/vendors/devcycle.svg';
 import FliptSvg from '@site/static/img/vendors/flipt.svg';
 import FlagsmithSvg from '@site/static/img/vendors/flagsmith.svg';
@@ -48,6 +49,11 @@ export const CommercialSupportList: CommercialSupportType[] = [
     name: 'GO Feature Flag',
     href: 'https://gofeatureflag.org/docs/openfeature_sdk/sdk',
     svg: GoffSvg,
+  },
+  {
+    name: 'Kameleoon',
+    href: 'https://developers.kameleoon.com/feature-management-and-experimentation/open-feature-providers/',
+    svg: KameleoonSvg,
   },
   {
     name: 'LaunchDarkly',
