@@ -1714,7 +1714,7 @@
     webpack "^5.95.0"
     webpackbar "^6.0.1"
 
-"@docusaurus/core@3.6.2", "@docusaurus/core@^3.6.1":
+"@docusaurus/core@3.6.2", "@docusaurus/core@^3.6.2":
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/@docusaurus/core/-/core-3.6.2.tgz#78628790f255555bb4c81e5952d16ea1412c4548"
   integrity sha512-irMts/mGLZv8dWcy0WUtbY/U6b5qIfHgQd1/kXMyAxUJo99fL0wFSqhMI+tcxjk0HYy427MXerLMqFJj+Arg1w==
@@ -1824,7 +1824,7 @@
     react-helmet-async "*"
     react-loadable "npm:@docusaurus/react-loadable@6.0.0"
 
-"@docusaurus/plugin-client-redirects@^3.6.1":
+"@docusaurus/plugin-client-redirects@^3.6.2":
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-client-redirects/-/plugin-client-redirects-3.6.2.tgz#a31efd2ade317d354a2634ca9590223a5e77c540"
   integrity sha512-rzRq20NKQZr5kgeMGt2DA993UfhXWEAiZk9j+ttikFnFpgc/EOrpDoWDukd8Xfw4ObQ2h8TexWgABStKNKCocg==
@@ -1958,7 +1958,7 @@
     sitemap "^7.1.1"
     tslib "^2.6.0"
 
-"@docusaurus/preset-classic@^3.6.1":
+"@docusaurus/preset-classic@^3.6.2":
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/@docusaurus/preset-classic/-/preset-classic-3.6.2.tgz#5ec801fa317123ba8458af3105eca8eac78a49bc"
   integrity sha512-r2n5eHdhiNSrJGsrrYcw+WsyStmXxe0ZG3RdA9LVyK5+jBHM8blrUWJEDugnzCNbyhUzhdtcmgCC9fhdAvKuQw==
@@ -2027,7 +2027,7 @@
     tslib "^2.6.0"
     utility-types "^3.10.0"
 
-"@docusaurus/theme-mermaid@^3.6.1":
+"@docusaurus/theme-mermaid@^3.6.2":
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/@docusaurus/theme-mermaid/-/theme-mermaid-3.6.2.tgz#f7ad64ae5b9510ddbf77bc4264ada059c8e815b1"
   integrity sha512-Ui+rBtqMPKj3RCOxNlY04i1tEjNg+fZg4URTvkHmYR07hcKaJw+vkw+wlaYjd0HFZk+3Er9vUAcwsCWuea4cVQ==
@@ -2070,7 +2070,7 @@
     fs-extra "^11.1.1"
     tslib "^2.6.0"
 
-"@docusaurus/tsconfig@^3.6.1":
+"@docusaurus/tsconfig@^3.6.2":
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/@docusaurus/tsconfig/-/tsconfig-3.6.2.tgz#a6d3fec19ae45a67da678b54c019b0e3839b6711"
   integrity sha512-TWLkyYHBYhIJNcXCEc3D1M9R8UFV4IZ82rGef5U9mE1ZrcgDUlZxYaYdoSuHrPrzPRIl3orjmpscO2FAk2gdZw==
