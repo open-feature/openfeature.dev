@@ -25,7 +25,7 @@ type CommercialSupportType = {
 export const CommercialSupportList: CommercialSupportType[] = [
   {
     name: 'Kameleoon',
-    href: 'https://www.kameleoon.com/',
+    href: 'https://developers.kameleoon.com/feature-management-and-experimentation/open-feature-providers/',
     svg: KameleoonSvg,
   },
   {
