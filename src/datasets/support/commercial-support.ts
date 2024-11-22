@@ -6,6 +6,8 @@ import FliptSvg from '@site/static/img/vendors/flipt.svg';
 import FlagsmithSvg from '@site/static/img/vendors/flagsmith.svg';
 import LaunchDarklySvg from '@site/static/img/vendors/launchdarkly.svg';
 import TgglSvg from '@site/static/img/vendors/tggl.svg';
+import GoffSvg from '@site/static/img/vendors/gofeatureflag.svg';
+import ConfigCatSvg from '@site/static/img/vendors/configcat.svg';
 
 type CommercialSupportType = {
   name: string;
@@ -24,9 +26,9 @@ type CommercialSupportType = {
  */
 export const CommercialSupportList: CommercialSupportType[] = [
   {
-    name: 'Kameleoon',
-    href: 'https://developers.kameleoon.com/feature-management-and-experimentation/open-feature-providers/',
-    svg: KameleoonSvg,
+    name: 'ConfigCat',
+    href: 'https://configcat.com/docs/sdk-reference/openfeature/overview',
+    svg: ConfigCatSvg,
   },
   {
     name: 'DevCycle',
@@ -42,6 +44,16 @@ export const CommercialSupportList: CommercialSupportType[] = [
     name: 'Flipt',
     href: 'https://docs.flipt.io/integration/openfeature',
     svg: FliptSvg,
+  },
+  {
+    name: 'GO Feature Flag',
+    href: 'https://gofeatureflag.org/docs/openfeature_sdk/sdk',
+    svg: GoffSvg,
+  },
+  {
+    name: 'Kameleoon',
+    href: 'https://developers.kameleoon.com/feature-management-and-experimentation/open-feature-providers/',
+    svg: KameleoonSvg,
   },
   {
     name: 'LaunchDarkly',

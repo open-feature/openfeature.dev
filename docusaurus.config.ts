@@ -92,11 +92,6 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
       },
     ],
   },
-  announcementBar: {
-    id: 'announcing-angular-sdk',
-    content:
-      'Psst! We\'ve released a brand new SDK for Angular. Read more <a href="/blog/announcing-angular-sdk">here</a>!',
-  },
   footer: {
     style: 'dark',
     links: [
