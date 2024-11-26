@@ -12,6 +12,12 @@ export const FeatBit: Provider = {
       category: ['Server'],
     },
     {
+      technology: '.NET',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-dotnet-server',
+      category: ['Server'],
+    },
+    {
       technology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://github.com/featbit/openfeature-provider-node-server',
