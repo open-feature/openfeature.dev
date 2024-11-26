@@ -1714,7 +1714,7 @@
     webpack "^5.95.0"
     webpackbar "^6.0.1"
 
-"@docusaurus/core@3.6.3", "@docusaurus/core@^3.6.2":
+"@docusaurus/core@3.6.3", "@docusaurus/core@^3.6.3":
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/@docusaurus/core/-/core-3.6.3.tgz#6bf968ee26a36d71387bab293f27ccffc0e428b6"
   integrity sha512-xL7FRY9Jr5DWqB6pEnqgKqcMPJOX5V0pgWXi5lCiih11sUBmcFKM7c3+GyxcVeeWFxyYSDP3grLTWqJoP4P9Vw==
@@ -1824,7 +1824,7 @@
     react-helmet-async "*"
     react-loadable "npm:@docusaurus/react-loadable@6.0.0"
 
-"@docusaurus/plugin-client-redirects@^3.6.2":
+"@docusaurus/plugin-client-redirects@^3.6.3":
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-client-redirects/-/plugin-client-redirects-3.6.3.tgz#a641fc8c6ab3a2afec183d57de7e12d8b5d6ec9f"
   integrity sha512-fQDCxoJCO1jXNQGQmhgYoX3Yx+Z2xSbrLf3PBET6pHnsRk6gGW/VuCHcfQuZlJzbTxN0giQ5u3XcQQ/LzXftJA==
@@ -1958,7 +1958,7 @@
     sitemap "^7.1.1"
     tslib "^2.6.0"
 
-"@docusaurus/preset-classic@^3.6.2":
+"@docusaurus/preset-classic@^3.6.3":
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/@docusaurus/preset-classic/-/preset-classic-3.6.3.tgz#072298b5b6d0de7d0346b1e9b550a30ef2add56d"
   integrity sha512-VHSYWROT3flvNNI1SrnMOtW1EsjeHNK9dhU6s9eY5hryZe79lUqnZJyze/ymDe2LXAqzyj6y5oYvyBoZZk6ErA==
@@ -2027,7 +2027,7 @@
     tslib "^2.6.0"
     utility-types "^3.10.0"
 
-"@docusaurus/theme-mermaid@^3.6.2":
+"@docusaurus/theme-mermaid@^3.6.3":
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/@docusaurus/theme-mermaid/-/theme-mermaid-3.6.3.tgz#4bb0b4940b39cc855626a23190aa45928aa168b4"
   integrity sha512-kIqpjNCP/9R2GGf8UmiDxD3CkOAEJuJIEFlaKMgQtjVxa/vH+9PLI1+DFbArGoG4+0ENTYUq8phHPW7SeL36uQ==
@@ -2070,7 +2070,7 @@
     fs-extra "^11.1.1"
     tslib "^2.6.0"
 
-"@docusaurus/tsconfig@^3.6.2":
+"@docusaurus/tsconfig@^3.6.3":
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/@docusaurus/tsconfig/-/tsconfig-3.6.3.tgz#8af20c45f0a67e193debedcb341c0a1e78b1dd63"
   integrity sha512-1pT/rTrRpMV15E4tJH95W5PrjboMn5JkKF+Ys8cTjMegetiXjs0gPFOSDA5hdTlberKQLDO50xPjMJHondLuzA==
