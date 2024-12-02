@@ -1,8 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>open-feature/community-tooling"],
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": ["^docs/tutorials/ofo.md$"],
       "matchStrings": [
         "open-feature\\/open-feature-operator\\/releases\\/download\\/(?<currentValue>.*?)\\/release\\.yaml"
@@ -11,6 +12,7 @@
       "datasourceTemplate": "github-releases"
     },
     {
+      "customType": "regex",
       "fileMatch": ["^docs/tutorials/getting-started/java.mdx$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
@@ -21,6 +23,7 @@
       "datasourceTemplate": "maven"
     },
     {
+      "customType": "regex",
       "fileMatch": ["^docs/tutorials/getting-started/java.mdx$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
