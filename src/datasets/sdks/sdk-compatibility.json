@@ -116,8 +116,8 @@
     "path": "/docs/reference/technologies/server/dotnet",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.0.0",
-      "version": "2.0.0",
+      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.1.0",
+      "version": "2.1.0",
       "stable": true
     },
     "spec": {
@@ -228,8 +228,8 @@
     "path": "/docs/reference/technologies/server/python",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.7.2",
-      "version": "0.7.2",
+      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.7.4",
+      "version": "0.7.4",
       "stable": false
     },
     "spec": {
@@ -266,8 +266,8 @@
         "path": "/docs/reference/technologies/server/python"
       },
       "Transaction Context Propagation": {
-        "status": "❓",
-        "path": "/docs/reference/technologies/server/python"
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/python#transaction-context-propagation"
       },
       "Shutdown": {
         "status": "✅",
