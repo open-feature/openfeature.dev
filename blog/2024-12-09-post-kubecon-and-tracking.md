@@ -34,7 +34,7 @@ The full list of videos and slides from the OpenFeature Summit are available [he
 
 Additionally, don't sleep on Pete Hodgson's [SDLC track presentation](https://kccncna2024.sched.com/event/1i7rl/migratory-patterns-making-architectural-transitions-with-confidence-and-grace-pete-hodgson-partnerslate) on undertaking big, hairy migrations, and how feature flags can help.
 
-## Robust Experimentation Support in OpenFeature with Tracking Events
+## Robust Experimentation Support with Tracking Events
 
 Teams spend a lot of time talking about developing, deploying, monitoring and maintaining features, but how do you know if you've built the right features in the first place?
 Without data to evaluate the success and adoption of features, aren't you just guessing?
