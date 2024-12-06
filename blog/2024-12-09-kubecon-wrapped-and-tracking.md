@@ -24,9 +24,9 @@ Each year we hear from more users who've made use of OpenFeature within their or
 This was also our first time having our own dedicated, colocated event: [The OpenFeature Summit](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/co-located-events/openfeature-summit/)!
 There were some great talks here; a couple of highlights:
 
-- [▶️ Migrating to OpenFeature at Scale: 0 to Billions](https://youtu.be/6ivdFYgznxQ?si=kVg-6mkPX4INwBca), by Chetan Kapoor & Justin Abrahms from eBay
+- [▶️ Migrating to OpenFeature at Scale: 0 to Billions](https://youtu.be/6ivdFYgznxQ?si=kVg-6mkPX4INwBca), by Chetan Kapoor & Justin Abrahms from [eBay](https://innovation.ebayinc.com/tech/engineering/)
   - a great presentation about using OpenFeature at massive scale, and a notable example of how to effectively (and empathetically) promote the internal adoption of a tool at enterprise scale
-- [▶️ Experimentation Programs at Scale: Lessons Learned from Top Companies](https://youtu.be/CwckuHnQkzE?si=8XRPauAKqqDoLA4R), by Graham McNicoll from GrowthBook
+- [▶️ Experimentation Programs at Scale: Lessons Learned from Top Companies](https://youtu.be/CwckuHnQkzE?si=8XRPauAKqqDoLA4R), by Graham McNicoll from [GrowthBook](https://www.growthbook.io/)
   - if this doesn't convince you that you need to be using experimentation to validate your features and roadmap, nothing will!
   - particularly relevant to [some of our newest features](#robust-experimentation-support-with-tracking-events) 👀
 
