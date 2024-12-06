@@ -46,7 +46,7 @@ The new [Tracking API](/specification/sections/tracking) defines interfaces and 
 
 In fact, if your vendor or home-grown feature flag solution doesn't support equivalent functionality, [hooks](/specification/sections/hooks) and tracking compose a flexible solution to associate flag evaluations with usage data, regardless of whatever customer data platform or telemetry backend you use.
 
-These enhancements were brought to you by the hard work from many feature flag vendors, enterprises, and thought leaders... Thanks to all who helped!
+These enhancements were brought to you by the hard work of many feature flag vendors, enterprises, and subject matter experts... Thanks to all who helped!
 
 <img src={require('@site/static/img/blog/2024-12-09-kubecon-wrapped-and-tracking/thanks.png').default} />
 
