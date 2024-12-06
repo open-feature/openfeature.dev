@@ -9,11 +9,11 @@ tags: [tracking, specification, experimentation, spec, kubecon, cncf]
 draft: false
 ---
 
-Hello from the OpenFeature community! This post is a double-feature of sorts: we'll be wrapping up our time at KubeCon NA 2024 as well as talking about our latest SDK feature: [✨ _tracking events_ ✨](#robust-experimentation-support-with-tracking-events).
+Hello from the OpenFeature community! This post is a double-feature of sorts: we'll be wrapping up our time at KubeCon NA 2024 as well as talking about our latest SDK feature: [✨ _tracking events_ ✨](/blog/kubecon-wrapped-and-tracking#robust-experimentation-support-with-tracking-events).
 
 <!--truncate-->
 
-<img src={require('@site/static/img/blog/2024-12-09-post-kubecon-and-tracking/summit-wrapped.png').default} />
+<img src={require('@site/static/img/blog/2024-12-09-kubecon-wrapped-and-tracking/summit-wrapped.png').default} />
 
 ## KubeCon NA 2024 _Wrapped_
 
@@ -48,7 +48,7 @@ In fact, if your vendor or home-grown feature flag solution doesn't support equi
 
 These enhancements were brought to you by the hard work from many feature flag vendors, enterprises, and thought leaders... Thanks to all who helped!
 
-<img src={require('@site/static/img/blog/2024-12-09-post-kubecon-and-tracking/thanks.png').default} />
+<img src={require('@site/static/img/blog/2024-12-09-kubecon-wrapped-and-tracking/thanks.png').default} />
 
 ### Implementations and Future Plans
 
