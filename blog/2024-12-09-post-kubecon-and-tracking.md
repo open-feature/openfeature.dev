@@ -9,7 +9,7 @@ tags: [tracking, specification, experimentation, spec, kubecon, cncf]
 draft: false
 ---
 
-Hello from the OpenFeature community! This post is a double-feature of sorts: we'll be wrapping up our time at KubeCon NA 2024 as well as talking about our latest SDK feature: ✨ _tracking events_ ✨.
+Hello from the OpenFeature community! This post is a double-feature of sorts: we'll be wrapping up our time at KubeCon NA 2024 as well as talking about our latest SDK feature: [✨ _tracking events_ ✨](#robust-experimentation-support-with-tracking-events).
 
 <!--truncate-->
 
