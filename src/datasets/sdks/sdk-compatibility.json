@@ -38,8 +38,8 @@
         "path": "/docs/reference/technologies/server/java#eventing"
       },
       "Tracking": {
-        "status": "❓",
-        "path": "/docs/reference/technologies/server/java"
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/java#tracking"
       },
       "Transaction Context Propagation": {
         "status": "✅",
