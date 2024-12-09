@@ -45,6 +45,7 @@ With the [latest enhancements to our specification](https://github.com/open-feat
 The new [Tracking API](/specification/sections/tracking) defines interfaces and functions to allow application authors to "close the gap" between feature flags and business objectives; helping to assert that a particular flag variant actually corresponds to increased usage, for instance.
 
 In fact, if your vendor or home-grown feature flag solution doesn't support equivalent functionality, [hooks](/specification/sections/hooks) and tracking compose a flexible solution to associate flag evaluations with usage data, regardless of whatever customer data platform or telemetry backend you use.
+For more information, see [tracking concepts](/docs/reference/concepts/tracking).
 
 These enhancements were brought to you by the hard work of many feature flag vendors, enterprises, and subject matter experts... Thanks to all who helped!
 

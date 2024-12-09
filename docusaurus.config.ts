@@ -92,6 +92,12 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
       },
     ],
   },
+  // announcements can go here
+  announcementBar: {
+    id: 'announcing-tracking',
+    content:
+      'Unable to attend KubeCon NA? Check out our <a href="/blog/kubecon-wrapped-and-tracking">latest blog entry</a> for some great conference content, and news on the latest addition to the OpenFeature specification.',
+  },
   footer: {
     style: 'dark',
     links: [
