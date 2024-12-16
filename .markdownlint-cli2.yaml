@@ -19,7 +19,7 @@ config:
 
     max-one-sentence-per-line: true
 
-    no-space-in-links: false: false
+    no-space-in-links: false
 
 customRules:
     - markdownlint-rule-max-one-sentence-per-line
