@@ -116,8 +116,8 @@
     "path": "/docs/reference/technologies/server/dotnet",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.1.0",
-      "version": "2.1.0",
+      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.2.0",
+      "version": "2.2.0",
       "stable": true
     },
     "spec": {
@@ -150,8 +150,8 @@
         "path": "/docs/reference/technologies/server/dotnet#eventing"
       },
       "Tracking": {
-        "status": "❓",
-        "path": "/docs/reference/technologies/server/dotnet"
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/dotnet#tracking"
       },
       "Transaction Context Propagation": {
         "status": "❓",
@@ -444,8 +444,8 @@
     "path": "/docs/reference/technologies/client/swift",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/swift-sdk/releases/tag/0.2.0",
-      "version": "0.2.0",
+      "href": "https://github.com/open-feature/swift-sdk/releases/tag/0.2.1",
+      "version": "0.2.1",
       "stable": false
     },
     "spec": {
