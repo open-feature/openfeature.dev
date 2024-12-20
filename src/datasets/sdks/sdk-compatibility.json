@@ -60,8 +60,8 @@
     "path": "/docs/reference/technologies/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.16.2",
-      "version": "1.16.2",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.17.0",
+      "version": "1.17.0",
       "stable": true
     },
     "spec": {
@@ -340,8 +340,8 @@
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.3.2",
-      "version": "1.3.2",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.4.0",
+      "version": "1.4.0",
       "stable": true
     },
     "spec": {
@@ -392,8 +392,8 @@
     "path": "/docs/reference/technologies/client/kotlin",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.3.0",
-      "version": "0.3.0",
+      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.3.2",
+      "version": "0.3.2",
       "stable": false
     },
     "spec": {
@@ -426,8 +426,8 @@
         "path": "/docs/reference/technologies/client/kotlin#eventing"
       },
       "Tracking": {
-        "status": "❓",
-        "path": "/docs/reference/technologies/client/kotlin"
+        "status": "✅",
+        "path": "/docs/reference/technologies/client/kotlin#tracking"
       },
       "Shutdown": {
         "status": "✅",
