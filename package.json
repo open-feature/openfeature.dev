@@ -71,7 +71,7 @@
     "@docusaurus/module-type-aliases": "3.7.0",
     "@docusaurus/tsconfig": "^3.7.0",
     "@types/fs-extra": "11.0.4",
-    "@types/react": "^18.3.5",
+    "@types/react": "^19.0.0",
     "@typescript-eslint/eslint-plugin": "8.19.1",
     "@typescript-eslint/parser": "8.19.1",
     "eslint": "^8.57.0",
