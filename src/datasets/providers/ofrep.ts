@@ -4,6 +4,7 @@ import type { Provider } from '.';
 export const OFREP: Provider = {
   name: 'OFREP',
   logo: OFLogo,
+  excludeFromLandingPage: true,
   technologies: [
     {
       technology: 'JavaScript',
