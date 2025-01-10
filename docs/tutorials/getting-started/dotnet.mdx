@@ -1,0 +1,62 @@
+---
+title: .NET SDK
+description: Getting Started with the OpenFeature .NET SDK
+---
+
+import FlagdContent from '@site/src/components/custom/tutorial/flagd-content.mdx';
+import FlagdChangeContent from '@site/src/components/custom/tutorial/flagd-change-content.mdx';
+import WhyDefaultContent from '@site/src/components/custom/tutorial/why-default-content.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Getting Started with the OpenFeature .NET SDK
+
+## Introduction
+
+This walk-through teaches you the basics of using OpenFeature in .NET.
+
+You'll learn how to:
+
+- Integrate the OpenFeature .NET SDK
+- Install and configure the OpenFeature provider
+- Perform basic feature flagging
+
+## Requirements
+
+This walk-through assumes that:
+
+- You have a basic knowledge of C# and .NET
+- You have installed the [.NET 8](https://dotnet.microsoft.com/en-us/) or later SDK
+
+## Walk-through
+
+### Step 1: Create a .NET 8 Console application
+
+To get started you can use the .NET SDK to initialise a console application. Open a terminal (**PowerShell**, **Command Prompt**, or **bash**) and paste the following commands:
+
+```powershell
+dotnet new console -o openfeature-dotnet-sample
+cd openfeature-dotnet-sample
+dotnet run
+```
+
+### Step 2: Add dependencies
+
+With NuGet you can install the latest [OpenFeature](https://www.nuget.org/packages/OpenFeature) package into your .NET console application.
+
+```powershell
+dotnet add package OpenFeature
+```
+
+### Step 3: Add code
+
+### Step 5: Configure a provider (flagd)
+
+### Step 4: Run the initial application
+
+## Conclusion
+
+This walk-through introduced you to the OpenFeature .NET SDK.
+It covered how a provider can be configured to perform the flag evaluation and introduced basic feature
+flagging concepts.
+It also showcased how feature flags can be updated at runtime, without requiring a code change and a redeployment.
