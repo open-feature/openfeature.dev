@@ -109,7 +109,7 @@ app.MapGet("/hello", async () =>
         return "Hello, welcome to this OpenFeature-enabled website!";
     }
 
-    return "Hello";
+    return "Hello!";
 })
 .WithName("GetHello");
 //diff-add-block-end
@@ -135,39 +135,21 @@ dotnet build
 dotnet run
 ```
 
-In the logs you should see a line with the following `Now listening on: http://localhost:5251`, although the port number may differ. You can visit the following URL in your browser http://localhost:5251/hello (adjust port number as necessary) to view the hello world message. You should the message "Hello".
+In the logs you should see a line with the following `Now listening on: http://localhost:5251`, although the port number may differ. You can visit the following URL in your browser http://localhost:5251/hello (adjust port number as necessary) to view the hello world message. You should the message "Hello!".
 
-At the moment, our application is configured with an InMemoryProvider. No flags have been passed to the provider, so by default the value specified in `GetBooleanValueAsync` method will return false.
-
-We can configure the InMemoryProvider and pass some configuration.
-
-```csharp
-// diff-add-block-start
-var features = new Dictionary<string, Flag>()
-{
-    { "welcome-message", new Flag<bool>(new Dictionary<string, bool> { { "on", true } }, "on") }
-};
-// diff-add-block-end
-
-// diff-remove
-await Api.Instance.SetProviderAsync(new InMemoryProvider());
-// diff-add
-await Api.Instance.SetProviderAsync(new InMemoryProvider(flags));
-```
-
-If you run the application again, and repeat the request to `/hello`, you will see the phrase "Hello, welcome to this OpenFeature-enabled website!"
+"Why I'm I seeing that value?", you may ask. Well, it's because a provider hasn't been configured yet. Without a provider to actually evaluate flags, OpenFeature will return the default value. In the next step, you'll learn how to add a provider.
 
 ### Step 5: Configure a provider (flagd)
 
 <FlagdContent/>
 
-Finally, let's add the required code change to enable the flagd provider in our .NET application. First we need to install the [.NET OpenFeature Flagd](https://www.nuget.org/packages/OpenFeature.Contrib.Providers.Flagd/) package.
+Before we can use the Flagd provider in .NET we need to install the [.NET OpenFeature Flagd](https://www.nuget.org/packages/OpenFeature.Contrib.Providers.Flagd/) package.
 
 ```shell
 dotnet add package OpenFeature.Contrib.Providers.Flagd
 ```
 
-Next, we need to make small change to the `SetProviderAsync` method and pass in the `FlagdProvider`.
+Finally, let's add the required code change to enable the flagd provider in our .NET application.
 
 ```csharp
 
@@ -209,7 +191,7 @@ app.MapGet("/hello", async () =>
         return "Hello, welcome to this OpenFeature-enabled website!";
     }
 
-    return "Hello";
+    return "Hello!";
 })
 .WithName("GetHello");
 
@@ -225,7 +207,7 @@ dotnet build
 dotnet run
 ```
 
-You can visit the following URL in your browser http://localhost:5251/hello (adjust port number as necessary) to view the hello world message. You should the message "Hello".
+You can visit the following URL in your browser http://localhost:5251/hello (adjust port number as necessary) to view the hello world message. You should the message "Hello!".
 
 <FlagdChangeContent/>
 
