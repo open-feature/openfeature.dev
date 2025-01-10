@@ -18,7 +18,7 @@ export default function Hit({ hit }: { hit: EcosystemElement }) {
     >
       <div className="flex justify-between mb-6">
         {/* Logo */}
-        <Svg className="mt-2 h-8 w-8" />
+        <Svg className="mt-2 h-8 w-fit" />
         {/* Icon showing that it's an external link */}
         {external && <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="h-4 w-4 opacity-60" />}
       </div>

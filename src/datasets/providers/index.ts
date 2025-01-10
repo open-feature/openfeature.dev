@@ -25,6 +25,7 @@ import { Hypertune } from './hypertune';
 import { Confidence } from './confidence';
 import { ConfigBee } from './configbee';
 import { Tggl } from './tggl';
+import { OFREP } from './ofrep';
 
 export const PROVIDERS: Provider[] = [
   Bucket,
@@ -51,6 +52,7 @@ export const PROVIDERS: Provider[] = [
   GrowthBook,
   MultiProvider,
   Tggl,
+  OFREP,
 ];
 
 export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) => {

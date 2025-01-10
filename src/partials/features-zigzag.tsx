@@ -153,7 +153,7 @@ function FeaturesZigZag() {
               >
                 <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row justify-center fill-[#1c1e21] dark:fill-[#e3e3e3]">
                   <GenericCarousel
-                    items={PROVIDERS.map((provider) => ({
+                    items={PROVIDERS.filter((provider) => !provider.excludeFromLandingPage).map((provider) => ({
                       name: provider.name,
                       logo: provider.logo,
                       href: encodeURI(`/ecosystem?instant_search[refinementList][vendor][0]=${provider.name}`),
