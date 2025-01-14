@@ -10965,9 +10965,9 @@ readable-stream@^3.0.2, readable-stream@^3.0.6:
     util-deprecate "^1.0.1"
 
 readdirp@^4.0.1:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-4.0.2.tgz#388fccb8b75665da3abffe2d8f8ed59fe74c230a"
-  integrity sha512-yDMz9g+VaZkqBYS/ozoBJwaBhTbZo3UNYQHNRw1D3UFQB8oHB4uS/tAODO+ZLjGWmUbKnIlOWO+aaIiAxrUWHA==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-4.1.1.tgz#bd115327129672dc47f87408f05df9bd9ca3ef55"
+  integrity sha512-h80JrZu/MHUZCyHu5ciuoI0+WxsCxzxJTILn6Fs8rxSnFPh+UVHYfeIxK1nVGugMqkfC4vJcBOYbkfkwYK0+gw==
 
 readdirp@~3.6.0:
   version "3.6.0"
@@ -11450,9 +11450,9 @@ sass-loader@^16.0.2:
     neo-async "^2.6.2"
 
 sass@^1.82.0:
-  version "1.83.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.83.1.tgz#dee1ab94b47a6f9993d3195d36f556bcbda64846"
-  integrity sha512-EVJbDaEs4Rr3F0glJzFSOvtg2/oy2V/YrGFPqPY24UqcLDWcI9ZY5sN+qyO3c/QCZwzgfirvhXvINiJCE/OLcA==
+  version "1.83.4"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.83.4.tgz#5ccf60f43eb61eeec300b780b8dcb85f16eec6d1"
+  integrity sha512-B1bozCeNQiOgDcLd33e2Cs2U60wZwjUUXzh900ZyQF5qUasvMdDZYbQ566LJu7cqR+sAHlAfO6RMkaID5s6qpA==
   dependencies:
     chokidar "^4.0.0"
     immutable "^5.0.2"
