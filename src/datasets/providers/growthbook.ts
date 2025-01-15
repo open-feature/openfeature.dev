@@ -11,5 +11,11 @@ export const GrowthBook: Provider = {
       href: 'https://docs.growthbook.io/lib/js#openfeature-provider',
       category: ['Client'],
     },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/js-sdk-contrib/blob/main/libs/providers/growthbook/README.md',
+      category: ['Server'],
+    },
   ],
 };
