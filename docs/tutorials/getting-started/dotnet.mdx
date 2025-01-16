@@ -1,0 +1,222 @@
+---
+title: .NET SDK and ASP.NET Core
+description: Getting Started with the OpenFeature .NET SDK
+---
+
+import FlagdContent from '@site/src/components/custom/tutorial/flagd-content.mdx';
+import FlagdChangeContent from '@site/src/components/custom/tutorial/flagd-change-content.mdx';
+
+# Getting Started with the OpenFeature .NET SDK
+
+## Introduction
+
+This walk-through teaches you the basics of using OpenFeature in .NET within a ASP.NET Core Web application.
+
+You'll learn how to:
+
+- Integrate the OpenFeature .NET SDK
+- Install and configure the OpenFeature provider
+- Perform basic feature flagging
+
+## Requirements
+
+This walk-through assumes that:
+
+- You have a basic knowledge of C# and .NET
+- You have installed the [.NET 8](https://dotnet.microsoft.com/en-us/) or later SDK
+- You have Docker installed and running on the host system
+
+## Walk-through
+
+### Step 1: Create a .NET 8 Web application
+
+To get started you can use the .NET SDK to initialise a web application. Open a terminal (**shell**, **Command Prompt**, or **bash**) and paste the following commands:
+
+```shell
+dotnet new webapi -o openfeature-dotnet-sample
+cd openfeature-dotnet-sample
+dotnet run
+```
+
+### Step 2: Add dependencies
+
+With NuGet you can install the latest [OpenFeature](https://www.nuget.org/packages/OpenFeature) package into your .NET web application.
+
+```shell
+dotnet add package OpenFeature
+```
+
+### Step 3: Add code
+
+The following will initialise an `InMemoryProvider` for use within the web application. Open a code editor and add the C# code below to the Program.cs.
+
+```csharp
+// diff-add-block-start
+using OpenFeature;
+using OpenFeature.Providers.Memory;
+// diff-add-block-end
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddOpenApi();
+
+var app = builder.Build();
+
+// diff-add-block-start
+// Register your feature flag provider
+await Api.Instance.SetProviderAsync(new InMemoryProvider());
+// diff-add-block-end
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+}
+
+app.UseHttpsRedirection();
+
+//diff-remove-block-start
+var summaries = new[]
+{
+    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+};
+//diff-remove-block-end
+
+//diff-remove-block-start
+app.MapGet("/weatherforecast", () =>
+{
+    var forecast = Enumerable.Range(1, 5).Select(index =>
+        new WeatherForecast
+        (
+            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+            Random.Shared.Next(-20, 55),
+            summaries[Random.Shared.Next(summaries.Length)]
+        ))
+        .ToArray();
+    return forecast;
+})
+.WithName("GetWeatherForecast");
+//diff-remove-block-end
+//diff-add-block-start
+app.MapGet("/hello", async () =>
+{
+    var client = Api.Instance.GetClient();
+
+    if (await client.GetBooleanValueAsync("welcome-message", false))
+    {
+        return "Hello, welcome to this OpenFeature-enabled website!";
+    }
+
+    return "Hello!";
+})
+.WithName("GetHello");
+//diff-add-block-end
+
+app.Run();
+
+//diff-remove-block-start
+record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+{
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}
+//diff-remove-block-end
+```
+
+At this point, we are ready to run the initial version of our application.
+
+### Step 4: Run the initial application
+
+Let's compile and run the application.
+
+```shell
+dotnet build
+dotnet run
+```
+
+In the logs you should see a line with the following `Now listening on: http://localhost:5251`, although the port number may differ. You can visit the following URL in your browser [http://localhost:5251/hello](http://localhost:5251/hello) (adjust port number as necessary) to view the hello world message. You should see the message "Hello!".
+
+"Why I'm I seeing that value?", you may ask. Well, it's because a provider hasn't been configured yet. Without a provider to actually evaluate flags, OpenFeature will return the default value. In the next step, you'll learn how to add a provider.
+
+### Step 5: Configure a provider (flagd)
+
+<FlagdContent/>
+
+Before we can use the Flagd provider in .NET we need to install the [.NET OpenFeature Flagd](https://www.nuget.org/packages/OpenFeature.Contrib.Providers.Flagd/) package.
+
+```shell
+dotnet add package OpenFeature.Contrib.Providers.Flagd
+```
+
+Finally, let's add the required code change to enable the flagd provider in our .NET application.
+
+```csharp
+
+using OpenFeature;
+//diff-add
+using OpenFeature.Contrib.Providers.Flagd
+//diff-remove
+using OpenFeature.Providers.Memory;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddOpenApi();
+
+var app = builder.Build();
+
+// Register your feature flag provider
+//diff-remove
+await Api.Instance.SetProviderAsync(new InMemoryProvider());
+//diff-add-block-start
+var flagdProvider = new FlagdProvider(new Uri("http://localhost:8013"));
+await Api.Instance.SetProviderAsync(flagdProvider);
+//diff-add-block-end
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+}
+
+app.UseHttpsRedirection();
+
+app.MapGet("/hello", async () =>
+{
+    var client = Api.Instance.GetClient();
+
+    if (await client.GetBooleanValueAsync("welcome-message", false))
+    {
+        return "Hello, welcome to this OpenFeature-enabled website!";
+    }
+
+    return "Hello!";
+})
+.WithName("GetHello");
+
+app.Run();
+```
+
+### Step 6: Rerun the application
+
+We can use the .NET CLI to build and run our application.
+
+```shell
+dotnet build
+dotnet run
+```
+
+You can visit the following URL in your browser [http://localhost:5251/hello](http://localhost:5251/hello) (adjust port number as necessary) to view the hello world message. You should see the message "Hello!".
+
+<FlagdChangeContent/>
+
+Revisit the endpoint [http://localhost:5251/hello](http://localhost:5251/hello) and you will be greeted with `Hello, welcome to this OpenFeature-enabled website!`
+
+## Conclusion
+
+This walk-through introduced you to the OpenFeature .NET SDK.
+It covered how a provider can be configured to perform the flag evaluation and introduced basic feature
+flagging concepts.
+It also showcased how feature flags can be updated at runtime, without requiring a code change and a redeployment.
