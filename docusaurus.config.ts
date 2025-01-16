@@ -126,6 +126,10 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
         title: 'Community',
         items: [
           {
+            label: 'BlueSky',
+            href: 'https://bsky.app/profile/openfeature.dev',
+          },
+          {
             label: 'Twitter',
             href: 'https://twitter.com/openfeature',
           },
