@@ -4,8 +4,8 @@
     "path": "/docs/reference/technologies/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.13.0",
-      "version": "1.13.0",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.14.0",
+      "version": "1.14.0",
       "stable": true
     },
     "spec": {
@@ -154,8 +154,8 @@
         "path": "/docs/reference/technologies/server/dotnet#tracking"
       },
       "Transaction Context Propagation": {
-        "status": "❓",
-        "path": "/docs/reference/technologies/server/dotnet"
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/dotnet#transaction-context-propagation"
       },
       "Shutdown": {
         "status": "✅",
@@ -392,8 +392,8 @@
     "path": "/docs/reference/technologies/client/kotlin",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.3.2",
-      "version": "0.3.2",
+      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.3.3",
+      "version": "0.3.3",
       "stable": false
     },
     "spec": {
