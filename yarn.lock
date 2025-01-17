@@ -3234,9 +3234,9 @@
   integrity sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==
 
 "@types/ms@*":
-  version "0.7.34"
-  resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.34.tgz#10964ba0dee6ac4cd462e2795b6bebd407303433"
-  integrity sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@types/ms/-/ms-2.1.0.tgz#052aa67a48eccc4309d7f0191b7e41434b90bb78"
+  integrity sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==
 
 "@types/node-forge@^1.3.0":
   version "1.3.11"
@@ -6483,7 +6483,7 @@ fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
   integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
 
-fast-glob@^3.2.11, fast-glob@^3.2.9, fast-glob@^3.3.0, fast-glob@^3.3.2:
+fast-glob@^3.2.11, fast-glob@^3.2.9, fast-glob@^3.3.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.3.2.tgz#a904501e57cfdd2ffcded45e99a54fef55e46129"
   integrity sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==
@@ -6493,6 +6493,17 @@ fast-glob@^3.2.11, fast-glob@^3.2.9, fast-glob@^3.3.0, fast-glob@^3.3.2:
     glob-parent "^5.1.2"
     merge2 "^1.3.0"
     micromatch "^4.0.4"
+
+fast-glob@^3.3.2:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.3.3.tgz#d06d585ce8dba90a16b0505c543c3ccfb3aeb818"
+  integrity sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==
+  dependencies:
+    "@nodelib/fs.stat" "^2.0.2"
+    "@nodelib/fs.walk" "^1.2.3"
+    glob-parent "^5.1.2"
+    merge2 "^1.3.0"
+    micromatch "^4.0.8"
 
 fast-json-stable-stringify@^2.0.0:
   version "2.1.0"
@@ -8121,7 +8132,14 @@ jsonfile@^6.0.1:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
-katex@^0.16.0, katex@^0.16.9:
+katex@^0.16.0:
+  version "0.16.20"
+  resolved "https://registry.yarnpkg.com/katex/-/katex-0.16.20.tgz#75c741ded0f7ee8d896a1d31bac307e61af863c3"
+  integrity sha512-jjuLaMGD/7P8jUTpdKhA9IoqnH+yMFB3sdAFtq5QdAqeP2PjiSbnC3EaguKPNtv6dXXanHxp1ckwvF4a86LBig==
+  dependencies:
+    commander "^8.3.0"
+
+katex@^0.16.9:
   version "0.16.19"
   resolved "https://registry.yarnpkg.com/katex/-/katex-0.16.19.tgz#698e026188876f9c8c93d3ecb27b212aaa056d0a"
   integrity sha512-3IA6DYVhxhBabjSLTNO9S4+OliA3Qvb8pBQXMfC4WxXJgLwZgnfDl0BmB4z6nBMdznBsZ+CGM8DrGZ5hcguDZg==
@@ -8416,14 +8434,14 @@ markdownlint-cli2-formatter-default@0.0.5:
   integrity sha512-4XKTwQ5m1+Txo2kuQ3Jgpo/KmnG+X90dWt4acufg6HVGadTUG5hzHF/wssp9b5MBYOMCnZ9RMPaU//uHsszF8Q==
 
 markdownlint-cli2@^0.17.0:
-  version "0.17.1"
-  resolved "https://registry.yarnpkg.com/markdownlint-cli2/-/markdownlint-cli2-0.17.1.tgz#4455105fe5d75821597779f7a442ce5c5ce0fede"
-  integrity sha512-n1Im9lhKJJE12/u2N0GWBwPqeb0HGdylN8XpSFg9hbj35+QalY9Vi6mxwUQdG6wlSrrIq9ZDQ0Q85AQG9V2WOg==
+  version "0.17.2"
+  resolved "https://registry.yarnpkg.com/markdownlint-cli2/-/markdownlint-cli2-0.17.2.tgz#8d3dc2637fae42cea01fe3bf218501cbf33a7cd5"
+  integrity sha512-XH06ZOi8wCrtOSSj3p8y3yJzwgzYOSa7lglNyS3fP05JPRzRGyjauBb5UvlLUSCGysMmULS1moxdRHHudV+g/Q==
   dependencies:
     globby "14.0.2"
     js-yaml "4.1.0"
     jsonc-parser "3.3.1"
-    markdownlint "0.37.3"
+    markdownlint "0.37.4"
     markdownlint-cli2-formatter-default "0.0.5"
     micromatch "4.0.8"
 
@@ -8439,10 +8457,10 @@ markdownlint-rule-max-one-sentence-per-line@^0.0.2:
   dependencies:
     markdownlint-rule-helpers "~0.18.0"
 
-markdownlint@0.37.3:
-  version "0.37.3"
-  resolved "https://registry.yarnpkg.com/markdownlint/-/markdownlint-0.37.3.tgz#061ac5462e97fedc7a96aaac5c132885e4161bfd"
-  integrity sha512-eoQqH0291YCCjd+Pe1PUQ9AmWthlVmS0XWgcionkZ8q34ceZyRI+pYvsWksXJJL8OBkWCPwp1h/pnXxrPFC4oA==
+markdownlint@0.37.4:
+  version "0.37.4"
+  resolved "https://registry.yarnpkg.com/markdownlint/-/markdownlint-0.37.4.tgz#dd58c4a13b798d4702438e5f7fd587a219f753f6"
+  integrity sha512-u00joA/syf3VhWh6/ybVFkib5Zpj2e5KB/cfCei8fkSRuums6nyisTWGqjTWIOFoFwuXoTBQQiqlB4qFKp8ncQ==
   dependencies:
     markdown-it "14.1.0"
     micromark "4.0.1"
