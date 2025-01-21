@@ -206,8 +206,8 @@
         "path": "/docs/reference/technologies/server/go#eventing"
       },
       "Tracking": {
-        "status": "❓",
-        "path": "/docs/reference/technologies/server/go"
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/go#tracking"
       },
       "Transaction Context Propagation": {
         "status": "✅",
