@@ -35,7 +35,7 @@ export const Flipt: Provider = {
       href: 'https://github.com/open-feature/rust-sdk-contrib/tree/main/crates/flipt',
       category: ['Server'],
     },
-        {
+    {
       technology: 'Python',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/python-sdk-contrib/tree/main/providers/openfeature-provider-flipt',
