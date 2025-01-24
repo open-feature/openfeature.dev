@@ -17,5 +17,11 @@ export const Tggl: Provider = {
       href: 'https://tggl.io/developers/sdks/open-feature/web',
       category: ['Client'],
     },
+    {
+      technology: '.NET',
+      vendorOfficial: true,
+      href: 'https://tggl.io/developers/sdks/open-feature/dotnet',
+      category: ['Server'],
+    },
   ],
 };
