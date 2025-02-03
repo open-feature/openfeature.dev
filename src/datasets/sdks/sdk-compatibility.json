@@ -116,8 +116,8 @@
     "path": "/docs/reference/technologies/server/dotnet",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.2.0",
-      "version": "2.2.0",
+      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.3.0",
+      "version": "2.3.0",
       "stable": true
     },
     "spec": {
@@ -228,8 +228,8 @@
     "path": "/docs/reference/technologies/server/python",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.7.4",
-      "version": "0.7.4",
+      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.7.5",
+      "version": "0.7.5",
       "stable": false
     },
     "spec": {
@@ -444,13 +444,13 @@
     "path": "/docs/reference/technologies/client/swift",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/swift-sdk/releases/tag/0.2.1",
-      "version": "0.2.1",
+      "href": "https://github.com/open-feature/swift-sdk/releases/tag/0.3.0",
+      "version": "0.3.0",
       "stable": false
     },
     "spec": {
-      "href": "https://github.com/open-feature/spec/releases/tag/v0.7.0",
-      "version": "0.7.0"
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.8.0",
+      "version": "0.8.0"
     },
     "features": {
       "Providers": {
@@ -478,8 +478,8 @@
         "path": "/docs/reference/technologies/client/swift#eventing"
       },
       "Tracking": {
-        "status": "❓",
-        "path": "/docs/reference/technologies/client/swift"
+        "status": "❌",
+        "path": "/docs/reference/technologies/client/swift#tracking"
       },
       "Shutdown": {
         "status": "❌",
