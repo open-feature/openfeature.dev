@@ -94,9 +94,9 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
   },
   // announcements can go here
   announcementBar: {
-    id: 'announcing-tracking',
+    id: 'announcing-kubecon-eu-25',
     content:
-      'Unable to attend KubeCon NA? Check out our <a href="/blog/kubecon-wrapped-and-tracking">latest blog entry</a> for some great conference content, and news on the latest addition to the OpenFeature specification.',
+      'We\'re back! Check out all the ways you can connect with us at <a href="/blog/kubeconeu25">KubeCon + CloudNativeCon Europe 2025</a>.',
   },
   footer: {
     style: 'dark',
