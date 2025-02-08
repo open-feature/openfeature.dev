@@ -2521,7 +2521,7 @@
   resolved "https://registry.yarnpkg.com/@radix-ui/react-compose-refs/-/react-compose-refs-1.1.1.tgz#6f766faa975f8738269ebb8a23bad4f5a8d2faec"
   integrity sha512-Y9VzoRDSJtgFMUCoiZBDVo084VQ5hfpXxVE+NgkdNsjiDBByiImMZKKhxMwCbdHvhlENG6a833CbFkOQvTricw==
 
-"@radix-ui/react-slot@^1.1.0":
+"@radix-ui/react-slot@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-slot/-/react-slot-1.1.2.tgz#daffff7b2bfe99ade63b5168407680b93c00e1c6"
   integrity sha512-YAKxaiGsSQJ38VzKH86/BPRC4rh+b1Jpa+JneA5LRE7skmLPNAyeG8kPJj/oo4STLvlrs8vkf/iYyc3A5stYCQ==
@@ -2750,7 +2750,7 @@
   dependencies:
     defer-to-connect "^2.0.1"
 
-"@tailwindcss/forms@^0.5.9":
+"@tailwindcss/forms@^0.5.10":
   version "0.5.10"
   resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.5.10.tgz#0a1cd67b6933402f1985a04595bd24f9785aa302"
   integrity sha512-utI1ONF6uf/pPNO68kmN1b8rEwNXv3czukalo8VtJH8ksIkZXr3Q3VYudZLkCsDd4Wku120uF02hYK25XGPorw==
@@ -3329,7 +3329,7 @@
   dependencies:
     csstype "^3.0.2"
 
-"@types/react@^19.0.0":
+"@types/react@^19.0.8":
   version "19.0.8"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-19.0.8.tgz#7098e6159f2a61e4f4cef2c1223c044a9bec590e"
   integrity sha512-9P/o1IGdfmQxrujGbIMDyYaaCykhLKc0NGCtYcECNUr9UAaDe4gwvV9bR6tvd5Br1SG0j+PBpbKr2UYY8CwqSw==
@@ -5706,12 +5706,12 @@ electron-to-chromium@^1.5.73:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.76.tgz#db20295c5061b68f07c8ea4dfcbd701485d94a3d"
   integrity sha512-CjVQyG7n7Sr+eBXE86HIulnL5N8xZY1sgmOPGuq/F0Rr0FJq63lg0kEtOIDfZBk44FnDLf6FUJ+dsJcuiUDdDQ==
 
-embla-carousel-autoplay@^8.5.1:
+embla-carousel-autoplay@^8.5.2:
   version "8.5.2"
   resolved "https://registry.yarnpkg.com/embla-carousel-autoplay/-/embla-carousel-autoplay-8.5.2.tgz#b24f2b5523282113ad2f2289a8e9a0bee7877e4e"
   integrity sha512-27emJ0px3q/c0kCHCjwRrEbYcyYUPfGO3g5IBWF1i7714TTzE6L9P81V6PHLoSMAKJ1aHoT2e7YFOsuFKCbyag==
 
-embla-carousel-react@^8.5.1:
+embla-carousel-react@^8.5.2:
   version "8.5.2"
   resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-8.5.2.tgz#f79f6c36690596fe2aceec994372ab84bfbfd9cc"
   integrity sha512-Tmx+uY3MqseIGdwp0ScyUuxpBgx5jX1f7od4Cm5mDwg/dptEiTKf9xp6tw0lZN2VA9JbnVMl/aikmbc53c6QFA==
@@ -8440,7 +8440,7 @@ markdownlint-cli2-formatter-default@0.0.5:
   resolved "https://registry.yarnpkg.com/markdownlint-cli2-formatter-default/-/markdownlint-cli2-formatter-default-0.0.5.tgz#b8fde4e127f9a9c0596e6d45eed352dd0aa0ff98"
   integrity sha512-4XKTwQ5m1+Txo2kuQ3Jgpo/KmnG+X90dWt4acufg6HVGadTUG5hzHF/wssp9b5MBYOMCnZ9RMPaU//uHsszF8Q==
 
-markdownlint-cli2@^0.17.0:
+markdownlint-cli2@^0.17.2:
   version "0.17.2"
   resolved "https://registry.yarnpkg.com/markdownlint-cli2/-/markdownlint-cli2-0.17.2.tgz#8d3dc2637fae42cea01fe3bf218501cbf33a7cd5"
   integrity sha512-XH06ZOi8wCrtOSSj3p8y3yJzwgzYOSa7lglNyS3fP05JPRzRGyjauBb5UvlLUSCGysMmULS1moxdRHHudV+g/Q==
@@ -10609,7 +10609,7 @@ postcss-zindex@^6.0.2:
   resolved "https://registry.yarnpkg.com/postcss-zindex/-/postcss-zindex-6.0.2.tgz#e498304b83a8b165755f53db40e2ea65a99b56e1"
   integrity sha512-5BxW9l1evPB/4ZIc+2GobEBoKC+h8gPGCMi+jxsYvd2x0mjq7wazk6DrP71pStqxE9Foxh5TVnonbWpFZzXaYg==
 
-postcss@^8.4.21, postcss@^8.4.24, postcss@^8.4.26, postcss@^8.4.33, postcss@^8.4.38, postcss@^8.4.47, postcss@^8.4.49:
+postcss@^8.4.21, postcss@^8.4.24, postcss@^8.4.26, postcss@^8.4.33, postcss@^8.4.38, postcss@^8.4.47, postcss@^8.5.1:
   version "8.5.1"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.1.tgz#e2272a1f8a807fafa413218245630b5db10a3214"
   integrity sha512-6oz2beyjc5VMn/KV1pPw8fliQkhBXrVn1Z3TVyqZxU8kZpzEKhBdmCFqI6ZbmGtamQvQGuU1sgPTk8ZrXDD7jQ==
@@ -10884,7 +10884,7 @@ react-instantsearch-core@7.15.3:
     instantsearch.js "4.77.3"
     use-sync-external-store "^1.0.0"
 
-react-instantsearch@^7.13.9:
+react-instantsearch@^7.15.3:
   version "7.15.3"
   resolved "https://registry.yarnpkg.com/react-instantsearch/-/react-instantsearch-7.15.3.tgz#6c1cff8528f6f2a56535c4e36169169d4434508e"
   integrity sha512-KDKvLgizxGRrHIy2RfFYvgw/VmyYHXLNk0TJkRpyoUClUhn1zoXwESFjSLz1n4AY/utkZkuhpfmJo9S7NfEqoQ==
@@ -11495,7 +11495,7 @@ sass-loader@^16.0.2:
   dependencies:
     neo-async "^2.6.2"
 
-sass@^1.82.0:
+sass@^1.84.0:
   version "1.84.0"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.84.0.tgz#da9154cbccb2d2eac7a9486091b6d9ba93ef5bad"
   integrity sha512-XDAbhEPJRxi7H0SxrnOpiXFQoUJHwkR2u3Zc4el+fK/Tt5Hpzw5kkQ59qVDfvdaUq6gCrEZIbySFBM2T9DNKHg==
@@ -13156,7 +13156,7 @@ wildcard@^2.0.0, wildcard@^2.0.1:
   resolved "https://registry.yarnpkg.com/wildcard/-/wildcard-2.0.1.tgz#5ab10d02487198954836b6349f74fff961e10f67"
   integrity sha512-CC1bOL87PIWSBhDcTrdeLo6eGT7mCFtrg0uIJtqJUFyK+eJnzl8A1niH56uu7KMa5XFrtiV+AQuHO3n7DsHnLQ==
 
-wireit@^0.14.9:
+wireit@^0.14.11:
   version "0.14.11"
   resolved "https://registry.yarnpkg.com/wireit/-/wireit-0.14.11.tgz#8adafad65fccfa6f5946e3d2bdb8df4c744395ee"
   integrity sha512-edO3AiL1wYlBIapwx8e1OGEmsG37sv7qnRzx4YDsMPcKo+6NMOjWYcfRbaeoB1MzakLrnozWB2Q1q7Ko45NckA==
