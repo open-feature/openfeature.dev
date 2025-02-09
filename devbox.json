@@ -1,6 +1,6 @@
 {
   "$schema":  "https://raw.githubusercontent.com/jetify-com/devbox/0.11.1/.schema/devbox.schema.json",
-  "packages": ["nodejs@20"],
+  "packages": ["nodejs@20.18.2"],
   "env": {
     "DEVBOX_COREPACK_ENABLED": "true"
   },
