@@ -22,7 +22,8 @@ export type Technology =
   | 'Python'
   | 'Swift'
   | 'Rust'
-  | 'Ruby';
+  | 'Ruby'
+  | 'React';
 
 export type Category = 'Server' | 'Client';
 export type Type = 'Hook' | 'Provider' | 'SDK';

@@ -36,6 +36,12 @@ export const DevCycle: Provider = {
       category: ['Client'],
     },
     {
+      technology: 'React',
+      vendorOfficial: true,
+      href: 'https://docs.devcycle.com/sdk/client-side-sdks/react/react-openfeature',
+      category: ['Client'],
+    },
+    {
       technology: 'PHP',
       vendorOfficial: true,
       href: 'https://docs.devcycle.com/sdk/server-side-sdks/php/php-openfeature',
