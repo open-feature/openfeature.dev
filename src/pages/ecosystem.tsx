@@ -131,7 +131,7 @@ export default function Ecosystem() {
                     <span className="font-medium text-content">Technology</span>
                     <RefinementList
                       attribute="technology"
-                      sortBy={['name:asc']}
+                      sortBy={['count:desc']}
                       classNames={{
                         count:
                           'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
@@ -145,10 +145,7 @@ export default function Ecosystem() {
                     <span className="font-medium text-content">Vendor</span>
                     <RefinementList
                       attribute="vendor"
-                      // Perform a case insensitive sort
-                      sortBy={(a, b) => {
-                        return a.name.localeCompare(b.name);
-                      }}
+                      sortBy={['count:desc']}
                       limit={VENDORS_SHOWN_AS_FACET}
                       classNames={{
                         count:
