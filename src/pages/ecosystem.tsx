@@ -33,7 +33,7 @@ const options = {
     },
     technology: {
       title: 'technologies',
-      size: 10,
+      size: 12,
       hide_zero_doc_count: true,
       conjunction: false,
     },
