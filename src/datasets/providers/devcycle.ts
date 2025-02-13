@@ -36,7 +36,7 @@ export const DevCycle: Provider = {
       category: ['Client'],
     },
     {
-      technology: 'React',
+      technology: ['React', 'JavaScript'],
       vendorOfficial: true,
       href: 'https://docs.devcycle.com/sdk/client-side-sdks/react/react-openfeature',
       category: ['Client'],

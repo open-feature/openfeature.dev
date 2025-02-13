@@ -6,12 +6,13 @@ export type EcosystemElement = {
   logo: ComponentType<SVGProps<SVGSVGElement>>;
   title: string;
   description: string;
-  technology: Technology;
+  technology: Technology | Technology[];
   type: Type;
   vendorOfficial: boolean;
   category: Category[];
 };
 
+// TODO: should this just be a list of technolgies from the SDKs?
 export type Technology =
   | 'JavaScript'
   | 'Java'

@@ -15,6 +15,7 @@ import Hit from '../partials/ecosystem/hit';
 import ScrollTo from '../partials/ecosystem/scroll-to';
 
 const VENDORS_SHOWN_AS_FACET = 20;
+const TECHNOLOGIES_SHOWN_AS_FACET = 12;
 
 const options = {
   searchableFields: ['title', 'description'],
@@ -33,7 +34,7 @@ const options = {
     },
     technology: {
       title: 'technologies',
-      size: 12,
+      size: TECHNOLOGIES_SHOWN_AS_FACET,
       hide_zero_doc_count: true,
       conjunction: false,
     },
@@ -132,6 +133,7 @@ export default function Ecosystem() {
                     <RefinementList
                       attribute="technology"
                       sortBy={['count:desc']}
+                      limit={TECHNOLOGIES_SHOWN_AS_FACET}
                       classNames={{
                         count:
                           'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',

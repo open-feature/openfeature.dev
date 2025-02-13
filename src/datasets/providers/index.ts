@@ -57,12 +57,13 @@ export const PROVIDERS: Provider[] = [
 
 export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) => {
   return provider.technologies.map(({ category, href, technology, vendorOfficial }): EcosystemElement => {
+    const technologyString = Array.isArray(technology) ? technology[0] : technology;
     return {
       vendor: provider.name,
       title:
-        technology === 'JavaScript'
-          ? `${provider.name} ${technology} ${category[0] === 'Client' ? 'Web' : 'Node.js'} Provider`
-          : `${provider.name} ${technology} ${category} Provider`,
+        technologyString === 'JavaScript'
+          ? `${provider.name} ${technologyString} ${category[0] === 'Client' ? 'Web' : 'Node.js'} Provider`
+          : `${provider.name} ${technologyString} ${category} Provider`,
       description: !provider.description
         ? createDefaultDescription(provider.name, vendorOfficial)
         : typeof provider.description === 'string'
@@ -87,7 +88,12 @@ function createDefaultDescription(vendor: string, official: boolean): string {
 export type Provider = {
   name: string;
   logo: ComponentType<SVGProps<SVGSVGElement>>;
-  technologies: Array<{ technology: Technology; vendorOfficial: boolean; href: string; category: Category[] }>;
+  technologies: Array<{
+    technology: Technology | Technology[];
+    vendorOfficial: boolean;
+    href: string;
+    category: Category[];
+  }>;
   description?: string | ((vendorSupported: boolean) => string);
   excludeFromLandingPage?: boolean;
 };

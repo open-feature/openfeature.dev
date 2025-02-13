@@ -25,7 +25,17 @@ export default function Hit({ hit }: { hit: EcosystemElement }) {
       <h3>{hit.title}</h3>
       <p className="h-20 leading-snug line-clamp-3">{hit.description}</p>
       <div className="flex gap-2 flex-wrap mt-auto">
-        <Pill color={TECHNOLOGY_COLOR_MAP[hit.technology]}>{hit.technology}</Pill>
+        {/* {Array.isArray(hit.technology) ? (
+          hit.technology.map((tech) => (
+            <Pill key={tech} color={TECHNOLOGY_COLOR_MAP[tech]}>
+              {tech}
+            </Pill>
+          ))
+        ) : ( */}
+          <Pill color={TECHNOLOGY_COLOR_MAP[Array.isArray(hit.technology) ? hit.technology[0] : hit.technology]}>
+            {Array.isArray(hit.technology) ? hit.technology[0] : hit.technology}
+          </Pill>
+        {/* )} */}
         <Pill color={TYPE_COLOR_MAP[hit.type]}>{hit.type}</Pill>
         <Pill>{hit.category}</Pill>
       </div>
