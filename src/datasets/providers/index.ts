@@ -63,15 +63,48 @@ export const PROVIDERS: Provider[] = [
   OFREP,
 ];
 
+// Map of provider name to technology to child technologies
+const PROVIDER_TECHNOLOGY_MAP = PROVIDERS.reduce(
+  (acc, provider) => {
+    const techMap: Record<string, string[]> = {};
+
+    provider.technologies.forEach(({ technology, parentTechnology }) => {
+      if (parentTechnology) {
+        if (!techMap[parentTechnology]) {
+          techMap[parentTechnology] = [];
+        }
+        techMap[parentTechnology].push(technology);
+      }
+    });
+
+    if (Object.keys(techMap).length > 0) {
+      acc[provider.name] = techMap;
+    }
+
+    return acc;
+  },
+  {} as Record<string, Record<string, string[]>>,
+);
+
 export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) => {
   return provider.technologies.map(
     ({ category, href, technology, parentTechnology, vendorOfficial }): EcosystemElement => {
+      // Create a list of supported technologies for a provider, for example: a base Web Provider will power React / Angular SDKs.
+      // Filter out creating multiple entries for if a provider has a child provider for the base web provider.
       const allTechnologies = [technology, parentTechnology].filter(Boolean);
       if (technology === 'JavaScript' && category[0] === 'Client') {
-        allTechnologies.push(...jsClientChildTechnologies);
+        allTechnologies.push(
+          ...jsClientChildTechnologies.filter((t) => {
+            return !PROVIDER_TECHNOLOGY_MAP[provider.name]?.[technology]?.includes(t);
+          }),
+        );
       }
       if (technology === 'JavaScript' && category[0] === 'Server') {
-        allTechnologies.push(...jsServerChildTechnologies);
+        allTechnologies.push(
+          ...jsServerChildTechnologies.filter((t) => {
+            return !PROVIDER_TECHNOLOGY_MAP[provider.name]?.[technology]?.includes(t);
+          }),
+        );
       }
 
       return {
