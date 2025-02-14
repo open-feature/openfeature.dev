@@ -18,8 +18,7 @@ export const Goff: Provider = {
       category: ['Server'],
     },
     {
-      technology: 'React',
-      parentTechnology: 'JavaScript',
+      technology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/go-feature-flag-web',
       category: ['Client'],
