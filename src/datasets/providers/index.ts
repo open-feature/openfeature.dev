@@ -27,13 +27,19 @@ import { Tggl } from './tggl';
 import { OFREP } from './ofrep';
 import { SDKS } from '../sdks';
 
-const jsClientChildTechnologies = SDKS.filter(
-  (sdk) => sdk.category === 'Client' && sdk.parentTechnology === 'JavaScript',
-).map((sdk) => sdk.technology);
-
-const jsServerChildTechnologies = SDKS.filter(
-  (sdk) => sdk.category === 'Server' && sdk.parentTechnology === 'JavaScript',
-).map((sdk) => sdk.technology);
+const childTechnologyMap = SDKS.reduce(
+  (acc, sdk) => {
+    if (sdk.parentTechnology) {
+      const key = `${sdk.category}:${sdk.parentTechnology}`;
+      if (!acc[key]) {
+        acc[key] = [];
+      }
+      acc[key].push(sdk.technology);
+    }
+    return acc;
+  },
+  {} as Record<string, Technology[]>,
+);
 
 export const PROVIDERS: Provider[] = [
   Bucket,
@@ -92,16 +98,10 @@ export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) 
       // Create a list of supported technologies for a provider, for example: a base Web Provider will power React / Angular SDKs.
       // Filter out creating multiple entries for if a provider has a child provider for the base web provider.
       const allTechnologies = [technology, parentTechnology].filter(Boolean);
-      if (technology === 'JavaScript' && category[0] === 'Client') {
+      const key = `${category[0]}:${technology}`;
+      if (childTechnologyMap[key]) {
         allTechnologies.push(
-          ...jsClientChildTechnologies.filter((t) => {
-            return !PROVIDER_TECHNOLOGY_MAP[provider.name]?.[technology]?.includes(t);
-          }),
-        );
-      }
-      if (technology === 'JavaScript' && category[0] === 'Server') {
-        allTechnologies.push(
-          ...jsServerChildTechnologies.filter((t) => {
+          ...childTechnologyMap[key].filter((t) => {
             return !PROVIDER_TECHNOLOGY_MAP[provider.name]?.[technology]?.includes(t);
           }),
         );
