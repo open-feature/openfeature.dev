@@ -56,27 +56,35 @@ export const PROVIDERS: Provider[] = [
 ];
 
 export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) => {
-  return provider.technologies.map(({ category, href, technology, vendorOfficial }): EcosystemElement => {
-    const technologyString = Array.isArray(technology) ? technology[0] : technology;
-    return {
-      vendor: provider.name,
-      title:
-        technologyString === 'JavaScript'
-          ? `${provider.name} ${technologyString} ${category[0] === 'Client' ? 'Web' : 'Node.js'} Provider`
-          : `${provider.name} ${technologyString} ${category} Provider`,
-      description: !provider.description
-        ? createDefaultDescription(provider.name, vendorOfficial)
-        : typeof provider.description === 'string'
-          ? provider.description
-          : provider.description(vendorOfficial),
-      type: 'Provider',
-      logo: provider.logo,
-      href,
-      technology,
-      vendorOfficial,
-      category,
-    };
-  });
+  return provider.technologies.map(
+    ({ category, href, technology, parentTechnology, vendorOfficial }): EcosystemElement => {
+      const allTechnologies = [technology, parentTechnology].filter(Boolean);
+      if (technology === 'JavaScript' && category[0] === 'Client') {
+        allTechnologies.push('React');
+      }
+
+      return {
+        vendor: provider.name,
+        title:
+          technology === 'JavaScript'
+            ? `${provider.name} ${technology} ${category[0] === 'Client' ? 'Web' : 'Node.js'} Provider`
+            : `${provider.name} ${technology} ${category} Provider`,
+        description: !provider.description
+          ? createDefaultDescription(provider.name, vendorOfficial)
+          : typeof provider.description === 'string'
+            ? provider.description
+            : provider.description(vendorOfficial),
+        type: 'Provider',
+        logo: provider.logo,
+        href,
+        allTechnologies,
+        technology,
+        parentTechnology,
+        vendorOfficial,
+        category,
+      };
+    },
+  );
 }).flat();
 
 function createDefaultDescription(vendor: string, official: boolean): string {
@@ -89,7 +97,8 @@ export type Provider = {
   name: string;
   logo: ComponentType<SVGProps<SVGSVGElement>>;
   technologies: Array<{
-    technology: Technology | Technology[];
+    technology: Technology;
+    parentTechnology?: Technology;
     vendorOfficial: boolean;
     href: string;
     category: Category[];

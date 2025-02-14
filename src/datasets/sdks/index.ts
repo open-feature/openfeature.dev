@@ -68,7 +68,9 @@ export type SDK = {
   /**
    * Friendly name of the technology of the SDK.
    */
-  technology: Technology | Technology[];
+  technology: Technology;
+
+  parentTechnology?: Technology;
   /**
    * Link to the SDK documentation
    */

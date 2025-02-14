@@ -6,7 +6,9 @@ export type EcosystemElement = {
   logo: ComponentType<SVGProps<SVGSVGElement>>;
   title: string;
   description: string;
-  technology: Technology | Technology[];
+  allTechnologies: Technology[];
+  technology: Technology;
+  parentTechnology?: Technology;
   type: Type;
   vendorOfficial: boolean;
   category: Category[];

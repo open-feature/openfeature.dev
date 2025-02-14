@@ -44,7 +44,9 @@ export const ECOSYSTEM_SDKS: EcosystemElement[] = SDKS.map((sdk) => {
     category: [sdk.category],
     href: sdk.href,
     logo: logo,
+    allTechnologies: [sdk.technology, sdk.parentTechnology].filter(Boolean),
     technology: sdk.technology,
+    parentTechnology: sdk.parentTechnology,
     type: 'SDK',
     vendorOfficial: false,
   };

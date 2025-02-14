@@ -13,11 +13,12 @@ import NoResultsBoundary from '../partials/ecosystem/no-results-boundary';
 import PageIllustration from '../partials/page-illustration';
 import Hit from '../partials/ecosystem/hit';
 import ScrollTo from '../partials/ecosystem/scroll-to';
+import { ItemsJsOptions } from 'instantsearch-itemsjs-adapter/lib/itemsjsInterface';
 
 const VENDORS_SHOWN_AS_FACET = 20;
 const TECHNOLOGIES_SHOWN_AS_FACET = 12;
 
-const options = {
+const options: ItemsJsOptions = {
   searchableFields: ['title', 'description'],
   query: '',
   aggregations: {
@@ -32,8 +33,9 @@ const options = {
       size: 2,
       conjunction: true,
     },
-    technology: {
+    allTechnologies: {
       title: 'technologies',
+      // searchInField: ['technology', 'parentTechnology'],
       size: TECHNOLOGIES_SHOWN_AS_FACET,
       hide_zero_doc_count: true,
       conjunction: false,
@@ -49,8 +51,7 @@ const options = {
       size: 2,
       conjunction: true,
     },
-  },
-  removeStopWordFilter: false,
+  }
 };
 
 const index = createIndex(ECOSYSTEM, options);
@@ -131,7 +132,7 @@ export default function Ecosystem() {
                   <div className="border-0 border-solid border-t border-gray-200 py-4">
                     <span className="font-medium text-content">Technology</span>
                     <RefinementList
-                      attribute="technology"
+                      attribute="allTechnologies"
                       sortBy={['count:desc']}
                       limit={TECHNOLOGIES_SHOWN_AS_FACET}
                       classNames={{

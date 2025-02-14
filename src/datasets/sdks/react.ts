@@ -9,7 +9,8 @@ export const React: SDK = {
   branch: 'main',
   folder: '/packages/react',
   logoKey: 'react-no-fill.svg',
-  technology: ['React', 'JavaScript'],
+  technology: 'React',
+  parentTechnology: 'JavaScript',
   href: '/docs/reference/technologies/client/web/react',
   includeInSupportMatrix: false,
 };
