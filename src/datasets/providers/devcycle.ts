@@ -43,6 +43,13 @@ export const DevCycle: Provider = {
       category: ['Client'],
     },
     {
+      technology: 'Angular',
+      parentTechnology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://docs.devcycle.com/sdk/client-side-sdks/angular/angular-install',
+      category: ['Client'],
+    },
+    {
       technology: 'PHP',
       vendorOfficial: true,
       href: 'https://docs.devcycle.com/sdk/server-side-sdks/php/php-openfeature',
