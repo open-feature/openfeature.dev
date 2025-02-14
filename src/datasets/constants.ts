@@ -1,5 +1,5 @@
 // Controls the number of items shown on the ecosystem page.
-export const SEARCH_ITEMS_PER_PAGE = 16;
+export const SEARCH_ITEMS_PER_PAGE = 20;
 
 /**
  * Features map to the anchors found in the features column on the SDK README template.

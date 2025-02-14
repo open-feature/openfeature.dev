@@ -1,5 +1,5 @@
 import type { ComponentType, SVGProps } from 'react';
-
+import { Category, EcosystemElement, Technology } from '../types';
 import { Bucket } from './bucket';
 import { CloudBees } from './cloudbees';
 import { ConfigCat } from './configcat';
@@ -19,13 +19,21 @@ import { Statsig } from './statsig';
 import { FeatBit } from './featbit';
 import { UserDefaults } from './user-defaults';
 import { GrowthBook } from './growthbook';
-import { Category, EcosystemElement, Technology } from '../types';
 import { MultiProvider } from './multi-provider';
 import { Hypertune } from './hypertune';
 import { Confidence } from './confidence';
 import { ConfigBee } from './configbee';
 import { Tggl } from './tggl';
 import { OFREP } from './ofrep';
+import { SDKS } from '../sdks';
+
+const jsClientChildTechnologies = SDKS.filter(
+  (sdk) => sdk.category === 'Client' && sdk.parentTechnology === 'JavaScript',
+).map((sdk) => sdk.technology);
+
+const jsServerChildTechnologies = SDKS.filter(
+  (sdk) => sdk.category === 'Server' && sdk.parentTechnology === 'JavaScript',
+).map((sdk) => sdk.technology);
 
 export const PROVIDERS: Provider[] = [
   Bucket,
@@ -60,13 +68,16 @@ export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) 
     ({ category, href, technology, parentTechnology, vendorOfficial }): EcosystemElement => {
       const allTechnologies = [technology, parentTechnology].filter(Boolean);
       if (technology === 'JavaScript' && category[0] === 'Client') {
-        allTechnologies.push('React');
+        allTechnologies.push(...jsClientChildTechnologies);
+      }
+      if (technology === 'JavaScript' && category[0] === 'Server') {
+        allTechnologies.push(...jsServerChildTechnologies);
       }
 
       return {
         vendor: provider.name,
         title:
-          technology === 'JavaScript'
+          technology === 'JavaScript' || parentTechnology === 'JavaScript'
             ? `${provider.name} ${technology} ${category[0] === 'Client' ? 'Web' : 'Node.js'} Provider`
             : `${provider.name} ${technology} ${category} Provider`,
         description: !provider.description

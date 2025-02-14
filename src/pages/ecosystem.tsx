@@ -66,7 +66,7 @@ export default function Ecosystem() {
         routing={true}
         future={{ preserveSharedStateOnUnmount: true }}
       >
-        <Configure hitsPerPage={SEARCH_ITEMS_PER_PAGE}></Configure>
+        <Configure hitsPerPage={SEARCH_ITEMS_PER_PAGE} />
         <ScrollTo>
           <div className="flex flex-col min-h-screen overflow-hidden">
             <main className="grow">

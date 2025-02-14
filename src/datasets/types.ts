@@ -26,7 +26,9 @@ export type Technology =
   | 'Swift'
   | 'Rust'
   | 'Ruby'
-  | 'React';
+  | 'React'
+  | 'Angular'
+  | 'NestJS';
 
 export type Category = 'Server' | 'Client';
 export type Type = 'Hook' | 'Provider' | 'SDK';

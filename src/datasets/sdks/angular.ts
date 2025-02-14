@@ -9,7 +9,8 @@ export const Angular: SDK = {
   branch: 'main',
   folder: '/packages/angular/projects/angular-sdk',
   logoKey: 'angular-no-fill.svg',
-  technology: 'JavaScript',
+  technology: 'Angular',
+  parentTechnology: 'JavaScript',
   href: '/docs/reference/technologies/client/web/angular',
   includeInSupportMatrix: false,
 };
