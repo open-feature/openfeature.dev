@@ -69,7 +69,9 @@ export type SDK = {
    * Friendly name of the technology of the SDK.
    */
   technology: Technology;
-
+  /**
+   * The parent technology of the SDK. For example, JavaScript is the parent technology of React and Angular.
+   */
   parentTechnology?: Technology;
   /**
    * Link to the SDK documentation

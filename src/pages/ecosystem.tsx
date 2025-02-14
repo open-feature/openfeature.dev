@@ -16,7 +16,7 @@ import ScrollTo from '../partials/ecosystem/scroll-to';
 import { ItemsJsOptions } from 'instantsearch-itemsjs-adapter/lib/itemsjsInterface';
 
 const VENDORS_SHOWN_AS_FACET = 20;
-const TECHNOLOGIES_SHOWN_AS_FACET = 12;
+const TECHNOLOGIES_SHOWN_AS_FACET = 15;
 
 const options: ItemsJsOptions = {
   searchableFields: ['title', 'description'],
@@ -51,7 +51,8 @@ const options: ItemsJsOptions = {
       size: 2,
       conjunction: true,
     },
-  }
+  },
+  removeStopWordFilter: false,
 };
 
 const index = createIndex(ECOSYSTEM, options);
