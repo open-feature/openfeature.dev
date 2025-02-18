@@ -26,9 +26,7 @@ export default function Hit({ hit }: { hit: EcosystemElement }) {
       <p className="leading-snug line-clamp-3">{hit.description}</p>
       <div className="flex gap-2 flex-wrap-reverse mt-auto pt-4">
         <Pill color={TECHNOLOGY_COLOR_MAP[hit.technology]}>{hit.technology}</Pill>
-        {hit.parentTechnology && (
-          <Pill color={TECHNOLOGY_COLOR_MAP[hit.parentTechnology]}>{hit.parentTechnology}</Pill>
-        )}
+        {hit.parentTechnology && <Pill color={TECHNOLOGY_COLOR_MAP[hit.parentTechnology]}>{hit.parentTechnology}</Pill>}
         <Pill>{hit.category}</Pill>
         <Pill color={TYPE_COLOR_MAP[hit.type]}>{hit.type}</Pill>
       </div>
