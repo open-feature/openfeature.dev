@@ -19,40 +19,21 @@ const VENDORS_SHOWN_AS_FACET = 20;
 const TECHNOLOGIES_SHOWN_AS_FACET = 15;
 
 const options: ItemsJsOptions = {
-  searchableFields: ['title', 'description'],
+  searchableFields: ['title', 'description', 'allTechnologies'],
   query: '',
   aggregations: {
-    type: {
-      title: 'types',
-      size: 4,
-      hide_zero_doc_count: true,
-      conjunction: false,
-    },
-    category: {
-      title: 'category',
-      size: 2,
-      conjunction: true,
-    },
+    type: { title: 'types', size: 4, hide_zero_doc_count: true, conjunction: false },
+    category: { title: 'category', size: 2, conjunction: true },
     allTechnologies: {
       title: 'technologies',
-      // searchInField: ['technology', 'parentTechnology'],
+      searchInField: ['technology', 'parentTechnology'],
       size: TECHNOLOGIES_SHOWN_AS_FACET,
       hide_zero_doc_count: true,
       conjunction: false,
     },
-    vendor: {
-      title: 'vendors',
-      size: VENDORS_SHOWN_AS_FACET,
-      conjunction: false,
-      hide_zero_doc_count: true,
-    },
-    vendorOfficial: {
-      title: 'official',
-      size: 2,
-      conjunction: true,
-    },
+    vendor: { title: 'vendors', size: VENDORS_SHOWN_AS_FACET, conjunction: false, hide_zero_doc_count: true },
+    vendorOfficial: { title: 'official', size: 2, conjunction: true },
   },
-  removeStopWordFilter: false,
 };
 
 const index = createIndex(ECOSYSTEM, options);
@@ -74,8 +55,8 @@ export default function Ecosystem() {
               <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
                 <PageIllustration />
               </div>
-              <div className="relative pt-16 pb-10 md:pt-32 md:pb-16">
-                <div className="max-w-3xl mx-auto text-center pb-12">
+              <div className="relative pt-12 pb-8">
+                <div className="max-w-3xl mx-auto text-center pb-4">
                   <h2 className="text-3xl text-semibold dark:fill-white fill-gray-700 mb-8 sm:px-2">
                     Discover the OpenFeature Ecosystem
                   </h2>
@@ -172,13 +153,10 @@ export default function Ecosystem() {
                     />
                   </div>
                 </div>
-                <div className="lg:col-span-4">
+                <div className="lg:col-span-4 z-10">
                   <NoResultsBoundary fallback={<NoResults />}>
                     <Hits
-                      classNames={{
-                        list: 'flex flex-wrap gap-8 justify-center md:justify-start',
-                        item: 'list-none',
-                      }}
+                      classNames={{ list: 'flex flex-wrap gap-8 justify-center md:justify-start', item: 'list-none' }}
                       hitComponent={Hit}
                     />
                     <Pagination />
