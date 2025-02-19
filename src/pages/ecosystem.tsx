@@ -22,8 +22,17 @@ const options: ItemsJsOptions = {
   searchableFields: ['title', 'description', 'allTechnologies'],
   query: '',
   aggregations: {
-    type: { title: 'types', size: 4, hide_zero_doc_count: true, conjunction: false },
-    category: { title: 'category', size: 2, conjunction: true },
+    type: {
+      title: 'types',
+      size: 4,
+      hide_zero_doc_count: true,
+      conjunction: false,
+    },
+    category: {
+      title: 'category',
+      size: 2,
+      conjunction: true,
+    },
     allTechnologies: {
       title: 'technologies',
       searchInField: ['technology', 'parentTechnology'],
