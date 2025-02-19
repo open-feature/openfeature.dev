@@ -13,7 +13,9 @@ import NoResultsBoundary from '../partials/ecosystem/no-results-boundary';
 import PageIllustration from '../partials/page-illustration';
 import Hit from '../partials/ecosystem/hit';
 import ScrollTo from '../partials/ecosystem/scroll-to';
-import { ItemsJsOptions } from 'instantsearch-itemsjs-adapter/lib/itemsjsInterface';
+
+import type { ItemsJsOptions } from 'instantsearch-itemsjs-adapter/lib/itemsjsInterface';
+import type { InstantSearchOptions } from 'instantsearch.js';
 
 const VENDORS_SHOWN_AS_FACET = 20;
 const TECHNOLOGIES_SHOWN_AS_FACET = 15;
@@ -46,7 +48,9 @@ const options: ItemsJsOptions = {
 };
 
 const index = createIndex(ECOSYSTEM, options);
-const searchClient = getSearchClient(index);
+// Casting as the items.js implementation has slightly different facet types.
+// This doesn't appear to have any negative effects.
+const searchClient = getSearchClient(index) as InstantSearchOptions['searchClient'];
 
 export default function Ecosystem() {
   return (
