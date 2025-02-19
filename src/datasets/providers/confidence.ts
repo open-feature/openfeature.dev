@@ -10,7 +10,13 @@ export const Confidence: Provider = {
       technology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://github.com/spotify/confidence-sdk-js',
-      category: ['Client','Server'],
+      category: ['Server'],
+    },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/spotify/confidence-sdk-js',
+      category: ['Client'],
     },
     {
       technology: 'Java',
