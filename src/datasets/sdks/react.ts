@@ -10,6 +10,7 @@ export const React: SDK = {
   folder: '/packages/react',
   logoKey: 'react-no-fill.svg',
   technology: 'React',
+  parentTechnology: 'JavaScript',
   href: '/docs/reference/technologies/client/web/react',
   includeInSupportMatrix: false,
 };

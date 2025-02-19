@@ -9,7 +9,8 @@ export const Nestjs: SDK = {
   branch: 'main',
   folder: '/packages/nest',
   logoKey: 'nestjs-no-fill.svg',
-  technology: 'JavaScript',
+  technology: 'NestJS',
+  parentTechnology: 'JavaScript',
   href: '/docs/reference/technologies/server/javascript/nestjs',
   includeInSupportMatrix: false,
 };

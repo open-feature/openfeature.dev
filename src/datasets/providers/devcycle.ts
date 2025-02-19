@@ -37,8 +37,16 @@ export const DevCycle: Provider = {
     },
     {
       technology: 'React',
+      parentTechnology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://docs.devcycle.com/sdk/client-side-sdks/react/react-openfeature',
+      category: ['Client'],
+    },
+    {
+      technology: 'Angular',
+      parentTechnology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://docs.devcycle.com/sdk/client-side-sdks/angular/angular-install',
       category: ['Client'],
     },
     {

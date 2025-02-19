@@ -23,11 +23,14 @@ export default function Hit({ hit }: { hit: EcosystemElement }) {
         {external && <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="h-4 w-4 opacity-60" />}
       </div>
       <h3>{hit.title}</h3>
-      <p className="h-20 leading-snug line-clamp-3">{hit.description}</p>
-      <div className="flex gap-2 flex-wrap mt-auto">
+      <p className="leading-snug line-clamp-3">{hit.description}</p>
+      <div className="flex gap-2 flex-wrap-reverse mt-auto pt-4">
         <Pill color={TECHNOLOGY_COLOR_MAP[hit.technology]}>{hit.technology}</Pill>
-        <Pill color={TYPE_COLOR_MAP[hit.type]}>{hit.type}</Pill>
+        {hit.parentTechnology && (
+          <Pill color={TECHNOLOGY_COLOR_MAP[hit.parentTechnology]}>{hit.parentTechnology}</Pill>
+        )}
         <Pill>{hit.category}</Pill>
+        <Pill color={TYPE_COLOR_MAP[hit.type]}>{hit.type}</Pill>
       </div>
     </Link>
   );

@@ -13,6 +13,7 @@ export const ECOSYSTEM_HOOKS: EcosystemElement[] = [OpenTelemetry, Validation, D
         type: 'Hook',
         logo: hook.logo,
         href,
+        allTechnologies: [technology],
         technology,
         vendorOfficial,
         category,
