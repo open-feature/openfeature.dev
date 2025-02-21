@@ -12,8 +12,9 @@ import { React } from './react';
 import { Nestjs } from './nestjs';
 import { Ruby } from './ruby';
 import { Angular } from './angular';
+import { Rust } from './rust';
 
-export const SDKS = [Java, Nodejs, Nestjs, Dotnet, Go, Python, PHP, Web, React, Kotlin, Swift, Ruby, Angular];
+export const SDKS = [Java, Nodejs, Nestjs, Dotnet, Go, Python, PHP, Web, React, Kotlin, Swift, Ruby, Angular, Rust];
 
 export type SDK = {
   /**
