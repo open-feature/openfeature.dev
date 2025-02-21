@@ -47,5 +47,11 @@ export const Flagd: Provider = {
       href: 'https://github.com/open-feature/python-sdk-contrib/tree/main/providers/openfeature-provider-flagd',
       category: ['Server'],
     },
+    {
+      technology: 'Rust',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/rust-sdk-contrib/tree/main/crates/flagd',
+      category: ['Server'],
+    },
   ],
 };

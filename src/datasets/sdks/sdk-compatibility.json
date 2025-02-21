@@ -546,5 +546,61 @@
         "path": "/docs/reference/technologies/server/ruby#extending"
       }
     }
+  },
+  {
+    "name": "Rust",
+    "path": "/docs/reference/technologies/server/rust",
+    "category": "Server",
+    "release": {
+      "href": "https://github.com/open-feature/rust-sdk/releases/tag/v0.2.5",
+      "version": "0.2.5",
+      "stable": false
+    },
+    "spec": {
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.5.2",
+      "version": "0.5.2"
+    },
+    "features": {
+      "Providers": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/rust#providers"
+      },
+      "Targeting": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/rust#targeting"
+      },
+      "Hooks": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/rust#hooks"
+      },
+      "Logging": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/rust#logging"
+      },
+      "Domains": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/rust#named-clients"
+      },
+      "Eventing": {
+        "status": "❌",
+        "path": "/docs/reference/technologies/server/rust#eventing"
+      },
+      "Tracking": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/server/rust"
+      },
+      "Transaction Context Propagation": {
+        "status": "❓",
+        "path": "/docs/reference/technologies/server/rust"
+      },
+      "Shutdown": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/rust#shutdown"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/technologies/server/rust#extending"
+      }
+    }
   }
 ]
