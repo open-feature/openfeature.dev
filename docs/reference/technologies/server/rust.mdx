@@ -203,7 +203,7 @@ let mut client = api.create_client();
 client.set_evaluation_context(client_evaluation_context);
 
 // Pass evaluation context in evaluation functions.
-// This one will overwrite the globla evaluation context and 
+// This one will overwrite the global evaluation context and 
 // the client level one.
 client.get_int_value("flag", Some(&evaluation_context), None);
 ```
