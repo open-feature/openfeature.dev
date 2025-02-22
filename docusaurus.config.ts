@@ -1,6 +1,7 @@
 import type { Options as PresetClassicOptions } from '@docusaurus/preset-classic';
 import type { UserThemeConfig as ThemeCommonConfig } from '@docusaurus/theme-common';
 import type { UserThemeConfig as AlgoliaThemeConfig } from '@docusaurus/theme-search-algolia';
+import type * as Redocusaurus from 'redocusaurus';
 import type { Config } from '@docusaurus/types';
 import autoprefixer from 'autoprefixer';
 import { themes } from 'prism-react-renderer';
@@ -172,7 +173,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
   },
   prism: {
     theme: themes.oceanicNext,
-    additionalLanguages: ['java', 'csharp', 'powershell', 'php', 'kotlin', 'ruby'],
+    additionalLanguages: ['java', 'csharp', 'powershell', 'php', 'kotlin', 'ruby', 'scala'],
     magicComments: [
       {
         className: 'theme-code-block-highlighted-line',
@@ -284,7 +285,23 @@ const config: Config = {
       },
     },
   ],
-  presets: [['classic', presetClassicOptions]],
+  presets: [
+    ['classic', presetClassicOptions],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            id: 'ofrep',
+            spec: './external-content/protocol/service/openapi.yaml',
+          },
+        ],
+        theme: {
+          primaryColor: '#5D5DFF',
+        },
+      },
+    ] satisfies Redocusaurus.PresetEntry,
+  ],
   plugins: [
     async function tailwind() {
       return {

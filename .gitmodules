@@ -4,3 +4,6 @@
 [submodule "external-content/community"]
 	path = external-content/community
 	url = https://github.com/open-feature/community
+[submodule "external-content/protocol"]
+	path = external-content/protocol
+	url = https://github.com/open-feature/protocol
