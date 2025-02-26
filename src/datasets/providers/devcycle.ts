@@ -12,6 +12,13 @@ export const DevCycle: Provider = {
       category: ['Server'],
     },
     {
+      technology: 'NestJS',
+      parentTechnology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://docs.devcycle.com/sdk/server-side-sdks/nestjs/nestjs-openfeature',
+      category: ['Server'],
+    },
+    {
       technology: 'Java',
       vendorOfficial: true,
       href: 'https://docs.devcycle.com/sdk/server-side-sdks/java/java-openfeature',
