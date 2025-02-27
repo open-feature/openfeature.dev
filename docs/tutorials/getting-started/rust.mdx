@@ -101,9 +101,12 @@ async fn hello_handler(State(state): State<AppState>) -> impl IntoResponse {
 async fn main() {
     // Initialize the flagd provider with default options.
     let flag_provider = Arc::new(
-        FlagdProvider::new(FlagdOptions::default())
-            .await
-            .expect("Failed to create FlagdProvider"),
+        FlagdProvider::new(FlagdOptions {
+            cache_settings: None,
+            ..Default::default()
+        })
+        .await
+        .expect("Failed to create FlagdProvider"),
     );
 
     // Create a custom application state with the flag provider.
