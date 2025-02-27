@@ -106,7 +106,7 @@ async fn main() {
             ..Default::default()
         })
         .await
-        .expect("Failed to create FlagdProvider"),
+        .expect("Failed to connect to flagd. Please confirm flagd is running."),
     );
 
     // Create a custom application state with the flag provider.
