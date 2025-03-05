@@ -5,7 +5,7 @@ date: 2025-03-05
 authors: [weyert]
 description: "Open Invitation to the Vendor Commitee"
 tags: [cncf, vendors, community]
-draft: true
+draft: false
 ---
 
 # Join OpenFeature's Vendor Council: Shaping the Future of Feature Flagging
