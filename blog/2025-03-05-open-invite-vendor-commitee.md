@@ -8,12 +8,6 @@ tags: [cncf, vendors, community]
 draft: false
 ---
 
-# Join OpenFeature's Vendor Council: Shaping the Future of Feature Flagging
-
-![OpenFeature Logo](https://openfeature.dev/img/logos/open-feature-horizontal-color.svg)
-
-## An Open Invitation to Feature Flagging Vendors and Maintainers
-
 The OpenFeature project is excited to announce the formation of our **Vendor Council** — a collaborative forum designed to deepen engagement with commercial vendors and open-source maintainers in the feature flagging ecosystem.
 <!--truncate-->
 ## About OpenFeature
