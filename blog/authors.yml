@@ -81,3 +81,9 @@ lukasreining:
   title: IT Consultant at codecentric, OpenFeature maintainer
   url: https://github.com/lukas-reining
   image_url: https://github.com/lukas-reining.png
+
+weyert:
+  name: Weyert de Boer
+  title: Lead Developer at FNZ, OpenFeature maintainer
+  url: https://github.com/weyert
+  image_url: https://github.com/weyert.png
