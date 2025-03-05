@@ -9,7 +9,9 @@ draft: false
 ---
 
 The OpenFeature project is excited to announce the formation of our **Vendor Council** — a collaborative forum designed to deepen engagement with commercial vendors and open-source maintainers in the feature flagging ecosystem.
+
 <!--truncate-->
+
 ## About OpenFeature
 
 OpenFeature is a CNCF-incubating project that's defining open standards for feature flagging and experimentation. As a vendor-agnostic initiative, we're committed to improving the developer experience across the feature flagging landscape.
