@@ -15,7 +15,7 @@ draft: false
 ## An Open Invitation to Feature Flagging Vendors and Maintainers
 
 The OpenFeature project is excited to announce the formation of our **Vendor Council** — a collaborative forum designed to deepen engagement with commercial vendors and open-source maintainers in the feature flagging ecosystem.
-
+<!--truncate-->
 ## About OpenFeature
 
 OpenFeature is a CNCF-incubating project that's defining open standards for feature flagging and experimentation. As a vendor-agnostic initiative, we're committed to improving the developer experience across the feature flagging landscape.
@@ -62,8 +62,8 @@ If your organization is involved in the feature flagging space - whether as a co
 
 Please reach out to us by:
 
-- Emailing the OpenFeature Pete Hodgson from the Governance Committee at [workwith@thepete.net](mailto:workwith@thepete.net)
-- Joining our [Slack community](https://cloud-native.slack.com/archives/C0344AANLA1) and messaging any Governance Committee member
+- Emailing Pete Hodgson (a member of the Open Feature Governance Committee) at [workwith@thepete.net](mailto:workwith@thepete.net)
+- Posting in the [#openfeature Slack channel](https://openfeature.dev/community/#special-interest-groups)
 - Opening an issue in our [GitHub repository](https://github.com/open-feature/community)
 
 In your message, please include:
