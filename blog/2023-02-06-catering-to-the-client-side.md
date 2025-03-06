@@ -180,7 +180,7 @@ In order to align the OpenFeature API with most existing feature flagging provid
 ```javascript
 function Salutation() {
   const useFormalSalutation = client.getBooleanValue('use-formal-salutation', false);
-  if (formalSalutation) {
+  if (useFormalSalutation) {
     return <blink>Good day!</blink>;
   } else {
     return <blink>What's up!</blink>;
