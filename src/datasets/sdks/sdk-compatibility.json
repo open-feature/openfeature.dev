@@ -422,7 +422,7 @@
         "path": "/docs/reference/technologies/client/kotlin#named-clients"
       },
       "Eventing": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/technologies/client/kotlin#eventing"
       },
       "Tracking": {
