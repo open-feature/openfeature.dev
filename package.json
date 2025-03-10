@@ -50,7 +50,7 @@
     "mermaid": "11.4.1",
     "postcss": "^8.5.2",
     "prism-react-renderer": "2.4.1",
-    "prismjs": "1.29.0",
+    "prismjs": "1.30.0",
     "react": "19.0.0",
     "react-copy-to-clipboard": "5.1.0",
     "react-dom": "19.0.0",
