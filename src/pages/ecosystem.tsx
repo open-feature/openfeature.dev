@@ -17,8 +17,8 @@ import ScrollTo from '../partials/ecosystem/scroll-to';
 import type { ItemsJsOptions } from 'instantsearch-itemsjs-adapter/lib/itemsjsInterface';
 import type { InstantSearchOptions } from 'instantsearch.js';
 
-const VENDORS_SHOWN_AS_FACET = 20;
-const TECHNOLOGIES_SHOWN_AS_FACET = 15;
+const VENDORS_SHOWN_AS_FACET = 30;
+const TECHNOLOGIES_SHOWN_AS_FACET = 20;
 
 const options: ItemsJsOptions = {
   searchableFields: ['title', 'description', 'allTechnologies'],
