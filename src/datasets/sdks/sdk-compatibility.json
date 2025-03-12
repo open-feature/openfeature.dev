@@ -392,8 +392,8 @@
     "path": "/docs/reference/technologies/client/kotlin",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.3.3",
-      "version": "0.3.3",
+      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.4.1",
+      "version": "0.4.1",
       "stable": false
     },
     "spec": {
