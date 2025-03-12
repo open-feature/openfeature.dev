@@ -14,7 +14,6 @@ export type EcosystemElement = {
   category: Category[];
 };
 
-// TODO: should this just be a list of technolgies from the SDKs?
 export type Technology =
   | 'JavaScript'
   | 'Java'
@@ -28,6 +27,7 @@ export type Technology =
   | 'Ruby'
   | 'React'
   | 'Angular'
+  | 'Rust'
   | 'NestJS';
 
 export type Category = 'Server' | 'Client';
