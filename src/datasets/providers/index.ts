@@ -1,6 +1,7 @@
 import type { ComponentType, SVGProps } from 'react';
 import { Category, EcosystemElement, Technology } from '../types';
 import { Bucket } from './bucket';
+import { Bucketeer } from './bucketeer';
 import { CloudBees } from './cloudbees';
 import { ConfigCat } from './configcat';
 import { DevCycle } from './devcycle';
@@ -43,6 +44,7 @@ const childTechnologyMap = SDKS.reduce(
 
 export const PROVIDERS: Provider[] = [
   Bucket,
+  Bucketeer,
   CloudBees,
   Confidence,
   ConfigBee,
