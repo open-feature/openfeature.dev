@@ -1,6 +1,6 @@
 import { SDK } from '.';
 
-export const NestjsFlagsSDK: SDK = {
+export const NextjsFlagsSDK: SDK = {
   name: 'Next.js Flags',
   description: 'Vercel Next.js Flags SDK with OpenFeature Adapter',
   filename: 'javascript/nextjs-flags-sdk',

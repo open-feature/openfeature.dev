@@ -13,7 +13,7 @@ import { Nestjs } from './nestjs';
 import { Ruby } from './ruby';
 import { Angular } from './angular';
 import { Rust } from './rust';
-import { NestjsFlagsSDK } from './nextjs-flags-sdk';
+import { NextjsFlagsSDK } from './nextjs-flags-sdk';
 
 export const SDKS = [
   Java,
@@ -30,7 +30,7 @@ export const SDKS = [
   Ruby,
   Angular,
   Rust,
-  NestjsFlagsSDK,
+  NextjsFlagsSDK,
 ];
 
 export type SDK = {
