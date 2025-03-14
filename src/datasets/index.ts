@@ -14,7 +14,7 @@ export const ECOSYSTEM: EcosystemElement[] = [...ECOSYSTEM_SDKS, ...ECOSYSTEM_PR
 export const TECHNOLOGY_COLOR_MAP: Record<Technology, string> = {
   JavaScript: 'bg-yellow-50 text-yellow-600 ring-yellow-500/10',
   Go: 'bg-sky-50 text-sky-600 ring-sky-500/10',
-  Java: 'bg-amber-50 text-amber-600 ring-amber-500/10',
+  Java: 'bg-rose-50 text-rose-600 ring-rose-500/10',
   ['.NET']: 'bg-violet-50 text-violet-600 ring-violet-500/10',
   PHP: 'bg-indigo-50 text-indigo-600 ring-indigo-500/10',
   Kotlin: 'bg-purple-50 text-purple-600 ring-purple-500/10',
@@ -25,6 +25,8 @@ export const TECHNOLOGY_COLOR_MAP: Record<Technology, string> = {
   React: 'bg-teal-50 text-teal-600 ring-teal-500/10',
   Angular: 'bg-red-50 text-red-600 ring-red-500/10',
   NestJS: 'bg-pink-50 text-pink-600 ring-pink-500/10',
+  'Next.js': 'bg-gray-50 text-gray-600 ring-gray-500/10',
+  SvelteKit: 'bg-amber-50 text-amber-600 ring-amber-500/10',
 };
 
 export const TYPE_COLOR_MAP: Record<Type, string> = {
