@@ -13,19 +13,40 @@ import { Nestjs } from './nestjs';
 import { Ruby } from './ruby';
 import { Angular } from './angular';
 import { Rust } from './rust';
+import { NestjsFlagsSDK } from './nextjs-flags-sdk';
 
-export const SDKS = [Java, Nodejs, Nestjs, Dotnet, Go, Python, PHP, Web, React, Kotlin, Swift, Ruby, Angular, Rust];
+export const SDKS = [
+  Java,
+  Nodejs,
+  Nestjs,
+  Dotnet,
+  Go,
+  Python,
+  PHP,
+  Web,
+  React,
+  Kotlin,
+  Swift,
+  Ruby,
+  Angular,
+  Rust,
+  NestjsFlagsSDK,
+];
 
 export type SDK = {
   /**
    * The name of the technology used for the SDK.
    */
   name: string;
+
+  /**
+   * The description of the SDK to override the default.
+   */
+  description?: string;
   /**
    * The name used for the generated file.
    *
    * @defaults name.toLowerCase()
-   
    */
   filename?: string;
   /**
@@ -51,7 +72,7 @@ export type SDK = {
   /**
    * The name of the SDK repo.
    */
-  repo: string;
+  repo?: string;
   /**
    * The git branch that should be used when fetching the readme.
    */
@@ -74,6 +95,10 @@ export type SDK = {
    * The parent technology of the SDK. For example, JavaScript is the parent technology of React and Angular.
    */
   parentTechnology?: Technology;
+  /**
+   * Determines if the technology list should skip including the parent technology providers.
+   */
+  skipParentTechnologyProviders?: boolean;
   /**
    * Link to the SDK documentation
    */
