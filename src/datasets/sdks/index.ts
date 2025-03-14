@@ -14,7 +14,7 @@ import { Ruby } from './ruby';
 import { Angular } from './angular';
 import { Rust } from './rust';
 import { NextjsFlagsSDK } from './nextjs-flags-sdk';
-
+import { SveltekitFlagsSDK } from './sveltekit-flags-sdk';
 export const SDKS = [
   Java,
   Nodejs,
@@ -31,6 +31,7 @@ export const SDKS = [
   Angular,
   Rust,
   NextjsFlagsSDK,
+  SveltekitFlagsSDK,
 ];
 
 export type SDK = {

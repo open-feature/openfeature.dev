@@ -16,6 +16,8 @@ import RubySvg from '@site/static/img/ruby-no-fill.svg';
 import AngularSvg from '@site/static/img/angular-no-fill.svg';
 import RustSvg from '@site/static/img/rust-no-fill.svg';
 import NextjsSvg from '@site/static/img/nextjs-no-fill.svg';
+import SveltekitSvg from '@site/static/img/svelte-no-fill.svg';
+import FlagsSDKSvg from '@site/static/img/flags-sdk-no-fill.svg';
 
 const LogoMap: Record<string, EcosystemElement['logo']> = {
   'c-sharp-no-fill.svg': CSharpSvg,
@@ -33,6 +35,8 @@ const LogoMap: Record<string, EcosystemElement['logo']> = {
   'angular-no-fill.svg': AngularSvg,
   'rust-no-fill.svg': RustSvg,
   'nextjs-no-fill.svg': NextjsSvg,
+  'svelte-no-fill.svg': SveltekitSvg,
+  'flags-sdk-no-fill.svg': FlagsSDKSvg,
 };
 
 export const ECOSYSTEM_SDKS: EcosystemElement[] = SDKS.map((sdk) => {
