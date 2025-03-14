@@ -28,7 +28,8 @@ export type Technology =
   | 'React'
   | 'Angular'
   | 'Rust'
-  | 'NestJS';
+  | 'NestJS'
+  | 'Next.js Flags SDK';
 
 export type Category = 'Server' | 'Client';
 export type Type = 'Hook' | 'Provider' | 'SDK';
