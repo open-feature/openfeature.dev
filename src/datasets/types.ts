@@ -29,7 +29,8 @@ export type Technology =
   | 'Angular'
   | 'Rust'
   | 'NestJS'
-  | 'Next.js Flags SDK';
+  | 'Next.js'
+  | 'SvelteKit';
 
 export type Category = 'Server' | 'Client';
 export type Type = 'Hook' | 'Provider' | 'SDK';
