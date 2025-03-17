@@ -2,7 +2,7 @@ import ABTastySvg from '@site/static/img/abtasty-no-fill.svg';
 import { Provider } from '.';
 
 export const ABTasty: Provider = {
-  name: 'ABTasty',
+  name: 'AB Tasty',
   logo: ABTastySvg,
   technologies: [
     {
