@@ -18,6 +18,12 @@ export const GrowthBook: Provider = {
       category: ['Server'],
     },
     {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://github.com/growthbook/growthbook-openfeature-provider-python',
+      category: ['Server'],
+    },
+    {
       technology: 'Java',
       vendorOfficial: true,
       href: 'https://github.com/growthbook/growthbook-openfeature-provider-java',
