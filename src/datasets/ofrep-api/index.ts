@@ -3,10 +3,10 @@ import { DevCycle } from './devcycle';
 import { EcosystemElement } from '../types';
 import { Goff } from './goff';
 import { Flipt } from './flipt';
-
+import { Flagd } from './flagd';
 export type OFREPElement = Omit<EcosystemElement, 'allTechnologies' | 'technology' | 'category'>;
 
-export const ECOSYSTEM_OFREP_APIS: OFREPElement[] = [DevCycle, Flipt, Goff]
+export const ECOSYSTEM_OFREP_APIS: OFREPElement[] = [DevCycle, Flipt, Goff, Flagd]
   .map(
     (api): OFREPElement => ({
       vendor: api.name,
