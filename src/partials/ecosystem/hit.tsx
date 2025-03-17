@@ -6,8 +6,9 @@ import Link from '@docusaurus/Link';
 import Pill from './pill';
 import { TECHNOLOGY_COLOR_MAP, TYPE_COLOR_MAP } from '../../datasets';
 import { EcosystemElement } from '../../datasets/types';
+import type { OFREPElement } from '../../datasets/ofrep-api';
 
-export default function Hit({ hit }: { hit: EcosystemElement }) {
+export default function Hit({ hit }: { hit: EcosystemElement | OFREPElement }) {
   const external = hit.href.startsWith('http');
   const Svg: ComponentType<SVGProps<SVGSVGElement>> = hit.logo;
 
@@ -25,11 +26,15 @@ export default function Hit({ hit }: { hit: EcosystemElement }) {
       <h3>{hit.title}</h3>
       <p className="leading-snug line-clamp-3">{hit.description}</p>
       <div className="flex gap-2 flex-wrap-reverse mt-auto pt-4">
-        <Pill color={TECHNOLOGY_COLOR_MAP[hit.technology]}>{hit.technology}</Pill>
-        {hit.parentTechnology && (
-          <Pill color={TECHNOLOGY_COLOR_MAP[hit.parentTechnology]}>{hit.parentTechnology}</Pill>
+        {'technology' in hit && (
+          <>
+            <Pill color={TECHNOLOGY_COLOR_MAP[hit.technology]}>{hit.technology}</Pill>
+            {hit.parentTechnology && (
+              <Pill color={TECHNOLOGY_COLOR_MAP[hit.parentTechnology]}>{hit.parentTechnology}</Pill>
+            )}
+            <Pill>{hit.category}</Pill>
+          </>
         )}
-        <Pill>{hit.category}</Pill>
         <Pill color={TYPE_COLOR_MAP[hit.type]}>{hit.type}</Pill>
       </div>
     </Link>
