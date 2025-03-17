@@ -15,6 +15,7 @@ import IosSvg from '@site/static/img/ios-no-fill.svg';
 import RubySvg from '@site/static/img/ruby-no-fill.svg';
 import AngularSvg from '@site/static/img/angular-no-fill.svg';
 import RustSvg from '@site/static/img/rust-no-fill.svg';
+import FlagsSDKSvg from '@site/static/img/flags-sdk-no-fill.svg';
 
 const LogoMap: Record<string, EcosystemElement['logo']> = {
   'c-sharp-no-fill.svg': CSharpSvg,
@@ -31,6 +32,7 @@ const LogoMap: Record<string, EcosystemElement['logo']> = {
   'ruby-no-fill.svg': RubySvg,
   'angular-no-fill.svg': AngularSvg,
   'rust-no-fill.svg': RustSvg,
+  'flags-sdk-no-fill.svg': FlagsSDKSvg,
 };
 
 export const ECOSYSTEM_SDKS: EcosystemElement[] = SDKS.map((sdk) => {
@@ -42,7 +44,7 @@ export const ECOSYSTEM_SDKS: EcosystemElement[] = SDKS.map((sdk) => {
 
   return {
     title: `${sdk.name} SDK`,
-    description: `The official OpenFeature SDK for ${sdk.name}`,
+    description: sdk.description || `The official OpenFeature SDK for ${sdk.name}`,
     category: [sdk.category],
     href: sdk.href,
     logo: logo,

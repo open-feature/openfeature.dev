@@ -31,7 +31,7 @@ import { SDKS } from '../sdks';
 
 const childTechnologyMap = SDKS.reduce(
   (acc, sdk) => {
-    if (sdk.parentTechnology) {
+    if (sdk.parentTechnology && !sdk.skipParentTechnologyProviders) {
       const key = `${sdk.category}:${sdk.parentTechnology}`;
       if (!acc[key]) {
         acc[key] = [];
