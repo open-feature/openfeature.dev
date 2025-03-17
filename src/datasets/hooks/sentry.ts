@@ -12,5 +12,11 @@ export const Sentry: Hook = {
       href: 'https://docs.sentry.io/platforms/javascript/configuration/integrations/openfeature/',
       category: ['Client'],
     },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://docs.sentry.io/platforms/python/configuration/integrations/openfeature/',
+      category: ['Client'],
+    },
   ],
 };
