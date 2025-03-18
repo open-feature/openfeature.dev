@@ -9,9 +9,9 @@ draft: false
 ---
 
 We are happy to share the news that Vercel's new open-source [Flags SDK](https://flags-sdk.dev/) for Next.js and SvelteKit has shipped with a native [OpenFeature Adapter](https://flags-sdk.dev/docs/api-reference/adapters/openfeature).
-The Flags SDK is an exciting development for standardizing feature flagging in Next.js and SvelteKit, as it takes an [oppinionated approach](https://vercel.com/blog/flags-as-code-in-next-js) to how feature flags should be used in Next.js:
+The Flags SDK is an exciting development for standardizing feature flagging in Next.js and SvelteKit, as it takes an [opinionated approach](https://vercel.com/blog/flags-as-code-in-next-js) to how feature flags should be used in Next.js:
 - Feature Flags are just functions
-- Feature Flags are only evaluated on the server-side, no client-side flag evaluation is supported to improve performance, avoid layout shifts, and other un-optimal user experiences.
+- Feature Flags are only evaluated on the server-side, no client-side flag evaluation is supported to improve performance, avoid layout shifts, and other non-optimal user experiences.
 - Integration with the Vercel Toolbar, allows local overrides of flag values during development and testing.
 
 ### OpenFeature Provider Example
@@ -66,8 +66,8 @@ This adaptor will allow most Node.js OpenFeature Providers to work with the Flag
 
 ### Future of Next.js Support
 
-We are excited to continue working with the team at Vercel leading this effort and work to help expand the efforts of open standards in feature flagging for Next.js and SvelteKit.
-One of the visions of OpenFeature has allways been deeper integration into the language / framework level as the adoption of OpenFeature as the open standard in feature flagging grows, we are happy to work with language and framework authors who strive to offer feature flagging built-in.
+We are excited to continue working with the team at Vercel that is leading this effort, and to help expand the efforts of open standards in feature flagging for Next.js and SvelteKit.
+One of the visions of OpenFeature has always been deeper integration into the language / framework level as the adoption of OpenFeature as the open standard in feature flagging grows, we are happy to work with language and framework authors who strive to offer feature flagging built-in.
 
-While the Flags SDK is offering Next.js and SvelteKit developers with an oppinionated and performance optimized open-source feature flagging solution, we recognize that its structure may not work for all Next.js developers out there relying on a mixture of client-side rendering in their applications.
-If you are knowlegeable about Next.js and would like to help OpenFeature develop our Next.js SDK, please reach-out to us in the [CNCF #openfeature Slack](https://openfeature.dev/community/#discussions).
+While the Flags SDK is offering Next.js and SvelteKit developers with an opinionated and performance optimized open-source feature flagging solution, we recognize that its structure may not work for all Next.js developers out there relying on a mixture of client-side rendering in their applications.
+If you are knowledgeable about Next.js and would like to help OpenFeature develop our Next.js SDK, please reach out to us in the [CNCF #openfeature Slack](https://openfeature.dev/community/#discussions).
