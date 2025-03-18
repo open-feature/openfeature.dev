@@ -46,7 +46,7 @@ const client = OpenFeature.getClient();
 ```
 
 Integrating OFREP with Cloudflare Workers offers a scalable and high-performance solution for feature flag evaluation at the edge built on open standards.
-This was a great demo during our Hackathon; there is still some work to do to productize this OFREP worker; reach out to us if you think this is an interesting use-case for OFREP as we continue to work on it: https://github.com/DevCycleHQ-Sandbox/OFREP-bucketing-worker
+This was a great demo during our Hackathon; there is still some work to do to productize [this OFREP worker](https://github.com/DevCycleHQ-Sandbox/OFREP-bucketing-worker); reach out to us if you think this is an interesting use-case for OFREP as we continue to work on it.
 
 ### OpenFeature CLI Contribution
 
@@ -115,7 +115,7 @@ We are excited to keep working on the CLI with the folks from Dynatrace, Google 
 At DevCycle, we've been interested in building a [Codemod](https://codemod.com/) for a while; we connected with the Codemod team a while back and thought it could help us build migration tools for customers looking to convert their usage over to OpenFeature SDKs from vendor SDKs.
 Codemod has seen great adoption from teams looking to upgrade to the latest versions of React or officially supported upgrade paths for example [Nuxt 3 → 4](https://codemod.com/blog/nuxt-announcement#nuxt-4-migration).
 
-Finally, in this hackathon, we got a chance to play with their tooling and publish a codemod. 
+Finally, in this hackathon, we got a chance to play with their tooling and publish a codemod.
 Think of the codemod platform as tooling around open-source code transformation tools like [jscodeshift](https://github.com/facebook/jscodeshift), plus some AI-powered tooling to generate codemods, and an NPM-like repository for distributing codemods.
 
 For our first set of codemods, we wanted to help teams transition their codebases from DevCycle or Launchdarkly Node.js SDKs to using the OpenFeature SDK with the OpenFeature Provider from the vendor.
