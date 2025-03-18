@@ -191,4 +191,4 @@ Dogfooding the OpenFeature SDKs and our own providers was a valuable learning ex
 
 And many more!
 Each project aimed to strengthen the OpenFeature ecosystem and provide better tools for developers.
-Let us know what projects you found the most interesting and we should continue developing further.
+Let us know what projects you found the most interesting and we should continue developing further, please reach out to us in the [CNCF #openfeature Slack](https://openfeature.dev/community/#discussions).
