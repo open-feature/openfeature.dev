@@ -1,15 +1,22 @@
 import { ECOSYSTEM_HOOKS } from './hooks';
+import { ECOSYSTEM_OFREP_APIS, OFREPElement } from './ofrep-api';
 import { ECOSYSTEM_PROVIDERS } from './providers';
 import { ECOSYSTEM_SDKS } from './sdks/ecosystem';
 import { EcosystemElement, Technology, Type } from './types';
 
-export const ECOSYSTEM: EcosystemElement[] = [...ECOSYSTEM_SDKS, ...ECOSYSTEM_PROVIDERS, ...ECOSYSTEM_HOOKS].map(
-  (s) => ({
-    // Creates a unique id per item for the search index
-    id: `${s.type}/${s.category}/${s.technology}/${s.vendor}/${s.href}`,
-    ...s,
-  }),
-);
+export const ECOSYSTEM: (EcosystemElement | OFREPElement)[] = [
+  ...ECOSYSTEM_SDKS,
+  ...ECOSYSTEM_PROVIDERS,
+  ...ECOSYSTEM_HOOKS,
+  ...ECOSYSTEM_OFREP_APIS,
+].map((s) => ({
+  // Creates a unique id per item for the search index
+  id:
+    'technology' in s && 'category' in s
+      ? `${s.type}/${s.category}/${s.technology}/${s.vendor}/${s.href}`
+      : `${s.type}/${s.vendor}/${s.href}`,
+  ...s,
+}));
 
 export const TECHNOLOGY_COLOR_MAP: Record<Technology, string> = {
   JavaScript: 'bg-yellow-50 text-yellow-600 ring-yellow-500/10',
@@ -33,4 +40,5 @@ export const TYPE_COLOR_MAP: Record<Type, string> = {
   Hook: 'bg-green-50 text-green-600 ring-green-500/10',
   Provider: 'bg-blue-50 text-blue-600 ring-blue-500/10',
   SDK: 'bg-violet-50 text-violet-600 ring-violet-500/10',
+  'OFREP API': 'bg-orange-50 text-orange-600 ring-orange-500/10',
 };
