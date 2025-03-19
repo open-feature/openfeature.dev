@@ -60,7 +60,7 @@ However, there was no built-in way for vendors to integrate their platforms with
 
 The `openfeature generate react` command runs by generating a typed interface for your OpenFeature SDK from a known list of flags from a standard flags manifest file.
 To support this standard as a vendor, the CLI would need a way to pul and sync the flag manifest file directly from a vendor’s platform.
-Jason from DevCycle stepped in and created an `openfeature cli pull` method to pull flag data from DevCycle's API and generate a manifest file for the the CLI to use.
+Jason from DevCycle stepped in and created an `openfeature pull` method to pull flag data from DevCycle's API and generate a manifest file for the the CLI to use.
 
 ```bash
 > openfeature cli pull
