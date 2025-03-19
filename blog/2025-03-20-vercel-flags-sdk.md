@@ -12,7 +12,7 @@ We are happy to share the news that Vercel's new open-source [Flags SDK](https:/
 The Flags SDK is an exciting development for standardizing feature flagging in Next.js and SvelteKit, as it takes an [opinionated approach](https://vercel.com/blog/flags-as-code-in-next-js) to how feature flags should be used:
 - Feature Flags are just functions
 - Feature Flags are only evaluated on the server-side, no client-side flag evaluation is supported to improve performance, avoid layout shifts, and other non-optimal user experiences.
-- Integration with the Vercel Toolbar, allows local overrides of flag values during development and testing.
+- Integration with the Vercel Toolbar, allows local overrides of flag values during development, testing and even in production.
 
 ### OpenFeature Provider Example
 
@@ -65,7 +65,7 @@ export default async function Page() {
 }
 ```
 
-This adaptor will allow most Node.js OpenFeature Providers to work with the Flags SDK, though there may be some compatability issues with certain Node.js OpenFeature Providers with the [Vercel Edge Runtime](https://vercel.com/docs/functions/runtimes/edge) that should be tested per-provider.
+This adapter will allow most Node.js OpenFeature Providers to work with the Flags SDK, though there may be some compatability issues with certain Node.js OpenFeature Providers with the [Vercel Edge Runtime](https://vercel.com/docs/functions/runtimes/edge) that should be tested per-provider.
 
 ### The Value of Open Standards
 
@@ -79,3 +79,5 @@ One of the visions of OpenFeature has always been deeper integration into the la
 
 While the Flags SDK is offering Next.js and SvelteKit developers with an opinionated and performance optimized open-source feature flagging SDK, we recognize that its structure may not work for all Next.js developers out there relying on a mixture of client-side rendering in their applications.
 If you are knowledgeable about Next.js and would like to help OpenFeature develop our Next.js SDK, please reach out to us in the [CNCF #openfeature Slack](https://openfeature.dev/community/#discussions).
+
+If you'd like to test out the Flags SDK OpenFeature Adapter check out their [example project](https://vercel.com/templates/next.js/flags-sdk-openfeature).
