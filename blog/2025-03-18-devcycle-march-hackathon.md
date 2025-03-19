@@ -63,8 +63,8 @@ To support this standard as a vendor, the CLI would need a way to pul and sync t
 Jason from DevCycle stepped in and created an `openfeature pull` method to pull flag data from DevCycle's API and generate a manifest file for the the CLI to use.
 
 ```bash
-> openfeature cli pull
-> openfeature cli generate react
+> openfeature pull
+> openfeature generate react
 ```
 
 will result in an `openfeature.ts` file with populated variable hooks:
