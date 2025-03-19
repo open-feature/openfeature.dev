@@ -1,7 +1,7 @@
 ---
 slug: "devcycle-march-2025-hackathon"
 title: "DevCycle March 2025 - OpenFeature Hackathon"
-date: 2025-03-18
+date: 2025-03-19
 authors: [jonathannorris]
 description: "DevCycle March 2025 OpenFeature Hackathon"
 tags: [devcycle, hackathon]
@@ -17,7 +17,7 @@ Let's take a closer look at how our team hacked, what we learned, and why these 
 
 ## DevCycle's Hackathon Projects
 
-<img src={require('@site/static/img/blog/2025-03-18-devcycle-march-hackathon/devcycle-march-2025-hackathon.jpg').default} />
+<img src={require('@site/static/img/blog/2025-03-19-devcycle-march-hackathon/devcycle-march-2025-hackathon.jpg').default} />
 
 ### OpenFeature Remote Evaluation Protocol with Cloudflare Workers
 
@@ -138,7 +138,7 @@ codemod devcycle-to-openfeature-nodejs-workflow
 
 The codemod CLI will download the latest version of the codemods and run them against your codebase.
 
-<img src={require('@site/static/img/blog/2025-03-18-devcycle-march-hackathon/codemod.png').default} />
+<img src={require('@site/static/img/blog/2025-03-19-devcycle-march-hackathon/codemod.png').default} />
 
 These codemods are a great starting point for anyone looking to do much of the heavy lifting updating a codebase from DevCycle or Launchdarkly Node.js SDKs to OpenFeature.
 We are interested in feedback from the community about the value of these codemods and if we should continue developing them for more languages / vendors, as well as if these codemods would make sense as an OpenFeature-supported project.
