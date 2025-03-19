@@ -33,7 +33,7 @@ export type Technology =
   | 'SvelteKit';
 
 export type Category = 'Server' | 'Client';
-export type Type = 'Hook' | 'Provider' | 'SDK';
+export type Type = 'Hook' | 'Provider' | 'SDK' | 'OFREP API';
 
 export type SdkCompatibility = {
   /**
