@@ -59,15 +59,15 @@ While the OpenFeature CLI is in its early development, type generation for Go an
 However, there was no built-in way for vendors to integrate their platforms with the CLI’s type generation feature.
 
 The `openfeature generate react` command runs by generating a typed interface for your OpenFeature SDK from a known list of flags from a standard flags manifest file.
-To support this standard as a vendor, the CLI would need a way to pul and sync the flag manifest file directly from a vendor’s platform.
-Jason from DevCycle stepped in and created an `openfeature pull` method to pull flag data from DevCycle's API and generate a manifest file for the the CLI to use.
+To support this standard as a vendor, the CLI would need a way to pull and sync the flag manifest file directly from a vendor’s platform.
+Jason from DevCycle stepped in and created an `openfeature pull` method to pull flag data from DevCycle's API and generate a manifest file for the CLI to use.
 
 ```bash
 > openfeature pull
 > openfeature generate react
 ```
 
-will result in an `openfeature.ts` file with populated variable hooks:
+This will result in an `openfeature.ts` file with populated variable hooks:
 
 ```tsx
 'use client';
@@ -110,7 +110,7 @@ export const useSuspenseANewerFeature = (options?: ReactFlagEvaluationNoSuspense
 ...
 ```
 
-We are excited to keep working on the CLI with the folks from Dynatrace, Google Cloud and others who are leading this effort.
+We are excited to keep working on the CLI with the folks from Dynatrace, Google Cloud, and others leading this effort.
 [Our PR adding the pull command](https://github.com/open-feature/cli/pull/79)
 
 ### Codemod: Convert Codebase from Vendor SDK to OpenFeature SDK
@@ -123,7 +123,7 @@ This hackathon finally gave us the chance to experiment with Codemod’s tooling
 Think of the codemod platform as tooling around open-source code transformation tools like [jscodeshift](https://github.com/facebook/jscodeshift), while adding AI-powered tooling for generating codemods, plus an NPM-like repository for distributing them.
 
 Our first set of codemods focussed on helping teams transition their codebases from DevCycle or Launchdarkly Node.js SDKs to using the OpenFeature SDK, using the respective vendor’s OpenFeature Provider.
-To do this, we discovered it best to break down the problem into smaller, testable steps and then run all the codemods together in an workflow:
+To do this, we discovered it best to break down the problem into smaller, testable steps and then run all the codemods together in a workflow:
 
 - [Update Imports CodeMod](https://codemod.com/registry/devcycle-to-openfeature-nodejs-update-imports) - transforms file and packages imports to use OpenFeature + Provider.
 - [Initialization Transform](https://codemod.com/registry/devcycle-to-openfeature-nodejs-initialization-transform) - transforms the SDK initialization from using `initializeDevCycle()` to setting up the `DevCycleProvider` and creating the OpenFeature Client
@@ -140,7 +140,7 @@ The codemod CLI will download the latest version of the codemods and run them ag
 
 <img src={require('@site/static/img/blog/2025-03-19-devcycle-march-hackathon/codemod.png').default} />
 
-These codemods are a great starting point for anyone looking to do much of the heavy lifting updating a codebase from DevCycle or Launchdarkly Node.js SDKs to OpenFeature.
+[These codemods](https://github.com/DevCycleHQ-Sandbox/OpenFeature-Codemod) are a great starting point for anyone looking to do much of the heavy lifting, updating a codebase from DevCycle or Launchdarkly Node.js SDKs to OpenFeature.
 We are interested in feedback from the community about the value of these codemods and if we should continue developing them for more languages / vendors, as well as if these codemods would make sense as an OpenFeature-supported project.
 
 ### Docusaurus OpenFeature Wrapper
@@ -169,7 +169,7 @@ In the spirit of dogfooding OpenFeature and our own Providers, Kaushal from our 
 To accomplish this, we introduced a wrapper service that used a single instance of the OpenFeature Client, making it accessible across our Nest.js service. 
 This straightforward migration allowed the OpenFeature Client to replace any existing calls to DevCycle's SDK.
 
-One of the key takeaway from this project was realizing how much our API development relied on  Nest.js decorators, which simplified our feature flagging of API endpoints:
+One of the key takeaways from this project was realizing how much our API development relied on  Nest.js decorators, which simplified our feature flagging of API endpoints:
 
 - `@RequireFlagsEnabled(["flag1", "flag2"], ForbiddenException)`
   - This would check if the targeting context evaluated multiple Boolean values to true for all the flags passed in else return the exception (default exception of `NotFound`)
@@ -178,7 +178,7 @@ One of the key takeaway from this project was realizing how much our API develop
 
 We started a [PR here](https://github.com/open-feature/js-sdk/pull/1159) to enhance the Nest.js SDK with these decorators.
 
-We also lean heavily on the mock interfaces provided by the DevCycle Nest.js SDK to mock and set flag values, which allow us to test different branching code paths in our API service.
+We also lean heavily on the mock interfaces provided by the DevCycle Nest.js SDK to mock and set flag values, which allows us to test different branching code paths in our API service.
 Adding similar mocking capabilities would be a useful addition to make testing all the OpenFeature SDKs easier.
 Dogfooding the OpenFeature SDKs and our own providers was a valuable learning experience, sparking new ideas on how to contribute to and improve these SDKs in the future.
 
