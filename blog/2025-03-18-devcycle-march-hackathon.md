@@ -58,7 +58,7 @@ When we heard about the development progress of the [OpenFeature CLI](https://gi
 While the OpenFeature CLI is in its early development, type generation for Go and React is already functional.
 However, there was no built-in way for vendors to integrate their platforms with the CLI’s type generation feature.
 
-The `openfeature cli generate react` command runs by generating a typed interface for your OpenFeature SDK from a known list of flags from a standard flags manifest file.
+The `openfeature generate react` command runs by generating a typed interface for your OpenFeature SDK from a known list of flags from a standard flags manifest file.
 To support this standard as a vendor, the CLI would need a way to pul and sync the flag manifest file directly from a vendor’s platform.
 Jason from DevCycle stepped in and created an `openfeature cli pull` method to pull flag data from DevCycle's API and generate a manifest file for the the CLI to use.
 
