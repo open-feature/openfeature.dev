@@ -47,7 +47,7 @@
     "embla-carousel-react": "^8.5.2",
     "instantsearch-itemsjs-adapter": "^1.1.5",
     "itemsjs": "^2.1.25",
-    "mermaid": "11.5.0",
+    "mermaid": "11.6.0",
     "postcss": "^8.5.2",
     "prism-react-renderer": "2.4.1",
     "prismjs": "1.30.0",
