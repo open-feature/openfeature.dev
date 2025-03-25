@@ -8,9 +8,8 @@ id: tracking
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Tracking in OpenFeature is the process of associating metrics or KPIs with feature flag evaluation contexts. 
+Tracking in OpenFeature is the process of associating metrics or KPIs with feature flag evaluation contexts.
 This association helps measure the impact of feature changes on both business KPIs and system performance, making it particularly valuable for experimentation.
-
 
 ## Use Cases
 
@@ -18,16 +17,16 @@ Tracking events associated with flag evaluations serves two primary purposes:
 
 ### Performance Monitoring
 
-When changes are made to an application via feature flags, tracking helps measure their impact on performance. By associating events with flag evaluation contexts 
-and sending this data to telemetry or analytics platforms, teams can determine whether specific flag configurations improve or degrade measured performance, 
+When changes are made to an application via feature flags, tracking helps measure their impact on performance. By associating events with flag evaluation contexts
+and sending this data to telemetry or analytics platforms, teams can determine whether specific flag configurations improve or degrade measured performance,
 whether business metrics or system performance.
 
 ### Experimentation
 
-Tracking creates a crucial link between flag evaluations and business outcomes, enabling robust experimentation. Experimentation differs from generalized 
-Performance Monitoring in its execution. The most common form of Experimentation being A/B testing which is when two variations of an application or feature 
-are distributed randomly to similar groups and the differences in metrics is evaluated. For example, if a feature flag controls the order 
-of items in a menu, tracking events can be emitted when users click on menu items. The feature flag provider can typically be set to distribute the different variations 
+Tracking creates a crucial link between flag evaluations and business outcomes, enabling robust experimentation. Experimentation differs from generalized
+Performance Monitoring in its execution. The most common form of Experimentation being A/B testing which is when two variations of an application or feature
+are distributed randomly to similar groups and the differences in metrics is evaluated. For example, if a feature flag controls the order
+of items in a menu, tracking events can be emitted when users click on menu items. The feature flag provider can typically be set to distribute the different variations
 equally to your audience, making this an A/B test, helping to validate hypotheses about user behavior in a statistically relevant manner.
 
 ## Providers, Hooks and Integration
@@ -46,6 +45,7 @@ sequenceDiagram
 ```
 
 ## Track Event Implementation
+
 The `track` function requires only a label parameter. You don’t need to pass an identifier or flag evaluation context since the OpenFeature provider already maintains this information.
 
 Optionally, you can associate additional metadata with each track event if your feature flagging tool supports it.
@@ -54,14 +54,13 @@ Optionally, you can associate additional metadata with each track event if your 
 <TabItem value="js" label="TypeScript">
 
 ```ts
-
 // example tracking event recording a conversion
 client.track('conversion-tracked');
 
 // optionally additional data can be associated with the event
 client.track('conversion-tracked', {
-  "value": 99.77,
-  "currencyCode":"USD"
+  value: 99.77,
+  currencyCode: 'USD',
 });
 ```
 
@@ -70,13 +69,35 @@ client.track('conversion-tracked', {
 <TabItem value="java" label="Java">
 
 ```java
-
 // example tracking event recording a conversion
 client.track("conversion-tracked");
 
 // optionally additional data can be associated with the event
 client.track("conversion-tracked", new TrackingEventDetails(99.77).add("currencyCode", "USD"));
+```
 
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+// example tracking event recording a conversion
+client.Track("visited-promo-page");
+
+// optionally additional data can be associated with the event
+client.Track("visited-promo-page", new TrackingEventDetailsBuilder().SetValue(99.77).Set("currencyCode", "USD").Build());
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+client.Track(
+  context.Background(),
+  "visited-promo-page",
+  openfeature.EvaluationContext{},
+  openfeature.NewTrackingEventDetails(99.77).Add("currencyCode", "USD"),
+  )
 ```
 
 </TabItem>

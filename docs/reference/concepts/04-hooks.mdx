@@ -194,7 +194,7 @@ export class MyHook implements Hook {
     // code to run before flag evaluation
   }
 
-  after(hookContext: HookContext, evaluationDetails: EvaluationDetails<FlagValue>) {
+  after(hookContext: HookContext, details: EvaluationDetails<FlagValue>) {
     // code to run after successful flag evaluation
   }
 
@@ -202,7 +202,7 @@ export class MyHook implements Hook {
     // code to run if there's an error during before hooks or during flag evaluation
   }
 
-  finally(hookContext: HookContext) {
+  finally(hookContext: HookContext, details: EvaluationDetails<FlagValue>) {
     // code to run after all other stages, regardless of success/failure
   }
 }
@@ -229,7 +229,7 @@ class MyHook implements BooleanHook {
   }
 
   @Override
-  public void finallyAfter(HookContext<Boolean> ctx, Map<String, Object> hints) {
+  public void finallyAfter(HookContext<Boolean> ctx, FlagEvaluationDetails details, Map<String, Object> hints) {
     // code to run after all other stages, regardless of success/failure
   }
 }
@@ -259,7 +259,7 @@ MyHook : Hook
     // code to run if there's an error during before hooks or during flag evaluation
   }
 
-  public virtual Task Finally<T>(HookContext<T> context, IReadOnlyDictionary<string, object> hints = null)
+  public virtual Task Finally<T>(HookContext<T> context, FlagEvaluationDetails<T> details, IReadOnlyDictionary<string, object> hints = null)
   {
     // code to run after all other stages, regardless of success/failure
   }
@@ -276,7 +276,7 @@ func (h myHook) Before(ctx context.Context, hookContext openfeature.HookContext,
     // code to run before flag evaluation
 }
 
-func (h myHook) After(ctx context.Context, hookContext openfeature.HookContext, flagEvaluationDetails openfeature.EvaluationDetails, hookHints openfeature.HookHints) error {
+func (h myHook) After(ctx context.Context, hookContext openfeature.HookContext, details openfeature.InterfaceEvaluationDetails, hookHints openfeature.HookHints) error {
     // code to run after successful flag evaluation
 }
 
@@ -284,7 +284,7 @@ func (h myHook) Error(ctx context.Context, hookContext openfeature.HookContext, 
     // code to run if there's an error during before hooks or during flag evaluation
 }
 
-func (h myHook) Finally(ctx context.Context, hookContext openfeature.HookContext, hookHints openfeature.HookHints) {
+func (h myHook) Finally(ctx context.Context, hookContext openfeature.HookContext, details openfeature.InterfaceEvaluationDetails, hookHints openfeature.HookHints) {
     // code to run after all other stages, regardless of success/failure
 }
 ```
@@ -335,7 +335,7 @@ class MyHook(Hook):
     def error(self, context: HookContext, error, hints: dict):
         ...  # code to run if there's an error during before hooks or during flag evaluation
 
-    def finally_after(self, context: HookContext, hints: dict):
+    def finally_after(self, context: HookContext, details: FlagEvaluationDetails, hints: dict):
         ...  # code to run after all other stages, regardless of success/failure
 ```
 
