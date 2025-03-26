@@ -23,30 +23,93 @@ Handlers are passed an [event details](/specification/types#event-details) struc
 <TabItem value="js" label="TypeScript">
 
 ```ts
-// attach a `PROVIDER_READY` handler
-client.addHandler(ProviderEvents.Ready, (eventDetails: EventDetails) => {
-  // do something when the provider is ready
+// add an event handler to a client
+const client = OpenFeature.getClient();
+client.addHandler(ProviderEvents.ConfigurationChanged, (eventDetails) => {
+  // do something when the provider's flag settings change
 });
 
-// attach a `PROVIDER_CONFIGURATION_CHANGED` handler
-client.addHandler(ProviderEvents.ConfigurationChanged, (eventDetails: EventDetails) => {
-  // do something when flags settings have changed
+// add an event handler to the global API
+OpenFeature.addHandler(ProviderEvents.Error, (eventDetails) => {
+  // do something when if the provider goes into an error state
+});
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+// add an event handler to a client
+Client client = OpenFeatureAPI.getInstance().getClient();
+client.onProviderConfigurationChanged((EventDetails eventDetails) -> {
+    // do something when the provider's flag settings change
 });
 
-// attach a `PROVIDER_ERROR` handler
-client.addHandler(ProviderEvents.Error, (eventDetails: EventDetails) => {
-  // do something when the provider has entered an error state
+// add an event handler to the global API
+OpenFeatureAPI.getInstance().onProviderError((EventDetails eventDetails) -> {
+  // do something when if the provider goes into an error state
+});
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+// add an event handler to a client
+var client = Api.Instance.GetClient();
+client.AddHandler(ProviderEventTypes.ProviderConfigurationChanged, (ProviderEventPayload eventDetails) =>
+{
+  // do something when the provider's flag settings change
 });
 
-// attach a `PROVIDER_STALE` handler
-client.addHandler(ProviderEvents.Stale, (eventDetails: EventDetails) => {
-  // do something when the provider has gone stale
+// add an event handler to the global API
+Api.Instance.AddHandler(ProviderEventTypes.ProviderError, (ProviderEventPayload eventDetails) =>
+{
+  // do something when if the provider goes into an error state
 });
+```
 
-// handlers can also be added globally
-OpenFeature.addHandler(ProviderEvents.Ready, (eventDetails: EventDetails) => {
-  // do something when the provider is ready
-});
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+var changedCallback = func(details openfeature.EventDetails) {
+  // do something when the provider's flag settings change
+}
+
+// add an event handler to a client
+client := openfeature.NewClient("clientName")
+
+// add an event handler to a client
+client.AddHandler(openfeature.ProviderError, &changedCallback)
+
+var errorCallback = func(details openfeature.EventDetails) {
+  // do something when if the provider goes into an error state
+}
+
+// add an event handler to the global API
+openfeature.AddHandler(openfeature.ProviderError, &errorCallback)
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+client = api.get_client()
+
+def on_changed(event_details: EventDetails):
+  # do something when the provider's flag settings change
+
+# add an event handler to a client
+client.add_handler(ProviderEvent.PROVIDER_CONFIGURATION_CHANGED, on_changed)
+
+def on_error(event_details: EventDetails):
+  # do something when if the provider goes into an error state
+
+# add an event handler to the global API
+api.add_handler(ProviderEvent.PROVIDER_ERROR, on_error)
 ```
 
 </TabItem>
