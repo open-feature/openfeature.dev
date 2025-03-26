@@ -335,7 +335,7 @@ class MyHook(Hook):
     def error(self, context: HookContext, error, hints: dict):
         ...  # code to run if there's an error during before hooks or during flag evaluation
 
-    def finally_after(self, context: HookContext, details: FlagEvaluationDetails, hints: dict):
+    def finally_after(self, context: HookContext, details: FlagEvaluationDetails, hints: HookHints):
         ...  # code to run after all other stages, regardless of success/failure
 ```
 
