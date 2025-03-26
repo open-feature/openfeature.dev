@@ -323,16 +323,16 @@ class MyHook implements Hook
 <TabItem value="python" label="Python">
 
 ```python
-from openfeature.hook import Hook
+from openfeature.hook import Hook, HookHints
 
 class MyHook(Hook):
-    def before(self, context: HookContext, hints: dict):
+    def before(self, context: HookContext, hints: HookHints):
         ...  # code to run before flag evaluation
 
-    def after(self, context: HookContext, details: FlagEvaluationDetails, hints: dict):
+    def after(self, context: HookContext, details: FlagEvaluationDetails, hints: HookHints):
         ...  # code to run after successful flag evaluation
 
-    def error(self, context: HookContext, error, hints: dict):
+    def error(self, context: HookContext, error, hints: HookHints):
         ...  # code to run if there's an error during before hooks or during flag evaluation
 
     def finally_after(self, context: HookContext, details: FlagEvaluationDetails, hints: HookHints):
