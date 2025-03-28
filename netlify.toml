@@ -5,3 +5,10 @@ to = "/specification/:splat"
 [[redirects]]
 from = "/docs/tutorials/ofo/"
 to = "/docs/category/openfeature-operator/"
+
+[[redirects]]
+from = "/scripts/install_cli.sh"
+to = "https://raw.githubusercontent.com/open-feature/cli/refs/heads/main/bin/install.sh"
+status = 200
+force = true
+headers = {X-From = "Netlify"}
