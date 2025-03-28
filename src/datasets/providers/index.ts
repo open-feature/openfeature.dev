@@ -1,6 +1,7 @@
 import type { ComponentType, SVGProps } from 'react';
 import { Category, EcosystemElement, Technology } from '../types';
 import { ABTasty } from './abtasty';
+import { AwsSSM } from './awsssm';
 import { Bucket } from './bucket';
 import { Bucketeer } from './bucketeer';
 import { CloudBees } from './cloudbees';
@@ -28,7 +29,6 @@ import { ConfigBee } from './configbee';
 import { Tggl } from './tggl';
 import { OFREP } from './ofrep';
 import { SDKS } from '../sdks';
-
 const childTechnologyMap = SDKS.reduce(
   (acc, sdk) => {
     if (sdk.parentTechnology && !sdk.skipParentTechnologyProviders) {
@@ -45,6 +45,7 @@ const childTechnologyMap = SDKS.reduce(
 
 export const PROVIDERS: Provider[] = [
   ABTasty,
+  AwsSSM,
   Bucket,
   Bucketeer,
   CloudBees,
