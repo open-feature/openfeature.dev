@@ -19,12 +19,10 @@ Last updated at Thu Mar 27 2025 19:59:43 GMT+0000 (Coordinated Universal Time)
     <img alt="Specification" src="https://img.shields.io/static/v1?label=specification&message=v0.8.0&color=yellow&style=for-the-badge" />
   </a>
   
-
   <a href="https://github.com/open-feature/swift-sdk/releases/tag/0.3.0">
     <img alt="Release" src="https://img.shields.io/static/v1?label=release&message=v0.3.0&color=blue&style=for-the-badge" />
   </a>
 
-  
   <br/>
   <img alt="Status" src="https://img.shields.io/badge/lifecycle-alpha-a0c3d2.svg" />
 </p>
@@ -41,15 +39,17 @@ Note that this library is intended to be used in a mobile context, and has not b
 
 #### Xcode Dependencies
 
-You have two options, both start from File > Add Packages... in the code menu.
+You have two options, both start from File > Add Packages...
+in the code menu.
 
-First, ensure you have your GitHub account added as an option (+ > Add Source Control Account...). You will need to create a [Personal Access Token](https://github.com/settings/tokens) with the permissions defined in the Xcode interface.
+First, ensure you have your GitHub account added as an option (+ > Add Source Control Account...).
+You will need to create a [Personal Access Token](https://github.com/settings/tokens) with the permissions defined in the Xcode interface.
 
 1. Add as a remote repository
-    * Search for `git@github.com:open-feature/swift-sdk.git` and click "Add Package"
+    - Search for `git@github.com:open-feature/swift-sdk.git` and click "Add Package"
 2. Clone the repository locally
-    * Clone locally using your preferred method
-    * Use the "Add Local..." button to select the local folder
+    - Clone locally using your preferred method
+    - Use the "Add Local..." button to select the local folder
 
 **Note:** Option 2 is only recommended if you are making changes to the client SDK.
 
@@ -62,6 +62,7 @@ If you manage dependencies through SPM, in the dependencies section of Package.s
 ```
 
 and in the target dependencies section add:
+
 ```swift
 .product(name: "OpenFeature", package: "swift-sdk"),
 ```
@@ -148,6 +149,7 @@ _ = client.getValue(
     defaultValue: false,
     options: FlagEvaluationOptions(hooks: [ExampleHook()]))
 ```
+
 ### Tracking
 
 Tracking is not yet available in the iOS SDK.
@@ -217,6 +219,7 @@ final class CustomProvider: FeatureProvider {
 }
 
 ```
+
 > Built a new provider? [Let us know](https://github.com/open-feature/openfeature.dev/issues/new?assignees=&labels=provider&projects=&template=document-provider.yaml&title=%5BProvider%5D%3A+) so we can add it to the docs!
 
 ### Develop a hook
@@ -248,4 +251,3 @@ class BooleanHook: Hook {
 ```
 
 > Built a new hook? [Let us know](https://github.com/open-feature/openfeature.dev/issues/new?assignees=&labels=hook&projects=&template=document-hook.yaml&title=%5BHook%5D%3A+) so we can add it to the docs!
-

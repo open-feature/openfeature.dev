@@ -18,12 +18,10 @@ Last updated at Thu Mar 27 2025 19:59:43 GMT+0000 (Coordinated Universal Time)
     <img alt="Specification" src="https://img.shields.io/static/v1?label=specification&message=v0.8.0&color=yellow&style=for-the-badge" />
   </a>
   
-
   <a href="https://github.com/open-feature/ruby-sdk/releases/tag/v0.4.0">
     <img alt="Release" src="https://img.shields.io/static/v1?label=release&message=v0.4.0&color=blue&style=for-the-badge" />
   </a>
 
-  
   <br/>
   <a href="https://bestpractices.coreinfrastructure.org/projects/9337">
     <img alt="CII Best Practices" src="https://bestpractices.coreinfrastructure.org/projects/9337/badge" />
@@ -174,7 +172,8 @@ Coming Soon! [Issue available](https://github.com/open-feature/ruby-sdk/issues/1
 
 ### Domains
 
-Clients can be assigned to a domain. A domain is a logical identifier which can be used to associate clients with a particular provider.
+Clients can be assigned to a domain.
+A domain is a logical identifier which can be used to associate clients with a particular provider.
 If a domain has no associated provider, the default provider is used.
 
 ```ruby
@@ -278,4 +277,3 @@ This can be a new repository or included in [the existing contrib repository](ht
 Implement your own hook by conforming to the `Hook interface`.
 To satisfy the interface, all methods (`Before`/`After`/`Finally`/`Error`) need to be defined.
 To avoid defining empty functions, make use of the `UnimplementedHook` struct (which already implements all the empty functions). -->
-

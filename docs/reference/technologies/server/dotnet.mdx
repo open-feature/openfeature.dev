@@ -15,8 +15,8 @@ Last updated at Thu Mar 27 2025 19:59:43 GMT+0000 (Coordinated Universal Time)
 
 [![Specification](https://img.shields.io/static/v1?label=specification&message=v0.7.0&color=yellow&style=for-the-badge)](https://github.com/open-feature/spec/releases/tag/v0.7.0)
 [
-  ![Release](https://img.shields.io/static/v1?label=release&message=v2.3.1&color=blue&style=for-the-badge) 
-](https://github.com/open-feature/dotnet-sdk/releases/tag/v2.3.1) 
+  ![Release](https://img.shields.io/static/v1?label=release&message=v2.3.1&color=blue&style=for-the-badge)
+](https://github.com/open-feature/dotnet-sdk/releases/tag/v2.3.1)
 
 [![Slack](https://img.shields.io/badge/slack-%40cncf%2Fopenfeature-brightgreen?style=flat&logo=slack)](https://cloud-native.slack.com/archives/C0344AANLA1)
 [![Codecov](https://codecov.io/gh/open-feature/dotnet-sdk/branch/main/graph/badge.svg?token=MONAVJBXUJ)](https://codecov.io/gh/open-feature/dotnet-sdk)
@@ -27,10 +27,11 @@ Last updated at Thu Mar 27 2025 19:59:43 GMT+0000 (Coordinated Universal Time)
 
 ### Requirements
 
--   .NET 8+
--   .NET Framework 4.6.2+
+- .NET 8+
+- .NET Framework 4.6.2+
 
-Note that the packages will aim to support all current .NET versions. Refer to the currently supported versions [.NET](https://dotnet.microsoft.com/download/dotnet) and [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework) excluding .NET Framework 3.5
+Note that the packages will aim to support all current .NET versions.
+Refer to the currently supported versions [.NET](https://dotnet.microsoft.com/download/dotnet) and [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework) excluding .NET Framework 3.5
 
 ### Install
 
@@ -81,7 +82,7 @@ public async Task Example()
 | ✅      | [Shutdown](#shutdown)                                               | Gracefully clean up a provider during application shutdown.                                                                                                   |
 | ✅      | [Transaction Context Propagation](#transaction-context-propagation) | Set a specific [evaluation context](/docs/reference/concepts/evaluation-context) for a transaction (e.g. an HTTP request or a thread). |
 | ✅      | [Extending](#extending)                                             | Extend OpenFeature with custom providers and hooks.                                                                                                           |
-| 🔬      | [DependencyInjection](#DependencyInjection)                         | Integrate OpenFeature with .NET's dependency injection for streamlined provider setup.                                                                        |
+| 🔬      | [DependencyInjection](#dependencyinjection)                         | Integrate OpenFeature with .NET's dependency injection for streamlined provider setup.                                                                        |
 
 > Implemented: ✅ | In-progress: ⚠️ | Not implemented yet: ❌ | Experimental: 🔬
 
@@ -152,11 +153,13 @@ var value = await client.GetBooleanValueAsync("boolFlag", false, context, new Fl
 
 ### Logging
 
-The .NET SDK uses Microsoft.Extensions.Logging. See the [manual](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line) for complete documentation.
+The .NET SDK uses Microsoft.Extensions.Logging.
+See the [manual](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line) for complete documentation.
 
 #### Logging Hook
 
-The .NET SDK includes a LoggingHook, which logs detailed information at key points during flag evaluation, using Microsoft.Extensions.Logging structured logging API. This hook can be particularly helpful for troubleshooting and debugging; simply attach it at the global, client or invocation level and ensure your log level is set to "debug".
+The .NET SDK includes a LoggingHook, which logs detailed information at key points during flag evaluation, using Microsoft.Extensions.Logging structured logging API.
+This hook can be particularly helpful for troubleshooting and debugging; simply attach it at the global, client or invocation level and ensure your log level is set to "debug".
 
 ```csharp
 using var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
@@ -165,6 +168,7 @@ var logger = loggerFactory.CreateLogger("Program");
 var client = Api.Instance.GetClient();
 client.AddHooks(new LoggingHook(logger));
 ```
+
 See [hooks](#hooks) for more information on configuring hooks.
 
 ### Domains
@@ -242,7 +246,8 @@ Note that some providers may not support tracking; check the documentation for y
 
 ### Shutdown
 
-The OpenFeature API provides a close function to perform a cleanup of all registered providers. This should only be called when your application is in the process of shutting down.
+The OpenFeature API provides a close function to perform a cleanup of all registered providers.
+This should only be called when your application is in the process of shutting down.
 
 ```csharp
 // Shut down all providers
@@ -260,6 +265,7 @@ To register a [AsyncLocal](https://learn.microsoft.com/en-us/dotnet/api/system.t
 // registering the AsyncLocalTransactionContextPropagator
 Api.Instance.SetTransactionContextPropagator(new AsyncLocalTransactionContextPropagator());
 ```
+
 Once you've registered a transaction context propagator, you can propagate the data into request-scoped transaction context.
 
 ```csharp
@@ -269,6 +275,7 @@ EvaluationContext transactionContext = EvaluationContext.Builder()
     .Build();
 Api.Instance.SetTransactionContext(transactionContext);
 ```
+
 Additionally, you can develop a custom transaction context propagator by implementing the `TransactionContextPropagator` interface and registering it as shown above.
 
 ## Extending
@@ -352,19 +359,27 @@ public class MyHook : Hook
 Built a new hook? [Let us know](https://github.com/open-feature/openfeature.dev/issues/new?assignees=&labels=hook&projects=&template=document-hook.yaml&title=%5BHook%5D%3A+) so we can add it to the docs!
 
 ### DependencyInjection
+>
 > [!NOTE]
-> The OpenFeature.DependencyInjection and OpenFeature.Hosting packages are currently experimental. They streamline the integration of OpenFeature within .NET applications, allowing for seamless configuration and lifecycle management of feature flag providers using dependency injection and hosting services.
+> The OpenFeature.DependencyInjection and OpenFeature.Hosting packages are currently experimental.
+> They streamline the integration of OpenFeature within .NET applications, allowing for seamless configuration and lifecycle management of feature flag providers using dependency injection and hosting services.
 
 #### Installation
+
 To set up dependency injection and hosting capabilities for OpenFeature, install the following packages:
+
 ```sh
 dotnet add package OpenFeature.DependencyInjection
 dotnet add package OpenFeature.Hosting
 ```
+
 #### Usage Examples
-For a basic configuration, you can use the InMemoryProvider. This provider is simple and well-suited for development and testing purposes.
+
+For a basic configuration, you can use the InMemoryProvider.
+This provider is simple and well-suited for development and testing purposes.
 
 **Basic Configuration:**
+
 ```csharp
 builder.Services.AddOpenFeature(featureBuilder => {
     featureBuilder
@@ -373,8 +388,11 @@ builder.Services.AddOpenFeature(featureBuilder => {
         .AddInMemoryProvider();
 });
 ```
+
 **Domain-Scoped Provider Configuration:**
-<br />To set up multiple providers with a selection policy, define logic for choosing the default provider. This example designates `name1` as the default provider:
+<br />To set up multiple providers with a selection policy, define logic for choosing the default provider.
+This example designates `name1` as the default provider:
+
 ```csharp
 builder.Services.AddOpenFeature(featureBuilder => {
     featureBuilder
@@ -390,7 +408,9 @@ builder.Services.AddOpenFeature(featureBuilder => {
 ```
 
 ### Registering a Custom Provider
-You can register a custom provider, such as `InMemoryProvider`, with OpenFeature using the `AddProvider` method. This approach allows you to dynamically resolve services or configurations during registration.
+
+You can register a custom provider, such as `InMemoryProvider`, with OpenFeature using the `AddProvider` method.
+This approach allows you to dynamically resolve services or configurations during registration.
 
 ```csharp
 services.AddOpenFeature(builder =>
@@ -431,4 +451,3 @@ services.AddOpenFeature(builder =>
     });
 });
 ```
-

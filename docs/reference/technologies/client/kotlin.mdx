@@ -92,7 +92,8 @@ coroutineScope.launch(Dispatchers.IO) {
 }
 ```
 
-Asynchronous API that doesn't wait is also available. It's useful when you want to set a provider and continue with other tasks.
+Asynchronous API that doesn't wait is also available.
+It's useful when you want to set a provider and continue with other tasks.
 
 However, flag evaluations are only possible after the provider is Ready.
 
@@ -140,10 +141,11 @@ val retval = client.getBooleanValue(flagKey, false,
 
 ### Tracking
 
-The [tracking API](/specification/sections/tracking/) allows you to use 
+The [tracking API](/specification/sections/tracking/) allows you to use
 OpenFeature abstractions to associate user actions with feature flag evaluations.
-This is essential for robust experimentation powered by feature flags. Note that, unlike methods 
-that handle feature flag evaluations, calling `track(...)` may throw an `IllegalArgumentException` 
+This is essential for robust experimentation powered by feature flags.
+Note that, unlike methods
+that handle feature flag evaluations, calling `track(...)` may throw an `IllegalArgumentException`
 if an empty string is passed as the `trackingEventName`.
 
 Below is an example of how we can track a "Checkout" event with some `TrackingDetails`.
@@ -176,11 +178,13 @@ Support for named clients is not yet available in the Kotlin SDK.
 ### Eventing
 
 Events from the Provider allow the SDK to react to state changes in the provider or underlying flag management system, such as flag definition changes, provider readiness, or error conditions.
-Events are optional which mean that not all Providers will emit them and it is not a must have. Some providers support additional events, such as `PROVIDER_CONFIGURATION_CHANGED`.
+Events are optional which mean that not all Providers will emit them and it is not a must have.
+Some providers support additional events, such as `PROVIDER_CONFIGURATION_CHANGED`.
 
 Please refer to the documentation of the provider you're using to see what events are supported.
 
 Example usage:
+
 ```kotlin
 viewModelScope.launch {
   OpenFeatureAPI.observe().collect {
@@ -205,13 +209,14 @@ This should only be called when your application is in the process of shutting d
 ```kotlin
 OpenFeatureAPI.shutdown()
 ```
+
 ## Sample app
 
-In the repo there is also a sample app currently under development. 
-The sample app can be used to try out development of a [Provider](#develop-a-provider), a [Hook](#develop-a-hook) 
-or to validate changes to the SDK itself. 
+In the repo there is also a sample app currently under development.
+The sample app can be used to try out development of a [Provider](#develop-a-provider), a [Hook](#develop-a-hook)
+or to validate changes to the SDK itself.
 
-The sample app should not be used as a reference implementation of how to use the OpenFeature SDK 
+The sample app should not be used as a reference implementation of how to use the OpenFeature SDK
 in an Android app.
 
 ## Extending
@@ -293,4 +298,3 @@ To develop a hook, you need to create a new project and include the OpenFeature 
 Implement your own hook by conforming to the `Hook` interface exported by the OpenFeature SDK.
 
 > Built a new hook? [Let us know](https://github.com/open-feature/openfeature.dev/issues/new?assignees=&labels=hook&projects=&template=document-hook.yaml&title=%5BHook%5D%3A+) so we can add it to the docs!
-

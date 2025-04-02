@@ -21,7 +21,6 @@ Last updated at Thu Mar 27 2025 19:59:44 GMT+0000 (Coordinated Universal Time)
     <img alt="Release" src="https://img.shields.io/static/v1?label=release&message=v0.2.5&color=blue&style=for-the-badge" />
   </a>
   
-
   <br/>
   <!-- TODO: update this when we have it set up
   <a href="https://bestpractices.coreinfrastructure.org/projects/6601">
@@ -43,7 +42,8 @@ Last updated at Thu Mar 27 2025 19:59:44 GMT+0000 (Coordinated Universal Time)
 
 ### Requirements
 
-This package was built with Rust version `1.70.0`. Earlier versions might work, but is not guaranteed.
+This package was built with Rust version `1.70.0`.
+Earlier versions might work, but is not guaranteed.
 
 ### Install
 
@@ -132,9 +132,13 @@ async fn extended_example() {
 
 #### Getting a Struct from a Provider
 
-It is possible to extract a struct from the provider. Internally, this SDK defines a type `StructValue` to store any structure value. The `client.get_struct_value()` functions takes a type parameter `T`. It will try to parse `StructValue` resolved by the provider to `T`, as long as `T` implements trait `TryFrom<StructValue>`.
+It is possible to extract a struct from the provider.
+Internally, this SDK defines a type `StructValue` to store any structure value.
+The `client.get_struct_value()` functions takes a type parameter `T`.
+It will try to parse `StructValue` resolved by the provider to `T`, as long as `T` implements trait `TryFrom<StructValue>`.
 
-You can pass in a type that satisfies this trait bound. When the conversion fails, it returns an `Err` with `EvaluationReason::TypeMismatch`.
+You can pass in a type that satisfies this trait bound.
+When the conversion fails, it returns an `Err` with `EvaluationReason::TypeMismatch`.
 
 ### API Reference
 
@@ -305,6 +309,7 @@ let client = api.create_named_client("named");
 
 assert_eq!(client.get_int_value("key", None, None).await.unwrap(), 42);
 ```
+
 ### Eventing
 
 Events are not yet available in the Rust SDK.
@@ -395,4 +400,3 @@ impl Hook for MyHook {
 ```
 
 > Built a new hook? [Let us know](https://github.com/open-feature/openfeature.dev/issues/new?assignees=&labels=hook&projects=&template=document-hook.yaml&title=%5BHook%5D%3A+) so we can add it to the docs!
-
