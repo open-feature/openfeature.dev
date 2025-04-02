@@ -21,14 +21,14 @@ jobs:
           # Avoid using the GitHub token in the git config
           persist-credentials: false
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Set up Node.js
         uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4
         with:
           node-version-file: '.nvmrc'
           cache: 'yarn'
-
-      - name: Enable Corepack
-        run: corepack enable
 
       - name: Install dependencies
         run: yarn install --immutable
