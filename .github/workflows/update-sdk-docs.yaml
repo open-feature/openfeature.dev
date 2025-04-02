@@ -2,7 +2,7 @@ name: Update SDK Docs
 
 on:
   schedule:
-    - cron:  '0 8 * * 1-5'
+    - cron: '0 8 * * 1-5'
   workflow_dispatch:
 
 jobs:
@@ -13,64 +13,67 @@ jobs:
       BRANCH_NAME: update-sdk-readmes
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-      with:
-        submodules: recursive
-        fetch-depth: 0
-        # Avoid using the GitHub token in the git config
-        persist-credentials: false
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+          # Avoid using the GitHub token in the git config
+          persist-credentials: false
 
-    - name: Set up Node.js
-      uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4
-      with:
-        node-version-file: '.nvmrc'
-        cache: 'yarn'
+      - name: Set up Node.js
+        uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
 
-    - name: Install dependencies
-      run: yarn install --immutable
+      - name: Enable Corepack
+        run: corepack enable
 
-    - name: Set up git
-      shell: bash
-      run: |
-        git config --global user.name "OpenFeature Bot"
-        git config --global user.email "109696520+openfeaturebot@users.noreply.github.com"
+      - name: Install dependencies
+        run: yarn install --immutable
 
-    - name: Checkout branch
-      shell: bash
-      run: |
-        if git rev-parse --verify $BRANCH_NAME >/dev/null 2>&1
-        then
-          echo "Branch exists, checking out"
-          git checkout $BRANCH_NAME
-        else
-          echo "Branch does not exist, creating"
-          git checkout -b $BRANCH_NAME
-        fi
+      - name: Set up git
+        shell: bash
+        run: |
+          git config --global user.name "OpenFeature Bot"
+          git config --global user.email "109696520+openfeaturebot@users.noreply.github.com"
 
-    - name: Ensure branch is up to date
-      shell: bash
-      run: |
-        git reset --hard origin/main
+      - name: Checkout branch
+        shell: bash
+        run: |
+          if git rev-parse --verify $BRANCH_NAME >/dev/null 2>&1
+          then
+            echo "Branch exists, checking out"
+            git checkout $BRANCH_NAME
+          else
+            echo "Branch does not exist, creating"
+            git checkout -b $BRANCH_NAME
+          fi
 
-    - name: Update SDKs and commit changes
-      shell: bash
-      run: |
-        yarn run update:sdk-docs && \
-        git add --all && \
-        git commit -m 'chore: update sdk readmes' -s
+      - name: Ensure branch is up to date
+        shell: bash
+        run: |
+          git reset --hard origin/main
 
-    - name: Push changes
-      uses: ad-m/github-push-action@d91a481090679876dfc4178fef17f286781251df # v0.8.0
-      with:
-        github_token: ${{ secrets.PULL_REQUEST_AUTOMATION }}
-        branch: ${{ env.BRANCH_NAME }}
-        force: true
+      - name: Update SDKs and commit changes
+        shell: bash
+        run: |
+          yarn run update:sdk-docs && \
+          git add --all && \
+          git commit -m 'chore: update sdk readmes' -s
 
-    - name: Create pr if doesn't exist
-      shell: bash
-      continue-on-error: true
-      run: |
-        gh pr create --title "chore: update sdk readmes" --body "The PR was automatically generated via the update-sdk-docs GitHub workflow." --base main --head $BRANCH_NAME
-      env:
-        GITHUB_TOKEN: ${{ secrets.PULL_REQUEST_AUTOMATION }}
+      - name: Push changes
+        uses: ad-m/github-push-action@d91a481090679876dfc4178fef17f286781251df # v0.8.0
+        with:
+          github_token: ${{ secrets.PULL_REQUEST_AUTOMATION }}
+          branch: ${{ env.BRANCH_NAME }}
+          force: true
+
+      - name: Create pr if doesn't exist
+        shell: bash
+        continue-on-error: true
+        run: |
+          gh pr create --title "chore: update sdk readmes" --body "The PR was automatically generated via the update-sdk-docs GitHub workflow." --base main --head $BRANCH_NAME
+        env:
+          GITHUB_TOKEN: ${{ secrets.PULL_REQUEST_AUTOMATION }}
