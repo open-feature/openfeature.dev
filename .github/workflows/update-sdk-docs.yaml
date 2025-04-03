@@ -29,7 +29,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'yarn'
-          cache-dependency-path: .yarn/cache
+          cache-dependency-path: 'yarn.lock'
 
       - name: Install dependencies
         run: yarn install --immutable
