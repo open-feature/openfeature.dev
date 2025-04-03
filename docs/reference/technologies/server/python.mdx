@@ -18,13 +18,10 @@ Last updated at Thu Mar 27 2025 19:59:43 GMT+0000 (Coordinated Universal Time)
     <img alt="Specification" src="https://img.shields.io/static/v1?label=Specification&message=v0.8.0&color=red&style=for-the-badge" />
   </a>
 
-  
-
   <a href="https://github.com/open-feature/python-sdk/releases/tag/v0.8.0">
     <img alt="Latest version" src="https://img.shields.io/static/v1?label=release&message=v0.8.0&color=blue&style=for-the-badge" />
   </a>
 
-  
   <br/>
   <a href="https://github.com/open-feature/python-sdk/actions/workflows/merge.yml">
     <img alt="Build status" src="https://github.com/open-feature/python-sdk/actions/workflows/build.yml/badge.svg" />
@@ -207,7 +204,9 @@ For more details, please refer to the [providers](#providers) section.
 
 ### Eventing
 
-Events allow you to react to state changes in the provider or underlying flag management system, such as flag definition changes, provider readiness, or error conditions. Initialization events (PROVIDER_READY on success, PROVIDER_ERROR on failure) are dispatched for every provider. Some providers support additional events, such as PROVIDER_CONFIGURATION_CHANGED.
+Events allow you to react to state changes in the provider or underlying flag management system, such as flag definition changes, provider readiness, or error conditions.
+Initialization events (PROVIDER_READY on success, PROVIDER_ERROR on failure) are dispatched for every provider.
+Some providers support additional events, such as PROVIDER_CONFIGURATION_CHANGED.
 
 Please refer to the documentation of the provider you're using to see what events are supported.
 
@@ -310,7 +309,8 @@ async def some_endpoint():
 
 ### Asynchronous Feature Retrieval
 
-The OpenFeature API supports asynchronous calls, enabling non-blocking feature evaluations for improved performance, especially useful in concurrent or latency-sensitive scenarios. If a provider *hasn't* implemented asynchronous calls, the client can still be used asynchronously, but calls will be blocking (synchronous).
+The OpenFeature API supports asynchronous calls, enabling non-blocking feature evaluations for improved performance, especially useful in concurrent or latency-sensitive scenarios.
+If a provider *hasn't* implemented asynchronous calls, the client can still be used asynchronously, but calls will be blocking (synchronous).
 
 ```python
 import asyncio
@@ -329,7 +329,8 @@ See the [develop a provider](#develop-a-provider) for how to support asynchronou
 
 ### Shutdown
 
-The OpenFeature API provides a shutdown function to perform a cleanup of all registered providers. This should only be called when your application is in the process of shutting down.
+The OpenFeature API provides a shutdown function to perform a cleanup of all registered providers.
+This should only be called when your application is in the process of shutting down.
 
 ```python
 from openfeature import api
@@ -471,4 +472,3 @@ class MyHook(Hook):
 ```
 
 > Built a new hook? [Let us know](https://github.com/open-feature/openfeature.dev/issues/new?assignees=&labels=hook&projects=&template=document-hook.yaml&title=%5BHook%5D%3A+) so we can add it to the docs!
-

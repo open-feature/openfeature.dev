@@ -83,8 +83,8 @@ yarn add @openfeature/react-sdk @openfeature/web-sdk @openfeature/core
 The following list contains the peer dependencies of `@openfeature/react-sdk`.
 See the [package.json](https://github.com/open-feature/js-sdk/blob/main/packages/react/package.json) for the required versions.
 
-* `@openfeature/web-sdk`
-* `react`
+- `@openfeature/web-sdk`
+- `react`
 
 ### Usage
 
@@ -376,7 +376,8 @@ This can cause surprising effects and inconsistencies if sibling components are 
 To fix this, you can upgrade to React 18, which uses "Concurrent Suspense", in which siblings are not mounted until their suspended sibling resolves.
 Alternatively, if you cannot upgrade to React 18, you can use the `useWhenProviderReady` utility hook in any sibling components to prevent them from mounting until the provider is ready.
 
-> I am using multiple `OpenFeatureProvider` contexts, but they share the same provider or evaluation context. Why?
+> I am using multiple `OpenFeatureProvider` contexts, but they share the same provider or evaluation context.
+> Why?
 
 The `OpenFeatureProvider` binds a `client` to all child components, but the provider and context associated with that client is controlled by the `domain` parameter.
 This is consistent with all OpenFeature SDKs.
@@ -396,4 +397,4 @@ Avoid importing anything from `@openfeature/web-sdk` or `@openfeature/core`.
 
 ## Resources
 
- - [Example repo](https://github.com/open-feature/react-test-app)
+- [Example repo](https://github.com/open-feature/react-test-app)

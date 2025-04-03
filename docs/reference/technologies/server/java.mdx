@@ -17,12 +17,10 @@ Last updated at Thu Mar 27 2025 19:59:42 GMT+0000 (Coordinated Universal Time)
     <img alt="Specification" src="https://img.shields.io/static/v1?label=specification&message=v0.7.0&color=yellow&style=for-the-badge" />
   </a>
   
-
   <a href="https://github.com/open-feature/java-sdk/releases/tag/v1.14.2">
     <img alt="Release" src="https://img.shields.io/static/v1?label=release&message=v1.14.2&color=blue&style=for-the-badge" />
   </a>  
 
-  
   <br/>
   <a href="https://javadoc.io/doc/dev.openfeature/sdk">
     <img alt="Javadoc" src="https://javadoc.io/badge2/dev.openfeature/sdk/javadoc.svg" />
@@ -122,7 +120,7 @@ See [here](https://javadoc.io/doc/dev.openfeature/sdk/latest/) for the Javadocs.
 | ✅     | [Domains](#domains)                                                 | Logically bind clients with providers.                                                                                                                        |
 | ✅     | [Eventing](#eventing)                                               | React to state changes in the provider or flag management system.                                                                                             |
 | ✅     | [Shutdown](#shutdown)                                               | Gracefully clean up a provider during application shutdown.                                                                                                   |
-| ✅     | [Transaction Context Propagation](#transaction-context-propagation) | Set a specific [evaluation context](/docs/reference/concepts/evaluation-context) for a transaction (e.g. an HTTP request or a thread). |   
+| ✅     | [Transaction Context Propagation](#transaction-context-propagation) | Set a specific [evaluation context](/docs/reference/concepts/evaluation-context) for a transaction (e.g. an HTTP request or a thread). |
 | ✅     | [Extending](#extending)                                             | Extend OpenFeature with custom providers and hooks.                                                                                                           |
 
 <sub>Implemented: ✅ | In-progress: ⚠️ | Not implemented yet: ❌</sub>
@@ -134,23 +132,23 @@ Look [here](/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=Provi
 If the provider you're looking for hasn't been created yet, see the [develop a provider](#develop-a-provider) section to learn how to build it yourself.
 
 Once you've added a provider as a dependency, it can be registered with OpenFeature like this:
-   
+
 #### Synchronous  
   
-To register a provider in a blocking manner to ensure it is ready before further actions are taken, you can use the `setProviderAndWait` method as shown below:     
+To register a provider in a blocking manner to ensure it is ready before further actions are taken, you can use the `setProviderAndWait` method as shown below:
   
 ```java
     OpenFeatureAPI api = OpenFeatureAPI.getInstance();
     api.setProviderAndWait(new MyProvider());
 ```  
   
-#### Asynchronous    
+#### Asynchronous
 
 To register a provider in a non-blocking manner, you can use the `setProvider` method as shown below:  
 
 ```java
     OpenFeatureAPI.getInstance().setProvider(new MyProvider());
-```    
+```
 
 In some situations, it may be beneficial to register multiple providers in the same application.
 This is possible using [domains](#domains), which is covered in more detail below.
@@ -211,7 +209,8 @@ Once you've added a hook as a dependency, it can be registered at the global, cl
 ### Tracking
 
 The [tracking API](/specification/sections/tracking/) allows you to use OpenFeature abstractions to associate user actions with feature flag evaluations.
-This is essential for robust experimentation powered by feature flags. Note that, unlike methods that handle feature flag evaluations, calling `track(...)` may throw an `IllegalArgumentException` if an empty string is passed as the `trackingEventName`.
+This is essential for robust experimentation powered by feature flags.
+Note that, unlike methods that handle feature flag evaluations, calling `track(...)` may throw an `IllegalArgumentException` if an empty string is passed as the `trackingEventName`.
 
 ```java
 OpenFeatureAPI api = OpenFeatureAPI.getInstance();
@@ -220,7 +219,8 @@ api.getClient().track("visited-promo-page", new MutableTrackingEventDetails(99.7
 
 ### Logging
 
-The Java SDK uses SLF4J. See the [SLF4J manual](https://slf4j.org/manual.html) for complete documentation.
+The Java SDK uses SLF4J.
+See the [SLF4J manual](https://slf4j.org/manual.html) for complete documentation.
 Note that in accordance with the OpenFeature specification, the SDK doesn't generally log messages during flag evaluation.
 
 #### Logging Hook
@@ -250,7 +250,7 @@ Client clientDefault = OpenFeatureAPI.getInstance().getClient();
 Client domainScopedClient = OpenFeatureAPI.getInstance().getClient("my-domain");
 ```
 
-Providers for domains can be set in a blocking or non-blocking way. 
+Providers for domains can be set in a blocking or non-blocking way.
 For more details, please refer to the [providers](#providers) section.  
 
 ### Eventing
@@ -285,14 +285,17 @@ OpenFeatureAPI.getInstance().shutdown();
 ```
 
 ### Transaction Context Propagation
+
 Transaction context is a container for transaction-specific evaluation context (e.g. user id, user agent, IP).
 Transaction context can be set where specific data is available (e.g. an auth service or request handler) and by using the transaction context propagator it will automatically be applied to all flag evaluations within a transaction (e.g. a request or thread).
 By default, the `NoOpTransactionContextPropagator` is used, which doesn't store anything.
 To register a `ThreadLocal` context propagator, you can use the `setTransactionContextPropagator` method as shown below.
+
 ```java
 // registering the ThreadLocalTransactionContextPropagator
 OpenFeatureAPI.getInstance().setTransactionContextPropagator(new ThreadLocalTransactionContextPropagator());
 ```
+
 Once you've registered a transaction context propagator, you can propagate the data into request-scoped transaction context.
 
 ```java
@@ -303,6 +306,7 @@ transactionAttrs.put("userId", new Value("userId"));
 EvaluationContext transactionCtx = new ImmutableContext(transactionAttrs);
 api.setTransactionContext(transactionCtx);
 ```
+
 Additionally, you can develop a custom transaction context propagator by implementing the `TransactionContextPropagator` interface and registering it as shown above.
 
 ## Extending
@@ -384,7 +388,8 @@ class MyEventProvider extends EventProvider {
 }
 ```
 
-Providers no longer need to manage their own state, this is done by the SDK itself. If desired, the state of a provider 
+Providers no longer need to manage their own state, this is done by the SDK itself.
+If desired, the state of a provider
 can be queried through the client that uses the provider.
 
 ```java
@@ -425,4 +430,3 @@ class MyHook implements Hook {
 ```
 
 > Built a new hook? [Let us know](https://github.com/open-feature/openfeature.dev/issues/new?assignees=&labels=hook&projects=&template=document-hook.yaml&title=%5BHook%5D%3A+) so we can add it to the docs!
-

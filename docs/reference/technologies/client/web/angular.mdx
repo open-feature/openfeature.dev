@@ -85,9 +85,9 @@ yarn add @openfeature/angular-sdk @openfeature/web-sdk @openfeature/core
 The following list contains the peer dependencies of `@openfeature/angular-sdk`.
 See the [package.json](https://github.com/open-feature/js-sdk/blob/main/packages/angular/projects/angular-sdk/package.json) for the required versions.
 
-* `@openfeature/web-sdk`
-* `@angular/common`
-* `@angular/core`
+- `@openfeature/web-sdk`
+- `@angular/common`
+- `@angular/core`
 
 ### Usage
 
@@ -123,7 +123,8 @@ export class AppModule {
 
 ##### Minimal Example
 
-You don't need to provide all the templates. Here's a minimal example using a boolean feature flag:
+You don't need to provide all the templates.
+Here's a minimal example using a boolean feature flag:
 
 If `initializing` and `reconciling` are not given, the feature flag value that is returned by the provider will
 determine what will be rendered.
@@ -152,7 +153,8 @@ This parameter is optional, if omitted, the `thenTemplate` will always be render
 The `domain` parameter is _optional_ and will be used as domain when getting the OpenFeature provider.
 
 The `updateOnConfigurationChanged` and `updateOnContextChanged` parameter are _optional_ and used to disable the
-automatic re-rendering on flag value or context change. They are set to `true` by default.
+automatic re-rendering on flag value or context change.
+They are set to `true` by default.
 
 The template referenced in `else` will be rendered if the evaluated feature flag is `false` for the `booleanFeatureFlag`
 directive and if the `value` does not match evaluated flag value for all other directives.
@@ -287,4 +289,4 @@ Avoid importing anything from `@openfeature/web-sdk` or `@openfeature/core`.
 
 ## Resources
 
- - [Example repo](https://github.com/open-feature/angular-test-app)
+- [Example repo](https://github.com/open-feature/angular-test-app)
