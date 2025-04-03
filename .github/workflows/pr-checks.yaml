@@ -23,7 +23,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'yarn'
-          cache-dependency-path: yarn.lock
+          cache-dependency-path: .yarn/cache
 
       - name: Lint
         run: make lint
