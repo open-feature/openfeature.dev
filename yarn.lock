@@ -5991,7 +5991,7 @@ eslint-import-resolver-node@^0.3.9:
     is-core-module "^2.13.0"
     resolve "^1.22.4"
 
-eslint-mdx@3.3.2:
+eslint-mdx@3.3.2, eslint-mdx@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-3.3.2.tgz#52f9df9ccabe4b254430a14372845645512305ee"
   integrity sha512-GFeLoM2S5Jx0iTXYvsp/do/UNTzV+vRNfNxRglelXb9ZNSfUFGHsq60ZcHyUvpxy2crPebCX4gzT/FRu/LJRbA==
@@ -6004,26 +6004,6 @@ eslint-mdx@3.3.2:
     remark-parse "^11.0.0"
     remark-stringify "^11.0.0"
     synckit "^0.11.2"
-    tslib "^2.8.1"
-    unified "^11.0.5"
-    unified-engine "^11.2.2"
-    unist-util-visit "^5.0.0"
-    uvu "^0.5.6"
-    vfile "^6.0.3"
-
-eslint-mdx@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-3.3.1.tgz#3acf2633e44009b683ced3ae3151c371aae72226"
-  integrity sha512-3koPGGjGOKXxWBIY0ExcMhtEGWRpbM/xrqIp6c4XDxZOMs/nIUEZKnaKZf+sAMRtqdv5Z99Nq5izWyCLoTdcGg==
-  dependencies:
-    acorn "^8.14.1"
-    acorn-jsx "^5.3.2"
-    espree "^9.6.1 || ^10.3.0"
-    estree-util-visit "^2.0.0"
-    remark-mdx "^3.1.0"
-    remark-parse "^11.0.0"
-    remark-stringify "^11.0.0"
-    synckit "^0.10.3"
     tslib "^2.8.1"
     unified "^11.0.5"
     unified-engine "^11.2.2"
@@ -6078,17 +6058,17 @@ eslint-plugin-jest@27.9.0:
   dependencies:
     "@typescript-eslint/utils" "^5.10.0"
 
-eslint-plugin-mdx@3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-3.3.1.tgz#24af2611f651ea77756cf0f32630a3dbb6f34dc1"
-  integrity sha512-YXm2YANiJ3Sl/6AdZUeR53deGG1JI6rG9crHITR2Mtb9k8SFWRspoHetnIvaYTEfgPsvUwAwVgT1JxRoZywpTA==
+eslint-plugin-mdx@3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-3.3.2.tgz#25c431952f9cbd321f96c10fa500b80626259cc2"
+  integrity sha512-zBvxCiKzahbTRvWPONDZups1As5clGjv1OLOLnX/p+OwdrZdcwJ3tiBihu6xeZuem9u6iwMkr9kHVurcuzbTCg==
   dependencies:
-    eslint-mdx "^3.3.1"
+    eslint-mdx "^3.3.2"
     mdast-util-from-markdown "^2.0.2"
     remark-mdx "^3.1.0"
     remark-parse "^11.0.0"
     remark-stringify "^11.0.0"
-    synckit "^0.10.3"
+    synckit "^0.11.2"
     tslib "^2.8.1"
     unified "^11.0.5"
     vfile "^6.0.3"
@@ -12005,14 +11985,6 @@ svgo@^3.0.2, svgo@^3.2.0:
     css-what "^6.1.0"
     csso "^5.0.5"
     picocolors "^1.0.0"
-
-synckit@^0.10.3:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/synckit/-/synckit-0.10.3.tgz#940aea2c7b6d141a4f74dbdebc81e0958c331a4b"
-  integrity sha512-R1urvuyiTaWfeCggqEvpDJwAlDVdsT9NM+IP//Tk2x7qHCkSvBk/fwFgw/TLAHzZlrAnnazMcRw0ZD8HlYFTEQ==
-  dependencies:
-    "@pkgr/core" "^0.2.0"
-    tslib "^2.8.1"
 
 synckit@^0.11.2:
   version "0.11.2"
