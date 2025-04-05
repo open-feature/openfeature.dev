@@ -6000,7 +6000,27 @@ eslint-import-resolver-node@^0.3.9:
     is-core-module "^2.13.0"
     resolve "^1.22.4"
 
-eslint-mdx@3.3.2, eslint-mdx@^3.3.2:
+eslint-mdx@3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-3.4.0.tgz#73d767b19451aeaf8d5ccb9079c25730ff44a7e8"
+  integrity sha512-sNffDEvt3fAEkrCntX0Kk/IWhHkfp0fhQ7/n30gQuIRm/FeUjLMkKkgAwlOFqxIMD4XJ03Iidmkf18EC8zTyYw==
+  dependencies:
+    acorn "^8.14.1"
+    acorn-jsx "^5.3.2"
+    espree "^9.6.1 || ^10.3.0"
+    estree-util-visit "^2.0.0"
+    remark-mdx "^3.1.0"
+    remark-parse "^11.0.0"
+    remark-stringify "^11.0.0"
+    synckit "^0.11.2"
+    tslib "^2.8.1"
+    unified "^11.0.5"
+    unified-engine "^11.2.2"
+    unist-util-visit "^5.0.0"
+    uvu "^0.5.6"
+    vfile "^6.0.3"
+
+eslint-mdx@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-3.3.2.tgz#52f9df9ccabe4b254430a14372845645512305ee"
   integrity sha512-GFeLoM2S5Jx0iTXYvsp/do/UNTzV+vRNfNxRglelXb9ZNSfUFGHsq60ZcHyUvpxy2crPebCX4gzT/FRu/LJRbA==
