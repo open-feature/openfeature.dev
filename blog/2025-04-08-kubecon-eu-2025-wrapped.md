@@ -10,7 +10,7 @@ draft: false
 
 Hello from the OpenFeature community! This post wraps up KubeCon EU 2025 and The OpenFeature Summit.
 
-<!--truncate-->
+<!-- truncate -->
 
 <img src={require('@site/static/img/blog/2025-04-08-kubecon-eu-2025-wrapped/summit-eu-2025-wrapped.png').default} />
 
