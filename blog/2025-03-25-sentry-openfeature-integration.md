@@ -86,7 +86,7 @@ The Sentry OpenFeature integration provides several key benefits:
 This integration exemplifies the power of open standards in the feature flagging ecosystem.
 By implementing the OpenFeature specification, Sentry can provide a seamless integration that works with any OpenFeature-compatible provider, without requiring vendor-specific implementations.
 
-This aligns with OpenFeature's vision of reducing integration effort by [moving from effort(N*M) to effort(N+M)](https://deploy-preview-1055--openfeature.netlify.app/blog/openfeature-a-standard-for-feature-flagging/#from-effortnm-to-effortnm).
+This aligns with OpenFeature's vision of reducing integration effort by [moving from effort(N*M) to effort(N+M)](https://openfeature.dev/blog/openfeature-a-standard-for-feature-flagging/#from-effortnm-to-effortnm).
 OpenFeature delivers a standardized feature flagging SDK, already implemented by most providers, and Sentry can focus on building the best performance monitoring and error-tracking platform.
 
 ## Next Steps
