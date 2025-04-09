@@ -99,4 +99,5 @@ For more information, check out the official Sentry documentation:
 - [JavaScript Integration](https://docs.sentry.io/platforms/javascript/configuration/integrations/openfeature/)
 - [Python Integration](https://docs.sentry.io/platforms/python/integrations/openfeature/)
 
+Using another platform? Sentry is planning expanding support for more platforms, starting with mobile. 
 We're excited to see how this integration helps teams better understand the impact of their feature flags on application stability and performance.
