@@ -12,7 +12,7 @@ We're excited to announce that Sentry has released OpenFeature Hooks for [JavaSc
 
 ## What is the Sentry OpenFeature Integration?
 
-The Sentry OpenFeature Hook automatically tracks feature flag evaluations in your application.
+The Sentry OpenFeature Hook allows Sentry to track feature flag evaluations within your application.
 When an error occurs, Sentry will include the state of all evaluated feature flags in the error report, providing crucial context for debugging and troubleshooting.
 
 This integration is currently in beta and only supports boolean flag evaluations. 
