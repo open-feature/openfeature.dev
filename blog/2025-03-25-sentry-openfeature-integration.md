@@ -15,7 +15,10 @@ We're excited to announce that Sentry has released OpenFeature Hooks for [JavaSc
 The Sentry OpenFeature Hook automatically tracks feature flag evaluations in your application.
 When an error occurs, Sentry will include the state of all evaluated feature flags in the error report, providing crucial context for debugging and troubleshooting.
 
-This integration is currently in beta and only supports boolean flag evaluations.
+This integration is currently in beta and only supports boolean flag evaluations. 
+See their [changelog](https://changelog.sentry.dev/changelog/view-distributions-of-feature-flag-evaluations-inside-issue-details/) for details on how feature flags are integrated into their platform.
+
+<img src={require('@site/static/img/blog/2025-03-25-sentry-openfeature-integration/sentry_dashboard.png').default} />
 
 ## JavaScript Integration
 
@@ -84,14 +87,14 @@ The Sentry OpenFeature integration provides several key benefits:
 ## The Value of Open Standards
 
 This integration exemplifies the power of open standards in the feature flagging ecosystem.
-By implementing the OpenFeature specification, Sentry can provide a seamless integration that works with any OpenFeature-compatible provider, without requiring vendor-specific implementations.
+By implementing the OpenFeature specification, Sentry can provide a seamless integration that works with any OpenFeature provider, without requiring vendor-specific implementations.
 
 This aligns with OpenFeature's vision of reducing integration effort by [moving from effort(N*M) to effort(N+M)](https://openfeature.dev/blog/openfeature-a-standard-for-feature-flagging/#from-effortnm-to-effortnm).
-OpenFeature delivers a standardized feature flagging SDK, already implemented by most providers, and Sentry can focus on building the best performance monitoring and error-tracking platform.
+OpenFeature delivers a standardized feature flagging SDK, already implemented by most providers, and Sentry can focus on building a great performance monitoring and error-tracking platform for their users.
 
 ## Next Steps
 
-If you're using Sentry and OpenFeature for feature flagging, we encourage you to try out this integration.
+If you're using Sentry and OpenFeature, we encourage you to try out this integration.
 The feature flag state will be automatically included in your error reports, providing valuable context for debugging.
 
 For more information, check out the official Sentry documentation:
