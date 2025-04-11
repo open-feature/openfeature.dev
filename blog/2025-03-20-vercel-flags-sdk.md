@@ -9,6 +9,7 @@ draft: false
 ---
 
 We are happy to share the news that Vercel's new open-source [Flags SDK](https://flags-sdk.dev/) for Next.js and SvelteKit has shipped with a native [OpenFeature Adapter](https://flags-sdk.dev/docs/api-reference/adapters/openfeature).
+<!--truncate-->
 The Flags SDK is an exciting development for standardizing feature flagging in Next.js and SvelteKit, as it takes an [opinionated approach](https://vercel.com/blog/flags-as-code-in-next-js) to how feature flags should be used:
 - Feature Flags are just functions
 - Feature Flags are only evaluated on the server-side, no client-side flag evaluation is supported to improve performance, avoid layout shifts, and other non-optimal user experiences.
