@@ -41,7 +41,7 @@ With OpenFeature CLI, developers can:
 
 The CLI represents our commitment to improving developer experience and making feature flag management more accessible to teams of all sizes. It's designed to work alongside your existing tools and workflows with minimal friction.
 
-In a separate article, We will dive deeper into the goals of `openfeature-cli` and how it can improve a developer's experience working with feature flags. Stay tuned for a hands-on tutorial.
+In a separate article, we will dive deeper into the goals of `openfeature-cli` and how it can improve a developer's experience working with feature flags. Stay tuned for a hands-on tutorial.
 
 ## 3. Conclusion
 
