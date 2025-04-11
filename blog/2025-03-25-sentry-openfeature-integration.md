@@ -9,7 +9,7 @@ draft: false
 ---
 
 We're excited to announce that Sentry has released OpenFeature Hooks for [JavaScript](https://docs.sentry.io/platforms/javascript/configuration/integrations/openfeature/) and [Python](https://docs.sentry.io/platforms/python/integrations/openfeature/), enabling developers to track feature flag evaluations directly in their error monitoring and performance tracking.
-
+<!--truncate-->
 ## What is the Sentry OpenFeature Integration?
 
 The Sentry OpenFeature Hook allows Sentry to track feature flag evaluations within your application.
