@@ -80,12 +80,42 @@ However, the following items should be used in the package name:
 
 An example of what it could look like in NPM: `@openfeature/flagd-provider`
 
-#### Multi-provider support
+### Domain scopped providers
 
-OpenFeature supports multiple providers in a single application, allowing teams to scope flag evaluation to a particular flag management system.
-This makes it easier for developers to mix and match providers based on their needs, all from a unified SDK.
+OpenFeature supports multiple providers [domain-scoped](https://openfeature.dev/specification/glossary/#domain) to multiple clients in a single application.
+This allows teams to scope flag evaluation to a particular flag management system, making it easier for developers to mix and match providers based on their needs, all from a unified SDK.
 
-> To learn more, please refer to the [OpenFeature Enhancement Proposal](https://github.com/open-feature/ofep/blob/main/OFEP-provider-client-mapping.md) or [spec change](https://openfeature.dev/specification/sections/flag-evaluation/#requirement-113).
+```typescript
+OpenFeature.setProvider('ProviderA', new ProviderA());
+OpenFeature.setProvider('ProviderB', new ProviderB());
+
+const clientA = OpenFeature.getClient('ProviderA');
+const clientB = OpenFeature.getClient('ProviderB');
+```
+
+> To learn more, please refer to the [OpenFeature Enhancement Proposal](https://github.com/open-feature/ofep/blob/main/OFEP/provider-client-mapping.md) or [spec change](https://openfeature.dev/specification/sections/flag-evaluation/#requirement-113).
+
+### Multi-Provider support
+
+OpenFeature SDKs also support combining multiple providers under a single client using the [Multi-Provider specification](/specification/appendix-a#multi-provider).
+This interface allows your application to transparently interact with multiple providers from different flag management systems through a single interface.
+The logic of how the different providers are accessed through the multi-provider is handled through the assigned [multi-provider strategy](/specification/appendix-a#strategies).
+
+```typescript
+const multiProvider = new MultiProvider(
+  [
+    {
+      provider: new ProviderA(),
+    },
+    {
+      provider: new ProviderB(),
+    },
+  ],
+  new FirstMatchStrategy(),
+);
+
+await OpenFeature.setProviderAndWait(multiProvider);
+```
 
 ### Examples
 
@@ -95,7 +125,13 @@ This makes it easier for developers to mix and match providers based on their ne
 <TabItem value="js" label="TypeScript">
 
 ```ts
-import { Provider, ResolutionDetails, EvaluationContext, JsonValue, OpenFeatureEventEmitter } from '@openfeature/server-sdk';
+import {
+  Provider,
+  ResolutionDetails,
+  EvaluationContext,
+  JsonValue,
+  OpenFeatureEventEmitter,
+} from '@openfeature/server-sdk';
 
 export class MyFeatureProvider implements Provider {
   readonly metadata = {
@@ -110,7 +146,7 @@ export class MyFeatureProvider implements Provider {
   resolveBooleanEvaluation(
     flagKey: string,
     defaultValue: boolean,
-    context: EvaluationContext
+    context: EvaluationContext,
   ): Promise<ResolutionDetails<boolean>> {
     // code to resolve boolean details
   }
@@ -118,7 +154,7 @@ export class MyFeatureProvider implements Provider {
   resolveStringEvaluation(
     flagKey: string,
     defaultValue: string,
-    context: EvaluationContext
+    context: EvaluationContext,
   ): Promise<ResolutionDetails<string>> {
     // code to resolve string details
   }
@@ -126,7 +162,7 @@ export class MyFeatureProvider implements Provider {
   resolveNumberEvaluation(
     flagKey: string,
     defaultValue: number,
-    context: EvaluationContext
+    context: EvaluationContext,
   ): Promise<ResolutionDetails<number>> {
     // code to resolve number details
   }
@@ -134,7 +170,7 @@ export class MyFeatureProvider implements Provider {
   resolveObjectEvaluation(
     flagKey: string,
     defaultValue: JsonValue,
-    context: EvaluationContext
+    context: EvaluationContext,
   ): Promise<ResolutionDetails<JsonValue>> {
     // code to resolve object details
   }

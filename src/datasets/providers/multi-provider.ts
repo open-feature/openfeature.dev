@@ -8,8 +8,20 @@ export const MultiProvider: Provider = {
   technologies: [
     {
       technology: 'JavaScript',
-      vendorOfficial: true,
+      vendorOfficial: false,
       href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/multi-provider',
+      category: ['Server'],
+    },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/multi-provider-web',
+      category: ['Client'],
+    },
+    {
+      technology: 'Java',
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/java-sdk-contrib/tree/main/providers/multiprovider',
       category: ['Server'],
     },
   ],
