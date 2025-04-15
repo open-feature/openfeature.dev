@@ -1,8 +1,9 @@
 ---
-slug: "kubecon-eu-2025-wrapped"
-title: "KubeCon EU 2025 wrapped"
+slug: "tldr-kubecon-london"
+title: "TLDR: KubeCon EU 2025"
 date: 2025-04-08
 authors: [weyert]
+image: /img/blog/2025-04-16-tldr-kubecon-london/london.png
 description: "KubeCon EU 2025 Summary"
 tags: [kubecon, cncf, session, talk, booth, "OpenFeature summit", "co-located"]
 draft: false
@@ -12,15 +13,15 @@ Hello from the OpenFeature community! This post wraps up KubeCon EU 2025 and The
 
 <!-- truncate -->
 
-<img src={require('@site/static/img/blog/2025-04-08-kubecon-eu-2025-wrapped/summit-eu-2025-wrapped.png').default} />
+<img src={require('@site/static/img/blog/2025-04-16-tldr-kubecon-london/london.png').default} />
 
-## 1. KubeCon EU 2025 _Wrapped_
+## 1. TLDR: KubeCon EU 2025
 
 This year's KubeCon EU was located in London, where I happen to live, giving me the opportunity to attend KubeCon EU for the first time. I had a wonderful time finally meeting fellow OpenFeature maintainers face-to-face and connecting with users of OpenFeature.
 
 This year we saw a growth of interest in OpenFeature, and heard stories of people using OpenFeature in their own products. The OpenFeature booth at the project pavillion buzzed with activity, plenty of knowledge shared and the power of OpenFeature shared with interested people.
 
-For a second time at KubeCon our dedicated, co-located event, <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/openfeature-summit">The OpenFeature Summit</a> happened the day before KubeCon EU 2025 itself. The summit featured great talks and speakers. I would like to point of a few of these talks:
+For a second time at KubeCon our dedicated, co-located event, <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/openfeature-summit">The OpenFeature Summit</a> took place the day before KubeCon EU 2025 itself. The summit featured great talks and speakers. I would like to point of a few of these talks:
 
 - <a href="https://colocatedeventseu2025.sched.com/event/1u5kz/openfeatures-positive-impact-on-confidence-at-dynatrace-simon-schrottner-todd-baert-dynatrace">▶️ OpenFeature’s Positive Impact on Confidence at Dynatrace - Simon Schrottner &amp; Todd Baert, Dynatrace </a> by Simon Schrottner &amp; Todd Baert from Dynatrace gave a great presentation about how they internally use the different OpenFeature offerings like flagd, OpenFeature SDKs
 
