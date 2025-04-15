@@ -1,7 +1,7 @@
 ---
 slug: "tldr-kubecon-london"
 title: "TLDR: KubeCon EU 2025"
-date: 2025-04-08
+date: 2025-04-16
 authors: [weyert]
 image: /img/blog/2025-04-16-tldr-kubecon-london/london.png
 description: "KubeCon EU 2025 Summary"
