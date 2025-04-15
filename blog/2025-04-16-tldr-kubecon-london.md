@@ -21,7 +21,11 @@ This year's KubeCon EU was located in London, where I happen to live, giving me 
 
 This year we saw a growth of interest in OpenFeature, and heard stories of people using OpenFeature in their own products. The OpenFeature booth at the project pavillion buzzed with activity, plenty of knowledge shared and the power of OpenFeature shared with interested people.
 
+<img src={require('@site/static/img/blog/2025-04-16-tldr-kubecon-london/photo1.jpg').default} />
+
 For a second time at KubeCon our dedicated, co-located event, <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/openfeature-summit">The OpenFeature Summit</a> took place the day before KubeCon EU 2025 itself. The summit featured great talks and speakers. I would like to point of a few of these talks:
+
+- <a href="https://www.youtube.com/watch?v=lEXm6k2wpG4&t=1658s">▶️ OpenFeature Update From the Maintainers - Thomas Poignant, Lukas Reining & Alexandra Oberaigner - Latest updates what happened in the world of OpenFeature</a>
 
 - <a href="https://colocatedeventseu2025.sched.com/event/1u5kz/openfeatures-positive-impact-on-confidence-at-dynatrace-simon-schrottner-todd-baert-dynatrace">▶️ OpenFeature’s Positive Impact on Confidence at Dynatrace - Simon Schrottner &amp; Todd Baert, Dynatrace </a> by Simon Schrottner &amp; Todd Baert from Dynatrace gave a great presentation about how they internally use the different OpenFeature offerings like flagd, OpenFeature SDKs
 
@@ -31,9 +35,13 @@ For a second time at KubeCon our dedicated, co-located event, <a href="https://e
 
 - <a href="https://colocatedeventseu2025.sched.com/event/1u5lB/challenges-in-distributed-feature-flag-evaluation-and-how-to-solve-them-lukas-reining-christopher-bohlen-codecentric-ag">▶️ Challenges in Distributed Feature Flag Evaluation and How To Solve Them Lukas Reining &amp; Christopher Bohlen, codecentric AG </a> by Lukas Reinig &amp; Christopher Bohlen from codecentric AG. In this talk we got into the nitty gritty of feature flags that span multiple services, and saw multiple proposals how we can ensure the feature flag evaluations are consistent between the services.
 
+<img src={require('@site/static/img/blog/2025-04-16-tldr-kubecon-london/photo2.jpg').default} />
+
 ## 2. Introducing OpenFeature CLI
 
 During the conference we also introduced our latest creation, OpenFeature CLI, which streamlines how feature flags are managed within your codebase. The tool generates a type-safe OpenFeature client based on a flags manifest file that either can be pulled from supported feature flag systems or sourced from a JSON file.
+
+<img src={require('@site/static/img/blog/2025-04-16-tldr-kubecon-london/photo3.jpg').default} />
 
 With OpenFeature CLI, developers can:
 - Generate a strongly-typed client, custom-built for your specific feature flags, in Typescript, Python or C# (with more to come!)
@@ -51,3 +59,9 @@ KubeCon EU 2025 was a milestone event for the OpenFeature community. The growing
 We'd like to thank everyone who visited our booth, attended the summit, or participated in OpenFeature-related discussions throughout the conference. Your enthusiasm and feedback drive our project forward. 
 
 We'd love to welcome you into [the OpenFeature community](/community/). You can join our [Slack channel](https://cloud-native.slack.com/archives/C0344AANLA1), attend our [bi-weekly community meeting](/community/#community-meetings) or just check out our [GitHub repository](https://github.com/open-feature).
+
+## 4. Impressions
+
+<img src={require('@site/static/img/blog/2025-04-16-tldr-kubecon-london/photo4.jpg').default} />
+<img src={require('@site/static/img/blog/2025-04-16-tldr-kubecon-london/photo5.jpg').default} />
+<img src={require('@site/static/img/blog/2025-04-16-tldr-kubecon-london/photo6.jpg').default} />
