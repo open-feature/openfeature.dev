@@ -15,7 +15,7 @@ Hello from the OpenFeature community! This post wraps up KubeCon EU 2025 and The
 
 <img src={require('@site/static/img/blog/2025-04-16-tldr-kubecon-london/london.png').default} />
 
-## 1. TLDR: KubeCon EU 2025
+## TLDR: KubeCon EU 2025
 
 This year's KubeCon EU was located in London, where I happen to live, giving me the opportunity to attend KubeCon EU for the first time. I had a wonderful time finally meeting fellow OpenFeature maintainers face-to-face and connecting with users of OpenFeature.
 
@@ -37,7 +37,7 @@ For a second time at KubeCon our dedicated, co-located event, <a href="https://e
 
 <img src={require('@site/static/img/blog/2025-04-16-tldr-kubecon-london/photo3.jpg').default} />
 
-## 2. Introducing OpenFeature CLI
+## Introducing OpenFeature CLI
 
 During the conference we also introduced our latest creation, OpenFeature CLI, which streamlines how feature flags are managed within your codebase. The tool generates a type-safe OpenFeature client based on a flags manifest file that either can be pulled from supported feature flag systems or sourced from a JSON file.
 
@@ -52,7 +52,7 @@ The CLI represents our commitment to improving developer experience and making f
 
 In a separate article, we will dive deeper into the goals of `openfeature-cli` and how it can improve a developer's experience working with feature flags. Stay tuned for a hands-on tutorial.
 
-## 3. Conclusion
+## Conclusion
 
 KubeCon EU 2025 was a milestone event for the OpenFeature community. The growing adoption of OpenFeature across diverse organizations demonstrates the industry's recognition of standardized feature flagging as a critical component of modern software delivery. 
 
@@ -60,7 +60,7 @@ We'd like to thank everyone who visited our booth, attended the summit, or parti
 
 We'd love to welcome you into [the OpenFeature community](/community/). You can join our [Slack channel](https://cloud-native.slack.com/archives/C0344AANLA1), attend our [bi-weekly community meeting](/community/#community-meetings) or just check out our [GitHub repository](https://github.com/open-feature).
 
-## 4. Impressions
+## Impressions
 
 <img src={require('@site/static/img/blog/2025-04-16-tldr-kubecon-london/photo4.jpg').default} />
 <img src={require('@site/static/img/blog/2025-04-16-tldr-kubecon-london/photo5.jpg').default} />
