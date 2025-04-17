@@ -304,7 +304,7 @@ Hello, world!
 
 Feature flags are at their most powerful when we can use contextual information to determine feature flag values.
 We call this targeting.
-We'll set the `defaultVariant` back to "off" to make sure our targting works.
+We'll set the `defaultVariant` back to "off" to make sure our targeting works.
 Now, let's add some targeting by adding a `contextEvaluator` to the `"with-cows"` flag.
 We'll use some request data as the basis of or flag evaluation - let's check the `X-Cow` HTTP header.
 Then, when we evaluate the flag, will be sure to pass our additional contextual information.
