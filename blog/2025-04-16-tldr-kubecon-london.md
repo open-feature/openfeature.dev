@@ -27,13 +27,13 @@ For a second time at KubeCon our dedicated, co-located event, <a href="https://e
 
 - <a href="https://www.youtube.com/watch?v=lEXm6k2wpG4&t=1658s">▶️ OpenFeature Update From the Maintainers - Thomas Poignant, Lukas Reining & Alexandra Oberaigner</a> Latest updates what happened in the world of OpenFeature.
 
-- <a href="https://colocatedeventseu2025.sched.com/event/1u5kz/openfeatures-positive-impact-on-confidence-at-dynatrace-simon-schrottner-todd-baert-dynatrace">▶️ OpenFeature’s Positive Impact on Confidence at Dynatrace - Simon Schrottner &amp; Todd Baert, Dynatrace </a> by Simon Schrottner &amp; Todd Baert from Dynatrace gave a great presentation about how they internally use the different OpenFeature offerings like flagd, OpenFeature SDKs
+- <a href="https://www.youtube.com/watch?v=pvjmPTTyCfc">▶️ OpenFeature’s Positive Impact on Confidence at Dynatrace - Simon Schrottner &amp; Todd Baert, Dynatrace </a> by Simon Schrottner &amp; Todd Baert from Dynatrace gave a great presentation about how they internally use the different OpenFeature offerings like flagd, OpenFeature SDKs
 
-- <a href="https://colocatedeventseu2025.sched.com/event/1u5l8/canary-deployments-are-a-myth-true-progressive-delivery-occurs-via-openfeature-bob-walker-octopus-deploy">▶️ Canary Deployments Are a Myth - True Progressive Delivery Occurs Via OpenFeature - Bob Walker, Octopus Deploy</a> by Bob Walker from Octopus Deploy described how they solved they delivery problems using OpenFeature and feature flags. A deep dive how flags can help with deploying releases in a safe and convenient manner. Tip! A longer version of this talk is available as part of KubeCon EU 2025.
+- <a href="https://www.youtube.com/watch?v=8P1_VIErKYk">▶️ Canary Deployments Are a Myth - True Progressive Delivery Occurs Via OpenFeature - Bob Walker, Octopus Deploy</a> by Bob Walker from Octopus Deploy described how they solved they delivery problems using OpenFeature and feature flags. A deep dive how flags can help with deploying releases in a safe and convenient manner. Tip! A longer version of this talk is available as part of KubeCon EU 2025.
 
-- <a href="https://colocatedeventseu2025.sched.com/event/1u5lH/cl-lightning-talk-openfeature-multi-provider-enabling-new-feature-flagging-use-cases-jonathan-norris-devcycle">▶️ Lightning Talk: OpenFeature Multi-Provider: Enabling New Feature Flagging Use-Cases</a> by Jonathan Norris from DevCycle. A talk about ways you can use the new Multi-Provider to your benefit, like to migrate away from feature flag solution to your new one.
+- <a href="https://www.youtube.com/watch?v=R2s54KCsQMg">▶️ Lightning Talk: OpenFeature Multi-Provider: Enabling New Feature Flagging Use-Cases</a> by Jonathan Norris from DevCycle. A talk about ways you can use the new Multi-Provider to your benefit, like to migrate away from feature flag solution to your new one.
 
-- <a href="https://colocatedeventseu2025.sched.com/event/1u5lB/challenges-in-distributed-feature-flag-evaluation-and-how-to-solve-them-lukas-reining-christopher-bohlen-codecentric-ag">▶️ Challenges in Distributed Feature Flag Evaluation and How To Solve Them Lukas Reining &amp; Christopher Bohlen, codecentric AG </a> by Lukas Reinig &amp; Christopher Bohlen from codecentric AG. In this talk we got into the nitty gritty of feature flags that span multiple services, and saw multiple proposals how we can ensure the feature flag evaluations are consistent between the services.
+- <a href="https://www.youtube.com/watch?v=6stsemAoBHA">▶️ Challenges in Distributed Feature Flag Evaluation and How To Solve Them Lukas Reining &amp; Christopher Bohlen, codecentric AG </a> by Lukas Reinig &amp; Christopher Bohlen from codecentric AG. In this talk we got into the nitty gritty of feature flags that span multiple services, and saw multiple proposals how we can ensure the feature flag evaluations are consistent between the services.
 
 <img src={require('@site/static/img/blog/2025-04-16-tldr-kubecon-london/photo3.jpg').default} />
 
@@ -54,9 +54,9 @@ In a separate article, we will dive deeper into the goals of `openfeature-cli` a
 
 ## Conclusion
 
-KubeCon EU 2025 was a milestone event for the OpenFeature community. The growing adoption of OpenFeature across diverse organizations demonstrates the industry's recognition of standardized feature flagging as a critical component of modern software delivery. 
+KubeCon EU 2025 was a milestone event for the OpenFeature community. The growing adoption of OpenFeature across diverse organizations demonstrates the industry's recognition of standardized feature flagging as a critical component of modern software delivery.
 
-We'd like to thank everyone who visited our booth, attended the summit, or participated in OpenFeature-related discussions throughout the conference. Your enthusiasm and feedback drive our project forward. 
+We'd like to thank everyone who visited our booth, attended the summit, or participated in OpenFeature-related discussions throughout the conference. Your enthusiasm and feedback drive our project forward.
 
 We'd love to welcome you into [the OpenFeature community](/community/). You can join our [Slack channel](https://cloud-native.slack.com/archives/C0344AANLA1), attend our [bi-weekly community meeting](/community/#community-meetings) or just check out our [GitHub repository](https://github.com/open-feature).
 
