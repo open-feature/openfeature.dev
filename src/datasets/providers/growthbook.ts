@@ -29,5 +29,17 @@ export const GrowthBook: Provider = {
       href: 'https://github.com/growthbook/growthbook-openfeature-provider-java',
       category: ['Server'],
     },
+    {
+      technology: 'Go',
+      vendorOfficial: true,
+      href: 'https://github.com/growthbook/growthbook-openfeature-provider-go',
+      category: ['Server'],
+    },
+    {
+      technology: '.NET',
+      vendorOfficial: true,
+      href: 'https://github.com/growthbook/growthbook-openfeature-provider-dot-net',
+      category: ['Server'],
+    },
   ],
 };
