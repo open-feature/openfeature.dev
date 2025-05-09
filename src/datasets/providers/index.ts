@@ -28,6 +28,7 @@ import { Confidence } from './confidence';
 import { ConfigBee } from './configbee';
 import { Tggl } from './tggl';
 import { OFREP } from './ofrep';
+import { VWO } from './vwo';
 import { SDKS } from '../sdks';
 const childTechnologyMap = SDKS.reduce(
   (acc, sdk) => {
@@ -72,6 +73,7 @@ export const PROVIDERS: Provider[] = [
   MultiProvider,
   Tggl,
   OFREP,
+  VWO,
 ];
 
 // Map of provider name to technology to child technologies
