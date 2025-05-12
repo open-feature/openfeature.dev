@@ -8,6 +8,7 @@ import LaunchDarklySvg from '@site/static/img/vendors/launchdarkly.svg';
 import TgglSvg from '@site/static/img/vendors/tggl.svg';
 import GoffSvg from '@site/static/img/vendors/gofeatureflag.svg';
 import ConfigCatSvg from '@site/static/img/vendors/configcat.svg';
+import VwoSvg from '@site/static/img/vendors/vwo.svg';
 
 type CommercialSupportType = {
   name: string;
@@ -64,5 +65,10 @@ export const CommercialSupportList: CommercialSupportType[] = [
     name: 'Tggl',
     href: 'https://tggl.io/developers/sdks/open-feature',
     svg: TgglSvg,
+  },
+  {
+    name: 'VWO',
+    href: 'https://developers.vwo.com/v2/docs/openfeature-providers',
+    svg: VwoSvg,
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
