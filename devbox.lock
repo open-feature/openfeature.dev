@@ -1,68 +1,84 @@
 {
   "lockfile_version": "1",
   "packages": {
-    "nodejs@20": {
-      "last_modified": "2024-07-31T08:48:38Z",
+    "nodejs@20.19.1": {
+      "last_modified": "2025-05-12T14:38:58Z",
       "plugin_version": "0.0.2",
-      "resolved": "github:NixOS/nixpkgs/c3392ad349a5227f4a3464dce87bcc5046692fce#nodejs_20",
+      "resolved": "github:NixOS/nixpkgs/eaeed9530c76ce5f1d2d8232e08bec5e26f18ec1#nodejs_20",
       "source": "devbox-search",
-      "version": "20.15.1",
+      "version": "20.19.1",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/pnz462fx615nhm9lavm25gvhl6q2rjhr-nodejs-20.15.1",
+              "path": "/nix/store/wl17ii0962w8qjn1an7bhhplcc1q2j3y-nodejs-20.19.1",
               "default": true
             },
             {
+              "name": "dev",
+              "path": "/nix/store/kwwhdcjp9bjk0lq0dzkr6c0yycxvwm8h-nodejs-20.19.1-dev"
+            },
+            {
               "name": "libv8",
-              "path": "/nix/store/zbyfi027sdvnxgrzqgallrmyzzifzkh5-nodejs-20.15.1-libv8"
+              "path": "/nix/store/w5pivwvk3d8gsqvvqnfchj4d80npp552-nodejs-20.19.1-libv8"
             }
           ],
-          "store_path": "/nix/store/pnz462fx615nhm9lavm25gvhl6q2rjhr-nodejs-20.15.1"
+          "store_path": "/nix/store/wl17ii0962w8qjn1an7bhhplcc1q2j3y-nodejs-20.19.1"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/igqd6ci0dbhq2lbvb9hd47fzbsb1vp55-nodejs-20.15.1",
+              "path": "/nix/store/dcicg31hb6wm4d4fw4qv3d6srbyzrabc-nodejs-20.19.1",
               "default": true
             },
             {
               "name": "libv8",
-              "path": "/nix/store/hjmd0akk51ngf69cyam19ibwc536mnnp-nodejs-20.15.1-libv8"
+              "path": "/nix/store/myfzd5mzlsq1dl1nq2vxqkpx9yl1za2s-nodejs-20.19.1-libv8"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/chv6xxjljyx9czqk1cp4cfy1rg8qsjzz-nodejs-20.19.1-dev"
             }
           ],
-          "store_path": "/nix/store/igqd6ci0dbhq2lbvb9hd47fzbsb1vp55-nodejs-20.15.1"
+          "store_path": "/nix/store/dcicg31hb6wm4d4fw4qv3d6srbyzrabc-nodejs-20.19.1"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/j4zrbdvppwxvvwnz5rk59qgv5f4077d0-nodejs-20.15.1",
+              "path": "/nix/store/lrrpc6wa73jz6mcy67gv4prji3wylv8m-nodejs-20.19.1",
               "default": true
             },
             {
               "name": "libv8",
-              "path": "/nix/store/nqlxmp8hgy061m0xv9ivaplln1824kk1-nodejs-20.15.1-libv8"
+              "path": "/nix/store/2hvw0157blnnmbpv6dc3brh240nwfg47-nodejs-20.19.1-libv8"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/jhznyv37gq23rkrjggihpl2v4axgd5im-nodejs-20.19.1-dev"
             }
           ],
-          "store_path": "/nix/store/j4zrbdvppwxvvwnz5rk59qgv5f4077d0-nodejs-20.15.1"
+          "store_path": "/nix/store/lrrpc6wa73jz6mcy67gv4prji3wylv8m-nodejs-20.19.1"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/zxa7qi0264hzsnf2bbyvrql5wy4fiy8j-nodejs-20.15.1",
+              "path": "/nix/store/rc520zzigf272ydkls8rh832zcq7drr0-nodejs-20.19.1",
               "default": true
             },
             {
+              "name": "dev",
+              "path": "/nix/store/h3b6cc1dm4fdqmf455p2cacsv8qgllfv-nodejs-20.19.1-dev"
+            },
+            {
               "name": "libv8",
-              "path": "/nix/store/amm162s6dwgsf0mj8j7i1h5f8n9ph2k0-nodejs-20.15.1-libv8"
+              "path": "/nix/store/v2sx0clql9klvfmk3s4rhlcgbk68ffpn-nodejs-20.19.1-libv8"
             }
           ],
-          "store_path": "/nix/store/zxa7qi0264hzsnf2bbyvrql5wy4fiy8j-nodejs-20.15.1"
+          "store_path": "/nix/store/rc520zzigf272ydkls8rh832zcq7drr0-nodejs-20.19.1"
         }
       }
     }
