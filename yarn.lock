@@ -2117,14 +2117,14 @@
     "@hapi/hoek" "^9.0.0"
 
 "@headlessui/react@^2.2.0":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-2.2.3.tgz#d947844665ce223f55d79aa23e9bb4ce28846133"
-  integrity sha512-hgOJGXPifPlOczIeSwX8OjLWRJ5XdYApZFf7DeCbCrO1PXHkPhNTRrA9ZwJsgAG7SON1i2JcvIreF/kbgtJeaQ==
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-2.2.4.tgz#9b0c48a5be1fe4577f03f3216290bb71d9883520"
+  integrity sha512-lz+OGcAH1dK93rgSMzXmm1qKOJkBUqZf1L4M8TWLNplftQD3IkoEDdUFNfAn4ylsN6WOTVtWaLmvmaHOUk1dTA==
   dependencies:
     "@floating-ui/react" "^0.26.16"
     "@react-aria/focus" "^3.20.2"
     "@react-aria/interactions" "^3.25.0"
-    "@tanstack/react-virtual" "^3.13.6"
+    "@tanstack/react-virtual" "^3.13.9"
     use-sync-external-store "^1.5.0"
 
 "@humanwhocodes/config-array@^0.13.0":
@@ -2522,25 +2522,25 @@
     "@radix-ui/react-compose-refs" "1.1.2"
 
 "@react-aria/focus@^3.20.2":
-  version "3.20.2"
-  resolved "https://registry.yarnpkg.com/@react-aria/focus/-/focus-3.20.2.tgz#f20cd830d2536b905169a547228c5d5471a874bc"
-  integrity sha512-Q3rouk/rzoF/3TuH6FzoAIKrl+kzZi9LHmr8S5EqLAOyP9TXIKG34x2j42dZsAhrw7TbF9gA8tBKwnCNH4ZV+Q==
+  version "3.20.3"
+  resolved "https://registry.yarnpkg.com/@react-aria/focus/-/focus-3.20.3.tgz#ef0c14f5bf7f2b5613d9e2719c099ffddb3d7797"
+  integrity sha512-rR5uZUMSY4xLHmpK/I8bP1V6vUNHFo33gTvrvNUsAKKqvMfa7R2nu5A6v97dr5g6tVH6xzpdkPsOJCWh90H2cw==
   dependencies:
-    "@react-aria/interactions" "^3.25.0"
-    "@react-aria/utils" "^3.28.2"
-    "@react-types/shared" "^3.29.0"
+    "@react-aria/interactions" "^3.25.1"
+    "@react-aria/utils" "^3.29.0"
+    "@react-types/shared" "^3.29.1"
     "@swc/helpers" "^0.5.0"
     clsx "^2.0.0"
 
-"@react-aria/interactions@^3.25.0":
-  version "3.25.0"
-  resolved "https://registry.yarnpkg.com/@react-aria/interactions/-/interactions-3.25.0.tgz#a57dcec4b8c429756770fbe969263588bb879110"
-  integrity sha512-GgIsDLlO8rDU/nFn6DfsbP9rfnzhm8QFjZkB9K9+r+MTSCn7bMntiWQgMM+5O6BiA8d7C7x4zuN4bZtc0RBdXQ==
+"@react-aria/interactions@^3.25.0", "@react-aria/interactions@^3.25.1":
+  version "3.25.1"
+  resolved "https://registry.yarnpkg.com/@react-aria/interactions/-/interactions-3.25.1.tgz#097210e8f4ee474be30b53a7606a6a9b70508dcd"
+  integrity sha512-ntLrlgqkmZupbbjekz3fE/n3eQH2vhncx8gUp0+N+GttKWevx7jos11JUBjnJwb1RSOPgRUFcrluOqBp0VgcfQ==
   dependencies:
     "@react-aria/ssr" "^3.9.8"
-    "@react-aria/utils" "^3.28.2"
+    "@react-aria/utils" "^3.29.0"
     "@react-stately/flags" "^3.1.1"
-    "@react-types/shared" "^3.29.0"
+    "@react-types/shared" "^3.29.1"
     "@swc/helpers" "^0.5.0"
 
 "@react-aria/ssr@^3.9.8":
@@ -2550,15 +2550,15 @@
   dependencies:
     "@swc/helpers" "^0.5.0"
 
-"@react-aria/utils@^3.28.2":
-  version "3.28.2"
-  resolved "https://registry.yarnpkg.com/@react-aria/utils/-/utils-3.28.2.tgz#f698bc54b2cb506c2f81d1ce92543ae39aae3968"
-  integrity sha512-J8CcLbvnQgiBn54eeEvQQbIOfBF3A1QizxMw9P4cl9MkeR03ug7RnjTIdJY/n2p7t59kLeAB3tqiczhcj+Oi5w==
+"@react-aria/utils@^3.29.0":
+  version "3.29.0"
+  resolved "https://registry.yarnpkg.com/@react-aria/utils/-/utils-3.29.0.tgz#eb07bd3403d8a26886c9ad953242451de15e1c2c"
+  integrity sha512-jSOrZimCuT1iKNVlhjIxDkAhgF7HSp3pqyT6qjg/ZoA0wfqCi/okmrMPiWSAKBnkgX93N8GYTLT3CIEO6WZe9Q==
   dependencies:
     "@react-aria/ssr" "^3.9.8"
     "@react-stately/flags" "^3.1.1"
     "@react-stately/utils" "^3.10.6"
-    "@react-types/shared" "^3.29.0"
+    "@react-types/shared" "^3.29.1"
     "@swc/helpers" "^0.5.0"
     clsx "^2.0.0"
 
@@ -2576,10 +2576,10 @@
   dependencies:
     "@swc/helpers" "^0.5.0"
 
-"@react-types/shared@^3.29.0":
-  version "3.29.0"
-  resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.29.0.tgz#f29bdad3bff1336aaa754d7abc420da2f014d931"
-  integrity sha512-IDQYu/AHgZimObzCFdNl1LpZvQW/xcfLt3v20sorl5qRucDVj4S9os98sVTZ4IRIBjmS+MkjqpR5E70xan7ooA==
+"@react-types/shared@^3.29.1":
+  version "3.29.1"
+  resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.29.1.tgz#81c685e54aab7abe890b2a93e6758d0163b04c54"
+  integrity sha512-KtM+cDf2CXoUX439rfEhbnEdAgFZX20UP2A35ypNIawR7/PFFPjQDWyA2EnClCcW/dLWJDEPX2U8+EJff8xqmQ==
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
@@ -2759,17 +2759,17 @@
   dependencies:
     mini-svg-data-uri "^1.2.3"
 
-"@tanstack/react-virtual@^3.13.6":
-  version "3.13.8"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-virtual/-/react-virtual-3.13.8.tgz#ce7c438ddc379a090a1b01f5436d5b2a1ebd750f"
-  integrity sha512-meS2AanUg50f3FBSNoAdBSRAh8uS0ue01qm7zrw65KGJtiXB9QXfybqZwkh4uFpRv2iX/eu5tjcH5wqUpwYLPg==
+"@tanstack/react-virtual@^3.13.9":
+  version "3.13.9"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-virtual/-/react-virtual-3.13.9.tgz#6f87bce08a65c8f4ec6d2c303646ca6b3897e9fe"
+  integrity sha512-SPWC8kwG/dWBf7Py7cfheAPOxuvIv4fFQ54PdmYbg7CpXfsKxkucak43Q0qKsxVthhUJQ1A7CIMAIplq4BjVwA==
   dependencies:
-    "@tanstack/virtual-core" "3.13.8"
+    "@tanstack/virtual-core" "3.13.9"
 
-"@tanstack/virtual-core@3.13.8":
-  version "3.13.8"
-  resolved "https://registry.yarnpkg.com/@tanstack/virtual-core/-/virtual-core-3.13.8.tgz#6346e688521c1f086f508ccbebaad0b472a2aefb"
-  integrity sha512-BT6w89Hqy7YKaWewYzmecXQzcJh6HTBbKYJIIkMaNU49DZ06LoTV3z32DWWEdUsgW6n1xTmwTLs4GtWrZC261w==
+"@tanstack/virtual-core@3.13.9":
+  version "3.13.9"
+  resolved "https://registry.yarnpkg.com/@tanstack/virtual-core/-/virtual-core-3.13.9.tgz#62b4d2d4351d658101664beacf088fbd061190bf"
+  integrity sha512-3jztt0jpaoJO5TARe2WIHC1UQC3VMLAFUW5mmMo0yrkwtDB2AQP0+sh10BVUpWrnvHjSLvzFizydtEGLCJKFoQ==
 
 "@trysound/sax@0.2.0":
   version "0.2.0"
