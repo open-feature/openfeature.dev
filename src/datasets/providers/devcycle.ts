@@ -74,5 +74,11 @@ export const DevCycle: Provider = {
       href: 'https://docs.devcycle.com/sdk/server-side-sdks/ruby/ruby-openfeature',
       category: ['Server'],
     },
+    {
+      technology: 'Swift',
+      vendorOfficial: true,
+      href: 'https://docs.devcycle.com/sdk/client-side-sdks/ios/ios-openfeature',
+      category: ['Client'],
+    },
   ],
 };
