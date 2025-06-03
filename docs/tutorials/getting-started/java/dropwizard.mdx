@@ -1,0 +1,315 @@
+---
+title: Dropwizard
+description: Getting Started with the OpenFeature Java SDK and Dropwizard
+---
+
+import FlagdContent from '@site/src/components/custom/tutorial/flagd-content.mdx';
+import FlagdChangeContent from '@site/src/components/custom/tutorial/flagd-change-content.mdx';
+import WhyDefaultContent from '@site/src/components/custom/tutorial/why-default-content.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Getting Started with the OpenFeature Java SDK and Dropwizard
+
+## Introduction
+
+This walk-through teaches you the basics of using OpenFeature in Java in the context of a Dropwizard application.
+
+You'll learn how to:
+
+- Integrate the OpenFeature Java SDK
+- Install and configure the OpenFeature provider
+- Perform basic feature flagging
+
+## Requirements
+
+This walk-through assumes that:
+
+- You have a basic knowledge of Java and Dropwizard
+- You have Java 8 or later
+- You have Docker installed and running on the host system
+
+This guide uses Java 21 syntax, adjustments might be needed for earlier Java versions.
+
+## Walk-through
+
+### Step 1: Create a Dropwizard application
+
+Create a new Dropwizard application following the guide on [dropwizard.io](https://www.dropwizard.io/en/stable/getting-started.html).
+
+For this example we are using the maven archetype
+
+```shell
+$ mvn archetype:generate -DarchetypeGroupId=io.dropwizard.archetypes -DarchetypeArtifactId=java-simple -DarchetypeVersion=4.0.13
+...
+Define value for property 'name': OpenFeatureExample
+...
+Define value for property 'groupId': dev.openfeature
+Define value for property 'artifactId': openfeature-example
+Define value for property 'version' 1.0-SNAPSHOT:
+Define value for property 'package' dev.openfeature:
+Confirm properties configuration:
+name: OpenFeatureExample
+description: null
+shaded: true
+groupId: dev.openfeature
+artifactId: openfeature-example
+version: 1.0-SNAPSHOT
+package: dev.openfeature
+ Y: Y
+...
+```
+
+We now have an application we can open
+
+```shell
+cd openfeature-example
+```
+
+### Step 2: Add dependencies
+
+For dropwizard we can either use the SDK directly, or use a community module [dropwizard-openfeature](https://github.com/sideshowcoder/dropwizard-openfeature),
+and while dropwizard-openfeature provides some benefits like built-in healthchecks, and managing the startup and shutdown of resources associated with the
+OpenFeature Java SDK, it is not however not officially supported, so use at your own risk.
+
+Depending what you choose add the following to your `pom.xml`
+
+<Tabs groupId="dependency">
+<TabItem value="sdk" label="sdk-only">
+
+```xml
+<dependency>
+    <groupId>dev.openfeature</groupId>
+    <artifactId>sdk</artifactId>
+    <version>1.15.1</version>
+</dependency>
+```
+
+</TabItem>
+<TabItem value="dropwizard-module" label="dropwizard-openfeature">
+
+```xml
+<dependency>
+    <groupId>io.github.sideshowcoder</groupId>
+    <artifactId>dropwizard-openfeature</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+</TabItem>
+</Tabs>
+
+Similar to the Spring Boot example we can use `flagd` as the provider, and would need to add the relevant provider as needed.
+In this example we are going to use the built-in `InMemoryProvider`, which would normally primarily used for testing purposes.
+
+### Step 3: Add code
+
+### Using the SDK only
+
+The simplest way of using the OpenFeature in Dropwizard is to directly initialize it with the `InMemoryProvider`
+
+```java
+public class OpenFeatureExampleApplication extends Application<OpenFeatureExampleConfiguration> {
+
+    public static void main(final String[] args) throws Exception {
+        new OpenFeatureExampleApplication().run(args);
+    }
+
+    @Override
+    public String getName() {
+        return "OpenFeatureExample";
+    }
+
+    @Override
+    public void initialize(final Bootstrap<OpenFeatureExampleConfiguration> bootstrap) {
+        // nothing to do here
+    }
+
+    @Override
+    public void run(final OpenFeatureExampleConfiguration configuration, final Environment environment) {
+        var provider = new InMemoryProvider(Map.of());
+        OpenFeatureAPI.getInstance().setProviderAndWait(provider);
+        var client = OpenFeatureAPI.getInstance().getClient("dev.openfeature.OpenFeatureExample");
+    }
+}
+```
+
+The provider as configured does not have any flags, as this is in memory we can direclty add them during initialization
+
+```java
+@Override
+public void run(final OpenFeatureExampleConfiguration configuration, final Environment environment) {
+// diff-add-block-start
+    var flag = Flag.builder()
+            .variant("show", true)
+            .variant("hide", false)
+            .defaultVariant("show")
+            .build();
+    var flags = Map.<String, Flag<?>>of(OPEN_FEATURE_MESSAGE, flag);
+    var provider = new InMemoryProvider(flags);
+// diff-add-block-end
+
+    OpenFeatureAPI.getInstance().setProviderAndWait(provider);
+    var client = OpenFeatureAPI.getInstance().getClient("dev.openfeature.OpenFeatureExample");
+}
+
+
+```
+
+While this works, some pieces are missing, namely healthcheck, and the startup and shutdown management of the provider.
+If this is all
+you need for trying it out you can skip right to "Create a resource using the OpenFeature client".
+
+### Using Dropwizard Openfeature
+
+Dropwizard OpenFeature ties into the configuration, healthcheck, and module system of Dropwizard.
+If you want to know more, explore
+[the module on github](https://github.com/sideshowcoder/dropwizard-openfeature), especially `OpenFeatureAPIManager`, `OpenFeatureBundle`,
+and `OpenFeatureHealthCheck`.
+
+To configure the module we add an `openFeature` section to the `config.yml` for the application, with in our case the provider
+set to `inmemory`.
+
+```yaml
+openFeature:
+  provider: inmemory
+```
+
+Next we read the configuration via the Dropwizard Configuration class, in the case here `OpenFeatureExampleConfiguration`
+
+```java
+public class OpenFeatureExampleConfiguration extends Configuration implements OpenFeatureBundleConfiguration {
+
+    @Valid
+    @NotNull
+    @JsonProperty
+    private OpenFeatureConfiguration openFeature;
+
+    @Override
+    public OpenFeatureConfiguration getOpenFeatureConfiguration() {
+        return openFeature;
+    }
+}
+```
+
+Now we can add the the Bundle to our application to be configured automatically.
+We want to have access to the underlying `InMemoryProvider` to
+later on configure or change flags so we hold on to the instance.
+
+```java
+public class OpenFeatureExampleApplication extends Application<OpenFeatureExampleConfiguration> {
+
+    private OpenFeatureBundle openFeatureBundle;
+    private InMemoryProvider memoryProvider;
+
+    public static void main(final String[] args) throws Exception {
+        new OpenFeatureExampleApplication().run(args);
+    }
+
+    @Override
+    public String getName() {
+        return "OpenFeatureExample";
+    }
+
+    @Override
+    public void initialize(final Bootstrap<OpenFeatureExampleConfiguration> bootstrap) {
+        openFeatureBundle = new OpenFeatureBundle();
+        bootstrap.addBundle(openFeatureBundle);
+    }
+
+    @Override
+    public void run(final OpenFeatureExampleConfiguration configuration, final Environment environment) {
+        memoryProvider = (InMemoryProvider) openFeatureBundle.getFeatureProvider();
+    }
+}
+```
+
+We can now use this provider to change flags as needed, a simple flag could look like this
+
+```java
+public static final String OPEN_FEATURE_MESSAGE = "open-feature-message";
+
+@Override
+public void run(final OpenFeatureExampleConfiguration configuration, final Environment environment) {
+    memoryProvider = (InMemoryProvider) openFeatureBundle.getFeatureProvider();
+    var flag = Flag.builder()
+            .variant("show", true)
+            .variant("hide", false)
+            .defaultVariant("show")
+            .build();
+    var flags = Map.<String, Flag<?>>of(OPEN_FEATURE_MESSAGE, flag);
+    memoryProvider.updateFlags(flags);
+}
+```
+
+### Create a resource using the OpenFeature client
+
+Now we add a REST endpoint under `/welcome` which uses the SDK client, and a flag to display different messages.
+
+```java
+@Path("/welcome")
+@Produces(TEXT_PLAIN)
+public class WelcomeResource {
+
+    private final Client client;
+
+    public WelcomeResource(Client client) {
+        this.client = client;
+    }
+
+    @GET
+    public String getWelcome() {
+        if(client.getBooleanValue(OPEN_FEATURE_MESSAGE, false)) {
+            return "Welcome to OpenFeature in Dropwizard!\n";
+        }
+        return "Welcome!\n";
+    }
+
+}
+```
+
+The resource needs to be created and registered in the `OpenFeatureExampleApplication`.
+
+```java
+@Override
+public void run(final OpenFeatureExampleConfiguration configuration, final Environment environment) {
+    /* Memory provider initialization code skipped see sections above! */
+    // ...
+    /* initialization code end */
+
+// diff-add-block-start
+    var client = OpenFeatureAPI.getInstance().getClient("dev.openfeature.OpenFeatureExample");
+    var welcomeResource = new WelcomeResource(client);
+    environment.jersey().register(welcomeResource);
+// diff-add-block-end
+}
+```
+
+### Step 4: Run the application
+
+Now we can build & run the application, either from your IDE of choice or via the command line
+
+```shell
+mvn clean install
+java -jar target/openfeature-example-1.0-SNAPSHOT.jar server config.yml
+```
+
+Visit [http://localhost:8080/welcome](http://localhost:8080/welcome) in your browser, or via curl to see the text
+
+```shell
+$ curl -i http://localhost:8080/welcome
+HTTP/1.1 200 OK
+Date: Fri, 06 Jun 2025 13:18:54 GMT
+Content-Type: text/plain
+Vary: Accept-Encoding
+Content-Length: 38
+
+Welcome to OpenFeature in Dropwizard!
+```
+
+## Conclusion
+
+In this walkthrough we learned two different methods to integrate the OpenFeature Java SDK into Dropwizard, and got a basic idea of
+how to use the InMemoryProvider to provide flags to the application in development or testing.
+We can change the flag provider to
+flagd for a production setup, allowing us to easily change flags at runtime without the need to rebuild or redeploy the application.
