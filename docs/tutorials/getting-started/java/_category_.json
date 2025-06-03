@@ -1,0 +1,11 @@
+{
+  "position": 3,
+  "label": "Java SDK",
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "Java SDK tutorials",
+    "description": "These step-by-step guides walk you through the basics of the OpenFeature SDK usage for Java."
+  }
+}
