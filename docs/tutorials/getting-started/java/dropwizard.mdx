@@ -83,7 +83,12 @@ Depending what you choose add the following to your `pom.xml`
     <artifactId>sdk</artifactId>
     <version>1.15.1</version>
 </dependency>
-```
+<dependency>
+    <groupId>dev.openfeature.contrib.providers</groupId>
+    <artifactId>flagd</artifactId>
+    <version>0.11.8</version>
+</dependency>
+  ```
 
 </TabItem>
 <TabItem value="dropwizard-module" label="dropwizard-openfeature">
@@ -92,21 +97,123 @@ Depending what you choose add the following to your `pom.xml`
 <dependency>
     <groupId>io.github.sideshowcoder</groupId>
     <artifactId>dropwizard-openfeature</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 </TabItem>
 </Tabs>
 
-Similar to the Spring Boot example we can use `flagd` as the provider, and would need to add the relevant provider as needed.
-In this example we are going to use the built-in `InMemoryProvider`, which would normally primarily used for testing purposes.
+### Step 3: Create a resource
 
-### Step 3: Add code
+We create a resource to serve the `/welcome` endpoint.
+Depending on the value of the feature flag named `"welcome-message"`, it serves different messages.
 
-### Using the SDK only
+```java
+@Path("/welcome")
+@Produces(TEXT_PLAIN)
+public class WelcomeResource {
 
-The simplest way of using the OpenFeature in Dropwizard is to directly initialize it with the `InMemoryProvider`
+    private final Client client;
+
+    public WelcomeResource(Client client) {
+        this.client = client;
+    }
+
+    @GET
+    public String getWelcome() {
+        if(client.getBooleanValue("welcome-message", false)) {
+            return "Welcome to OpenFeature in Dropwizard!\n";
+        }
+
+        return "Welcome!\n";
+    }
+}
+```
+
+to make this resource available we need to register it, and inject the OpenFeature `Client`.
+
+```java
+public class OpenFeatureExampleApplication extends Application<OpenFeatureExampleConfiguration> {
+
+    public static void main(final String[] args) throws Exception {
+        new OpenFeatureExampleApplication().run(args);
+    }
+
+    @Override
+    public String getName() {
+        return "OpenFeatureExample";
+    }
+
+    @Override
+    public void initialize(final Bootstrap<OpenFeatureExampleConfiguration> bootstrap) {
+        // TODO: application initialization
+    }
+
+    @Override
+    public void run(final OpenFeatureExampleConfiguration configuration, final Environment environment) {
+        // diff-remove
+        // TODO: implement application
+        // diff-add-block-start
+        var client = OpenFeatureAPI.getInstance().getClient("dev.openfeature.OpenFeatureExample");
+        var welcomeResource = new WelcomeResource(client);
+        environment.jersey().register(welcomeResource);
+       // diff-add-block-end
+    }
+}
+```
+
+### Step 4: Run the application
+
+Now we can build and run the initial version of the application.
+
+```shell
+$ mvn clean package
+$ java -jar target/openfeature-example-1.0-SNAPSHOT.jar server config.yml
+INFO  [2025-06-13 10:00:00,000] io.dropwizard.core.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2025-06-13 10:00:00,000] io.dropwizard.core.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2025-06-13 10:00:00,000] io.dropwizard.core.server.ServerFactory: Starting OpenFeatureExample
+================================================================================
+
+                              OpenFeatureExample
+
+================================================================================
+
+INFO  [2025-06-13 10:00:00,000] org.eclipse.jetty.setuid.SetUIDListener: Opened application@748e9b20{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2025-06-13 10:00:00,000] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@2063c53e{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2025-06-13 10:00:00,000] org.eclipse.jetty.server.Server: jetty-11.0.25; built: 2025-03-13T00:15:57.301Z; git: a2e9fae3ad8320f2a713d4fa29bba356a99d1295; jvm 21+35
+
+INFO  [2025-06-13 10:00:00,000] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /welcome (com.sideshowcoder.resources.WelcomeResource)
+...
+```
+
+In the output we can see the resource being available under `/welcome` as well as the application listening to `http://0.0.0.0:8080`, where `0.0.0.0` refers to all interfaces.
+Using `curl`
+we can see the application working.
+
+```shell
+$ curl -i http://localhost:8080/welcome
+HTTP/1.1 200 OK
+Date: Fri, 13 Jun 2025 10:00:00 GMT
+Content-Type: text/plain
+Vary: Accept-Encoding
+Content-Length: 9
+
+Welcome!
+```
+
+<WhyDefaultContent/>
+
+### Step 5: Configure flagd as a provider
+
+<FlagdContent/>
+
+Now we configure flagd as the provider in our application
+
+<Tabs groupId="provider">
+<TabItem value="sdk" label="sdk-only">
 
 ```java
 public class OpenFeatureExampleApplication extends Application<OpenFeatureExampleConfiguration> {
@@ -127,80 +234,67 @@ public class OpenFeatureExampleApplication extends Application<OpenFeatureExampl
 
     @Override
     public void run(final OpenFeatureExampleConfiguration configuration, final Environment environment) {
-        var provider = new InMemoryProvider(Map.of());
-        OpenFeatureAPI.getInstance().setProviderAndWait(provider);
+        // diff-add-block-start
+        // Use flagd as the OpenFeature provider and use default configurations
+        try {
+            OpenFeatureAPI.getInstance().setProviderAndWait(new FlagdProvider());
+        } catch (OpenFeatureError e) {
+            throw new RuntimeException("Failed to set OpenFeature provider", e);
+        }
+        // diff-add-block-end
+
         var client = OpenFeatureAPI.getInstance().getClient("dev.openfeature.OpenFeatureExample");
+        var welcomeResource = new WelcomeResource(client);
+        environment.jersey().register(welcomeResource);
     }
 }
 ```
 
-The provider as configured does not have any flags, as this is in memory we can direclty add them during initialization
+</TabItem>
+<TabItem value="dropwizard-module" label="dropwizard-openfeature">
+
+Add the bundle configuration to the existing application configuration
 
 ```java
-@Override
-public void run(final OpenFeatureExampleConfiguration configuration, final Environment environment) {
-// diff-add-block-start
-    var flag = Flag.builder()
-            .variant("show", true)
-            .variant("hide", false)
-            .defaultVariant("show")
-            .build();
-    var flags = Map.<String, Flag<?>>of(OPEN_FEATURE_MESSAGE, flag);
-    var provider = new InMemoryProvider(flags);
-// diff-add-block-end
-
-    OpenFeatureAPI.getInstance().setProviderAndWait(provider);
-    var client = OpenFeatureAPI.getInstance().getClient("dev.openfeature.OpenFeatureExample");
-}
-
-
-```
-
-While this works, some pieces are missing, namely healthcheck, and the startup and shutdown management of the provider.
-If this is all
-you need for trying it out you can skip right to "Create a resource using the OpenFeature client".
-
-### Using Dropwizard Openfeature
-
-Dropwizard OpenFeature ties into the configuration, healthcheck, and module system of Dropwizard.
-If you want to know more, explore
-[the module on github](https://github.com/sideshowcoder/dropwizard-openfeature), especially `OpenFeatureAPIManager`, `OpenFeatureBundle`,
-and `OpenFeatureHealthCheck`.
-
-To configure the module we add an `openFeature` section to the `config.yml` for the application, with in our case the provider
-set to `inmemory`.
-
-```yaml
-openFeature:
-  provider: inmemory
-```
-
-Next we read the configuration via the Dropwizard Configuration class, in the case here `OpenFeatureExampleConfiguration`
-
-```java
+// diff-remove
+public class OpenFeatureExampleConfiguration extends Configuration {
+// diff-add
 public class OpenFeatureExampleConfiguration extends Configuration implements OpenFeatureBundleConfiguration {
-
+    // diff-remove
+    // TODO: implement service configuration
+    // diff-add-block-start
     @Valid
     @NotNull
     @JsonProperty
-    private OpenFeatureConfiguration openFeature;
+    private OpenFeatureConfiguration openfeature;
 
     @Override
     public OpenFeatureConfiguration getOpenFeatureConfiguration() {
-        return openFeature;
+        return openfeature;
     }
+    // diff-add-block-end
 }
 ```
 
-Now we can add the the Bundle to our application to be configured automatically.
-We want to have access to the underlying `InMemoryProvider` to
-later on configure or change flags so we hold on to the instance.
+add the bundle configuration to the `config.yml` file
+
+```yaml
+---
+logging:
+  level: INFO
+  loggers:
+    dev.openfeature: DEBUG
+
+// diff-add-block-start
+openfeature:
+  provider: flagd
+// diff-add-block-end
+```
+
+initialize the bundle
 
 ```java
 public class OpenFeatureExampleApplication extends Application<OpenFeatureExampleConfiguration> {
-
-    private OpenFeatureBundle openFeatureBundle;
-    private InMemoryProvider memoryProvider;
 
     public static void main(final String[] args) throws Exception {
         new OpenFeatureExampleApplication().run(args);
@@ -208,98 +302,77 @@ public class OpenFeatureExampleApplication extends Application<OpenFeatureExampl
 
     @Override
     public String getName() {
-        return "OpenFeatureExample";
+      return "OpenFeatureExample";
     }
 
     @Override
     public void initialize(final Bootstrap<OpenFeatureExampleConfiguration> bootstrap) {
-        openFeatureBundle = new OpenFeatureBundle();
-        bootstrap.addBundle(openFeatureBundle);
+        // diff-add-block-start
+        bootstrap.addBundle(new OpenFeatureBundle());
+       // diff-add-block-end
     }
 
     @Override
     public void run(final OpenFeatureExampleConfiguration configuration, final Environment environment) {
-        memoryProvider = (InMemoryProvider) openFeatureBundle.getFeatureProvider();
+        var client = OpenFeatureAPI.getInstance().getClient("dev.openfeature.OpenFeatureExample");
+        var welcomeResource = new WelcomeResource(client);
+        environment.jersey().register(welcomeResource);
     }
 }
 ```
 
-We can now use this provider to change flags as needed, a simple flag could look like this
+> NOTE: dropwizard-openfeature not only configures the provider, but also adds a healthcheck and hooks the provider into the application startup and shutdown lifecycle.
 
-```java
-public static final String OPEN_FEATURE_MESSAGE = "open-feature-message";
+</TabItem>
+</Tabs>
 
-@Override
-public void run(final OpenFeatureExampleConfiguration configuration, final Environment environment) {
-    memoryProvider = (InMemoryProvider) openFeatureBundle.getFeatureProvider();
-    var flag = Flag.builder()
-            .variant("show", true)
-            .variant("hide", false)
-            .defaultVariant("show")
-            .build();
-    var flags = Map.<String, Flag<?>>of(OPEN_FEATURE_MESSAGE, flag);
-    memoryProvider.updateFlags(flags);
-}
-```
+### Step 6: Rerun the application
 
-### Create a resource using the OpenFeature client
-
-Now we add a REST endpoint under `/welcome` which uses the SDK client, and a flag to display different messages.
-
-```java
-@Path("/welcome")
-@Produces(TEXT_PLAIN)
-public class WelcomeResource {
-
-    private final Client client;
-
-    public WelcomeResource(Client client) {
-        this.client = client;
-    }
-
-    @GET
-    public String getWelcome() {
-        if(client.getBooleanValue(OPEN_FEATURE_MESSAGE, false)) {
-            return "Welcome to OpenFeature in Dropwizard!\n";
-        }
-        return "Welcome!\n";
-    }
-
-}
-```
-
-The resource needs to be created and registered in the `OpenFeatureExampleApplication`.
-
-```java
-@Override
-public void run(final OpenFeatureExampleConfiguration configuration, final Environment environment) {
-    /* Memory provider initialization code skipped see sections above! */
-    // ...
-    /* initialization code end */
-
-// diff-add-block-start
-    var client = OpenFeatureAPI.getInstance().getClient("dev.openfeature.OpenFeatureExample");
-    var welcomeResource = new WelcomeResource(client);
-    environment.jersey().register(welcomeResource);
-// diff-add-block-end
-}
-```
-
-### Step 4: Run the application
-
-Now we can build & run the application, either from your IDE of choice or via the command line
+We can now rerun the application
 
 ```shell
-mvn clean install
-java -jar target/openfeature-example-1.0-SNAPSHOT.jar server config.yml
+$ mvn clean package
+$ java -jar target/openfeature-example-1.0-SNAPSHOT.jar server config.yml
+INFO  [2025-06-13 10:00:00,000] io.dropwizard.core.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2025-06-13 10:00:00,000] io.dropwizard.core.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2025-06-13 10:00:00,000] io.dropwizard.core.server.ServerFactory: Starting OpenFeatureExample
+================================================================================
+
+OpenFeatureExample
+
+================================================================================
+
+INFO  [2025-06-13 10:00:00,000] org.eclipse.jetty.setuid.SetUIDListener: Opened application@748e9b20{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2025-06-13 10:00:00,000] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@2063c53e{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2025-06-13 10:00:00,000] org.eclipse.jetty.server.Server: jetty-11.0.25; built: 2025-03-13T00:15:57.301Z; git: a2e9fae3ad8320f2a713d4fa29bba356a99d1295; jvm 21+35
+
+INFO  [2025-06-13 10:00:00,000] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+GET     /welcome (com.sideshowcoder.resources.WelcomeResource)
+...
 ```
 
-Visit [http://localhost:8080/welcome](http://localhost:8080/welcome) in your browser, or via curl to see the text
+Using `curl` to again fetch the `/welcome` resource will show again the default message
 
 ```shell
 $ curl -i http://localhost:8080/welcome
 HTTP/1.1 200 OK
-Date: Fri, 06 Jun 2025 13:18:54 GMT
+Date: Fri, 13 Jun 2025 10:00:00 GMT
+Content-Type: text/plain
+Vary: Accept-Encoding
+Content-Length: 9
+
+Welcome!
+```
+
+<FlagdChangeContent/>
+
+fetching `/welcome` now will show the message for `"welcome-message"` being `true`.
+
+```shell
+$ curl -i http://localhost:8080/welcome
+HTTP/1.1 200 OK
+Date: Fri, 13 Jun 2025 10:00:00 GMT
 Content-Type: text/plain
 Vary: Accept-Encoding
 Content-Length: 38
@@ -309,7 +382,6 @@ Welcome to OpenFeature in Dropwizard!
 
 ## Conclusion
 
-In this walkthrough we learned two different methods to integrate the OpenFeature Java SDK into Dropwizard, and got a basic idea of
-how to use the InMemoryProvider to provide flags to the application in development or testing.
-We can change the flag provider to
-flagd for a production setup, allowing us to easily change flags at runtime without the need to rebuild or redeploy the application.
+In this walkthrough we learned how to integrate OpenFeature into a Dropwizard application, using flagd to provide the feature flags at runtime.
+We saw how changing the flags
+definition can change the runtime behaviour of our application, without the need to redeploy or restart the application.
