@@ -12,9 +12,30 @@ export const ConfigCat: Provider = {
       category: ['Server'],
     },
     {
+      technology: 'NestJS',
+      parentTechnology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://configcat.com/docs/sdk-reference/openfeature/nestjs',
+      category: ['Server'],
+    },
+    {
       technology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/config-cat-web',
+      category: ['Client'],
+    },
+    {
+      technology: 'Angular',
+      parentTechnology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://configcat.com/docs/sdk-reference/openfeature/angular',
+      category: ['Client'],
+    },
+    {
+      technology: 'React',
+      parentTechnology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://configcat.com/docs/sdk-reference/openfeature/react',
       category: ['Client'],
     },
     {
@@ -52,6 +73,24 @@ export const ConfigCat: Provider = {
       vendorOfficial: true,
       href: 'https://github.com/configcat/openfeature-rust',
       category: ['Server'],
+    },
+    {
+      technology: 'Ruby',
+      vendorOfficial: true,
+      href: 'https://github.com/configcat/openfeature-ruby',
+      category: ['Server'],
+    },
+    {
+      technology: 'Kotlin',
+      vendorOfficial: true,
+      href: 'https://github.com/configcat/openfeature-kotlin',
+      category: ['Client'],
+    },
+    {
+      technology: 'Swift',
+      vendorOfficial: true,
+      href: 'https://github.com/configcat/openfeature-swift',
+      category: ['Client'],
     },
   ],
 };
