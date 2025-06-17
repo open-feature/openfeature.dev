@@ -12,5 +12,11 @@ export const Bucketeer: Provider = {
       href: 'https://github.com/bucketeer-io/openfeature-swift-client-sdk',
       category: ['Client'],
     },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://www.npmjs.com/package/@bucketeer/openfeature-js-client-sdk',
+      category: ['Client'],
+    },
   ],
 };
