@@ -13,7 +13,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["^docs/tutorials/getting-started/java.mdx$"],
+      "fileMatch": ["^docs/tutorials/getting-started/java/spring-boot.mdx$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "\\s*<groupId>dev\\.openfeature<\\/groupId>\\s*<artifactId>sdk<\\/artifactId>\\s*<version>(?<currentValue>.*?)<\\/version>",
@@ -22,6 +22,18 @@
       "depNameTemplate": "dev.openfeature:sdk",
       "datasourceTemplate": "maven"
     },
+    {
+      "customType": "regex",
+      "fileMatch": ["^docs/tutorials/getting-started/java/dropwizard.mdx$"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "\\s*<groupId>dev\\.openfeature<\\/groupId>\\s*<artifactId>sdk<\\/artifactId>\\s*<version>(?<currentValue>.*?)<\\/version>",
+        "'dev\\.openfeature:sdk:(?<currentValue>.*?)'"
+      ],
+      "depNameTemplate": "dev.openfeature:sdk",
+      "datasourceTemplate": "maven"
+    },
+
     {
       "customType": "regex",
       "fileMatch": ["^docs/tutorials/getting-started/java.mdx$"],
