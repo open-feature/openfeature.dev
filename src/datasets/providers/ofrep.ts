@@ -30,5 +30,11 @@ export const OFREP: Provider = {
       href: 'https://github.com/open-feature/python-sdk-contrib/tree/main/providers/openfeature-provider-ofrep',
       vendorOfficial: true,
     },
+    {
+      technology: '.NET',
+      category: ['Server'],
+      href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Providers.Ofrep',
+      vendorOfficial: true,
+    },
   ],
 };
