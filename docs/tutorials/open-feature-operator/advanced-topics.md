@@ -93,8 +93,17 @@ kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'cert-
 
 For our NGINX ingress to work with `kind`, we need to install some additional components:
 
+Download our NGINX controller configuration customization:
+
+```shell
+curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/nginx-config.yaml > nginx-config.yaml
+```
+
+Install the NGINX controller:
+
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+kubectl apply -f nginx-config.yaml
 kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'ingress-nginx'
 ```
 
