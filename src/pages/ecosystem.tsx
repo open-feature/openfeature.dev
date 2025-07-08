@@ -26,7 +26,7 @@ const options: ItemsJsOptions = {
   aggregations: {
     type: {
       title: 'types',
-      size: 4,
+      size: 5,
       hide_zero_doc_count: true,
       conjunction: false,
     },

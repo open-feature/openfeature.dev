@@ -2,6 +2,7 @@ import { ECOSYSTEM_HOOKS } from './hooks';
 import { ECOSYSTEM_OFREP_APIS, OFREPElement } from './ofrep-api';
 import { ECOSYSTEM_PROVIDERS } from './providers';
 import { ECOSYSTEM_SDKS } from './sdks/ecosystem';
+import { ECOSYSTEM_INTEGRATONS } from './integrations';
 import { EcosystemElement, Technology, Type } from './types';
 
 export const ECOSYSTEM: (EcosystemElement | OFREPElement)[] = [
@@ -9,6 +10,7 @@ export const ECOSYSTEM: (EcosystemElement | OFREPElement)[] = [
   ...ECOSYSTEM_PROVIDERS,
   ...ECOSYSTEM_HOOKS,
   ...ECOSYSTEM_OFREP_APIS,
+  ...ECOSYSTEM_INTEGRATONS,
 ].map((s) => ({
   // Creates a unique id per item for the search index
   id:
@@ -41,4 +43,5 @@ export const TYPE_COLOR_MAP: Record<Type, string> = {
   Provider: 'bg-blue-50 text-blue-600 ring-blue-500/10',
   SDK: 'bg-violet-50 text-violet-600 ring-violet-500/10',
   'OFREP API': 'bg-orange-50 text-orange-600 ring-orange-500/10',
+  Integration: 'bg-gray-50 text-gray-600 ring-gray-500/10',
 };
