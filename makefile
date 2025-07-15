@@ -1,6 +1,6 @@
 
 VOLUMES := -v $(CURDIR):$(CURDIR) -w $(CURDIR)
-IMAGE := node:18-bullseye
+IMAGE := node:20-bullseye
 PORT := -p 3000:3000
 DOCKER := docker run --rm $(VOLUMES) $(IMAGE)
 DOCKER_I := docker run -ti --rm $(VOLUMES) $(PORT) $(IMAGE)
