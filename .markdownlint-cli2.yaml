@@ -32,5 +32,7 @@ ignores:
     - node_modules
     - external-content
     - docs/specification
+    # Fetched from each SDK's README.md
+    - docs/reference/technologies/@(client|server)/**/*.mdx
 
 fix: true
