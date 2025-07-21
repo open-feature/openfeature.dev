@@ -80,5 +80,11 @@ export const DevCycle: Provider = {
       href: 'https://docs.devcycle.com/sdk/client-side-sdks/ios/ios-openfeature',
       category: ['Client'],
     },
+    {
+      technology: 'Kotlin',
+      vendorOfficial: true,
+      href: 'https://docs.devcycle.com/sdk/client-side-sdks/android/android-openfeature',
+      category: ['Client'],
+    },
   ],
 };
