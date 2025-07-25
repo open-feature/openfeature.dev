@@ -98,7 +98,7 @@ The schema defines the following properties:
 - `flags`: An object containing the feature flags.
   - `flagKey`: A unique key for the flag.
     - `description`: A description of what the flag does.
-    - `type`: The type of the flag (e.g., `boolean`, `string`, `number`, `object`).
+    - `flagType`: The type of the flag (e.g., `boolean`, `string`, `number`, `object`).
     - `defaultValue`: The default value of the flag.
 
 ## Code generation
