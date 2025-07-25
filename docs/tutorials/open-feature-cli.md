@@ -1,0 +1,357 @@
+---
+sidebar_position: 1
+id: open-feature-cli
+title: OpenFeature CLI
+---
+
+> **⚠️ The OpenFeature CLI is experimental!**
+> Feel free to give it a shot and provide feedback, but expect breaking changes.
+
+## Overview
+
+The OpenFeature CLI is a command-line tool designed to improve the developer experience when working with feature flags.
+It helps developers manage feature flags consistently across different environments and programming languages by providing powerful utilities for code generation, flag validation, and more.
+
+## Setup
+
+Before we jump in, let's get everything ready.
+You'll need to install the OpenFeature CLI.
+Choose the method that works best for you:
+
+### curl
+
+The OpenFeature CLI can be installed using a shell command.
+This method is suitable for most Unix-like operating systems.
+
+```bash
+curl -fsSL https://openfeature.dev/scripts/install_cli.sh | sh
+```
+
+### docker
+
+The OpenFeature CLI is available as a Docker image in the [GitHub Container Registry](https://github.com/open-feature/cli/pkgs/container/cli).
+
+You can run the CLI in a Docker container using the following command:
+
+```bash
+docker run -it -v $(pwd):/local -w /local ghcr.io/open-feature/cli:latest
+```
+
+### go
+
+If you have `Go >= 1.23` installed, you can install the CLI using the following command:
+
+```bash
+go install github.com/open-feature/cli/cmd/openfeature@latest
+```
+
+### pre-built binaries
+
+Download the appropriate pre-built binary from the [releases page](https://github.com/open-feature/cli/releases).
+
+## Your first flag manifest
+
+Every great feature flagging setup starts with knowing what flags you have.
+Let's create a simple flag manifest that defines a few common flags you might use in a real project:
+
+```bash
+cat > flags.json << EOF
+{
+  "$schema": "https://raw.githubusercontent.com/open-feature/cli/refs/heads/main/schema/v0/flag-manifest.json",
+  "flags": {
+    "newUserOnboarding": {
+      "description": "Shows the new streamlined onboarding flow",
+      "flagType": "boolean",
+      "defaultValue": false
+    },
+    "maxLoginAttempts": {
+      "description": "Maximum number of login attempts before lockout",
+      "flagType": "integer",
+      "defaultValue": 3
+    },
+    "welcomeMessage": {
+      "description": "Personalized welcome message for users",
+      "flagType": "string",
+      "defaultValue": "Welcome!"
+    }
+  }
+}
+EOF
+```
+
+This manifest defines three flags `newUserOnboarding`, `maxLoginAttempts` and `welcomeMessage` that you might find in any web application.
+Notice how each flag has a clear `description`, a `type`, and a sensible `default value`.
+
+## Flag Manifest
+
+The flag manifest is a JSON file that defines your feature flags and their properties.
+It serves as the source of truth for your feature flags and is used by the CLI to generate strongly typed accessors.
+The manifest file should be named `flags.json` and placed in the root of your project.
+
+### Flag Manifest Structure
+
+The flag manifest file should follow the JSON schema defined [here](https://raw.githubusercontent.com/open-feature/cli/refs/heads/main/schema/v0/flag-manifest.json).
+
+The schema defines the following properties:
+
+- `$schema`: The URL of the JSON schema for validation.
+- `flags`: An object containing the feature flags.
+  - `flagKey`: A unique key for the flag.
+    - `description`: A description of what the flag does.
+    - `flagType`: The type of the flag (e.g., `boolean`, `string`, `number`, `object`).
+    - `defaultValue`: The default value of the flag.
+
+## Code generation
+
+Let's generate strongly typed flag accessors.
+The OpenFeature CLI supports multiple languages, so let's see what's available through the `generate` command.
+
+```bash
+❯ openfeature generate
+```
+
+This will display a list of supported languages and their respective description:
+
+```bash
+Available generators:
+Generator | Description                                  | Stability
+csharp    | Generate typesafe C# client.                 | alpha
+go        | Generate typesafe accessors for OpenFeature. | alpha
+java      | Generate typesafe Java client.               | alpha
+nestjs    | Generate typesafe NestJS decorators.         | alpha
+nodejs    | Generate typesafe Node.js client.            | alpha
+python    | Generate typesafe Python client.             | alpha
+react     | Generate typesafe React Hooks.               | alpha
+```
+
+Let's start with NodeJs decorators since it's widely used:
+
+```bash
+❯ openfeature generate nodejs
+```
+
+After running this command, you should see output similar to the following:
+
+```bash
+INFO  Generating a typesafe client for Node.js
+SUCCESS  Created openfeature.ts
+SUCCESS  Successfully generated client. Happy coding!
+```
+
+This will create a `openfeature.ts` file with strongly typed accessors for the flags defined in your manifest.
+No more string literals, no more guessing what type a flag returns.
+The file will look something like this:
+
+```javascript
+// AUTOMATICALLY GENERATED BY OPENFEATURE CLI, DO NOT EDIT.
+import {
+  OpenFeature,
+  stringOrUndefined,
+  objectOrUndefined,
+} from "@openfeature/server-sdk";
+import type {
+  EvaluationContext,
+  EvaluationDetails,
+  FlagEvaluationOptions,
+} from "@openfeature/server-sdk";
+
+export interface GeneratedClient {
+  /**
+  * Maximum number of login attempts before lockout
+  * 
+  * **Details:**
+  * - flag key: `maxLoginAttempts`
+  * - default value: `3`
+  * - type: `number`
+  * 
+  * Performs a flag evaluation that returns a number.
+  * @param {EvaluationContext} context The evaluation context used on an individual flag evaluation
+  * @param {FlagEvaluationOptions} options Additional flag evaluation options
+  * @returns {Promise<number>} Flag evaluation response
+  */
+  maxLoginAttempts(context?: EvaluationContext, options?: FlagEvaluationOptions): Promise<number>;
+
+  /**
+  * Maximum number of login attempts before lockout
+  * 
+  * **Details:**
+  * - flag key: `maxLoginAttempts`
+  * - default value: `3`
+  * - type: `number`
+  * 
+  * Performs a flag evaluation that a returns an evaluation details object.
+  * @param {EvaluationContext} context The evaluation context used on an individual flag evaluation
+  * @param {FlagEvaluationOptions} options Additional flag evaluation options
+  * @returns {Promise<EvaluationDetails<number>>} Flag evaluation details response
+  */
+  maxLoginAttemptsDetails(context?: EvaluationContext, options?: FlagEvaluationOptions): Promise<EvaluationDetails<number>>;
+
+  /**
+  * Shows the new streamlined onboarding flow
+  * 
+  * **Details:**
+  * - flag key: `newUserOnboarding`
+  * - default value: `false`
+  * - type: `boolean`
+  * 
+  * Performs a flag evaluation that returns a boolean.
+  * @param {EvaluationContext} context The evaluation context used on an individual flag evaluation
+  * @param {FlagEvaluationOptions} options Additional flag evaluation options
+  * @returns {Promise<boolean>} Flag evaluation response
+  */
+  newUserOnboarding(context?: EvaluationContext, options?: FlagEvaluationOptions): Promise<boolean>;
+
+  /**
+  * Shows the new streamlined onboarding flow
+  * 
+  * **Details:**
+  * - flag key: `newUserOnboarding`
+  * - default value: `false`
+  * - type: `boolean`
+  * 
+  * Performs a flag evaluation that a returns an evaluation details object.
+  * @param {EvaluationContext} context The evaluation context used on an individual flag evaluation
+  * @param {FlagEvaluationOptions} options Additional flag evaluation options
+  * @returns {Promise<EvaluationDetails<boolean>>} Flag evaluation details response
+  */
+  newUserOnboardingDetails(context?: EvaluationContext, options?: FlagEvaluationOptions): Promise<EvaluationDetails<boolean>>;
+
+  /**
+  * Personalized welcome message for users
+  * 
+  * **Details:**
+  * - flag key: `welcomeMessage`
+  * - default value: `Welcome!`
+  * - type: `string`
+  * 
+  * Performs a flag evaluation that returns a string.
+  * @param {EvaluationContext} context The evaluation context used on an individual flag evaluation
+  * @param {FlagEvaluationOptions} options Additional flag evaluation options
+  * @returns {Promise<string>} Flag evaluation response
+  */
+  welcomeMessage(context?: EvaluationContext, options?: FlagEvaluationOptions): Promise<string>;
+
+  /**
+  * Personalized welcome message for users
+  * 
+  * **Details:**
+  * - flag key: `welcomeMessage`
+  * - default value: `Welcome!`
+  * - type: `string`
+  * 
+  * Performs a flag evaluation that a returns an evaluation details object.
+  * @param {EvaluationContext} context The evaluation context used on an individual flag evaluation
+  * @param {FlagEvaluationOptions} options Additional flag evaluation options
+  * @returns {Promise<EvaluationDetails<string>>} Flag evaluation details response
+  */
+  welcomeMessageDetails(context?: EvaluationContext, options?: FlagEvaluationOptions): Promise<EvaluationDetails<string>>;
+}
+
+/**
+ * A factory function that returns a generated client that not bound to a domain.
+ * It was generated using the OpenFeature CLI and is compatible with `@openfeature/server-sdk`.
+ *
+ * All domainless or unbound clients use the default provider set via {@link OpenFeature.setProvider}.
+ * @param {EvaluationContext} context Evaluation context that should be set on the client to used during flag evaluations
+ * @returns {GeneratedClient} Generated OpenFeature Client
+ */
+export function getGeneratedClient(context?: EvaluationContext): GeneratedClient
+/**
+ * A factory function that returns a domain-bound generated client that was
+ * created using the OpenFeature CLI and is compatible with the `@openfeature/server-sdk`.
+ *
+ * If there is already a provider bound to this domain via {@link OpenFeature.setProvider}, this provider will be used.
+ * Otherwise, the default provider is used until a provider is assigned to that domain.
+ * @param {string} domain An identifier which logically binds clients with providers
+ * @param {EvaluationContext} context Evaluation context that should be set on the client to used during flag evaluations
+ * @returns {GeneratedClient} Generated OpenFeature Client
+ */
+export function getGeneratedClient(domain: string, context?: EvaluationContext): GeneratedClient
+export function getGeneratedClient(domainOrContext?: string | EvaluationContext, contextOrUndefined?: EvaluationContext): GeneratedClient {
+  const domain = stringOrUndefined(domainOrContext);
+  const context =
+    objectOrUndefined<EvaluationContext>(domainOrContext) ??
+    objectOrUndefined<EvaluationContext>(contextOrUndefined);
+
+  const client = domain ? OpenFeature.getClient(domain, context) : OpenFeature.getClient(context)
+
+  return {
+    maxLoginAttempts: (context?: EvaluationContext, options?: FlagEvaluationOptions): Promise<number> => {
+      return client.getNumberValue("maxLoginAttempts", 3, context, options);
+    },
+
+    maxLoginAttemptsDetails: (context?: EvaluationContext, options?: FlagEvaluationOptions): Promise<EvaluationDetails<number>> => {
+      return client.getNumberDetails("maxLoginAttempts", 3, context, options);
+    },
+
+    newUserOnboarding: (context?: EvaluationContext, options?: FlagEvaluationOptions): Promise<boolean> => {
+      return client.getBooleanValue("newUserOnboarding", false, context, options);
+    },
+
+    newUserOnboardingDetails: (context?: EvaluationContext, options?: FlagEvaluationOptions): Promise<EvaluationDetails<boolean>> => {
+      return client.getBooleanDetails("newUserOnboarding", false, context, options);
+    },
+
+    welcomeMessage: (context?: EvaluationContext, options?: FlagEvaluationOptions): Promise<string> => {
+      return client.getStringValue("welcomeMessage", "Welcome!", context, options);
+    },
+
+    welcomeMessageDetails: (context?: EvaluationContext, options?: FlagEvaluationOptions): Promise<EvaluationDetails<string>> => {
+      return client.getStringDetails("welcomeMessage", "Welcome!", context, options);
+    },
+  }
+}
+```
+
+You can now use the generated client in your Node.js application, and it will provide type-safe access to your feature flags.
+
+## Using the generated client
+
+Now that we have our generated client, we can use it in our Node.js application.
+Let's create a simple server that uses the generated client to evaluate flags:
+
+```javascript
+import { getGeneratedClient } from './openfeature';
+
+// Create your strongly typed client
+const flags = getGeneratedClient();
+
+// You get this type-safe approach:
+const isEnabled = await flags.newUserOnboarding();
+const attempts = await flags.maxLoginAttempts();
+const message = await flags.welcomeMessage();
+
+...
+const details = await flags.newUserOnboardingDetails(); // Returns Promise<EvaluationDetails<boolean>>
+```
+
+## Configuration
+
+The OpenFeature CLI uses an optional configuration file to override default settings and customize the behavior of the CLI.
+This file can be in JSON or YAML format and should be named either `.openfeature.json` or `.openfeature.yaml`.
+
+### Configuration File Structure
+
+```yaml
+# Example .openfeature.yaml
+manifest: "flags/manifest.json" # Overrides the default manifest path
+generate:
+  output: "src/flags" # Overrides the default output directory
+  # Any language-specific options can be specified here
+  # For example, for React:
+  react:
+    output: "src/flags/react" # Overrides the default React output directory
+  # For Go:
+  go:
+    package: "github.com/myorg/myrepo/flags" # Overrides the default Go package name
+    output: "src/flags/go" # Overrides the default Go output directory
+```
+
+## Next Steps
+
+Want to dive deeper? Here are some great next steps:
+
+- Explore more generators: Try `openfeature generate` to see all supported languages
+- Set up provider integration: Connect your generated code to a real feature flag service using [OpenFeature providers](/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=Provider)
+- Contribute: Visit the [GitHub repository](https://github.com/open-feature/cli) to contribute or report issues
+- Join the community: Drop by the [#openfeature-cli](https://cloud-native.slack.com/archives/C07DY4TUDK6) channel in CNCF Slack
