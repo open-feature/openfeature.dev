@@ -171,8 +171,11 @@ import (
 func main() {
 // diff-add-block-start
        // Use flagd as the OpenFeature provider
-       err := openfeature.SetProviderAndWait(flagd.NewProvider())
+       provider, err := flagd.NewProvider()
        if err != nil {
+           log.Fatalf("failed to initialize flagd provider: %v", err)
+       }
+       if err := openfeature.SetProviderAndWait(provider); err != nil {
            // If a provider initialization error occurs, log it and exit
            log.Fatalf("Failed to set the OpenFeature provider: %v", err)
        }
@@ -208,8 +211,11 @@ const newWelcomeMessage = "Hello, welcome to this OpenFeature-enabled website!"
 
 func main() {
     // Use flagd as the OpenFeature provider
-    err := openfeature.SetProviderAndWait(flagd.NewProvider())
+    provider, err := flagd.NewProvider()
     if err != nil {
+        log.Fatalf("failed to initialize flagd provider: %v", err)
+    }
+    if err := openfeature.SetProviderAndWait(provider); err != nil {
         // If an error occurs, log it and exit
         log.Fatalf("Failed to set the OpenFeature provider: %v", err)
     }
