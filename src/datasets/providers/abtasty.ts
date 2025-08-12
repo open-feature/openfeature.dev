@@ -11,5 +11,11 @@ export const ABTasty: Provider = {
       href: 'https://github.com/flagship-io/openfeature-provider-js',
       category: ['Server'],
     },
+     {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/flagship-io/openfeature-provider-js-client',
+      category: ['Client'],
+    },
   ],
 };
