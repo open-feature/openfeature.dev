@@ -1,12 +1,12 @@
 import { SDK } from '.';
 
 export const Kotlin: SDK = {
-  name: 'Android',
+  name: 'Kotlin',
   filename: 'kotlin',
   slug: 'kotlin',
   category: 'Client',
   repo: 'kotlin-sdk',
-  logoKey: 'android-no-fill.svg',
+  logoKey: 'kotlin-no-fill.svg',
   technology: 'Kotlin',
   href: '/docs/reference/technologies/client/kotlin',
 };
