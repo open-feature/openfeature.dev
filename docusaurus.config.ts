@@ -93,11 +93,11 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
     ],
   },
   // announcements can go here
-  announcementBar: {
-    id: 'announcing-kubecon-eu-25',
-    content:
-      'Not able to attend the OpenFeature Summit or KubeCon EU? Check out the <a href="/blog/tldr-kubecon-london">latest blog post</a> for highlights!',
-  },
+  // announcementBar: {
+  //   id: 'announcing-kubecon-eu-25',
+  //   content:
+  //     'Not able to attend the OpenFeature Summit or KubeCon EU? Check out the <a href="/blog/tldr-kubecon-london">latest blog post</a> for highlights!',
+  // },
   footer: {
     style: 'dark',
     links: [
