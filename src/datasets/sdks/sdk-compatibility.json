@@ -388,12 +388,12 @@
     }
   },
   {
-    "name": "Android",
+    "name": "Kotlin",
     "path": "/docs/reference/technologies/client/kotlin",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.4.1",
-      "version": "0.4.1",
+      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.6.2",
+      "version": "0.6.2",
       "stable": false
     },
     "spec": {
