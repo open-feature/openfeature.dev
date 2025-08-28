@@ -2,7 +2,7 @@ import { ECOSYSTEM_HOOKS } from './hooks';
 import { ECOSYSTEM_OFREP_APIS, OFREPElement } from './ofrep-api';
 import { ECOSYSTEM_PROVIDERS } from './providers';
 import { ECOSYSTEM_SDKS } from './sdks/ecosystem';
-import { ECOSYSTEM_INTEGRATONS } from './integrations';
+import { ECOSYSTEM_INTEGRATIONS } from './integrations';
 import { EcosystemElement, Technology, Type } from './types';
 
 export const ECOSYSTEM: (EcosystemElement | OFREPElement)[] = [
@@ -10,7 +10,7 @@ export const ECOSYSTEM: (EcosystemElement | OFREPElement)[] = [
   ...ECOSYSTEM_PROVIDERS,
   ...ECOSYSTEM_HOOKS,
   ...ECOSYSTEM_OFREP_APIS,
-  ...ECOSYSTEM_INTEGRATONS,
+  ...ECOSYSTEM_INTEGRATIONS,
 ].map((s) => ({
   // Creates a unique id per item for the search index
   id:
