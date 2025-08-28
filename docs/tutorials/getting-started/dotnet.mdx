@@ -30,7 +30,8 @@ This walk-through assumes that:
 
 ### Step 1: Create a .NET 8 Web application
 
-To get started you can use the .NET SDK to initialise a web application. Open a terminal (**shell**, **Command Prompt**, or **bash**) and paste the following commands:
+To get started you can use the .NET SDK to initialise a web application.
+Open a terminal (**shell**, **Command Prompt**, or **bash**) and paste the following commands:
 
 ```shell
 dotnet new webapi -o openfeature-dotnet-sample
@@ -48,7 +49,8 @@ dotnet add package OpenFeature
 
 ### Step 3: Add code
 
-The following will initialise an `InMemoryProvider` for use within the web application. Open a code editor and add the C# code below to the Program.cs.
+The following will initialise an `InMemoryProvider` for use within the web application.
+Open a code editor and add the C# code below to the Program.cs.
 
 ```csharp
 // diff-add-block-start
@@ -135,9 +137,14 @@ dotnet build
 dotnet run
 ```
 
-In the logs you should see a line with the following `Now listening on: http://localhost:5251`, although the port number may differ. You can visit the following URL in your browser [http://localhost:5251/hello](http://localhost:5251/hello) (adjust port number as necessary) to view the hello world message. You should see the message "Hello!".
+In the logs you should see a line with the following `Now listening on: http://localhost:5251`, although the port number may differ.
+You can visit the following URL in your browser [http://localhost:5251/hello](http://localhost:5251/hello) (adjust port number as necessary) to view the hello world message.
+You should see the message "Hello!".
 
-"Why I'm I seeing that value?", you may ask. Well, it's because a provider hasn't been configured yet. Without a provider to actually evaluate flags, OpenFeature will return the default value. In the next step, you'll learn how to add a provider.
+"Why I'm I seeing that value?", you may ask.
+Well, it's because a provider hasn't been configured yet.
+Without a provider to actually evaluate flags, OpenFeature will return the default value.
+In the next step, you'll learn how to add a provider.
 
 ### Step 5: Configure a provider (flagd)
 
@@ -208,7 +215,8 @@ dotnet build
 dotnet run
 ```
 
-You can visit the following URL in your browser [http://localhost:5251/hello](http://localhost:5251/hello) (adjust port number as necessary) to view the hello world message. You should see the message "Hello!".
+You can visit the following URL in your browser [http://localhost:5251/hello](http://localhost:5251/hello) (adjust port number as necessary) to view the hello world message.
+You should see the message "Hello!".
 
 <FlagdChangeContent/>
 
