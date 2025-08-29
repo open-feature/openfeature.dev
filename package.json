@@ -20,7 +20,7 @@
     "update:sdk-docs": "docusaurus download-remote-sdk-content"
   },
   "engines": {
-    "node": ">18.0.0"
+    "node": ">20.0.0"
   },
   "dependencies": {
     "@docusaurus/core": "^3.8.0",
