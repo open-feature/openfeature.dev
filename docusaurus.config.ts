@@ -172,7 +172,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
   },
   prism: {
     theme: themes.oceanicNext,
-    additionalLanguages: ['java', 'csharp', 'powershell', 'php', 'kotlin', 'ruby'],
+    additionalLanguages: ['java', 'csharp', 'powershell', 'php', 'kotlin', 'ruby', 'dart'],
     magicComments: [
       {
         className: 'theme-code-block-highlighted-line',

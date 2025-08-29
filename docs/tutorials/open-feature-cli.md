@@ -349,7 +349,8 @@ generate:
 
 ## Next Steps
 
-Want to dive deeper? Here are some great next steps:
+Want to dive deeper?
+Here are some great next steps:
 
 - Explore more generators: Try `openfeature generate` to see all supported languages
 - Set up provider integration: Connect your generated code to a real feature flag service using [OpenFeature providers](/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=Provider)

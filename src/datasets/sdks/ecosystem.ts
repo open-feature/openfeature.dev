@@ -14,6 +14,7 @@ import PhpSvg from '@site/static/img/php-no-fill.svg';
 import IosSvg from '@site/static/img/ios-no-fill.svg';
 import RubySvg from '@site/static/img/ruby-no-fill.svg';
 import AngularSvg from '@site/static/img/angular-no-fill.svg';
+import DartSvg from '@site/static/img/dart-no-fill.svg';
 import RustSvg from '@site/static/img/rust-no-fill.svg';
 import FlagsSDKSvg from '@site/static/img/flags-sdk-no-fill.svg';
 
@@ -31,6 +32,7 @@ const LogoMap: Record<string, EcosystemElement['logo']> = {
   'ios-no-fill.svg': IosSvg,
   'ruby-no-fill.svg': RubySvg,
   'angular-no-fill.svg': AngularSvg,
+  'dart-no-fill.svg': DartSvg,
   'rust-no-fill.svg': RustSvg,
   'flags-sdk-no-fill.svg': FlagsSDKSvg,
 };

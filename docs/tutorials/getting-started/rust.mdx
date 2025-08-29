@@ -10,7 +10,8 @@ import FlagdChangeContent from '@site/src/components/custom/tutorial/flagd-chang
 
 ## Introduction
 
-This tutorial explains how to integrate the OpenFeature Rust SDK into an Axum application using the flagd provider. In this guide you will learn how to:
+This tutorial explains how to integrate the OpenFeature Rust SDK into an Axum application using the flagd provider.
+In this guide you will learn how to:
 
 - Create a new Rust project with Cargo
 - Update dependencies to include Docker-based flagd configuration
@@ -56,7 +57,9 @@ Adjust version numbers according to the latest releases.
 
 ### Step 3: Set Up the Application
 
-Create or modify your `src/main.rs` with the following code. Notice the diff markers to indicate new additions:
+Create or modify your `src/main.rs` with the following code.
+Notice the diff markers to indicate new additions:
+
 ```rust
 // diff-remove-block-start
 fn main() {
@@ -131,8 +134,9 @@ async fn main() {
 
 <FlagdContent />
 
-Flagd can be run as a [standalone binary](https://flagd.dev/reference/flagd-cli/flagd/) or [Kubernetes Operator](https://openfeature.dev/docs/tutorials/ofo/) 
-as well. If you don't have docker installed, get and install the [Flagd binary](https://github.com/open-feature/flagd/releases).
+Flagd can be run as a [standalone binary](https://flagd.dev/reference/flagd-cli/flagd/) or [Kubernetes Operator](https://openfeature.dev/docs/tutorials/ofo/)
+as well.
+If you don't have docker installed, get and install the [Flagd binary](https://github.com/open-feature/flagd/releases).
 With the flagd configuration in place, start flagd service with the following command.
 
 ```sh
@@ -157,7 +161,7 @@ You should now be greeted with `Hello, welcome to this OpenFeature-enabled websi
 
 ## Conclusion
 
-This tutorial demonstrated how to integrate the OpenFeature Rust SDK with an Axum web server using a custom AppState containing a FlagdProvider. By leveraging flagd service, you can dynamically update feature flags at runtime without needing to redeploy your application.
+This tutorial demonstrated how to integrate the OpenFeature Rust SDK with an Axum web server using a custom AppState containing a FlagdProvider.
+By leveraging flagd service, you can dynamically update feature flags at runtime without needing to redeploy your application.
 
 For advanced configuration and more details, refer to the [OpenFeature Rust SDK documentation](https://docs.rs/open-feature-flagd/latest/open_feature_flagd/).
-

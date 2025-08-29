@@ -130,6 +130,8 @@ const replaceLinks = (repo: { url: string; branch: string; folder?: string }) =>
 const markdownProcessor = (sdks: SDK[]) => {
   let sdksProcessed = 0;
   const sdkSupportMatrixGenerator = new SdkCompatibilityGenerator();
+  // Filter SDKs with repo attribute to get the actual count of SDKs that will be processed
+  const sdksWithRepo = sdks.filter((sdk) => sdk.repo);
   return (file: string, initialContent: string): { filename: string; content: string } => {
     const sdk = sdks.find((sdk) => file.startsWith(`${sdk.repo}/${sdk.branch ?? DEFAULT_BRANCH}${sdk.folder ?? ''}/`));
 
@@ -164,7 +166,7 @@ const markdownProcessor = (sdks: SDK[]) => {
       });
     }
 
-    if (sdksProcessed >= sdks.length - 1) {
+    if (sdksProcessed >= sdksWithRepo.length - 1) {
       console.log('processed all sdks... writing matrix to file');
       sdkSupportMatrixGenerator.generateJson('src/datasets/sdks/sdk-compatibility.json');
     }
