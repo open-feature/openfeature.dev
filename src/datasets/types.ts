@@ -23,6 +23,7 @@ export type Technology =
   | 'Kotlin'
   | 'Python'
   | 'Swift'
+  | 'Dart'
   | 'Rust'
   | 'Ruby'
   | 'React'
