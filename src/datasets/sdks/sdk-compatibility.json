@@ -284,8 +284,8 @@
     "path": "/docs/reference/technologies/server/php",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.0.11",
-      "version": "2.0.11",
+      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.0.12",
+      "version": "2.0.12",
       "stable": true
     },
     "spec": {
@@ -552,8 +552,8 @@
     "path": "/docs/reference/technologies/server/dart",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.10",
-      "version": "0.0.10",
+      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.12",
+      "version": "0.0.12",
       "stable": false
     },
     "spec": {
