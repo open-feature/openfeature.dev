@@ -2,7 +2,6 @@ import type { ComponentType, SVGProps } from 'react';
 import { Category, EcosystemElement, Technology } from '../types';
 import { ABTasty } from './abtasty';
 import { AwsSSM } from './awsssm';
-import { Bucket } from './bucket';
 import { Bucketeer } from './bucketeer';
 import { CloudBees } from './cloudbees';
 import { ConfigCat } from './configcat';
@@ -16,6 +15,7 @@ import { Harness } from './harness';
 import { Kameleoon } from './kameleoon';
 import { LaunchDarkly } from './launchdarkly';
 import { PostHog } from './posthog';
+import { Reflag } from './reflag';
 import { Split } from './split';
 import { Unleash } from './unleash';
 import { Statsig } from './statsig';
@@ -49,7 +49,6 @@ const childTechnologyMap = SDKS.reduce(
 export const PROVIDERS: Provider[] = [
   ABTasty,
   AwsSSM,
-  Bucket,
   Bucketeer,
   CloudBees,
   Confidence,
@@ -67,6 +66,7 @@ export const PROVIDERS: Provider[] = [
   Kameleoon,
   LaunchDarkly,
   PostHog,
+  Reflag,
   Split,
   Statsig,
   Unleash,
