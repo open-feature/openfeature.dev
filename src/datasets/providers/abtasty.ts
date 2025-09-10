@@ -18,7 +18,7 @@ export const ABTasty: Provider = {
       category: ['Client'],
     },
     {
-      technology: 'iOS',
+      technology: 'Swift',
       vendorOfficial: true,
       href: 'https://github.com/flagship-io/openfeature-provider-iOS',
       category: ['Client'],
