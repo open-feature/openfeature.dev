@@ -14,6 +14,7 @@ import { Goff } from './goff';
 import { Harness } from './harness';
 import { Kameleoon } from './kameleoon';
 import { LaunchDarkly } from './launchdarkly';
+import { MDBRules } from './mdb-rules';
 import { PostHog } from './posthog';
 import { Reflag } from './reflag';
 import { Split } from './split';
@@ -65,6 +66,7 @@ export const PROVIDERS: Provider[] = [
   Hypertune,
   Kameleoon,
   LaunchDarkly,
+  MDBRules,
   PostHog,
   Reflag,
   Split,
