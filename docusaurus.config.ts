@@ -93,11 +93,11 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
     ],
   },
   // announcements can go here
-  // announcementBar: {
-  //   id: 'announcing-kubecon-eu-25',
-  //   content:
-  //     'Not able to attend the OpenFeature Summit or KubeCon EU? Check out the <a href="/blog/tldr-kubecon-london">latest blog post</a> for highlights!',
-  // },
+  announcementBar: {
+    id: 'announcing-kubecon-na-25',
+    content:
+      '🎉️ Meet us in Atlanta for KubeCon + CloudNativeCon North America · Nov 10-13 · <b><a target="_blank" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/?utm_source=openfeature-dev&utm_medium=homepage&utm_campaign=10608228-KubeCon-NA-2025&utm_content=hero">Register Today!</a></b> 🥳️',
+  },
   footer: {
     style: 'dark',
     links: [
