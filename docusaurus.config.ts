@@ -96,7 +96,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
   announcementBar: {
     id: 'announcing-kubecon-na-25',
     content:
-      '🎉️ Meet us in Atlanta for KubeCon + CloudNativeCon North America · Nov 10-13 ·<b><a target="_blank" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/?utm_source=contribute-cncf-io&utm_medium=subpage&utm_campaign=10608228-KubeCon-NA-2025&utm_content=announcing-kubecon-na-25">Register Today!</a></b> 🥳️',
+      '🎉️ Meet us in Atlanta for KubeCon + CloudNativeCon North America · Nov 10-13 ·<b><a target="_blank" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/?utm_source=openfeature-dev&utm_medium=homepage&utm_campaign=10608228-KubeCon-NA-2025&utm_content=hero">Register Today!</a></b> 🥳️',
   },
   footer: {
     style: 'dark',
