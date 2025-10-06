@@ -4,8 +4,8 @@
     "path": "/docs/reference/technologies/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.17.0",
-      "version": "1.17.0",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.18.1",
+      "version": "1.18.1",
       "stable": true
     },
     "spec": {
@@ -172,8 +172,8 @@
     "path": "/docs/reference/technologies/server/go",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.15.1",
-      "version": "1.15.1",
+      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.16.0",
+      "version": "1.16.0",
       "stable": true
     },
     "spec": {
@@ -228,8 +228,8 @@
     "path": "/docs/reference/technologies/server/python",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.8.2",
-      "version": "0.8.2",
+      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.8.3",
+      "version": "0.8.3",
       "stable": false
     },
     "spec": {
@@ -284,8 +284,8 @@
     "path": "/docs/reference/technologies/server/php",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.0.12",
-      "version": "2.0.12",
+      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.1.0",
+      "version": "2.1.0",
       "stable": true
     },
     "spec": {
@@ -340,8 +340,8 @@
     "path": "/docs/reference/technologies/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.6.1",
-      "version": "1.6.1",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.6.2",
+      "version": "1.6.2",
       "stable": true
     },
     "spec": {
@@ -392,8 +392,8 @@
     "path": "/docs/reference/technologies/client/kotlin",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.6.2",
-      "version": "0.6.2",
+      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.7.0",
+      "version": "0.7.0",
       "stable": false
     },
     "spec": {
@@ -470,8 +470,8 @@
         "path": "/docs/reference/technologies/client/swift#logging"
       },
       "Domains": {
-        "status": "❌",
-        "path": "/docs/reference/technologies/client/swift#named-clients"
+        "status": "❓",
+        "path": "/docs/reference/technologies/client/swift"
       },
       "Eventing": {
         "status": "✅",
@@ -552,8 +552,8 @@
     "path": "/docs/reference/technologies/server/dart",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.12",
-      "version": "0.0.12",
+      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.13",
+      "version": "0.0.13",
       "stable": false
     },
     "spec": {
@@ -608,8 +608,8 @@
     "path": "/docs/reference/technologies/server/rust",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/rust-sdk/releases/tag/v0.2.5",
-      "version": "0.2.5",
+      "href": "https://github.com/open-feature/rust-sdk/releases/tag/v0.2.7",
+      "version": "0.2.7",
       "stable": false
     },
     "spec": {
