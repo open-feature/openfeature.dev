@@ -24,6 +24,12 @@ export const Flagsmith: Provider = {
       category: ['Client'],
     },
     {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/flagsmith',
+      category: ['Server'],
+    },
+    {
       technology: '.NET',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.Flagsmith',
@@ -33,12 +39,6 @@ export const Flagsmith: Provider = {
       technology: 'Python',
       vendorOfficial: true,
       href: 'https://github.com/Flagsmith/flagsmith-openfeature-provider-python',
-      category: ['Server'],
-    },
-    {
-      technology: 'JavaScript',
-      vendorOfficial: true,
-      href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/flagsmith',
       category: ['Server'],
     },
   ],
