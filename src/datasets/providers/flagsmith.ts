@@ -35,5 +35,11 @@ export const Flagsmith: Provider = {
       href: 'https://github.com/Flagsmith/flagsmith-openfeature-provider-python',
       category: ['Server'],
     },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/flagsmith',
+      category: ['Server'],
+    },
   ],
 };
