@@ -335,6 +335,7 @@ const config: Config = {
         },
         rehypePlugins: [rehypeGithubAlerts],
         remarkPlugins: [remarkGfm],
+        exclude: ['assets/**'],
         // ... other options
       },
     ],
