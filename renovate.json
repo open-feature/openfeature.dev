@@ -4,7 +4,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^docs/tutorials/ofo.md$"],
+      "managerFilePatterns": ["/^docs/tutorials/ofo.md$/"],
       "matchStrings": [
         "open-feature\\/open-feature-operator\\/releases\\/download\\/(?<currentValue>.*?)\\/release\\.yaml"
       ],
@@ -13,7 +13,9 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["^docs/tutorials/getting-started/java/spring-boot.mdx$"],
+      "managerFilePatterns": [
+        "/^docs/tutorials/getting-started/java/spring-boot.mdx$/"
+      ],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "\\s*<groupId>dev\\.openfeature<\\/groupId>\\s*<artifactId>sdk<\\/artifactId>\\s*<version>(?<currentValue>.*?)<\\/version>",
@@ -24,7 +26,9 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["^docs/tutorials/getting-started/java/dropwizard.mdx$"],
+      "managerFilePatterns": [
+        "/^docs/tutorials/getting-started/java/dropwizard.mdx$/"
+      ],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "\\s*<groupId>dev\\.openfeature<\\/groupId>\\s*<artifactId>sdk<\\/artifactId>\\s*<version>(?<currentValue>.*?)<\\/version>",
@@ -33,10 +37,9 @@
       "depNameTemplate": "dev.openfeature:sdk",
       "datasourceTemplate": "maven"
     },
-
     {
       "customType": "regex",
-      "fileMatch": ["^docs/tutorials/getting-started/java.mdx$"],
+      "managerFilePatterns": ["/^docs/tutorials/getting-started/java.mdx$/"],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "\\s*<groupId>dev\\.openfeature\\.contrib\\.providers<\\/groupId>\\s*<artifactId>flagd<\\/artifactId>\\s*<version>(?<currentValue>.*?)<\\/version>",
