@@ -24,5 +24,11 @@ export const MultiProvider: Provider = {
       href: 'https://github.com/open-feature/java-sdk-contrib/tree/main/providers/multiprovider',
       category: ['Server'],
     },
+    {
+      technology: '.NET',
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/dotnet-sdk/tree/main/src/OpenFeature.Providers.MultiProvider',
+      category: ['Server'],
+    }
   ],
 };
