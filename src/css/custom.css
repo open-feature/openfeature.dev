@@ -343,47 +343,18 @@ details[open] .mcp-install-summary strong::before {
   max-width: none;
 }
 
-.redocusaurus {
-  max-width: none !important;
-  width: 100% !important;
-}
-
-.redocusaurus .api-content {
+/* Expand parent containers for full width */
+article:has(.redoc-container) {
   max-width: none !important;
 }
 
-.redoc-wrap {
-  max-width: none !important;
-}
-
-/* Expand main container for Redoc pages */
-article:has(.redocusaurus) {
-  max-width: none !important;
-}
-
-.docMainContainer_TBSr:has(.redocusaurus) {
-  max-width: 100% !important;
-}
-
-.container:has(.redocusaurus) {
-  max-width: 100% !important;
-}
-
-.docItemContainer_Djhp:has(.redocusaurus) {
-  max-width: none !important;
-  width: 100%;
-}
-
-.docItemCol_VOVn:has(.redocusaurus) {
+.main-wrapper:has(.redoc-container) [class*="docItemCol"] {
   max-width: none !important;
   flex-basis: 100% !important;
 }
 
-/* Hide Redocly branding footer */
-.redocusaurus a[href*="redocly.com"] {
-  display: none !important;
-}
-
+/* Hide Redocly branding */
+.redocusaurus a[href*="redocly.com"],
 .redocusaurus [class*="powered-by"] {
   display: none !important;
 }
