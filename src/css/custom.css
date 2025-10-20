@@ -338,6 +338,11 @@ details[open] .mcp-install-summary strong::before {
 }
 
 /* Full width Redoc API viewer */
+.redoc-container {
+  margin: -2rem calc(-1 * var(--ifm-spacing-horizontal));
+  max-width: none;
+}
+
 .redocusaurus {
   max-width: none !important;
   width: 100% !important;
