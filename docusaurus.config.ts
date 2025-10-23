@@ -319,7 +319,7 @@ const config: Config = {
         name: 'sdk-content',
         noRuntimeDownloads: true,
         sourceBaseUrl: 'https://raw.githubusercontent.com/open-feature/',
-        outDir: 'docs/reference/technologies',
+        outDir: 'docs/reference/sdks',
         documents: processSdkReadmes.paths,
         modifyContent: processSdkReadmes.modifyContent,
       },

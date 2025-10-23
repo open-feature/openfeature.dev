@@ -18,6 +18,7 @@ export const serverSideFeatures = [
   'Transaction Context Propagation',
   'Shutdown',
   'Extending',
+  'Multi-Provider',
 ];
 
 export const clientSideFeatures = [
@@ -31,4 +32,5 @@ export const clientSideFeatures = [
   'Tracking',
   'Shutdown',
   'Extending',
+  'Multi-Provider',
 ];

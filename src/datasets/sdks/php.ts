@@ -6,5 +6,5 @@ export const PHP: SDK = {
   repo: 'php-sdk',
   logoKey: 'php-no-fill.svg',
   technology: 'PHP',
-  href: '/docs/reference/technologies/server/php',
+  href: '/docs/reference/sdks/server/php',
 };

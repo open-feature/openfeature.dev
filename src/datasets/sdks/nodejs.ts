@@ -9,5 +9,5 @@ export const Nodejs: SDK = {
   folder: '/packages/server',
   logoKey: 'nodejs-no-fill.svg',
   technology: 'JavaScript',
-  href: '/docs/reference/technologies/server/javascript',
+  href: '/docs/reference/sdks/server/javascript',
 };

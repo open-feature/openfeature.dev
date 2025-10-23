@@ -8,7 +8,7 @@ tags: [react, client, sdk, web, javascript, typescript]
 draft: false
 ---
 
-We're stoked to announce the first release of the [@openfeature/react-sdk](/docs/reference/technologies/client/web/react)!
+We're stoked to announce the first release of the [@openfeature/react-sdk](/docs/reference/sdks/client/web/react)!
 This SDK is a distribution of our SDK for the web with extensions to support idiomatic React development and features.
 This blog highlights a few of these, with a few implementation details for the real React nerds. 🤓
 
@@ -60,6 +60,7 @@ function MyPage() {
   );
 }
 ```
+
 Additionally, some feature flag solutions support realtime updates when flag configurations themselves are changed and the bound provider emits a [PROVIDER_CONFIGURATION_CHANGED](https://openfeature.dev/specification/types#provider-events) event.
 The React SDK also supports re-rendering in these cases so that a change in a flag definition immediately reflects those changes in the user interface.
 Both of these features can be disabled per-flag, or for the scope of the [context provider](#context-provider).

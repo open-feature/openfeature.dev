@@ -9,5 +9,5 @@ export const Ruby: SDK = {
   branch: 'main',
   logoKey: 'ruby-no-fill.svg',
   technology: 'Ruby',
-  href: '/docs/reference/technologies/server/ruby',
+  href: '/docs/reference/sdks/server/ruby',
 };

@@ -11,6 +11,6 @@ export const Angular: SDK = {
   logoKey: 'angular-no-fill.svg',
   technology: 'Angular',
   parentTechnology: 'JavaScript',
-  href: '/docs/reference/technologies/client/web/angular',
+  href: '/docs/reference/sdks/client/web/angular',
   includeInSupportMatrix: false,
 };

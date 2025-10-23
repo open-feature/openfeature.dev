@@ -11,6 +11,6 @@ export const React: SDK = {
   logoKey: 'react-no-fill.svg',
   technology: 'React',
   parentTechnology: 'JavaScript',
-  href: '/docs/reference/technologies/client/web/react',
+  href: '/docs/reference/sdks/client/web/react',
   includeInSupportMatrix: false,
 };

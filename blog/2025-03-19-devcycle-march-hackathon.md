@@ -21,7 +21,8 @@ Let's take a closer look at how our team hacked, what we learned, and why these 
 
 ### OpenFeature Remote Evaluation Protocol with Cloudflare Workers
 
-At DevCycle, we were an early supporters of the [OpenFeature Remote Evaluation Protocol (OFREP)](https://openfeature.dev/specification/appendix-c), and long-time users of [Cloudflare Workers](https://developers.cloudflare.com/workers/). Naturally, we were curious if we could use the OFREP API as a bridge interface to better support Feature Flags in these edge environments.
+At DevCycle, we were an early supporters of the [OpenFeature Remote Evaluation Protocol (OFREP)](https://openfeature.dev/specification/appendix-c), and long-time users of [Cloudflare Workers](https://developers.cloudflare.com/workers/).
+Naturally, we were curious if we could use the OFREP API as a bridge interface to better support Feature Flags in these edge environments.
 As one of our hackathon projects, Elliot from our team built a [DevCycle OFREP Worker](https://github.com/DevCycleHQ-Sandbox/OFREP-bucketing-worker), which we could publish for customers to run in their own environment.
 This worker can use a [service binding](https://developers.cloudflare.com/workers/runtime-apis/bindings/service-bindings/) to bind this worker to any of their own internal workers.
 
@@ -164,9 +165,9 @@ Our goal is to provide OpenFeature support across all DevCycle SDKs, with only N
 
 ### Dogfooding OpenFeature SDK Nest.js SDK + Providers
 
-In the spirit of dogfooding OpenFeature and our own Providers, Kaushal from our team took up the task of updating the usage of DevCycle's Nest.js SDK in our main API service to use the [OpenFeature Nest.js SDK](https://openfeature.dev/docs/reference/technologies/server/javascript/nestjs/) with [DevCycle's Nest.js Provider](https://docs.devcycle.com/sdk/server-side-sdks/nestjs/nestjs-openfeature).
+In the spirit of dogfooding OpenFeature and our own Providers, Kaushal from our team took up the task of updating the usage of DevCycle's Nest.js SDK in our main API service to use the [OpenFeature Nest.js SDK](https://openfeature.dev/docs/reference/sdks/server/javascript/nestjs/) with [DevCycle's Nest.js Provider](https://docs.devcycle.com/sdk/server-side-sdks/nestjs/nestjs-openfeature).
 
-To accomplish this, we introduced a wrapper service that used a single instance of the OpenFeature Client, making it accessible across our Nest.js service. 
+To accomplish this, we introduced a wrapper service that used a single instance of the OpenFeature Client, making it accessible across our Nest.js service.
 This straightforward migration allowed the OpenFeature Client to replace any existing calls to DevCycle's SDK.
 
 One of the key takeaways from this project was realizing how much our API development relied on  Nest.js decorators, which simplified our feature flagging of API endpoints:
@@ -186,7 +187,7 @@ Dogfooding the OpenFeature SDKs and our own providers was a valuable learning ex
 
 - **Evaluation Reasons for SDKs** – Enhancing our SDKs with evaluation reasons, bringing us closer to full OpenFeature spec compliance.
 - **Feature Flag Observability** – Improving insights into how feature flags impact performance and decision-making.
-- **Add Tracking support to more SDKs** - [OpenFeature SDK Tracking Support](https://openfeature.dev/docs/reference/technologies/sdk-compatibility#server-side-sdks)
+- **Add Tracking support to more SDKs** - [OpenFeature SDK Tracking Support](https://openfeature.dev/docs/reference/sdks/sdk-compatibility#server-side-sdks)
 - **Multi-Provider Expansion** – Bringing multi-provider support to more languages.
 
 And many more!

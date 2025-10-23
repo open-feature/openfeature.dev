@@ -9,7 +9,7 @@ tags: [angular, ng, sdk, ts, js, javascript, web]
 draft: false
 ---
 
-We are excited to unveil the first official release of the [@openfeature/angular-sdk](/docs/reference/technologies/client/web/angular)! 🚀 
+We are excited to unveil the first official release of the [@openfeature/angular-sdk](/docs/reference/sdks/client/web/angular)! 🚀
 This SDK extends OpenFeature capabilities to Angular applications, with a focus on Angular's unique patterns and practices.
 In this post, we’ll walk you through some of the standout features and how they integrate seamlessly with Angular development.
 
@@ -22,7 +22,7 @@ In this post, we’ll walk you through some of the standout features and how the
 ### Angular Module System Integration
 
 The Angular SDK exports a module that allows you to configure your [OpenFeature provider](https://openfeature.dev/docs/reference/concepts/provider) using Angular constructs.
-You can set your default provider, and optionally configure additional providers for other domains. 
+You can set your default provider, and optionally configure additional providers for other domains.
 Besides configuring your provider, you'll also need to use the `OpenFeatureModule` in order to utilize the other features of the SDK.
 
 ```ts
