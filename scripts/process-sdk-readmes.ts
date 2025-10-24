@@ -97,6 +97,16 @@ Last updated at ${new Date()}
 ${content}`;
   };
 
+/**
+ * Fix internal doc links from /technologies/ to /sdks/
+ */
+const fixInternalDocLinks = (content: string): string => {
+  return content.replace(
+    /\/docs\/reference\/technologies\//g,
+    '/docs/reference/sdks/'
+  );
+};
+
 const replaceLinks = (repo: { url: string; branch: string; folder?: string }) => {
   return (content: string) => {
     const replace = (processRelativeUrl: (url: string) => string) => (url: string) => {
@@ -154,6 +164,7 @@ const markdownProcessor = (sdks: SDK[]) => {
       removeExtraNewlinesAtTop,
       addHeader({ name: sdk.name, repo: sdk.repo, url: repoUrl, fileName, slug: sdk.slug, id: sdk.id }),
       replaceLinks({ url: repoUrl, branch, folder: sdk.folder }),
+      fixInternalDocLinks,
     ].reduce((currentContent, processor) => processor(currentContent), initialContent);
 
     if (sdk.includeInSupportMatrix ?? true) {
@@ -192,4 +203,71 @@ export const processSdkReadmes = {
       return `${sdk.repo}/${branch}${folder}/README.md`;
     }),
   modifyContent: markdownProcessor(SDKS),
+};
+
+/**
+ * Other Technologies content configuration
+ */
+// TODO: update branches to main once PRs are merged
+const OTHER_TECHNOLOGIES = [
+  { repo: 'cli', id: 'cli', title: 'OpenFeature CLI', label: 'CLI', position: 1, branch: 'docs-update-readme-for-website' },
+  { repo: 'protocol', id: 'ofrep', title: 'OpenFeature Remote Evaluation Protocol (OFREP)', label: 'OFREP', position: 2, branch: 'docs-update-readme-for-website' },
+  { repo: 'mcp', id: 'mcp', title: 'OpenFeature MCP Server', label: 'MCP', position: 3, branch: 'docs-improve-readme-and-contributing' },
+];
+
+/**
+ * Transforms Other Technologies READMEs for inclusion in the OpenFeature docs.
+ */
+export const processOtherTechnologies = {
+  paths: OTHER_TECHNOLOGIES.map((tech) => `${tech.repo}/${tech.branch}/README.md`),
+  modifyContent: (file: string, initialContent: string): { filename: string; content: string } => {
+    const tech = OTHER_TECHNOLOGIES.find((t) => file.startsWith(`${t.repo}/`));
+    
+    if (!tech) {
+      throw new Error(`Unable to modify content for ${file}`);
+    }
+
+    const frontmatter = `---
+title: ${tech.title}
+sidebar_label: ${tech.label}
+sidebar_position: ${tech.position}
+id: ${tech.id}
+---
+
+`;
+
+    // Convert relative links to absolute GitHub URLs
+    const fixRelativeLinks = (content: string): string => {
+      const repoUrl = `https://github.com/${GITHUB_ORG}/${tech.repo}`;
+      const branch = tech.branch || 'main';
+      
+      // Convert relative markdown links to GitHub URLs
+      return content.replace(
+        /\[([^\]]+)\]\(\.\/([^)]+)\)/g,
+        (match, text, path) => {
+          // Skip if it's already an absolute URL
+          if (path.startsWith('http')) return match;
+          return `[${text}](${repoUrl}/blob/${branch}/${path})`;
+        }
+      );
+    };
+
+    const processors = [
+      carriageReturnsToNewLines,
+      removeEmojisFromHeaders,
+      removeSections,
+      removeLine,
+      removeComments,
+      removeExtraNewlinesBetweenSections,
+      removeExtraNewlinesAtTop,
+      fixRelativeLinks,
+    ];
+
+    const content = processors.reduce((currentContent, processor) => processor(currentContent), initialContent);
+
+    return {
+      filename: `${tech.id}.mdx`,
+      content: frontmatter + content,
+    };
+  },
 };

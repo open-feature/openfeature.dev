@@ -8,7 +8,7 @@ import { rehypeGithubAlerts } from 'rehype-github-alerts';
 import remarkGfm from 'remark-gfm';
 import tailwindcss from 'tailwindcss';
 
-import { processSdkReadmes } from './scripts/process-sdk-readmes';
+import { processSdkReadmes, processOtherTechnologies } from './scripts/process-sdk-readmes';
 
 const presetClassicOptions: PresetClassicOptions = {
   docs: {
@@ -322,6 +322,17 @@ const config: Config = {
         outDir: 'docs/reference/sdks',
         documents: processSdkReadmes.paths,
         modifyContent: processSdkReadmes.modifyContent,
+      },
+    ],
+    [
+      'docusaurus-plugin-remote-content',
+      {
+        name: 'other-technologies-content',
+        noRuntimeDownloads: true,
+        sourceBaseUrl: 'https://raw.githubusercontent.com/open-feature/',
+        outDir: 'docs/reference/other-technologies',
+        documents: processOtherTechnologies.paths,
+        modifyContent: processOtherTechnologies.modifyContent,
       },
     ],
     [

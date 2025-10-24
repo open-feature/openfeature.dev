@@ -114,8 +114,8 @@
         "path": "/docs/reference/sdks/server/javascript#extending"
       },
       "Multi-Provider": {
-        "status": "❓",
-        "path": "/docs/reference/sdks/server/javascript"
+        "status": "✅",
+        "path": "/docs/reference/sdks/server/javascript#multi-provider"
       }
     }
   },
@@ -410,8 +410,8 @@
         "path": "/docs/reference/sdks/client/web#extending"
       },
       "Multi-Provider": {
-        "status": "❓",
-        "path": "/docs/reference/sdks/client/web"
+        "status": "✅",
+        "path": "/docs/reference/sdks/client/web#multi-provider"
       }
     }
   },
