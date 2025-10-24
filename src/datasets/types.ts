@@ -46,7 +46,7 @@ export type SdkCompatibility = {
   /**
    * The path in the docs to the SDK
    *
-   * @example /docs/reference/technologies/server/java
+   * @example /docs/reference/sdks/server/java
    */
   path: string;
   /**
@@ -101,7 +101,7 @@ export type SdkCompatibility = {
       /**
        * The path to the SDK doc with an anchor to the specific feature.
        *
-       * @example /docs/reference/technologies/server/java#providers
+       * @example /docs/reference/sdks/server/java#providers
        */
       path: string;
     };

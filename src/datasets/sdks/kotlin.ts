@@ -9,5 +9,5 @@ export const Kotlin: SDK = {
   repo: 'kotlin-sdk',
   logoKey: 'kotlin-no-fill.svg',
   technology: 'Kotlin',
-  href: '/docs/reference/technologies/client/kotlin',
+  href: '/docs/reference/sdks/client/kotlin',
 };

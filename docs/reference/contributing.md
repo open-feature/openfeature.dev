@@ -1,6 +1,7 @@
 ---
 id: contributing
 title: Contributing
+sidebar_position: 5
 ---
 ## Providing Feedback
 

@@ -9,7 +9,8 @@ tags: [tracking, specification, experimentation, spec, kubecon, cncf]
 draft: false
 ---
 
-Hello from the OpenFeature community! This post is a double-feature of sorts: we'll be wrapping up our time at KubeCon NA 2024 as well as talking about our latest SDK feature: [✨ _tracking events_ ✨](/blog/kubecon-wrapped-and-tracking#robust-experimentation-support-with-tracking-events).
+Hello from the OpenFeature community!
+This post is a double-feature of sorts: we'll be wrapping up our time at KubeCon NA 2024 as well as talking about our latest SDK feature: [✨ _tracking events_ ✨](/blog/kubecon-wrapped-and-tracking#robust-experimentation-support-with-tracking-events).
 
 <!--truncate-->
 
@@ -47,12 +48,13 @@ The new [Tracking API](/specification/sections/tracking) defines interfaces and 
 In fact, if your vendor or home-grown feature flag solution doesn't support equivalent functionality, [hooks](/specification/sections/hooks) and tracking compose a flexible solution to associate flag evaluations with usage data, regardless of whatever customer data platform or telemetry backend you use.
 For more information, see [tracking concepts](/docs/reference/concepts/tracking).
 
-These enhancements were brought to you by the hard work of many feature flag vendors, enterprises, and subject matter experts... Thanks to all who helped!
+These enhancements were brought to you by the hard work of many feature flag vendors, enterprises, and subject matter experts...
+Thanks to all who helped!
 
 <img src={require('@site/static/img/blog/2024-12-09-kubecon-wrapped-and-tracking/thanks.png').default} />
 
 ### Implementations and Future Plans
 
 Tracking event functionality is already implemented in our React, Javascript, Java, and Go SDKs, with more on the way.
-For an up-to-date list of implementations, check out the [SDK Compatibility Overview](/docs/reference/technologies/sdk-compatibility).
+For an up-to-date list of implementations, check out the [SDK Compatibility Overview](/docs/reference/sdks/sdk-compatibility).
 Download the latest release in your language of choice and try it out!

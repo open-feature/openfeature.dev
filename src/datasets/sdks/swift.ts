@@ -8,5 +8,5 @@ export const Swift: SDK = {
   repo: 'swift-sdk',
   logoKey: 'ios-no-fill.svg',
   technology: 'Swift',
-  href: '/docs/reference/technologies/client/swift',
+  href: '/docs/reference/sdks/client/swift',
 };

@@ -1,4 +1,3 @@
-
 config:
     default: true
 
@@ -33,6 +32,8 @@ ignores:
     - external-content
     - docs/specification
     # Fetched from each SDK's README.md
-    - docs/reference/technologies/@(client|server)/**/*.mdx
+    - docs/reference/sdks/@(client|server)/**/*.mdx
+    # Fetched from other technology repos
+    - docs/reference/other-technologies/*.mdx
 
 fix: true

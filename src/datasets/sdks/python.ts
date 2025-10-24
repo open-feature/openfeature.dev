@@ -6,5 +6,5 @@ export const Python: SDK = {
   repo: 'python-sdk',
   logoKey: 'python-no-fill.svg',
   technology: 'Python',
-  href: '/docs/reference/technologies/server/python',
+  href: '/docs/reference/sdks/server/python',
 };

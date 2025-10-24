@@ -6,5 +6,5 @@ export const Rust: SDK = {
   repo: 'rust-sdk',
   logoKey: 'rust-no-fill.svg',
   technology: 'Rust',
-  href: '/docs/reference/technologies/server/rust',
+  href: '/docs/reference/sdks/server/rust',
 };

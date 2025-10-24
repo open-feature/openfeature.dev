@@ -11,6 +11,6 @@ export const Nestjs: SDK = {
   logoKey: 'nestjs-no-fill.svg',
   technology: 'NestJS',
   parentTechnology: 'JavaScript',
-  href: '/docs/reference/technologies/server/javascript/nestjs',
+  href: '/docs/reference/sdks/server/javascript/nestjs',
   includeInSupportMatrix: false,
 };

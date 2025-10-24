@@ -411,7 +411,7 @@ We can get started with feature flags with low investment and low risk, and once
 ## Next steps
 
 To learn more about OpenFeature, check out the documentation [here](/docs/reference/intro).
-Specifically, you can read more about how the [evaluation API works](/docs/reference/concepts/evaluation-api/), what [tech stacks are supported](/docs/reference/technologies/), or read [more tutorials](/docs/category/getting-started/) about using OpenFeature in a variety of tech stacks.
+Specifically, you can read more about how the [evaluation API works](/docs/reference/concepts/evaluation-api/), what [tech stacks are supported](/docs/reference/sdks/), or read [more tutorials](/docs/category/getting-started/) about using OpenFeature in a variety of tech stacks.
 
 More hands-on tutorials are available on the [OpenFeature Killercoda page](https://killercoda.com/open-feature).
 

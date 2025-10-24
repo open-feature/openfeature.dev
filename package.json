@@ -17,7 +17,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "update:sdk-docs": "docusaurus download-remote-sdk-content"
+    "update:sdk-docs": "docusaurus download-remote-sdk-content && docusaurus download-remote-other-technologies-content"
   },
   "engines": {
     "node": ">20.0.0"

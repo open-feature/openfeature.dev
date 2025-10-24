@@ -6,5 +6,5 @@ export const Java: SDK = {
   repo: 'java-sdk',
   logoKey: 'java-no-fill.svg',
   technology: 'Java',
-  href: '/docs/reference/technologies/server/java',
+  href: '/docs/reference/sdks/server/java',
 };

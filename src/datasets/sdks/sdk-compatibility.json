@@ -1,11 +1,11 @@
 [
   {
     "name": "Java",
-    "path": "/docs/reference/technologies/server/java",
+    "path": "/docs/reference/sdks/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.18.1",
-      "version": "1.18.1",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.18.2",
+      "version": "1.18.2",
       "stable": true
     },
     "spec": {
@@ -15,53 +15,57 @@
     "features": {
       "Providers": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/java#providers"
+        "path": "/docs/reference/sdks/server/java#providers"
       },
       "Targeting": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/java#targeting"
+        "path": "/docs/reference/sdks/server/java#targeting"
       },
       "Hooks": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/java#hooks"
+        "path": "/docs/reference/sdks/server/java#hooks"
       },
       "Logging": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/java#logging"
+        "path": "/docs/reference/sdks/server/java#logging"
       },
       "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/java#domains"
+        "path": "/docs/reference/sdks/server/java#domains"
       },
       "Eventing": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/java#eventing"
+        "path": "/docs/reference/sdks/server/java#eventing"
       },
       "Tracking": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/java#tracking"
+        "path": "/docs/reference/sdks/server/java#tracking"
       },
       "Transaction Context Propagation": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/java#transaction-context-propagation"
+        "path": "/docs/reference/sdks/server/java#transaction-context-propagation"
       },
       "Shutdown": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/java#shutdown"
+        "path": "/docs/reference/sdks/server/java#shutdown"
       },
       "Extending": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/java#extending"
+        "path": "/docs/reference/sdks/server/java#extending"
+      },
+      "Multi-Provider": {
+        "status": "❓",
+        "path": "/docs/reference/sdks/server/java"
       }
     }
   },
   {
     "name": "Node.js",
-    "path": "/docs/reference/technologies/server/javascript",
+    "path": "/docs/reference/sdks/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.19.0",
-      "version": "1.19.0",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.20.0",
+      "version": "1.20.0",
       "stable": true
     },
     "spec": {
@@ -71,53 +75,57 @@
     "features": {
       "Providers": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/javascript#providers"
+        "path": "/docs/reference/sdks/server/javascript#providers"
       },
       "Targeting": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/javascript#targeting"
+        "path": "/docs/reference/sdks/server/javascript#targeting"
       },
       "Hooks": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/javascript#hooks"
+        "path": "/docs/reference/sdks/server/javascript#hooks"
       },
       "Logging": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/javascript#logging"
+        "path": "/docs/reference/sdks/server/javascript#logging"
       },
       "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/javascript#domains"
+        "path": "/docs/reference/sdks/server/javascript#domains"
       },
       "Eventing": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/javascript#eventing"
+        "path": "/docs/reference/sdks/server/javascript#eventing"
       },
       "Tracking": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/javascript#tracking"
+        "path": "/docs/reference/sdks/server/javascript#tracking"
       },
       "Transaction Context Propagation": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/javascript#transaction-context-propagation"
+        "path": "/docs/reference/sdks/server/javascript#transaction-context-propagation"
       },
       "Shutdown": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/javascript#shutdown"
+        "path": "/docs/reference/sdks/server/javascript#shutdown"
       },
       "Extending": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/javascript#extending"
+        "path": "/docs/reference/sdks/server/javascript#extending"
+      },
+      "Multi-Provider": {
+        "status": "✅",
+        "path": "/docs/reference/sdks/server/javascript#multi-provider"
       }
     }
   },
   {
     "name": ".NET",
-    "path": "/docs/reference/technologies/server/dotnet",
+    "path": "/docs/reference/sdks/server/dotnet",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.8.1",
-      "version": "2.8.1",
+      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.9.0",
+      "version": "2.9.0",
       "stable": true
     },
     "spec": {
@@ -127,49 +135,53 @@
     "features": {
       "Providers": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dotnet#providers"
+        "path": "/docs/reference/sdks/server/dotnet#providers"
       },
       "Targeting": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dotnet#targeting"
+        "path": "/docs/reference/sdks/server/dotnet#targeting"
       },
       "Hooks": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dotnet#hooks"
+        "path": "/docs/reference/sdks/server/dotnet#hooks"
       },
       "Logging": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dotnet#logging"
+        "path": "/docs/reference/sdks/server/dotnet#logging"
       },
       "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dotnet#domains"
+        "path": "/docs/reference/sdks/server/dotnet#domains"
       },
       "Eventing": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dotnet#eventing"
+        "path": "/docs/reference/sdks/server/dotnet#eventing"
       },
       "Tracking": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dotnet#tracking"
+        "path": "/docs/reference/sdks/server/dotnet#tracking"
       },
       "Transaction Context Propagation": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dotnet#transaction-context-propagation"
+        "path": "/docs/reference/sdks/server/dotnet#transaction-context-propagation"
       },
       "Shutdown": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dotnet#shutdown"
+        "path": "/docs/reference/sdks/server/dotnet#shutdown"
       },
       "Extending": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dotnet#extending"
+        "path": "/docs/reference/sdks/server/dotnet#extending"
+      },
+      "Multi-Provider": {
+        "status": "❓",
+        "path": "/docs/reference/sdks/server/dotnet"
       }
     }
   },
   {
     "name": "Go",
-    "path": "/docs/reference/technologies/server/go",
+    "path": "/docs/reference/sdks/server/go",
     "category": "Server",
     "release": {
       "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.16.0",
@@ -183,49 +195,53 @@
     "features": {
       "Providers": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/go#providers"
+        "path": "/docs/reference/sdks/server/go#providers"
       },
       "Targeting": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/go#targeting"
+        "path": "/docs/reference/sdks/server/go#targeting"
       },
       "Hooks": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/go#hooks"
+        "path": "/docs/reference/sdks/server/go#hooks"
       },
       "Logging": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/go#logging"
+        "path": "/docs/reference/sdks/server/go#logging"
       },
       "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/go#domains"
+        "path": "/docs/reference/sdks/server/go#domains"
       },
       "Eventing": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/go#eventing"
+        "path": "/docs/reference/sdks/server/go#eventing"
       },
       "Tracking": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/go#tracking"
+        "path": "/docs/reference/sdks/server/go#tracking"
       },
       "Transaction Context Propagation": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/go#transaction-context-propagation"
+        "path": "/docs/reference/sdks/server/go#transaction-context-propagation"
       },
       "Shutdown": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/go#shutdown"
+        "path": "/docs/reference/sdks/server/go#shutdown"
       },
       "Extending": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/go#extending"
+        "path": "/docs/reference/sdks/server/go#extending"
+      },
+      "Multi-Provider": {
+        "status": "❓",
+        "path": "/docs/reference/sdks/server/go"
       }
     }
   },
   {
     "name": "Python",
-    "path": "/docs/reference/technologies/server/python",
+    "path": "/docs/reference/sdks/server/python",
     "category": "Server",
     "release": {
       "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.8.3",
@@ -239,49 +255,53 @@
     "features": {
       "Providers": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/python#providers"
+        "path": "/docs/reference/sdks/server/python#providers"
       },
       "Targeting": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/python#targeting"
+        "path": "/docs/reference/sdks/server/python#targeting"
       },
       "Hooks": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/python#hooks"
+        "path": "/docs/reference/sdks/server/python#hooks"
       },
       "Logging": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/python#logging"
+        "path": "/docs/reference/sdks/server/python#logging"
       },
       "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/python#domains"
+        "path": "/docs/reference/sdks/server/python#domains"
       },
       "Eventing": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/python#eventing"
+        "path": "/docs/reference/sdks/server/python#eventing"
       },
       "Tracking": {
         "status": "❓",
-        "path": "/docs/reference/technologies/server/python"
+        "path": "/docs/reference/sdks/server/python"
       },
       "Transaction Context Propagation": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/python#transaction-context-propagation"
+        "path": "/docs/reference/sdks/server/python#transaction-context-propagation"
       },
       "Shutdown": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/python#shutdown"
+        "path": "/docs/reference/sdks/server/python#shutdown"
       },
       "Extending": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/python#extending"
+        "path": "/docs/reference/sdks/server/python#extending"
+      },
+      "Multi-Provider": {
+        "status": "❓",
+        "path": "/docs/reference/sdks/server/python"
       }
     }
   },
   {
     "name": "PHP",
-    "path": "/docs/reference/technologies/server/php",
+    "path": "/docs/reference/sdks/server/php",
     "category": "Server",
     "release": {
       "href": "https://github.com/open-feature/php-sdk/releases/tag/2.1.0",
@@ -295,53 +315,57 @@
     "features": {
       "Providers": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/php#providers"
+        "path": "/docs/reference/sdks/server/php#providers"
       },
       "Targeting": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/php#targeting"
+        "path": "/docs/reference/sdks/server/php#targeting"
       },
       "Hooks": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/php#hooks"
+        "path": "/docs/reference/sdks/server/php#hooks"
       },
       "Logging": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/php#logging"
+        "path": "/docs/reference/sdks/server/php#logging"
       },
       "Domains": {
         "status": "❌",
-        "path": "/docs/reference/technologies/server/php#named-clients"
+        "path": "/docs/reference/sdks/server/php#named-clients"
       },
       "Eventing": {
         "status": "⚠️",
-        "path": "/docs/reference/technologies/server/php#eventing"
+        "path": "/docs/reference/sdks/server/php#eventing"
       },
       "Tracking": {
         "status": "❓",
-        "path": "/docs/reference/technologies/server/php"
+        "path": "/docs/reference/sdks/server/php"
       },
       "Transaction Context Propagation": {
         "status": "❓",
-        "path": "/docs/reference/technologies/server/php"
+        "path": "/docs/reference/sdks/server/php"
       },
       "Shutdown": {
         "status": "❌",
-        "path": "/docs/reference/technologies/server/php#shutdown"
+        "path": "/docs/reference/sdks/server/php#shutdown"
       },
       "Extending": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/php#extending"
+        "path": "/docs/reference/sdks/server/php#extending"
+      },
+      "Multi-Provider": {
+        "status": "❓",
+        "path": "/docs/reference/sdks/server/php"
       }
     }
   },
   {
     "name": "Web",
-    "path": "/docs/reference/technologies/client/web",
+    "path": "/docs/reference/sdks/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.6.2",
-      "version": "1.6.2",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.7.0",
+      "version": "1.7.0",
       "stable": true
     },
     "spec": {
@@ -351,45 +375,49 @@
     "features": {
       "Providers": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/web#providers"
+        "path": "/docs/reference/sdks/client/web#providers"
       },
       "Targeting": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/web#targeting-and-context"
+        "path": "/docs/reference/sdks/client/web#targeting-and-context"
       },
       "Hooks": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/web#hooks"
+        "path": "/docs/reference/sdks/client/web#hooks"
       },
       "Logging": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/web#logging"
+        "path": "/docs/reference/sdks/client/web#logging"
       },
       "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/web#domains"
+        "path": "/docs/reference/sdks/client/web#domains"
       },
       "Eventing": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/web#eventing"
+        "path": "/docs/reference/sdks/client/web#eventing"
       },
       "Tracking": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/web#tracking"
+        "path": "/docs/reference/sdks/client/web#tracking"
       },
       "Shutdown": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/web#shutdown"
+        "path": "/docs/reference/sdks/client/web#shutdown"
       },
       "Extending": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/web#extending"
+        "path": "/docs/reference/sdks/client/web#extending"
+      },
+      "Multi-Provider": {
+        "status": "✅",
+        "path": "/docs/reference/sdks/client/web#multi-provider"
       }
     }
   },
   {
     "name": "Kotlin",
-    "path": "/docs/reference/technologies/client/kotlin",
+    "path": "/docs/reference/sdks/client/kotlin",
     "category": "Client",
     "release": {
       "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.7.0",
@@ -403,45 +431,49 @@
     "features": {
       "Providers": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/kotlin#providers"
+        "path": "/docs/reference/sdks/client/kotlin#providers"
       },
       "Targeting": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/kotlin#targeting"
+        "path": "/docs/reference/sdks/client/kotlin#targeting"
       },
       "Hooks": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/kotlin#hooks"
+        "path": "/docs/reference/sdks/client/kotlin#hooks"
       },
       "Logging": {
         "status": "❌",
-        "path": "/docs/reference/technologies/client/kotlin#logging"
+        "path": "/docs/reference/sdks/client/kotlin#logging"
       },
       "Domains": {
         "status": "❌",
-        "path": "/docs/reference/technologies/client/kotlin#named-clients"
+        "path": "/docs/reference/sdks/client/kotlin#named-clients"
       },
       "Eventing": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/kotlin#eventing"
+        "path": "/docs/reference/sdks/client/kotlin#eventing"
       },
       "Tracking": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/kotlin#tracking"
+        "path": "/docs/reference/sdks/client/kotlin#tracking"
       },
       "Shutdown": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/kotlin#shutdown"
+        "path": "/docs/reference/sdks/client/kotlin#shutdown"
       },
       "Extending": {
         "status": "⚠️",
-        "path": "/docs/reference/technologies/client/kotlin#extending"
+        "path": "/docs/reference/sdks/client/kotlin#extending"
+      },
+      "Multi-Provider": {
+        "status": "❓",
+        "path": "/docs/reference/sdks/client/kotlin"
       }
     }
   },
   {
     "name": "iOS",
-    "path": "/docs/reference/technologies/client/swift",
+    "path": "/docs/reference/sdks/client/swift",
     "category": "Client",
     "release": {
       "href": "https://github.com/open-feature/swift-sdk/releases/tag/0.4.0",
@@ -455,45 +487,49 @@
     "features": {
       "Providers": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/swift#providers"
+        "path": "/docs/reference/sdks/client/swift#providers"
       },
       "Targeting": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/swift#targeting"
+        "path": "/docs/reference/sdks/client/swift#targeting"
       },
       "Hooks": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/swift#hooks"
+        "path": "/docs/reference/sdks/client/swift#hooks"
       },
       "Logging": {
         "status": "❌",
-        "path": "/docs/reference/technologies/client/swift#logging"
+        "path": "/docs/reference/sdks/client/swift#logging"
       },
       "Domains": {
         "status": "❓",
-        "path": "/docs/reference/technologies/client/swift"
+        "path": "/docs/reference/sdks/client/swift"
       },
       "Eventing": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/swift#eventing"
+        "path": "/docs/reference/sdks/client/swift#eventing"
       },
       "Tracking": {
         "status": "❌",
-        "path": "/docs/reference/technologies/client/swift#tracking"
+        "path": "/docs/reference/sdks/client/swift#tracking"
       },
       "Shutdown": {
         "status": "❌",
-        "path": "/docs/reference/technologies/client/swift#shutdown"
+        "path": "/docs/reference/sdks/client/swift#shutdown"
       },
       "Extending": {
         "status": "✅",
-        "path": "/docs/reference/technologies/client/swift#extending"
+        "path": "/docs/reference/sdks/client/swift#extending"
+      },
+      "Multi-Provider": {
+        "status": "❓",
+        "path": "/docs/reference/sdks/client/swift"
       }
     }
   },
   {
     "name": "Ruby",
-    "path": "/docs/reference/technologies/server/ruby",
+    "path": "/docs/reference/sdks/server/ruby",
     "category": "Server",
     "release": {
       "href": "https://github.com/open-feature/ruby-sdk/releases/tag/v0.4.0",
@@ -507,49 +543,53 @@
     "features": {
       "Providers": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/ruby#providers"
+        "path": "/docs/reference/sdks/server/ruby#providers"
       },
       "Targeting": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/ruby#targeting"
+        "path": "/docs/reference/sdks/server/ruby#targeting"
       },
       "Hooks": {
         "status": "⚠️",
-        "path": "/docs/reference/technologies/server/ruby#hooks"
+        "path": "/docs/reference/sdks/server/ruby#hooks"
       },
       "Logging": {
         "status": "❌",
-        "path": "/docs/reference/technologies/server/ruby#logging"
+        "path": "/docs/reference/sdks/server/ruby#logging"
       },
       "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/ruby#domains"
+        "path": "/docs/reference/sdks/server/ruby#domains"
       },
       "Eventing": {
         "status": "❌",
-        "path": "/docs/reference/technologies/server/ruby#eventing"
+        "path": "/docs/reference/sdks/server/ruby#eventing"
       },
       "Tracking": {
         "status": "❓",
-        "path": "/docs/reference/technologies/server/ruby"
+        "path": "/docs/reference/sdks/server/ruby"
       },
       "Transaction Context Propagation": {
         "status": "❌",
-        "path": "/docs/reference/technologies/server/ruby#transaction-context-propagation"
+        "path": "/docs/reference/sdks/server/ruby#transaction-context-propagation"
       },
       "Shutdown": {
         "status": "⚠️",
-        "path": "/docs/reference/technologies/server/ruby#shutdown"
+        "path": "/docs/reference/sdks/server/ruby#shutdown"
       },
       "Extending": {
         "status": "⚠️",
-        "path": "/docs/reference/technologies/server/ruby#extending"
+        "path": "/docs/reference/sdks/server/ruby#extending"
+      },
+      "Multi-Provider": {
+        "status": "❓",
+        "path": "/docs/reference/sdks/server/ruby"
       }
     }
   },
   {
     "name": "Dart",
-    "path": "/docs/reference/technologies/server/dart",
+    "path": "/docs/reference/sdks/server/dart",
     "category": "Server",
     "release": {
       "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.13",
@@ -563,49 +603,53 @@
     "features": {
       "Providers": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dart#providers"
+        "path": "/docs/reference/sdks/server/dart#providers"
       },
       "Targeting": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dart#targeting"
+        "path": "/docs/reference/sdks/server/dart#targeting"
       },
       "Hooks": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dart#hooks"
+        "path": "/docs/reference/sdks/server/dart#hooks"
       },
       "Logging": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dart#logging"
+        "path": "/docs/reference/sdks/server/dart#logging"
       },
       "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dart#domains"
+        "path": "/docs/reference/sdks/server/dart#domains"
       },
       "Eventing": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dart#eventing"
+        "path": "/docs/reference/sdks/server/dart#eventing"
       },
       "Tracking": {
         "status": "❓",
-        "path": "/docs/reference/technologies/server/dart"
+        "path": "/docs/reference/sdks/server/dart"
       },
       "Transaction Context Propagation": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dart#transaction-context-propagation"
+        "path": "/docs/reference/sdks/server/dart#transaction-context-propagation"
       },
       "Shutdown": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dart#shutdown"
+        "path": "/docs/reference/sdks/server/dart#shutdown"
       },
       "Extending": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/dart#extending"
+        "path": "/docs/reference/sdks/server/dart#extending"
+      },
+      "Multi-Provider": {
+        "status": "❓",
+        "path": "/docs/reference/sdks/server/dart"
       }
     }
   },
   {
     "name": "Rust",
-    "path": "/docs/reference/technologies/server/rust",
+    "path": "/docs/reference/sdks/server/rust",
     "category": "Server",
     "release": {
       "href": "https://github.com/open-feature/rust-sdk/releases/tag/v0.2.7",
@@ -619,43 +663,47 @@
     "features": {
       "Providers": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/rust#providers"
+        "path": "/docs/reference/sdks/server/rust#providers"
       },
       "Targeting": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/rust#targeting"
+        "path": "/docs/reference/sdks/server/rust#targeting"
       },
       "Hooks": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/rust#hooks"
+        "path": "/docs/reference/sdks/server/rust#hooks"
       },
       "Logging": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/rust#logging"
+        "path": "/docs/reference/sdks/server/rust#logging"
       },
       "Domains": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/rust#named-clients"
+        "path": "/docs/reference/sdks/server/rust#named-clients"
       },
       "Eventing": {
         "status": "❌",
-        "path": "/docs/reference/technologies/server/rust#eventing"
+        "path": "/docs/reference/sdks/server/rust#eventing"
       },
       "Tracking": {
         "status": "❓",
-        "path": "/docs/reference/technologies/server/rust"
+        "path": "/docs/reference/sdks/server/rust"
       },
       "Transaction Context Propagation": {
         "status": "❓",
-        "path": "/docs/reference/technologies/server/rust"
+        "path": "/docs/reference/sdks/server/rust"
       },
       "Shutdown": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/rust#shutdown"
+        "path": "/docs/reference/sdks/server/rust#shutdown"
       },
       "Extending": {
         "status": "✅",
-        "path": "/docs/reference/technologies/server/rust#extending"
+        "path": "/docs/reference/sdks/server/rust#extending"
+      },
+      "Multi-Provider": {
+        "status": "❓",
+        "path": "/docs/reference/sdks/server/rust"
       }
     }
   }
