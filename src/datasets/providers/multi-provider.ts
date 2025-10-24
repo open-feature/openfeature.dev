@@ -9,13 +9,13 @@ export const MultiProvider: Provider = {
     {
       technology: 'JavaScript',
       vendorOfficial: false,
-      href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/multi-provider',
+      href: 'https://github.com/open-feature/js-sdk/tree/main/packages/server#multi-provider',
       category: ['Server'],
     },
     {
       technology: 'JavaScript',
       vendorOfficial: false,
-      href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/multi-provider-web',
+      href: 'https://github.com/open-feature/js-sdk/tree/main/packages/web#multi-provider',
       category: ['Client'],
     },
     {
