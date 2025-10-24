@@ -32,7 +32,11 @@ export default function Hit({ hit }: { hit: EcosystemElement | OFREPElement }) {
             {hit.parentTechnology && (
               <Pill color={TECHNOLOGY_COLOR_MAP[hit.parentTechnology]}>{hit.parentTechnology}</Pill>
             )}
-            <Pill>{hit.category}</Pill>
+            {hit.category.map((cat) => (
+              <Pill key={cat}>
+                {cat}
+              </Pill>
+            ))}
           </>
         )}
         <Pill color={TYPE_COLOR_MAP[hit.type]}>{hit.type}</Pill>
