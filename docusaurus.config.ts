@@ -346,6 +346,9 @@ const config: Config = {
           if (existingPath.includes('/docs/specification')) {
             return [existingPath.replace('/docs/specification', '/specification')];
           }
+          if (existingPath.includes('/docs/reference/sdks')) {
+            return [existingPath.replace('/docs/reference/sdks', '/docs/reference/technologies')];
+          }
           return undefined; // Return a falsy value: no redirect created
         },
       },
