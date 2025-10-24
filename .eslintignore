@@ -4,3 +4,4 @@ dist
 
 # Auto-generated disclaimer causes an eslint parsing error 
 docs/reference/technologies/**/*.mdx
+docs/reference/sdks/**/*.mdx
