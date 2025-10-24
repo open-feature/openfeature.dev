@@ -2,5 +2,10 @@
     "label": "Other Technologies",
     "position": 4,
     "collapsible": true,
-    "collapsed": false
+    "collapsed": false,
+    "link": {
+        "type": "generated-index",
+        "title": "Other Technologies",
+        "description": "OpenFeature protocols, tools, and integrations for feature flag management across various technologies and platforms."
+    }
 }
