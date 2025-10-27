@@ -9,5 +9,5 @@ export const Dotnet: SDK = {
   branch: 'main',
   logoKey: 'c-sharp-no-fill.svg',
   technology: '.NET',
-  href: '/docs/reference/technologies/server/dotnet',
+  href: '/docs/reference/sdks/server/dotnet',
 };

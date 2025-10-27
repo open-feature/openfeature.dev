@@ -8,7 +8,7 @@ tags: [release, client, spec, specification, web, mobile, sdk, react]
 draft: false
 ---
 
-We are excited to announce the availability of the [OpenFeature Web SDK v1](/docs/reference/technologies/client/web/).
+We are excited to announce the availability of the [OpenFeature Web SDK v1](/docs/reference/sdks/client/web/).
 The Web SDK represents a culmination of years of research and industry consensus.
 It was built from the ground up to be performant, powerful, and flexible while providing broad support for your favorite feature management tool or in-house solution.
 
@@ -25,7 +25,8 @@ The web framework ecosystem is massive and constantly evolving, it’s more impo
 ## Web vs Server
 
 At first glance, using a feature flag on the web may appear similar to server-side usage.
-In many cases, this is true! However, there are subtle, yet important differences.
+In many cases, this is true!
+However, there are subtle, yet important differences.
 In OpenFeature, we have distilled these two different approaches down to static and dynamic context paradigms.
 The static context paradigm is commonly used on a client, and it’s the paradigm supported by the Web SDK.
 The rationale for introducing this paradigm can be found in our [Catering to the client-side](/blog/catering-to-the-client-side/) blog.
@@ -47,12 +48,12 @@ This moves responsibility to the SDK instead of the provider author, making prov
 ## What's next?
 
 The Web SDK is great on its own but becomes even more powerful and user-friendly when leveraging framework-specific functionality.
-The [React SDK](/docs/reference/technologies/client/web/react/) is an excellent example of this.
+The [React SDK](/docs/reference/sdks/client/web/react/) is an excellent example of this.
 It abstracts the implementation details of supporting features like automatic component re-rendering and [built-in suspense](https://react.dev/reference/react/Suspense) support.
 We plan to support many more frameworks, including Angular, Vue, and Svelte.
 
 While this post is focused on the Web SDK, we haven’t forgotten about mobile.
-Our friends at Spotify recently donated an initial [Kotlin](/docs/reference/technologies/client/kotlin/) and [Swift](/docs/reference/technologies/client/swift/) SDK.
+Our friends at Spotify recently donated an initial [Kotlin](/docs/reference/sdks/client/kotlin/) and [Swift](/docs/reference/sdks/client/swift/) SDK.
 These comprise the primary technologies in the mobile space, and in concert with the Web SDK, cover the majority of client platforms.
 
 Finally, OpenFeature has been hard at work defining the [OpenFeature Remote Evaluation Protocol (OFREP)](https://github.com/open-feature/protocol).
@@ -61,7 +62,9 @@ This initiative aims to standardize how feature flags can be evaluated over a ne
 ## Get involved
 
 OpenFeature is comprised of feature flag experts and enthusiasts.
-If you'd like to [get involved](https://github.com/open-feature/community), don't be shy! Join a community call, or join the #OpenFeature [CNCF Slack](https://slack.cncf.io/) channel, and help us build a great open standard that benefits the industry.
+If you'd like to [get involved](https://github.com/open-feature/community), don't be shy!
+Join a community call, or join the #OpenFeature [CNCF Slack](https://slack.cncf.io/) channel, and help us build a great open standard that benefits the industry.
 
-The [Web SDK](https://openfeature.dev/docs/reference/technologies/client/web/) is available now. Give it a shot and let us know how it goes.
+The [Web SDK](https://openfeature.dev/docs/reference/sdks/client/web/) is available now.
+Give it a shot and let us know how it goes.
 We can’t wait to see what you build!

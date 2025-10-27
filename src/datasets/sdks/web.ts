@@ -10,5 +10,5 @@ export const Web: SDK = {
   folder: '/packages/web',
   logoKey: 'web-no-fill.svg',
   technology: 'JavaScript',
-  href: '/docs/reference/technologies/client/web',
+  href: '/docs/reference/sdks/client/web',
 };

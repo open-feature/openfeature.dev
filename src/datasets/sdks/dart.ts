@@ -6,5 +6,5 @@ export const Dart: SDK = {
   repo: 'dart-server-sdk',
   logoKey: 'dart-no-fill.svg',
   technology: 'Dart',
-  href: '/docs/reference/technologies/server/dart',
+  href: '/docs/reference/sdks/server/dart',
 };

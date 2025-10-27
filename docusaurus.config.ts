@@ -8,7 +8,7 @@ import { rehypeGithubAlerts } from 'rehype-github-alerts';
 import remarkGfm from 'remark-gfm';
 import tailwindcss from 'tailwindcss';
 
-import { processSdkReadmes } from './scripts/process-sdk-readmes';
+import { processSdkReadmes, processOtherTechnologies } from './scripts/process-sdk-readmes';
 
 const presetClassicOptions: PresetClassicOptions = {
   docs: {
@@ -319,9 +319,20 @@ const config: Config = {
         name: 'sdk-content',
         noRuntimeDownloads: true,
         sourceBaseUrl: 'https://raw.githubusercontent.com/open-feature/',
-        outDir: 'docs/reference/technologies',
+        outDir: 'docs/reference/sdks',
         documents: processSdkReadmes.paths,
         modifyContent: processSdkReadmes.modifyContent,
+      },
+    ],
+    [
+      'docusaurus-plugin-remote-content',
+      {
+        name: 'other-technologies-content',
+        noRuntimeDownloads: true,
+        sourceBaseUrl: 'https://raw.githubusercontent.com/open-feature/',
+        outDir: 'docs/reference/other-technologies',
+        documents: processOtherTechnologies.paths,
+        modifyContent: processOtherTechnologies.modifyContent,
       },
     ],
     [
@@ -345,6 +356,9 @@ const config: Config = {
         createRedirects(existingPath: string) {
           if (existingPath.includes('/docs/specification')) {
             return [existingPath.replace('/docs/specification', '/specification')];
+          }
+          if (existingPath.includes('/docs/reference/sdks')) {
+            return [existingPath.replace('/docs/reference/sdks', '/docs/reference/technologies')];
           }
           return undefined; // Return a falsy value: no redirect created
         },

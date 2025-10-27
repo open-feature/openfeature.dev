@@ -6,5 +6,5 @@ export const Go: SDK = {
   repo: 'go-sdk',
   logoKey: 'go-no-fill.svg',
   technology: 'Go',
-  href: '/docs/reference/technologies/server/go',
+  href: '/docs/reference/sdks/server/go',
 };
