@@ -358,3 +358,8 @@ article:has(.redoc-container) {
 .redocusaurus [class*="powered-by"] {
   display: none !important;
 }
+
+/* Hide menu border on API viewer pages */
+.redoc-container .menu-content {
+  border-right: none !important;
+}

@@ -1,0 +1,10 @@
+{
+    "label": "OFREP",
+    "position": 2,
+    "collapsible": true,
+    "collapsed": false,
+    "link": {
+        "type": "doc",
+        "id": "reference/other-technologies/ofrep/index"
+    }
+}
