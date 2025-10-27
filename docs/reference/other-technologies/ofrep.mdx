@@ -12,8 +12,7 @@ The **OpenFeature Remote Evaluation Protocol (OFREP)** is an API specification f
 - **Vendor Agnostic**: Connect to any OFREP-compliant flag management system without vendor-specific implementations
 - **Standardized**: Built on a common OpenAPI specification for consistent integration
 - **Flexible**: Works on both client-side and server-side applications
-- **Community Maintained**: Generic OFREP providers maintained by the OpenFeature community
-- **Simple Migration**: Switch between flag management systems without changing application code
+- **Community Maintained**: Generic OFREP providers maintained by the OpenFeature project
 
 ## How It Works
 
@@ -39,13 +38,13 @@ OFREP supports both paradigms defined by OpenFeature:
 #### Server-Side (Dynamic Context)
 
 - Evaluation happens by calling the OFREP API with context
-- No in-process evaluation inside OFREP providers, API request made on every evaluation.
-- Context changes frequently (per request, per user)
+- API request with evaluation context is made on every evaluation
+- Context per evaluation
 
 #### Client-Side (Static Context)
 
-- Evaluation happens locally with pre-fetched flag data
-- Provider reconciles state using the OFREP API when context changes
+- All flags are evaluated in one OFREP API call using a common static context
+- Then local flag evaluation happens against the cached static context
 - Context represents a single user or session
 
 ## Using OFREP
@@ -56,7 +55,7 @@ The OpenFeature community maintains OFREP providers for multiple languages. View
 
 ### Available Flag Management Systems
 
-Many flag management systems support OFREP. View the complete list of [OFREP-compliant systems in the ecosystem](https://openfeature.dev/ecosystem/?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=OFREP%20API).
+Several flag management systems support OFREP. View the complete list of [OFREP-compliant systems in the ecosystem](https://openfeature.dev/ecosystem/?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=OFREP%20API).
 
 ## Implementing OFREP
 
@@ -65,18 +64,14 @@ Many flag management systems support OFREP. View the complete list of [OFREP-com
 To create an OFREP provider for a new language:
 
 1. Review the [server provider guideline](https://github.com/open-feature/protocol/blob/docs-update-readme-for-website/guideline/dynamic-context-provider.md) or [client provider guideline](https://github.com/open-feature/protocol/blob/docs-update-readme-for-website/guideline/static-context-provider.md)
-2. Implement the provider interface for your SDK
-3. Add HTTP client logic to call OFREP endpoints
-4. Handle error cases and response codes according to the specification
-5. Register your provider in the [OpenFeature ecosystem](https://github.com/open-feature/openfeature.dev/issues)
+2. Implement the provider for your SDK according to the guidelines
+3. Register your provider in the [OpenFeature ecosystem](https://github.com/open-feature/openfeature.dev/issues)
 
 ### For Flag Management System Developers
 
 To make your flag management system OFREP-compliant:
 
 1. Implement the [OFREP OpenAPI specification](https://github.com/open-feature/protocol/blob/docs-update-readme-for-website/service/openapi.yaml)
-2. Expose OFREP endpoints at `/ofrep/v1/evaluate/...`
-3. Support both bulk evaluation (for client-side) and single flag evaluation (for server-side)
-4. Test your implementation with existing OFREP providers
-5. Register your system in the [OpenFeature ecosystem](https://github.com/open-feature/openfeature.dev/issues)
+2. Test your implementation with existing OFREP providers
+3. Register your system in the [OpenFeature ecosystem](https://github.com/open-feature/openfeature.dev/issues)
 
