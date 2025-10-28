@@ -8,6 +8,21 @@ const DEFAULT_BRANCH = 'main';
 const DEFAULT_FILE_EXTENSION = 'mdx';
 const GITHUB_ORG = 'open-feature';
 
+const SDK_NAME_TO_MCP_MAPPING: Record<string, string> = {
+  'node.js': 'nodejs',
+  'nestjs': 'nestjs',
+  'go': 'go',
+  'python': 'python',
+  'java': 'java',
+  '.net': 'dotnet',
+  'php': 'php',
+  'ruby': 'ruby',
+  'web': 'javascript',
+  'react': 'react',
+  'kotlin': 'kotlin',
+  'ios': 'swift',
+};
+
 /**
  * Converts carriage return characters to new lines. This is an important preprocessing
  * step to ensure subsequent regex's match.
@@ -107,6 +122,42 @@ const fixInternalDocLinks = (content: string): string => {
   );
 };
 
+/**
+ * Add MCPInstall import statement after frontmatter
+ */
+const addMCPInstallImport = (mcpTechnology: string | undefined) => (content: string): string => {
+  if (!mcpTechnology) return content;
+  
+  const importStatement = '\nimport MCPInstall from \'@site/src/partials/mcp-install\';\n';
+  const frontmatterEnd = content.indexOf('-->');
+  
+  if (frontmatterEnd !== -1) {
+    const insertPosition = frontmatterEnd + 3;
+    return content.slice(0, insertPosition) + importStatement + content.slice(insertPosition);
+  }
+  
+  return content;
+};
+
+/**
+ * Insert MCPInstall component after "## Quick start" heading
+ */
+const insertMCPInstallComponent = (mcpTechnology: string | undefined) => (content: string): string => {
+  if (!mcpTechnology) return content;
+  
+  const quickStartPattern = /^#{1,4}\s+quick start$/mi;
+  const match = content.match(quickStartPattern);
+  console.log(`Insert MCPInstall component for ${mcpTechnology} heading: ${match ? 'found' : 'not found'}`);
+
+  if (match && match.index !== undefined) {
+    const insertPosition = match.index + match[0].length;
+    const component = `\n\n<MCPInstall sdkTechnology="${mcpTechnology}" />\n`;
+    return content.slice(0, insertPosition) + component + content.slice(insertPosition);
+  }
+  
+  return content;
+};
+
 const replaceLinks = (repo: { url: string; branch: string; folder?: string }) => {
   return (content: string) => {
     const replace = (processRelativeUrl: (url: string) => string) => (url: string) => {
@@ -154,6 +205,9 @@ const markdownProcessor = (sdks: SDK[]) => {
     const fileExtension = sdk.fileExtension ?? DEFAULT_FILE_EXTENSION;
     const branch = sdk.branch ?? DEFAULT_BRANCH;
 
+    const mcpTechnology = sdk.name ? SDK_NAME_TO_MCP_MAPPING[sdk.name.toLowerCase()] : undefined;
+    console.log(`Processing SDK ${sdk.name}, with MCP technology: ${mcpTechnology}`);
+
     const content = [
       carriageReturnsToNewLines,
       removeEmojisFromHeaders,
@@ -163,8 +217,10 @@ const markdownProcessor = (sdks: SDK[]) => {
       removeExtraNewlinesBetweenSections,
       removeExtraNewlinesAtTop,
       addHeader({ name: sdk.name, repo: sdk.repo, url: repoUrl, fileName, slug: sdk.slug, id: sdk.id }),
+      addMCPInstallImport(mcpTechnology),
       replaceLinks({ url: repoUrl, branch, folder: sdk.folder }),
       fixInternalDocLinks,
+      insertMCPInstallComponent(mcpTechnology),
     ].reduce((currentContent, processor) => processor(currentContent), initialContent);
 
     if (sdk.includeInSupportMatrix ?? true) {
