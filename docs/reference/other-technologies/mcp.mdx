@@ -115,6 +115,35 @@ In the `Manage MCP servers` raw config, add:
 }
 ```
 
+### Codex CLI
+
+Edit `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.openfeature]
+command = "npx"
+args = ["-y", "@openfeature/mcp"]
+```
+
+Restart Codex CLI after saving.
+
+### Gemini CLI
+
+Edit `~/.gemini/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "OpenFeature": {
+      "command": "npx",
+      "args": ["-y", "@openfeature/mcp"]
+    }
+  }
+}
+```
+
+Restart Gemini CLI after saving.
+
 ### Claude Desktop
 
 Edit your Claude Desktop config at:

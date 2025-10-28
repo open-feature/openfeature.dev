@@ -212,7 +212,7 @@ export const processSdkReadmes = {
 const OTHER_TECHNOLOGIES = [
   { repo: 'cli', id: 'cli', title: 'OpenFeature CLI', label: 'CLI', position: 1, branch: 'main' },
   { repo: 'protocol', id: 'ofrep', title: 'OpenFeature Remote Evaluation Protocol (OFREP)', label: 'OFREP', position: 2, branch: 'docs-update-readme-for-website' },
-  { repo: 'mcp', id: 'mcp', title: 'OpenFeature MCP Server', label: 'MCP', position: 3, branch: 'docs-add-cursor-vscode-install-links' },
+  { repo: 'mcp', id: 'mcp', title: 'OpenFeature MCP Server', label: 'MCP', position: 3, branch: 'main' },
 ];
 
 /**
