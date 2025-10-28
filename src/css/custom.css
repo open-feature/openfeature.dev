@@ -348,6 +348,7 @@ article:has(.redoc-container) {
   max-width: none !important;
 }
 
+/* Force doc column to full width when Redoc is present */
 .main-wrapper:has(.redoc-container) [class*="docItemCol"] {
   max-width: none !important;
   flex-basis: 100% !important;
