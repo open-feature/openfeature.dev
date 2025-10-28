@@ -277,6 +277,30 @@
   border: 0;
 }
 
+.mcp-install-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+
+.mcp-install-summary::-webkit-details-marker {
+  display: none;
+}
+
+.mcp-install-summary strong::before {
+  content: '▶';
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+  margin-right: 0.5em;
+}
+
+details[open] .mcp-install-summary strong::before {
+  content: '▼';
+}
+
 .mcp-install-button {
   display: inline-flex;
   align-items: center;
