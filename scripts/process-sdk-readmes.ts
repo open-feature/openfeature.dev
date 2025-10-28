@@ -147,7 +147,6 @@ const insertMCPInstallComponent = (mcpTechnology: string | undefined) => (conten
   
   const quickStartPattern = /^#{1,4}\s+quick start$/mi;
   const match = content.match(quickStartPattern);
-  console.log(`Insert MCPInstall component for ${mcpTechnology} heading: ${match ? 'found' : 'not found'}`);
 
   if (match && match.index !== undefined) {
     const insertPosition = match.index + match[0].length;
@@ -206,7 +205,6 @@ const markdownProcessor = (sdks: SDK[]) => {
     const branch = sdk.branch ?? DEFAULT_BRANCH;
 
     const mcpTechnology = sdk.name ? SDK_NAME_TO_MCP_MAPPING[sdk.name.toLowerCase()] : undefined;
-    console.log(`Processing SDK ${sdk.name}, with MCP technology: ${mcpTechnology}`);
 
     const content = [
       carriageReturnsToNewLines,
