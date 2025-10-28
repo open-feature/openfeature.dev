@@ -37,11 +37,13 @@ export default function MCPInstall({ sdkTechnology }: MCPInstallProps) {
             console.error(`Failed to fetch prompt for ${sdkTechnology}: ${response.status}`);
             setButtonState('error');
             setTimeout(() => setButtonState('idle'), 2000);
+            return;
           }
         } catch (error) {
           console.error(`Error fetching prompt for ${sdkTechnology}:`, error);
           setButtonState('error');
           setTimeout(() => setButtonState('idle'), 2000);
+          return;
         }
       }
     }
