@@ -265,7 +265,7 @@ export const processSdkReadmes = {
 // TODO: update branches to main once PRs are merged
 const OTHER_TECHNOLOGIES = [
   { repo: 'cli', id: 'cli', title: 'OpenFeature CLI', label: 'CLI', position: 1, branch: 'main' },
-  { repo: 'protocol', id: 'ofrep', title: 'OpenFeature Remote Evaluation Protocol (OFREP)', label: 'OFREP', position: 2, branch: 'docs-update-readme-for-website' },
+  { repo: 'protocol', id: 'ofrep', title: 'OpenFeature Remote Evaluation Protocol (OFREP)', label: 'OFREP', position: 2, branch: 'main', filename: 'ofrep/index.mdx' },
   { repo: 'mcp', id: 'mcp', title: 'OpenFeature MCP Server', label: 'MCP', position: 3, branch: 'main' },
 ];
 
@@ -320,7 +320,7 @@ id: ${tech.id}
     const content = processors.reduce((currentContent, processor) => processor(currentContent), initialContent);
 
     return {
-      filename: `${tech.id}.mdx`,
+      filename: tech.filename || `${tech.id}.mdx`,
       content: frontmatter + content,
     };
   },
