@@ -172,7 +172,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
   },
   prism: {
     theme: themes.oceanicNext,
-    additionalLanguages: ['java', 'csharp', 'powershell', 'php', 'kotlin', 'ruby', 'dart'],
+    additionalLanguages: ['java', 'csharp', 'powershell', 'php', 'kotlin', 'ruby', 'dart', 'scala'],
     magicComments: [
       {
         className: 'theme-code-block-highlighted-line',
@@ -284,7 +284,31 @@ const config: Config = {
       },
     },
   ],
-  presets: [['classic', presetClassicOptions]],
+  presets: [
+    ['classic', presetClassicOptions],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            id: 'ofrep-api',
+            spec: 'https://raw.githubusercontent.com/open-feature/protocol/refs/heads/main/service/openapi.yaml',
+          },
+        ],
+        theme: {
+          primaryColor: '#1890ff',
+          options: {
+            disableSearch: true,
+            theme: {
+              sidebar: {
+                width: '0px',
+              },
+            },
+          },
+        },
+      },
+    ],
+  ],
   plugins: [
     async function tailwind() {
       return {
@@ -377,7 +401,7 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ['@docusaurus/theme-mermaid', 'docusaurus-theme-redoc'],
 };
 
 export default config;

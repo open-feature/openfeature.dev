@@ -333,4 +333,34 @@ details[open] .mcp-install-summary strong::before {
 [data-theme='dark'] .mcp-install-button:hover {
   background-color: var(--ifm-color-primary-light);
   border-color: var(--ifm-color-primary-light);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Full width Redoc API viewer */
+.redoc-container {
+  margin: -2rem calc(-1 * var(--ifm-spacing-horizontal));
+  max-width: none;
+}
+
+/* Expand parent containers for full width */
+article:has(.redoc-container) {
+  max-width: none !important;
+}
+
+/* Force doc column to full width when Redoc is present */
+.main-wrapper:has(.redoc-container) [class*="docItemCol"] {
+  max-width: none !important;
+  flex-basis: 100% !important;
+}
+
+/* Hide Redocly branding */
+.redocusaurus a[href*="redocly.com"],
+.redocusaurus [class*="powered-by"] {
+  display: none !important;
+}
+
+/* Hide menu border on API viewer pages */
+.redoc-container .menu-content {
+  border-right: none !important;
 }
