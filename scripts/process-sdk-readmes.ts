@@ -315,6 +315,19 @@ id: ${tech.id}
       );
     };
 
+    // Replace service/openapi.yaml links with docs link for OFREP OpenAPI viewer
+    const replaceOFREPOpenApiLinks = (content: string): string => {
+      if (tech.id !== 'ofrep') return content;
+      
+      // Replace links to service/openapi.yaml with docs link
+      return content.replace(
+        /\[([^\]]+)\]\([^)]*service\/openapi\.yaml[^)]*\)/g,
+        (match, text) => {
+          return `[${text}](/docs/reference/other-technologies/ofrep/openapi)`;
+        }
+      );
+    };
+
     const processors = [
       carriageReturnsToNewLines,
       removeEmojisFromHeaders,
@@ -324,6 +337,7 @@ id: ${tech.id}
       removeExtraNewlinesBetweenSections,
       removeExtraNewlinesAtTop,
       fixRelativeLinks,
+      replaceOFREPOpenApiLinks,
     ];
 
     const content = processors.reduce((currentContent, processor) => processor(currentContent), initialContent);
