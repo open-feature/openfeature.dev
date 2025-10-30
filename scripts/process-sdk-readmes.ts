@@ -262,8 +262,17 @@ export const processSdkReadmes = {
 /**
  * Other Technologies content configuration
  */
-// TODO: update branches to main once PRs are merged
-const OTHER_TECHNOLOGIES = [
+type OtherTechnology = {
+  repo: string;
+  id: string;
+  title: string;
+  label: string;
+  position: number;
+  branch: string;
+  filename?: string;
+};
+
+const OTHER_TECHNOLOGIES: OtherTechnology[] = [
   { repo: 'cli', id: 'cli', title: 'OpenFeature CLI', label: 'CLI', position: 1, branch: 'main' },
   { repo: 'protocol', id: 'ofrep', title: 'OpenFeature Remote Evaluation Protocol (OFREP)', label: 'OFREP', position: 2, branch: 'main', filename: 'ofrep/index.mdx' },
   { repo: 'mcp', id: 'mcp', title: 'OpenFeature MCP Server', label: 'MCP', position: 3, branch: 'main' },
