@@ -292,7 +292,8 @@ const config: Config = {
         specs: [
           {
             id: 'ofrep-api',
-            spec: 'https://raw.githubusercontent.com/open-feature/protocol/refs/heads/main/service/openapi.yaml',
+            // TODO: revert to main once PR is merged: https://github.com/open-feature/protocol/pull/56
+            spec: 'https://raw.githubusercontent.com/open-feature/protocol/b549b94c91cf068d8068efaff7e74890e5238447/service/openapi.yaml',
           },
         ],
         theme: {
