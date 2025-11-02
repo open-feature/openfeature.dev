@@ -55,7 +55,9 @@ Open a code editor and add the C# code below to the Program.cs.
 
 ```csharp
 // diff-add-block-start
+using Microsoft.AspNetCore.Mvc;
 using OpenFeature;
+using OpenFeature.Hosting.Providers.Memory;
 using OpenFeature.Providers.Memory;
 // diff-add-block-end
 
@@ -70,7 +72,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddOpenFeature(featureBuilder =>
 {
     featureBuilder
-        .AddInMemoryProvider("InMemory", _ => new Dictionary<string, Flag>()
+        .AddInMemoryProvider(_ => new Dictionary<string, Flag>()
         {
             {
                 "welcome-message", new Flag<bool>(
@@ -169,11 +171,15 @@ Finally, let's add the required code change to enable the flagd provider in our 
 
 ```csharp
 
+using Microsoft.AspNetCore.Mvc;
 using OpenFeature;
-//diff-add
+//diff-add-block-start
 using OpenFeature.Contrib.Providers.Flagd.DependencyInjection;
-//diff-remove
+//diff-add-block-end
+//diff-remove-block-start
 using OpenFeature.Providers.Memory;
+using OpenFeature.Hosting.Providers.Memory;
+//diff-remove-block-end
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -187,8 +193,7 @@ var app = builder.Build();
 builder.Services.AddOpenFeature(featureBuilder =>
 {
     featureBuilder
-//diff-remove
-        .AddInMemoryProvider("InMemory", _ => new Dictionary<string, Flag>()
+        .AddInMemoryProvider(_ => new Dictionary<string, Flag>()
         {
             {
                 "welcome-message", new Flag<bool>(
