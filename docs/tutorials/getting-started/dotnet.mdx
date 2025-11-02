@@ -65,12 +65,22 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-var app = builder.Build();
-
 // diff-add-block-start
 // Register your feature flag provider
-await Api.Instance.SetProviderAsync(new InMemoryProvider());
+builder.Services.AddOpenFeature(featureBuilder =>
+{
+    featureBuilder
+        .AddInMemoryProvider("InMemory", _ => new Dictionary<string, Flag>()
+        {
+            {
+                "welcome-message", new Flag<bool>(
+                    new Dictionary<string, bool> { { "show", true }, { "hide", false } }, "show")
+            }
+        });
+});
 // diff-add-block-end
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -103,11 +113,9 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast");
 //diff-remove-block-end
 //diff-add-block-start
-app.MapGet("/hello", async () =>
+app.MapGet("/hello", async ([FromServices] IFeatureClient featureClient) =>
 {
-    var client = Api.Instance.GetClient();
-
-    if (await client.GetBooleanValueAsync("welcome-message", false))
+    if (await featureClient.GetBooleanValueAsync("welcome-message", false))
     {
         return "Hello, welcome to this OpenFeature-enabled website!";
     }
