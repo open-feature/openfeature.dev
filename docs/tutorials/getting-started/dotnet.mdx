@@ -171,7 +171,7 @@ Finally, let's add the required code change to enable the flagd provider in our 
 
 using OpenFeature;
 //diff-add
-using OpenFeature.Contrib.Providers.Flagd
+using OpenFeature.Contrib.Providers.Flagd.DependencyInjection;
 //diff-remove
 using OpenFeature.Providers.Memory;
 
@@ -184,12 +184,21 @@ builder.Services.AddOpenApi();
 var app = builder.Build();
 
 // Register your feature flag provider
+builder.Services.AddOpenFeature(featureBuilder =>
+{
+    featureBuilder
 //diff-remove
-await Api.Instance.SetProviderAsync(new InMemoryProvider());
+        .AddInMemoryProvider("InMemory", _ => new Dictionary<string, Flag>()
+        {
+            {
+                "welcome-message", new Flag<bool>(
+                    new Dictionary<string, bool> { { "show", true }, { "hide", false } }, "show")
+            }
+        });
 //diff-add-block-start
-var flagdProvider = new FlagdProvider(new Uri("http://localhost:8013"));
-await Api.Instance.SetProviderAsync(flagdProvider);
+        .AddFlagdProvider();
 //diff-add-block-end
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -199,11 +208,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/hello", async () =>
+app.MapGet("/hello", async ([FromServices] IFeatureClient featureClient) =>
 {
-    var client = Api.Instance.GetClient();
-
-    if (await client.GetBooleanValueAsync("welcome-message", false))
+    if (await featureClient.GetBooleanValueAsync("welcome-message", false))
     {
         return "Hello, welcome to this OpenFeature-enabled website!";
     }
