@@ -12,6 +12,12 @@ export const Split: Provider = {
       category: ['Server'],
     },
     {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/splitio/split-openfeature-provider-web-js',
+      category: ['Client'],
+    },
+    {
       technology: 'Go',
       vendorOfficial: true,
       href: 'https://github.com/splitio/split-openfeature-provider-go',
