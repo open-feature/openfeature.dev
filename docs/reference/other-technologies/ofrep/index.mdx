@@ -3,7 +3,8 @@ title: OpenFeature Remote Evaluation Protocol (OFREP)
 sidebar_position: 1
 ---
 
-The **OpenFeature Remote Evaluation Protocol (OFREP)** is an [API specification](./openapi) for feature flagging that enables vendor-agnostic communication between applications and flag management systems. It defines a standard API layer between the provider and the flag management system, allowing any OpenSource or commercial system to implement the protocol and be compatible with community-maintained providers.
+The **OpenFeature Remote Evaluation Protocol (OFREP)** is an [API specification](./openapi) for feature flagging that enables vendor-agnostic communication between applications and flag management systems.
+It defines a standard API layer between the provider and the flag management system, allowing any OpenSource or commercial system to implement the protocol and be compatible with community-maintained providers.
 
 ### Key Benefits
 
@@ -14,7 +15,8 @@ The **OpenFeature Remote Evaluation Protocol (OFREP)** is an [API specification]
 
 ## How It Works
 
-OFREP is **a protocol, not a provider**. It defines how to communicate with feature flag management systems and works on top of OpenFeature SDKs by providing standardized providers.
+OFREP is **a protocol, not a provider**.
+It defines how to communicate with feature flag management systems and works on top of OpenFeature SDKs by providing standardized providers.
 
 ```mermaid
 graph LR
@@ -49,11 +51,13 @@ OFREP supports both paradigms defined by OpenFeature:
 
 ### Available Providers
 
-The OpenFeature community maintains OFREP providers for multiple languages. View the complete list of [OFREP providers in the ecosystem](https://openfeature.dev/ecosystem/?instant_search%5BrefinementList%5D%5Bvendor%5D%5B0%5D=OFREP).
+The OpenFeature community maintains OFREP providers for multiple languages.
+View the complete list of [OFREP providers in the ecosystem](https://openfeature.dev/ecosystem/?instant_search%5BrefinementList%5D%5Bvendor%5D%5B0%5D=OFREP).
 
 ### Available Flag Management Systems
 
-Several flag management systems support OFREP. View the complete list of [OFREP-compliant systems in the ecosystem](https://openfeature.dev/ecosystem/?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=OFREP%20API).
+Several flag management systems support OFREP.
+View the complete list of [OFREP-compliant systems in the ecosystem](https://openfeature.dev/ecosystem/?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=OFREP%20API).
 
 ## Implementing OFREP
 
@@ -72,4 +76,3 @@ To make your flag management system OFREP-compliant:
 1. Implement the [OFREP OpenAPI specification](./openapi)
 2. Test your implementation with existing OFREP providers
 3. Register your system in the [OpenFeature ecosystem](https://github.com/open-feature/openfeature.dev/issues)
-
