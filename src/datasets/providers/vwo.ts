@@ -25,7 +25,7 @@ export const VWO: Provider = {
     },
     {
       technology: 'PHP',
-      vendorOfficial: false,
+      vendorOfficial: true,
       href: 'https://github.com/wingify/vwo-openfeature-provider-php',
       category: ['Server'],
     },
@@ -35,5 +35,11 @@ export const VWO: Provider = {
       href: 'https://github.com/wingify/vwo-openfeature-provider-python',
       category: ['Server'],
     },
+    {
+      technology: 'Go',
+      vendorOfficial: true,
+      href: 'https://github.com/wingify/vwo-openfeature-provider-go',
+      category: ['Server'],
+    }
   ],
 };
