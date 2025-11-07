@@ -4,7 +4,7 @@ import { Hook } from '.';
 export const Debounce: Hook = {
   name: 'Debounce',
   logo: StopWatch,
-  description: 'Rate-limits or "debounces" flag evaluations',
+  description: 'Rate-limits or "debounces" hook executions',
   technologies: [
     {
       technology: 'JavaScript',
