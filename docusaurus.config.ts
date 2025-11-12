@@ -292,7 +292,7 @@ const config: Config = {
         specs: [
           {
             id: 'ofrep-api',
-            spec: 'https://raw.githubusercontent.com/open-feature/protocol/refs/heads/main/service/openapi.yaml',
+            spec: 'https://raw.githubusercontent.com/open-feature/protocol/main/service/openapi.yaml',
           },
         ],
         theme: {
