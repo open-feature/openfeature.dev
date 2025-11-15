@@ -6,16 +6,10 @@ export const Hyphen: Provider = {
   logo: HyphenNoFillSvg,
   technologies: [
     {
-      technology: 'JavaScript',
+      technology: '.NET',
       vendorOfficial: true,
-      href: 'https://github.com/Hyphen/openfeature-provider-javascript-server',
+      href: 'https://github.com/Hyphen/openfeature-provider-dotnet',
       category: ['Server'],
-    },
-    {
-      technology: 'JavaScript',
-      vendorOfficial: true,
-      href: 'https://github.com/Hyphen/openfeature-provider-javascript-web',
-      category: ['Client'],
     },
     {
       technology: 'Go',
@@ -30,9 +24,15 @@ export const Hyphen: Provider = {
       category: ['Server'],
     },
     {
-      technology: '.NET',
+      technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://github.com/Hyphen/openfeature-provider-dotnet',
+      href: 'https://github.com/Hyphen/openfeature-provider-javascript-web',
+      category: ['Client'],
+    },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/Hyphen/openfeature-provider-javascript-server',
       category: ['Server'],
     },
     {
