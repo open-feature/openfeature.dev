@@ -12,6 +12,7 @@ import { Flagsmith } from './flagsmith';
 import { Flipt } from './flipt';
 import { Goff } from './goff';
 import { Harness } from './harness';
+import { Hyphen } from './hyphen';
 import { Kameleoon } from './kameleoon';
 import { LaunchDarkly } from './launchdarkly';
 import { MDBRules } from './mdb-rules';
@@ -63,6 +64,7 @@ export const PROVIDERS: Provider[] = [
   Flipt,
   Goff,
   Harness,
+  Hyphen,
   Hypertune,
   Kameleoon,
   LaunchDarkly,
