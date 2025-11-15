@@ -14,7 +14,7 @@ export const Hyphen: Provider = {
     {
       technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://github.com/Hyphen/openfeature-provider-javascript-server',
+      href: 'https://github.com/Hyphen/openfeature-provider-javascript-web',
       category: ['Client'],
     },
     {
