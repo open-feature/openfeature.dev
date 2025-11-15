@@ -15,6 +15,7 @@ import { Harness } from './harness';
 import { Hyphen } from './hyphen';
 import { Kameleoon } from './kameleoon';
 import { LaunchDarkly } from './launchdarkly';
+import { Hyphen } from './hyphen';
 import { MDBRules } from './mdb-rules';
 import { PostHog } from './posthog';
 import { Reflag } from './reflag';
@@ -68,6 +69,7 @@ export const PROVIDERS: Provider[] = [
   Hypertune,
   Kameleoon,
   LaunchDarkly,
+  Hyphen,
   MDBRules,
   PostHog,
   Reflag,
