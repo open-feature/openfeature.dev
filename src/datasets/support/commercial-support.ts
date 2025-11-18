@@ -4,6 +4,7 @@ import KameleoonSvg from '@site/static/img/vendors/kameleoon.svg';
 import DevCycleSvg from '@site/static/img/vendors/devcycle.svg';
 import FliptSvg from '@site/static/img/vendors/flipt.svg';
 import FlagsmithSvg from '@site/static/img/vendors/flagsmith.svg';
+import HarnessSvg from '@site/static/img/vendors/harness.svg';
 import LaunchDarklySvg from '@site/static/img/vendors/launchdarkly.svg';
 import TgglSvg from '@site/static/img/vendors/tggl.svg';
 import GoffSvg from '@site/static/img/vendors/gofeatureflag.svg';
@@ -50,6 +51,11 @@ export const CommercialSupportList: CommercialSupportType[] = [
     name: 'GO Feature Flag',
     href: 'https://gofeatureflag.org/docs/openfeature_sdk/sdk',
     svg: GoffSvg,
+  },
+  {
+    name: 'Harness Feature Management & Experimentation',
+    href: 'https://developer.harness.io/docs/feature-management-experimentation/sdks-and-infrastructure/openfeature',
+    svg: HarnessSvg,
   },
   {
     name: 'Kameleoon',
