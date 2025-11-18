@@ -1,31 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 250.05 216.8">
-  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
   <defs>
     <style>
+      [data-theme='dark'] {
+        --hyphen-no-fill-color: #ffffff;
+      }
+
       .st0 {
         fill: url(#linear-gradient1);
       }
 
       .st1 {
-        fill: #231f20;
+        fill: var(--hyphen-no-fill-color, #231f20);
       }
 
       .st2 {
         fill: url(#linear-gradient);
       }
+
+      .gradient-stop {
+        stop-color: var(--hyphen-no-fill-color, #231f20);
+      }
     </style>
     <linearGradient id="linear-gradient" x1="83.05" y1="78.88" x2="342.45" y2="78.88" gradientTransform="translate(0 216.69) scale(1 -1)" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#231f20" stop-opacity="0"/>
-      <stop offset=".26" stop-color="#231f20" stop-opacity=".53"/>
-      <stop offset=".53" stop-color="#231f20" stop-opacity=".88"/>
-      <stop offset=".8" stop-color="#231f20"/>
+      <stop class="gradient-stop" offset="0" stop-opacity="0"/>
+      <stop class="gradient-stop" offset=".26" stop-opacity=".53"/>
+      <stop class="gradient-stop" offset=".53" stop-opacity=".88"/>
+      <stop class="gradient-stop" offset=".8"/>
     </linearGradient>
     <linearGradient id="linear-gradient1" x1="-4328.69" y1="6415.04" x2="-4042.55" y2="6580.24" gradientTransform="translate(-4143.75 -6411.54) rotate(-180) scale(1 -1)" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#231f20" stop-opacity="0"/>
-      <stop offset=".26" stop-color="#231f20" stop-opacity=".53"/>
-      <stop offset=".53" stop-color="#231f20" stop-opacity=".88"/>
-      <stop offset=".8" stop-color="#231f20"/>
+      <stop class="gradient-stop" offset="0" stop-opacity="0"/>
+      <stop class="gradient-stop" offset=".26" stop-opacity=".53"/>
+      <stop class="gradient-stop" offset=".53" stop-opacity=".88"/>
+      <stop class="gradient-stop" offset=".8"/>
     </linearGradient>
   </defs>
   <path class="st2" d="M205.47,64.19c-4.47,6.67-87.47,151.58-87.47,151.58l52.8,1c11.62,0,19.72-5,24.41-13.13l54.84-95s-21.11-37.24-25.75-44.45-14.14-7.02-18.83,0Z"/>
