@@ -25,6 +25,12 @@ export const Bucketeer: Provider = {
       category: ['Client'],
     },
     {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://www.npmjs.com/package/@bucketeer/openfeature-node-server-sdk',
+      category: ['Server'],
+    },
+    {
       technology: 'Go',
       vendorOfficial: true,
       href: 'https://github.com/bucketeer-io/openfeature-go-server-sdk',
