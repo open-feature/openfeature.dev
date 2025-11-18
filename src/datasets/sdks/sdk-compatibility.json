@@ -476,8 +476,8 @@
     "path": "/docs/reference/sdks/client/swift",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/swift-sdk/releases/tag/0.4.0",
-      "version": "0.4.0",
+      "href": "https://github.com/open-feature/swift-sdk/releases/tag/0.5.0",
+      "version": "0.5.0",
       "stable": false
     },
     "spec": {
@@ -510,7 +510,7 @@
         "path": "/docs/reference/sdks/client/swift#eventing"
       },
       "Tracking": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/sdks/client/swift#tracking"
       },
       "Shutdown": {
