@@ -16,6 +16,7 @@ import { Kameleoon } from './kameleoon';
 import { LaunchDarkly } from './launchdarkly';
 import { MDBRules } from './mdb-rules';
 import { PostHog } from './posthog';
+import { Prefab } from './prefab';
 import { Reflag } from './reflag';
 import { Split } from './split';
 import { Unleash } from './unleash';
@@ -68,6 +69,7 @@ export const PROVIDERS: Provider[] = [
   LaunchDarkly,
   MDBRules,
   PostHog,
+  Prefab,
   Reflag,
   Split,
   Statsig,
