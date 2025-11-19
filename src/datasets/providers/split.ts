@@ -44,13 +44,13 @@ export const Split: Provider = {
     {
       technology: 'Swift',
       vendorOfficial: true,
-      href: 'https://swiftpackageindex.com/splitio/split-openfeature-provider-swift',
+      href: 'https://github.com/splitio/split-openfeature-provider-swift',
       category: ['Client'],
     },
     {
       technology: 'Kotlin',
       vendorOfficial: true,
-      href: 'https://central.sonatype.com/artifact/io.split.openfeature/split-openfeature-android',
+      href: 'https://github.com/splitio/split-openfeature-provider-android',
       category: ['Client'],
     },
   ],
