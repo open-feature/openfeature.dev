@@ -5,6 +5,7 @@ import { AwsSSM } from './awsssm';
 import { Bucketeer } from './bucketeer';
 import { CloudBees } from './cloudbees';
 import { ConfigCat } from './configcat';
+import { Datadog } from './datadog';
 import { DevCycle } from './devcycle';
 import { EnvVar } from './env-var';
 import { Flagd } from './flagd';
@@ -55,6 +56,7 @@ export const PROVIDERS: Provider[] = [
   Confidence,
   ConfigBee,
   ConfigCat,
+  Datadog,
   DevCycle,
   EnvVar,
   FeatBit,
