@@ -96,7 +96,7 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
   announcementBar: {
     id: 'announcing-kubecon-na-25',
     content:
-      '🎉️ Meet us in Atlanta for <a href="/blog/kubecon-na-2025-openfeature-summit-preview">KubeCon + CloudNativeCon North America!</a>',
+      'Check out our <a href="/blog/kubecon-na-2025-recap">KubeCon NA \'25 recap, and our new training course!</a>',
   },
   footer: {
     style: 'dark',
