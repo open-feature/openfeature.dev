@@ -3,6 +3,7 @@ import { CourseCard } from '../components/custom/CourseCard';
 import Layout from '@theme/Layout';
 import { CommercialSupportList } from '../datasets/support/commercial-support';
 import Link from '@docusaurus/Link';
+import lfs140Image from '@site/static/img/blog/2025-11-18-kubecon-na-recap-and-new-cncf-training/lfs140.png';
 
 export default function Support(): JSX.Element {
   return (
@@ -16,15 +17,13 @@ export default function Support(): JSX.Element {
           <div className="flex flex-col gap-8">
             <CourseCard
               href="https://training.linuxfoundation.org/training/feature-flagging-with-openfeature-lfs140/"
-              imageUrl={
-                require('@site/static/img/blog/2025-11-18-kubecon-na-recap-and-new-cncf-training/lfs140.png').default
-              }
+              imageUrl={lfs140Image}
               imageAlt="LFS140 Course"
               title="Feature Flagging with OpenFeature (LFS140)"
               subtitle="Linux Foundation Training Course"
               description={[
-                "10 hours of self-paced content, including hands-on labs.",
-                "Learn how to apply feature flagging in real-world projects using OpenFeature. Integrate with any flag management system, support canary and dark launches, run experiments, instrument flags with observability, and maintain clean, testable code."
+                '10 hours of self-paced content, including hands-on labs.',
+                'Learn how to apply feature flagging in real-world projects using OpenFeature. Integrate with any flag management system, support canary and dark launches, run experiments, instrument flags with observability, and maintain clean, testable code.'
               ]}
             />
             <CourseCard
@@ -34,8 +33,8 @@ export default function Support(): JSX.Element {
               title="OpenFeature Fundamentals"
               subtitle="YouTube Video Series"
               description={[
-                "A series of short videos introducing the core concepts of OpenFeature.",
-                "Learn about the evaluation API, providers, context, hooks, and how to integrate OpenFeature into your code."
+                'A series of short videos introducing the core concepts of OpenFeature.',
+                'Learn about the evaluation API, providers, context, hooks, and how to integrate OpenFeature into your code.'
               ]}
             />
           </div>
