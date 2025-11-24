@@ -6,10 +6,13 @@ import QuestionBlocks from '../partials/question-blocks';
 import FeaturesZigZag from '../partials/features-zigzag';
 import HeroHome from '../partials/hero-home';
 import PageIllustration from '../partials/page-illustration';
+import VideoEmbed from '../partials/video-embed';
 
 import { useLocation } from '@docusaurus/router';
 import 'aos/dist/aos.css';
 import '../css/style.css';
+
+const WHAT_IS_OPENFEATURE_VIDEO_ID = 'heQ83k15ZE4';
 
 export default function Home(): JSX.Element {
   const location = useLocation();
@@ -42,6 +45,7 @@ export default function Home(): JSX.Element {
           {/*  Page sections */}
           <HeroHome />
           <QuestionBlocks />
+          <VideoEmbed videoId={WHAT_IS_OPENFEATURE_VIDEO_ID} />
           <FeaturesZigZag />
         </main>
       </div>
