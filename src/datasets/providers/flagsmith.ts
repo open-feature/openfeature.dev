@@ -36,6 +36,12 @@ export const Flagsmith: Provider = {
       category: ['Server'],
     },
     {
+      technology: 'PHP',
+      vendorOfficial: true,
+      href: 'TBD',
+      category: ['Server'],
+    },
+    {
       technology: 'Python',
       vendorOfficial: true,
       href: 'https://github.com/Flagsmith/flagsmith-openfeature-provider-python',
