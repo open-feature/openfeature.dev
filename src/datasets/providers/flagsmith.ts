@@ -44,7 +44,7 @@ export const Flagsmith: Provider = {
     {
       technology: 'Ruby',
       vendorOfficial: true,
-      href: 'TBD',
+      href: 'https://github.com/open-feature/ruby-sdk-contrib/tree/main/providers/openfeature-flagsmith-provider',
       category: ['Server'],
     },
   ],
