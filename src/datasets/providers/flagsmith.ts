@@ -45,7 +45,7 @@ export const Flagsmith: Provider = {
       technology: 'Rust',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/rust-sdk-contrib/tree/main/crates/flagsmith',
-      category: ['Server'],
+      category: ['Server']
     },
   ],
 };
