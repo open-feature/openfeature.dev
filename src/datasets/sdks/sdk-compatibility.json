@@ -4,8 +4,8 @@
     "path": "/docs/reference/sdks/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.18.2",
-      "version": "1.18.2",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.19.0",
+      "version": "1.19.0",
       "stable": true
     },
     "spec": {
@@ -124,8 +124,8 @@
     "path": "/docs/reference/sdks/server/dotnet",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.9.0",
-      "version": "2.9.0",
+      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.10.0",
+      "version": "2.10.0",
       "stable": true
     },
     "spec": {
@@ -652,7 +652,7 @@
     "path": "/docs/reference/sdks/server/rust",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/rust-sdk/releases/tag/v0.2.7",
+      "href": "https://github.com/open-feature/rust-sdk/releases/tag/open-feature-v0.2.7",
       "version": "0.2.7",
       "stable": false
     },
