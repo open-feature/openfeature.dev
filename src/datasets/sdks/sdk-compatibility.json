@@ -4,8 +4,8 @@
     "path": "/docs/reference/sdks/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.19.0",
-      "version": "1.19.0",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.19.2",
+      "version": "1.19.2",
       "stable": true
     },
     "spec": {
@@ -64,8 +64,8 @@
     "path": "/docs/reference/sdks/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.20.0",
-      "version": "1.20.0",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.20.1",
+      "version": "1.20.1",
       "stable": true
     },
     "spec": {
@@ -244,8 +244,8 @@
     "path": "/docs/reference/sdks/server/python",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.8.3",
-      "version": "0.8.3",
+      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.8.4",
+      "version": "0.8.4",
       "stable": false
     },
     "spec": {
@@ -364,8 +364,8 @@
     "path": "/docs/reference/sdks/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.7.1",
-      "version": "1.7.1",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.7.2",
+      "version": "1.7.2",
       "stable": true
     },
     "spec": {
