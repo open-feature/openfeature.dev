@@ -16,9 +16,16 @@ import ScrollTo from '../partials/ecosystem/scroll-to';
 
 import type { ItemsJsOptions } from 'instantsearch-itemsjs-adapter/lib/itemsjsInterface';
 import type { InstantSearchOptions } from 'instantsearch.js';
+import { ECOSYSTEM_SDKS } from '../datasets/sdks/ecosystem';
+import { ECOSYSTEM_PROVIDERS } from '../datasets/providers';
 
-const VENDORS_SHOWN_AS_FACET = 30;
+const VENDORS_SHOWN_AS_FACET = 20;
 const TECHNOLOGIES_SHOWN_AS_FACET = 20;
+
+const TECHNOLOGY_COUNT = new Set(
+  ECOSYSTEM_SDKS.flatMap((sdk) => [sdk.technology, ...(sdk.parentTechnology ? [sdk.parentTechnology] : [])]),
+).size;
+const VENDOR_COUNT = new Set(ECOSYSTEM_PROVIDERS.map((provider) => provider.vendor)).size;
 
 const options: ItemsJsOptions = {
   searchableFields: ['title', 'description', 'allTechnologies'],
@@ -38,11 +45,16 @@ const options: ItemsJsOptions = {
     allTechnologies: {
       title: 'technologies',
       searchInField: ['technology', 'parentTechnology'],
-      size: TECHNOLOGIES_SHOWN_AS_FACET,
+      size: TECHNOLOGY_COUNT,
       hide_zero_doc_count: true,
       conjunction: false,
     },
-    vendor: { title: 'vendors', size: VENDORS_SHOWN_AS_FACET, conjunction: false, hide_zero_doc_count: true },
+    vendor: {
+      title: 'vendors',
+      size: VENDOR_COUNT,
+      conjunction: false,
+      hide_zero_doc_count: true,
+    },
     vendorOfficial: { title: 'official', size: 2, conjunction: true },
   },
 };
@@ -51,6 +63,17 @@ const index = createIndex(ECOSYSTEM, options);
 // Casting as the items.js implementation has slightly different facet types.
 // This doesn't appear to have any negative effects.
 const searchClient = getSearchClient(index) as InstantSearchOptions['searchClient'];
+
+const SHARED_STYLES = {
+  count:
+    'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
+  list: 'list-none m-0 p-0',
+  checkbox: 'border-solid h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500',
+  labelText: 'ml-3 text-sm text-content',
+  showMore:
+    'mt-2 text-sm font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300 cursor-pointer bg-transparent border-none p-0 underline decoration-1 underline-offset-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 focus:rounded',
+  sectionDivider: 'border-0 border-solid border-t border-gray-200 py-4',
+};
 
 export default function Ecosystem() {
   return (
@@ -96,72 +119,74 @@ export default function Ecosystem() {
                     <span className="text-xl font-medium text-content">Filter</span>
                     <ClearFilters />
                   </div>
-                  <div className="border-0 border-solid border-t border-gray-200 py-4">
+                  <div className={SHARED_STYLES.sectionDivider}>
                     <span className="font-medium text-content">Type</span>
                     <RefinementList
                       attribute="type"
                       sortBy={['count:desc']}
                       classNames={{
-                        count:
-                          'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
-                        list: 'list-none m-0 p-0',
-                        checkbox: 'border-solid h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500',
-                        labelText: 'ml-3 text-sm text-content',
+                        count: SHARED_STYLES.count,
+                        list: SHARED_STYLES.list,
+                        checkbox: SHARED_STYLES.checkbox,
+                        labelText: SHARED_STYLES.labelText,
                       }}
                     />
                   </div>
-                  <div className="border-0 border-solid border-t border-gray-200 py-4">
+                  <div className={SHARED_STYLES.sectionDivider}>
                     <span className="font-medium text-content">Category</span>
                     <RefinementList
                       attribute="category"
                       sortBy={['count:desc']}
                       classNames={{
-                        count:
-                          'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
-                        list: 'list-none m-0 p-0',
-                        checkbox: 'border-solid h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500',
-                        labelText: 'ml-3 text-sm text-content',
+                        count: SHARED_STYLES.count,
+                        list: SHARED_STYLES.list,
+                        checkbox: SHARED_STYLES.checkbox,
+                        labelText: SHARED_STYLES.labelText,
                       }}
                     />
                   </div>
-                  <div className="border-0 border-solid border-t border-gray-200 py-4">
+                  <div className={SHARED_STYLES.sectionDivider}>
                     <span className="font-medium text-content">Technology</span>
                     <RefinementList
                       attribute="allTechnologies"
                       sortBy={['count:desc']}
-                      limit={TECHNOLOGIES_SHOWN_AS_FACET}
                       classNames={{
-                        count:
-                          'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
-                        list: 'list-none m-0 p-0',
-                        checkbox: 'border-solid h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500',
-                        labelText: 'ml-3 text-sm text-content',
+                        count: SHARED_STYLES.count,
+                        list: SHARED_STYLES.list,
+                        checkbox: SHARED_STYLES.checkbox,
+                        labelText: SHARED_STYLES.labelText,
+                        showMore: SHARED_STYLES.showMore,
                       }}
+                      limit={TECHNOLOGIES_SHOWN_AS_FACET}
+                      showMoreLimit={TECHNOLOGY_COUNT}
+                      showMore={TECHNOLOGY_COUNT > TECHNOLOGIES_SHOWN_AS_FACET}
                     />
                   </div>
-                  <div className="border-0 border-solid border-t border-gray-200 py-4">
+                  <div className={SHARED_STYLES.sectionDivider}>
                     <span className="font-medium text-content">Vendor</span>
                     <RefinementList
                       attribute="vendor"
                       sortBy={['count:desc']}
-                      limit={VENDORS_SHOWN_AS_FACET}
                       classNames={{
-                        count:
-                          'ml-2 px-2 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10',
-                        list: 'list-none m-0 p-0',
-                        checkbox: 'border-solid h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500',
-                        labelText: 'ml-3 text-sm text-content',
+                        count: SHARED_STYLES.count,
+                        list: SHARED_STYLES.list,
+                        checkbox: SHARED_STYLES.checkbox,
+                        labelText: SHARED_STYLES.labelText,
+                        showMore: SHARED_STYLES.showMore,
                       }}
+                      limit={VENDORS_SHOWN_AS_FACET}
+                      showMoreLimit={VENDOR_COUNT}
+                      showMore={VENDOR_COUNT > VENDORS_SHOWN_AS_FACET}
                     />
                   </div>
-                  <div className="border-0 border-solid border-t border-gray-200 py-4">
+                  <div className={SHARED_STYLES.sectionDivider}>
                     <span className="font-medium text-content">Support level</span>
                     <ToggleRefinement
                       attribute="vendorOfficial"
                       label="Vendor supported"
                       classNames={{
-                        checkbox: 'border-solid h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500',
-                        labelText: 'ml-3 text-sm text-content',
+                        checkbox: SHARED_STYLES.checkbox,
+                        labelText: SHARED_STYLES.labelText,
                       }}
                     />
                   </div>
