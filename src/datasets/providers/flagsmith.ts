@@ -6,6 +6,12 @@ export const Flagsmith: Provider = {
   logo: FlagsmithSvg,
   technologies: [
     {
+      technology: '.NET',
+      vendorOfficial: true,
+      href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.Flagsmith',
+      category: ['Server'],
+    },
+    {
       technology: 'Go',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/go-sdk-contrib/tree/main/providers/flagsmith',
@@ -27,12 +33,6 @@ export const Flagsmith: Provider = {
       technology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/flagsmith',
-      category: ['Server'],
-    },
-    {
-      technology: '.NET',
-      vendorOfficial: true,
-      href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.Flagsmith',
       category: ['Server'],
     },
     {
