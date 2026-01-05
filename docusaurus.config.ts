@@ -206,7 +206,6 @@ const config: Config = {
   url: 'https://openfeature.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -400,6 +399,7 @@ const config: Config = {
   themeConfig,
   markdown: {
     mermaid: true,
+    hooks: { onBrokenMarkdownLinks: 'warn' },
   },
   themes: ['@docusaurus/theme-mermaid', 'docusaurus-theme-redoc'],
 };
