@@ -592,8 +592,8 @@
     "path": "/docs/reference/sdks/server/dart",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.13",
-      "version": "0.0.13",
+      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.15",
+      "version": "0.0.15",
       "stable": false
     },
     "spec": {
