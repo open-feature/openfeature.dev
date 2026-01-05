@@ -38,7 +38,7 @@ export const Flagsmith: Provider = {
     {
       technology: 'PHP',
       vendorOfficial: true,
-      href: 'TBD',
+      href: 'https://github.com/open-feature/php-sdk-contrib/tree/main/providers/Flagsmith',
       category: ['Server'],
     },
     {
