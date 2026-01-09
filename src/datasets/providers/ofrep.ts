@@ -36,5 +36,11 @@ export const OFREP: Provider = {
       href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Providers.Ofrep',
       vendorOfficial: true,
     },
+    {
+      technology: 'Java',
+      category: ['Server'],
+      href: 'https://github.com/open-feature/java-sdk-contrib/tree/main/providers/ofrep',
+      vendorOfficial: true,
+    },
   ],
 };
