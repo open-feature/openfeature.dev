@@ -124,8 +124,8 @@
     "path": "/docs/reference/sdks/server/dotnet",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.11.0",
-      "version": "2.11.0",
+      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.11.1",
+      "version": "2.11.1",
       "stable": true
     },
     "spec": {
@@ -592,8 +592,8 @@
     "path": "/docs/reference/sdks/server/dart",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.15",
-      "version": "0.0.15",
+      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.16",
+      "version": "0.0.16",
       "stable": false
     },
     "spec": {
