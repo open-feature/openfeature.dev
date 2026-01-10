@@ -91,11 +91,11 @@ function FeaturesZigZag() {
         <div className="py-12 md:py-20 border-t border-gray-800">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <div className="inline-flex text-sm font-semibold py-1 px-3 m-2 text-green-600 bg-green-200 rounded-full mb-4">
+            <div className="inline-flex text-sm font-semibold py-1 px-3 m-2 text-green-800 bg-green-200 rounded-full mb-4">
               Open source
             </div>
             <h1 className="h2 mb-4">Community driven feature flagging</h1>
-            <p className="text-xl text-gray-500 dark:text-gray-300 mb-4">
+            <p className="text-xl text-gray-700 dark:text-gray-300 mb-4">
               OpenFeature is an open source CNCF incubating project under the Apache 2 license. Check out the project on{' '}
               <Link to="https://github.com/open-feature">GitHub</Link> and consider joining the{' '}
               <Link to="/community/">OpenFeature community!</Link>
@@ -126,11 +126,11 @@ function FeaturesZigZag() {
                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
                   <div className="font-architects-daughter text-xl text-purple-600 mb-2">Avoid code-level lock-in</div>
                   <h3 className="h3 mb-3">One SDK, any backend</h3>
-                  <p className="text-xl text-gray-500 dark:text-gray-300 mb-4">
+                  <p className="text-xl text-gray-700 dark:text-gray-300 mb-4">
                     OpenFeature is designed to work with any feature flag management tool or in-house solution. This
                     enables you to switch between platforms or consolidate multiple platforms much more easily.
                   </p>
-                  <ul className="text-lg text-gray-500 dark:text-gray-300 -mb-2 pl-0">
+                  <ul className="text-lg text-gray-600 dark:text-gray-300 -mb-2 pl-0">
                     <li className="flex items-center mb-2">
                       <CheckboxIcon text="Continue to use your current solution" />
                     </li>
@@ -172,11 +172,11 @@ function FeaturesZigZag() {
                     Developed with the industry
                   </div>
                   <h3 className="h3 mb-3">Supports your favorite tools</h3>
-                  <p className="text-xl text-gray-500 dark:text-gray-300 mb-4">
+                  <p className="text-xl text-gray-700 dark:text-gray-300 mb-4">
                     OpenFeature has broad industry support, and many of the top open source and commercial tools have
                     created officially-supported providers.
                   </p>
-                  <ul className="text-lg text-gray-500 dark:text-gray-300 -mb-2 pl-0">
+                  <ul className="text-lg text-gray-600 dark:text-gray-300 -mb-2 pl-0">
                     <li className="flex items-center mb-2">
                       <CheckboxIcon text="Works with your favorite vendor" />
                     </li>
@@ -217,7 +217,7 @@ function FeaturesZigZag() {
                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
                   <div className="font-architects-daughter text-xl text-purple-600 mb-2">Ultimate flexibility</div>
                   <h3 className="h3 mb-3">Speaks your language</h3>
-                  <p className="text-xl text-gray-500 dark:text-gray-300 mb-4">
+                  <p className="text-xl text-gray-700 dark:text-gray-300 mb-4">
                     OpenFeature supports many of the top programming languages, with more on the way.
                   </p>
                 </div>
