@@ -28,7 +28,7 @@ function QuestionBlocks() {
               </div>
 
               <h4 className="h4 mb-2">What's a Feature Flag?</h4>
-              <p className="text-lg text-gray-500 dark:text-gray-300 text-center">
+              <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
                 Feature flags are a software development technique that allows teams to enable, disable or change the
                 behavior of certain features or code paths in a product or service, without modifying the source code.
               </p>
@@ -44,7 +44,7 @@ function QuestionBlocks() {
                 <FontAwesomeIcon className="absolute top-5 left-[18px] text-purple-100 fa-xl" icon={faUserGroup} />
               </div>
               <h4 className="h4 mb-2">What's OpenFeature?</h4>
-              <p className="text-lg text-gray-500 dark:text-gray-300 text-center">
+              <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
                 {siteConfig.customFields.description as string}
               </p>
             </div>
@@ -60,7 +60,7 @@ function QuestionBlocks() {
                 <FontAwesomeIcon className="absolute top-5 left-6 text-purple-100 fa-xl" icon={faClipboard} />
               </div>
               <h4 className="h4 mb-2">Why standardize?</h4>
-              <p className="text-lg text-gray-500 dark:text-gray-300 text-center">
+              <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
                 Standardizing feature flags unifies tools and vendors behind a common interface, avoiding vendor lock-in
                 at the code level. It provides a framework for building extensions and integrations that can be shared
                 across the community.

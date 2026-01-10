@@ -15,6 +15,7 @@
   --github-alert-default-color: rgb(175, 184, 193);
   --github-alert-warning-color: rgb(154, 103, 0);
   --github-alert-note-color: rgb(9, 105, 218);
+  --docsearch-muted-color: #525860;
 }
 
 .footer {
@@ -25,6 +26,7 @@
 [data-theme='dark'] {
   --ifm-color-primary: #8D8DFF;
   --ifm-navbar-background-color: #33363A;
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
 }
 
 .header-github-link:hover {
