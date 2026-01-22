@@ -364,3 +364,9 @@ article:has(.redoc-container) {
 .redoc-container .menu-content {
   border-right: none !important;
 }
+
+.DocSearch-Input:focus {
+  --tw-ring-offset-shadow: none;
+  --tw-ring-shadow: none;
+  box-shadow: none;
+}
