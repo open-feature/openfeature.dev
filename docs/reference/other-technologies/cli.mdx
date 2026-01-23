@@ -104,6 +104,16 @@ For more advanced usage, read on!
 
 The OpenFeature CLI provides the following commands:
 
+| Command | Description |
+|---------|-------------|
+| `init` | Initialize a new flag manifest |
+| `manifest` | Manage flag manifest files (add, list) |
+| `compare` | Compare two flag manifests |
+| `generate` | Generate strongly typed flag accessors |
+| `pull` | Fetch flags from remote sources |
+| `push` | Push flags to remote services |
+| `version` | Display CLI version |
+
 ### `init`
 
 Initialize a new flag manifest in your project.
@@ -116,6 +126,55 @@ This command creates a `flags.json` file in your current directory with the prop
 You can customize the manifest path using configuration options.
 
 See [here](https://github.com/open-feature/cli/blob/main/docs/commands/openfeature_init.md) for all available options.
+
+### `manifest`
+
+Manage flag manifest files with subcommands for adding and listing flags.
+
+```bash
+# Add a new flag interactively
+openfeature manifest add
+
+# Add a boolean flag
+openfeature manifest add new-feature --default-value false
+
+# Add a string flag with description
+openfeature manifest add welcome-message \
+  --type string \
+  --default-value "Hello!" \
+  --description "Welcome message for users"
+
+# List all flags in the manifest
+openfeature manifest list
+```
+
+The manifest command provides:
+- **add**: Add new flags to your manifest file
+- **list**: Display all flags with their configuration
+
+See [here](https://github.com/open-feature/cli/blob/main/docs/commands/openfeature_manifest.md) for all available options.
+
+### `compare`
+
+Compare two feature flag manifests and display the differences.
+
+```bash
+# Compare your local manifest against another
+openfeature compare --against production-flags.json
+
+# Compare with different output formats
+openfeature compare --against other.json --output json
+openfeature compare --against other.json --output yaml
+openfeature compare --against other.json --output flat
+```
+
+Output formats:
+- **tree**: Hierarchical tree view (default)
+- **flat**: Simple flat list
+- **json**: JSON format
+- **yaml**: YAML format
+
+See [here](https://github.com/open-feature/cli/blob/main/docs/commands/openfeature_compare.md) for all available options.
 
 ### `generate`
 
@@ -147,6 +206,48 @@ openfeature generate typescript --output ./src/flags
 | `nodejs` | Node.js flag accessors |
 
 See [here](https://github.com/open-feature/cli/blob/main/docs/commands/openfeature_generate.md) for all available options.
+
+### `pull`
+
+Fetch feature flag configurations from a remote source.
+
+```bash
+# Pull flags from a remote API
+openfeature pull --flag-source-url https://api.example.com
+
+# With authentication
+openfeature pull --flag-source-url https://api.example.com --auth-token secret-token
+
+# Pull from a JSON file URL
+openfeature pull --flag-source-url https://example.com/flags.json
+```
+
+The pull command supports:
+- HTTP/HTTPS endpoints implementing the OpenFeature Manifest Management API
+- Direct JSON/YAML file URLs
+- Authentication via bearer tokens
+
+See [here](https://github.com/open-feature/cli/blob/main/docs/commands/openfeature_pull.md) for all available options.
+
+### `push`
+
+Push local flag configurations to a remote flag management service.
+
+```bash
+# Push flags to a remote API
+openfeature push --flag-source-url https://api.example.com --auth-token secret-token
+
+# Dry run to preview changes
+openfeature push --flag-source-url https://api.example.com --dry-run
+```
+
+The push command intelligently:
+- Fetches existing flags from the remote
+- Compares local flags with remote flags
+- Creates new flags that don't exist remotely
+- Updates existing flags that have changed
+
+See [here](https://github.com/open-feature/cli/blob/main/docs/commands/openfeature_push.md) for all available options.
 
 ### `version`
 
@@ -189,6 +290,33 @@ The flag manifest file should follow the [JSON schema](https://raw.githubusercon
   }
 }
 ```
+
+## Remote Flag Management
+
+The OpenFeature CLI supports synchronizing flags with remote flag management services through a standardized OpenAPI-based approach. This enables teams to:
+
+- **Pull flags** from centralized flag management systems
+- **Push flags** back to maintain consistency across environments
+- **Integrate** with any service that implements the Manifest Management API
+
+### OpenAPI Client Pattern
+
+The CLI uses an OpenAPI-driven architecture for remote operations:
+
+1. **Standardized API**: All remote operations conform to the [Manifest Management API](https://github.com/open-feature/cli/blob/main/api/v0/sync.yaml) OpenAPI specification
+2. **Type-Safe Clients**: Generated clients provide compile-time safety and better IDE support
+3. **Provider Agnostic**: Any service implementing the API specification can integrate with the CLI
+
+For detailed information about implementing or extending the OpenAPI client pattern, see the [OpenAPI Client Pattern documentation](https://github.com/open-feature/cli/blob/main/docs/openapi-client-pattern.md).
+
+### Implementing the Manifest Management API
+
+If you're building a flag management service that needs to integrate with the OpenFeature CLI, implement the endpoints defined in the [sync.yaml](https://github.com/open-feature/cli/blob/main/api/v0/sync.yaml) specification:
+
+- `GET /openfeature/v0/manifest` - Retrieve the project manifest
+- `POST /openfeature/v0/manifest/flags` - Create new flags
+- `PUT /openfeature/v0/manifest/flags/{key}` - Update existing flags
+- `DELETE /openfeature/v0/manifest/flags/{key}` - Archive/delete flags
 
 ## Configuration
 

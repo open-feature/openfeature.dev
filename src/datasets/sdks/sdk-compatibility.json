@@ -4,8 +4,8 @@
     "path": "/docs/reference/sdks/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.19.2",
-      "version": "1.19.2",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.20.1",
+      "version": "1.20.1",
       "stable": true
     },
     "spec": {
@@ -124,8 +124,8 @@
     "path": "/docs/reference/sdks/server/dotnet",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.11.0",
-      "version": "2.11.0",
+      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.11.1",
+      "version": "2.11.1",
       "stable": true
     },
     "spec": {
@@ -184,8 +184,8 @@
     "path": "/docs/reference/sdks/server/go",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.17.0",
-      "version": "1.17.0",
+      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.17.1",
+      "version": "1.17.1",
       "stable": true
     },
     "spec": {
@@ -447,7 +447,7 @@
       },
       "Domains": {
         "status": "❌",
-        "path": "/docs/reference/sdks/client/kotlin#named-clients"
+        "path": "/docs/reference/sdks/client/kotlin#domains"
       },
       "Eventing": {
         "status": "✅",
@@ -462,12 +462,12 @@
         "path": "/docs/reference/sdks/client/kotlin#shutdown"
       },
       "Extending": {
-        "status": "⚠️",
+        "status": "✅",
         "path": "/docs/reference/sdks/client/kotlin#extending"
       },
       "Multi-Provider": {
-        "status": "❓",
-        "path": "/docs/reference/sdks/client/kotlin"
+        "status": "✅",
+        "path": "/docs/reference/sdks/client/kotlin#multi-provider"
       }
     }
   },
@@ -502,8 +502,8 @@
         "path": "/docs/reference/sdks/client/swift#logging"
       },
       "Domains": {
-        "status": "❓",
-        "path": "/docs/reference/sdks/client/swift"
+        "status": "❌",
+        "path": "/docs/reference/sdks/client/swift#domains"
       },
       "Eventing": {
         "status": "✅",
@@ -532,8 +532,8 @@
     "path": "/docs/reference/sdks/server/ruby",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/ruby-sdk/releases/tag/v0.4.1",
-      "version": "0.4.1",
+      "href": "https://github.com/open-feature/ruby-sdk/releases/tag/v0.5.0",
+      "version": "0.5.0",
       "stable": false
     },
     "spec": {
@@ -562,7 +562,7 @@
         "path": "/docs/reference/sdks/server/ruby#domains"
       },
       "Eventing": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/sdks/server/ruby#eventing"
       },
       "Tracking": {
@@ -592,8 +592,8 @@
     "path": "/docs/reference/sdks/server/dart",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.15",
-      "version": "0.0.15",
+      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.16",
+      "version": "0.0.16",
       "stable": false
     },
     "spec": {
