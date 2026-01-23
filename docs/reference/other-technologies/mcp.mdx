@@ -78,15 +78,20 @@ Alternatively, navigate to `Cursor Settings` -> `Tools & MCP` -> `New MCP Server
 <a href="https://vscode.dev/redirect/mcp/install?name=OpenFeature&config=%7B%22command%22%3A%20%22npx%22%2C%20%22args%22%3A%20%5B%22-y%22%2C%20%22%40openfeature%2Fmcp%22%5D%7D" class="mcp-install-button" target="_blank" rel="noopener noreferrer">📦 Install in VS Code</a>
 
 To open VS Code and automatically add the OpenFeature MCP, click the install button above.
+For more details, see the [VS Code MCP documentation](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).
 
-Alternatively, add to `.continue/config.json`:
+Alternatively, add to `.vscode/mcp.json` in your project:
 
 ```json
 {
   "mcpServers": {
     "OpenFeature": {
       "command": "npx",
-      "args": ["-y", "@openfeature/mcp"]
+      "args": ["-y", "@openfeature/mcp"],
+      "env": { // Optional environment variables
+        "OPENFEATURE_OFREP_BASE_URL": "<your-base-url>",
+        "OPENFEATURE_OFREP_API_KEY": "<your-api-key>"
+      }
     }
   }
 }
