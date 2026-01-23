@@ -366,3 +366,14 @@ article:has(.redoc-container) {
 .redoc-container .menu-content {
   border-right: none !important;
 }
+
+/*
+ * Fixes an issue where the focus ring from @tailwindcss/forms
+ * overlaps with the Algolia DocSearch component's internal UI.
+ */
+.DocSearch-Input:focus {
+  --tw-ring-offset-shadow: none;
+  --tw-ring-shadow: none;
+  box-shadow: none;
+}
+
