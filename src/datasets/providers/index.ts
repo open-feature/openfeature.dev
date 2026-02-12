@@ -30,6 +30,7 @@ import { MultiProvider } from './multi-provider';
 import { Hypertune } from './hypertune';
 import { Confidence } from './confidence';
 import { ConfigBee } from './configbee';
+import { Vercel } from './vercel';
 import { Tggl } from './tggl';
 import { OFREP } from './ofrep';
 import { VWO } from './vwo';
@@ -79,6 +80,7 @@ export const PROVIDERS: Provider[] = [
   Statsig,
   Unleash,
   UserDefaults,
+  Vercel,
   GrowthBook,
   MultiProvider,
   Tggl,
