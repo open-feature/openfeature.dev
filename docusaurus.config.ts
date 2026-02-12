@@ -94,9 +94,9 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
   },
   // announcements can go here
   announcementBar: {
-    id: 'announcing-kubecon-na-25',
+    id: 'announcing-kubecon-eu-26',
     content:
-      'Check out our <a href="/blog/kubecon-na-2025-recap">KubeCon NA \'25 recap, and our new training course!</a>',
+      'Join the global cloud native community at KubeCon + CloudNativeCon Europe 2026 · March 23-26 · <b><a target="_blank" rel="noopener noreferrer" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/?utm_source=openfeature&utm_medium=homepage&utm_campaign=18269725-KubeCon-EU-2026&utm_content=hero">Register Today!</a></b>'
   },
   footer: {
     style: 'dark',
