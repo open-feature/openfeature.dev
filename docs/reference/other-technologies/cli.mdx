@@ -107,7 +107,7 @@ The OpenFeature CLI provides the following commands:
 | Command | Description |
 |---------|-------------|
 | `init` | Initialize a new flag manifest |
-| `manifest` | Manage flag manifest files (add, list) |
+| `manifest` | Manage flag manifest files (add, list, delete) |
 | `compare` | Compare two flag manifests |
 | `generate` | Generate strongly typed flag accessors |
 | `pull` | Fetch flags from remote sources |
@@ -129,7 +129,7 @@ See [here](https://github.com/open-feature/cli/blob/main/docs/commands/openfeatu
 
 ### `manifest`
 
-Manage flag manifest files with subcommands for adding and listing flags.
+Manage flag manifest files with subcommands for adding, listing, and deleting flags.
 
 ```bash
 # Add a new flag interactively
@@ -146,11 +146,15 @@ openfeature manifest add welcome-message \
 
 # List all flags in the manifest
 openfeature manifest list
+
+# Delete a flag from the manifest
+openfeature manifest delete old-feature
 ```
 
 The manifest command provides:
 - **add**: Add new flags to your manifest file
 - **list**: Display all flags with their configuration
+- **delete**: Remove flags from your manifest file
 
 See [here](https://github.com/open-feature/cli/blob/main/docs/commands/openfeature_manifest.md) for all available options.
 
@@ -195,8 +199,6 @@ openfeature generate typescript --output ./src/flags
 
 | Language | Description |
 |----------|-------------|
-| `typescript` | TypeScript flag accessors |
-| `javascript` | JavaScript flag accessors |
 | `react` | React hooks for feature flags |
 | `go` | Go flag accessors |
 | `csharp` | C# flag accessors |
@@ -204,6 +206,7 @@ openfeature generate typescript --output ./src/flags
 | `python` | Python flag accessors |
 | `nestjs` | NestJS flag accessors |
 | `nodejs` | Node.js flag accessors |
+| `angular` | Angular flag accessors |
 
 See [here](https://github.com/open-feature/cli/blob/main/docs/commands/openfeature_generate.md) for all available options.
 

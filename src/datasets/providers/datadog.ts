@@ -17,5 +17,11 @@ export const Datadog: Provider = {
       href: 'https://www.npmjs.com/package/@datadog/openfeature-browser',
       category: ['Client'],
     },
+    {
+      technology: 'Swift',
+      vendorOfficial: true,
+      href: 'https://github.com/DataDog/dd-openfeature-provider-swift',
+      category: ['Client'],
+    },
   ],
 };

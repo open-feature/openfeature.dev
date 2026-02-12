@@ -1,7 +1,7 @@
 import { SDK } from '.';
 
 export const SveltekitFlagsSDK: SDK = {
-  name: 'Vercel Flags',
+  name: 'Flags',
   description: 'Vercel Flags SDK with OpenFeature Adapter',
   filename: 'javascript/sveltekit-flags-sdk',
   category: 'Client',
