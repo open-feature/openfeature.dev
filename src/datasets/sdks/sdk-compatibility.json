@@ -64,8 +64,8 @@
     "path": "/docs/reference/sdks/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.20.1",
-      "version": "1.20.1",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.20.2",
+      "version": "1.20.2",
       "stable": true
     },
     "spec": {
@@ -364,8 +364,8 @@
     "path": "/docs/reference/sdks/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.7.2",
-      "version": "1.7.2",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.7.3",
+      "version": "1.7.3",
       "stable": true
     },
     "spec": {
@@ -498,7 +498,7 @@
         "path": "/docs/reference/sdks/client/swift#hooks"
       },
       "Logging": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/sdks/client/swift#logging"
       },
       "Domains": {
