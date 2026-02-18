@@ -23,5 +23,11 @@ export const Datadog: Provider = {
       href: 'https://github.com/DataDog/dd-openfeature-provider-swift',
       category: ['Client'],
     },
+    {
+      technology: 'Kotlin',
+      vendorOfficial: true,
+      href: 'https://docs.datadoghq.com/feature_flags/client/android/',
+      category: ['Client'],
+    },
   ],
 };
