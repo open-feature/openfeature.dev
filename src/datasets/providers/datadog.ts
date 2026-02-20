@@ -8,20 +8,50 @@ export const Datadog: Provider = {
     {
       technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://www.npmjs.com/package/@datadog/openfeature-node-server',
+      href: 'https://docs.datadoghq.com/feature_flags/server/nodejs',
       category: ['Server'],
     },
     {
       technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://www.npmjs.com/package/@datadog/openfeature-browser',
+      href: 'https://docs.datadoghq.com/feature_flags/client/javascript?tab=npm',
+      category: ['Client'],
+    },
+    {
+      technology: 'React',
+      vendorOfficial: true,
+      href: 'https://docs.datadoghq.com/feature_flags/client/react?tab=npm',
       category: ['Client'],
     },
     {
       technology: 'Swift',
       vendorOfficial: true,
-      href: 'https://github.com/DataDog/dd-openfeature-provider-swift',
+      href: 'https://docs.datadoghq.com/feature_flags/client/ios?tab=swiftpackagemanagerspm',
       category: ['Client'],
+    },
+    {
+      technology: 'Kotlin',
+      vendorOfficial: true,
+      href: 'https://docs.datadoghq.com/feature_flags/client/android/',
+      category: ['Client'],
+    },
+    {
+      technology: 'Java',
+      vendorOfficial: true,
+      href: 'https://docs.datadoghq.com/feature_flags/server/java?tab=gradlegroovy',
+      category: ['Server'],
+    },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://docs.datadoghq.com/feature_flags/server/python',
+      category: ['Server'],
+    },
+    {
+      technology: 'Ruby',
+      vendorOfficial: true,
+      href: 'https://docs.datadoghq.com/feature_flags/server/ruby',
+      category: ['Server'],
     },
   ],
 };
