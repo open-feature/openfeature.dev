@@ -532,8 +532,8 @@
     "path": "/docs/reference/sdks/server/ruby",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/ruby-sdk/releases/tag/v0.5.0",
-      "version": "0.5.0",
+      "href": "https://github.com/open-feature/ruby-sdk/releases/tag/v0.6.4",
+      "version": "0.6.4",
       "stable": false
     },
     "spec": {
@@ -550,11 +550,11 @@
         "path": "/docs/reference/sdks/server/ruby#targeting"
       },
       "Hooks": {
-        "status": "⚠️",
+        "status": "✅",
         "path": "/docs/reference/sdks/server/ruby#hooks"
       },
       "Logging": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/sdks/server/ruby#logging"
       },
       "Domains": {
@@ -566,19 +566,19 @@
         "path": "/docs/reference/sdks/server/ruby#eventing"
       },
       "Tracking": {
-        "status": "❓",
-        "path": "/docs/reference/sdks/server/ruby"
+        "status": "✅",
+        "path": "/docs/reference/sdks/server/ruby#tracking"
       },
       "Transaction Context Propagation": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/sdks/server/ruby#transaction-context-propagation"
       },
       "Shutdown": {
-        "status": "⚠️",
+        "status": "✅",
         "path": "/docs/reference/sdks/server/ruby#shutdown"
       },
       "Extending": {
-        "status": "⚠️",
+        "status": "✅",
         "path": "/docs/reference/sdks/server/ruby#extending"
       },
       "Multi-Provider": {
@@ -652,8 +652,8 @@
     "path": "/docs/reference/sdks/server/rust",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/rust-sdk/releases/tag/open-feature-v0.2.7",
-      "version": "0.2.7",
+      "href": "https://github.com/open-feature/rust-sdk/releases/tag/open-feature-v0.3.0",
+      "version": "0.3.0",
       "stable": false
     },
     "spec": {
