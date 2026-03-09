@@ -130,15 +130,6 @@ object = client.fetch_object_value(flag_key: 'object_value', default_value: { na
 [Providers](/docs/reference/concepts/provider) are an abstraction between a flag management system and the OpenFeature SDK.
 Look [here](/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=Provider&instant_search%5BrefinementList%5D%5Btechnology%5D%5B0%5D=Ruby) for a complete list of available providers.
 
-#### Known Providers
-
-| Provider | Package |
-|----------|---------|
-| flagd | [openfeature-flagd-provider](https://rubygems.org/gems/openfeature-flagd-provider) |
-| Flipt | [openfeature-flipt-provider](https://rubygems.org/gems/openfeature-flipt-provider) |
-| Flagsmith | [openfeature-flagsmith-provider](https://rubygems.org/gems/openfeature-flagsmith-provider) |
-| GO Feature Flag | [openfeature-go-feature-flag-provider](https://rubygems.org/gems/openfeature-go-feature-flag-provider) |
-
 If the provider you're looking for hasn't been created yet, see the [develop a provider](#develop-a-provider) section to learn how to build it yourself.
 
 Once you've added a provider as a dependency, it can be registered with OpenFeature like this:
