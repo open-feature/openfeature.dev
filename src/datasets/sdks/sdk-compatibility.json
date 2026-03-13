@@ -592,8 +592,8 @@
     "path": "/docs/reference/sdks/server/dart",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.16",
-      "version": "0.0.16",
+      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.17",
+      "version": "0.0.17",
       "stable": false
     },
     "spec": {
@@ -626,8 +626,8 @@
         "path": "/docs/reference/sdks/server/dart#eventing"
       },
       "Tracking": {
-        "status": "❓",
-        "path": "/docs/reference/sdks/server/dart"
+        "status": "✅",
+        "path": "/docs/reference/sdks/server/dart#tracking"
       },
       "Transaction Context Propagation": {
         "status": "✅",
