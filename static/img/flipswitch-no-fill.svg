@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 500 500">
+  <!-- Toggle track -->
+  <rect x="31.25" y="125" width="437.5" height="250" rx="125" ry="125" fill="none" stroke="currentColor" stroke-width="39"/>
+  <!-- Toggle dot (on position) -->
+  <circle cx="343.75" cy="250" r="78.125" fill="currentColor"/>
+</svg>
