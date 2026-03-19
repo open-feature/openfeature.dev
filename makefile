@@ -17,16 +17,16 @@ node_modules:
 	mkdir -p $@
 
 build: yarn.lock
-	$(DOCKER) yarn build
+	$(DOCKER) sh -c "corepack enable && yarn build"
 
 version: yarn.lock
-	$(DOCKER) npx docusaurus --version
+	$(DOCKER) sh -c "corepack enable && npx docusaurus --version"
 
 start: yarn.lock
-	$(DOCKER_I) yarn run start -- --poll --host 0.0.0.0
+	$(DOCKER_I) sh -c "corepack enable && yarn run start -- --poll --host 0.0.0.0"
 
 lint: yarn.lock
-	$(DOCKER) yarn run lint
+	$(DOCKER) sh -c "corepack enable && yarn run lint"
 
 clean:
 	rm -rf ./node_modules
