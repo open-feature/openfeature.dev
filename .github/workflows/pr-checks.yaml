@@ -16,16 +16,22 @@ jobs:
         with:
           submodules: recursive
 
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+      - name: Enable Corepack
+        run: corepack enable
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
         with:
           node-version-file: '.nvmrc'
           cache: 'yarn'
 
+      - name: Install dependencies
+        run: yarn install --immutable
+
       - name: Lint
-        run: make lint
+        run: yarn run lint
 
       - name: Build
-        run: make build
-      
+        run: yarn build
+
       - name: Test
         run: make test
