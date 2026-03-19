@@ -10,6 +10,7 @@ import { DevCycle } from './devcycle';
 import { EnvVar } from './env-var';
 import { Flagd } from './flagd';
 import { Flagsmith } from './flagsmith';
+import { Flipswitch } from './flipswitch';
 import { Flipt } from './flipt';
 import { Goff } from './goff';
 import { Harness } from './harness';
@@ -65,6 +66,7 @@ export const PROVIDERS: Provider[] = [
   FeatBit,
   Flagd,
   Flagsmith,
+  Flipswitch,
   Flipt,
   Goff,
   Harness,
