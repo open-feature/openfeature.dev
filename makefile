@@ -11,7 +11,7 @@ all: yarn.lock
 
 yarn.lock: package.json node_modules
 	$(MAKE clean)
-	$(DOCKER) yarn install --immutable
+	$(DOCKER) sh -c "corepack enable && yarn install --immutable"
 
 node_modules:
 	mkdir -p $@
