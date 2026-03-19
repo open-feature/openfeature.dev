@@ -24,11 +24,14 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'yarn'
 
+      - name: Install dependencies
+        run: yarn install --immutable
+
       - name: Lint
-        run: make lint
+        run: yarn run lint
 
       - name: Build
-        run: make build
+        run: yarn build
 
       - name: Test
         run: make test
