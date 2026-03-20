@@ -1,7 +1,7 @@
 ---
 title: 'Welcoming the 2026-2028 OpenFeature Governance Board Members'
 description: 'The 2026 Governance Board elections have concluded. Meet the four new members joining the OpenFeature Governance Board for the 2026-2028 term.'
-date: 2026-02-18
+date: 2026-03-20
 slug: 'governance-board-2026'
 authors: ['beeme1mr']
 tags: ['governance', 'community']
