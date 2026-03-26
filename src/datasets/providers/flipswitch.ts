@@ -14,13 +14,6 @@ export const Flipswitch: Provider = {
     { ...jsSdk, category: ['Client'] as const },
     { ...jsSdk, category: ['Server'] as const },
     {
-      technology: 'React',
-      parentTechnology: 'JavaScript',
-      vendorOfficial: true,
-      href: 'https://docs.flipswitch.io/docs/sdks/react',
-      category: ['Client'],
-    },
-    {
       technology: 'Angular',
       parentTechnology: 'JavaScript',
       vendorOfficial: true,
@@ -35,15 +28,16 @@ export const Flipswitch: Provider = {
       category: ['Server'],
     },
     {
-      technology: 'Java',
+      technology: 'React',
+      parentTechnology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://docs.flipswitch.io/docs/sdks/java',
-      category: ['Server'],
+      href: 'https://docs.flipswitch.io/docs/sdks/react',
+      category: ['Client'],
     },
     {
-      technology: 'Python',
+      technology: '.NET',
       vendorOfficial: true,
-      href: 'https://docs.flipswitch.io/docs/sdks/python',
+      href: 'https://docs.flipswitch.io/docs/sdks/dotnet',
       category: ['Server'],
     },
     {
@@ -53,9 +47,27 @@ export const Flipswitch: Provider = {
       category: ['Server'],
     },
     {
-      technology: '.NET',
+      technology: 'Java',
       vendorOfficial: true,
-      href: 'https://docs.flipswitch.io/docs/sdks/dotnet',
+      href: 'https://docs.flipswitch.io/docs/sdks/java',
+      category: ['Server'],
+    },
+    {
+      technology: 'PHP',
+      vendorOfficial: true,
+      href: 'https://docs.flipswitch.io/docs/sdks/php',
+      category: ['Server'],
+    },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://docs.flipswitch.io/docs/sdks/python',
+      category: ['Server'],
+    },
+    {
+      technology: 'Ruby',
+      vendorOfficial: true,
+      href: 'https://docs.flipswitch.io/docs/sdks/ruby',
       category: ['Server'],
     },
     {
@@ -69,18 +81,6 @@ export const Flipswitch: Provider = {
       vendorOfficial: true,
       href: 'https://docs.flipswitch.io/docs/sdks/swift',
       category: ['Client'],
-    },
-    {
-      technology: 'PHP',
-      vendorOfficial: true,
-      href: 'https://docs.flipswitch.io/docs/sdks/php',
-      category: ['Server'],
-    },
-    {
-      technology: 'Ruby',
-      vendorOfficial: true,
-      href: 'https://docs.flipswitch.io/docs/sdks/ruby',
-      category: ['Server'],
     },
   ],
 };
