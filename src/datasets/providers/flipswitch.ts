@@ -27,7 +27,7 @@ export const Flipswitch: Provider = {
       href: 'https://docs.flipswitch.io/docs/sdks/angular',
       category: ['Client'],
     },
-{
+    {
       technology: 'NestJS',
       parentTechnology: 'JavaScript',
       vendorOfficial: true,
