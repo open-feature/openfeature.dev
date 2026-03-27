@@ -1,5 +1,6 @@
 import { SDKS } from '.';
-import { EcosystemElement } from '../types';
+import compatibilityData from './sdk-compatibility.json';
+import { EcosystemElement, SdkCompatibility } from '../types';
 
 import CSharpSvg from '@site/static/img/c-sharp-no-fill.svg';
 import GoSvg from '@site/static/img/go-no-fill.svg';
@@ -37,8 +38,68 @@ const LogoMap: Record<string, EcosystemElement['logo']> = {
   'flags-sdk-no-fill.svg': FlagsSDKSvg,
 };
 
+const sdkCompatibility = compatibilityData as SdkCompatibility[];
+
+function compareVersions(a: string, b: string) {
+  const aParts = a.split('.').map(Number);
+  const bParts = b.split('.').map(Number);
+  const maxLength = Math.max(aParts.length, bParts.length);
+
+  for (let index = 0; index < maxLength; index++) {
+    const aPart = aParts[index] ?? 0;
+    const bPart = bParts[index] ?? 0;
+
+    if (aPart !== bPart) {
+      return aPart - bPart;
+    }
+  }
+
+  return 0;
+}
+
+const latestSpecVersion = sdkCompatibility.reduce(
+  (latest, sdk) => (compareVersions(sdk.spec.version, latest) > 0 ? sdk.spec.version : latest),
+  '0.0.0',
+);
+
+const sdkCompatibilityByPath = new Map(
+  sdkCompatibility.map((sdk) => [
+    sdk.path,
+    {
+      release: {
+        version: sdk.release.version,
+        href: sdk.release.href,
+        stable: sdk.release.stable,
+      },
+      spec: {
+        version: sdk.spec.version,
+        href: sdk.spec.href,
+        latest: sdk.spec.version === latestSpecVersion,
+      },
+    },
+  ]),
+);
+
+function getInheritedCompatibilityPath(href: string, repo?: string) {
+  if (repo !== 'js-sdk') {
+    return undefined;
+  }
+
+  if (href.startsWith('/docs/reference/sdks/server/javascript/')) {
+    return '/docs/reference/sdks/server/javascript';
+  }
+
+  if (href.startsWith('/docs/reference/sdks/client/web/')) {
+    return '/docs/reference/sdks/client/web';
+  }
+
+  return undefined;
+}
+
 export const ECOSYSTEM_SDKS: EcosystemElement[] = SDKS.map((sdk) => {
   const logo = LogoMap[sdk.logoKey];
+  const sdkVersions =
+    sdkCompatibilityByPath.get(sdk.href) ?? sdkCompatibilityByPath.get(getInheritedCompatibilityPath(sdk.href, sdk.repo));
 
   if (!logo) {
     throw new Error(`Unable to find a logo that matches the key ${sdk.logoKey}`);
@@ -55,5 +116,6 @@ export const ECOSYSTEM_SDKS: EcosystemElement[] = SDKS.map((sdk) => {
     parentTechnology: sdk.parentTechnology,
     type: 'SDK',
     vendorOfficial: false,
+    sdkVersions,
   };
 });

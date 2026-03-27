@@ -1,5 +1,10 @@
 import type { ComponentType, SVGProps } from 'react';
 
+type VersionReference = {
+  version: string;
+  href: string;
+};
+
 export type EcosystemElement = {
   vendor?: string;
   href: string;
@@ -12,6 +17,14 @@ export type EcosystemElement = {
   type: Type;
   vendorOfficial: boolean;
   category: Category[];
+  sdkVersions?: {
+    release: VersionReference & {
+      stable: boolean;
+    };
+    spec: VersionReference & {
+      latest: boolean;
+    };
+  };
 };
 
 export type Technology =
