@@ -278,8 +278,8 @@
         "path": "/docs/reference/sdks/server/python#eventing"
       },
       "Tracking": {
-        "status": "❓",
-        "path": "/docs/reference/sdks/server/python"
+        "status": "✅",
+        "path": "/docs/reference/sdks/server/python#tracking"
       },
       "Transaction Context Propagation": {
         "status": "✅",
