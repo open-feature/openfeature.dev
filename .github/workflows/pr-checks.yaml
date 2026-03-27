@@ -34,4 +34,4 @@ jobs:
         run: yarn build
 
       - name: Test
-        run: make test
+        run: docker run -v $(pwd):/test --rm wjdp/htmltest -s -c .htmltest.yml build
