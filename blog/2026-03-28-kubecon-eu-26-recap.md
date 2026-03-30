@@ -3,9 +3,10 @@ title: "KubeCon EU 2026 Recap: In-Person Discussions and What's Next"
 description: 'A recap of OpenFeature at KubeCon EU 2026 in Amsterdam. Sessions, booth conversations, and summaries from our in-person community discussions on experimentation, OFREP, flagd, AI workflows, and more.'
 date: 2026-03-28
 categories: ['OpenFeature', 'KubeCon', 'Feature Flags', 'CloudNative']
+tags: [kubecon, cncf, recap]
 slug: 'kubecon-eu-2026-recap'
 authors: ['jonathannorris']
-image: /img/blog/2026-03-19-kubecon-eu-26/kubecon-eu-26.png
+image: /img/blog/2026-03-28-kubecon-eu-26-recap/kubecon-eu-26.png
 ---
 
 KubeCon EU 2026 in Amsterdam is in the books. We had a great week. Well-attended sessions, busy booth conversations, a party on a boat that never left the dock, and a series of focused in-person discussions on the future of the project. Here's a summary of the week.
@@ -16,9 +17,9 @@ KubeCon EU 2026 in Amsterdam is in the books. We had a great week. Well-attended
 
 OpenFeature had three sessions on the schedule this year:
 
-- [**Building Secure Package Pipelines**](https://sched.co/2EWfG): Andre Silva walked through how to build a secure open-source package pipeline at the Maintainer Summit, covering OIDC authentication, SBOM generation, cryptographic attestations, and automated releases.
+- [**Building Secure Package Pipelines**](https://sched.co/2EWfG): André Silva walked through how to build a secure open-source package pipeline at the Maintainer Summit, covering OIDC authentication, SBOM generation, cryptographic attestations, and automated releases.
 
-- [**OpenFeature Update From the Maintainers**](https://sched.co/2EF4j): Lukas Reining, Andre Silva, Thomas Poignant, and Alexandra Oberaigner shared updates on the MCP server, the OpenFeature GitHub Action for flag cleanup, and the stable release of OFREP. The session was part of the Maintainer Track on Wednesday.
+- [**OpenFeature Update From the Maintainers**](https://sched.co/2EF4j): Lukas Reining, André Silva, Thomas Poignant, and Alexandra Oberaigner shared updates on the MCP server, the OpenFeature GitHub Action for flag cleanup, and the stable release of OFREP. The session was part of the Maintainer Track on Wednesday.
 
 <img src={require('@site/static/img/blog/2026-03-28-kubecon-eu-26-recap/maintainer-update.jpeg').default} />
 
@@ -44,7 +45,7 @@ The experimentation discussion focused on what OpenFeature needs to better suppo
 
 **Key themes:**
 
-- **Standardized context for experimentation:** Multiple participants identified that having only a targeting key is limiting. There may be a need for well-understood metadata fields (browser, geo, device type) similar to semantic conventions in OpenTelemetry, so systems can map these consistently.
+- **Standardized context for experimentation:** Multiple participants identified that having only a targeting key is limiting. There may be a need for well-understood metadata fields (browser, geo, device type) similar to semantic conventions in OpenTelemetry, so systems can map these consistently. This aligns with the existing [Feature Flag Semantic Conventions SIG](https://github.com/open-telemetry/semantic-conventions) work in OTel.
 
 - **Evaluation metrics in the SDK:** There was interest in having the SDK produce basic evaluation metrics (e.g. per flag key, by targeting reason, unique targeting keys) that analytics vendors could consume. This could be an official hook we publish rather than new API surface, since it's buildable with hooks today.
 
@@ -135,9 +136,9 @@ The observability discussion focused on deepening the integration between OpenFe
 
 **Action items:**
 
-- Start a SIG focused on SDK telemetry coverage
+- Increase participation in the existing [Feature Flag Semantic Conventions SIG](https://github.com/open-telemetry/semantic-conventions) in OTel
 - Stabilize telemetry conventions to "stable" status
-- Push for feature flag metrics semantic conventions in OTel
+- Push for feature flag metrics semantic conventions through the SIG
 - ADR for event tracking and computation in flagd
 
 ### AI Workflow Integrations
@@ -157,9 +158,9 @@ The AI discussion explored how OpenFeature can better serve AI application devel
 - Engage with the community to understand where AI tooling (e.g. write permissions, automated flag management) can add value to the project itself.
 - Validate that the community sees value in these directions before investing heavily.
 
-### Expanding the TC
+### Expanding the Technical Committee
 
-The group discussed growing the Technical Committee to ensure broader representation and sustainable governance.
+The group discussed growing the Technical Committee (TC) to ensure broader representation and sustainable governance.
 
 - **Target size:** The consensus is that the TC needs at least 5 members (currently 3).
 - **Recruitment:** Several maintainers will reach out to potential candidates within their organizations and the broader community. The goal is to bring in people who are already active contributors.
