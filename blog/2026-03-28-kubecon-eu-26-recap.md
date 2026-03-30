@@ -83,8 +83,8 @@ The OFREP discussion covered several active topics as the protocol approaches it
 **Action items:**
 
 - ADR for targeting key hash in request headers ([protocol#70](https://github.com/open-feature/protocol/issues/70))
-- Create issue for tracking endpoint in OFREP ([protocol#71](https://github.com/open-feature/protocol/issues/71))
-- Open issue for gRPC definitions ([protocol#72](https://github.com/open-feature/protocol/issues/72))
+- Tracking endpoint for OFREP ([protocol#71](https://github.com/open-feature/protocol/issues/71))
+- gRPC definitions for OFREP ([protocol#72](https://github.com/open-feature/protocol/issues/72))
 - Reintroduce OFREP SIG meetings
 
 ### flagd
