@@ -45,11 +45,11 @@ The experimentation discussion focused on what OpenFeature needs to better suppo
 
 **Key themes:**
 
-- **Standardized context for experimentation:** Multiple participants identified that having only a targeting key is limiting. There may be a need for well-understood metadata fields (browser, geo, device type) similar to semantic conventions in OpenTelemetry, so systems can map these consistently. This aligns with the existing [Feature Flag Semantic Conventions SIG](https://github.com/open-telemetry/semantic-conventions) work in OTel.
+- **[Standardized context for experimentation](https://github.com/open-feature/spec/issues/370):** Multiple participants identified that having only a targeting key is limiting. There may be a need for well-understood metadata fields (browser, geo, device type) similar to semantic conventions in OpenTelemetry, so systems can map these consistently. This aligns with the existing [Feature Flag Semantic Conventions SIG](https://github.com/open-telemetry/semantic-conventions) work in OTel.
 
-- **Evaluation metrics in the SDK:** There was interest in having the SDK produce basic evaluation metrics (e.g. per flag key, by targeting reason, unique targeting keys) that analytics vendors could consume. This could be an official hook we publish rather than new API surface, since it's buildable with hooks today.
+- **[Evaluation metrics in the SDK](https://github.com/open-feature/spec/issues/371):** There was interest in having the SDK produce basic evaluation metrics (e.g. per flag key, by targeting reason, unique targeting keys) that analytics vendors could consume. This could be an official hook we publish rather than new API surface, since it's buildable with hooks today.
 
-- **Experiment grouping:** Several participants described models where experimentation is a separate concept from feature flags, with a 1-to-N mapping between experiments and flags. There's currently no standard way in OpenFeature to describe grouped flags that share targeting under a shared experiment ID. Flag metadata could carry experiment associations, but this isn't standardized yet.
+- **[Experiment grouping](https://github.com/open-feature/spec/issues/370):** Several participants described models where experimentation is a separate concept from feature flags, with a 1-to-N mapping between experiments and flags. There's currently no standard way in OpenFeature to describe grouped flags that share targeting under a shared experiment ID. Flag metadata could carry experiment associations, but this isn't standardized yet.
 
 - **Tracking API in OFREP:** The question of whether OFREP should have an endpoint for collecting tracking events is an open topic.
 
@@ -57,10 +57,10 @@ The experimentation discussion focused on what OpenFeature needs to better suppo
 
 **Action items:**
 
-- Gather feedback from vendors on what's missing in the SDKs
-- Explore an OFREP API for tracking/event collection
+- Gather feedback from vendors on what's missing in the SDKs ([spec#370](https://github.com/open-feature/spec/issues/370))
+- Explore an OFREP API for tracking/event collection ([protocol#71](https://github.com/open-feature/protocol/issues/71))
 - Add tracking to the OFREP demo
-- Improve experimentation messaging/documentation on the website
+- Improve experimentation messaging/documentation on the website ([openfeature.dev#1362](https://github.com/open-feature/openfeature.dev/issues/1362))
 
 ### OFREP
 
@@ -72,19 +72,19 @@ The OFREP discussion covered several active topics as the protocol approaches it
 
 - **[Local caching for client-side SDKs](https://github.com/open-feature/protocol/issues/65):** Currently there's no standardized way to do caching with OFREP. A caching API needs to be defined so clients can persist configurations and know when to flush.
 
-- **Routing and session affinity:** The current POST-based API makes load balancing harder since routing requires parsing the body. The group discussed adding a hash of the targeting key to a request header to enable routing without exposing PII. An ADR will be created for this.
+- **[Routing and session affinity](https://github.com/open-feature/protocol/issues/70):** The current POST-based API makes load balancing harder since routing requires parsing the body. The group discussed adding a hash of the targeting key to a request header to enable routing without exposing PII. An ADR will be created for this.
 
-- **Tracking support:** The group discussed whether OFREP should define an event endpoint. Pre-aggregation on the client side, configurable flush intervals, and bulk payloads were discussed as implementation considerations. The evaluation response could include the events endpoint URL, letting the provider enable tracking conditionally.
+- **[Tracking support](https://github.com/open-feature/protocol/issues/71):** The group discussed whether OFREP should define an event endpoint. Pre-aggregation on the client side, configurable flush intervals, and bulk payloads were discussed as implementation considerations. The evaluation response could include the events endpoint URL, letting the provider enable tracking conditionally.
 
-- **OpenAPI vs gRPC:** Some participants noted that their organizations require gRPC for public APIs. An issue will be opened to explore gRPC definitions for OFREP.
+- **[OpenAPI vs gRPC](https://github.com/open-feature/protocol/issues/72):** Some participants noted that their organizations require gRPC for public APIs. An issue will be opened to explore gRPC definitions for OFREP.
 
 - **Timeline:** The target is OFREP 1.0 by Q2 2026.
 
 **Action items:**
 
-- ADR for targeting key hash in request headers
-- Create issue for tracking endpoint in OFREP
-- Open issue for gRPC definitions
+- ADR for targeting key hash in request headers ([protocol#70](https://github.com/open-feature/protocol/issues/70))
+- Create issue for tracking endpoint in OFREP ([protocol#71](https://github.com/open-feature/protocol/issues/71))
+- Open issue for gRPC definitions ([protocol#72](https://github.com/open-feature/protocol/issues/72))
 - Reintroduce OFREP SIG meetings
 
 ### flagd
@@ -114,11 +114,11 @@ The consensus was to drive toward a **v1.0 milestone with defined test cases** f
 
 **Action items:**
 
-- Performance benchmarks and load testing, gate PRs on performance where applicable
-- Enhance the ADR for the sync API; modularize and define what services are actually needed
+- Performance benchmarks and load testing, gate PRs on performance where applicable ([flagd#1915](https://github.com/open-feature/flagd/issues/1915))
+- Enhance the ADR for the sync API; modularize and define what services are actually needed ([flagd#1781](https://github.com/open-feature/flagd/issues/1781))
 - Changes to the sync API for 1.0 (agreed in principle)
-- Case-insensitive matching for evaluation
-- Explore CNCF support for performance testing on dedicated machines
+- Case-insensitive matching for evaluation ([flagd#1916](https://github.com/open-feature/flagd/issues/1916))
+- Explore CNCF support for performance testing on dedicated machines ([flagd#1915](https://github.com/open-feature/flagd/issues/1915))
 
 ### OTel Observability
 
@@ -126,7 +126,7 @@ The observability discussion focused on deepening the integration between OpenFe
 
 **Key themes:**
 
-- **Move OTel into the SDKs:** The group proposed moving telemetry from hooks into the SDKs natively. This would mean traces and metrics are built-in rather than requiring separate hook setup. Likely makes sense to include it in the flagd providers by default.
+- **[Move OTel into the SDKs](https://github.com/open-feature/spec/issues/372):** The group proposed moving telemetry from hooks into the SDKs natively. This would mean traces and metrics are built-in rather than requiring separate hook setup. Likely makes sense to include it in the flagd providers by default.
 
 - **Native vs hooks:** There's a question of whether to extend the SDK API to include traces and metrics directly, or continue with the hook-based approach.
 
@@ -151,7 +151,7 @@ The AI discussion explored how OpenFeature can better serve AI application devel
 
 - **Experimentation for AI workflows:** How can developers use OpenFeature's experimentation capabilities to tweak models and manage AI workflow rollouts? This ties back to the experimentation discussion.
 
-- **Standards for flag creation:** Can we define a standard way for AI tools to create and manage feature flags? This would enable tighter integration with AI-assisted development workflows.
+- **[Standards for flag creation](https://github.com/open-feature/protocol/issues/73):** Can we define a standard way for AI tools to create and manage feature flags? This would enable tighter integration with AI-assisted development workflows.
 
 **OpenFeature using AI:**
 
