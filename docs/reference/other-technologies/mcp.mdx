@@ -234,12 +234,31 @@ Supports both single flag and bulk evaluation.
 
 To use OFREP flag evaluation features, configure authentication and endpoint details. The server checks configuration in this priority order:
 
-1. **Environment Variables**
-   - `OPENFEATURE_OFREP_BASE_URL` or `OFREP_BASE_URL`
+1. **Tool Arguments**
+   - `base_url`
+   - `auth.bearer_token` / `auth.api_key`
+
+2. **Environment Variables**
+   - `OFREP_ENDPOINT` (preferred) or `OPENFEATURE_OFREP_BASE_URL` / `OFREP_BASE_URL`
+   - `OFREP_HEADERS` (comma-separated `key=value` pairs, URL-decoded before parsing)
+   - `OFREP_TIMEOUT_MS` (positive integer milliseconds)
    - `OPENFEATURE_OFREP_BEARER_TOKEN` or `OFREP_BEARER_TOKEN`
    - `OPENFEATURE_OFREP_API_KEY` or `OFREP_API_KEY`
 
-2. **Configuration File**: `~/.openfeature-mcp.json`
+3. **Configuration File**: `~/.openfeature-mcp.json`
+
+`OFREP_HEADERS` parsing follows the OFREP protocol convention:
+
+- URL-decode the full value first
+- Split by comma into header pairs
+- Split each pair by the first equals sign (`=`)
+- Trim whitespace around keys/values
+- Skip malformed entries
+
+Examples:
+
+- `OFREP_HEADERS=Authorization=Bearer%20token,X-Custom=value`
+- `OFREP_TIMEOUT_MS=5000`
 
 Example `~/.openfeature-mcp.json`:
 
@@ -248,7 +267,11 @@ Example `~/.openfeature-mcp.json`:
   "OFREP": {
     "baseUrl": "https://flags.example.com",
     "bearerToken": "<your-token>",
-    "apiKey": "<your-api-key>"
+    "apiKey": "<your-api-key>",
+    "headers": {
+      "X-Custom-Header": "value"
+    },
+    "timeoutMs": 5000
   }
 }
 ```
