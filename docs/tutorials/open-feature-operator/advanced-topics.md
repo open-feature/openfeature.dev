@@ -64,7 +64,7 @@ We strongly recommend using `kind` for this demo, but if you already have a K8s 
 Download the cluster definition file, `kind-cluster-advanced-topics.yaml`:
 
 ```shell
-curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/kind-cluster-advanced-topics.yaml > kind-cluster-advanced-topics.yaml
+curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/kind-cluster-advanced-topics.yaml > kind-cluster-advanced-topics.yaml
 ```
 
 Then, create our cluster using the `kind-cluster-advanced-topics.yaml` file:
@@ -85,7 +85,7 @@ If your cluster already has cert manager, or you're using another solution for c
 Install cert-manager, and wait for it to be ready:
 
 ```shell
-kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.13.2/cert-manager.yaml && \
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.20.2/cert-manager.yaml && \
 kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'cert-manager'
 ```
 
@@ -96,14 +96,16 @@ For our NGINX ingress to work with `kind`, we need to install some additional co
 Download our NGINX controller configuration customization:
 
 ```shell
-curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/nginx-config.yaml > nginx-config.yaml
+curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/nginx-config.yaml > nginx-config.yaml
+curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/nginx-kind-patch.yaml > nginx-kind-patch.yaml
 ```
 
 Install the NGINX controller:
 
 ```shell
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.15.1/deploy/static/provider/kind/deploy.yaml
 kubectl apply -f nginx-config.yaml
+kubectl patch deployment ingress-nginx-controller -n ingress-nginx --patch-file nginx-kind-patch.yaml
 kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'ingress-nginx'
 ```
 
@@ -117,7 +119,7 @@ And finally, let's install the operator itself:
   <summary>Install using manifest</summary>
 
   ```shell
-  kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.6.1/release.yaml && \
+  kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.9.0/release.yaml && \
   kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'open-feature-operator-system'
   ```
 
@@ -149,7 +151,7 @@ First, lets see how a centralized flagd can be used to serve flags to an *in-pro
 Download the file defining our demo deployment, service and custom resource (CRs), `in-process-evaluation.yaml`:
 
 ```shell
-curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/playground/main/config/k8s/in-process-evaluation.yaml > in-process-evaluation.yaml
+curl -sfL https://raw.githubusercontent.com/open-feature/playground/main/config/k8s/in-process-evaluation.yaml > in-process-evaluation.yaml
 ```
 
 Let's take a look at the manifest and try to understand what's happening...
@@ -256,7 +258,7 @@ Now, lets see how a centralized flagd can be used to support client-side evaluat
 Download the file defining our demo deployment, service and custom resource (CRs), `in-process-evaluation.yaml`:
 
 ```shell
-curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/playground/main/config/k8s/client-side-evaluation.yaml > client-side-evaluation.yaml
+curl -sfL https://raw.githubusercontent.com/open-feature/playground/main/config/k8s/client-side-evaluation.yaml > client-side-evaluation.yaml
 ```
 
 Let's take a look at the manifest...
