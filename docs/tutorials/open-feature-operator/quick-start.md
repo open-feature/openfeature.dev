@@ -46,7 +46,7 @@ We recommend using `kind` for this demo, but if you already have a K8s cluster, 
 Download the cluster definition file, `kind-cluster-quick-start.yaml`:
 
 ```shell
-curl -sfL curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/kind-cluster-quick-start.yaml > kind-cluster-quick-start.yaml
+curl -sfL https://raw.githubusercontent.com/open-feature/openfeature.dev/main/static/samples/kind-cluster-quick-start.yaml > kind-cluster-quick-start.yaml
 ```
 
 Then, create our cluster using the `kind-cluster-quick-start.yaml` file:
@@ -65,7 +65,7 @@ If your cluster already has cert manager, or you're using another solution for c
 Install cert-manager, and wait for it to be ready:
 
 ```shell
-kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.13.2/cert-manager.yaml && \
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.20.2/cert-manager.yaml && \
 kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'cert-manager'
 ```
 
@@ -77,7 +77,7 @@ And finally, let's install the operator itself:
   <summary>Install using manifest</summary>
 
   ```shell
-  kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.6.0/release.yaml && \
+  kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.9.0/release.yaml && \
   kubectl wait --timeout=60s --for condition=Available=True deploy --all -n 'open-feature-operator-system'
   ```
 
