@@ -1,0 +1,20 @@
+# This patch schedules the NGINX ingress controller on the control-plane node,
+# which is where the kind hostPort mapping is configured.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingress-nginx-controller
+  namespace: ingress-nginx
+spec:
+  template:
+    spec:
+      nodeSelector:
+        ingress-ready: "true"
+        kubernetes.io/os: linux
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: Equal
+          effect: NoSchedule
+        - key: node-role.kubernetes.io/master
+          operator: Equal
+          effect: NoSchedule
