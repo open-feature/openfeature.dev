@@ -4,8 +4,8 @@
     "path": "/docs/reference/sdks/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.20.1",
-      "version": "1.20.1",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.20.2",
+      "version": "1.20.2",
       "stable": true
     },
     "spec": {
@@ -64,8 +64,8 @@
     "path": "/docs/reference/sdks/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.20.1",
-      "version": "1.20.1",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.20.2",
+      "version": "1.20.2",
       "stable": true
     },
     "spec": {
@@ -124,8 +124,8 @@
     "path": "/docs/reference/sdks/server/dotnet",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.11.1",
-      "version": "2.11.1",
+      "href": "https://github.com/open-feature/dotnet-sdk/releases/tag/v2.12.0",
+      "version": "2.12.0",
       "stable": true
     },
     "spec": {
@@ -184,8 +184,8 @@
     "path": "/docs/reference/sdks/server/go",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.17.1",
-      "version": "1.17.1",
+      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.17.2",
+      "version": "1.17.2",
       "stable": true
     },
     "spec": {
@@ -278,8 +278,8 @@
         "path": "/docs/reference/sdks/server/python#eventing"
       },
       "Tracking": {
-        "status": "❓",
-        "path": "/docs/reference/sdks/server/python"
+        "status": "✅",
+        "path": "/docs/reference/sdks/server/python#tracking"
       },
       "Transaction Context Propagation": {
         "status": "✅",
@@ -364,8 +364,8 @@
     "path": "/docs/reference/sdks/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.7.2",
-      "version": "1.7.2",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.7.3",
+      "version": "1.7.3",
       "stable": true
     },
     "spec": {
@@ -420,8 +420,8 @@
     "path": "/docs/reference/sdks/client/kotlin",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.7.1",
-      "version": "0.7.1",
+      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.7.2",
+      "version": "0.7.2",
       "stable": false
     },
     "spec": {
@@ -442,11 +442,11 @@
         "path": "/docs/reference/sdks/client/kotlin#hooks"
       },
       "Logging": {
-        "status": "❌",
+        "status": "⚠️",
         "path": "/docs/reference/sdks/client/kotlin#logging"
       },
       "Domains": {
-        "status": "❌",
+        "status": "⚠️",
         "path": "/docs/reference/sdks/client/kotlin#domains"
       },
       "Eventing": {
@@ -498,7 +498,7 @@
         "path": "/docs/reference/sdks/client/swift#hooks"
       },
       "Logging": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/sdks/client/swift#logging"
       },
       "Domains": {
@@ -532,8 +532,8 @@
     "path": "/docs/reference/sdks/server/ruby",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/ruby-sdk/releases/tag/v0.5.0",
-      "version": "0.5.0",
+      "href": "https://github.com/open-feature/ruby-sdk/releases/tag/v0.6.5",
+      "version": "0.6.5",
       "stable": false
     },
     "spec": {
@@ -550,11 +550,11 @@
         "path": "/docs/reference/sdks/server/ruby#targeting"
       },
       "Hooks": {
-        "status": "⚠️",
+        "status": "✅",
         "path": "/docs/reference/sdks/server/ruby#hooks"
       },
       "Logging": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/sdks/server/ruby#logging"
       },
       "Domains": {
@@ -566,19 +566,19 @@
         "path": "/docs/reference/sdks/server/ruby#eventing"
       },
       "Tracking": {
-        "status": "❓",
-        "path": "/docs/reference/sdks/server/ruby"
+        "status": "✅",
+        "path": "/docs/reference/sdks/server/ruby#tracking"
       },
       "Transaction Context Propagation": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/sdks/server/ruby#transaction-context-propagation"
       },
       "Shutdown": {
-        "status": "⚠️",
+        "status": "✅",
         "path": "/docs/reference/sdks/server/ruby#shutdown"
       },
       "Extending": {
-        "status": "⚠️",
+        "status": "✅",
         "path": "/docs/reference/sdks/server/ruby#extending"
       },
       "Multi-Provider": {
@@ -592,8 +592,8 @@
     "path": "/docs/reference/sdks/server/dart",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.16",
-      "version": "0.0.16",
+      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.18",
+      "version": "0.0.18",
       "stable": false
     },
     "spec": {
@@ -626,8 +626,8 @@
         "path": "/docs/reference/sdks/server/dart#eventing"
       },
       "Tracking": {
-        "status": "❓",
-        "path": "/docs/reference/sdks/server/dart"
+        "status": "✅",
+        "path": "/docs/reference/sdks/server/dart#tracking"
       },
       "Transaction Context Propagation": {
         "status": "✅",
@@ -652,8 +652,8 @@
     "path": "/docs/reference/sdks/server/rust",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/rust-sdk/releases/tag/open-feature-v0.2.7",
-      "version": "0.2.7",
+      "href": "https://github.com/open-feature/rust-sdk/releases/tag/open-feature-v0.3.0",
+      "version": "0.3.0",
       "stable": false
     },
     "spec": {
