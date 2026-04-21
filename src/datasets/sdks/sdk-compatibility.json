@@ -442,11 +442,11 @@
         "path": "/docs/reference/sdks/client/kotlin#hooks"
       },
       "Logging": {
-        "status": "❌",
+        "status": "⚠️",
         "path": "/docs/reference/sdks/client/kotlin#logging"
       },
       "Domains": {
-        "status": "❌",
+        "status": "⚠️",
         "path": "/docs/reference/sdks/client/kotlin#domains"
       },
       "Eventing": {
