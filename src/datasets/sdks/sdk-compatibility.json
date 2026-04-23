@@ -64,8 +64,8 @@
     "path": "/docs/reference/sdks/server/javascript",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.20.2",
-      "version": "1.20.2",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/server-sdk-v1.21.0",
+      "version": "1.21.0",
       "stable": true
     },
     "spec": {
@@ -244,8 +244,8 @@
     "path": "/docs/reference/sdks/server/python",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.8.4",
-      "version": "0.8.4",
+      "href": "https://github.com/open-feature/python-sdk/releases/tag/v0.9.0",
+      "version": "0.9.0",
       "stable": false
     },
     "spec": {
@@ -364,8 +364,8 @@
     "path": "/docs/reference/sdks/client/web",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.7.3",
-      "version": "1.7.3",
+      "href": "https://github.com/open-feature/js-sdk/releases/tag/web-sdk-v1.8.0",
+      "version": "1.8.0",
       "stable": true
     },
     "spec": {
@@ -420,8 +420,8 @@
     "path": "/docs/reference/sdks/client/kotlin",
     "category": "Client",
     "release": {
-      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.7.2",
-      "version": "0.7.2",
+      "href": "https://github.com/open-feature/kotlin-sdk/releases/tag/v0.8.0",
+      "version": "0.8.0",
       "stable": false
     },
     "spec": {
@@ -442,7 +442,7 @@
         "path": "/docs/reference/sdks/client/kotlin#hooks"
       },
       "Logging": {
-        "status": "❌",
+        "status": "✅",
         "path": "/docs/reference/sdks/client/kotlin#logging"
       },
       "Domains": {
@@ -592,8 +592,8 @@
     "path": "/docs/reference/sdks/server/dart",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.18",
-      "version": "0.0.18",
+      "href": "https://github.com/open-feature/dart-server-sdk/releases/tag/v0.0.21",
+      "version": "0.0.21",
       "stable": false
     },
     "spec": {
@@ -642,8 +642,8 @@
         "path": "/docs/reference/sdks/server/dart#extending"
       },
       "Multi-Provider": {
-        "status": "❓",
-        "path": "/docs/reference/sdks/server/dart"
+        "status": "⚠️",
+        "path": "/docs/reference/sdks/server/dart#multi-provider-experimental"
       }
     }
   },
