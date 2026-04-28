@@ -38,6 +38,7 @@ export type Technology =
   | 'Swift'
   | 'Dart'
   | 'Rust'
+  | 'C++'
   | 'Ruby'
   | 'React'
   | 'Angular'

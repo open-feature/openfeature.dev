@@ -17,6 +17,7 @@ import RubySvg from '@site/static/img/ruby-no-fill.svg';
 import AngularSvg from '@site/static/img/angular-no-fill.svg';
 import DartSvg from '@site/static/img/dart-no-fill.svg';
 import RustSvg from '@site/static/img/rust-no-fill.svg';
+import CppSvg from '@site/static/img/cpp-no-fill.svg';
 import FlagsSDKSvg from '@site/static/img/flags-sdk-no-fill.svg';
 
 const LogoMap: Record<string, EcosystemElement['logo']> = {
@@ -35,6 +36,7 @@ const LogoMap: Record<string, EcosystemElement['logo']> = {
   'angular-no-fill.svg': AngularSvg,
   'dart-no-fill.svg': DartSvg,
   'rust-no-fill.svg': RustSvg,
+  'cpp-no-fill.svg': CppSvg,
   'flags-sdk-no-fill.svg': FlagsSDKSvg,
 };
 
