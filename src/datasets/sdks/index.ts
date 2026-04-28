@@ -13,6 +13,7 @@ import { Nestjs } from './nestjs';
 import { Ruby } from './ruby';
 import { Angular } from './angular';
 import { Rust } from './rust';
+import { Cpp } from './cpp';
 import { NextjsFlagsSDK } from './nextjs-flags-sdk';
 import { SveltekitFlagsSDK } from './sveltekit-flags-sdk';
 import { Dart } from './dart';
@@ -32,6 +33,7 @@ export const SDKS = [
   Angular,
   Dart,
   Rust,
+  Cpp,
   NextjsFlagsSDK,
   SveltekitFlagsSDK,
 ];

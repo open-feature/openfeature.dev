@@ -304,8 +304,8 @@
     "path": "/docs/reference/sdks/server/php",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.1.1",
-      "version": "2.1.1",
+      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.1.2",
+      "version": "2.1.2",
       "stable": true
     },
     "spec": {
@@ -446,7 +446,7 @@
         "path": "/docs/reference/sdks/client/kotlin#logging"
       },
       "Domains": {
-        "status": "❌",
+        "status": "⚠️",
         "path": "/docs/reference/sdks/client/kotlin#domains"
       },
       "Eventing": {
@@ -704,6 +704,66 @@
       "Multi-Provider": {
         "status": "❓",
         "path": "/docs/reference/sdks/server/rust"
+      }
+    }
+  },
+  {
+    "name": "C++",
+    "path": "/docs/reference/sdks/server/cpp",
+    "category": "Server",
+    "release": {
+      "href": "https://github.com/open-feature/cpp-sdk/releases/tag/v0.0.1",
+      "version": "0.0.1",
+      "stable": false
+    },
+    "spec": {
+      "href": "https://github.com/open-feature/spec/releases/tag/v0.2.0",
+      "version": "0.2.0"
+    },
+    "features": {
+      "Providers": {
+        "status": "⚠️",
+        "path": "/docs/reference/sdks/server/cpp#providers"
+      },
+      "Targeting": {
+        "status": "✅",
+        "path": "/docs/reference/sdks/server/cpp#targeting"
+      },
+      "Hooks": {
+        "status": "❌",
+        "path": "/docs/reference/sdks/server/cpp#hooks"
+      },
+      "Logging": {
+        "status": "❌",
+        "path": "/docs/reference/sdks/server/cpp#logging"
+      },
+      "Domains": {
+        "status": "✅",
+        "path": "/docs/reference/sdks/server/cpp#domains"
+      },
+      "Eventing": {
+        "status": "❌",
+        "path": "/docs/reference/sdks/server/cpp#eventing"
+      },
+      "Tracking": {
+        "status": "❌",
+        "path": "/docs/reference/sdks/server/cpp#tracking"
+      },
+      "Transaction Context Propagation": {
+        "status": "❌",
+        "path": "/docs/reference/sdks/server/cpp#transaction-context-propagation"
+      },
+      "Shutdown": {
+        "status": "✅",
+        "path": "/docs/reference/sdks/server/cpp#shutdown"
+      },
+      "Extending": {
+        "status": "✅",
+        "path": "/docs/reference/sdks/server/cpp#extending"
+      },
+      "Multi-Provider": {
+        "status": "❓",
+        "path": "/docs/reference/sdks/server/cpp"
       }
     }
   }
