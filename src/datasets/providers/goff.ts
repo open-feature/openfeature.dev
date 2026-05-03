@@ -86,5 +86,11 @@ export const Goff: Provider = {
       href: 'https://gofeatureflag.org/docs/sdk/client_providers/openfeature_react',
       category: ['Client'],
     },
+    {
+      technology: 'Rust',
+      vendorOfficial: false,
+      href: 'https://gofeatureflag.org/docs/sdk/server_providers/openfeature_rust',
+      category: ['Server'],
+    },
   ],
 };
