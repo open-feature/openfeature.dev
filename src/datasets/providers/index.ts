@@ -18,6 +18,7 @@ import { Hyphen } from './hyphen';
 import { Kameleoon } from './kameleoon';
 import { LaunchDarkly } from './launchdarkly';
 import { MDBRules } from './mdb-rules';
+import { Mixpanel } from './mixpanel';
 import { PostHog } from './posthog';
 import { Prefab } from './prefab';
 import { Reflag } from './reflag';
@@ -75,6 +76,7 @@ export const PROVIDERS: Provider[] = [
   Kameleoon,
   LaunchDarkly,
   MDBRules,
+  Mixpanel,
   PostHog,
   Prefab,
   Reflag,
