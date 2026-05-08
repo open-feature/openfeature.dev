@@ -9631,7 +9631,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-xml-builder@npm:>=1.1.7":
+"fast-xml-builder@npm:^1.1.5":
   version: 1.2.0
   resolution: "fast-xml-builder@npm:1.2.0"
   dependencies:
@@ -11031,7 +11031,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ip-address@npm:>=10.1.1":
+"ip-address@npm:^10.0.1":
   version: 10.2.0
   resolution: "ip-address@npm:10.2.0"
   checksum: 10c0/5a00aada6e922c9c69dfc800ed5d0fa3348675ebdeed0e1575f503f27ca385b5f534363c9af7ad1daf64c1f1409388cdd3cc2e9b9b0fe1c924a431378d55075a
@@ -15433,7 +15433,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.5.10":
+"postcss@npm:^8.4.21, postcss@npm:^8.4.24, postcss@npm:^8.4.33, postcss@npm:^8.4.45, postcss@npm:^8.4.47, postcss@npm:^8.5.10, postcss@npm:^8.5.4":
   version: 8.5.14
   resolution: "postcss@npm:8.5.14"
   dependencies:
@@ -18994,7 +18994,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:>=5.104.1":
+"webpack@npm:^5.88.1, webpack@npm:^5.95.0":
   version: 5.106.2
   resolution: "webpack@npm:5.106.2"
   dependencies:
