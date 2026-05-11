@@ -7,7 +7,7 @@ interface VideoEmbedProps {
   title?: string;
 }
 
-function VideoEmbed({ videoId, title = "YouTube video player" }: VideoEmbedProps) {
+function VideoEmbed({ videoId, title = 'YouTube video player' }: VideoEmbedProps) {
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
