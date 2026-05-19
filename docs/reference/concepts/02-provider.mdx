@@ -117,6 +117,71 @@ const multiProvider = new MultiProvider(
 await OpenFeature.setProviderAndWait(multiProvider);
 ```
 
+### Provider lifecycle
+
+Providers can implement lifecycle methods that the SDK calls when the provider is registered and when the API shuts down.
+Use initialization to open network connections, load remote flag state, validate configuration, or start background workers that are required before evaluations should use the provider.
+Use shutdown to release those same resources during application shutdown.
+The exact method names vary by SDK, but they map to the same lifecycle: initialize when the provider is set, and clean up when the [Evaluation API is shut down](./evaluation-api#api-shutdown).
+When your application needs to wait until initialization completes, use the SDK's waitable provider registration method when available.
+If the provider is registered without waiting, application authors can use [`PROVIDER_READY`](./events#provider_ready) and [`PROVIDER_ERROR`](./events#provider_error) handlers to react to provider startup events.
+
+<Tabs groupId="code">
+<TabItem value="js" label="TypeScript">
+
+```ts
+import { EvaluationContext, Provider } from '@openfeature/server-sdk';
+
+class MyFeatureProvider implements Provider {
+  readonly metadata = {
+    name: 'My Feature Provider',
+  } as const;
+
+  readonly runsOn = 'server';
+
+  async initialize(context?: EvaluationContext): Promise<void> {
+    // Open connections, validate configuration, or preload flag state here.
+  }
+
+  async onClose(): Promise<void> {
+    // Close connections or stop background workers here.
+  }
+
+  // Implement the required resolve*Evaluation methods shown in the provider examples below.
+}
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+import dev.openfeature.sdk.EvaluationContext;
+import dev.openfeature.sdk.FeatureProvider;
+import dev.openfeature.sdk.Metadata;
+
+public class MyProvider implements FeatureProvider {
+    @Override
+    public Metadata getMetadata() {
+        return () -> "My Provider";
+    }
+
+    @Override
+    public void initialize(EvaluationContext evaluationContext) throws Exception {
+        // Open connections, validate configuration, or preload flag state here.
+    }
+
+    @Override
+    public void shutdown() {
+        // Close connections or stop background workers here.
+    }
+
+    // Implement the required evaluation methods shown in the provider examples below.
+}
+```
+
+</TabItem>
+</Tabs>
+
 ### Examples
 
 #### Dynamic Context Implementations (Server-side SDKs)
