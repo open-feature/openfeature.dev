@@ -37,6 +37,17 @@ export default function Support(): JSX.Element {
                 'Learn about the evaluation API, providers, context, hooks, and how to integrate OpenFeature into your code.'
               ]}
             />
+             <CourseCard
+              href="https://blog.touret.info/feature-flag-workshop"
+              imageUrl="https://blog.touret.info/feature-flag-workshop/img/logo.webp"
+              imageAlt="OpenFeature & Go Feature Flag Workshop"
+              title="Free OpenFeature & Go Feature Flag Workshop"
+              subtitle="Feature-Flag with OpenFeature Hands-on by Alexandre Touret"
+              description={[
+                'This workshop dives into the concepts of Feature Flags and details how to maximize their benefits using OpenFeature. Participants will discover methodologies (e.g., A/B Testing or Canary Deployment) and tools tailored to streamline the development process.',
+                'It is designed to be flexible as much as possible: it can be experienced as a self-paced, hands-on module or delivered as a live presentation during a guided workshop.'
+              ]}
+            />
           </div>
         </div>
         <div className="mb-16">
