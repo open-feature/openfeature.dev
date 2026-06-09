@@ -304,8 +304,8 @@
     "path": "/docs/reference/sdks/server/php",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.1.2",
-      "version": "2.1.2",
+      "href": "https://github.com/open-feature/php-sdk/releases/tag/2.2.0",
+      "version": "2.2.0",
       "stable": true
     },
     "spec": {
