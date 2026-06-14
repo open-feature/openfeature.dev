@@ -40,8 +40,8 @@ export default function Support(): JSX.Element {
              <CourseCard
               href="https://blog.touret.info/feature-flag-workshop"
               imageUrl="https://blog.touret.info/feature-flag-workshop/img/logo.webp"
-              imageAlt="OpenFeature & Go Feature Flag Workshop"
-              title="Free OpenFeature & Go Feature Flag Workshop"
+              imageAlt="OpenFeature Workshop"
+              title="Free OpenFeature Workshop"
               subtitle="Feature-Flag with OpenFeature Hands-on by Alexandre Touret"
               description={[
                 'This workshop dives into the concepts of Feature Flags and details how to maximize their benefits using OpenFeature. Participants will discover methodologies (e.g., A/B Testing or Canary Deployment) and tools tailored to streamline the development process.',
