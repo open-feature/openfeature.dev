@@ -33,7 +33,7 @@ export const OpenTelemetry: Hook = {
     {
       technology: '.NET',
       vendorOfficial: false,
-      href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Hooks.Otel',
+      href: 'https://github.com/open-feature/dotnet-sdk/tree/main/src/OpenFeature/Hooks',
       category: ['Server'],
     },
     {
