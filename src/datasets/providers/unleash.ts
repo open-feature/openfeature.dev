@@ -23,5 +23,11 @@ export const Unleash: Provider = {
       href: 'https://github.com/open-feature/js-sdk-contrib/tree/main/libs/providers/unleash-web',
       category: ['Client'],
     },
+    {
+      technology: '.NET',
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Providers.Unleash',
+      category: ['Server'],
+    },
   ],
 };

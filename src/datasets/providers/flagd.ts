@@ -32,7 +32,7 @@ export const Flagd: Provider = {
     {
       technology: '.NET',
       vendorOfficial: true,
-      href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.Flagd',
+      href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Providers.Flagd',
       category: ['Server'],
     },
     {
