@@ -29,5 +29,11 @@ export const Unleash: Provider = {
       href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Providers.Unleash',
       category: ['Server'],
     },
+    {
+      technology: 'Python',
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/python-sdk-contrib/tree/main/providers/openfeature-provider-unleash',
+      category: ['Server'],
+    },
   ],
 };
