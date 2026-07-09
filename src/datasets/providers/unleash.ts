@@ -27,7 +27,14 @@ export const Unleash: Provider = {
       technology: 'Angular',
       parentTechnology: 'JavaScript',
       vendorOfficial: false,
-      href: 'open-feature/js-sdk-contrib@main/libs/providers/unleash-web#use-with-react-angular-and-other-web-frameworks',
+      href: 'https://github.com/open-feature/js-sdk-contrib/blob/main/libs/providers/unleash-web/README.md#angular-framework',
+      category: ['Client'],
+    },
+    {
+      technology: 'React',
+      parentTechnology: 'JavaScript',
+      vendorOfficial: false,
+      href: 'https://github.com/open-feature/js-sdk-contrib/blob/main/libs/providers/unleash-web/README.md#react-framework',
       category: ['Client'],
     },
     {
