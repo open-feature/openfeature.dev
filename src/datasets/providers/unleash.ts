@@ -24,6 +24,13 @@ export const Unleash: Provider = {
       category: ['Client'],
     },
     {
+      technology: 'Angular',
+      parentTechnology: 'JavaScript',
+      vendorOfficial: false,
+      href: 'open-feature/js-sdk-contrib@main/libs/providers/unleash-web#use-with-react-angular-and-other-web-frameworks',
+      category: ['Client'],
+    },
+    {
       technology: '.NET',
       vendorOfficial: false,
       href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Providers.Unleash',
