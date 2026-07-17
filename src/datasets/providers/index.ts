@@ -26,6 +26,7 @@ import { Split } from './split';
 import { Unleash } from './unleash';
 import { Statsig } from './statsig';
 import { FeatBit } from './featbit';
+import { Featureflip } from './featureflip';
 import { UserDefaults } from './user-defaults';
 import { GrowthBook } from './growthbook';
 import { MultiProvider } from './multi-provider';
@@ -65,6 +66,7 @@ export const PROVIDERS: Provider[] = [
   DevCycle,
   EnvVar,
   FeatBit,
+  Featureflip,
   Flagd,
   Flagsmith,
   Flipswitch,
