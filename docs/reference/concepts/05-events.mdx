@@ -31,7 +31,7 @@ client.addHandler(ProviderEvents.ConfigurationChanged, (eventDetails) => {
 
 // add an event handler to the global API
 OpenFeature.addHandler(ProviderEvents.Error, (eventDetails) => {
-  // do something when if the provider goes into an error state
+  // do something when the provider goes into an error state
 });
 ```
 
@@ -47,7 +47,7 @@ client.onProviderConfigurationChanged((EventDetails eventDetails) -> {
 
 // add an event handler to the global API
 OpenFeatureAPI.getInstance().onProviderError((EventDetails eventDetails) -> {
-  // do something when if the provider goes into an error state
+  // do something when the provider goes into an error state
 });
 ```
 
@@ -66,7 +66,7 @@ client.AddHandler(ProviderEventTypes.ProviderConfigurationChanged, (ProviderEven
 // add an event handler to the global API
 Api.Instance.AddHandler(ProviderEventTypes.ProviderError, (ProviderEventPayload eventDetails) =>
 {
-  // do something when if the provider goes into an error state
+  // do something when the provider goes into an error state
 });
 ```
 
@@ -85,7 +85,7 @@ client := openfeature.NewClient("clientName")
 client.AddHandler(openfeature.ProviderError, &changedCallback)
 
 var errorCallback = func(details openfeature.EventDetails) {
-  // do something when if the provider goes into an error state
+  // do something when the provider goes into an error state
 }
 
 // add an event handler to the global API
@@ -106,7 +106,7 @@ def on_changed(event_details: EventDetails):
 client.add_handler(ProviderEvent.PROVIDER_CONFIGURATION_CHANGED, on_changed)
 
 def on_error(event_details: EventDetails):
-  # do something when if the provider goes into an error state
+  # do something when the provider goes into an error state
 
 # add an event handler to the global API
 api.add_handler(ProviderEvent.PROVIDER_ERROR, on_error)
@@ -146,7 +146,7 @@ Handlers associated with `PROVIDER_ERROR` events can be used to alert monitoring
 
 The provider's cached state is no longer valid and may not be up-to-date with the source of truth.
 
-Some providers maintain a connection to a management system, but are also tolerate of disconnection.
+Some providers maintain a connection to a management system, but are also tolerant of disconnection.
 The `PROVIDER_STALE` indicates this situation.
 
 ### PROVIDER_RECONCILING (Static-context/Client-side only)

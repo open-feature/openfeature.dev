@@ -237,7 +237,7 @@ class MyProvider : public openfeature::FeatureProvider {
   std::unique_ptr<openfeature::IntResolutionDetails> GetIntegerEvaluation(
       std::string_view flag, int64_t default_value,
       const openfeature::EvaluationContext& ctx) override {
-        // resolve a int flag value
+        // resolve an int flag value
       }
 
   std::unique_ptr<openfeature::DoubleResolutionDetails> GetDoubleEvaluation(
@@ -249,7 +249,7 @@ class MyProvider : public openfeature::FeatureProvider {
   std::unique_ptr<openfeature::ObjectResolutionDetails> GetObjectEvaluation(
       std::string_view flag, Value default_value,
       const openfeature::EvaluationContext& ctx) override {
-        // resolve a object flag value
+        // resolve an object flag value
       }
 };
 ```
