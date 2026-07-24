@@ -42,7 +42,7 @@ OpenFeature.setProvider(new YourProviderOfChoice());
 <TabItem value="java" label="Java">
 
 ```java
-import dev.openfeature.javasdk.OpenFeatureAPI;
+import dev.openfeature.sdk.OpenFeatureAPI;
 
 OpenFeatureAPI api = OpenFeatureAPI.getInstance();
 api.setProvider(new YourProviderOfChoice());
@@ -84,6 +84,11 @@ openfeature.api.set_provider(YourProviderOfChoice())
 
 </TabItem>
 </Tabs>
+
+Some providers need to establish connections, load flag data, or validate configuration before they can resolve flags accurately.
+If your SDK exposes a blocking or awaitable registration method, use it during startup when your application needs to avoid default values while the provider initializes.
+If you register the provider asynchronously, attach event handlers for [`PROVIDER_READY`](./events#provider_ready) and [`PROVIDER_ERROR`](./events#provider_error) so your application can react when initialization succeeds or fails.
+See [Events](./events#event-handlers) for language-specific handler examples.
 
 ## Creating a client
 
@@ -275,15 +280,15 @@ These return the value, as well as additional metadata about the flag evaluation
 
 #### Evaluation Details Structure Fields
 
-| Field                    | Description                                                                                   |
-| ------------------------ | --------------------------------------------------------------------------------------------- |
-| flag key                 | the unique identifier for a feature flag                                                      |
-| value                    | the value returned from a flag evaluation                                                     |
-| reason (optional)        | a string explaining why the flag value was returned                                           |
-| variant (optional)       | the variant associated with the return flag value                                             |
-| flag metadata (optional) | a key-value structure which supports definition of arbitrary properties                       |
+| Field                    | Description                                                                              |
+| ------------------------ | ---------------------------------------------------------------------------------------- |
+| flag key                 | the unique identifier for a feature flag                                                 |
+| value                    | the value returned from a flag evaluation                                                |
+| reason (optional)        | a string explaining why the flag value was returned                                      |
+| variant (optional)       | the variant associated with the return flag value                                        |
+| flag metadata (optional) | a key-value structure which supports definition of arbitrary properties                  |
 | error code (optional)    | an [error code](/specification/types#error-code) that categorizes flag evaluation errors |
-| error message (optional) | a string detailing the error                                                                  |
+| error message (optional) | a string detailing the error                                                             |
 
 <Tabs groupId="code">
 <TabItem value="js" label="TypeScript">
@@ -400,6 +405,42 @@ details = client.get_float_details("floatFlag", 1);
 
 # get details of object evaluation
 details = client.get_object_details("objectFlag", {});
+```
+
+</TabItem>
+</Tabs>
+
+## API Shutdown
+
+The OpenFeature API can shut down all registered providers so they can release connections, background workers, file watchers, or other resources.
+Call this from your application shutdown path after you stop evaluating flags.
+The method name varies by SDK; use the shutdown or close function documented by the SDK you are using.
+
+<Tabs groupId="code">
+<TabItem value="js" label="TypeScript">
+
+```ts
+import { OpenFeature } from '@openfeature/server-sdk';
+
+await OpenFeature.close();
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+import dev.openfeature.sdk.OpenFeatureAPI;
+
+OpenFeatureAPI.getInstance().shutdown();
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+from openfeature import api
+
+api.shutdown()
 ```
 
 </TabItem>
