@@ -1,8 +1,9 @@
 import type { ComponentType, SVGProps } from 'react';
 import { DropwizardOpenfeature } from './dropwizard-openfeature';
+import { FlagLint } from './flaglint';
 import { Category, EcosystemElement, Technology } from '../types';
 
-export const ECOSYSTEM_INTEGRATIONS: EcosystemElement[] = [DropwizardOpenfeature]
+export const ECOSYSTEM_INTEGRATIONS: EcosystemElement[] = [DropwizardOpenfeature, FlagLint]
   .map((integration) => {
     return integration.technologies.map(({ vendorOfficial, technology, href, category }): EcosystemElement => {
       return {

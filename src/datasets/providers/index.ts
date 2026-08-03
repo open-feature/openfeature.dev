@@ -23,9 +23,11 @@ import { PostHog } from './posthog';
 import { Prefab } from './prefab';
 import { Reflag } from './reflag';
 import { Split } from './split';
+import { Switchbox } from './switchbox';
 import { Unleash } from './unleash';
 import { Statsig } from './statsig';
 import { FeatBit } from './featbit';
+import { Featureflip } from './featureflip';
 import { UserDefaults } from './user-defaults';
 import { GrowthBook } from './growthbook';
 import { MultiProvider } from './multi-provider';
@@ -65,6 +67,7 @@ export const PROVIDERS: Provider[] = [
   DevCycle,
   EnvVar,
   FeatBit,
+  Featureflip,
   Flagd,
   Flagsmith,
   Flipswitch,
@@ -82,6 +85,7 @@ export const PROVIDERS: Provider[] = [
   Reflag,
   Split,
   Statsig,
+  Switchbox,
   Unleash,
   UserDefaults,
   Vercel,

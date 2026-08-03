@@ -30,6 +30,12 @@ export const Flagsmith: Provider = {
       category: ['Server'],
     },
     {
+      technology: 'Kotlin',
+      vendorOfficial: true,
+      href: 'https://github.com/Flagsmith/flagsmith-openfeature-provider-kotlin',
+      category: ['Client'],
+    },
+    {
       technology: '.NET',
       vendorOfficial: true,
       href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Contrib.Providers.Flagsmith',
