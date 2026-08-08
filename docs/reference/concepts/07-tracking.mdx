@@ -109,3 +109,135 @@ client.Track(
 </TabItem>
 
 </Tabs>
+
+## Experimentation-Focused Example
+ 
+Here is a complete A/B testing flow using OpenFeature.
+The pattern is: evaluate a flag to assign the user to a variant, show the corresponding experience, then call `track` when the conversion event occurs.
+The provider automatically links the tracking event back to the flag evaluation context (including the `targetingKey`), so your analytics platform can segment results by variant.
+ 
+<Tabs groupId="code">
+<TabItem value="js" label="TypeScript">
+```ts
+import { OpenFeature } from '@openfeature/server-sdk';
+ 
+// Set evaluation context with the user's targeting key.
+// The targeting key is how your provider buckets users into variants consistently.
+OpenFeature.setContext({
+  targetingKey: 'user-123',
+});
+ 
+const client = OpenFeature.getClient();
+ 
+// Evaluate the experiment flag — provider returns true (variant) or false (control)
+const useNewCheckout = await client.getBooleanValue('checkout-experiment', false);
+ 
+if (useNewCheckout) {
+  // Show the new checkout UI (variant group)
+  await showNewCheckout();
+} else {
+  // Show the existing checkout UI (control group)
+  await showExistingCheckout();
+}
+ 
+// When the user completes the purchase, emit a tracking event.
+// The provider associates this event with the flag evaluation context automatically.
+client.track('checkout-completed', { value: 49.99, currencyCode: 'USD' });
+```
+ 
+</TabItem>
+<TabItem value="java" label="Java">
+```java
+import dev.openfeature.sdk.*;
+ 
+OpenFeatureAPI api = OpenFeatureAPI.getInstance();
+ 
+// Set evaluation context with the user's targeting key
+Map<String, Value> attrs = new HashMap<>();
+EvaluationContext ctx = new ImmutableContext("user-123", attrs);
+api.setEvaluationContext(ctx);
+ 
+Client client = api.getClient();
+ 
+// Evaluate the experiment flag
+Boolean useNewCheckout = client.getBooleanValue("checkout-experiment", false);
+ 
+if (useNewCheckout) {
+    showNewCheckout();
+} else {
+    showExistingCheckout();
+}
+ 
+// Track the conversion event — provider links it back to the flag evaluation context
+client.track("checkout-completed", new MutableTrackingEventDetails(49.99).add("currencyCode", "USD"));
+```
+ 
+</TabItem>
+<TabItem value="csharp" label="C#">
+```csharp
+using OpenFeature;
+using OpenFeature.Model;
+ 
+// Set evaluation context with the user's targeting key
+EvaluationContextBuilder builder = EvaluationContext.Builder();
+builder.Set("targetingKey", "user-123");
+EvaluationContext ctx = builder.Build();
+Api.Instance.SetContext(ctx);
+ 
+var client = Api.Instance.GetClient();
+ 
+// Evaluate the experiment flag — all evaluations are async in .NET SDK, note GetBooleanValueAsync
+var useNewCheckout = await client.GetBooleanValueAsync("checkout-experiment", false);
+ 
+if (useNewCheckout) {
+    await ShowNewCheckout();
+} else {
+    await ShowExistingCheckout();
+}
+ 
+// Track the conversion event
+client.Track("checkout-completed", trackingEventDetails: new TrackingEventDetailsBuilder()
+    .SetValue(49.99).Set("currencyCode", "USD").Build());
+```
+ 
+</TabItem>
+<TabItem value="go" label="Go">
+```go
+import (
+    "context"
+    "github.com/open-feature/go-sdk/openfeature"
+)
+ 
+// Set evaluation context with the user's targeting key
+openfeature.SetEvaluationContext(
+    openfeature.NewEvaluationContext(
+        "user-123",
+        map[string]any{},
+    ),
+)
+ 
+client := openfeature.NewClient("my-app")
+ 
+// Evaluate the experiment flag
+useNewCheckout, _ := client.BooleanValue(
+    context.TODO(), "checkout-experiment", false, openfeature.EvaluationContext{},
+)
+ 
+if useNewCheckout {
+    showNewCheckout()
+} else {
+    showExistingCheckout()
+}
+ 
+// Track the conversion event — provider links it back to the flag evaluation context
+client.Track(
+    context.TODO(),
+    "checkout-completed",
+    openfeature.EvaluationContext{},
+    openfeature.NewTrackingEventDetails(49.99).Add("currencyCode", "USD"),
+)
+```
+ 
+</TabItem>
+</Tabs>
+
