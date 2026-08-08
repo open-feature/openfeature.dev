@@ -22,6 +22,7 @@ import { Mixpanel } from './mixpanel';
 import { PostHog } from './posthog';
 import { Prefab } from './prefab';
 import { Reflag } from './reflag';
+import { Rollgate } from './rollgate';
 import { Split } from './split';
 import { Switchbox } from './switchbox';
 import { Unleash } from './unleash';
@@ -83,6 +84,7 @@ export const PROVIDERS: Provider[] = [
   PostHog,
   Prefab,
   Reflag,
+  Rollgate,
   Split,
   Statsig,
   Switchbox,
