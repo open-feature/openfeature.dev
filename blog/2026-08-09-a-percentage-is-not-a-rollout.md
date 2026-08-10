@@ -41,8 +41,8 @@ flagd shows how much is left to the provider. Its
 custom JsonLogic operation that hashes a bucketing value with murmur3 and maps the result onto
 variants by relative weight, and by convention the bucketing value is the flag key concatenated with
 a targeting property so that two flags do not bucket the same subject identically. Every one of those
-choices, the hash function, the seed convention, weights-as-relative-rather-than-absolute, is flagd's
-rather than the specification's. A provider hashing a different value, or using a different function,
+choices, the hash function, the seed convention, the use of relative rather than absolute weights, is
+flagd's rather than the specification's. A provider hashing a different value, or using a different function,
 is equally conformant and will place a different set of subjects in the exposed cohort at the same
 stated percentage. Many providers implement some form of fractional evaluation, but their allocation
 algorithms and portability guarantees may differ.
@@ -54,9 +54,9 @@ is a value, not a process.
 
 That boundary is defensible. OpenFeature is an evaluation API, explicitly independent of any
 particular flag management system, and progression logic legitimately belongs above it. The
-consequence is still worth saying out loud: OpenFeature's evaluation API standardizes exposure
-decisions, but rollout progression and metric-based gates remain control-plane capabilities and vary
-by platform.
+consequence is still worth saying out loud: the evaluation API standardizes how applications request
+and receive evaluation results, while both the allocation itself and rollout progression remain
+outside it, in providers and control planes respectively, and vary by platform.
 
 ## The two halves of a canary
 
@@ -90,11 +90,12 @@ defines four stages:
   (Requirement 4.3.7)
 - `finally`, unconditionally after the `before`, `after` and `error` stages (Requirement 4.3.8)
 
-Application-configured hooks can be global, per client, or per invocation; providers may also supply
-hooks, and the spec fixes their execution order as API, Client, Invocation, Provider
-(Requirement 4.4.2). In dynamic-context SDKs, a `before` hook can return additional evaluation
-context, which is then merged (Requirements 4.3.4 and 4.3.5); static-context SDKs handle context
-differently.
+Application-configured hooks can be global, per client, or per invocation, and providers may also
+supply hooks. The spec fixes the ordering in both directions: `before` hooks run API, Client,
+Invocation, Provider, while `after`, `error` and `finally` run in reverse, Provider, Invocation,
+Client, API, and within each level in the reverse of the order they were added (Requirement 4.4.2).
+In dynamic-context SDKs, a `before` hook can return additional evaluation context, which is then
+merged (Requirements 4.3.4 and 4.3.5); static-context SDKs handle context differently.
 
 That is enough to build something genuinely useful. A `finally` hook can emit evaluation or exposure
 telemetry containing the flag key, variant, reason, and error details when available, which is where
@@ -127,9 +128,11 @@ takeaway: you can measure a rollout through the standard API today, and you cann
 Three things that do not require anything new.
 
 **Emit exposure, not blanket metric tags.** Tagging every existing metric with the resolved variant
-multiplies time-series cardinality. Emit one exposure record containing the flag key, variant,
-reason, and a relevant request or subject correlation identifier, or enrich the active request trace,
-and correlate business outcomes through the Tracking API.
+multiplies time-series cardinality. Emit one exposure record instead, or enrich the active request
+trace, and correlate business outcomes through the Tracking API. Appendix D grades the fields for
+you: the flag key is required, the variant is conditionally required, and the reason is recommended.
+Carry a request or subject correlation identifier alongside them so the record can be joined to
+anything else.
 
 **Write the gate contract down, even if a human executes it.** A rollout that cannot state these has
 not been designed, it has been started: success metric, abort metric, threshold, observation window,
