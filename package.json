@@ -9,7 +9,7 @@
     "docusaurus": "docusaurus",
     "submodules": "wireit",
     "start": "wireit",
-    "build": "docusaurus build",
+    "build": "wireit",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -105,6 +105,12 @@
     "start": {
       "command": "docusaurus start",
       "service": true,
+      "dependencies": [
+        "submodules"
+      ]
+    },
+    "build": {
+      "command": "docusaurus build",
       "dependencies": [
         "submodules"
       ]
