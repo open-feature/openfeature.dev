@@ -172,7 +172,7 @@
     "yaml": "^2.8.3",
     "markdownlint-cli2/js-yaml": "^4.3.0",
     "js-yaml@npm:^4.1.0": "^4.3.0",
-    "gray-matter/js-yaml": "^3.15.0",
+    "gray-matter/js-yaml": "^4.0.0",
     "@docusaurus/theme-mermaid/mermaid": "^11.15.0",
     "ws": "^8.20.1",
     "styled-components/postcss": "^8.5.10",
