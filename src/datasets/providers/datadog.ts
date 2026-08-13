@@ -36,6 +36,18 @@ export const Datadog: Provider = {
       category: ['Client'],
     },
     {
+      technology: 'Go',
+      vendorOfficial: true,
+      href: 'https://docs.datadoghq.com/feature_flags/server/go/',
+      category: ['Server'],
+    },
+    {
+      technology: '.NET',
+      vendorOfficial: true,
+      href: 'https://docs.datadoghq.com/feature_flags/server/dotnet/',
+      category: ['Server'],
+    },
+    {
       technology: 'Java',
       vendorOfficial: true,
       href: 'https://docs.datadoghq.com/feature_flags/server/java?tab=gradlegroovy',
@@ -51,6 +63,12 @@ export const Datadog: Provider = {
       technology: 'Ruby',
       vendorOfficial: true,
       href: 'https://docs.datadoghq.com/feature_flags/server/ruby',
+      category: ['Server'],
+    },
+    {
+      technology: 'PHP',
+      vendorOfficial: true,
+      href: 'https://docs.datadoghq.com/feature_flags/server/php/',
       category: ['Server'],
     },
   ],
