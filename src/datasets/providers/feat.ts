@@ -2,7 +2,7 @@ import FeatSvg from '@site/static/img/feat-no-fill.svg';
 import { Provider } from '.';
 
 export const Feat: Provider = {
-  name: 'feat',
+  name: 'Feat',
   logo: FeatSvg,
   technologies: [
     {
