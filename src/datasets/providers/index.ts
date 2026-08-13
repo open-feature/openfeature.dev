@@ -29,6 +29,7 @@ import { Unleash } from './unleash';
 import { Statsig } from './statsig';
 import { FeatBit } from './featbit';
 import { Featureflip } from './featureflip';
+import { Featurevisor } from './featurevisor';
 import { UserDefaults } from './user-defaults';
 import { GrowthBook } from './growthbook';
 import { MultiProvider } from './multi-provider';
@@ -70,6 +71,7 @@ export const PROVIDERS: Provider[] = [
   EnvVar,
   FeatBit,
   Featureflip,
+  Featurevisor,
   Flagd,
   Flagsmith,
   Flipswitch,
