@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
-  <rect x="2" y="2" width="10" height="10" rx="2" fill="currentColor"/>
-  <rect x="16" y="16" width="10" height="10" rx="2" fill="currentColor"/>
-  <rect x="16" y="2" width="10" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
-  <rect x="2" y="16" width="10" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="2" y="2" width="10" height="10" rx="2"/>
+  <rect x="16" y="16" width="10" height="10" rx="2"/>
+  <path d="M18 1.25 H24 A2.75 2.75 0 0 1 26.75 4 V10 A2.75 2.75 0 0 1 24 12.75 H18 A2.75 2.75 0 0 1 15.25 10 V4 A2.75 2.75 0 0 1 18 1.25 Z M18 2.75 A1.25 1.25 0 0 0 16.75 4 V10 A1.25 1.25 0 0 0 18 11.25 H24 A1.25 1.25 0 0 0 25.25 10 V4 A1.25 1.25 0 0 0 24 2.75 Z"/>
+  <path d="M4 15.25 H10 A2.75 2.75 0 0 1 12.75 18 V24 A2.75 2.75 0 0 1 10 26.75 H4 A2.75 2.75 0 0 1 1.25 24 V18 A2.75 2.75 0 0 1 4 15.25 Z M4 16.75 A1.25 1.25 0 0 0 2.75 18 V24 A1.25 1.25 0 0 0 4 25.25 H10 A1.25 1.25 0 0 0 11.25 24 V18 A1.25 1.25 0 0 0 10 16.75 Z"/>
 </svg>
