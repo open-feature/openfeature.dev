@@ -9,6 +9,7 @@ import { ConfigDirector } from './configdirector';
 import { Datadog } from './datadog';
 import { DevCycle } from './devcycle';
 import { EnvVar } from './env-var';
+import { Feat } from './feat';
 import { Flagd } from './flagd';
 import { Flagsmith } from './flagsmith';
 import { Flipswitch } from './flipswitch';
@@ -68,6 +69,7 @@ export const PROVIDERS: Provider[] = [
   Datadog,
   DevCycle,
   EnvVar,
+  Feat,
   FeatBit,
   Featureflip,
   Flagd,
