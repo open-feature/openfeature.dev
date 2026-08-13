@@ -41,6 +41,7 @@ import { OFREP } from './ofrep';
 import { VWO } from './vwo';
 import { SDKS } from '../sdks';
 import { Intellitoggle } from './intellitoggle';
+import { Quonfig } from './quonfig';
 
 const childTechnologyMap = SDKS.reduce(
   (acc, sdk) => {
@@ -97,6 +98,7 @@ export const PROVIDERS: Provider[] = [
   OFREP,
   VWO,
   Intellitoggle,
+  Quonfig,
 ];
 
 // Map of provider name to technology to child technologies
