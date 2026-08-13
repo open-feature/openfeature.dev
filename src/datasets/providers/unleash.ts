@@ -43,5 +43,47 @@ export const Unleash: Provider = {
       href: 'https://github.com/open-feature/dotnet-sdk-contrib/tree/main/src/OpenFeature.Providers.Unleash',
       category: ['Server'],
     },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/Unleash/unleash-openfeature-node-provider',
+      category: ['Server'],
+    },
+    {
+      technology: 'Kotlin',
+      vendorOfficial: true,
+      href: 'https://github.com/Unleash/unleash-openfeature-android-provider',
+      category: ['Client'],
+    },
+    {
+      technology: 'PHP',
+      vendorOfficial: true,
+      href: 'https://github.com/Unleash/unleash-openfeature-php-provider',
+      category: ['Server'],
+    },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://github.com/Unleash/unleash-openfeature-python-provider',
+      category: ['Server'],
+    },
+    {
+      technology: 'Ruby',
+      vendorOfficial: true,
+      href: 'https://github.com/Unleash/unleash-openfeature-ruby-provider',
+      category: ['Server'],
+    },
+    {
+      technology: 'Rust',
+      vendorOfficial: true,
+      href: 'https://github.com/Unleash/unleash-openfeature-rust-provider',
+      category: ['Server'],
+    },
+    {
+      technology: 'Swift',
+      vendorOfficial: true,
+      href: 'https://github.com/Unleash/unleash-openfeature-swift-provider',
+      category: ['Client'],
+    },
   ],
 };
