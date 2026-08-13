@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <path fill-rule="evenodd" d="m24 4 20 10-20 10L4 14 24 4Zm0 6.7L17.4 14l6.6 3.3 6.6-3.3L24 10.7Z"/>
+  <path d="m4 22 20 10 20-10v7L24 39 4 29v-7Z"/>
+  <path d="m4 33 20 10 20-10v7L24 48 4 40v-7Z"/>
+</svg>
