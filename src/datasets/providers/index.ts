@@ -4,6 +4,7 @@ import { ABTasty } from './abtasty';
 import { AwsSSM } from './awsssm';
 import { Bucketeer } from './bucketeer';
 import { CloudBees } from './cloudbees';
+import { Cloudflare } from './cloudflare';
 import { ConfigCat } from './configcat';
 import { ConfigDirector } from './configdirector';
 import { Datadog } from './datadog';
@@ -64,6 +65,7 @@ export const PROVIDERS: Provider[] = [
   AwsSSM,
   Bucketeer,
   CloudBees,
+  Cloudflare,
   Confidence,
   ConfigBee,
   ConfigCat,
