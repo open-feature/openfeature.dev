@@ -23,10 +23,7 @@ const VENDORS_SHOWN_AS_FACET = 20;
 const TECHNOLOGIES_SHOWN_AS_FACET = 20;
 
 const TECHNOLOGY_COUNT = new Set(
-  [...ECOSYSTEM_SDKS, ...ECOSYSTEM_PROVIDERS].flatMap((element) => [
-    element.technology,
-    ...(element.parentTechnology ? [element.parentTechnology] : []),
-  ]),
+  ECOSYSTEM_SDKS.flatMap((sdk) => [sdk.technology, ...(sdk.parentTechnology ? [sdk.parentTechnology] : [])]),
 ).size;
 const VENDOR_COUNT = new Set(ECOSYSTEM_PROVIDERS.map((provider) => provider.vendor)).size;
 

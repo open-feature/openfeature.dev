@@ -32,13 +32,6 @@ export const Bucketeer: Provider = {
       category: ['Client'],
     },
     {
-      technology: 'React Native',
-      parentTechnology: 'JavaScript',
-      vendorOfficial: true,
-      href: 'https://github.com/bucketeer-io/openfeature-js-client-sdk/blob/main/docs/react-native.md',
-      category: ['Client'],
-    },
-    {
       technology: 'JavaScript',
       vendorOfficial: true,
       href: 'https://www.npmjs.com/package/@bucketeer/openfeature-node-server-sdk',
