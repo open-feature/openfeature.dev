@@ -45,6 +45,7 @@ import { VWO } from './vwo';
 import { SDKS } from '../sdks';
 import { Intellitoggle } from './intellitoggle';
 import { OctopusDeploy } from './octopus-deploy';
+import { Optimizely } from './optimizely';
 
 const childTechnologyMap = SDKS.reduce(
   (acc, sdk) => {
@@ -105,6 +106,7 @@ export const PROVIDERS: Provider[] = [
   VWO,
   Intellitoggle,
   OctopusDeploy,
+  Optimizely,
 ];
 
 // Map of provider name to technology to child technologies
