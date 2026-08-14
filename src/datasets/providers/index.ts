@@ -2,6 +2,7 @@ import type { ComponentType, SVGProps } from 'react';
 import { Category, EcosystemElement, Technology } from '../types';
 import { ABTasty } from './abtasty';
 import { AwsSSM } from './awsssm';
+import { AzureAppConfiguration } from './azure-app-configuration';
 import { Bucketeer } from './bucketeer';
 import { CloudBees } from './cloudbees';
 import { Cloudflare } from './cloudflare';
@@ -63,6 +64,7 @@ const childTechnologyMap = SDKS.reduce(
 export const PROVIDERS: Provider[] = [
   ABTasty,
   AwsSSM,
+  AzureAppConfiguration,
   Bucketeer,
   CloudBees,
   Cloudflare,
