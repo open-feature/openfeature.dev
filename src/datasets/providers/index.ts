@@ -12,6 +12,7 @@ import { DevCycle } from './devcycle';
 import { EnvVar } from './env-var';
 import { Feat } from './feat';
 import { Flagd } from './flagd';
+import { FirebaseRemoteConfig } from './firebase-remote-config';
 import { Flagsmith } from './flagsmith';
 import { Flipswitch } from './flipswitch';
 import { Flipt } from './flipt';
@@ -78,6 +79,7 @@ export const PROVIDERS: Provider[] = [
   FeatBit,
   Featureflip,
   Featurevisor,
+  FirebaseRemoteConfig,
   Flagd,
   Flagsmith,
   Flipswitch,
