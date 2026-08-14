@@ -47,6 +47,7 @@ import { VWO } from './vwo';
 import { SDKS } from '../sdks';
 import { Intellitoggle } from './intellitoggle';
 import { OctopusDeploy } from './octopus-deploy';
+import { Optimizely } from './optimizely';
 import { Pendo } from './pendo';
 import { Superposition } from './superposition';
 
@@ -111,6 +112,7 @@ export const PROVIDERS: Provider[] = [
   VWO,
   Intellitoggle,
   OctopusDeploy,
+  Optimizely,
   Pendo,
   Superposition
 ];
