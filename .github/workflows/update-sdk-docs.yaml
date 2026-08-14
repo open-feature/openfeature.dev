@@ -64,7 +64,7 @@ jobs:
           git commit -m 'chore: update sdk readmes' -s
 
       - name: Push changes
-        uses: ad-m/github-push-action@d91a481090679876dfc4178fef17f286781251df # v0.8.0
+        uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c # v1.3.0
         with:
           github_token: ${{ secrets.PULL_REQUEST_AUTOMATION }}
           branch: ${{ env.BRANCH_NAME }}
