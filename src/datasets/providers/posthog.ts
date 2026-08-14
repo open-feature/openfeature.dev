@@ -7,6 +7,24 @@ export const PostHog: Provider = {
   technologies: [
     {
       technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/PostHog/posthog-js/tree/main/packages/openfeature-node-provider',
+      category: ['Server'],
+    },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/PostHog/posthog-js/tree/main/packages/openfeature-web-provider',
+      category: ['Client'],
+    },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://github.com/PostHog/posthog-python/tree/main/openfeature-provider',
+      category: ['Server'],
+    },
+    {
+      technology: 'JavaScript',
       vendorOfficial: false,
       href: 'https://www.npmjs.com/package/@tapico/node-openfeature-posthog',
       category: ['Server'],
