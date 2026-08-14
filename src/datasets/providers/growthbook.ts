@@ -8,7 +8,7 @@ export const GrowthBook: Provider = {
     {
       technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://docs.growthbook.io/lib/js#openfeature-provider',
+      href: 'https://docs.growthbook.io/lib/openfeature',
       category: ['Client'],
     },
     {

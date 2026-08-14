@@ -8,25 +8,25 @@ export const Datadog: Provider = {
     {
       technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://docs.datadoghq.com/feature_flags/server/nodejs',
+      href: 'https://docs.datadoghq.com/feature_flags/server/nodejs/',
       category: ['Server'],
     },
     {
       technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://docs.datadoghq.com/feature_flags/client/javascript?tab=npm',
+      href: 'https://docs.datadoghq.com/feature_flags/client/javascript/',
       category: ['Client'],
     },
     {
       technology: 'React',
       vendorOfficial: true,
-      href: 'https://docs.datadoghq.com/feature_flags/client/react?tab=npm',
+      href: 'https://docs.datadoghq.com/feature_flags/client/react/',
       category: ['Client'],
     },
     {
       technology: 'Swift',
       vendorOfficial: true,
-      href: 'https://docs.datadoghq.com/feature_flags/client/ios?tab=swiftpackagemanagerspm',
+      href: 'https://docs.datadoghq.com/feature_flags/client/ios/',
       category: ['Client'],
     },
     {
@@ -50,19 +50,19 @@ export const Datadog: Provider = {
     {
       technology: 'Java',
       vendorOfficial: true,
-      href: 'https://docs.datadoghq.com/feature_flags/server/java?tab=gradlegroovy',
+      href: 'https://docs.datadoghq.com/feature_flags/server/java/',
       category: ['Server'],
     },
     {
       technology: 'Python',
       vendorOfficial: true,
-      href: 'https://docs.datadoghq.com/feature_flags/server/python',
+      href: 'https://docs.datadoghq.com/feature_flags/server/python/',
       category: ['Server'],
     },
     {
       technology: 'Ruby',
       vendorOfficial: true,
-      href: 'https://docs.datadoghq.com/feature_flags/server/ruby',
+      href: 'https://docs.datadoghq.com/feature_flags/server/ruby/',
       category: ['Server'],
     },
     {

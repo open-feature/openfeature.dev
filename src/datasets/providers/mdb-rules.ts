@@ -8,7 +8,7 @@ export const MDBRules: Provider = {
     {
       technology: 'Go',
       vendorOfficial: false,
-      href: 'https://github.com/ZackarySantana/mongo-openfeature-go',
+      href: 'https://github.com/ZackarySantana/openfeature-go',
       category: ['Server'],
     },
   ],

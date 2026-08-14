@@ -8,19 +8,19 @@ export const CloudBees: Provider = {
     {
       technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://github.com/rollout/cloudbees-openfeature-provider-node',
+      href: 'https://github.com/cloudbees-oss/cloudbees-openfeature-provider-node',
       category: ['Server'],
     },
     {
       technology: 'Go',
       vendorOfficial: true,
-      href: 'https://github.com/rollout/cloudbees-openfeature-provider-go',
+      href: 'https://github.com/cloudbees-oss/cloudbees-openfeature-provider-go',
       category: ['Server'],
     },
     {
       technology: 'Java',
       vendorOfficial: true,
-      href: 'https://github.com/rollout/cloudbees-openfeature-provider-java',
+      href: 'https://github.com/cloudbees-oss/cloudbees-openfeature-provider-java',
       category: ['Server'],
     },
     {
@@ -32,7 +32,7 @@ export const CloudBees: Provider = {
     {
       technology: 'Python',
       vendorOfficial: true,
-      href: 'https://github.com/rollout/cloudbees-openfeature-provider-python',
+      href: 'https://github.com/cloudbees-oss/cloudbees-openfeature-provider-python',
       category: ['Server'],
     },
   ],

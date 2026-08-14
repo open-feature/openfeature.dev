@@ -15,7 +15,7 @@ export const ConfigCat: Provider = {
       technology: 'NestJS',
       parentTechnology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://configcat.com/docs/sdk-reference/openfeature/nestjs',
+      href: 'https://configcat.com/docs/sdk-reference/openfeature/nestjs/',
       category: ['Server'],
     },
     {
@@ -28,14 +28,14 @@ export const ConfigCat: Provider = {
       technology: 'Angular',
       parentTechnology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://configcat.com/docs/sdk-reference/openfeature/angular',
+      href: 'https://configcat.com/docs/sdk-reference/openfeature/angular/',
       category: ['Client'],
     },
     {
       technology: 'React',
       parentTechnology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://configcat.com/docs/sdk-reference/openfeature/react',
+      href: 'https://configcat.com/docs/sdk-reference/openfeature/react/',
       category: ['Client'],
     },
     {
