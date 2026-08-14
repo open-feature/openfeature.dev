@@ -41,6 +41,7 @@ export type Technology =
   | 'C++'
   | 'Ruby'
   | 'React'
+  | 'React Native'
   | 'Angular'
   | 'Rust'
   | 'NestJS'

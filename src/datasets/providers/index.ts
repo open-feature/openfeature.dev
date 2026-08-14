@@ -148,7 +148,9 @@ export const ECOSYSTEM_PROVIDERS: EcosystemElement[] = PROVIDERS.map((provider) 
       return {
         vendor: provider.name,
         title:
-          technology === 'JavaScript' || parentTechnology === 'JavaScript'
+          technology === 'React Native'
+            ? `${provider.name} React Native Provider`
+            : technology === 'JavaScript' || parentTechnology === 'JavaScript'
             ? `${provider.name} ${technology} ${category[0] === 'Client' ? 'Web' : 'Node.js'} Provider`
             : `${provider.name} ${technology} ${category} Provider`,
         description: !provider.description
