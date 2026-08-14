@@ -2,6 +2,7 @@ import type { ComponentType, SVGProps } from 'react';
 import { Category, EcosystemElement, Technology } from '../types';
 import { ABTasty } from './abtasty';
 import { AwsSSM } from './awsssm';
+import { AzureAppConfiguration } from './azure-app-configuration';
 import { Bucketeer } from './bucketeer';
 import { CloudBees } from './cloudbees';
 import { Cloudflare } from './cloudflare';
@@ -12,6 +13,7 @@ import { DevCycle } from './devcycle';
 import { EnvVar } from './env-var';
 import { Feat } from './feat';
 import { Flagd } from './flagd';
+import { FirebaseRemoteConfig } from './firebase-remote-config';
 import { Flagsmith } from './flagsmith';
 import { Flipswitch } from './flipswitch';
 import { Flipt } from './flipt';
@@ -46,6 +48,8 @@ import { SDKS } from '../sdks';
 import { Intellitoggle } from './intellitoggle';
 import { OctopusDeploy } from './octopus-deploy';
 import { Optimizely } from './optimizely';
+import { Pendo } from './pendo';
+import { Superposition } from './superposition';
 
 const childTechnologyMap = SDKS.reduce(
   (acc, sdk) => {
@@ -64,6 +68,7 @@ const childTechnologyMap = SDKS.reduce(
 export const PROVIDERS: Provider[] = [
   ABTasty,
   AwsSSM,
+  AzureAppConfiguration,
   Bucketeer,
   CloudBees,
   Cloudflare,
@@ -78,6 +83,7 @@ export const PROVIDERS: Provider[] = [
   FeatBit,
   Featureflip,
   Featurevisor,
+  FirebaseRemoteConfig,
   Flagd,
   Flagsmith,
   Flipswitch,
@@ -107,6 +113,8 @@ export const PROVIDERS: Provider[] = [
   Intellitoggle,
   OctopusDeploy,
   Optimizely,
+  Pendo,
+  Superposition
 ];
 
 // Map of provider name to technology to child technologies
