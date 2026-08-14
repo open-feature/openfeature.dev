@@ -12,6 +12,12 @@ export const CloudBees: Provider = {
       category: ['Server'],
     },
     {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/cloudbees-oss/cloudbees-openfeature-provider-browser',
+      category: ['Client'],
+    },
+    {
       technology: 'Go',
       vendorOfficial: true,
       href: 'https://github.com/cloudbees-oss/cloudbees-openfeature-provider-go',
@@ -21,6 +27,12 @@ export const CloudBees: Provider = {
       technology: 'Java',
       vendorOfficial: true,
       href: 'https://github.com/cloudbees-oss/cloudbees-openfeature-provider-java',
+      category: ['Server'],
+    },
+    {
+      technology: '.NET',
+      vendorOfficial: true,
+      href: 'https://github.com/cloudbees-oss/cloudbees-openfeature-provider-dotnet',
       category: ['Server'],
     },
     {
