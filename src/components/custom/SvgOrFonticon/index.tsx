@@ -26,7 +26,7 @@ export type SvgCardData = {
 export class SvgOrFonticon extends React.Component<SvgOrFontIconConfig & SvgCardData & FontAwesomeCardData> {
   override render() {
     // default to 45px
-    const props = {size: 45, ...this.props} as SvgOrFontIconConfig & Partial<SvgCardData & FontAwesomeCardData>;
+    const props = { size: 45, ...this.props } as SvgOrFontIconConfig & Partial<SvgCardData & FontAwesomeCardData>;
     let iconDef: IconProp;
     let SvgComponent: ComponentType<SVGProps<SVGSVGElement>>;
 
@@ -39,10 +39,20 @@ export class SvgOrFonticon extends React.Component<SvgOrFontIconConfig & SvgCard
       <span style={{ marginBottom: 16 }}>
         {props.svg ? (
           <div style={{ display: 'inline', verticalAlign: 'middle' }} className={styles.svgOrIcon}>
-          <SvgComponent style={{ display: 'inline', width: props.size, height: props.size}}/>
-        </div>          
+            <SvgComponent style={{ display: 'inline', width: props.size, height: props.size }} />
+          </div>
         ) : (
-          <FontAwesomeIcon style={{verticalAlign: 'sub', margin: 0, height: props.size, width: props.size }} className={styles.svgOrIcon} icon={iconDef} />
+          <FontAwesomeIcon
+            style={{
+              display: 'inline-block',
+              verticalAlign: 'middle',
+              margin: 0,
+              height: props.size,
+              width: props.size,
+            }}
+            className={styles.svgOrIcon}
+            icon={iconDef}
+          />
         )}
       </span>
     );

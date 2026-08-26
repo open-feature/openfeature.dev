@@ -37,10 +37,14 @@ export class OpenFeatureComponentCard extends React.Component<OpenFeatureCompone
         <h2 className={'text-sm'}>{this.props.description}</h2>
         <div className={'flex justify-end'}>
           {props.vendorOfficial ? (
-            <FontAwesomeIcon icon={faCircleCheck} title="Official, vendor-supported provider" />
+            <FontAwesomeIcon
+              className="h-4 w-4"
+              icon={faCircleCheck}
+              aria-label="Official, vendor-supported provider"
+            />
           ) : (
             // visibility: 'hidden'  is important here. This icon is only here for consistent sizing.
-            <FontAwesomeIcon style={{ visibility: 'hidden' }} icon={faSadCry} />
+            <FontAwesomeIcon className="h-4 w-4" style={{ visibility: 'hidden' }} icon={faSadCry} />
           )}
         </div>
       </Link>

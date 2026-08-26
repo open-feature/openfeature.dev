@@ -16,7 +16,7 @@ export default function ClearFilters() {
       onClick={refine}
     >
       <div className="flex items-center gap-2">
-        <FontAwesomeIcon icon={faRotateRight} />
+        <FontAwesomeIcon icon={faRotateRight} widthAuto />
         Clear filters
       </div>
     </button>

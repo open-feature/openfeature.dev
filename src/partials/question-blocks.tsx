@@ -1,8 +1,17 @@
 import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faFlag, faClipboard } from '@fortawesome/free-regular-svg-icons';
 import { faUserGroup } from '@fortawesome/free-solid-svg-icons';
+
+function QuestionIcon({ icon }: { icon: IconDefinition }) {
+  return (
+    <div className="w-16 h-16 mb-4 rounded-full bg-purple-600 flex items-center justify-center">
+      <FontAwesomeIcon className="text-purple-100 fa-xl" icon={icon} widthAuto />
+    </div>
+  );
+}
 
 function QuestionBlocks() {
   const { siteConfig } = useDocusaurusContext();
@@ -23,9 +32,7 @@ function QuestionBlocks() {
               data-aos-delay="100"
               data-aos-anchor="[data-aos-id-blocks]"
             >
-              <div className="w-16 h-16 mb-4 rounded-full bg-purple-600 relative">
-                <FontAwesomeIcon className="absolute top-5 left-6 text-purple-100 fa-xl" icon={faFlag} />
-              </div>
+              <QuestionIcon icon={faFlag} />
 
               <h4 className="h4 mb-2">What's a Feature Flag?</h4>
               <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
@@ -40,9 +47,7 @@ function QuestionBlocks() {
               data-aos="fade-up"
               data-aos-anchor="[data-aos-id-blocks]"
             >
-              <div className="w-16 h-16 mb-4 rounded-full bg-purple-600 relative">
-                <FontAwesomeIcon className="absolute top-5 left-[18px] text-purple-100 fa-xl" icon={faUserGroup} />
-              </div>
+              <QuestionIcon icon={faUserGroup} />
               <h4 className="h4 mb-2">What's OpenFeature?</h4>
               <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
                 {siteConfig.customFields.description as string}
@@ -56,9 +61,7 @@ function QuestionBlocks() {
               data-aos-delay="200"
               data-aos-anchor="[data-aos-id-blocks]"
             >
-              <div className="w-16 h-16 mb-4 rounded-full bg-purple-600 relative">
-                <FontAwesomeIcon className="absolute top-5 left-6 text-purple-100 fa-xl" icon={faClipboard} />
-              </div>
+              <QuestionIcon icon={faClipboard} />
               <h4 className="h4 mb-2">Why standardize?</h4>
               <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
                 Standardizing feature flags unifies tools and vendors behind a common interface, avoiding vendor lock-in
