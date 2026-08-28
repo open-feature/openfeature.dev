@@ -4,8 +4,8 @@
     "path": "/docs/reference/sdks/server/java",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.22.0",
-      "version": "1.22.0",
+      "href": "https://github.com/open-feature/java-sdk/releases/tag/v1.22.1",
+      "version": "1.22.1",
       "stable": true
     },
     "spec": {
