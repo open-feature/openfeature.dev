@@ -18,5 +18,11 @@ export const Featureflip: Provider = {
       href: 'https://featureflip.io/docs/integrations/openfeature/',
       category: ['Server'],
     },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://featureflip.io/docs/integrations/openfeature/',
+      category: ['Server'],
+    },
   ],
 };
