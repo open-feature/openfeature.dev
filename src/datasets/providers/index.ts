@@ -39,6 +39,7 @@ import { GrowthBook } from './growthbook';
 import { MultiProvider } from './multi-provider';
 import { Hypertune } from './hypertune';
 import { Confidence } from './confidence';
+import { Nona } from './nona';
 import { ConfigBee } from './configbee';
 import { Vercel } from './vercel';
 import { Tggl } from './tggl';
@@ -107,6 +108,7 @@ export const PROVIDERS: Provider[] = [
   Vercel,
   GrowthBook,
   MultiProvider,
+  Nona,
   Tggl,
   OFREP,
   VWO,
