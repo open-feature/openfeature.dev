@@ -50,6 +50,7 @@ import { OctopusDeploy } from './octopus-deploy';
 import { Optimizely } from './optimizely';
 import { Pendo } from './pendo';
 import { Superposition } from './superposition';
+import { UseFlagly } from './useflagly';
 
 const childTechnologyMap = SDKS.reduce(
   (acc, sdk) => {
@@ -114,7 +115,8 @@ export const PROVIDERS: Provider[] = [
   OctopusDeploy,
   Optimizely,
   Pendo,
-  Superposition
+  Superposition,
+  UseFlagly,
 ];
 
 // Map of provider name to technology to child technologies
