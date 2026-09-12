@@ -2,6 +2,7 @@ import type { ComponentType, SVGProps } from 'react';
 
 import KameleoonSvg from '@site/static/img/vendors/kameleoon.svg';
 import DevCycleSvg from '@site/static/img/vendors/devcycle.svg';
+import FeatureflipSvg from '@site/static/img/vendors/featureflip.svg';
 import FliptSvg from '@site/static/img/vendors/flipt.svg';
 import FlagsmithSvg from '@site/static/img/vendors/flagsmith.svg';
 import HarnessSvg from '@site/static/img/vendors/harness.svg';
@@ -36,6 +37,11 @@ export const CommercialSupportList: CommercialSupportType[] = [
     name: 'DevCycle',
     href: 'https://docs.devcycle.com/integrations/openfeature',
     svg: DevCycleSvg,
+  },
+  {
+    name: 'Featureflip',
+    href: 'https://featureflip.io/docs/integrations/openfeature/',
+    svg: FeatureflipSvg,
   },
   {
     name: 'Flagsmith',
