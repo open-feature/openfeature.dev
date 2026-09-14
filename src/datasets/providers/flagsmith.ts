@@ -59,5 +59,11 @@ export const Flagsmith: Provider = {
       href: 'https://github.com/open-feature/rust-sdk-contrib/tree/main/crates/flagsmith',
       category: ['Server'],
     },
+    {
+      technology: 'Swift',
+      vendorOfficial: true,
+      href: 'https://github.com/Flagsmith/flagsmith-openfeature-swift-provider',
+      category: ['Client'],
+    },
   ],
 };
