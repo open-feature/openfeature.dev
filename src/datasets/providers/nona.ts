@@ -12,6 +12,12 @@ export const Nona: Provider = {
       category: ['Server'],
     },
     {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://www.npmjs.com/package/nona-openfeature-web-provider',
+      category: ['Client'],
+    },
+    {
       technology: '.NET',
       vendorOfficial: true,
       href: 'https://www.nuget.org/packages/Nona.OpenFeature.Provider',
