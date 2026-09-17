@@ -2587,7 +2587,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/module-type-aliases@npm:3.10.2, @docusaurus/module-type-aliases@npm:^3.10.0":
+"@docusaurus/module-type-aliases@npm:3.10.2":
   version: 3.10.2
   resolution: "@docusaurus/module-type-aliases@npm:3.10.2"
   dependencies:
@@ -2965,7 +2965,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/tsconfig@npm:^3.10.0":
+"@docusaurus/tsconfig@npm:3.10.2":
   version: 3.10.2
   resolution: "@docusaurus/tsconfig@npm:3.10.2"
   checksum: 10c0/f73d11ce6440d8ad3d8a87a87661e39d1d16451db0f16cd15a1856b331608b429e4b35ab1e8d1fae4c4e2b5bb4b8c238bac3900a8f024a68ba942c633c228361
@@ -8414,11 +8414,11 @@ __metadata:
   resolution: "docs@workspace:."
   dependencies:
     "@docusaurus/core": "npm:^3.10.0"
-    "@docusaurus/module-type-aliases": "npm:^3.10.0"
+    "@docusaurus/module-type-aliases": "npm:3.10.2"
     "@docusaurus/plugin-client-redirects": "npm:^3.10.0"
     "@docusaurus/preset-classic": "npm:^3.10.0"
     "@docusaurus/theme-mermaid": "npm:^3.10.0"
-    "@docusaurus/tsconfig": "npm:^3.10.0"
+    "@docusaurus/tsconfig": "npm:3.10.2"
     "@fortawesome/fontawesome-svg-core": "npm:7.3.1"
     "@fortawesome/free-brands-svg-icons": "npm:7.3.1"
     "@fortawesome/free-regular-svg-icons": "npm:7.3.1"
@@ -8441,7 +8441,7 @@ __metadata:
     docusaurus-theme-github-codeblock: "npm:^2.0.2"
     embla-carousel-autoplay: "npm:^8.6.0"
     embla-carousel-react: "npm:^8.6.0"
-    eslint: "npm:^8.57.0"
+    eslint: "npm:8.57.1"
     eslint-config-prettier: "npm:10.1.5"
     eslint-mdx: "npm:3.6.0"
     eslint-plugin-check-file: "npm:3.3.0"
@@ -8451,8 +8451,8 @@ __metadata:
     fs-extra: "npm:11.3.0"
     instantsearch-itemsjs-adapter: "npm:^1.1.5"
     itemsjs: "npm:^2.1.25"
-    markdownlint-cli2: "npm:^0.17.2"
-    markdownlint-rule-max-one-sentence-per-line: "npm:^0.0.2"
+    markdownlint-cli2: "npm:0.17.2"
+    markdownlint-rule-max-one-sentence-per-line: "npm:0.0.2"
     mermaid: "npm:11.16.1"
     postcss: "npm:^8.5.10"
     prettier: "npm:3.6.2"
@@ -8475,7 +8475,7 @@ __metadata:
     tailwindcss-animate: "npm:^1.0.7"
     tsconfig-paths: "npm:^4.2.0"
     typescript: "npm:5.9.3"
-    wireit: "npm:^0.14.12"
+    wireit: "npm:0.14.12"
   languageName: unknown
   linkType: soft
 
@@ -9385,7 +9385,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.57.0":
+"eslint@npm:8.57.1":
   version: 8.57.1
   resolution: "eslint@npm:8.57.1"
   dependencies:
@@ -12263,7 +12263,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdownlint-cli2@npm:^0.17.2":
+"markdownlint-cli2@npm:0.17.2":
   version: 0.17.2
   resolution: "markdownlint-cli2@npm:0.17.2"
   dependencies:
@@ -12286,7 +12286,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdownlint-rule-max-one-sentence-per-line@npm:^0.0.2":
+"markdownlint-rule-max-one-sentence-per-line@npm:0.0.2":
   version: 0.0.2
   resolution: "markdownlint-rule-max-one-sentence-per-line@npm:0.0.2"
   dependencies:
@@ -19115,7 +19115,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wireit@npm:^0.14.12":
+"wireit@npm:0.14.12":
   version: 0.14.12
   resolution: "wireit@npm:0.14.12"
   dependencies:
