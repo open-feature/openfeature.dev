@@ -6,10 +6,11 @@ import { Flipt } from './flipt';
 import { Flagd } from './flagd';
 import { ConfigCat } from './configcat';
 import { FFlags } from './fflags';
+import { Flaghoist } from './flaghoist';
 import { Flipswitch } from './flipswitch';
 export type OFREPElement = Omit<EcosystemElement, 'allTechnologies' | 'technology' | 'category'>;
 
-export const ECOSYSTEM_OFREP_APIS: OFREPElement[] = [ConfigCat, DevCycle, Flagd, FFlags, Flipswitch, Flipt, Goff]
+export const ECOSYSTEM_OFREP_APIS: OFREPElement[] = [ConfigCat, DevCycle, Flagd, FFlags, Flaghoist, Flipswitch, Flipt, Goff]
   .map(
     (api): OFREPElement => ({
       vendor: api.name,
