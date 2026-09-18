@@ -6,6 +6,7 @@ import { Flipt } from './flipt';
 import { Flagd } from './flagd';
 import { ConfigCat } from './configcat';
 import { FFlags } from './fflags';
+import { Flaghoist } from './flaghoist';
 import { Flipswitch } from './flipswitch';
 import { PydanticLogfire } from './pydantic-logfire';
 export type OFREPElement = Omit<EcosystemElement, 'allTechnologies' | 'technology' | 'category'>;
@@ -15,6 +16,7 @@ export const ECOSYSTEM_OFREP_APIS: OFREPElement[] = [
   DevCycle,
   Flagd,
   FFlags,
+  Flaghoist,
   Flipswitch,
   Flipt,
   Goff,
