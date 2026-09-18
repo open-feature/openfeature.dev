@@ -36,5 +36,11 @@ export const Featureflip: Provider = {
       href: 'https://featureflip.io/docs/integrations/openfeature/',
       category: ['Server'],
     },
+    {
+      technology: 'PHP',
+      vendorOfficial: true,
+      href: 'https://featureflip.io/docs/integrations/openfeature/',
+      category: ['Server'],
+    },
   ],
 };
