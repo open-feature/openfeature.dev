@@ -17,6 +17,7 @@ import { Cpp } from './cpp';
 import { NextjsFlagsSDK } from './nextjs-flags-sdk';
 import { SveltekitFlagsSDK } from './sveltekit-flags-sdk';
 import { Dart } from './dart';
+import { DartClient } from './dart-client';
 export const SDKS = [
   Java,
   Nodejs,
@@ -32,6 +33,7 @@ export const SDKS = [
   Ruby,
   Angular,
   Dart,
+  DartClient,
   Rust,
   Cpp,
   NextjsFlagsSDK,
