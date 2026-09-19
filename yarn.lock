@@ -8588,13 +8588,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docusaurus-theme-redoc@npm:2.5.0":
-  version: 2.5.0
-  resolution: "docusaurus-theme-redoc@npm:2.5.0"
+"docusaurus-theme-redoc@npm:2.5.1":
+  version: 2.5.1
+  resolution: "docusaurus-theme-redoc@npm:2.5.1"
   dependencies:
     "@redocly/openapi-core": "npm:1.16.0"
     clsx: "npm:^1.2.1"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     mobx: "npm:^6.12.4"
     postcss: "npm:^8.4.45"
     postcss-prefix-selector: "npm:^1.16.1"
@@ -8603,7 +8603,7 @@ __metadata:
   peerDependencies:
     "@docusaurus/theme-common": ^3.6.0
     webpack: ^5.0.0
-  checksum: 10c0/c00b8c52073d98c7a0a4d2516688eded55f6151cde686ce1109d1896db17bf190fbef07bc36d1c92ace1890fd22882d723617196922b4ae19ac91aefa740c50a
+  checksum: 10c0/8418c3e5f7ff0f7f9c6f3b8081f95bb0dd0d76d3a87cd4f4b2d98c405a35dd09dfd17a0b7574adb152d49110e41fb2ed54504b836784b351ff6c651a35e334c7
   languageName: node
   linkType: hard
 
@@ -16106,15 +16106,15 @@ __metadata:
   linkType: hard
 
 "redocusaurus@npm:^2.5.0":
-  version: 2.5.0
-  resolution: "redocusaurus@npm:2.5.0"
+  version: 2.5.2
+  resolution: "redocusaurus@npm:2.5.2"
   dependencies:
     docusaurus-plugin-redoc: "npm:2.5.0"
-    docusaurus-theme-redoc: "npm:2.5.0"
+    docusaurus-theme-redoc: "npm:2.5.1"
   peerDependencies:
     "@docusaurus/theme-common": ^3.6.0
     "@docusaurus/utils": ^3.6.0
-  checksum: 10c0/2c75e57f1b77b9b646b95056141cd93c9f8a46969547d7d15ecf7b0b5a1acf62c8b850649bdda37cf9db17742f1d909f18c50a5758716792bc72d10da078d547
+  checksum: 10c0/443c1221657d06927d40a29a95edecbcecd60885807b2fc0aaaadf543cf0d3dc06162ae3575f75a463457be5bab34ad82bbc987b057904bffe7cb0935d744508
   languageName: node
   linkType: hard
 
