@@ -84,6 +84,14 @@ Providers might wrap a vendor SDK, call a bespoke flag evaluation REST API, or e
 [Hooks](./concepts/04-hooks.mdx) are a mechanism that allow for the addition of arbitrary behavior at various points in the _flag evaluation life-cycle_.
 Hooks let you extend the OpenFeature SDK, adding functionality such as validating a resolved flag value, modifying or adding data to the evaluation context, logging, telemetry, and tracking.
 
+### Experimentation
+
+OpenFeature includes support for [experimentation](./concepts/08-experimentation.mdx) use cases.
+The [tracking API](./concepts/07-tracking.mdx) lets you associate user actions (conversions, clicks, sign-ups) with flag evaluations,
+enabling A/B testing and other experimentation workflows.
+Combined with the [evaluation context](./concepts/03-evaluation-context.mdx) (targeting key, user attributes) and [hooks](./concepts/04-hooks.mdx)
+for custom metrics, OpenFeature provides a complete experimentation pipeline that works with any analytics platform.
+
 ### Events
 
 [Events](./concepts/05-events.mdx) enable the ability to react to state changes in the provider or underlying flag management system.
