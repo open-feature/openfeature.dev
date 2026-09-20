@@ -8536,7 +8536,7 @@ __metadata:
     tailwindcss-animate: "npm:^1.0.7"
     tsconfig-paths: "npm:^4.2.0"
     typescript: "npm:5.9.3"
-    wireit: "npm:0.14.12"
+    wireit: "npm:0.14.13"
   languageName: unknown
   linkType: soft
 
@@ -19184,18 +19184,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wireit@npm:0.14.12":
-  version: 0.14.12
-  resolution: "wireit@npm:0.14.12"
+"wireit@npm:0.14.13":
+  version: 0.14.13
+  resolution: "wireit@npm:0.14.13"
   dependencies:
-    brace-expansion: "npm:^4.0.0"
+    brace-expansion: "npm:^5.0.6"
     chokidar: "npm:^3.5.3"
     fast-glob: "npm:^3.2.11"
     jsonc-parser: "npm:^3.0.0"
     proper-lockfile: "npm:^4.1.2"
   bin:
     wireit: bin/wireit.js
-  checksum: 10c0/2bc3aabb9cdfe2318d44ee953123bd5f6e1bb7645bd12757791aa2aaf93a1ee0963e6a046012c7956d0d655d637923c41177752b3f84f2c63d81941413c99157
+  checksum: 10c0/1ed9a07d67de78b1a49a79c0b398f7f5cca77cb0d24f9ffa5955d5a6c96df4de143c81db8691c255be0281787a171f0529bfd670005c394a2fc4a9e0983981a0
   languageName: node
   linkType: hard
 
