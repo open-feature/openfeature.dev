@@ -11739,9 +11739,9 @@ __metadata:
   linkType: hard
 
 "itemsjs@npm:^2.1.14, itemsjs@npm:^2.1.25":
-  version: 2.1.25
-  resolution: "itemsjs@npm:2.1.25"
-  checksum: 10c0/74e18c403c5eb2c466a8570cddbc14a75c04b4b3099357c9299a78fcc051ac2d95582847d44f9b9728f4c7de0569a6c1b75618a150ef9ccc1ac5dada78463698
+  version: 2.4.4
+  resolution: "itemsjs@npm:2.4.4"
+  checksum: 10c0/a4f2c2098a5c8718ca261ab0e1631bed0c938ebf50d4db6a180c04107f4d6a2631da9389e38e666c166623a1af48338d324b4c3dc1fc92f4d2bddaf66e65e76b
   languageName: node
   linkType: hard
 
