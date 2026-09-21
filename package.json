@@ -77,7 +77,7 @@
     "@typescript-eslint/parser": "8.35.1",
     "eslint": "8.57.1",
     "eslint-config-prettier": "10.1.8",
-    "eslint-mdx": "3.6.0",
+    "eslint-mdx": "3.8.1",
     "eslint-plugin-check-file": "3.3.2",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-jest": "27.9.0",
