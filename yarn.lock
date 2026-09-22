@@ -4312,12 +4312,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@primer/octicons@npm:^19.15.1":
-  version: 19.15.1
-  resolution: "@primer/octicons@npm:19.15.1"
+"@primer/octicons@npm:^19.20.0":
+  version: 19.38.0
+  resolution: "@primer/octicons@npm:19.38.0"
   dependencies:
     object-assign: "npm:^4.1.1"
-  checksum: 10c0/9572dfbac302ed588eee408bd869549f295a1f9afa47eb7844fd1b38a6cea59f52d48f7d61f1e73b44c27c1527cf18c2c442660e61d5e361819941cc5f2cd1bc
+  checksum: 10c0/70b0d1e557e85f126863dd79396018432e6d7062e9f8724a95730d7cf3d2690c82a469a067eb650620cbc64e2e9893512e2f824fd30c2fb34608b515b0e13f90
   languageName: node
   linkType: hard
 
@@ -16353,14 +16353,14 @@ __metadata:
   linkType: hard
 
 "rehype-github-alerts@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "rehype-github-alerts@npm:4.1.1"
+  version: 4.2.0
+  resolution: "rehype-github-alerts@npm:4.2.0"
   dependencies:
-    "@primer/octicons": "npm:^19.15.1"
+    "@primer/octicons": "npm:^19.20.0"
     hast-util-from-html: "npm:^2.0.3"
     hast-util-is-element: "npm:^3.0.0"
     unist-util-visit: "npm:^5.0.0"
-  checksum: 10c0/aa6f30ed1d26a3b40e37d281e68452d2272e57b6f059c121d2f26d2f5416aa005fb3dd86912dcf6a1569bcbde7aa53fe6709e2121dea99ea9350f946ff85a033
+  checksum: 10c0/57968582f1b19ae0ffe275184205f43bb139e3f598492ac094dc45093963c9501c28f8dd444750c4a0c8a14649430e75c7d23b2f36262c3368b7fcd4d57b750a
   languageName: node
   linkType: hard
 
