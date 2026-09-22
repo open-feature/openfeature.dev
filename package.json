@@ -87,7 +87,7 @@
     "markdownlint-rule-max-one-sentence-per-line": "0.0.2",
     "prettier": "3.9.8",
     "typescript": "5.9.3",
-    "wireit": "0.14.12"
+    "wireit": "0.14.13"
   },
   "browserslist": {
     "production": [
@@ -143,7 +143,6 @@
     "@babel/core": "^7.29.7",
     "axios": "^1.15.0",
     "body-parser": "^1.20.6",
-    "brace-expansion": "^2.0.3",
     "dompurify": "^3.4.0",
     "esbuild": "^0.28.1",
     "fast-xml-parser": "^5.7.0",
