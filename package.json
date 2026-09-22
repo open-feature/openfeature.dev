@@ -157,7 +157,7 @@
     "markdown-it": "^14.2.0",
     "mdast-util-to-hast": "^13.2.1",
     "minimatch": "^9.0.7",
-    "path-to-regexp": "^0.2.0",
+    "path-to-regexp": "^1.0.0",
     "webpack-dev-server": "^5.2.3",
     "picomatch": "^4.0.4",
     "preact": "^10.26.10",
