@@ -4725,6 +4725,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swc/helpers@npm:0.5.18":
+  version: 0.5.18
+  resolution: "@swc/helpers@npm:0.5.18"
+  dependencies:
+    tslib: "npm:^2.8.0"
+  checksum: 10c0/cb32d72e32f775c30287bffbcf61c89ea3a963608cb3a4a675a3f9af545b8b3ab0bc9930432a5520a7307daaa87538158e253584ae1cf39f3e7e6e83408a2d51
+  languageName: node
+  linkType: hard
+
 "@swc/helpers@npm:^0.5.0":
   version: 0.5.17
   resolution: "@swc/helpers@npm:0.5.17"
@@ -6184,7 +6193,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"algoliasearch-helper@npm:3.26.0, algoliasearch-helper@npm:^3.26.0":
+"algoliasearch-helper@npm:3.29.3":
+  version: 3.29.3
+  resolution: "algoliasearch-helper@npm:3.29.3"
+  dependencies:
+    "@algolia/events": "npm:^4.0.1"
+  peerDependencies:
+    algoliasearch: ">= 3.1 < 6"
+  checksum: 10c0/22e7aa69cc959941a3bbf338b5b0becd1e3301257c737de75bafc78cac5cb5693dfdba65855ec826bdee51367c76cdb5cac8a1430223d0f494868dcea115d4ae
+  languageName: node
+  linkType: hard
+
+"algoliasearch-helper@npm:^3.26.0":
   version: 3.26.0
   resolution: "algoliasearch-helper@npm:3.26.0"
   dependencies:
@@ -11181,34 +11201,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"instantsearch-ui-components@npm:0.11.1":
-  version: 0.11.1
-  resolution: "instantsearch-ui-components@npm:0.11.1"
+"instantsearch-ui-components@npm:0.40.1":
+  version: 0.40.1
+  resolution: "instantsearch-ui-components@npm:0.40.1"
   dependencies:
-    "@babel/runtime": "npm:^7.1.2"
-  checksum: 10c0/d1523b91e1b6fc7fc7eaad129e3edb878247403697e6f64dd546479370d8c885f7f499747e3fbcb80e16e3a4d8802617445c9baf3a2015da588bdb4778605c4f
+    "@swc/helpers": "npm:0.5.18"
+    markdown-to-jsx: "npm:^7.7.15"
+  checksum: 10c0/5a3257e40c9f4d4ff4f82b4d01678346a7ab9cf145d141596ca65311be6b7da957cf90009fcc39544a087e09a341fa18df5443b944c21efb5e8481e3a96477e4
   languageName: node
   linkType: hard
 
-"instantsearch.js@npm:4.79.0":
-  version: 4.79.0
-  resolution: "instantsearch.js@npm:4.79.0"
+"instantsearch.js@npm:4.117.0":
+  version: 4.117.0
+  resolution: "instantsearch.js@npm:4.117.0"
   dependencies:
     "@algolia/events": "npm:^4.0.1"
+    "@swc/helpers": "npm:0.5.18"
     "@types/dom-speech-recognition": "npm:^0.0.1"
     "@types/google.maps": "npm:^3.55.12"
     "@types/hogan.js": "npm:^3.0.0"
     "@types/qs": "npm:^6.5.3"
-    algoliasearch-helper: "npm:3.26.0"
+    algoliasearch-helper: "npm:3.29.3"
     hogan.js: "npm:^3.0.2"
     htm: "npm:^3.0.0"
-    instantsearch-ui-components: "npm:0.11.1"
+    instantsearch-ui-components: "npm:0.40.1"
     preact: "npm:^10.10.0"
-    qs: "npm:^6.5.1 < 6.10"
+    qs: "npm:^6.5.1"
+    react: "npm:>= 0.14.0"
     search-insights: "npm:^2.17.2"
   peerDependencies:
     algoliasearch: ">= 3.1 < 6"
-  checksum: 10c0/3372d4ded0430dc5e4ae0894d6b40dbfe832d8628570e93622033550f35dabcc7980e5b014fcbb5bab87ad159c30f8534dfed0769c1ecd0ae7f6a55f01299921
+  checksum: 10c0/8896a6620c65622ecee2cdfbe81b0cc819a2ae63e9828be2d8366bd9c4d43e3363550f64a9bae6891ed2a85b9757b258aa275affc4aa1e8148b9b4ac8c6dfbee
   languageName: node
   linkType: hard
 
@@ -12370,6 +12393,18 @@ __metadata:
   version: 3.0.4
   resolution: "markdown-table@npm:3.0.4"
   checksum: 10c0/1257b31827629a54c24a5030a3dac952256c559174c95ce3ef89bebd6bff0cb1444b1fd667b1a1bb53307f83278111505b3e26f0c4e7b731e0060d435d2d930b
+  languageName: node
+  linkType: hard
+
+"markdown-to-jsx@npm:^7.7.15":
+  version: 7.7.17
+  resolution: "markdown-to-jsx@npm:7.7.17"
+  peerDependencies:
+    react: ">= 0.14.0"
+  peerDependenciesMeta:
+    react:
+      optional: true
+  checksum: 10c0/581c5ee1b3c79445f9f8369dc2882d0289507e702b2fcf2bc276b163a984cdcca2d8463a609c9bf310a31dcbf10c3210721c42c9173d4f12da675d3b56243736
   languageName: node
   linkType: hard
 
@@ -15888,34 +15923,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-instantsearch-core@npm:7.16.0":
-  version: 7.16.0
-  resolution: "react-instantsearch-core@npm:7.16.0"
+"react-instantsearch-core@npm:7.49.1":
+  version: 7.49.1
+  resolution: "react-instantsearch-core@npm:7.49.1"
   dependencies:
-    "@babel/runtime": "npm:^7.1.2"
-    algoliasearch-helper: "npm:3.26.0"
-    instantsearch.js: "npm:4.79.0"
+    "@swc/helpers": "npm:0.5.18"
+    algoliasearch-helper: "npm:3.29.3"
+    instantsearch.js: "npm:4.117.0"
     use-sync-external-store: "npm:^1.0.0"
   peerDependencies:
     algoliasearch: ">= 3.1 < 6"
     react: ">= 16.8.0 < 20"
-  checksum: 10c0/6941d029d30bfc7244b43e0c26c3b6354aa988744b50676a61e9ccd9c159ffcf25ae5237ff670176fe750059b9ad04a08aa0e6671c0876ef6341185f00c523b6
+  checksum: 10c0/a744a1ddda62cbf2ef35ee06bd6ca8848239753d459730b0ee3acfe82f0859c6c2a765d3240e352207081e72fcfead83b10dc69d8fc894f2d228fcb17232e1bb
   languageName: node
   linkType: hard
 
 "react-instantsearch@npm:^7.15.8":
-  version: 7.16.0
-  resolution: "react-instantsearch@npm:7.16.0"
+  version: 7.49.1
+  resolution: "react-instantsearch@npm:7.49.1"
   dependencies:
-    "@babel/runtime": "npm:^7.1.2"
-    instantsearch-ui-components: "npm:0.11.1"
-    instantsearch.js: "npm:4.79.0"
-    react-instantsearch-core: "npm:7.16.0"
+    "@swc/helpers": "npm:0.5.18"
+    instantsearch-ui-components: "npm:0.40.1"
+    instantsearch.js: "npm:4.117.0"
+    react-instantsearch-core: "npm:7.49.1"
   peerDependencies:
     algoliasearch: ">= 3.1 < 6"
     react: ">= 16.8.0 < 20"
     react-dom: ">= 16.8.0 < 20"
-  checksum: 10c0/4726706c165662fee96789911e0e50ac51256851211eae0aa899f9b63d253de452278a46bc097c5aeeeb67d1bbe7400b2505b6f1a32ae4724dd54aeba8bf7c80
+  checksum: 10c0/d0e10e84f87ab52e7cedb198568e9d2379ff596198b17774213085b1612f5bc76e557516227df5db3ba0eb6d4b14813ef3687d0932c57e98034e88b7d8581268
   languageName: node
   linkType: hard
 
@@ -16043,7 +16078,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:19.3.0":
+"react@npm:19.3.0, react@npm:>= 0.14.0":
   version: 19.3.0
   resolution: "react@npm:19.3.0"
   checksum: 10c0/dd3099c3c43a7122bc01223bb26b0f8d5ba13cca569af6fb94a005fb54fa73223c9cb203bb226d40cfd49a82cbeef2e36ce84062a3a6d5b9fe8f4437694c7b52
