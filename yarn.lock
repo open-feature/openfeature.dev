@@ -15971,12 +15971,12 @@ __metadata:
   linkType: hard
 
 "react-lite-youtube-embed@npm:^2.5.1":
-  version: 2.5.1
-  resolution: "react-lite-youtube-embed@npm:2.5.1"
+  version: 2.6.0
+  resolution: "react-lite-youtube-embed@npm:2.6.0"
   peerDependencies:
     react: ">=18.2.0"
     react-dom: ">=18.2.0"
-  checksum: 10c0/b4bbb11af1d6b158dd41dbdb457b2da08d8dc71199b62a0ac256a989ed0ac93a61342396b105f1f584974cb0a0c149a08f26ea6bf98b90f650c26101b9616102
+  checksum: 10c0/2d0fc4cd2279f4f45e71195330e57fa32d241038fbc9c43aa22dc1b9a5cc8ecf655b5f2828a0fecec2fd82e0bd4037f930fa69a430696792e908b7a2ff6aac15
   languageName: node
   linkType: hard
 
