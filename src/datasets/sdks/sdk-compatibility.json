@@ -184,8 +184,8 @@
     "path": "/docs/reference/sdks/server/go",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.18.0",
-      "version": "1.18.0",
+      "href": "https://github.com/open-feature/go-sdk/releases/tag/v1.19.0",
+      "version": "1.19.0",
       "stable": true
     },
     "spec": {
@@ -592,8 +592,8 @@
     "path": "/docs/reference/sdks/server/dart",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/dart-sdk/releases/tag/v0.0.25",
-      "version": "0.0.25",
+      "href": "https://github.com/open-feature/dart-sdk/releases/tag/v0.0.26",
+      "version": "0.0.26",
       "stable": false
     },
     "spec": {
