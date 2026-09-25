@@ -1,0 +1,30 @@
+# OpenFeature
+
+> OpenFeature is a vendor-neutral, community-driven specification for feature flagging. This index points coding agents and language models to the project's primary documentation and ecosystem resources.
+
+## Start here
+
+- [OpenFeature documentation](https://openfeature.dev/docs/reference/intro): Learn the core concepts and how OpenFeature fits into a feature flagging system.
+- [Five minutes to feature flags](https://openfeature.dev/docs/tutorials/five-minutes-to-feature-flags): Follow a short, practical introduction to evaluating feature flags with OpenFeature.
+- [OpenFeature specification](https://openfeature.dev/specification): Read the normative API, evaluation context, provider, hook, and event definitions.
+
+## Concepts
+
+- [Providers](https://openfeature.dev/docs/reference/concepts/provider): Understand how providers connect the OpenFeature API to a feature flag management system.
+- [Hooks](https://openfeature.dev/docs/reference/concepts/hooks): Learn how hooks add behavior before, during, and after flag evaluation.
+- [SDK paradigms](https://openfeature.dev/docs/reference/concepts/sdk-paradigms): Compare the design patterns shared across OpenFeature SDKs.
+
+## SDKs and integrations
+
+- [SDK technologies](https://openfeature.dev/docs/reference/sdks): Find server-side, client-side, and web SDK documentation.
+- [SDK compatibility](https://openfeature.dev/docs/reference/sdks/sdk-compatibility): Compare SDK support for OpenFeature specification features.
+- [Ecosystem](https://openfeature.dev/ecosystem): Search available SDKs, providers, hooks, and integrations.
+- [OpenFeature CLI](https://openfeature.dev/docs/reference/other-technologies/cli): Generate typed flag accessors and work with OpenFeature tooling.
+- [OpenFeature MCP Server](https://openfeature.dev/docs/reference/other-technologies/mcp): Connect AI assistants to OpenFeature documentation and resources through MCP.
+
+## Protocols and project resources
+
+- [OpenFeature Remote Evaluation Protocol](https://openfeature.dev/docs/reference/other-technologies/ofrep): Learn the vendor-neutral protocol for remote flag evaluation.
+- [OFREP OpenAPI specification](https://openfeature.dev/docs/reference/other-technologies/ofrep/openapi): Inspect the HTTP API contract for OFREP implementations.
+- [OpenFeature community](https://openfeature.dev/community): Find governance, contribution, and community meeting information.
+- [OpenFeature on GitHub](https://github.com/open-feature): Browse the specification, SDKs, integrations, and project repositories.
