@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 44 44">
+  <mask id="togul-dot-gap">
+    <rect width="44" height="44" fill="#fff"/>
+    <circle cx="33" cy="12.75" r="4.6" fill="#000"/>
+  </mask>
+  <g fill="currentColor">
+    <g mask="url(#togul-dot-gap)">
+      <rect x="8" y="10" width="28" height="5.5" rx="2.75"/>
+      <rect x="19.25" y="10" width="5.5" height="24" rx="2.75"/>
+    </g>
+    <circle cx="33" cy="12.75" r="2.8"/>
+  </g>
+</svg>
