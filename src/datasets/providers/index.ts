@@ -43,6 +43,7 @@ import { Nona } from './nona';
 import { ConfigBee } from './configbee';
 import { Vercel } from './vercel';
 import { Tggl } from './tggl';
+import { Togul } from './togul';
 import { OFREP } from './ofrep';
 import { VWO } from './vwo';
 import { SDKS } from '../sdks';
@@ -110,6 +111,7 @@ export const PROVIDERS: Provider[] = [
   MultiProvider,
   Nona,
   Tggl,
+  Togul,
   OFREP,
   VWO,
   Intellitoggle,
