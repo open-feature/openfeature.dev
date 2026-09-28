@@ -137,7 +137,7 @@
       "output": []
     }
   },
-  "packageManager": "yarn@4.18.0",
+  "packageManager": "yarn@4.18.1",
   "resolutions": {
     "@babel/runtime": "^7.26.10",
     "@babel/core": "^7.29.7",
