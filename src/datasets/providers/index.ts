@@ -40,6 +40,7 @@ import { MultiProvider } from './multi-provider';
 import { Hypertune } from './hypertune';
 import { Confidence } from './confidence';
 import { Nona } from './nona';
+import { Flagward } from './flagward';
 import { ConfigBee } from './configbee';
 import { Vercel } from './vercel';
 import { Tggl } from './tggl';
@@ -116,7 +117,8 @@ export const PROVIDERS: Provider[] = [
   OctopusDeploy,
   Optimizely,
   Pendo,
-  Superposition
+  Superposition,
+  Flagward,
 ];
 
 // Map of provider name to technology to child technologies
