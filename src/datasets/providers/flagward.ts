@@ -8,9 +8,8 @@ export const Flagward: Provider = {
     {
       technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://www.npmjs.com/package/@flagward/openfeature-web',
+      href: 'https://docs.flagward.com/sdks/openfeature',
       category: ['Client'],
     },
   ],
-  description: 'Official OpenFeature web provider for Flagward, open-source feature flags with local evaluation.',
 };
