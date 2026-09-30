@@ -8,7 +8,7 @@ export const LaunchDarkly: Provider = {
     {
       technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://github.com/launchdarkly/openfeature-node-server',
+      href: 'https://github.com/launchdarkly/js-core/tree/main/packages/sdk/openfeature-node-server',
       category: ['Server'],
     },
     {
