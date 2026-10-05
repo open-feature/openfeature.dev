@@ -6159,14 +6159,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-regex@npm:^6.1.0":
-  version: 6.4.0
-  resolution: "ansi-regex@npm:6.4.0"
-  checksum: 10c0/e42f68ffa21aac4c4de27aad601bb5ea415b5a07b127681ef44728195f22231b77bc39230ce0c976420d84650b7bf5a5b60eb4e7500c1f74e9a3f3cd4a68f3f6
-  languageName: node
-  linkType: hard
-
-"ansi-regex@npm:^6.2.2":
+"ansi-regex@npm:^6.1.0, ansi-regex@npm:^6.2.2":
   version: 6.4.0
   resolution: "ansi-regex@npm:6.4.0"
   checksum: 10c0/e42f68ffa21aac4c4de27aad601bb5ea415b5a07b127681ef44728195f22231b77bc39230ce0c976420d84650b7bf5a5b60eb4e7500c1f74e9a3f3cd4a68f3f6
