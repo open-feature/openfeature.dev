@@ -9,6 +9,7 @@ import { FFlags } from './fflags';
 import { Flaghoist } from './flaghoist';
 import { Flipswitch } from './flipswitch';
 import { PydanticLogfire } from './pydantic-logfire';
+import { Togul } from './togul';
 export type OFREPElement = Omit<EcosystemElement, 'allTechnologies' | 'technology' | 'category'>;
 
 export const ECOSYSTEM_OFREP_APIS: OFREPElement[] = [
@@ -21,6 +22,7 @@ export const ECOSYSTEM_OFREP_APIS: OFREPElement[] = [
   Flipt,
   Goff,
   PydanticLogfire,
+  Togul,
 ]
   .map(
     (api): OFREPElement => ({
