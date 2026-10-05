@@ -6,6 +6,7 @@
     "lint": "wireit",
     "lint:md": "wireit",
     "lint:es": "wireit",
+    "lint:svg": "wireit",
     "docusaurus": "docusaurus",
     "submodules": "wireit",
     "start": "wireit",
@@ -115,7 +116,8 @@
     "lint": {
       "dependencies": [
         "lint:es",
-        "lint:md"
+        "lint:md",
+        "lint:svg"
       ]
     },
     "lint:es": {
@@ -133,6 +135,14 @@
       "files": [
         "**/*.md*",
         ".markdownlint-cli2.yaml"
+      ],
+      "output": []
+    },
+    "lint:svg": {
+      "command": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/lint-svg-logos.ts",
+      "files": [
+        "static/img/*-no-fill.svg",
+        "scripts/lint-svg-logos.ts"
       ],
       "output": []
     }
