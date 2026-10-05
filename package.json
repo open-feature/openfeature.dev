@@ -87,6 +87,7 @@
     "markdownlint-cli2": "0.23.3",
     "markdownlint-rule-max-one-sentence-per-line": "0.0.2",
     "prettier": "3.9.9",
+    "svglint": "4.2.1",
     "typescript": "5.9.3",
     "wireit": "0.14.13"
   },
@@ -139,10 +140,10 @@
       "output": []
     },
     "lint:svg": {
-      "command": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/lint-svg-logos.ts",
+      "command": "svglint --ci \"static/img/*-no-fill.svg\"",
       "files": [
         "static/img/*-no-fill.svg",
-        "scripts/lint-svg-logos.ts"
+        ".svglintrc.mjs"
       ],
       "output": []
     }
