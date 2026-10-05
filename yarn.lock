@@ -8446,7 +8446,7 @@ __metadata:
     fs-extra: "npm:11.4.1"
     instantsearch-itemsjs-adapter: "npm:^1.1.5"
     itemsjs: "npm:^2.1.25"
-    markdownlint-cli2: "npm:0.23.2"
+    markdownlint-cli2: "npm:0.23.3"
     markdownlint-rule-max-one-sentence-per-line: "npm:0.0.2"
     mermaid: "npm:11.17.2"
     postcss: "npm:^8.5.10"
@@ -10187,17 +10187,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:16.2.2":
-  version: 16.2.2
-  resolution: "globby@npm:16.2.2"
+"globby@npm:16.2.4":
+  version: 16.2.4
+  resolution: "globby@npm:16.2.4"
   dependencies:
     "@sindresorhus/merge-streams": "npm:^4.0.0"
     fast-glob: "npm:^3.3.3"
     ignore: "npm:^7.0.5"
     is-path-inside: "npm:^4.0.0"
+    micromatch: "npm:^4.0.8"
     slash: "npm:^5.1.0"
     unicorn-magic: "npm:^0.4.0"
-  checksum: 10c0/77bbd36a8862b2952ccbb7e411064387c5b274cb0a1466fd335b0bf336f2b7d92e05167799ddcaf8beac571229d9a7d8a4d5ea7446d4a90714cdc32cef2443ed
+  checksum: 10c0/ef4a56b656260138b47706bd9532aad86d2820f028c58d51af41f458cf7f1177ce71cf104697cd6068c18eb1e0f3272bf446bc7c6265a357c6a159a1a1e31cec
   languageName: node
   linkType: hard
 
@@ -12156,22 +12157,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdownlint-cli2@npm:0.23.2":
-  version: 0.23.2
-  resolution: "markdownlint-cli2@npm:0.23.2"
+"markdownlint-cli2@npm:0.23.3":
+  version: 0.23.3
+  resolution: "markdownlint-cli2@npm:0.23.3"
   dependencies:
-    globby: "npm:16.2.2"
-    js-yaml: "npm:5.2.2"
+    globby: "npm:16.2.4"
+    js-yaml: "npm:5.4.1"
     jsonc-parser: "npm:3.3.1"
     jsonpointer: "npm:5.0.1"
-    markdown-it: "npm:14.3.0"
+    markdown-it: "npm:15.0.1"
     markdownlint: "npm:0.41.1"
     markdownlint-cli2-formatter-default: "npm:0.0.6"
     micromatch: "npm:4.0.8"
-    smol-toml: "npm:1.7.0"
+    smol-toml: "npm:1.8.0"
   bin:
     markdownlint-cli2: markdownlint-cli2-bin.mjs
-  checksum: 10c0/a854cc77c8a64b07d1f99a74303d0f3d773a5ff78a361328566ce469df8bb08fbc1d57b2715c5ad111cc85278c034a14bfa92c41b51e5926494d370af94ccd21
+  checksum: 10c0/d82f017e202b021b0525d053bed888bf52bbdf1f2272e4777f087ad7911650ab9252391524248bf30db744b44a75cef06a79355257a13cea8c46d5b8a2e8fa1b
   languageName: node
   linkType: hard
 
@@ -17072,10 +17073,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"smol-toml@npm:1.7.0":
-  version: 1.7.0
-  resolution: "smol-toml@npm:1.7.0"
-  checksum: 10c0/8eef246b9b96f278a181f6dd2a90c754304cb4cf92ccdfe1d2f714fb980fb3f539ba00283609e8fd2fbcf7c0d48a4ae76b36bc0de556ed286b2c865827a778e8
+"smol-toml@npm:1.8.0":
+  version: 1.8.0
+  resolution: "smol-toml@npm:1.8.0"
+  checksum: 10c0/4e01dbfb7c7af142176b037ebedaccccafb8229cc873feaa47c184ee31073d86e30b4b1b0fe9a5a6d083ed3ce21615eda9e81d1f5d779ad8b2e2e9459b900aea
   languageName: node
   linkType: hard
 
