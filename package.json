@@ -6,6 +6,7 @@
     "lint": "wireit",
     "lint:md": "wireit",
     "lint:es": "wireit",
+    "lint:svg": "wireit",
     "docusaurus": "docusaurus",
     "submodules": "wireit",
     "start": "wireit",
@@ -86,6 +87,7 @@
     "markdownlint-cli2": "0.23.3",
     "markdownlint-rule-max-one-sentence-per-line": "0.0.2",
     "prettier": "3.9.9",
+    "svglint": "4.2.1",
     "typescript": "5.9.3",
     "wireit": "0.14.13"
   },
@@ -115,7 +117,8 @@
     "lint": {
       "dependencies": [
         "lint:es",
-        "lint:md"
+        "lint:md",
+        "lint:svg"
       ]
     },
     "lint:es": {
@@ -133,6 +136,14 @@
       "files": [
         "**/*.md*",
         ".markdownlint-cli2.yaml"
+      ],
+      "output": []
+    },
+    "lint:svg": {
+      "command": "svglint --ci \"static/img/*-no-fill.svg\"",
+      "files": [
+        "static/img/*-no-fill.svg",
+        ".svglintrc.mjs"
       ],
       "output": []
     }
