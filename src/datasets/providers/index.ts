@@ -10,6 +10,7 @@ import { ConfigCat } from './configcat';
 import { ConfigDirector } from './configdirector';
 import { Datadog } from './datadog';
 import { DevCycle } from './devcycle';
+import { Dif } from './dif';
 import { EnvVar } from './env-var';
 import { Feat } from './feat';
 import { Flagd } from './flagd';
@@ -81,6 +82,7 @@ export const PROVIDERS: Provider[] = [
   ConfigDirector,
   Datadog,
   DevCycle,
+  Dif,
   EnvVar,
   Feat,
   FeatBit,
