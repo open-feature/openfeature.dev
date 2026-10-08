@@ -89,6 +89,7 @@ const addHeader =
   (content: string): string => {
     const frontmatter: string[] = [];
     frontmatter.push(`title: OpenFeature ${sdk.name} SDK`);
+    frontmatter.push(`description: Install and use the OpenFeature ${sdk.name} SDK`);
     if (sdk.slug) {
       frontmatter.push(`slug: ${sdk.slug}`);
     }
