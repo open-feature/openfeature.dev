@@ -9,6 +9,7 @@ import remarkGfm from 'remark-gfm';
 import tailwindcss from 'tailwindcss';
 
 import { processSdkReadmes, processOtherTechnologies } from './scripts/process-sdk-readmes';
+import rehypeLlmsCleanup from './scripts/rehype-llms-cleanup';
 
 const presetClassicOptions: PresetClassicOptions = {
   docs: {
@@ -309,6 +310,44 @@ const config: Config = {
     ],
   ],
   plugins: [
+    [
+      '@signalwire/docusaurus-plugin-llms-txt',
+      {
+        siteDescription:
+          'OpenFeature is an open specification that provides a vendor-agnostic, community-driven API for feature flagging.',
+        depth: 1,
+        includeOrder: ['/docs/**', '/specification/**'],
+        optionalLinks: [
+          {
+            title: 'flagd',
+            url: 'https://flagd.dev/',
+            description: 'OpenFeature-compliant feature flag evaluation engine',
+          },
+          { title: 'OpenFeature on GitHub', url: 'https://github.com/open-feature' },
+        ],
+        content: {
+          enableLlmsFullTxt: true,
+          relativePaths: false,
+          excludeRoutes: ['/search', '/community/**', '/docs/reference/contributing', '/docs/category/**'],
+          beforeDefaultRehypePlugins: [rehypeLlmsCleanup],
+          routeRules: [
+            {
+              route: '/docs/**',
+              categoryName: 'Documentation',
+              depth: 3,
+              includeOrder: [
+                '/docs/reference/intro',
+                '/docs/tutorials/**',
+                '/docs/reference/concepts/**',
+                '/docs/reference/sdks/**',
+                '/docs/reference/other-technologies/**',
+              ],
+            },
+            { route: '/specification/**', categoryName: 'Specification' },
+          ],
+        },
+      },
+    ],
     async function tailwind() {
       return {
         name: 'docusaurus-tailwindcss',
