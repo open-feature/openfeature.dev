@@ -3,7 +3,7 @@ import type { Element, ElementContent, Root, RootContent } from 'hast';
 /**
  * Normalizes Docusaurus-rendered HTML before @signalwire/docusaurus-plugin-llms-txt
  * converts it to Markdown:
- * - drops heading permalinks and React text separators
+ * - drops heading permalinks, buttons, and React text separators
  * - replaces YouTube embeds with a plain link
  * - restores code block languages and line breaks from Prism output
  * - labels each tab panel instead of emitting a detached list of tab names
@@ -43,7 +43,7 @@ function transform<T extends Root | Element>(node: T): T {
       out.push(child);
       continue;
     }
-    if (hasClass(child, 'hash-link')) continue;
+    if (hasClass(child, 'hash-link') || hasClass(child, 'mcp-install-button') || child.tagName === 'button') continue;
 
     if (hasClass(child, 'video-container')) {
       const href = findAll(child, (n) => n.type === 'element' && n.tagName === 'a')[0]?.properties?.href;
