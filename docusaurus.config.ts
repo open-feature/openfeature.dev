@@ -328,7 +328,13 @@ const config: Config = {
         content: {
           enableLlmsFullTxt: true,
           relativePaths: false,
-          excludeRoutes: ['/search', '/community/**', '/docs/reference/contributing', '/docs/category/**'],
+          excludeRoutes: [
+            '/search',
+            '/community/**',
+            '/docs/reference/contributing',
+            '/docs/category/**',
+            '/specification/category/**',
+          ],
           beforeDefaultRehypePlugins: [rehypeLlmsCleanup],
           routeRules: [
             {
