@@ -4357,8 +4357,8 @@ __metadata:
   linkType: hard
 
 "@radix-ui/react-slot@npm:^1.2.3":
-  version: 1.4.0
-  resolution: "@radix-ui/react-slot@npm:1.4.0"
+  version: 1.5.0
+  resolution: "@radix-ui/react-slot@npm:1.5.0"
   dependencies:
     "@radix-ui/react-compose-refs": "npm:1.1.5"
   peerDependencies:
@@ -4367,7 +4367,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10c0/a8c5be704183d4e388280191d6245458b45b059ea8530a523e8f87820b6eab407e06b749f63df5284204e66fc2ba5c8a934a74c61a17272f79ca98eae1403baa
+  checksum: 10c0/8bc25dc5569d50b5b019811b51ef43a55bf1c0eb69d46bd132bac7c4f124b57805ad1a81b2c94e8f4faf115ce9dad91490411a2f631af2e43f9cfe060c0d6f79
   languageName: node
   linkType: hard
 
