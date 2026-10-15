@@ -13,6 +13,7 @@ import { DevCycle } from './devcycle';
 import { EnvVar } from './env-var';
 import { Feat } from './feat';
 import { Flagd } from './flagd';
+import { Flagtide } from './flagtide';
 import { FirebaseRemoteConfig } from './firebase-remote-config';
 import { Flagsmith } from './flagsmith';
 import { Flipswitch } from './flipswitch';
@@ -121,6 +122,7 @@ export const PROVIDERS: Provider[] = [
   Pendo,
   Superposition,
   Flagward,
+  Flagtide,
 ];
 
 // Map of provider name to technology to child technologies
