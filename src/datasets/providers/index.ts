@@ -1,6 +1,7 @@
 import type { ComponentType, SVGProps } from 'react';
 import { Category, EcosystemElement, Technology } from '../types';
 import { ABTasty } from './abtasty';
+import { Ageris } from './ageris';
 import { AwsSSM } from './awsssm';
 import { AzureAppConfiguration } from './azure-app-configuration';
 import { Bucketeer } from './bucketeer';
@@ -10,9 +11,11 @@ import { ConfigCat } from './configcat';
 import { ConfigDirector } from './configdirector';
 import { Datadog } from './datadog';
 import { DevCycle } from './devcycle';
+import { Dif } from './dif';
 import { EnvVar } from './env-var';
 import { Feat } from './feat';
 import { Flagd } from './flagd';
+import { Flagtide } from './flagtide';
 import { FirebaseRemoteConfig } from './firebase-remote-config';
 import { Flagsmith } from './flagsmith';
 import { Flipswitch } from './flipswitch';
@@ -70,6 +73,7 @@ const childTechnologyMap = SDKS.reduce(
 
 export const PROVIDERS: Provider[] = [
   ABTasty,
+  Ageris,
   AwsSSM,
   AzureAppConfiguration,
   Bucketeer,
@@ -81,6 +85,7 @@ export const PROVIDERS: Provider[] = [
   ConfigDirector,
   Datadog,
   DevCycle,
+  Dif,
   EnvVar,
   Feat,
   FeatBit,
@@ -121,6 +126,7 @@ export const PROVIDERS: Provider[] = [
   Pendo,
   Superposition,
   Flagward,
+  Flagtide,
 ];
 
 // Map of provider name to technology to child technologies
