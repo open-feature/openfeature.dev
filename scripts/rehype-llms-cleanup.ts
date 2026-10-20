@@ -5,7 +5,7 @@ import type { Element, ElementContent, Root, RootContent } from 'hast';
  * converts it to Markdown:
  * - drops heading permalinks, buttons, and React text separators
  * - replaces YouTube embeds with a plain link
- * - restores code block languages and line breaks from Prism output
+ * - restores code block languages, line breaks, and diff markers from Prism output
  * - labels each tab panel instead of emitting a detached list of tab names
  */
 
@@ -33,6 +33,10 @@ const el = (tagName: string, children: ElementContent[], properties: Element['pr
   children,
 });
 
+// Diff magic comments are rendered as line classes, so restore them as text markers.
+const diffPrefix = (line: Element): string =>
+  hasClass(line, 'code-block-diff-remove-line') ? '- ' : hasClass(line, 'code-block-diff-add-line') ? '+ ' : '';
+
 const txt = (value: string): ElementContent => ({ type: 'text', value });
 
 function transform<T extends Root | Element>(node: T): T {
@@ -43,7 +47,7 @@ function transform<T extends Root | Element>(node: T): T {
       out.push(child);
       continue;
     }
-    if (hasClass(child, 'hash-link') || hasClass(child, 'mcp-install-button') || child.tagName === 'button') continue;
+    if (hasClass(child, 'hash-link') || child.tagName === 'button') continue;
 
     if (hasClass(child, 'video-container')) {
       const href = findAll(child, (n) => n.type === 'element' && n.tagName === 'a')[0]?.properties?.href;
@@ -53,7 +57,7 @@ function transform<T extends Root | Element>(node: T): T {
 
     if (child.tagName === 'pre') {
       const lang = [child.properties?.className ?? []].flat().find((c) => String(c).startsWith('language-'));
-      const lines = findAll(child, (n) => hasClass(n, 'token-line')).map(textOf);
+      const lines = findAll(child, (n) => hasClass(n, 'token-line')).map((line) => diffPrefix(line) + textOf(line));
       const code = lines.length ? lines.join('\n') : textOf(child);
       out.push(el('pre', [el('code', [txt(code)], lang ? { className: [String(lang)] } : {})]));
       continue;
