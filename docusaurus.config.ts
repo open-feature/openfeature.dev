@@ -9,7 +9,7 @@ import remarkGfm from 'remark-gfm';
 import tailwindcss from 'tailwindcss';
 
 import { processSdkReadmes, processOtherTechnologies } from './scripts/process-sdk-readmes';
-import rehypeLlmsCleanup from './scripts/rehype-llms-cleanup';
+import rehypeLlmsCleanup, { remarkLlmsIndexLinks } from './scripts/rehype-llms-cleanup';
 
 const presetClassicOptions: PresetClassicOptions = {
   docs: {
@@ -327,15 +327,30 @@ const config: Config = {
         ],
         content: {
           enableLlmsFullTxt: true,
+          includePages: true,
+          // Route rule contentSelectors aren't applied by the plugin, so the ecosystem list selector is global.
+          // The rest are the plugin defaults.
+          contentSelectors: [
+            '.llms-ecosystem',
+            '.theme-doc-markdown',
+            'main .container .col',
+            'main .theme-doc-wrapper',
+            'article',
+            'main .container',
+            'main',
+          ],
           relativePaths: false,
           excludeRoutes: [
+            '/',
             '/search',
+            '/support-training',
             '/community/**',
             '/docs/reference/contributing',
             '/docs/category/**',
             '/specification/category/**',
           ],
           beforeDefaultRehypePlugins: [rehypeLlmsCleanup],
+          remarkPlugins: [remarkLlmsIndexLinks],
           routeRules: [
             {
               route: '/docs/**',
@@ -350,6 +365,7 @@ const config: Config = {
               ],
             },
             { route: '/specification/**', categoryName: 'Specification' },
+            { route: '/ecosystem', categoryName: 'Ecosystem' },
           ],
         },
       },
