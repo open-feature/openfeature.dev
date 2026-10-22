@@ -74,7 +74,7 @@ export default function MCPInstall({ sdkTechnology }: MCPInstallProps) {
   };
 
   return (
-    <details className="alert alert--info" style={{ marginBottom: '1rem' }}>
+    <details className="alert alert--info mcp-install" style={{ marginBottom: '1rem' }}>
       <summary className="mcp-install-summary">
         <strong>MCP Install</strong>
         <button

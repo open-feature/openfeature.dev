@@ -1,9 +1,10 @@
 import type { Element, ElementContent, Root, RootContent } from 'hast';
+import type { Nodes as MdNodes, Root as MdRoot } from 'mdast';
 
 /**
  * Normalizes Docusaurus-rendered HTML before @signalwire/docusaurus-plugin-llms-txt
  * converts it to Markdown:
- * - drops heading permalinks, buttons, and React text separators
+ * - drops heading permalinks, buttons, the MCP install widget, and React text separators
  * - replaces YouTube embeds with a plain link
  * - restores code block languages, line breaks, and diff markers from Prism output
  * - labels each tab panel instead of emitting a detached list of tab names
@@ -47,7 +48,7 @@ function transform<T extends Root | Element>(node: T): T {
       out.push(child);
       continue;
     }
-    if (hasClass(child, 'hash-link') || child.tagName === 'button') continue;
+    if (hasClass(child, 'hash-link') || hasClass(child, 'mcp-install') || child.tagName === 'button') continue;
 
     if (hasClass(child, 'video-container')) {
       const href = findAll(child, (n) => n.type === 'element' && n.tagName === 'a')[0]?.properties?.href;
@@ -82,5 +83,20 @@ function transform<T extends Root | Element>(node: T): T {
 export default function rehypeLlmsCleanup() {
   return (tree: Root) => {
     transform(tree);
+  };
+}
+
+const fixIndexLinks = (node: MdNodes): void => {
+  if (node.type === 'link') node.url = node.url.replace(/\/\.md(?=[#?]|$)/, '.md');
+  if ('children' in node) node.children.forEach(fixIndexLinks);
+};
+
+/**
+ * Remark plugin that runs after the plugin's link rewriting, which turns links to index pages like `/docs/foo/`
+ * into `/docs/foo/.md` while the generated file is `/docs/foo.md`.
+ */
+export function remarkLlmsIndexLinks() {
+  return (tree: MdRoot) => {
+    fixIndexLinks(tree);
   };
 }
