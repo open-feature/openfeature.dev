@@ -532,8 +532,8 @@
     "path": "/docs/reference/sdks/server/ruby",
     "category": "Server",
     "release": {
-      "href": "https://github.com/open-feature/ruby-sdk/releases/tag/v0.6.5",
-      "version": "0.6.5",
+      "href": "https://github.com/open-feature/ruby-sdk/releases/tag/v0.6.7",
+      "version": "0.6.7",
       "stable": false
     },
     "spec": {
