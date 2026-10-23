@@ -8521,7 +8521,7 @@ __metadata:
     eslint-plugin-check-file: "npm:3.3.2"
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-jest: "npm:27.9.0"
-    eslint-plugin-mdx: "npm:3.8.1"
+    eslint-plugin-mdx: "npm:3.8.2"
     fs-extra: "npm:11.4.1"
     instantsearch-itemsjs-adapter: "npm:^1.1.5"
     itemsjs: "npm:^2.1.25"
@@ -9333,7 +9333,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-mdx@npm:3.8.2":
+"eslint-mdx@npm:3.8.2, eslint-mdx@npm:^3.8.2":
   version: 3.8.2
   resolution: "eslint-mdx@npm:3.8.2"
   dependencies:
@@ -9356,32 +9356,6 @@ __metadata:
     remark-lint-file-extension:
       optional: true
   checksum: 10c0/e4e55f803ceb07da644ab7c3b25aa616bae4d8ca16cb8301ed5db0dce9c2353964ff71871f1ccfc23bb891000ad5e457ebbc9c3894946c0bba38cffef8c7b208
-  languageName: node
-  linkType: hard
-
-"eslint-mdx@npm:^3.8.1":
-  version: 3.8.1
-  resolution: "eslint-mdx@npm:3.8.1"
-  dependencies:
-    acorn: "npm:^8.15.0"
-    acorn-jsx: "npm:^5.3.2"
-    espree: "npm:^9.6.1 || ^10.4.0 || ^11.2.0"
-    estree-util-visit: "npm:^2.0.0"
-    remark-mdx: "npm:^3.1.0"
-    remark-parse: "npm:^11.0.0"
-    remark-stringify: "npm:^11.0.0"
-    synckit: "npm:^0.11.8"
-    unified: "npm:^11.0.5"
-    unified-engine: "npm:^11.2.2"
-    unist-util-visit: "npm:^5.0.0"
-    vfile: "npm:^6.0.3"
-  peerDependencies:
-    eslint: ">=8.0.0"
-    remark-lint-file-extension: "*"
-  peerDependenciesMeta:
-    remark-lint-file-extension:
-      optional: true
-  checksum: 10c0/0ce68b91fb2159a740ca337ad0e5b79cde60cece08500496d67b6137c2b5f631d9867fe1f66384940ed9e21711925e6e4a6eeec85a3e459419bf93a61bb595c8
   languageName: node
   linkType: hard
 
@@ -9456,23 +9430,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-mdx@npm:3.8.1":
-  version: 3.8.1
-  resolution: "eslint-plugin-mdx@npm:3.8.1"
+"eslint-plugin-mdx@npm:3.8.2":
+  version: 3.8.2
+  resolution: "eslint-plugin-mdx@npm:3.8.2"
   dependencies:
-    eslint-mdx: "npm:^3.8.1"
-    mdast-util-from-markdown: "npm:^2.0.2"
+    eslint-mdx: "npm:^3.8.2"
+    mdast-util-from-markdown: "npm:^2.1.0"
     mdast-util-mdx: "npm:^3.0.0"
     micromark-extension-mdxjs: "npm:^3.0.0"
-    remark-mdx: "npm:^3.1.0"
+    remark-mdx: "npm:^3.1.1"
     remark-parse: "npm:^11.0.0"
     remark-stringify: "npm:^11.0.0"
-    synckit: "npm:^0.11.8"
+    synckit: "npm:^0.12.3"
     unified: "npm:^11.0.5"
     vfile: "npm:^6.0.3"
   peerDependencies:
     eslint: ">=8.0.0"
-  checksum: 10c0/d24af2896e584c65d1404e5a39cfc3793a0fc2ed920f8df7c891d3da9b1abe69ccc527d2d290be4dfcca3666951b9ba8a168b4412f1416581859856af475e1a4
+  checksum: 10c0/c443a964600f0a866234d8a54d9833d9a03b2dd0e8db266eb20de27c36b35fd239333c9c4e624cf73f1ca40c27668b03c33040f8549dc0b141719f06a7c6be2c
   languageName: node
   linkType: hard
 
@@ -12611,7 +12585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdast-util-from-markdown@npm:^2.0.0, mdast-util-from-markdown@npm:^2.0.2":
+"mdast-util-from-markdown@npm:^2.0.0, mdast-util-from-markdown@npm:^2.1.0":
   version: 2.1.0
   resolution: "mdast-util-from-markdown@npm:2.1.0"
   dependencies:
@@ -16644,7 +16618,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark-mdx@npm:^3.0.0, remark-mdx@npm:^3.1.0, remark-mdx@npm:^3.1.1":
+"remark-mdx@npm:^3.0.0, remark-mdx@npm:^3.1.1":
   version: 3.1.1
   resolution: "remark-mdx@npm:3.1.1"
   dependencies:
@@ -18100,15 +18074,6 @@ __metadata:
     oas-validate: oas-validate.js
     swagger2openapi: swagger2openapi.js
   checksum: 10c0/441a4d3a7d353f99395b14a0c8d6124be6390f2f8aa53336905e7314a7f80b66f5f2a40ac0dc2dbe2f7bc01f52a223a94f54a2ece345095fd3ad8ae8b03d688b
-  languageName: node
-  linkType: hard
-
-"synckit@npm:^0.11.8":
-  version: 0.11.13
-  resolution: "synckit@npm:0.11.13"
-  dependencies:
-    "@pkgr/core": "npm:^0.3.6"
-  checksum: 10c0/5a6c19f4f79045aaa7994106401bff6dbe7cca23a6d0a0723ff14eb8b1bebeb4a71729118f6914905598e304ea2fa13509885e11ba07d92e7cb68a06740cb328
   languageName: node
   linkType: hard
 
