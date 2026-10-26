@@ -13,6 +13,7 @@ import NoResultsBoundary from '../partials/ecosystem/no-results-boundary';
 import PageIllustration from '../partials/page-illustration';
 import Hit from '../partials/ecosystem/hit';
 import ScrollTo from '../partials/ecosystem/scroll-to';
+import LlmsEcosystemList from '../partials/ecosystem/llms-list';
 
 import type { ItemsJsOptions } from 'instantsearch-itemsjs-adapter/lib/itemsjsInterface';
 import type { InstantSearchOptions } from 'instantsearch.js';
@@ -77,7 +78,8 @@ const SHARED_STYLES = {
 
 export default function Ecosystem() {
   return (
-    <Layout title="Ecosystem" description="OpenFeature Ecosystem">
+    <Layout title="Ecosystem" description="Discover OpenFeature SDKs, providers, hooks, OFREP APIs, and integrations.">
+      <LlmsEcosystemList />
       <InstantSearch
         searchClient={searchClient}
         indexName="instant_search"

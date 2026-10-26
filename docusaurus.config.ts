@@ -9,6 +9,7 @@ import remarkGfm from 'remark-gfm';
 import tailwindcss from 'tailwindcss';
 
 import { processSdkReadmes, processOtherTechnologies } from './scripts/process-sdk-readmes';
+import rehypeLlmsCleanup, { remarkLlmsIndexLinks } from './scripts/rehype-llms-cleanup';
 
 const presetClassicOptions: PresetClassicOptions = {
   docs: {
@@ -309,6 +310,66 @@ const config: Config = {
     ],
   ],
   plugins: [
+    [
+      '@signalwire/docusaurus-plugin-llms-txt',
+      {
+        siteDescription:
+          'OpenFeature is an open specification that provides a vendor-agnostic, community-driven API for feature flagging.',
+        depth: 1,
+        includeOrder: ['/docs/**', '/specification/**'],
+        optionalLinks: [
+          {
+            title: 'flagd',
+            url: 'https://flagd.dev/',
+            description: 'OpenFeature-compliant feature flag evaluation engine',
+          },
+          { title: 'OpenFeature on GitHub', url: 'https://github.com/open-feature' },
+        ],
+        content: {
+          enableLlmsFullTxt: true,
+          includePages: true,
+          // Route rule contentSelectors aren't applied by the plugin, so the ecosystem list selector is global.
+          // The rest are the plugin defaults.
+          contentSelectors: [
+            '.llms-ecosystem',
+            '.theme-doc-markdown',
+            'main .container .col',
+            'main .theme-doc-wrapper',
+            'article',
+            'main .container',
+            'main',
+          ],
+          relativePaths: false,
+          excludeRoutes: [
+            '/',
+            '/search',
+            '/support-training',
+            '/community/**',
+            '/docs/reference/contributing',
+            '/docs/category/**',
+            '/specification/category/**',
+          ],
+          beforeDefaultRehypePlugins: [rehypeLlmsCleanup],
+          remarkPlugins: [remarkLlmsIndexLinks],
+          routeRules: [
+            {
+              route: '/docs/**',
+              categoryName: 'Documentation',
+              depth: 3,
+              includeOrder: [
+                '/docs/reference/intro',
+                '/docs/tutorials/**',
+                '/docs/reference/concepts/**',
+                '/docs/reference/sdks/**',
+                '/docs/reference/other-technologies/**',
+              ],
+            },
+            { route: '/specification/**', categoryName: 'Specification' },
+            { route: '/ecosystem', categoryName: 'Ecosystem' },
+          ],
+        },
+      },
+    ],
     async function tailwind() {
       return {
         name: 'docusaurus-tailwindcss',

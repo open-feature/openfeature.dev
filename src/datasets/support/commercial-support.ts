@@ -8,6 +8,7 @@ import FlagsmithSvg from '@site/static/img/vendors/flagsmith.svg';
 import HarnessSvg from '@site/static/img/vendors/harness.svg';
 import LaunchDarklySvg from '@site/static/img/vendors/launchdarkly.svg';
 import TgglSvg from '@site/static/img/vendors/tggl.svg';
+import UnleashSvg from '@site/static/img/vendors/unleash.svg';
 import GoffSvg from '@site/static/img/vendors/gofeatureflag.svg';
 import ConfigCatSvg from '@site/static/img/vendors/configcat.svg';
 import VwoSvg from '@site/static/img/vendors/vwo.svg';
@@ -77,6 +78,11 @@ export const CommercialSupportList: CommercialSupportType[] = [
     name: 'Tggl',
     href: 'https://tggl.io/developers/sdks/open-feature',
     svg: TgglSvg,
+  },
+  {
+    name: 'Unleash',
+    href: 'https://docs.getunleash.io/sdks/openfeature',
+    svg: UnleashSvg,
   },
   {
     name: 'VWO',
