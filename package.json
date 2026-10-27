@@ -90,7 +90,7 @@
     "prettier": "3.9.10",
     "svglint": "4.2.1",
     "typescript": "5.9.3",
-    "wireit": "0.14.13"
+    "wireit": "0.15.0"
   },
   "browserslist": {
     "production": [
