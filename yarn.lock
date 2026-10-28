@@ -11057,8 +11057,8 @@ __metadata:
   linkType: hard
 
 "http-proxy-middleware@npm:^2.0.10":
-  version: 2.0.10
-  resolution: "http-proxy-middleware@npm:2.0.10"
+  version: 2.0.11
+  resolution: "http-proxy-middleware@npm:2.0.11"
   dependencies:
     "@types/http-proxy": "npm:^1.17.8"
     http-proxy: "npm:^1.18.1"
@@ -11070,7 +11070,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/express":
       optional: true
-  checksum: 10c0/363cd25fbac18f851af93cea34ac7068656413c9af5af12d3b2a127adc70623d2c0d6e9e12037bbac5a4744b762fd9f89fb16e16c29ad06af2b17766890c1b26
+  checksum: 10c0/fe9c29c0efb3f6cc9fae1282ea858c132e4970e2dca6d7de5478bbfd692c7f7c33f45004ee26b1e39d43ecf43b1f1cee9c453c06949ee4e1ca43965c1e13e77e
   languageName: node
   linkType: hard
 
