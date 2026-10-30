@@ -6121,7 +6121,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"algoliasearch-helper@npm:3.30.0, algoliasearch-helper@npm:^3.26.0":
+"algoliasearch-helper@npm:3.30.1":
+  version: 3.30.1
+  resolution: "algoliasearch-helper@npm:3.30.1"
+  dependencies:
+    "@algolia/events": "npm:^4.0.1"
+  peerDependencies:
+    algoliasearch: ">= 3.1 < 6"
+  checksum: 10c0/485eb5f986573395e8031fc33fb02aed4120f415a1970f9e10b394b486264b0f53546e73e95e943ac53d292dc47456efc51d01c93a2f6846fe3ee74b6dfaeb1a
+  languageName: node
+  linkType: hard
+
+"algoliasearch-helper@npm:^3.26.0":
   version: 3.30.0
   resolution: "algoliasearch-helper@npm:3.30.0"
   dependencies:
@@ -11292,18 +11303,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"instantsearch-ui-components@npm:0.43.0":
-  version: 0.43.0
-  resolution: "instantsearch-ui-components@npm:0.43.0"
+"instantsearch-ui-components@npm:0.44.0":
+  version: 0.44.0
+  resolution: "instantsearch-ui-components@npm:0.44.0"
   dependencies:
     "@swc/helpers": "npm:0.5.18"
-  checksum: 10c0/e29bb3b8d465e03579f4ebe038b23c50bc9238f627a1bf029f850911933334bb83b52e947582db42f1e8276854c8f8abc1e8a52d9b99ca01ae2d63a2bb06234b
+  checksum: 10c0/f1430a22af683c8bf3d3f85aa5f99d71cbce0c7432217e012b84a5653a71f91b855b2f296818e813936e63a91f0c1168359d82cb45cc6bacf0ecdb0bb547d279
   languageName: node
   linkType: hard
 
-"instantsearch.js@npm:4.120.0":
-  version: 4.120.0
-  resolution: "instantsearch.js@npm:4.120.0"
+"instantsearch.js@npm:4.121.0":
+  version: 4.121.0
+  resolution: "instantsearch.js@npm:4.121.0"
   dependencies:
     "@algolia/events": "npm:^4.0.1"
     "@swc/helpers": "npm:0.5.18"
@@ -11311,17 +11322,17 @@ __metadata:
     "@types/google.maps": "npm:^3.55.12"
     "@types/hogan.js": "npm:^3.0.0"
     "@types/qs": "npm:^6.5.3"
-    algoliasearch-helper: "npm:3.30.0"
+    algoliasearch-helper: "npm:3.30.1"
     hogan.js: "npm:^3.0.2"
     htm: "npm:^3.0.0"
-    instantsearch-ui-components: "npm:0.43.0"
+    instantsearch-ui-components: "npm:0.44.0"
     preact: "npm:^10.10.0"
     qs: "npm:^6.5.1"
     react: "npm:>= 0.14.0"
     search-insights: "npm:^2.17.2"
   peerDependencies:
     algoliasearch: ">= 3.1 < 6"
-  checksum: 10c0/7e615e1c2f907e9b4cdb12c275ba8ca925ebc4ae09f4418c5e7727cb9af523b8b9fe79a543caa2622d0109df1da93a086b9fe61b25643b788594c3a36f621a49
+  checksum: 10c0/c047b916421f37f0f3029f724ebd2a33b51c07b846e503dc9e049049450f7ff6eafd784cf8253d8821cf9d71f29aafaf07a8f8128675027e1302c5b38ce4619b
   languageName: node
   linkType: hard
 
@@ -16049,34 +16060,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-instantsearch-core@npm:7.52.0":
-  version: 7.52.0
-  resolution: "react-instantsearch-core@npm:7.52.0"
+"react-instantsearch-core@npm:7.53.0":
+  version: 7.53.0
+  resolution: "react-instantsearch-core@npm:7.53.0"
   dependencies:
     "@swc/helpers": "npm:0.5.18"
-    algoliasearch-helper: "npm:3.30.0"
-    instantsearch.js: "npm:4.120.0"
+    algoliasearch-helper: "npm:3.30.1"
+    instantsearch.js: "npm:4.121.0"
     use-sync-external-store: "npm:^1.0.0"
   peerDependencies:
     algoliasearch: ">= 3.1 < 6"
     react: ">= 16.8.0 < 20"
-  checksum: 10c0/1198a4ebfc22da9eda0a5de08579f9ba4c0c1fcecc94644571aebb590019beeda904c2300725e7b6f801265ff4980b4ab29b68d9f4c1158800e1c7bf53163ddf
+  checksum: 10c0/66208e8f96eb9f678add3d3071a76e91ef61304184ff01a6577a5b1bf956c5baa57b59840e666fb91e5cfd9b9209bbe91832ae64b4ccfd12fc29d9b88b1d6ae4
   languageName: node
   linkType: hard
 
 "react-instantsearch@npm:^7.15.8":
-  version: 7.52.0
-  resolution: "react-instantsearch@npm:7.52.0"
+  version: 7.53.0
+  resolution: "react-instantsearch@npm:7.53.0"
   dependencies:
     "@swc/helpers": "npm:0.5.18"
-    instantsearch-ui-components: "npm:0.43.0"
-    instantsearch.js: "npm:4.120.0"
-    react-instantsearch-core: "npm:7.52.0"
+    instantsearch-ui-components: "npm:0.44.0"
+    instantsearch.js: "npm:4.121.0"
+    react-instantsearch-core: "npm:7.53.0"
   peerDependencies:
     algoliasearch: ">= 3.1 < 6"
     react: ">= 16.8.0 < 20"
     react-dom: ">= 16.8.0 < 20"
-  checksum: 10c0/d5cbfea5227bdb23edaea3b34627c058208ca91fcbf9e9d8e0364a6560a967446fb8a3a8ab048b85a0b49e4dd602130074dc581611ae7000f728d78e9c0ff58d
+  checksum: 10c0/2d539a8befca1c2f46874ca2d8e985ad518e6d21abc1cae3d497dec1ba2c50f024748ca21cc1995e9246bb69a2994198085ba4efd2fe4d99724a4a1395c03afb
   languageName: node
   linkType: hard
 
