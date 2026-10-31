@@ -48,5 +48,18 @@ export const Featureflip: Provider = {
       href: 'https://featureflip.io/docs/integrations/openfeature/',
       category: ['Server'],
     },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://featureflip.io/docs/integrations/openfeature/#web-and-react',
+      category: ['Client'],
+    },
+    {
+      technology: 'React',
+      parentTechnology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://featureflip.io/docs/integrations/openfeature/#web-and-react',
+      category: ['Client'],
+    },
   ],
 };
