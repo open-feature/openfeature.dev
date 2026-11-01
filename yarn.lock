@@ -5127,6 +5127,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/esrecurse@npm:^4.3.1":
+  version: 4.3.1
+  resolution: "@types/esrecurse@npm:4.3.1"
+  checksum: 10c0/90dad74d5da3ad27606d8e8e757322f33171cfeaa15ad558b615cf71bb2a516492d18f55f4816384685a3eb2412142e732bbae9a4a7cd2cf3deb7572aa4ebe03
+  languageName: node
+  linkType: hard
+
 "@types/estree-jsx@npm:^1.0.0":
   version: 1.0.5
   resolution: "@types/estree-jsx@npm:1.0.5"
@@ -8541,7 +8548,7 @@ __metadata:
     eslint-plugin-check-file: "npm:3.3.2"
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-jest: "npm:27.9.0"
-    eslint-plugin-mdx: "npm:3.8.2"
+    eslint-plugin-mdx: "npm:3.8.3"
     fs-extra: "npm:11.4.1"
     instantsearch-itemsjs-adapter: "npm:^1.1.5"
     itemsjs: "npm:^2.1.25"
@@ -9379,14 +9386,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-mdx@npm:^3.8.2":
-  version: 3.8.2
-  resolution: "eslint-mdx@npm:3.8.2"
+"eslint-mdx@npm:^3.8.3":
+  version: 3.9.0
+  resolution: "eslint-mdx@npm:3.9.0"
   dependencies:
     acorn: "npm:^8.19.0"
     acorn-jsx: "npm:^5.3.2"
+    devlop: "npm:^1.1.0"
+    eslint-scope: "npm:^8.4.0 || ^9.1.2"
+    eslint-visitor-keys: "npm:^4.2.0 || ^5.0.1"
     espree: "npm:^9.6.1 || ^10.4.0 || ^11.2.0"
     estree-util-visit: "npm:^2.0.0"
+    mdast-util-from-markdown: "npm:^2.1.0"
     remark-mdx: "npm:^3.1.1"
     remark-parse: "npm:^11.0.0"
     remark-stringify: "npm:^11.0.0"
@@ -9394,14 +9405,18 @@ __metadata:
     unified: "npm:^11.0.5"
     unified-engine: "npm:^11.2.2"
     unist-util-visit: "npm:^5.1.0"
+    unist-util-visit-parents: "npm:^6.0.0"
     vfile: "npm:^6.0.3"
   peerDependencies:
+    "@types/estree": ^1.0.10
     eslint: ">=8.0.0"
     remark-lint-file-extension: "*"
   peerDependenciesMeta:
+    "@types/estree":
+      optional: true
     remark-lint-file-extension:
       optional: true
-  checksum: 10c0/e4e55f803ceb07da644ab7c3b25aa616bae4d8ca16cb8301ed5db0dce9c2353964ff71871f1ccfc23bb891000ad5e457ebbc9c3894946c0bba38cffef8c7b208
+  checksum: 10c0/7273022570b922b247747867f6359749f694bee310c17c26ff70ba0a8db506e6d82484660152d9b635f849bf478b035dbb5377571a0c3908da3df3b2b4f3a96b
   languageName: node
   linkType: hard
 
@@ -9476,11 +9491,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-mdx@npm:3.8.2":
-  version: 3.8.2
-  resolution: "eslint-plugin-mdx@npm:3.8.2"
+"eslint-plugin-mdx@npm:3.8.3":
+  version: 3.8.3
+  resolution: "eslint-plugin-mdx@npm:3.8.3"
   dependencies:
-    eslint-mdx: "npm:^3.8.2"
+    eslint-mdx: "npm:^3.8.3"
     mdast-util-from-markdown: "npm:^2.1.0"
     mdast-util-mdx: "npm:^3.0.0"
     micromark-extension-mdxjs: "npm:^3.0.0"
@@ -9492,7 +9507,7 @@ __metadata:
     vfile: "npm:^6.0.3"
   peerDependencies:
     eslint: ">=8.0.0"
-  checksum: 10c0/c443a964600f0a866234d8a54d9833d9a03b2dd0e8db266eb20de27c36b35fd239333c9c4e624cf73f1ca40c27668b03c33040f8549dc0b141719f06a7c6be2c
+  checksum: 10c0/4758bb2972a73486f057c938fad257d2432c5d6ecbdd95c8990366d88967e6b720ab66353f90968ae7b4ea1f0d9b1dbe1028bbec7cb7b4db0748ccb4f4eb2553
   languageName: node
   linkType: hard
 
@@ -9516,6 +9531,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-scope@npm:^8.4.0 || ^9.1.2":
+  version: 9.1.2
+  resolution: "eslint-scope@npm:9.1.2"
+  dependencies:
+    "@types/esrecurse": "npm:^4.3.1"
+    "@types/estree": "npm:^1.0.8"
+    esrecurse: "npm:^4.3.0"
+    estraverse: "npm:^5.2.0"
+  checksum: 10c0/9fb8bca5a73e5741efb6cec84467027b6cb6f4203ff9b43a938e272c5cd30800bde46a5c20dfd1609f840225f0b62b7673be391b20acadf8658ca9fa4729b3dd
+  languageName: node
+  linkType: hard
+
 "eslint-visitor-keys@npm:^3.3.0, eslint-visitor-keys@npm:^3.4.1, eslint-visitor-keys@npm:^3.4.3":
   version: 3.4.3
   resolution: "eslint-visitor-keys@npm:3.4.3"
@@ -9523,7 +9550,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-visitor-keys@npm:^5.0.0, eslint-visitor-keys@npm:^5.0.1":
+"eslint-visitor-keys@npm:^4.2.0 || ^5.0.1, eslint-visitor-keys@npm:^5.0.0, eslint-visitor-keys@npm:^5.0.1":
   version: 5.0.1
   resolution: "eslint-visitor-keys@npm:5.0.1"
   checksum: 10c0/16190bdf2cbae40a1109384c94450c526a79b0b9c3cb21e544256ed85ac48a4b84db66b74a6561d20fe6ab77447f150d711c2ad5ad74df4fcc133736bce99678
