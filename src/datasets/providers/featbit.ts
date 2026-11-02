@@ -35,5 +35,29 @@ export const FeatBit: Provider = {
       href: 'https://github.com/featbit/openfeature-provider-js-client',
       category: ['Client'],
     },
+    {
+      technology: 'Kotlin',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-android-client',
+      category: ['Client'],
+    },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-python-server',
+      category: ['Server'],
+    },
+    {
+      technology: 'Ruby',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-ruby-server',
+      category: ['Server'],
+    },
+    {
+      technology: 'Rust',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-rust-server',
+      category: ['Server'],
+    },
   ],
 };
