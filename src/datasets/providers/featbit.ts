@@ -6,6 +6,12 @@ export const FeatBit: Provider = {
   logo: FeatBitSvg,
   technologies: [
     {
+      technology: 'Go',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-golang-server',
+      category: ['Server'],
+    },
+    {
       technology: 'Java',
       vendorOfficial: true,
       href: 'https://github.com/featbit/featbit-openfeature-provider-java-server',
