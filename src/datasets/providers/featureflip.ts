@@ -61,5 +61,11 @@ export const Featureflip: Provider = {
       href: 'https://featureflip.io/docs/integrations/openfeature/#web-and-react',
       category: ['Client'],
     },
+    {
+      technology: 'Kotlin',
+      vendorOfficial: true,
+      href: 'https://featureflip.io/docs/integrations/openfeature/#android',
+      category: ['Client'],
+    },
   ],
 };
