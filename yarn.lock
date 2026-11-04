@@ -8544,7 +8544,7 @@ __metadata:
     embla-carousel-react: "npm:^8.6.0"
     eslint: "npm:8.57.1"
     eslint-config-prettier: "npm:10.1.8"
-    eslint-mdx: "npm:3.8.3"
+    eslint-mdx: "npm:3.9.0"
     eslint-plugin-check-file: "npm:3.3.2"
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-jest: "npm:27.9.0"
@@ -9360,14 +9360,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-mdx@npm:3.8.3":
-  version: 3.8.3
-  resolution: "eslint-mdx@npm:3.8.3"
+"eslint-mdx@npm:3.9.0":
+  version: 3.9.0
+  resolution: "eslint-mdx@npm:3.9.0"
   dependencies:
     acorn: "npm:^8.19.0"
     acorn-jsx: "npm:^5.3.2"
+    devlop: "npm:^1.1.0"
+    eslint-scope: "npm:^8.4.0 || ^9.1.2"
+    eslint-visitor-keys: "npm:^4.2.0 || ^5.0.1"
     espree: "npm:^9.6.1 || ^10.4.0 || ^11.2.0"
     estree-util-visit: "npm:^2.0.0"
+    mdast-util-from-markdown: "npm:^2.1.0"
     remark-mdx: "npm:^3.1.1"
     remark-parse: "npm:^11.0.0"
     remark-stringify: "npm:^11.0.0"
@@ -9375,14 +9379,18 @@ __metadata:
     unified: "npm:^11.0.5"
     unified-engine: "npm:^11.2.2"
     unist-util-visit: "npm:^5.1.0"
+    unist-util-visit-parents: "npm:^6.0.0"
     vfile: "npm:^6.0.3"
   peerDependencies:
+    "@types/estree": ^1.0.10
     eslint: ">=8.0.0"
     remark-lint-file-extension: "*"
   peerDependenciesMeta:
+    "@types/estree":
+      optional: true
     remark-lint-file-extension:
       optional: true
-  checksum: 10c0/28903586bcae746e67da4ac2b381defd5592ee5d59bf8c6a09df2a28530b0f23ea614017a93095b828dbb3f4b71aaeaea35d4dbbbb8f884b44300527b4463553
+  checksum: 10c0/7273022570b922b247747867f6359749f694bee310c17c26ff70ba0a8db506e6d82484660152d9b635f849bf478b035dbb5377571a0c3908da3df3b2b4f3a96b
   languageName: node
   linkType: hard
 
