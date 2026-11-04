@@ -8548,7 +8548,7 @@ __metadata:
     eslint-plugin-check-file: "npm:3.3.2"
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-jest: "npm:27.9.0"
-    eslint-plugin-mdx: "npm:3.8.3"
+    eslint-plugin-mdx: "npm:3.9.0"
     fs-extra: "npm:11.4.1"
     instantsearch-itemsjs-adapter: "npm:^1.1.5"
     itemsjs: "npm:^2.1.25"
@@ -9386,9 +9386,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-mdx@npm:^3.8.3":
-  version: 3.9.0
-  resolution: "eslint-mdx@npm:3.9.0"
+"eslint-mdx@npm:^3.9.0":
+  version: 3.9.1
+  resolution: "eslint-mdx@npm:3.9.1"
   dependencies:
     acorn: "npm:^8.19.0"
     acorn-jsx: "npm:^5.3.2"
@@ -9416,7 +9416,7 @@ __metadata:
       optional: true
     remark-lint-file-extension:
       optional: true
-  checksum: 10c0/7273022570b922b247747867f6359749f694bee310c17c26ff70ba0a8db506e6d82484660152d9b635f849bf478b035dbb5377571a0c3908da3df3b2b4f3a96b
+  checksum: 10c0/450bc0dfe56f934a204d45135d91bc3115b84171a60b1c0c2aa454f855f0b8cfabb6bd4f349bd38ccc1b37e468778015d62c9e3d08c16223a99c913ecc8d4f22
   languageName: node
   linkType: hard
 
@@ -9491,23 +9491,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-mdx@npm:3.8.3":
-  version: 3.8.3
-  resolution: "eslint-plugin-mdx@npm:3.8.3"
+"eslint-plugin-mdx@npm:3.9.0":
+  version: 3.9.0
+  resolution: "eslint-plugin-mdx@npm:3.9.0"
   dependencies:
-    eslint-mdx: "npm:^3.8.3"
-    mdast-util-from-markdown: "npm:^2.1.0"
+    eslint-mdx: "npm:^3.9.0"
     mdast-util-mdx: "npm:^3.0.0"
-    micromark-extension-mdxjs: "npm:^3.0.0"
+    prettier-linter-helpers: "npm:^1.0.1"
     remark-mdx: "npm:^3.1.1"
     remark-parse: "npm:^11.0.0"
     remark-stringify: "npm:^11.0.0"
-    synckit: "npm:^0.12.3"
     unified: "npm:^11.0.5"
     vfile: "npm:^6.0.3"
   peerDependencies:
     eslint: ">=8.0.0"
-  checksum: 10c0/4758bb2972a73486f057c938fad257d2432c5d6ecbdd95c8990366d88967e6b720ab66353f90968ae7b4ea1f0d9b1dbe1028bbec7cb7b4db0748ccb4f4eb2553
+  checksum: 10c0/899ed28c1c24fbd1d4c08354e23ea077e471e682108894c06473292316eaa1ead1b9490052cffc009c9a4ec56e6c54ff41c8d15a7791449348bb68d16d77e1f5
   languageName: node
   linkType: hard
 
@@ -9871,6 +9869,13 @@ __metadata:
   version: 3.1.3
   resolution: "fast-deep-equal@npm:3.1.3"
   checksum: 10c0/40dedc862eb8992c54579c66d914635afbec43350afbbe991235fdcb4e3a8d5af1b23ae7e79bef7d4882d0ecee06c3197488026998fb19f72dc95acff1d1b1d0
+  languageName: node
+  linkType: hard
+
+"fast-diff@npm:^1.1.2":
+  version: 1.3.0
+  resolution: "fast-diff@npm:1.3.0"
+  checksum: 10c0/5c19af237edb5d5effda008c891a18a585f74bf12953be57923f17a3a4d0979565fc64dbc73b9e20926b9d895f5b690c618cbb969af0cf022e3222471220ad29
   languageName: node
   linkType: hard
 
@@ -15779,6 +15784,15 @@ __metadata:
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
   checksum: 10c0/b00d617431e7886c520a6f498a2e14c75ec58f6d93ba48c3b639cf241b54232d90daa05d83a9e9b9fef6baa63cb7e1e4602c2372fea5bc169668401eb127d0cd
+  languageName: node
+  linkType: hard
+
+"prettier-linter-helpers@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "prettier-linter-helpers@npm:1.0.1"
+  dependencies:
+    fast-diff: "npm:^1.1.2"
+  checksum: 10c0/91cea965681bc5f62c9d26bd3ca6358b81557261d4802e96ec1cf0acbd99d4b61632d53320cd2c3ec7d7f7805a81345644108a41ef46ddc9688e783a9ac792d1
   languageName: node
   linkType: hard
 
