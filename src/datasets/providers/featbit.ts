@@ -6,6 +6,12 @@ export const FeatBit: Provider = {
   logo: FeatBitSvg,
   technologies: [
     {
+      technology: 'Go',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-golang-server',
+      category: ['Server'],
+    },
+    {
       technology: 'Java',
       vendorOfficial: true,
       href: 'https://github.com/featbit/featbit-openfeature-provider-java-server',
@@ -28,6 +34,30 @@ export const FeatBit: Provider = {
       vendorOfficial: true,
       href: 'https://github.com/featbit/openfeature-provider-js-client',
       category: ['Client'],
+    },
+    {
+      technology: 'Kotlin',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-android-client',
+      category: ['Client'],
+    },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-python-server',
+      category: ['Server'],
+    },
+    {
+      technology: 'Ruby',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-ruby-server',
+      category: ['Server'],
+    },
+    {
+      technology: 'Rust',
+      vendorOfficial: true,
+      href: 'https://github.com/featbit/openfeature-provider-rust-server',
+      category: ['Server'],
     },
   ],
 };
