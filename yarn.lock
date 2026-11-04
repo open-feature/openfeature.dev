@@ -8548,7 +8548,7 @@ __metadata:
     eslint-plugin-check-file: "npm:3.3.2"
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-jest: "npm:27.9.0"
-    eslint-plugin-mdx: "npm:3.9.0"
+    eslint-plugin-mdx: "npm:3.9.1"
     fs-extra: "npm:11.4.1"
     instantsearch-itemsjs-adapter: "npm:^1.1.5"
     itemsjs: "npm:^2.1.25"
@@ -9360,7 +9360,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-mdx@npm:3.9.1, eslint-mdx@npm:^3.9.0":
+"eslint-mdx@npm:3.9.1, eslint-mdx@npm:^3.9.1":
   version: 3.9.1
   resolution: "eslint-mdx@npm:3.9.1"
   dependencies:
@@ -9465,11 +9465,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-mdx@npm:3.9.0":
-  version: 3.9.0
-  resolution: "eslint-plugin-mdx@npm:3.9.0"
+"eslint-plugin-mdx@npm:3.9.1":
+  version: 3.9.1
+  resolution: "eslint-plugin-mdx@npm:3.9.1"
   dependencies:
-    eslint-mdx: "npm:^3.9.0"
+    eslint-mdx: "npm:^3.9.1"
     mdast-util-mdx: "npm:^3.0.0"
     prettier-linter-helpers: "npm:^1.0.1"
     remark-mdx: "npm:^3.1.1"
@@ -9479,7 +9479,7 @@ __metadata:
     vfile: "npm:^6.0.3"
   peerDependencies:
     eslint: ">=8.0.0"
-  checksum: 10c0/899ed28c1c24fbd1d4c08354e23ea077e471e682108894c06473292316eaa1ead1b9490052cffc009c9a4ec56e6c54ff41c8d15a7791449348bb68d16d77e1f5
+  checksum: 10c0/2f3d075269f866f53713f390b6cea0c27ebf90a2f9fab460cd776769876e6eac6ce463ad363ae9ed6f70402231688726bbd091630b9221307a6e03beec22191e
   languageName: node
   linkType: hard
 
