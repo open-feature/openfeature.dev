@@ -9,6 +9,10 @@ export default function Pagination() {
     padding: 3,
   });
 
+  // `currentRefinement` is the zero-based index of the current page.
+  const firstHit = nbHits === 0 ? 0 : currentRefinement * SEARCH_ITEMS_PER_PAGE + 1;
+  const lastHit = Math.min((currentRefinement + 1) * SEARCH_ITEMS_PER_PAGE, nbHits);
+
   return (
     <div className="flex items-center justify-between border-t border-gray-200 px-4 py-3 sm:px-6">
       <div className="flex flex-1 justify-between sm:hidden">
@@ -39,10 +43,8 @@ export default function Pagination() {
       </div>
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
-          {/* 30 is set in the instance search config */}
           <p className="text-sm text-emphasis-700">
-            Showing <span className="font-medium">1</span> to{' '}
-            <span className="font-medium">{nbHits < SEARCH_ITEMS_PER_PAGE ? nbHits : SEARCH_ITEMS_PER_PAGE}</span> of{' '}
+            Showing <span className="font-medium">{firstHit}</span> to <span className="font-medium">{lastHit}</span> of{' '}
             <span className="font-medium">{nbHits}</span> results
           </p>
         </div>
