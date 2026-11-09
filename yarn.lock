@@ -8626,7 +8626,7 @@ __metadata:
     fs-extra: "npm:11.4.1"
     instantsearch-itemsjs-adapter: "npm:^1.1.5"
     itemsjs: "npm:^2.1.25"
-    markdownlint-cli2: "npm:0.23.3"
+    markdownlint-cli2: "npm:0.24.0"
     markdownlint-rule-max-one-sentence-per-line: "npm:0.0.2"
     mermaid: "npm:11.17.2"
     postcss: "npm:^8.5.10"
@@ -12587,22 +12587,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdownlint-cli2@npm:0.23.3":
-  version: 0.23.3
-  resolution: "markdownlint-cli2@npm:0.23.3"
+"markdownlint-cli2@npm:0.24.0":
+  version: 0.24.0
+  resolution: "markdownlint-cli2@npm:0.24.0"
   dependencies:
     globby: "npm:16.2.4"
-    js-yaml: "npm:5.4.1"
+    js-yaml: "npm:5.4.3"
     jsonc-parser: "npm:3.3.1"
     jsonpointer: "npm:5.0.1"
-    markdown-it: "npm:15.0.1"
-    markdownlint: "npm:0.41.1"
+    markdown-it: "npm:15.0.3"
+    markdownlint: "npm:0.42.0"
     markdownlint-cli2-formatter-default: "npm:0.0.6"
     micromatch: "npm:4.0.8"
-    smol-toml: "npm:1.8.0"
+    smol-toml: "npm:1.9.1"
   bin:
     markdownlint-cli2: markdownlint-cli2-bin.mjs
-  checksum: 10c0/d82f017e202b021b0525d053bed888bf52bbdf1f2272e4777f087ad7911650ab9252391524248bf30db744b44a75cef06a79355257a13cea8c46d5b8a2e8fa1b
+  checksum: 10c0/b2a6ccee82860512624eea913d1630d34293e287f672a1aca7aef0a828b0877a12b9f415d4c062a075afc71ec688d33f3802b4e8184ff206f5cecbb2681f361e
   languageName: node
   linkType: hard
 
@@ -17614,10 +17614,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"smol-toml@npm:1.8.0":
-  version: 1.8.0
-  resolution: "smol-toml@npm:1.8.0"
-  checksum: 10c0/4e01dbfb7c7af142176b037ebedaccccafb8229cc873feaa47c184ee31073d86e30b4b1b0fe9a5a6d083ed3ce21615eda9e81d1f5d779ad8b2e2e9459b900aea
+"smol-toml@npm:1.9.1":
+  version: 1.9.1
+  resolution: "smol-toml@npm:1.9.1"
+  checksum: 10c0/8acccf7bbc063f29405f58f5014ab39bf4eb9d7f0e000e5e3f140f7d4d6ead5696681a7c15260d1f2910213012c0af43b31a05bf94f704b0bdf39989fba08c02
   languageName: node
   linkType: hard
 
