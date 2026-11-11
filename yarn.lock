@@ -8618,7 +8618,7 @@ __metadata:
     embla-carousel-react: "npm:^8.6.0"
     eslint: "npm:8.57.1"
     eslint-config-prettier: "npm:10.1.8"
-    eslint-mdx: "npm:3.9.1"
+    eslint-mdx: "npm:3.9.3"
     eslint-plugin-check-file: "npm:3.3.2"
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-jest: "npm:27.9.0"
@@ -9434,9 +9434,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-mdx@npm:3.9.1":
-  version: 3.9.1
-  resolution: "eslint-mdx@npm:3.9.1"
+"eslint-mdx@npm:3.9.3":
+  version: 3.9.3
+  resolution: "eslint-mdx@npm:3.9.3"
   dependencies:
     acorn: "npm:^8.19.0"
     acorn-jsx: "npm:^5.3.2"
@@ -9464,7 +9464,7 @@ __metadata:
       optional: true
     remark-lint-file-extension:
       optional: true
-  checksum: 10c0/450bc0dfe56f934a204d45135d91bc3115b84171a60b1c0c2aa454f855f0b8cfabb6bd4f349bd38ccc1b37e468778015d62c9e3d08c16223a99c913ecc8d4f22
+  checksum: 10c0/c814d7264f912dde0e17b4419b122152735c179d38347237f833b0b4e9d8160ab7eb02277a5e7f4f49c7e8fa908c95ece0ae2e1874bc4fe8c1a390a9d97eb50c
   languageName: node
   linkType: hard
 
