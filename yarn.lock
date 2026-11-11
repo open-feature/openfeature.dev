@@ -7342,6 +7342,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"commander@npm:^15.0.0":
+  version: 15.1.0
+  resolution: "commander@npm:15.1.0"
+  checksum: 10c0/dd1013291d3e8779c726313616fa23174abc962182d0894ac73017c55d8b1ffe4a72401d91a1173974050536576896dc5279db07d37f929dbad469a16a12c54e
+  languageName: node
+  linkType: hard
+
 "commander@npm:^2.20.0":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
@@ -10406,7 +10413,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^14.0.0":
+"glob@npm:^14.0.2":
   version: 14.0.4
   resolution: "glob@npm:14.0.4"
   dependencies:
@@ -12227,14 +12234,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"katex@npm:^0.16.0, katex@npm:^0.16.47":
-  version: 0.16.47
-  resolution: "katex@npm:0.16.47"
+"katex@npm:^0.18.2":
+  version: 0.18.10
+  resolution: "katex@npm:0.18.10"
   dependencies:
-    commander: "npm:^8.3.0"
+    commander: "npm:^15.0.0"
   bin:
     katex: cli.js
-  checksum: 10c0/b10f4d0651c60771a48444879e4227255e26e2b2ec061b1ee4b08934863ad2324ba8dbb772455f7768aeb14dfcc13bcd309174a0ddd5ef954a607f644a197710
+  checksum: 10c0/3864a236334e9c7aef906b2fdd70defb76edfe8362372ccd5504167e8b22bbc1a48210e5d03e30e464c0c0f669e6d467b3b8b01120598fb1968c275fa5059721
   languageName: node
   linkType: hard
 
@@ -13766,7 +13773,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^11.0.0":
+"minimatch@npm:^11.0.1":
   version: 11.0.5
   resolution: "minimatch@npm:11.0.5"
   dependencies:
@@ -17614,7 +17621,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"smol-toml@npm:1.9.1":
+"smol-toml@npm:^1.9.0":
   version: 1.9.1
   resolution: "smol-toml@npm:1.9.1"
   checksum: 10c0/8acccf7bbc063f29405f58f5014ab39bf4eb9d7f0e000e5e3f140f7d4d6ead5696681a7c15260d1f2910213012c0af43b31a05bf94f704b0bdf39989fba08c02
@@ -18415,10 +18422,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinypool@npm:^1.0.2":
-  version: 1.1.1
-  resolution: "tinypool@npm:1.1.1"
-  checksum: 10c0/bf26727d01443061b04fa863f571016950888ea994ba0cd8cba3a1c51e2458d84574341ab8dbc3664f1c3ab20885c8cf9ff1cc4b18201f04c2cde7d317fff69b
+"tinypool@npm:^2.1.2":
+  version: 2.2.0
+  resolution: "tinypool@npm:2.2.0"
+  checksum: 10c0/93b2ce0e0cf1a83f003f577d05b0f9860d490d9c082d30687134f4724ea67501847a308c659f658f3cfa545a4cc4b3cd8a8d100d715245988989be6fb0acdcc4
   languageName: node
   linkType: hard
 
