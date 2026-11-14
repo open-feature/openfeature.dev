@@ -223,6 +223,48 @@ function FeaturesZigZag() {
                 </div>
               </div>
             </div>
+            <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
+              <div
+                className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0"
+                data-aos="fade-up"
+              >
+                <div className="max-w-full mx-auto md:max-w-none h-auto flex flex-row justify-center fill-[#1c1e21] dark:fill-[#e3e3e3]">
+                  <GenericCarousel
+                    items={PROVIDERS.filter((provider) => !provider.excludeFromLandingPage).map((provider) => ({
+                      key: `exp-provider-${provider.name}`,
+                      name: provider.name,
+                      logo: provider.logo,
+                      href: encodeURI(`/ecosystem?instant_search[refinementList][vendor][0]=${provider.name}`),
+                    }))}
+                  />
+                </div>
+              </div>
+              <div
+                className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6"
+                data-aos="fade-left"
+              >
+                <div className="md:pl-4 lg:pl-12 xl:pl-16">
+                  <div className="font-architects-daughter text-xl text-purple-600 mb-2">
+                    Data-driven decisions
+                  </div>
+                  <h3 className="h3 mb-3">Built for experimentation</h3>
+                  <p className="text-xl text-gray-700 dark:text-gray-300 mb-4">
+                    Run A/B tests and measure feature impact without changing your stack.
+                  </p>
+                  <ul className="text-lg text-gray-600 dark:text-gray-300 -mb-2 pl-0">
+                    <li className="flex items-center mb-2">
+                      <CheckboxIcon text="Tracking API for conversions and event measurement" />
+                    </li>
+                    <li className="flex items-center mb-2">
+                      <CheckboxIcon text="Hooks for custom experimentation metrics" />
+                    </li>
+                    <li className="flex items-center">
+                      <CheckboxIcon text="Targeting key for consistent traffic splitting" />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
