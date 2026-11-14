@@ -182,7 +182,7 @@
     "websocket-driver": "^0.7.5",
     "yaml": "^2.8.3",
     "markdownlint-cli2/js-yaml": "^4.3.2",
-    "markdownlint-cli2/markdownlint": "0.41.1",
+    "markdownlint-cli2/markdownlint": "0.42.1",
     "js-yaml@npm:^4.1.0": "^4.3.2",
     "@redocly/openapi-core/js-yaml": "^4.3.2",
     "cosmiconfig/js-yaml": "^4.3.2",
