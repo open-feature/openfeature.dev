@@ -87,7 +87,7 @@
     "fs-extra": "11.4.1",
     "markdownlint-cli2": "0.24.1",
     "markdownlint-rule-max-one-sentence-per-line": "0.0.2",
-    "prettier": "3.10.0",
+    "prettier": "3.10.1",
     "svglint": "4.2.1",
     "typescript": "5.9.3",
     "wireit": "0.15.0"
