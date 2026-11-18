@@ -29,6 +29,7 @@ import { MDBRules } from './mdb-rules';
 import { Mixpanel } from './mixpanel';
 import { PostHog } from './posthog';
 import { Prefab } from './prefab';
+import { Railflag } from './railflag';
 import { Reflag } from './reflag';
 import { Split } from './split';
 import { Switchbox } from './switchbox';
@@ -106,6 +107,7 @@ export const PROVIDERS: Provider[] = [
   Mixpanel,
   PostHog,
   Prefab,
+  Railflag,
   Reflag,
   Split,
   Statsig,
