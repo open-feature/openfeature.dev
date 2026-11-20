@@ -179,7 +179,7 @@
     "svgo": "^3.3.3",
     "tar": "^7.5.22",
     "uuid": "^14.0.0",
-    "websocket-driver": "^0.7.5",
+    "websocket-driver": "^0.8.0",
     "yaml": "^2.8.3",
     "markdownlint-cli2/js-yaml": "^4.3.2",
     "markdownlint-cli2/markdownlint": "0.41.1",
