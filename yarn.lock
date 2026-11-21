@@ -7307,9 +7307,9 @@ __metadata:
   linkType: hard
 
 "colord@npm:^2.9.4":
-  version: 2.13.0
-  resolution: "colord@npm:2.13.0"
-  checksum: 10c0/6071135a8bcc7d5f44ec82edf3a4f10d738a63f6ffbbe8bf9cf19043ae703843db4e50dfffe4a1d7d9d898c01aa5aacb0fc427eb1a50d73b29f0e0736638c856
+  version: 2.14.0
+  resolution: "colord@npm:2.14.0"
+  checksum: 10c0/e16b472899b8958881375a0cf4db259bae35e36f1de1ba00af908e5896fdc3d3f5d7d801baf54942a404c1de5275f9e7433daf4e86ca5bd703f9894570ef319e
   languageName: node
   linkType: hard
 
