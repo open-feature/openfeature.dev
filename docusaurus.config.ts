@@ -94,11 +94,11 @@ const themeConfig: ThemeCommonConfig & AlgoliaThemeConfig = {
     ],
   },
   // announcements can go here
-  announcementBar: {
-    id: 'announcing-kubecon-na-26',
-    content:
-      '🎉️ Meet us in Salt Lake City for KubeCon + CloudNativeCon North America · Nov 9-12 · <b><a target="_blank" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/?utm_source=openfeature&utm_medium=ribbon-banner&utm_campaign=KubeCon-CloudNativeCon-NA-2026&utm_content=hero">Register Today!</a></b> 🥳️',
-  },
+  // announcementBar: {
+  //   id: 'announcing-kubecon-na-26',
+  //   content:
+  //     '🎉️ Meet us in Salt Lake City for KubeCon + CloudNativeCon North America · Nov 9-12 · <b><a target="_blank" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/?utm_source=openfeature&utm_medium=ribbon-banner&utm_campaign=KubeCon-CloudNativeCon-NA-2026&utm_content=hero">Register Today!</a></b> 🥳️',
+  // },
   footer: {
     style: 'dark',
     links: [
