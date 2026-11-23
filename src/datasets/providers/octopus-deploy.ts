@@ -21,7 +21,13 @@ export const OctopusDeploy: Provider = {
     {
       technology: 'JavaScript',
       vendorOfficial: true,
-      href: 'https://github.com/OctopusDeploy/openfeature-provider-ts-web',
+      href: 'https://github.com/OctopusDeploy/openfeature-provider-ts/tree/main/packages/server',
+      category: ['Server'],
+    },
+    {
+      technology: 'JavaScript',
+      vendorOfficial: true,
+      href: 'https://github.com/OctopusDeploy/openfeature-provider-ts/tree/main/packages/web',
       category: ['Client'],
     },
   ],
