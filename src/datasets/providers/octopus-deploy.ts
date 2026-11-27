@@ -13,6 +13,12 @@ export const OctopusDeploy: Provider = {
       category: ['Server'],
     },
     {
+      technology: 'Go',
+      vendorOfficial: true,
+      href: 'https://github.com/OctopusDeploy/openfeature-provider-go',
+      category: ['Server'],
+    },
+    {
       technology: 'Java',
       vendorOfficial: true,
       href: 'https://github.com/OctopusDeploy/openfeature-provider-java',
@@ -29,6 +35,12 @@ export const OctopusDeploy: Provider = {
       vendorOfficial: true,
       href: 'https://github.com/OctopusDeploy/openfeature-provider-ts/tree/main/packages/web',
       category: ['Client'],
+    },
+    {
+      technology: 'Python',
+      vendorOfficial: true,
+      href: 'https://github.com/OctopusDeploy/openfeature-provider-python',
+      category: ['Server'],
     },
   ],
 };
