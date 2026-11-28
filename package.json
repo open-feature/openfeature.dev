@@ -74,7 +74,7 @@
     "@docusaurus/tsconfig": "3.10.2",
     "@signalwire/docusaurus-plugin-llms-txt": "1.2.2",
     "@types/fs-extra": "11.0.4",
-    "@types/react": "19.3.0",
+    "@types/react": "19.3.1",
     "@typescript-eslint/eslint-plugin": "8.74.0",
     "@typescript-eslint/parser": "8.74.0",
     "eslint": "8.57.1",
