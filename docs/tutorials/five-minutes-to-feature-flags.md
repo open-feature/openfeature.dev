@@ -367,6 +367,7 @@ Start the node server:
 ```bash
 node 05_openfeature_with_targeting.js
 ```
+
 Make a new request:
 
 ```bash
