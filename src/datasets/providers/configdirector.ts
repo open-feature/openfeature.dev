@@ -12,7 +12,7 @@ export const ConfigDirector: Provider = {
   technologies: [
     {
       ...jsSdk,
-      href: 'https://docs.configdirector.com/sdks/server/openfeature-node',
+      href: 'https://docs.configdirector.com/sdks/openfeature/node-js',
       category: ['Server'],
     },
     {
@@ -28,9 +28,27 @@ export const ConfigDirector: Provider = {
       category: ['Server'],
     },
     {
+      technology: 'Go',
+      vendorOfficial: true,
+      href: 'https://docs.configdirector.com/sdks/openfeature/go',
+      category: ['Server'],
+    },
+    {
+      technology: 'PHP',
+      vendorOfficial: true,
+      href: 'https://docs.configdirector.com/sdks/openfeature/php',
+      category: ['Server'],
+    },
+    {
       technology: 'Python',
       vendorOfficial: true,
       href: 'https://docs.configdirector.com/sdks/openfeature/python',
+      category: ['Server'],
+    },
+    {
+      technology: 'Ruby',
+      vendorOfficial: true,
+      href: 'https://docs.configdirector.com/sdks/openfeature/ruby',
       category: ['Server'],
     },
     {
@@ -41,7 +59,7 @@ export const ConfigDirector: Provider = {
     },
     {
       ...jsSdk,
-      href: 'https://docs.configdirector.com/sdks/browser/openfeature-web',
+      href: 'https://docs.configdirector.com/sdks/openfeature/web',
       category: ['Client'],
     },
     {
